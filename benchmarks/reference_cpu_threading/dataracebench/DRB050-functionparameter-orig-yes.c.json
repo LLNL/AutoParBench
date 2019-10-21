@@ -3,19 +3,20 @@
 "file":"./dataracebench/DRB050-functionparameter-orig-yes.c",
 "function":"foo1",
 "loop id":"1",
-"loop line":"55",
-"loop column":"3",
-"pragma type":"NULL",
+"loop line":"0",
+"loop column":"0",
+"pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false"
+"multiversioned":"true",
+"firstprivate":["c","o1","i","len","c","o1","i"]
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB050-functionparameter-orig-yes.c",
 "function":"main",
 "loop id":"1",
-"loop line":"68",
-"loop column":"3",
+"loop line":"0",
+"loop column":"0",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
@@ -23,27 +24,27 @@
 "induction variable":"i",
 "private":["i"]
 },
-"ordered - object id : 3":{
+"ordered 3":{
 "pragma type":"ordered",
 "file":"./dataracebench/DRB050-functionparameter-orig-yes.c",
 "function":"main",
 "loop id":"2",
 "statement id":"1",
-"snippet line":"77",
-"snippet column":"13"
+"snippet line":"0",
+"snippet column":"0"
 },
 "loop - object id : 4":{
 "file":"./dataracebench/DRB050-functionparameter-orig-yes.c",
 "function":"main",
 "loop id":"2",
-"loop line":"76",
-"loop column":"3",
+"loop line":"0",
+"loop column":"0",
 "pragma type":"parallel for",
 "ordered":"true",
 "offload":"false",
 "multiversioned":"false",
 "induction variable":"i",
 "private":["i"],
-"dependence list":["ordered - object id : 3"]
+"dependence list":["ordered 3"]
 }
 }

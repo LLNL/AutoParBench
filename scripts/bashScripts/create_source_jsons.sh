@@ -102,7 +102,8 @@ run_OMP ${1}
 update_jsons ${1} ${2}
 }
 
-analyze_directory reference_cpu_threading
+analyze_directory original
+#reference_cpu_threading
 analyze_directory Cetus
 analyze_directory reference_gpu_target
 analyze_directory Dawncc

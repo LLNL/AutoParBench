@@ -3,11 +3,13 @@
 "file":"./dataracebench/DRB016-outputdep-orig-yes.c",
 "function":"main",
 "loop id":"1",
-"loop line":"70",
-"loop column":"3",
-"pragma type":"NULL",
+"loop line":"0",
+"loop column":"0",
+"pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false"
+"multiversioned":"false",
+"firstprivate":["i"],
+"lastprivate":["i"]
 }
 }

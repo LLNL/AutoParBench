@@ -3,8 +3,8 @@
 "file":"./dataracebench/DRB052-indirectaccesssharebase-orig-no.c",
 "function":"main",
 "loop id":"1",
-"loop line":"110",
-"loop column":"3",
+"loop line":"0",
+"loop column":"0",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
@@ -16,8 +16,8 @@
 "file":"./dataracebench/DRB052-indirectaccesssharebase-orig-no.c",
 "function":"main",
 "loop id":"2",
-"loop line":"116",
-"loop column":"3",
+"loop line":"0",
+"loop column":"0",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
@@ -25,27 +25,27 @@
 "induction variable":"i",
 "private":["i"]
 },
-"ordered - object id : 3":{
+"ordered 3":{
 "pragma type":"ordered",
 "file":"./dataracebench/DRB052-indirectaccesssharebase-orig-no.c",
 "function":"main",
 "loop id":"3",
 "statement id":"1",
-"snippet line":"127",
-"snippet column":"13"
+"snippet line":"0",
+"snippet column":"0"
 },
 "loop - object id : 4":{
 "file":"./dataracebench/DRB052-indirectaccesssharebase-orig-no.c",
 "function":"main",
 "loop id":"3",
-"loop line":"125",
-"loop column":"3",
+"loop line":"0",
+"loop column":"0",
 "pragma type":"parallel for",
 "ordered":"true",
 "offload":"false",
 "multiversioned":"false",
 "induction variable":"i",
 "private":["i"],
-"dependence list":["ordered - object id : 3"]
+"dependence list":["ordered 3"]
 }
 }

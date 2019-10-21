@@ -8,13 +8,13 @@ SCRIPTS=$(pwd)
 cd "${THIS}"
 
 # remove the output directory, if it exists
-if [ -d "${SCRIPTS}/../benchmarks/baseline" ]; then
-  rm -r "${SCRIPTS}/../benchmarks/baseline"
+if [ -d "${SCRIPTS}/../benchmarks/reference_cpu_threading" ]; then
+  rm -r "${SCRIPTS}/../benchmarks/reference_cpu_threading"
 fi
-mkdir "${SCRIPTS}/../benchmarks/baseline"
+mkdir "${SCRIPTS}/../benchmarks/reference_cpu_threading"
 
 # Map directoires
-cd "${SCRIPTS}/../benchmarks/baseline"
+cd "${SCRIPTS}/../benchmarks/reference_cpu_threading"
 BASELINEDIR=$(pwd)
 cd "${THIS}"
 
@@ -22,7 +22,7 @@ cd "${SCRIPTS}/../benchmarks/ICC_Full"
 ICC_NOCOST_DIR=$(pwd)
 cd "${THIS}"
 
-cd "${SCRIPTS}/../benchmarks/reference_cpu_threading"
+cd "${SCRIPTS}/../benchmarks/original"
 CPU_reference_DIR=$(pwd)
 cd "${THIS}"
 
@@ -40,13 +40,13 @@ g++-8 ${SCRIPTS}/../tools/EquivalenceChecker/equivalence_checker.h ${SCRIPTS}/..
 chmod +x ${THIS}/equivalence_checker.out
 
 # Join the manual JSON file and ICC without threshold to find all parallelizable but not profitable loops.
-for json in $(find "${CPU_reference_DIR}" -name "*.json" | sort); do
+for json in $(find "${BASELINEDIR}" -name "*.json" | sort); do
   echo ""
-  echo "./equivalence_checker.out -join ${json} ${json/reference_cpu_threading/ICC_Full} ${json/reference_cpu_threading/baseline}"
+  echo "./equivalence_checker.out -join ${json/reference_cpu_threading/original} ${json/reference_cpu_threading/ICC_Full} ${json}"
   if [ -f "${json/reference_cpu_threading/ICC_Full}" ]; then
-    ./equivalence_checker.out -join "${json}" "${json/reference_cpu_threading/ICC_Full}" "${json/reference_cpu_threading/baseline}"
+    ./equivalence_checker.out -join "${json/reference_cpu_threading/original}" "${json/reference_cpu_threading/ICC_Full}" "${json}"
   else
-    ./equivalence_checker.out -join "${json}" "${json}" "${json/reference_cpu_threading/baseline}"
+    ./equivalence_checker.out -join "${json/reference_cpu_threading/original}" "${jsonjson/reference_cpu_threading/original}" "${json}"
   fi
 done
 

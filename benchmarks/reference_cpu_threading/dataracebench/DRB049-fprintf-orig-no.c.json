@@ -3,8 +3,8 @@
 "file":"./dataracebench/DRB049-fprintf-orig-no.c",
 "function":"main",
 "loop id":"1",
-"loop line":"64",
-"loop column":"3",
+"loop line":"0",
+"loop column":"0",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
@@ -12,27 +12,27 @@
 "induction variable":"i",
 "private":["i"]
 },
-"ordered - object id : 2":{
+"ordered 2":{
 "pragma type":"ordered",
 "file":"./dataracebench/DRB049-fprintf-orig-no.c",
 "function":"main",
 "loop id":"2",
 "statement id":"1",
-"snippet line":"76",
-"snippet column":"13"
+"snippet line":"0",
+"snippet column":"0"
 },
 "loop - object id : 3":{
 "file":"./dataracebench/DRB049-fprintf-orig-no.c",
 "function":"main",
 "loop id":"2",
-"loop line":"74",
-"loop column":"3",
+"loop line":"0",
+"loop column":"0",
 "pragma type":"parallel for",
 "ordered":"true",
 "offload":"false",
 "multiversioned":"false",
 "induction variable":"i",
 "private":["i"],
-"dependence list":["ordered - object id : 2"]
+"dependence list":["ordered 2"]
 }
 }
