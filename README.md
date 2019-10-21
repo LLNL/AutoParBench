@@ -38,4 +38,11 @@ This repository contains the following content:
   * OpenMPExtractor
   * PragmaRemover
   
+  ## Running the framweork
   
+On the top level directory of this repository, please, type the following commands:
+ 
+ ```bash
+   cd scripts/bashScripts
+   sudo ./run.sh
+ ```
