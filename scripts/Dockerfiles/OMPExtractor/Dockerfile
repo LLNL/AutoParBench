@@ -32,7 +32,7 @@ ENV CLANG_SRC_FILE="cfe-${CLANG_VER}.src.tar.xz"
 ENV LLVM_SRC_ADDR="http://llvm.org/releases/${LLVM_VER}/${LLVM_SRC_FILE}"
 ENV CLANG_SRC_ADDR="http://llvm.org/releases/${CLANG_VER}/${CLANG_SRC_FILE}"
 
-#Download LLVM, Clang and DawnCC source tarballs if not already downloaded
+#Download LLVM, Clang and OpenMP Extractor source tarballs if not already downloaded
 RUN wget "${LLVM_SRC_ADDR}"
 
 RUN wget "${CLANG_SRC_ADDR}"
@@ -60,15 +60,15 @@ RUN make -j4
 workdir ${ROOT_FOLDER}
 
 #NOTE: Remove the token when AutoParBench be a public repository
-RUN git clone https://gleisonsdm:78e48c089ce620d071324e3d202546b457f9e8b9@github.com/chunhualiao/AutoParBench.git ${OMPEXTRACTOR_PATH}
+RUN git clone https://github.com/gleisonsdm/AutoParBench.git ${OMPEXTRACTOR_PATH}
 
 #Create lib folder of OMP Extractor if not already created
 RUN mkdir ${OMPEXTRACTOR_PATH}/lib 
 
-#Navigate to OMP Extractor output directory, run if theres no makefile, and then build DawnCC
+#Navigate to OMP Extractor output directory, run if theres no makefile, and then build OpenMP Extractor
 workdir ${OMPEXTRACTOR_PATH}/lib
 
-RUN CXX=g++-8 cmake -DLLVM_DIR=${LLVM_OUTPUT_DIR}/lib/cmake/llvm ${OMPEXTRACTOR_PATH}/clangPlugin/
+RUN CXX=g++-8 cmake -DLLVM_DIR=${LLVM_OUTPUT_DIR}/lib/cmake/llvm ${OMPEXTRACTOR_PATH}/tools/OpenMPExtractor
 
 RUN make -j4
 
