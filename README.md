@@ -18,7 +18,7 @@ This repository contains the following content:
   * reference_cpu_simd
   * reference_cpu_threading
   * reference_gpu_target
-  *  	sequential
+  * sequential
 * scripts
   * Dockerfiles
     * Cetus
