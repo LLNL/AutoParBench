@@ -1,0 +1,90 @@
+{
+"loop - object id : 1":{
+"file":"./NPB3.0-omp-c/sys/setparams.c",
+"function":"write_compiler_info",
+"loop id":"1",
+"loop line":"920",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./NPB3.0-omp-c/sys/setparams.c",
+"function":"check_line",
+"loop id":"1",
+"loop line":"985",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 3":{
+"file":"./NPB3.0-omp-c/sys/setparams.c",
+"function":"check_line",
+"loop id":"2",
+"loop line":"1001",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 4":{
+"file":"./NPB3.0-omp-c/sys/setparams.c",
+"function":"check_line",
+"loop id":"3",
+"loop line":"1011",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 5":{
+"file":"./NPB3.0-omp-c/sys/setparams.c",
+"function":"check_include_line",
+"loop id":"1",
+"loop line":"1037",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 6":{
+"file":"./NPB3.0-omp-c/sys/setparams.c",
+"function":"check_include_line",
+"loop id":"2",
+"loop line":"1055",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 7":{
+"file":"./NPB3.0-omp-c/sys/setparams.c",
+"function":"check_include_line",
+"loop id":"3",
+"loop line":"1066",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 8":{
+"file":"./NPB3.0-omp-c/sys/setparams.c",
+"function":"ilog2",
+"loop id":"1",
+"loop line":"1150",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

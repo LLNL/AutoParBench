@@ -1,0 +1,39 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB047-doallchar-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"62",
+"loop column":"3",
+"pragma type":"target parallel for",
+"ordered":"false",
+"offload":"true",
+"multiversioned":"false",
+"induction variable":"i",
+"map tofrom":["a[0:100]"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB047-doallchar-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"69",
+"loop column":"3",
+"pragma type":"target parallel for",
+"ordered":"false",
+"offload":"true",
+"multiversioned":"false",
+"induction variable":"i",
+"map tofrom":["a[0:100]"]
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB047-doallchar-orig-no.c",
+"function":"main",
+"loop id":"3",
+"loop line":"73",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

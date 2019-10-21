@@ -1,0 +1,2814 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -w -qopenmp -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -c
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: verify(double *, double *, double, char *, boolean *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (verify(double *, double *, double, char *, boolean *)) [1/18=5.6%] lu.c(3177,38)
+  -> EXTERN: (3377,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3378,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3382,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (3385,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3389,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3391,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3396,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (3399,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (3402,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (3408,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3410,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3415,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (3418,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (3421,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (3427,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3429,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3433,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3436,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3439,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3444,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3445,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3447,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (3449,5) printf(const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(3196,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+LOOP BEGIN at lu.c(3364,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+LOOP BEGIN at lu.c(3394,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ lu.c(3396,7) ]
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ lu.c(3399,7) ]
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ lu.c(3402,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+LOOP BEGIN at lu.c(3413,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ lu.c(3415,7) ]
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ lu.c(3418,7) ]
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ lu.c(3421,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(3177,38):remark #34051: REGISTER ALLOCATION : [verify] lu.c:3177
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   25[ rax rdx rcx rbx rsi rdi r13-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     347
+            Global    :      37
+            Local     :     310
+        Regenerable   :     162
+        Spilled       :      28
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :     192 bytes*
+            Reads     :      72 [4.53e+01 ~ 15.8%]
+            Writes    :      84 [2.40e+01 ~ 8.4%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: pintgr(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (pintgr(void)) [2/18=11.1%] lu.c(2013,26)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(2054,3)
+   remark #25420: Collapsed with loop at line 2055 
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ phi1 phi2 } private={ } firstprivate={ k i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+   remark #25015: Estimate of max trip count of loop=4356
+
+   LOOP BEGIN at lu.c(2055,5)
+      remark #25421: Loop eliminated in Collapsing 
+
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2060,3)
+   remark #25082: Preprocess Loopnests: Moving Out Simple Stmts From Loop  
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 phi1 phi2 } private={ } firstprivate={ ibeg ifin j jbeg ki1 ki2 jfin i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2062,5)
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2085,3)
+   remark #25082: Preprocess Loopnests: Moving Out Simple Stmts From Loop  
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=66
+
+   LOOP BEGIN at lu.c(2086,5)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 4
+      remark #25015: Estimate of max trip count of loop=66
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2103,3)
+   remark #25420: Collapsed with loop at line 2104 
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ phi1 phi2 } private={ } firstprivate={ k i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+   remark #25015: Estimate of max trip count of loop=4356
+
+   LOOP BEGIN at lu.c(2104,5)
+      remark #25421: Loop eliminated in Collapsing 
+
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2111,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 phi1 } private={ } firstprivate={ ibeg ifin k jbeg ki1 ki2 i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2113,7)
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2125,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 phi2 } private={ } firstprivate={ ibeg ifin k jfin ki1 ki2 i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2127,7)
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2139,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=66
+
+   LOOP BEGIN at lu.c(2140,5)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 4
+      remark #25015: Estimate of max trip count of loop=66
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2158,3)
+   remark #25420: Collapsed with loop at line 2159 
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ phi1 phi2 } private={ } firstprivate={ k i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+   remark #25015: Estimate of max trip count of loop=4356
+
+   LOOP BEGIN at lu.c(2159,5)
+      remark #25421: Loop eliminated in Collapsing 
+
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2166,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 phi1 } private={ } firstprivate={ jbeg jfin k ibeg ki1 ki2 j } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=65
+
+   LOOP BEGIN at lu.c(2168,7)
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2180,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 phi2 } private={ } firstprivate={ jbeg jfin k ifin ki1 ki2 j } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=65
+
+   LOOP BEGIN at lu.c(2182,7)
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2194,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=66
+
+   LOOP BEGIN at lu.c(2195,5)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 4
+      remark #25015: Estimate of max trip count of loop=66
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2054,3)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=4356
+LOOP END
+
+LOOP BEGIN at lu.c(2054,3)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=4356
+LOOP END
+
+LOOP BEGIN at lu.c(2060,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2062,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2103,3)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=4356
+LOOP END
+
+LOOP BEGIN at lu.c(2103,3)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=4356
+LOOP END
+
+LOOP BEGIN at lu.c(2111,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2113,7)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2125,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2127,7)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2158,3)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=4356
+LOOP END
+
+LOOP BEGIN at lu.c(2158,3)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=4356
+LOOP END
+
+LOOP BEGIN at lu.c(2166,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=65
+
+   LOOP BEGIN at lu.c(2168,7)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2180,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=65
+
+   LOOP BEGIN at lu.c(2182,7)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(2013,26):remark #34051: REGISTER ALLOCATION : [pintgr] lu.c:2013
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   29[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm13]
+        
+    Routine temporaries
+        Total         :    1170
+            Global    :     352
+            Local     :     818
+        Regenerable   :     320
+        Spilled       :      55
+        
+    Routine stack
+        Variables     :   70084 bytes*
+            Reads     :      28 [2.65e+04 ~ 3.1%]
+            Writes    :     103 [2.61e+04 ~ 3.1%]
+        Spills        :     464 bytes*
+            Reads     :     233 [5.65e+02 ~ 0.1%]
+            Writes    :     205 [1.46e+02 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: exact(int, int, int, double *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (exact(int, int, int, double *)) [3/18=16.7%] lu.c(1183,61)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(1201,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(1183,61):remark #34051: REGISTER ALLOCATION : [exact] lu.c:1183
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   23[ rax rdx rcx rsi rdi r8-r9 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     164
+            Global    :       0
+            Local     :     164
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: error(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (error(void)) [4/18=22.2%] lu.c(1141,25)
+  -> (1166,2) exact(int, int, int, double *) (isz = 95) (sz = 106)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(1157,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+LOOP BEGIN at lu.c(1161,3)
+   remark #25095: Loop Interchange not done due to: User Function Inside Loop Nest
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (1166:2) and call:exact(int, int, int, double *) (1166:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (1166:2) and call:exact(int, int, int, double *) (1166:2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at lu.c(1163,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (1166:2) and call:exact(int, int, int, double *) (1166:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (1166:2) and call:exact(int, int, int, double *) (1166:2)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at lu.c(1165,7)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+         LOOP BEGIN at lu.c(1167,2)
+            remark #17108: loop was not parallelized: insufficient computational work
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(1175,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(1141,25):remark #34051: REGISTER ALLOCATION : [error] lu.c:1141
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   25[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm9]
+        
+    Routine temporaries
+        Total         :      84
+            Global    :      38
+            Local     :      46
+        Regenerable   :       3
+        Spilled       :      23
+        
+    Routine stack
+        Variables     :      40 bytes*
+            Reads     :       5 [6.25e+02 ~ 9.9%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :     168 bytes*
+            Reads     :      21 [7.73e+02 ~ 12.3%]
+            Writes    :      21 [7.73e+02 ~ 12.3%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: rhs(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (rhs(void)) [5/18=27.8%] lu.c(2301,23)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(2326,3)
+   remark #25101: Loop Interchange not done due to: Original Order seems proper
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2327,5)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(2328,7)
+         remark #25420: Collapsed with loop at line 2329 
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25439: unrolled with remainder by 8  
+         remark #25015: Estimate of max trip count of loop=5
+
+         LOOP BEGIN at lu.c(2329,2)
+            remark #25421: Loop eliminated in Collapsing 
+
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(2328,7)
+      <Remainder>
+         remark #25436: completely unrolled by 7  
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2343,3)
+   remark #25101: Loop Interchange not done due to: Original Order seems proper
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ L2 nx j k u21 q nz jst jend i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2344,5)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(2345,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2363,3)
+   remark #25101: Loop Interchange not done due to: Original Order seems proper
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ jend m i m m i i i jst k m u21i u31i u41i u51i tmp u21im1 u31im1 u41im1 u51im1 tx2 ist iend tx3 L2 tx1 dx1 dx2 dx3 dx4 dx5 dssp nx nz j } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=65
+
+   LOOP BEGIN at lu.c(2364,5)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(2365,7)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=64
+
+         LOOP BEGIN at lu.c(2366,2)
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(2374,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=64
+      LOOP END
+
+      LOOP BEGIN at lu.c(2400,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=64
+      LOOP END
+
+      LOOP BEGIN at lu.c(2430,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
+
+      LOOP BEGIN at lu.c(2445,7)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=64
+
+         LOOP BEGIN at lu.c(2446,2)
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(2457,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2478,3)
+   remark #25101: Loop Interchange not done due to: Original Order seems proper
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ iend ist j k ny u31 q nz L2 i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2479,5)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(2480,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2497,3)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ iend m j m m j j ist j k m u21j u31j u41j u51j tmp u21jm1 u31jm1 u41jm1 u51jm1 ty2 jst jend ty3 L2 ty1 dy1 dy2 dy3 dy4 dy5 dssp ny nz i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2498,5)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(2499,7)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=65
+
+         LOOP BEGIN at lu.c(2500,2)
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(2507,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+
+      LOOP BEGIN at lu.c(2532,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+
+      LOOP BEGIN at lu.c(2568,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
+
+      LOOP BEGIN at lu.c(2582,7)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=65
+
+         LOOP BEGIN at lu.c(2583,2)
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(2593,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2610,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between flux[i][j][k][0] (2613:2) and flux[i][j][k+1][m] (2629:4)
+   remark #17106: parallel dependence: assumed ANTI dependence between flux[i][j][k+1][m] (2629:4) and flux[i][j][k][0] (2613:2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2611,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between flux[i][j][k][0] (2613:2) and flux[i][j][k+1][m] (2629:4)
+      remark #17106: parallel dependence: assumed ANTI dependence between flux[i][j][k+1][m] (2629:4) and flux[i][j][k][0] (2613:2)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(2612,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+
+      LOOP BEGIN at lu.c(2627,7)
+         remark #25420: Collapsed with loop at line 2628 
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25439: unrolled with remainder by 8  
+         remark #25015: Estimate of max trip count of loop=5
+
+         LOOP BEGIN at lu.c(2628,2)
+            remark #25421: Loop eliminated in Collapsing 
+
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(2634,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+
+      LOOP BEGIN at lu.c(2660,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+
+      LOOP BEGIN at lu.c(2690,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
+
+      LOOP BEGIN at lu.c(2702,7)
+         remark #25420: Collapsed with loop at line 2703 
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=5
+
+         LOOP BEGIN at lu.c(2703,2)
+            remark #25421: Loop eliminated in Collapsing 
+
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(2713,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
+
+      LOOP BEGIN at lu.c(2627,7)
+      <Remainder>
+         remark #25436: completely unrolled by 7  
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2343,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2344,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(2345,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2363,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=65
+
+   LOOP BEGIN at lu.c(2364,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(2365,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=64
+
+         LOOP BEGIN at lu.c(2366,2)
+            remark #17107: loop was not parallelized: inner loop
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(2374,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=64
+      LOOP END
+
+      LOOP BEGIN at lu.c(2400,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=64
+      LOOP END
+
+      LOOP BEGIN at lu.c(2445,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=64
+
+         LOOP BEGIN at lu.c(2446,2)
+            remark #17107: loop was not parallelized: inner loop
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2478,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2479,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(2480,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2497,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2498,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(2499,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=65
+
+         LOOP BEGIN at lu.c(2500,2)
+            remark #17107: loop was not parallelized: inner loop
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(2507,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+
+      LOOP BEGIN at lu.c(2532,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+
+      LOOP BEGIN at lu.c(2582,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=65
+
+         LOOP BEGIN at lu.c(2583,2)
+            remark #17107: loop was not parallelized: inner loop
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(2301,23):remark #34051: REGISTER ALLOCATION : [rhs] lu.c:2301
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :    2838
+            Global    :     390
+            Local     :    2448
+        Regenerable   :     312
+        Spilled       :     127
+        
+    Routine stack
+        Variables     :     616 bytes*
+            Reads     :       8 [4.49e+02 ~ 0.0%]
+            Writes    :     112 [0.00e+00 ~ 0.0%]
+        Spills        :    1064 bytes*
+            Reads     :     213 [1.91e+05 ~ 0.1%]
+            Writes    :     202 [7.45e+04 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: l2norm(int, int, int, int, int, int, int, double (*)[65][65][5], double *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (l2norm(int, int, int, int, int, int, int, double (*)[65][65][5], double *)) [6/18=33.3%] lu.c(1967,22)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(1981,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+LOOP BEGIN at lu.c(1985,3)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ iend ist j k v nz0 jst jend i } lastprivate={ } firstlastprivate={ } reduction={ sum4 sum3 sum2 sum1 sum0 }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at lu.c(1986,5)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(1987,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 5
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2005,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+LOOP BEGIN at lu.c(1985,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at lu.c(1986,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(1987,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 5
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(1967,22):remark #34051: REGISTER ALLOCATION : [l2norm] lu.c:1967
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm14]
+        
+    Routine temporaries
+        Total         :     224
+            Global    :      71
+            Local     :     153
+        Regenerable   :      64
+        Spilled       :      18
+        
+    Routine stack
+        Variables     :     100 bytes*
+            Reads     :       7 [1.00e+01 ~ 0.2%]
+            Writes    :      19 [0.00e+00 ~ 0.0%]
+        Spills        :     192 bytes*
+            Reads     :      30 [9.60e+00 ~ 0.2%]
+            Writes    :      30 [3.60e+00 ~ 0.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: buts(int, int, int, int, double, double (*)[65][65][5], double (*)[64][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], int, int, int, int, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (buts(int, int, int, int, double, double (*)[65][65][5], double (*)[64][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], int, int, int, int, int, int)) [7/18=38.9%] lu.c(424,23)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(440,3)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ ist iend j m udz k v omega tv jst jend i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at lu.c(441,5)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=64
+
+      LOOP BEGIN at lu.c(442,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 5  
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(453,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between flag[i] (461:7) and flag[i+1] (637:20)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=65
+
+   LOOP BEGIN at lu.c(456,7)
+      remark #17102: loop was not parallelized: not a parallelization candidate
+      remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+   LOOP END
+
+   LOOP BEGIN at lu.c(461,7)
+      remark #17102: loop was not parallelized: not a parallelization candidate
+      remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+   LOOP END
+
+   LOOP BEGIN at lu.c(467,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between tmat[m][_2] (486:2) and tmat[0][0] (626:7)
+      remark #17106: parallel dependence: assumed ANTI dependence between tmat[0][0] (626:7) and tmat[m][_2] (486:2)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 88
+
+      LOOP BEGIN at lu.c(468,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
+
+      LOOP BEGIN at lu.c(485,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25436: completely unrolled by 5  
+
+         LOOP BEGIN at lu.c(486,2)
+            remark #17108: loop was not parallelized: insufficient computational work
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+
+         LOOP BEGIN at lu.c(486,2)
+         LOOP END
+
+         LOOP BEGIN at lu.c(486,2)
+         LOOP END
+
+         LOOP BEGIN at lu.c(486,2)
+         LOOP END
+
+         LOOP BEGIN at lu.c(486,2)
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(495,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 4  
+      LOOP END
+
+      LOOP BEGIN at lu.c(507,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 4  
+      LOOP END
+
+      LOOP BEGIN at lu.c(519,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 4  
+      LOOP END
+
+      LOOP BEGIN at lu.c(531,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 4  
+      LOOP END
+
+      LOOP BEGIN at lu.c(629,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 5  
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(440,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at lu.c(441,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=64
+
+      LOOP BEGIN at lu.c(442,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 5  
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(424,23):remark #34051: REGISTER ALLOCATION : [buts] lu.c:424
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     690
+            Global    :      98
+            Local     :     592
+        Regenerable   :      58
+        Spilled       :      36
+        
+    Routine stack
+        Variables     :      84 bytes*
+            Reads     :       2 [9.41e+00 ~ 0.0%]
+            Writes    :      17 [0.00e+00 ~ 0.0%]
+        Spills        :     320 bytes*
+            Reads     :      60 [3.02e+03 ~ 2.7%]
+            Writes    :      47 [2.33e+03 ~ 2.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: jacu(int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (jacu(int)) [8/18=44.4%] lu.c(1588,25)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(1608,3)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ ist _2 iend j tmp1 tmp2 tmp3 tmp1 tmp2 tmp3 tmp1 tmp2 tmp3 tmp1 tmp2 tmp3 k dz1 tz1 dy1 ty1 dx1 tx1 dt dz2 dy2 dx2 dz3 dy3 dx3 dz4 dy4 dx4 dz5 dy5 dx5 tx2 ty2 tz2 jst jend i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(1609,7)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=64
+
+      LOOP BEGIN at lu.c(1626,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 4  
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(1608,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(1609,7)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=64
+
+      LOOP BEGIN at lu.c(1626,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 4  
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(1588,25):remark #34051: REGISTER ALLOCATION : [jacu] lu.c:1588
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :    1288
+            Global    :     292
+            Local     :     996
+        Regenerable   :     131
+        Spilled       :     181
+        
+    Routine stack
+        Variables     :     328 bytes*
+            Reads     :       2 [1.15e+02 ~ 0.0%]
+            Writes    :      47 [0.00e+00 ~ 0.0%]
+        Spills        :    1488 bytes*
+            Reads     :     261 [5.24e+05 ~ 12.7%]
+            Writes    :     248 [3.57e+04 ~ 0.9%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: blts(int, int, int, int, double, double (*)[65][65][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], int, int, int, int, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (blts(int, int, int, int, double, double (*)[65][65][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], int, int, int, int, int, int)) [9/18=50.0%] lu.c(191,24)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(207,3)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ iend ist j m ldz k v omega jst jend i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at lu.c(208,5)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=64
+
+      LOOP BEGIN at lu.c(209,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 5  
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(220,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between flag[i] (229:2) and flag[i-1] (402:19)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=65
+
+   LOOP BEGIN at lu.c(224,2)
+      remark #17102: loop was not parallelized: not a parallelization candidate
+      remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+   LOOP END
+
+   LOOP BEGIN at lu.c(229,2)
+      remark #17102: loop was not parallelized: not a parallelization candidate
+      remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+   LOOP END
+
+   LOOP BEGIN at lu.c(235,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between v[i][j][k][m] (238:2) and v[i][j-1][k][0] (238:2)
+      remark #17106: parallel dependence: assumed FLOW dependence between v[i][j][k][m] (238:2) and v[i][j-1][k][0] (238:2)
+      remark #17106: parallel dependence: assumed FLOW dependence between v[i][j][k][m] (238:2) and v[i][j-1][k][0] (238:2)
+      remark #17106: parallel dependence: assumed FLOW dependence between v[i][j][k][m] (238:2) and v[i][j-1][k][0] (238:2)
+      remark #17106: parallel dependence: assumed FLOW dependence between v[i][j][k][m] (238:2) and v[i][j-1][k][0] (238:2)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 83
+
+      LOOP BEGIN at lu.c(236,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
+
+      LOOP BEGIN at lu.c(256,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25436: completely unrolled by 5  
+
+         LOOP BEGIN at lu.c(257,2)
+            remark #17108: loop was not parallelized: insufficient computational work
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+
+         LOOP BEGIN at lu.c(257,2)
+         LOOP END
+
+         LOOP BEGIN at lu.c(257,2)
+         LOOP END
+
+         LOOP BEGIN at lu.c(257,2)
+         LOOP END
+
+         LOOP BEGIN at lu.c(257,2)
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(266,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 4  
+      LOOP END
+
+      LOOP BEGIN at lu.c(278,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 4  
+      LOOP END
+
+      LOOP BEGIN at lu.c(290,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 4  
+      LOOP END
+
+      LOOP BEGIN at lu.c(302,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 4  
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(207,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at lu.c(208,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=64
+
+      LOOP BEGIN at lu.c(209,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 5  
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(191,24):remark #34051: REGISTER ALLOCATION : [blts] lu.c:191
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     689
+            Global    :      86
+            Local     :     603
+        Regenerable   :      56
+        Spilled       :      24
+        
+    Routine stack
+        Variables     :      76 bytes*
+            Reads     :       2 [9.41e+00 ~ 0.0%]
+            Writes    :      16 [0.00e+00 ~ 0.0%]
+        Spills        :     232 bytes*
+            Reads     :      40 [2.71e+03 ~ 2.4%]
+            Writes    :      37 [2.22e+03 ~ 2.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: jacld(int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (jacld(int)) [10/18=55.6%] lu.c(1221,26)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(1240,3)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ iend _2 ist j tmp1 tmp2 tmp3 tmp1 tmp2 tmp3 tmp1 tmp2 tmp3 tmp1 tmp2 tmp3 k dz1 tz1 dy1 ty1 dx1 tx1 dt dz2 dy2 dx2 dz3 dy3 dx3 dz4 dy4 dx4 dz5 dy5 dx5 tz2 ty2 tx2 jst jend i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(1241,5)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=64
+
+      LOOP BEGIN at lu.c(1254,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 4  
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(1240,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(1241,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=64
+
+      LOOP BEGIN at lu.c(1254,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 4  
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(1221,26):remark #34051: REGISTER ALLOCATION : [jacld] lu.c:1221
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :    1338
+            Global    :     291
+            Local     :    1047
+        Regenerable   :     129
+        Spilled       :     177
+        
+    Routine stack
+        Variables     :     328 bytes*
+            Reads     :       2 [1.15e+02 ~ 0.0%]
+            Writes    :      47 [0.00e+00 ~ 0.0%]
+        Spills        :    1456 bytes*
+            Reads     :     265 [5.34e+05 ~ 12.9%]
+            Writes    :     240 [2.20e+04 ~ 0.5%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: ssor(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (ssor(void)) [11/18=61.1%] lu.c(3001,24)
+  -> (3042,3) rhs(void) (isz = 2418) (sz = 2421)
+     [[ Unable to inline callsite  <1>]]
+  -> (3047,3) l2norm(int, int, int, int, int, int, int, double (*)[65][65][5], double *) (isz = 185) (sz = 206)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (3052,3) timer_clear(int)
+  -> EXTERN: (3053,3) timer_start(int)
+  -> EXTERN: (3063,7) printf(const char *__restrict__, ...)
+  -> (3085,7) jacld(int) (isz = 2362) (sz = 2367)
+     [[ Unable to inline callsite  <1>]]
+  -> (3090,7) blts(int, int, int, int, double, double (*)[65][65][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], int, int, int, int, int, int) (isz = 1181) (sz = 1216)
+     [[ Unable to inline callsite  <1>]]
+  -> (3103,7) jacu(int) (isz = 2311) (sz = 2316)
+     [[ Unable to inline callsite  <1>]]
+  -> (3108,7) buts(int, int, int, int, double, double (*)[65][65][5], double (*)[64][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], int, int, int, int, int, int) (isz = 1207) (sz = 1244)
+     [[ Unable to inline callsite  <1>]]
+  -> (3135,7) l2norm(int, int, int, int, int, int, int, double (*)[65][65][5], double *) (isz = 185) (sz = 206)
+     [[ Unable to inline callsite  <1>]]
+  -> (3143,5) rhs(void) (isz = 2418) (sz = 2421)
+     [[ Unable to inline callsite  <1>]]
+  -> (3150,7) l2norm(int, int, int, int, int, int, int, double (*)[65][65][5], double *) (isz = 185) (sz = 206)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (3163,2) exit(int)
+  -> EXTERN: (3168,3) timer_stop(int)
+  -> EXTERN: (3169,12) timer_read(int)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(3026,3)
+   remark #25101: Loop Interchange not done due to: Original Order seems proper
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #25420: Collapsed with loop at line 3027 
+   remark #25420: Collapsed with loop at line 3028 
+   remark #25420: Collapsed with loop at line 3029 
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ j k m i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+   remark #25015: Estimate of max trip count of loop=102400
+
+   LOOP BEGIN at lu.c(3027,5)
+      remark #25421: Loop eliminated in Collapsing 
+
+
+      LOOP BEGIN at lu.c(3028,7)
+         remark #25421: Loop eliminated in Collapsing 
+
+
+         LOOP BEGIN at lu.c(3029,2)
+            remark #25421: Loop eliminated in Collapsing 
+
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(3060,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at lu.c(3071,5)
+      remark #25101: Loop Interchange not done due to: Original Order seems proper
+      remark #25452: Original Order found to be proper, but by a close margin
+      remark #17109: LOOP WAS AUTO-PARALLELIZED
+      remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ iend ist j k m dt nz jst jend i istep } lastprivate={ } firstlastprivate={ } reduction={ }
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=64
+
+      LOOP BEGIN at lu.c(3072,7)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=65
+
+         LOOP BEGIN at lu.c(3073,2)
+            remark #25420: Collapsed with loop at line 3074 
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25439: unrolled with remainder by 8  
+            remark #25015: Estimate of max trip count of loop=5
+
+            LOOP BEGIN at lu.c(3074,4)
+               remark #25421: Loop eliminated in Collapsing 
+
+            LOOP END
+         LOOP END
+
+         LOOP BEGIN at lu.c(3073,2)
+         <Remainder>
+            remark #25436: completely unrolled by 7  
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at lu.c(3081,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15382: vectorization support: call to function jacld(int) cannot be vectorized   [ lu.c(3085,7) ]
+      remark #15382: vectorization support: call to function blts(int, int, int, int, double, double (*)[65][65][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], int, int, int, int, int, int) cannot be vectorized   [ lu.c(3090,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+
+   LOOP BEGIN at lu.c(3099,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15382: vectorization support: call to function jacu(int) cannot be vectorized   [ lu.c(3103,7) ]
+      remark #15382: vectorization support: call to function buts(int, int, int, int, double, double (*)[65][65][5], double (*)[64][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], double (*)[64][5][5], int, int, int, int, int, int) cannot be vectorized   [ lu.c(3108,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+
+   LOOP BEGIN at lu.c(3120,5)
+      remark #25101: Loop Interchange not done due to: Original Order seems proper
+      remark #25452: Original Order found to be proper, but by a close margin
+      remark #17109: LOOP WAS AUTO-PARALLELIZED
+      remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ iend ist j k m tmp nz jst jend i istep } lastprivate={ } firstlastprivate={ } reduction={ }
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=64
+
+      LOOP BEGIN at lu.c(3121,7)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=65
+
+         LOOP BEGIN at lu.c(3122,2)
+            remark #25420: Collapsed with loop at line 3123 
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25439: unrolled with remainder by 8  
+            remark #25015: Estimate of max trip count of loop=5
+
+            LOOP BEGIN at lu.c(3123,4)
+               remark #25421: Loop eliminated in Collapsing 
+
+            LOOP END
+         LOOP END
+
+         LOOP BEGIN at lu.c(3122,2)
+         <Remainder>
+            remark #25436: completely unrolled by 7  
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(3026,3)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=102400
+LOOP END
+
+LOOP BEGIN at lu.c(3026,3)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=102400
+LOOP END
+
+LOOP BEGIN at lu.c(3071,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(3072,7)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(3073,2)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25439: unrolled with remainder by 8  
+         remark #25015: Estimate of max trip count of loop=5
+      LOOP END
+
+      LOOP BEGIN at lu.c(3073,2)
+      <Remainder>
+         remark #25436: completely unrolled by 7  
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(3120,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(3121,7)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(3122,2)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25439: unrolled with remainder by 8  
+         remark #25015: Estimate of max trip count of loop=5
+      LOOP END
+
+      LOOP BEGIN at lu.c(3122,2)
+      <Remainder>
+         remark #25436: completely unrolled by 7  
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(3001,24):remark #34051: REGISTER ALLOCATION : [ssor] lu.c:3001
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   24[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm8]
+        
+    Routine temporaries
+        Total         :     654
+            Global    :     139
+            Local     :     515
+        Regenerable   :     142
+        Spilled       :      32
+        
+    Routine stack
+        Variables     :   164056 bytes*
+            Reads     :       6 [2.06e+05 ~ 0.2%]
+            Writes    :      42 [0.00e+00 ~ 0.0%]
+        Spills        :     304 bytes*
+            Reads     :     103 [6.12e+02 ~ 0.0%]
+            Writes    :      65 [1.18e+02 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: erhs(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (erhs(void)) [12/18=66.7%] lu.c(689,24)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(721,3)
+   remark #25101: Loop Interchange not done due to: Original Order seems proper
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(722,5)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(723,7)
+         remark #25420: Collapsed with loop at line 724 
+         remark #25408: memset generated
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed OUTPUT dependence between frct[i][j][k][m] (723:7) and frct[i][j][k][m] (725:4)
+         remark #17106: parallel dependence: assumed OUTPUT dependence between frct[i][j][k][m] (725:4) and frct[i][j][k][m] (723:7)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=1
+
+         LOOP BEGIN at lu.c(723,7)
+            remark #17108: loop was not parallelized: insufficient computational work
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25439: unrolled with remainder by 2  
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+
+         LOOP BEGIN at lu.c(723,7)
+         <Remainder>
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+
+         LOOP BEGIN at lu.c(724,2)
+            remark #25421: Loop eliminated in Collapsing 
+
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(731,3)
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ nx m k j xi eta zeta nx0 ny0 nz ny i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(734,5)
+      remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+      remark #25452: Original Order found to be proper, but by a close margin
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(737,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+
+         LOOP BEGIN at lu.c(739,2)
+            remark #25436: completely unrolled by 5   (pre-vector) 
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(765,3)
+   remark #25101: Loop Interchange not done due to: Original Order seems proper
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ L2 nx j k u21 q nz jst jend i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(766,5)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(767,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(783,3)
+   remark #25101: Loop Interchange not done due to: Original Order seems proper
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ jend m i m m i i i jst k m u21i u31i u41i u51i tmp u21im1 u31im1 u41im1 u51im1 tx2 ist iend tx3 L2 tx1 dx1 dx2 dx3 dx4 dx5 dssp iend1 nx nz j } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=65
+
+   LOOP BEGIN at lu.c(784,5)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(785,7)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=64
+
+         LOOP BEGIN at lu.c(786,2)
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(791,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=64
+      LOOP END
+
+      LOOP BEGIN at lu.c(818,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=64
+      LOOP END
+
+      LOOP BEGIN at lu.c(848,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
+
+      LOOP BEGIN at lu.c(862,7)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=64
+
+         LOOP BEGIN at lu.c(863,2)
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(873,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(894,3)
+   remark #25101: Loop Interchange not done due to: Original Order seems proper
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ iend ist j k ny u31 q nz L2 i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(895,5)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(896,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(912,3)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ iend m j m m j j ist j k m u21j u31j u41j u51j tmp u21jm1 u31jm1 u41jm1 u51jm1 ty2 jst jend ty3 L2 ty1 dy1 dy2 dy3 dy4 dy5 dssp jend1 ny nz i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(913,5)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(914,7)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=65
+
+         LOOP BEGIN at lu.c(915,2)
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(920,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+
+      LOOP BEGIN at lu.c(947,7)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+
+      LOOP BEGIN at lu.c(977,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
+
+      LOOP BEGIN at lu.c(992,7)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=65
+
+         LOOP BEGIN at lu.c(993,2)
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(1003,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(1021,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between flux[i][j][k][0] (1024:2) and flux[i][j][k+1][m] (1039:4)
+   remark #17106: parallel dependence: assumed ANTI dependence between flux[i][j][k+1][m] (1039:4) and flux[i][j][k][0] (1024:2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(1022,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between flux[i][j][k][0] (1024:2) and flux[i][j][k+1][m] (1039:4)
+      remark #17106: parallel dependence: assumed ANTI dependence between flux[i][j][k+1][m] (1039:4) and flux[i][j][k][0] (1024:2)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(1023,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+
+      LOOP BEGIN at lu.c(1037,7)
+         remark #25420: Collapsed with loop at line 1038 
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25439: unrolled with remainder by 8  
+         remark #25015: Estimate of max trip count of loop=5
+
+         LOOP BEGIN at lu.c(1038,2)
+            remark #25421: Loop eliminated in Collapsing 
+
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(1043,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+
+      LOOP BEGIN at lu.c(1070,7)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+
+      LOOP BEGIN at lu.c(1100,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
+
+      LOOP BEGIN at lu.c(1112,7)
+         remark #25420: Collapsed with loop at line 1113 
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=5
+
+         LOOP BEGIN at lu.c(1113,2)
+            remark #25421: Loop eliminated in Collapsing 
+
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(1123,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
+
+      LOOP BEGIN at lu.c(1037,7)
+      <Remainder>
+         remark #25436: completely unrolled by 7  
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(731,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(734,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(737,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(765,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(766,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(767,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(783,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=65
+
+   LOOP BEGIN at lu.c(784,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(785,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=64
+
+         LOOP BEGIN at lu.c(786,2)
+            remark #17107: loop was not parallelized: inner loop
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(791,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=64
+      LOOP END
+
+      LOOP BEGIN at lu.c(818,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=64
+      LOOP END
+
+      LOOP BEGIN at lu.c(862,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=64
+
+         LOOP BEGIN at lu.c(863,2)
+            remark #17107: loop was not parallelized: inner loop
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(894,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(895,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(896,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(912,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(913,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=65
+
+      LOOP BEGIN at lu.c(914,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=65
+
+         LOOP BEGIN at lu.c(915,2)
+            remark #17107: loop was not parallelized: inner loop
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at lu.c(920,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+
+      LOOP BEGIN at lu.c(947,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=65
+      LOOP END
+
+      LOOP BEGIN at lu.c(992,7)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=65
+
+         LOOP BEGIN at lu.c(993,2)
+            remark #17107: loop was not parallelized: inner loop
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(723,7):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+lu.c(723,7):remark #34026: call to memset implemented as a call to optimized library version
+lu.c(689,24):remark #34051: REGISTER ALLOCATION : [erhs] lu.c:689
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :    3239
+            Global    :     485
+            Local     :    2754
+        Regenerable   :     360
+        Spilled       :     182
+        
+    Routine stack
+        Variables     :     704 bytes*
+            Reads     :      10 [5.57e+02 ~ 0.0%]
+            Writes    :     131 [0.00e+00 ~ 0.0%]
+        Spills        :    1496 bytes*
+            Reads     :     284 [4.72e+06 ~ 1.7%]
+            Writes    :     259 [1.98e+05 ~ 0.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: setiv(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (setiv(void)) [13/18=72.2%] lu.c(2943,25)
+  -> (2973,6) exact(int, int, int, double *) (isz = 95) (sz = 106)
+     [[ Unable to inline callsite  <1>]]
+  -> (2974,6) exact(int, int, int, double *) (isz = 95) (sz = 106)
+     [[ Unable to inline callsite  <1>]]
+  -> (2975,6) exact(int, int, int, double *) (isz = 95) (sz = 106)
+     [[ Unable to inline callsite  <1>]]
+  -> (2976,6) exact(int, int, int, double *) (isz = 95) (sz = 106)
+     [[ Unable to inline callsite  <1>]]
+  -> (2977,6) exact(int, int, int, double *) (isz = 95) (sz = 106)
+     [[ Unable to inline callsite  <1>]]
+  -> (2978,6) exact(int, int, int, double *) (isz = 95) (sz = 106)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(2963,3)
+   remark #25095: Loop Interchange not done due to: User Function Inside Loop Nest
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (2973:6) and call:exact(int, int, int, double *) (2978:6)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (2978:6) and call:exact(int, int, int, double *) (2973:6)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at lu.c(2965,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (2973:6) and call:exact(int, int, int, double *) (2978:6)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (2978:6) and call:exact(int, int, int, double *) (2973:6)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at lu.c(2969,2)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+         LOOP BEGIN at lu.c(2979,6)
+            remark #17108: loop was not parallelized: insufficient computational work
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25436: completely unrolled by 5  
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(2943,25):remark #34051: REGISTER ALLOCATION : [setiv] lu.c:2943
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     192
+            Global    :      31
+            Local     :     161
+        Regenerable   :      17
+        Spilled       :      22
+        
+    Routine stack
+        Variables     :     240 bytes*
+            Reads     :      30 [1.63e+05 ~ 12.5%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :     176 bytes*
+            Reads     :      22 [4.74e+04 ~ 3.6%]
+            Writes    :      22 [8.39e+03 ~ 0.6%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: setbv(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (setbv(void)) [14/18=77.8%] lu.c(2733,25)
+  -> (2754,7) exact(int, int, int, double *) (isz = 95) (sz = 106)
+     [[ Unable to inline callsite  <1>]]
+  -> (2755,7) exact(int, int, int, double *) (isz = 95) (sz = 106)
+     [[ Unable to inline callsite  <1>]]
+  -> (2765,7) exact(int, int, int, double *) (isz = 95) (sz = 106)
+     [[ Unable to inline callsite  <1>]]
+  -> (2772,7) exact(int, int, int, double *) (isz = 95) (sz = 106)
+     [[ Unable to inline callsite  <1>]]
+  -> (2782,7) exact(int, int, int, double *) (isz = 95) (sz = 106)
+     [[ Unable to inline callsite  <1>]]
+  -> (2789,7) exact(int, int, int, double *) (isz = 95) (sz = 106)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(2750,3)
+   remark #25095: Loop Interchange not done due to: User Function Inside Loop Nest
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (2754:7) and call:exact(int, int, int, double *) (2755:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (2755:7) and call:exact(int, int, int, double *) (2754:7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2752,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15382: vectorization support: call to function exact(int, int, int, double *) cannot be vectorized   [ lu.c(2754,7) ]
+      remark #15382: vectorization support: call to function exact(int, int, int, double *) cannot be vectorized   [ lu.c(2755,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2762,3)
+   remark #25095: Loop Interchange not done due to: User Function Inside Loop Nest
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (2765:7) and call:exact(int, int, int, double *) (2765:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (2765:7) and call:exact(int, int, int, double *) (2765:7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2764,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15382: vectorization support: call to function exact(int, int, int, double *) cannot be vectorized   [ lu.c(2765,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2769,3)
+   remark #25095: Loop Interchange not done due to: User Function Inside Loop Nest
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (2772:7) and call:exact(int, int, int, double *) (2772:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (2772:7) and call:exact(int, int, int, double *) (2772:7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=64
+
+   LOOP BEGIN at lu.c(2771,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15382: vectorization support: call to function exact(int, int, int, double *) cannot be vectorized   [ lu.c(2772,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2779,3)
+   remark #25095: Loop Interchange not done due to: User Function Inside Loop Nest
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (2782:7) and call:exact(int, int, int, double *) (2782:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (2782:7) and call:exact(int, int, int, double *) (2782:7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=65
+
+   LOOP BEGIN at lu.c(2781,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15382: vectorization support: call to function exact(int, int, int, double *) cannot be vectorized   [ lu.c(2782,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+LOOP BEGIN at lu.c(2786,3)
+   remark #25095: Loop Interchange not done due to: User Function Inside Loop Nest
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (2789:7) and call:exact(int, int, int, double *) (2789:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact(int, int, int, double *) (2789:7) and call:exact(int, int, int, double *) (2789:7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=65
+
+   LOOP BEGIN at lu.c(2788,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15382: vectorization support: call to function exact(int, int, int, double *) cannot be vectorized   [ lu.c(2789,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #25015: Estimate of max trip count of loop=65
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(2733,25):remark #34051: REGISTER ALLOCATION : [setbv] lu.c:2733
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   13[ rax rdx rcx rbx rbp rsi rdi r8-r9 r12-r15]
+        
+    Routine temporaries
+        Total         :      77
+            Global    :      38
+            Local     :      39
+        Regenerable   :       5
+        Spilled       :      10
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      32 bytes*
+            Reads     :      12 [3.42e+03 ~ 2.1%]
+            Writes    :      11 [2.54e+02 ~ 0.2%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: setcoeff(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (setcoeff(void)) [15/18=83.3%] lu.c(2799,28)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(2856,3)
+   remark #25399: memcopy generated
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at lu.c(2873,3)
+   remark #25399: memcopy generated
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at lu.c(2890,3)
+   remark #25399: memcopy generated
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at lu.c(2907,3)
+   remark #25399: memcopy generated
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at lu.c(2924,3)
+   remark #25399: memcopy generated
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(2856,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 0)
+lu.c(2873,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 8)
+lu.c(2890,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 16)
+lu.c(2907,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 24)
+lu.c(2924,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 0)
+lu.c(2799,28):remark #34051: REGISTER ALLOCATION : [setcoeff] lu.c:2799
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   25[ rax rdx rcx rsi rdi r8-r11 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :      75
+            Global    :       6
+            Local     :      69
+        Regenerable   :      39
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: domain(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (domain(void)) [16/18=88.9%] lu.c(646,26)
+  -> EXTERN: (660,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (664,5) exit(int)
+  -> EXTERN: (668,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (673,5) exit(int)
+
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(646,26):remark #34051: REGISTER ALLOCATION : [domain] lu.c:646
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    5[ rax rdx rcx rsi rdi]
+        
+    Routine temporaries
+        Total         :      26
+            Global    :       9
+            Local     :      17
+        Regenerable   :       9
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: read_input(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (read_input(void)) [17/18=94.4%] lu.c(2214,30)
+  -> EXTERN: (2229,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (2232,8) fopen(const char *__restrict__, const char *__restrict__)
+  -> EXTERN: (2234,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2236,11) fgetc(FILE *)
+  -> EXTERN: (2236,11) fgetc(FILE *)
+  -> EXTERN: (2236,37) fgetc(FILE *)
+  -> EXTERN: (2236,37) fgetc(FILE *)
+  -> EXTERN: (2237,5) fscanf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2238,11) fgetc(FILE *)
+  -> EXTERN: (2238,11) fgetc(FILE *)
+  -> EXTERN: (2240,11) fgetc(FILE *)
+  -> EXTERN: (2240,11) fgetc(FILE *)
+  -> EXTERN: (2240,37) fgetc(FILE *)
+  -> EXTERN: (2240,37) fgetc(FILE *)
+  -> EXTERN: (2241,5) fscanf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2242,11) fgetc(FILE *)
+  -> EXTERN: (2242,11) fgetc(FILE *)
+  -> EXTERN: (2244,11) fgetc(FILE *)
+  -> EXTERN: (2244,11) fgetc(FILE *)
+  -> EXTERN: (2244,37) fgetc(FILE *)
+  -> EXTERN: (2244,37) fgetc(FILE *)
+  -> EXTERN: (2245,5) fscanf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2246,11) fgetc(FILE *)
+  -> EXTERN: (2246,11) fgetc(FILE *)
+  -> EXTERN: (2248,11) fgetc(FILE *)
+  -> EXTERN: (2248,11) fgetc(FILE *)
+  -> EXTERN: (2248,37) fgetc(FILE *)
+  -> EXTERN: (2248,37) fgetc(FILE *)
+  -> EXTERN: (2249,5) fscanf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2250,11) fgetc(FILE *)
+  -> EXTERN: (2250,11) fgetc(FILE *)
+  -> EXTERN: (2252,11) fgetc(FILE *)
+  -> EXTERN: (2252,11) fgetc(FILE *)
+  -> EXTERN: (2252,37) fgetc(FILE *)
+  -> EXTERN: (2252,37) fgetc(FILE *)
+  -> EXTERN: (2253,5) fscanf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2255,11) fgetc(FILE *)
+  -> EXTERN: (2255,11) fgetc(FILE *)
+  -> EXTERN: (2257,11) fgetc(FILE *)
+  -> EXTERN: (2257,11) fgetc(FILE *)
+  -> EXTERN: (2257,37) fgetc(FILE *)
+  -> EXTERN: (2257,37) fgetc(FILE *)
+  -> EXTERN: (2258,5) fscanf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2259,11) fgetc(FILE *)
+  -> EXTERN: (2259,11) fgetc(FILE *)
+  -> EXTERN: (2260,5) fclose(FILE *)
+  -> EXTERN: (2282,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2284,5) exit(int)
+  -> EXTERN: (2288,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2291,5) exit(int)
+  -> EXTERN: (2294,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (2295,3) printf(const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at lu.c(2236,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2236,31)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2238,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2240,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2240,31)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2242,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2244,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2244,31)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2246,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2248,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2248,31)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2250,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2252,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2252,31)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2255,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2257,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2257,31)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2259,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at lu.c(2267,5)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(2214,30):remark #34051: REGISTER ALLOCATION : [read_input] lu.c:2214
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rcx rsi rdi r8-r9 r12]
+        
+    Routine temporaries
+        Total         :     197
+            Global    :      84
+            Local     :     113
+        Regenerable   :      66
+        Spilled       :       1
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [18/18=100.0%] lu.c(91,33)
+  -> (108,3) read_input(void) (isz = 448) (sz = 451)
+     [[ Unable to inline callsite  <1>]]
+  -> (113,3) domain(void) (isz = 46) (sz = 49)
+     [[ Unable to inline callsite  <1>]]
+  -> (118,3) setcoeff(void) (isz = 260) (sz = 263)
+     [[ Unable to inline callsite  <1>]]
+  -> (123,3) setbv(void) (isz = 201) (sz = 204)
+     [[ Unable to inline callsite  <1>]]
+  -> (128,3) setiv(void) (isz = 162) (sz = 165)
+     [[ Unable to inline callsite  <1>]]
+  -> (133,3) erhs(void) (isz = 2546) (sz = 2549)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (138,14) omp_get_num_threads(void)
+  -> (145,3) ssor(void) (isz = 413) (sz = 416)
+     [[ Unable to inline callsite  <1>]]
+  -> (150,3) error(void) (isz = 114) (sz = 117)
+     [[ Unable to inline callsite  <1>]]
+  -> (155,3) pintgr(void) (isz = 772) (sz = 775)
+     [[ Unable to inline callsite  <1>]]
+  -> (160,3) verify(double *, double *, double, char *, boolean *) (isz = 483) (sz = 496)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (169,3) c_print_results(char *, char, int, int, int, int, int, double, double, char *, int, char *, char *, char *, char *, char *, char *, char *, char *, char *)
+
+
+    Report from: Code generation optimizations [cg]
+
+lu.c(91,33):remark #34051: REGISTER ALLOCATION : [main] lu.c:91
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   20[ rax rdx rcx rsi rdi r8-r11 r13 zmm0-zmm9]
+        
+    Routine temporaries
+        Total         :      72
+            Global    :       8
+            Local     :      64
+        Regenerable   :      24
+        Spilled       :       1
+        
+    Routine stack
+        Variables     :       9 bytes*
+            Reads     :       4 [2.00e+00 ~ 2.4%]
+            Writes    :       2 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> Inlining the function will lead to incorrect program behavior.
+

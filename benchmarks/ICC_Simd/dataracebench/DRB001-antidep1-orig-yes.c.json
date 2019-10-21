@@ -1,0 +1,26 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB001-antidep1-orig-yes.c",
+"function":"main",
+"loop id":"1",
+"loop line":"60",
+"loop column":"3",
+"pragma type":"parallel for simd",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"shared":["a"],
+"firstprivate":["i"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB001-antidep1-orig-yes.c",
+"function":"main",
+"loop id":"2",
+"loop line":"63",
+"loop column":"3",
+"pragma type":"simd",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

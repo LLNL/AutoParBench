@@ -1,0 +1,965 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -w -qopenmp -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -c
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: conj_grad(int *, int *, double *, double *, double *, double *, double *, double *, double *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (conj_grad(int *, int *, double *, double *, double *, double *, double *, double *, double *)) [1/7=14.3%] cg.c(354,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at cg.c(366,5)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #25427: Loop Statements Reordered
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+LOOP END
+
+LOOP BEGIN at cg.c(366,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at cg.c(378,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ r j } lastprivate={ } firstlastprivate={ } reduction={ rho }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   remark #25457: Number of partial sums replaced: 1
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(387,5)
+   remark #25084: Preprocess Loopnests: Moving Out Store    [ cg.c(515,5) ]
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between p[*(colidx+k*4)] (410:3) and p[j] (513:13)
+   remark #17106: parallel dependence: assumed FLOW dependence between p[j] (513:13) and p[*(colidx+k*4)] (410:3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at cg.c(407,2)
+      remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+      remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 ) --> ( 2 1 ) 
+      remark #17109: LOOP WAS AUTO-PARALLELIZED
+      remark #17101: parallel loop shared={ } private={ } firstprivate={ sum k rowstr colidx p a q j cgit } lastprivate={ } firstlastprivate={ } reduction={ }
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25015: Estimate of max trip count of loop=14000
+
+      LOOP BEGIN at cg.c(409,6)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25439: unrolled with remainder by 8  
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+         remark #25457: Number of partial sums replaced: 1
+      LOOP END
+
+      LOOP BEGIN at cg.c(409,6)
+      <Remainder>
+         remark #25436: completely unrolled by 7  
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at cg.c(470,2)
+      remark #17109: LOOP WAS AUTO-PARALLELIZED
+      remark #17101: parallel loop shared={ } private={ } firstprivate={ q p j cgit } lastprivate={ } firstlastprivate={ } reduction={ d }
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25438: unrolled without remainder by 2  
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      remark #25457: Number of partial sums replaced: 1
+      remark #25015: Estimate of max trip count of loop=14000
+   LOOP END
+
+   LOOP BEGIN at cg.c(488,2)
+      remark #17109: LOOP WAS AUTO-PARALLELIZED
+      remark #17101: parallel loop shared={ } private={ } firstprivate={ p alpha z q r j cgit } lastprivate={ } firstlastprivate={ } reduction={ rho }
+      remark #25427: Loop Statements Reordered
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25015: Estimate of max trip count of loop=14000
+   LOOP END
+
+   LOOP BEGIN at cg.c(512,2)
+      remark #17109: LOOP WAS AUTO-PARALLELIZED
+      remark #17101: parallel loop shared={ } private={ } firstprivate={ p beta r j cgit } lastprivate={ } firstlastprivate={ } reduction={ }
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25438: unrolled without remainder by 2  
+      remark #25015: Estimate of max trip count of loop=14000
+   LOOP END
+LOOP END
+
+LOOP BEGIN at cg.c(527,5)
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 ) --> ( 2 1 ) 
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ d k rowstr colidx z a r j } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=14000
+
+   LOOP BEGIN at cg.c(529,2)
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 8  
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      remark #25457: Number of partial sums replaced: 1
+   LOOP END
+
+   LOOP BEGIN at cg.c(529,2)
+   <Remainder>
+      remark #25436: completely unrolled by 7  
+   LOOP END
+LOOP END
+
+LOOP BEGIN at cg.c(538,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ d r x j } lastprivate={ } firstlastprivate={ } reduction={ sum }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   remark #25457: Number of partial sums replaced: 1
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(378,5)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 8  
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   remark #25457: Number of partial sums replaced: 1
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(378,5)
+<Remainder>
+   remark #25436: completely unrolled by 7  
+LOOP END
+
+LOOP BEGIN at cg.c(407,2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=14000
+
+   LOOP BEGIN at cg.c(409,6)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 8  
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      remark #25457: Number of partial sums replaced: 1
+   LOOP END
+
+   LOOP BEGIN at cg.c(409,6)
+   <Remainder>
+      remark #25436: completely unrolled by 7  
+   LOOP END
+LOOP END
+
+LOOP BEGIN at cg.c(470,2)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 8  
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   remark #25457: Number of partial sums replaced: 1
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(470,2)
+<Remainder>
+   remark #25436: completely unrolled by 7  
+LOOP END
+
+LOOP BEGIN at cg.c(488,2)
+   remark #25427: Loop Statements Reordered
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(512,2)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 8  
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(512,2)
+<Remainder>
+   remark #25436: completely unrolled by 7  
+LOOP END
+
+LOOP BEGIN at cg.c(527,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=14000
+
+   LOOP BEGIN at cg.c(529,2)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 8  
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      remark #25457: Number of partial sums replaced: 1
+   LOOP END
+
+   LOOP BEGIN at cg.c(529,2)
+   <Remainder>
+      remark #25436: completely unrolled by 7  
+   LOOP END
+LOOP END
+
+LOOP BEGIN at cg.c(538,5)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   remark #25457: Number of partial sums replaced: 1
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(538,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+cg.c(354,1):remark #34051: REGISTER ALLOCATION : [conj_grad] cg.c:354
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :    1236
+            Global    :     291
+            Local     :     945
+        Regenerable   :     284
+        Spilled       :      35
+        
+    Routine stack
+        Variables     :     464 bytes*
+            Reads     :      18 [2.20e+02 ~ 3.2%]
+            Writes    :      83 [0.00e+00 ~ 0.0%]
+        Spills        :     320 bytes*
+            Reads     :     120 [1.87e+02 ~ 2.7%]
+            Writes    :     120 [1.30e+02 ~ 1.9%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: sparse(double *, int *, int *, int, int *, int *, double *, int, int, double *, boolean *, int *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (sparse(double *, int *, int *, int, int *, int *, double *, int, int, double *, boolean *, int *, int)) [2/7=28.6%] cg.c(689,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at cg.c(702,5)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at cg.c(702,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at cg.c(708,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between rowstr[j] (710:2) and rowstr[j] (710:2)
+   remark #15346: vector dependence: assumed ANTI dependence between rowstr[j] (710:2) and rowstr[j] (710:2)
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at cg.c(708,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at cg.c(714,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between rowstr[j] (715:2) and rowstr[j-1] (715:2)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between rowstr[j] (715:2) and rowstr[j-1] (715:2)
+   remark #25439: unrolled with remainder by 2  
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+LOOP END
+
+LOOP BEGIN at cg.c(714,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at cg.c(726,7)
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between a[k] (727:10) and a[k] (728:9)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between a[k] (728:9) and a[k] (727:10)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at cg.c(727,10)
+      remark #25408: memset generated
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between a[k] (727:10) and a[k] (728:9)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between a[k] (728:9) and a[k] (727:10)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at cg.c(727,10)
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25439: unrolled with remainder by 2  
+         remark #25015: Estimate of max trip count of loop=12
+      LOOP END
+
+      LOOP BEGIN at cg.c(727,10)
+      <Remainder>
+         remark #25015: Estimate of max trip count of loop=12
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at cg.c(733,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between rowstr[j] (735:2) and rowstr[j] (738:2)
+   remark #17106: parallel dependence: assumed FLOW dependence between rowstr[j] (738:2) and rowstr[j] (735:2)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between rowstr[j] (735:2) and rowstr[j] (738:2)
+   remark #15346: vector dependence: assumed FLOW dependence between rowstr[j] (738:2) and rowstr[j] (735:2)
+LOOP END
+
+LOOP BEGIN at cg.c(744,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between rowstr[j] (745:2) and rowstr[j+1] (745:2)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at cg.c(744,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at cg.c(753,5)
+<Distributed chunk1>
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #25426: Loop Distributed (2 way) 
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at cg.c(753,5)
+<Remainder, Distributed chunk1>
+LOOP END
+
+LOOP BEGIN at cg.c(753,5)
+<Distributed chunk2>
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at cg.c(753,5)
+<Remainder, Distributed chunk2>
+LOOP END
+
+LOOP BEGIN at cg.c(759,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between *(rowstr+?) (765:2) and rowstr[j+1] (790:2)
+   remark #17106: parallel dependence: assumed FLOW dependence between rowstr[j+1] (790:2) and *(rowstr+?) (765:2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at cg.c(765,2)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between x[i] (767:13) and x[i] (768:13)
+      remark #17106: parallel dependence: assumed ANTI dependence between x[i] (768:13) and x[i] (767:13)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between x[i] (767:13) and x[i] (768:13)
+      remark #15346: vector dependence: assumed ANTI dependence between x[i] (768:13) and x[i] (767:13)
+   LOOP END
+
+   LOOP BEGIN at cg.c(778,2)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between nzloc[k] (779:13) and mark[i] (780:13)
+      remark #17106: parallel dependence: assumed FLOW dependence between mark[i] (780:13) and nzloc[k] (779:13)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between nzloc[k] (779:13) and mark[i] (780:13)
+      remark #15346: vector dependence: assumed FLOW dependence between mark[i] (780:13) and nzloc[k] (779:13)
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at cg.c(778,2)
+   <Remainder>
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+cg.c(727,10):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+cg.c(727,10):remark #34026: call to memset implemented as a call to optimized library version
+cg.c(689,1):remark #34051: REGISTER ALLOCATION : [sparse] cg.c:689
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   17[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm1]
+        
+    Routine temporaries
+        Total         :     177
+            Global    :      96
+            Local     :      81
+        Regenerable   :      18
+        Spilled       :      14
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      64 bytes*
+            Reads     :      10 [1.65e+01 ~ 1.2%]
+            Writes    :      10 [1.23e+01 ~ 0.9%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: vecset(int, double *, int *, int *, int, double)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (vecset(int, double *, int *, int *, int, double)) [3/7=42.9%] cg.c(873,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at cg.c(878,5)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at cg.c(878,5)
+<Remainder>
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+cg.c(873,1):remark #34051: REGISTER ALLOCATION : [vecset] cg.c:873
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   11[ rax rdx rcx rbp rsi rdi r8-r11 zmm0]
+        
+    Routine temporaries
+        Total         :      30
+            Global    :      19
+            Local     :      11
+        Regenerable   :       3
+        Spilled       :       1
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       8 bytes*
+            Reads     :       1 [9.00e-01 ~ 1.4%]
+            Writes    :       1 [9.00e-01 ~ 1.4%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: icnvrt(double, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (icnvrt(double, int)) [4/7=57.1%] cg.c(858,40)
+
+
+    Report from: Code generation optimizations [cg]
+
+cg.c(858,40):remark #34051: REGISTER ALLOCATION : [icnvrt] cg.c:858
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdi zmm0-zmm1]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       0
+            Local     :      14
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: sprnvc(int, int, double *, int *, int *, int *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (sprnvc(int, int, double *, int *, int *, int *)) [5/7=71.4%] cg.c(810,1)
+  -> EXTERN: (827,11) randlc(double *, double)
+  -> EXTERN: (832,11) randlc(double *, double)
+  -> (833,6) icnvrt(double, int) (isz = 1) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at cg.c(817,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at cg.c(826,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at cg.c(849,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between mark[*(nzloc+ii*4)] (851:2) and nzloc[ii] (851:2)
+   remark #17106: parallel dependence: assumed ANTI dependence between nzloc[ii] (851:2) and mark[*(nzloc+ii*4)] (851:2)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between mark[*(nzloc+ii*4)] (851:2) and nzloc[ii] (851:2)
+   remark #15346: vector dependence: assumed ANTI dependence between nzloc[ii] (851:2) and mark[*(nzloc+ii*4)] (851:2)
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at cg.c(849,5)
+<Remainder>
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+cg.c(810,1):remark #34051: REGISTER ALLOCATION : [sprnvc] cg.c:810
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   16[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0]
+        
+    Routine temporaries
+        Total         :      54
+            Global    :      31
+            Local     :      23
+        Regenerable   :       6
+        Spilled       :      11
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      72 bytes*
+            Reads     :      10 [1.45e+01 ~ 7.5%]
+            Writes    :       9 [1.22e+01 ~ 6.3%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: makea(int, int, double *, int *, int *, int, int, int, int, int, double, int *, int *, double *, double *, int *, double)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (makea(int, int, double *, int *, int *, int, int, int, int, int, double, int *, int *, double *, double *, int *, double)) [6/7=85.7%] cg.c(589,1)
+  -> EXTERN: (600,13) pow(double, double)
+  -> (612,2) sprnvc(int, int, double *, int *, int *, int *) (isz = 80) (sz = 95)
+     [[ Unable to inline callsite  <1>]]
+  -> (613,2) vecset(int, double *, int *, int *, int, double) (isz = 35) (sz = 50)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (623,8) printf(const char *__restrict__, ...)
+  -> EXTERN: (625,8) printf(const char *__restrict__, ...)
+  -> EXTERN: (626,8) printf(const char *__restrict__, ...)
+  -> EXTERN: (627,8) exit(int)
+  -> EXTERN: (648,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (649,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (650,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (651,3) exit(int)
+  -> (663,5) sparse(double *, int *, int *, int, int *, int *, double *, int, int, double *, boolean *, int *, int) (isz = 338) (sz = 367)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at cg.c(607,5)
+   remark #25408: memset generated
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between colidx[n+i] (607:5) and colidx[n+i] (608:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between colidx[n+i] (608:2) and colidx[n+i] (607:5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at cg.c(607,5)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 2  
+      remark #25015: Estimate of max trip count of loop=24
+   LOOP END
+
+   LOOP BEGIN at cg.c(607,5)
+   <Remainder>
+      remark #25015: Estimate of max trip count of loop=24
+   LOOP END
+LOOP END
+
+LOOP BEGIN at cg.c(610,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between nzv (611:2) and nzv (613:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between nzv (613:2) and nzv (611:2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at cg.c(614,2)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *__restrict__, ...) (623:8) and call:exit(int) (627:8)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exit(int) (627:8) and call:printf(const char *__restrict__, ...) (623:8)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at cg.c(618,3)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ cg.c(627,8) ]
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at cg.c(643,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ cg.c(651,3) ]
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+cg.c(607,5):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+cg.c(607,5):remark #34026: call to memset implemented as a call to optimized library version
+cg.c(589,1):remark #34051: REGISTER ALLOCATION : [makea] cg.c:589
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   18[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm2]
+        
+    Routine temporaries
+        Total         :     120
+            Global    :      48
+            Local     :      72
+        Regenerable   :      46
+        Spilled       :      18
+        
+    Routine stack
+        Variables     :       4 bytes*
+            Reads     :       1 [4.74e+00 ~ 0.6%]
+            Writes    :       1 [4.74e+00 ~ 0.6%]
+        Spills        :      96 bytes*
+            Reads     :      17 [4.35e+01 ~ 5.4%]
+            Writes    :      14 [3.27e+01 ~ 4.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [7/7=100.0%] cg.c(106,33)
+  -> EXTERN: (142,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (144,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (145,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (155,15) randlc(double *, double)
+  -> (160,5) makea(int, int, double *, int *, int *, int, int, int, int, int, double, int *, int *, double *, double *, int *, double) (isz = 195) (sz = 232)
+     [[ Unable to inline callsite  <1>]]
+  -> (205,2) conj_grad(int *, int *, double *, double *, double *, double *, double *, double *, double *) (isz = 347) (sz = 368)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (239,5) timer_clear(int)
+  -> EXTERN: (240,5) timer_start(int)
+  -> (253,2) conj_grad(int *, int *, double *, double *, double *, double *, double *, double *, double *) (isz = 347) (sz = 368)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (274,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (276,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (287,16) omp_get_num_threads(void)
+  -> EXTERN: (291,5) timer_stop(int)
+  -> EXTERN: (297,9) timer_read(int)
+  -> EXTERN: (299,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (305,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (306,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (307,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (310,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (311,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (312,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (316,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (317,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (328,5) c_print_results(char *, char, int, int, int, int, int, double, double, char *, int, char *, char *, char *, char *, char *, char *, char *, char *, char *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at cg.c(173,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ k j } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(182,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=14001
+LOOP END
+
+LOOP BEGIN at cg.c(182,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=14001
+LOOP END
+
+LOOP BEGIN at cg.c(185,7)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ j } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(215,2)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ j } lastprivate={ } firstlastprivate={ } reduction={ norm_temp12 }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(224,2)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ norm_temp12 j } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(233,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=14001
+LOOP END
+
+LOOP BEGIN at cg.c(233,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=14001
+LOOP END
+
+LOOP BEGIN at cg.c(248,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at cg.c(264,2)
+      remark #17109: LOOP WAS AUTO-PARALLELIZED
+      remark #17101: parallel loop shared={ } private={ } firstprivate={ j it } lastprivate={ } firstlastprivate={ } reduction={ norm_temp12 norm_temp11 }
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25438: unrolled without remainder by 2  
+      remark #25015: Estimate of max trip count of loop=14000
+   LOOP END
+
+   LOOP BEGIN at cg.c(281,2)
+      remark #17109: LOOP WAS AUTO-PARALLELIZED
+      remark #17101: parallel loop shared={ } private={ } firstprivate={ norm_temp12 j it } lastprivate={ } firstlastprivate={ } reduction={ }
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25438: unrolled without remainder by 2  
+      remark #25015: Estimate of max trip count of loop=14000
+   LOOP END
+LOOP END
+
+LOOP BEGIN at cg.c(173,5)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(173,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(182,5)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=14001
+LOOP END
+
+LOOP BEGIN at cg.c(182,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=14001
+LOOP END
+
+LOOP BEGIN at cg.c(185,7)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(185,7)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(215,2)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 8  
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(215,2)
+<Remainder>
+   remark #25436: completely unrolled by 7  
+LOOP END
+
+LOOP BEGIN at cg.c(224,2)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 8  
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(224,2)
+<Remainder>
+   remark #25436: completely unrolled by 7  
+LOOP END
+
+LOOP BEGIN at cg.c(233,5)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=14001
+LOOP END
+
+LOOP BEGIN at cg.c(233,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=14001
+LOOP END
+
+LOOP BEGIN at cg.c(264,2)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 8  
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(264,2)
+<Remainder>
+   remark #25436: completely unrolled by 7  
+LOOP END
+
+LOOP BEGIN at cg.c(281,2)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 8  
+   remark #25015: Estimate of max trip count of loop=14000
+LOOP END
+
+LOOP BEGIN at cg.c(281,2)
+<Remainder>
+   remark #25436: completely unrolled by 7  
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+cg.c(106,33):remark #34051: REGISTER ALLOCATION : [main] cg.c:106
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     919
+            Global    :     167
+            Local     :     752
+        Regenerable   :     330
+        Spilled       :      12
+        
+    Routine stack
+        Variables     :     232 bytes*
+            Reads     :      20 [8.87e+04 ~ 11.0%]
+            Writes    :      52 [0.00e+00 ~ 0.0%]
+        Spills        :     136 bytes*
+            Reads     :      80 [5.39e+00 ~ 0.0%]
+            Writes    :      75 [2.01e+04 ~ 2.5%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> Inlining the function will lead to incorrect program behavior.
+

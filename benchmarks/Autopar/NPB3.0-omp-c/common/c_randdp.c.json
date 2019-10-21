@@ -1,0 +1,13 @@
+{
+"loop - object id : 1":{
+"file":"./NPB3.0-omp-c/common/c_randdp.c",
+"function":"vranlc",
+"loop id":"1",
+"loop line":"124",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

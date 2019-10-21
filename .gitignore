@@ -1,0 +1,12 @@
+*.out
+*.log
+*.dot
+*.bc
+*_AI.c
+*.o
+*.exe
+*.run
+*.so
+*.swp
+bin/
+inputs/

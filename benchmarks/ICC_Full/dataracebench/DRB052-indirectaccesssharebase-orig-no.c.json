@@ -1,0 +1,35 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB052-indirectaccesssharebase-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"109",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB052-indirectaccesssharebase-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"114",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB052-indirectaccesssharebase-orig-no.c",
+"function":"main",
+"loop id":"3",
+"loop line":"122",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

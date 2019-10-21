@@ -1,0 +1,28 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"61",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["j"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"62",
+"loop column":"7",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j",
+"private":["j"]
+}
+}

@@ -1,0 +1,16 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB065-pireduction-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"109",
+"loop column":"2",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i","x"],
+"reduction":["+:pi"]
+}
+}

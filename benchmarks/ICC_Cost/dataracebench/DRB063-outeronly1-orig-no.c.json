@@ -1,0 +1,70 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB063-outeronly1-orig-no.c",
+"function":"init",
+"loop id":"1",
+"loop line":"58",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["j","i"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB063-outeronly1-orig-no.c",
+"function":"init",
+"loop id":"2",
+"loop line":"59",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["j","i"]
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB063-outeronly1-orig-no.c",
+"function":"foo",
+"loop id":"1",
+"loop line":"69",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 4":{
+"file":"./dataracebench/DRB063-outeronly1-orig-no.c",
+"function":"foo",
+"loop id":"2",
+"loop line":"70",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"true"
+},
+"loop - object id : 5":{
+"file":"./dataracebench/DRB063-outeronly1-orig-no.c",
+"function":"print",
+"loop id":"1",
+"loop line":"77",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 6":{
+"file":"./dataracebench/DRB063-outeronly1-orig-no.c",
+"function":"print",
+"loop id":"2",
+"loop line":"78",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

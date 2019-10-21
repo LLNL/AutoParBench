@@ -1,0 +1,111 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB028-privatemissing-orig-yes.o
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB028-privatemissing-orig-yes.c(54,1)
+  -> EXTERN: (69,3) printf(const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB028-privatemissing-orig-yes.c(60,3)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ a } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+   remark #25015: Estimate of max trip count of loop=100
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB028-privatemissing-orig-yes.c(63,3)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ a } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+   remark #25015: Estimate of max trip count of loop=100
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB028-privatemissing-orig-yes.c(60,3)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=100
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB028-privatemissing-orig-yes.c(60,3)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=100
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB028-privatemissing-orig-yes.c(63,3)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=100
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB028-privatemissing-orig-yes.c(63,3)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=100
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB028-privatemissing-orig-yes.c(54,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB028-privatemissing-orig-yes.c:54
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   12[ rax rdx rcx rbx rsi rdi r8-r10 r12-r14]
+        
+    Routine temporaries
+        Total         :     166
+            Global    :      34
+            Local     :     132
+        Regenerable   :      65
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :     460 bytes*
+            Reads     :      13 [4.75e+02 ~ 17.3%]
+            Writes    :      18 [1.90e+02 ~ 6.9%]
+        Spills        :      40 bytes*
+            Reads     :      15 [5.00e+00 ~ 0.2%]
+            Writes    :      15 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================

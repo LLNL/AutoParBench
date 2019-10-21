@@ -1,0 +1,28 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB005-indirectaccess1-orig-yes.c",
+"function":"main",
+"loop id":"1",
+"loop line":"121",
+"loop column":"3",
+"pragma type":"target parallel for",
+"ordered":"false",
+"offload":"true",
+"multiversioned":"false",
+"induction variable":"i",
+"map from":["base[0:4028]"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB005-indirectaccess1-orig-yes.c",
+"function":"main",
+"loop id":"2",
+"loop line":"128",
+"loop column":"3",
+"pragma type":"target parallel for",
+"ordered":"false",
+"offload":"true",
+"multiversioned":"false",
+"induction variable":"i",
+"map tofrom":["xa1[0:2014]","xa2[0:2014]","indexSet[0:180]"]
+}
+}

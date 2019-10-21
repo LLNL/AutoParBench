@@ -1,0 +1,36 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB049-fprintf-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"64",
+"loop column":"3",
+"pragma type":"parallel for simd",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i"
+},
+"ordered - object id : 2":{
+"pragma type":"ordered",
+"file":"./dataracebench/DRB049-fprintf-orig-no.c",
+"function":"main",
+"loop id":"2",
+"statement id":"1",
+"snippet line":"76",
+"snippet column":"13"
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB049-fprintf-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"74",
+"loop column":"3",
+"pragma type":"parallel for simd",
+"ordered":"true",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"dependence list":["ordered - object id : 2"]
+}
+}

@@ -1,0 +1,13 @@
+{
+"loop - object id : 1":{
+"file":"./rodinia_3.1/openmp/b+tree/util/num/num.c",
+"function":"isInteger",
+"loop id":"1",
+"loop line":"70",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

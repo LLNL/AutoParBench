@@ -1,0 +1,26 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB084-threadprivatemissing-orig-yes.c",
+"function":"main",
+"loop id":"1",
+"loop line":"116",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB084-threadprivatemissing-orig-yes.c",
+"function":"main",
+"loop id":"2",
+"loop line":"126",
+"loop column":"2",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"]
+}
+}

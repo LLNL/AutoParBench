@@ -1,0 +1,49 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB048-firstprivate-orig-no.c",
+"function":"foo",
+"loop id":"1",
+"loop line":"56",
+"loop column":"3",
+"pragma type":"parallel for simd",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"firstprivate":["g"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB048-firstprivate-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"68",
+"loop column":"3",
+"pragma type":"parallel for simd",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i"
+},
+"ordered - object id : 3":{
+"pragma type":"ordered",
+"file":"./dataracebench/DRB048-firstprivate-orig-no.c",
+"function":"main",
+"loop id":"2",
+"statement id":"1",
+"snippet line":"78",
+"snippet column":"13"
+},
+"loop - object id : 4":{
+"file":"./dataracebench/DRB048-firstprivate-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"76",
+"loop column":"3",
+"pragma type":"parallel for simd",
+"ordered":"true",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"dependence list":["ordered - object id : 3"]
+}
+}

@@ -1,0 +1,101 @@
+{
+"loop - object id : 1":{
+"file":"./rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp",
+"function":"single_iteration",
+"loop id":"1",
+"loop line":"57",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp",
+"function":"single_iteration",
+"loop id":"2",
+"loop line":"63",
+"loop column":"7",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 3":{
+"file":"./rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp",
+"function":"single_iteration",
+"loop id":"3",
+"loop line":"64",
+"loop column":"9",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 4":{
+"file":"./rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp",
+"function":"single_iteration",
+"loop id":"4",
+"loop line":"102",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 5":{
+"file":"./rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp",
+"function":"single_iteration",
+"loop id":"5",
+"loop line":"103",
+"loop column":"7",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 6":{
+"file":"./rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp",
+"function":"compute_tran_temp",
+"loop id":"1",
+"loop line":"140",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 7":{
+"file":"./rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp",
+"function":"writeoutput",
+"loop id":"1",
+"loop line":"168",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 8":{
+"file":"./rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp",
+"function":"writeoutput",
+"loop id":"2",
+"loop line":"169",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 9":{
+"file":"./rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp",
+"function":"read_input",
+"loop id":"1",
+"loop line":"188",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

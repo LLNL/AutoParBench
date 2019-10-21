@@ -1,0 +1,170 @@
+{
+"loop - object id : 1":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"readinput",
+"loop id":"1",
+"loop line":"39",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"readinput",
+"loop id":"2",
+"loop line":"40",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 3":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"readinput",
+"loop id":"3",
+"loop line":"41",
+"loop column":"7",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 4":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"writeoutput",
+"loop id":"1",
+"loop line":"65",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 5":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"writeoutput",
+"loop id":"2",
+"loop line":"66",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 6":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"writeoutput",
+"loop id":"3",
+"loop line":"67",
+"loop column":"7",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 7":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"computeTempCPU",
+"loop id":"1",
+"loop line":"102",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 8":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"computeTempCPU",
+"loop id":"2",
+"loop line":"103",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 9":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"computeTempCPU",
+"loop id":"3",
+"loop line":"104",
+"loop column":"7",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 10":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"computeTempCPU",
+"loop id":"4",
+"loop line":"105",
+"loop column":"9",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 11":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"accuracy",
+"loop id":"1",
+"loop line":"130",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"],
+"reduction":["+:err"]
+},
+"loop - object id : 12":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"computeTempOMP",
+"loop id":"1",
+"loop line":"155",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 13":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"computeTempOMP",
+"loop id":"2",
+"loop line":"157",
+"loop column":"7",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 14":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"computeTempOMP",
+"loop id":"3",
+"loop line":"159",
+"loop column":"9",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 15":{
+"file":"./rodinia_3.1/openmp/hotspot3D/3D.c",
+"function":"computeTempOMP",
+"loop id":"4",
+"loop line":"161",
+"loop column":"11",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

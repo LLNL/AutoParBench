@@ -1,0 +1,1757 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.o
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: norm2u3(double ***, int, int, int, double *, double *, int, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (norm2u3(double ***, int, int, int, double *, double *, int, int, int)) [1/17=5.9%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(798,59)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(817,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ n3 i2 i1 r n1 n2 i3 } lastprivate={ } firstlastprivate={ } reduction={ tmp s }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(818,2)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(819,13)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25439: unrolled with remainder by 2  
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+         remark #25457: Number of partial sums replaced: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(819,13)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(817,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(818,2)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(819,13)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25439: unrolled with remainder by 2  
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+         remark #25457: Number of partial sums replaced: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(819,13)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(798,59):remark #34051: REGISTER ALLOCATION : [norm2u3] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:798
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   22[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm6]
+        
+    Routine temporaries
+        Total         :     183
+            Global    :      57
+            Local     :     126
+        Regenerable   :      54
+        Spilled       :       7
+        
+    Routine stack
+        Variables     :      68 bytes*
+            Reads     :       4 [1.00e+01 ~ 0.3%]
+            Writes    :      14 [0.00e+00 ~ 0.0%]
+        Spills        :     104 bytes*
+            Reads     :      20 [6.90e+00 ~ 0.2%]
+            Writes    :      20 [9.00e-01 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: showall(double ***, int, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (showall(double ***, int, int, int)) [2/17=11.8%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1074,58)
+  -> EXTERN: (1086,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (1090,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (1092,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (1094,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (1096,5) printf(const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1087,5)
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 3 ) --> ( 1 3 2 ) 
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *__restrict__, ...) (1090:3) and call:printf(const char *__restrict__, ...) (1094:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *__restrict__, ...) (1094:2) and call:printf(const char *__restrict__, ...) (1090:3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1088,2)
+      remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+      remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 ) --> ( 2 1 ) 
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *__restrict__, ...) (1090:3) and call:printf(const char *__restrict__, ...) (1092:6)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *__restrict__, ...) (1092:6) and call:printf(const char *__restrict__, ...) (1090:3)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1089,6)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1090,3) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1074,58):remark #34051: REGISTER ALLOCATION : [showall] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:1074
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   13[ rax rdx rcx rbx rbp rsi rdi r8 r12-r15 zmm0]
+        
+    Routine temporaries
+        Total         :      38
+            Global    :      16
+            Local     :      22
+        Regenerable   :      11
+        Spilled       :       7
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      24 bytes*
+            Reads     :       3 [6.30e+00 ~ 0.4%]
+            Writes    :       3 [6.30e+00 ~ 0.4%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: rep_nrm(double ***, int, int, int, char *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (rep_nrm(double ***, int, int, int, char *, int)) [3/17=17.6%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(834,28)
+  -> (846,5) norm2u3(double ***, int, int, int, double *, double *, int, int, int) (isz = 84) (sz = 105)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (847,5) printf(const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(834,28):remark #34051: REGISTER ALLOCATION : [rep_nrm] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:834
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   13[ rax rdx rcx rsi rdi r8-r11 r13-r14 zmm0-zmm1]
+        
+    Routine temporaries
+        Total         :      39
+            Global    :       8
+            Local     :      31
+        Regenerable   :       7
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :      16 bytes*
+            Reads     :       2 [2.00e+00 ~ 4.8%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: comm3(double ***, int, int, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (comm3(double ***, int, int, int, int)) [4/17=23.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(854,64)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(867,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ n3 i1 i2 u n1 n2 i3 } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(868,2)
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(877,2)
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(877,2)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(884,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between u[n3-1][i2][i1] (886:6) and *u[i2][i1] (887:6)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between *u[i2][i1] (887:6) and u[n3-1][i2][i1] (886:6)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(885,2)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between u[n3-1][i2][i1] (886:6) and *u[i2][i1] (887:6)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between *u[i2][i1] (887:6) and u[n3-1][i2][i1] (886:6)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between u[n3-1][i2][i1] (886:6) and *u[i2][i1] (887:6)
+      remark #15346: vector dependence: assumed OUTPUT dependence between *u[i2][i1] (887:6) and u[n3-1][i2][i1] (886:6)
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(885,2)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(867,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(868,2)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(877,2)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(877,2)
+   <Remainder>
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(854,64):remark #34051: REGISTER ALLOCATION : [comm3] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:854
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   15[ rax rdx rcx rbx rbp rsi rdi r8-r15]
+        
+    Routine temporaries
+        Total         :     189
+            Global    :      63
+            Local     :     126
+        Regenerable   :      38
+        Spilled       :       5
+        
+    Routine stack
+        Variables     :      52 bytes*
+            Reads     :       2 [1.00e+01 ~ 0.7%]
+            Writes    :      12 [0.00e+00 ~ 0.0%]
+        Spills        :      88 bytes*
+            Reads     :      17 [2.13e+01 ~ 1.5%]
+            Writes    :      17 [4.50e+00 ~ 0.3%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: resid(double ***, double ***, double ***, int, int, int, double *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (resid(double ***, double ***, double ***, int, int, int, double *, int)) [5/17=29.4%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(493,51)
+  -> (539,5) comm3(double ***, int, int, int, int) (isz = 174) (sz = 187)
+     [[ Unable to inline callsite  <1>]]
+  -> (542,2) rep_nrm(double ***, int, int, int, char *, int) (isz = 16) (sz = 31)
+     [[ Unable to inline callsite  <1>]]
+  -> (546,2) showall(double ***, int, int, int) (isz = 73) (sz = 84)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(513,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between u1[i1] (516:3) and u1[i1-1] (522:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between u1[i1-1] (522:3) and u1[i1] (516:3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(514,2)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between u1[i1] (516:3) and u1[i1-1] (522:3)
+      remark #17106: parallel dependence: assumed ANTI dependence between u1[i1-1] (522:3) and u1[i1] (516:3)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(515,13)
+         remark #17109: LOOP WAS AUTO-PARALLELIZED
+         remark #17101: parallel loop shared={ .2 u1 u2 } private={ } firstprivate={ n1 u i1 i2 i3 } lastprivate={ } firstlastprivate={ } reduction={ }
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=1037
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(521,6)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between r[i3][i2][i1] (522:3) and v[i3][i2][i1] (522:3)
+         remark #17106: parallel dependence: assumed ANTI dependence between v[i3][i2][i1] (522:3) and r[i3][i2][i1] (522:3)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between r[i3][i2][i1] (522:3) and v[i3][i2][i1] (522:3)
+         remark #15346: vector dependence: assumed ANTI dependence between v[i3][i2][i1] (522:3) and r[i3][i2][i1] (522:3)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 3
+         remark #25015: Estimate of max trip count of loop=1037
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(515,13)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=1037
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(493,51):remark #34051: REGISTER ALLOCATION : [resid] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:493
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   25[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm9]
+        
+    Routine temporaries
+        Total         :     203
+            Global    :      64
+            Local     :     139
+        Regenerable   :      45
+        Spilled       :       8
+        
+    Routine stack
+        Variables     :   16644 bytes*
+            Reads     :       8 [9.06e+04 ~ 7.1%]
+            Writes    :      14 [4.39e+04 ~ 3.4%]
+        Spills        :     112 bytes*
+            Reads     :      22 [8.86e+01 ~ 0.0%]
+            Writes    :      20 [9.60e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: psinv(double ***, double ***, int, int, int, double *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (psinv(double ***, double ***, int, int, int, double *, int)) [6/17=35.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(433,26)
+  -> (478,5) comm3(double ***, int, int, int, int) (isz = 174) (sz = 187)
+     [[ Unable to inline callsite  <1>]]
+  -> (481,2) rep_nrm(double ***, int, int, int, char *, int) (isz = 16) (sz = 31)
+     [[ Unable to inline callsite  <1>]]
+  -> (485,2) showall(double ***, int, int, int) (isz = 73) (sz = 84)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(452,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between r1[i1] (455:3) and r1[i1] (461:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between r1[i1] (461:3) and r1[i1] (455:3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(453,2)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between r1[i1] (455:3) and r1[i1] (461:3)
+      remark #17106: parallel dependence: assumed ANTI dependence between r1[i1] (461:3) and r1[i1] (455:3)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(454,13)
+         remark #17109: LOOP WAS AUTO-PARALLELIZED
+         remark #17101: parallel loop shared={ .2 r1 r2 } private={ } firstprivate={ n1 r i1 i2 i3 } lastprivate={ } firstlastprivate={ } reduction={ }
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=1037
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(460,13)
+         remark #17109: LOOP WAS AUTO-PARALLELIZED
+         remark #17101: parallel loop shared={ .2 r1 r2 } private={ } firstprivate={ n1 c r u i1 i2 i3 } lastprivate={ } firstlastprivate={ } reduction={ }
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+         remark #25015: Estimate of max trip count of loop=1037
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(454,13)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=1037
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(460,13)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+   remark #25015: Estimate of max trip count of loop=1037
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(433,26):remark #34051: REGISTER ALLOCATION : [psinv] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:433
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   23[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm7]
+        
+    Routine temporaries
+        Total         :     313
+            Global    :      87
+            Local     :     226
+        Regenerable   :      90
+        Spilled       :       8
+        
+    Routine stack
+        Variables     :   16720 bytes*
+            Reads     :       8 [1.37e+05 ~ 6.7%]
+            Writes    :      29 [4.39e+04 ~ 2.1%]
+        Spills        :     112 bytes*
+            Reads     :      32 [6.52e+01 ~ 0.0%]
+            Writes    :      30 [8.70e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: interp(double ***, int, int, int, double ***, int, int, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (interp(double ***, int, int, int, double ***, int, int, int, int)) [7/17=41.2%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(637,52)
+  -> (784,2) rep_nrm(double ***, int, int, int, char *, int) (isz = 16) (sz = 31)
+     [[ Unable to inline callsite  <1>]]
+  -> (785,2) rep_nrm(double ***, int, int, int, char *, int) (isz = 16) (sz = 31)
+     [[ Unable to inline callsite  <1>]]
+  -> (789,2) showall(double ***, int, int, int) (isz = 73) (sz = 84)
+     [[ Unable to inline callsite  <1>]]
+  -> (790,2) showall(double ***, int, int, int) (isz = 73) (sz = 84)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(664,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between z[i3][i2+1][i1] (667:7) and u[i3*2+1][i2*2+1][i1*2+1] (692:7)
+   remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2+1][i2*2+1][i1*2+1] (692:7) and z[i3][i2+1][i1] (667:7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(665,13)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between z[i3][i2+1][i1] (667:7) and u[i3*2+1][i2*2+1][i1*2+1] (692:7)
+      remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2+1][i2*2+1][i1*2+1] (692:7) and z[i3][i2+1][i1] (667:7)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(666,3)
+         remark #17109: LOOP WAS AUTO-PARALLELIZED
+         remark #17101: parallel loop shared={ .2 z1 z2 z3 } private={ } firstprivate={ mm1 z i1 i2 i3 } lastprivate={ } firstlastprivate={ } reduction={ }
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25015: Estimate of max trip count of loop=1037
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(671,3)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2][i2*2][i1*2] (672:7) and z[i3][i2][i1+1] (674:7)
+         remark #17106: parallel dependence: assumed ANTI dependence between z[i3][i2][i1+1] (674:7) and u[i3*2][i2*2][i1*2] (672:7)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between u[i3*2][i2*2][i1*2] (672:7) and z[i3][i2][i1+1] (674:7)
+         remark #15346: vector dependence: assumed ANTI dependence between z[i3][i2][i1+1] (674:7) and u[i3*2][i2*2][i1*2] (672:7)
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(677,3)
+         remark #17109: LOOP WAS AUTO-PARALLELIZED
+         remark #17101: parallel loop shared={ .2 z1 } private={ } firstprivate={ mm1 u i1 i2 i3 } lastprivate={ } firstlastprivate={ } reduction={ }
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+         remark #25015: Estimate of max trip count of loop=1037
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(683,3)
+         remark #17109: LOOP WAS AUTO-PARALLELIZED
+         remark #17101: parallel loop shared={ .2 z2 } private={ } firstprivate={ mm1 u i1 i2 i3 } lastprivate={ } firstlastprivate={ } reduction={ }
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+         remark #25015: Estimate of max trip count of loop=1037
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(689,3)
+         remark #17109: LOOP WAS AUTO-PARALLELIZED
+         remark #17101: parallel loop shared={ .2 z3 } private={ } firstprivate={ mm1 u i1 i2 i3 } lastprivate={ } firstlastprivate={ } reduction={ }
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+         remark #25015: Estimate of max trip count of loop=1037
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(723,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2-d3-1][i2*2-d2-1][i1*2-d1-1] (726:7) and z[i3-1][i2][i1] (743:7)
+   remark #17106: parallel dependence: assumed ANTI dependence between z[i3-1][i2][i1] (743:7) and u[i3*2-d3-1][i2*2-d2-1][i1*2-d1-1] (726:7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(724,13)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2-d3-1][i2*2-d2-1][i1*2-d1-1] (726:7) and z[i3-1][i2-1][i1] (731:7)
+      remark #17106: parallel dependence: assumed ANTI dependence between z[i3-1][i2-1][i1] (731:7) and u[i3*2-d3-1][i2*2-d2-1][i1*2-d1-1] (726:7)
+      remark #25082: Preprocess Loopnests: Moving Out Simple Stmts From Loop  
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(725,3)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2-d3-1][i2*2-d2-1][i1*2-d1-1] (726:7) and z[i3-1][i2-1][i1-1] (726:7)
+         remark #17106: parallel dependence: assumed ANTI dependence between z[i3-1][i2-1][i1-1] (726:7) and u[i3*2-d3-1][i2*2-d2-1][i1*2-d1-1] (726:7)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between u[i3*2-d3-1][i2*2-d2-1][i1*2-d1-1] (726:7) and z[i3-1][i2-1][i1-1] (726:7)
+         remark #15346: vector dependence: assumed ANTI dependence between z[i3-1][i2-1][i1-1] (726:7) and u[i3*2-d3-1][i2*2-d2-1][i1*2-d1-1] (726:7)
+         remark #25439: unrolled with remainder by 2  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(725,3)
+      <Remainder>
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(730,3)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2-d3-1][i2*2-d2-1][i1*2-t1-1] (731:7) and z[i3-1][i2-1][i1] (731:7)
+         remark #17106: parallel dependence: assumed ANTI dependence between z[i3-1][i2-1][i1] (731:7) and u[i3*2-d3-1][i2*2-d2-1][i1*2-t1-1] (731:7)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between u[i3*2-d3-1][i2*2-d2-1][i1*2-t1-1] (731:7) and z[i3-1][i2-1][i1] (731:7)
+         remark #15346: vector dependence: assumed ANTI dependence between z[i3-1][i2-1][i1] (731:7) and u[i3*2-d3-1][i2*2-d2-1][i1*2-t1-1] (731:7)
+         remark #25439: unrolled with remainder by 2  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(730,3)
+      <Remainder>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(736,13)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2-d3-1][i2*2-t2-1][i1*2-d1-1] (738:7) and z[i3-1][i2][i1] (743:7)
+      remark #17106: parallel dependence: assumed ANTI dependence between z[i3-1][i2][i1] (743:7) and u[i3*2-d3-1][i2*2-t2-1][i1*2-d1-1] (738:7)
+      remark #25082: Preprocess Loopnests: Moving Out Simple Stmts From Loop  
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(737,3)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2-d3-1][i2*2-t2-1][i1*2-d1-1] (738:7) and z[i3-1][i2][i1-1] (738:7)
+         remark #17106: parallel dependence: assumed ANTI dependence between z[i3-1][i2][i1-1] (738:7) and u[i3*2-d3-1][i2*2-t2-1][i1*2-d1-1] (738:7)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between u[i3*2-d3-1][i2*2-t2-1][i1*2-d1-1] (738:7) and z[i3-1][i2][i1-1] (738:7)
+         remark #15346: vector dependence: assumed ANTI dependence between z[i3-1][i2][i1-1] (738:7) and u[i3*2-d3-1][i2*2-t2-1][i1*2-d1-1] (738:7)
+         remark #25439: unrolled with remainder by 2  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(737,3)
+      <Remainder>
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(742,3)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2-d3-1][i2*2-t2-1][i1*2-t1-1] (743:7) and z[i3-1][i2][i1] (743:7)
+         remark #17106: parallel dependence: assumed ANTI dependence between z[i3-1][i2][i1] (743:7) and u[i3*2-d3-1][i2*2-t2-1][i1*2-t1-1] (743:7)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between u[i3*2-d3-1][i2*2-t2-1][i1*2-t1-1] (743:7) and z[i3-1][i2][i1] (743:7)
+         remark #15346: vector dependence: assumed ANTI dependence between z[i3-1][i2][i1] (743:7) and u[i3*2-d3-1][i2*2-t2-1][i1*2-t1-1] (743:7)
+         remark #25439: unrolled with remainder by 4  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(742,3)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(750,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2-t3-1][i2*2-d2-1][i1*2-d1-1] (753:7) and z[i3][i2][i1] (772:7)
+   remark #17106: parallel dependence: assumed ANTI dependence between z[i3][i2][i1] (772:7) and u[i3*2-t3-1][i2*2-d2-1][i1*2-d1-1] (753:7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(751,13)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2-t3-1][i2*2-d2-1][i1*2-d1-1] (753:7) and z[i3][i2-1][i1] (758:7)
+      remark #17106: parallel dependence: assumed ANTI dependence between z[i3][i2-1][i1] (758:7) and u[i3*2-t3-1][i2*2-d2-1][i1*2-d1-1] (753:7)
+      remark #25082: Preprocess Loopnests: Moving Out Simple Stmts From Loop  
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(752,3)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2-t3-1][i2*2-d2-1][i1*2-d1-1] (753:7) and z[i3][i2-1][i1-1] (753:7)
+         remark #17106: parallel dependence: assumed ANTI dependence between z[i3][i2-1][i1-1] (753:7) and u[i3*2-t3-1][i2*2-d2-1][i1*2-d1-1] (753:7)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between u[i3*2-t3-1][i2*2-d2-1][i1*2-d1-1] (753:7) and z[i3][i2-1][i1-1] (753:7)
+         remark #15346: vector dependence: assumed ANTI dependence between z[i3][i2-1][i1-1] (753:7) and u[i3*2-t3-1][i2*2-d2-1][i1*2-d1-1] (753:7)
+         remark #25439: unrolled with remainder by 2  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(752,3)
+      <Remainder>
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(757,3)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2-t3-1][i2*2-d2-1][i1*2-t1-1] (758:7) and z[i3][i2-1][i1] (758:7)
+         remark #17106: parallel dependence: assumed ANTI dependence between z[i3][i2-1][i1] (758:7) and u[i3*2-t3-1][i2*2-d2-1][i1*2-t1-1] (758:7)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between u[i3*2-t3-1][i2*2-d2-1][i1*2-t1-1] (758:7) and z[i3][i2-1][i1] (758:7)
+         remark #15346: vector dependence: assumed ANTI dependence between z[i3][i2-1][i1] (758:7) and u[i3*2-t3-1][i2*2-d2-1][i1*2-t1-1] (758:7)
+         remark #25439: unrolled with remainder by 4  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(757,3)
+      <Remainder>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(764,6)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2-t3-1][i2*2-t2-1][i1*2-d1-1] (766:7) and z[i3][i2][i1] (772:7)
+      remark #17106: parallel dependence: assumed ANTI dependence between z[i3][i2][i1] (772:7) and u[i3*2-t3-1][i2*2-t2-1][i1*2-d1-1] (766:7)
+      remark #25082: Preprocess Loopnests: Moving Out Simple Stmts From Loop  
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(765,3)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2-t3-1][i2*2-t2-1][i1*2-d1-1] (766:7) and z[i3][i2][i1-1] (766:7)
+         remark #17106: parallel dependence: assumed ANTI dependence between z[i3][i2][i1-1] (766:7) and u[i3*2-t3-1][i2*2-t2-1][i1*2-d1-1] (766:7)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between u[i3*2-t3-1][i2*2-t2-1][i1*2-d1-1] (766:7) and z[i3][i2][i1-1] (766:7)
+         remark #15346: vector dependence: assumed ANTI dependence between z[i3][i2][i1-1] (766:7) and u[i3*2-t3-1][i2*2-t2-1][i1*2-d1-1] (766:7)
+         remark #25439: unrolled with remainder by 4  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(765,3)
+      <Remainder>
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(771,3)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between u[i3*2-t3-1][i2*2-t2-1][i1*2-t1-1] (772:7) and z[i3][i2][i1] (772:7)
+         remark #17106: parallel dependence: assumed ANTI dependence between z[i3][i2][i1] (772:7) and u[i3*2-t3-1][i2*2-t2-1][i1*2-t1-1] (772:7)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between u[i3*2-t3-1][i2*2-t2-1][i1*2-t1-1] (772:7) and z[i3][i2][i1] (772:7)
+         remark #15346: vector dependence: assumed ANTI dependence between z[i3][i2][i1] (772:7) and u[i3*2-t3-1][i2*2-t2-1][i1*2-t1-1] (772:7)
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(666,3)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=1037
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(677,3)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+   remark #25015: Estimate of max trip count of loop=1037
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(683,3)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+   remark #25015: Estimate of max trip count of loop=1037
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(689,3)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+   remark #25015: Estimate of max trip count of loop=1037
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(637,52):remark #34051: REGISTER ALLOCATION : [interp] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:637
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   22[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm6]
+        
+    Routine temporaries
+        Total         :     930
+            Global    :     271
+            Local     :     659
+        Regenerable   :     183
+        Spilled       :      48
+        
+    Routine stack
+        Variables     :   25096 bytes*
+            Reads     :      14 [1.46e+05 ~ 7.1%]
+            Writes    :      51 [3.90e+04 ~ 1.9%]
+        Spills        :     416 bytes*
+            Reads     :     138 [5.59e+02 ~ 0.0%]
+            Writes    :     112 [1.05e+02 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: zero3(double ***, int, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (zero3(double ***, int, int, int)) [8/17=47.1%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1197,56)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1203,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ n3 i1 i2 z n1 n2 i3 } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1204,2)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1205,13)
+         remark #25408: memset generated
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=1
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1205,13)
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25439: unrolled with remainder by 2  
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1205,13)
+         <Remainder>
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1203,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1204,2)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1205,13)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed OUTPUT dependence between z[i3][i2][i1] (1205:13) and z[i3][i2][i1] (1206:3)
+         remark #17106: parallel dependence: assumed OUTPUT dependence between z[i3][i2][i1] (1206:3) and z[i3][i2][i1] (1205:13)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=1
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1205,13)
+            remark #17107: loop was not parallelized: inner loop
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25439: unrolled with remainder by 2  
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1205,13)
+         <Remainder>
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1205,13):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1205,13):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1205,13):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1205,13):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1197,56):remark #34051: REGISTER ALLOCATION : [zero3] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:1197
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   15[ rax rdx rcx rbx rbp rsi rdi r8-r15]
+        
+    Routine temporaries
+        Total         :     134
+            Global    :      41
+            Local     :      93
+        Regenerable   :      40
+        Spilled       :       7
+        
+    Routine stack
+        Variables     :      52 bytes*
+            Reads     :       2 [1.00e+01 ~ 0.4%]
+            Writes    :      12 [0.00e+00 ~ 0.0%]
+        Spills        :     104 bytes*
+            Reads     :      25 [2.01e+02 ~ 7.8%]
+            Writes    :      27 [4.50e+00 ~ 0.2%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: rprj3(double ***, int, int, int, double ***, int, int, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (rprj3(double ***, int, int, int, double ***, int, int, int, int)) [9/17=52.9%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(554,54)
+  -> (622,5) comm3(double ***, int, int, int, int) (isz = 174) (sz = 187)
+     [[ Unable to inline callsite  <1>]]
+  -> (625,2) rep_nrm(double ***, int, int, int, char *, int) (isz = 16) (sz = 31)
+     [[ Unable to inline callsite  <1>]]
+  -> (629,2) showall(double ***, int, int, int) (isz = 73) (sz = 84)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(591,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between r[i3+1][i2][i1] (601:3) and s[j3][j2][j1] (614:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between s[j3][j2][j1] (614:3) and r[i3+1][i2][i1] (601:3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(594,2)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between r[i3+1][i2][i1] (601:3) and s[j3][j2][j1] (614:3)
+      remark #17106: parallel dependence: assumed FLOW dependence between s[j3][j2][j1] (614:3) and r[i3+1][i2][i1] (601:3)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(598,13)
+         remark #17109: LOOP WAS AUTO-PARALLELIZED
+         remark #17101: parallel loop shared={ .2 x1 y1 } private={ } firstprivate={ m1j d2 d3 i1 d1 i2 i3 r j1 j2 j3 } lastprivate={ } firstlastprivate={ } reduction={ }
+         remark #25427: Loop Statements Reordered
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+         remark #25015: Estimate of max trip count of loop=518
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(607,13)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between s[j3][j2][j1] (614:3) and r[i3+1][i2+1][i1+1] (614:3)
+         remark #17106: parallel dependence: assumed ANTI dependence between r[i3+1][i2+1][i1+1] (614:3) and s[j3][j2][j1] (614:3)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between s[j3][j2][j1] (614:3) and r[i3+1][i2+1][i1+1] (614:3)
+         remark #15346: vector dependence: assumed ANTI dependence between r[i3+1][i2+1][i1+1] (614:3) and s[j3][j2][j1] (614:3)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 3
+         remark #25015: Estimate of max trip count of loop=518
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(598,13)
+   remark #25427: Loop Statements Reordered
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   remark #25015: Estimate of max trip count of loop=518
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(554,54):remark #34051: REGISTER ALLOCATION : [rprj3] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:554
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   25[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm9]
+        
+    Routine temporaries
+        Total         :     280
+            Global    :      95
+            Local     :     185
+        Regenerable   :      57
+        Spilled       :      26
+        
+    Routine stack
+        Variables     :   16668 bytes*
+            Reads     :       2 [2.35e+02 ~ 2.0%]
+            Writes    :      18 [0.00e+00 ~ 0.0%]
+        Spills        :     248 bytes*
+            Reads     :      55 [5.56e+02 ~ 4.8%]
+            Writes    :      39 [1.25e+02 ~ 1.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: mg3P(double ****, double ***, double ****, double *, double *, int, int, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (mg3P(double ****, double ***, double ****, double *, double *, int, int, int, int)) [10/17=58.8%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(375,48)
+  -> (393,2) rprj3(double ***, int, int, int, double ***, int, int, int, int) (isz = 356) (sz = 377)
+     [[ Unable to inline callsite  <1>]]
+  -> (401,5) zero3(double ***, int, int, int) (isz = 44) (sz = 55)
+     [[ Unable to inline callsite  <1>]]
+  -> (402,5) psinv(double ***, double ***, int, int, int, double *, int) (isz = 238) (sz = 255)
+     [[ Unable to inline callsite  <1>]]
+  -> (409,2) zero3(double ***, int, int, int) (isz = 44) (sz = 55)
+     [[ Unable to inline callsite  <1>]]
+  -> (410,2) interp(double ***, int, int, int, double ***, int, int, int, int) (isz = 1392) (sz = 1413)
+     [[ Unable to inline callsite  <1>]]
+  -> (415,2) resid(double ***, double ***, double ***, int, int, int, double *, int) (isz = 219) (sz = 238)
+     [[ Unable to inline callsite  <1>]]
+  -> (419,2) psinv(double ***, double ***, int, int, int, double *, int) (isz = 238) (sz = 255)
+     [[ Unable to inline callsite  <1>]]
+  -> (424,5) interp(double ***, int, int, int, double ***, int, int, int, int) (isz = 1392) (sz = 1413)
+     [[ Unable to inline callsite  <1>]]
+  -> (425,5) resid(double ***, double ***, double ***, int, int, int, double *, int) (isz = 219) (sz = 238)
+     [[ Unable to inline callsite  <1>]]
+  -> (426,5) psinv(double ***, double ***, int, int, int, double *, int) (isz = 238) (sz = 255)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(391,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable k was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(404,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable k was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(375,48):remark #34051: REGISTER ALLOCATION : [mg3P] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:375
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   14[ rax rdx rcx rbx rbp rsi rdi r8-r10 r12-r15]
+        
+    Routine temporaries
+        Total         :     129
+            Global    :      29
+            Local     :     100
+        Regenerable   :       0
+        Spilled       :      16
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      80 bytes*
+            Reads     :      21 [7.58e+01 ~ 9.6%]
+            Writes    :      10 [2.82e+01 ~ 3.5%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: bubble..0(double (*)[2], int (*)[2], int (*)[2], int (*)[2], int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (bubble..0(double (*)[2], int (*)[2], int (*)[2], int (*)[2], int, int)) [11/17=64.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1133,38)
+  CLONED FROM: bubble(double (*)[2], int (*)[2], int (*)[2], int (*)[2], int, int)(X,X,X,X,10,0)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1169,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between ten[i+1][0] (1170:13) and ten[i][0] (1174:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between ten[i+1][0] (1172:3) and ten[i][0] (1174:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between ten[i+1][0] (1173:3) and ten[i][0] (1173:3)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between ten[i+1][0] (1173:3) and ten[i][0] (1174:3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1188,3) ]
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1133,38):remark #34051: REGISTER ALLOCATION : [bubble..0] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:1133
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   11[ rax rdx rcx rsi rdi r8-r11 zmm0-zmm1]
+        
+    Routine temporaries
+        Total         :      26
+            Global    :      14
+            Local     :      12
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: bubble..1(double (*)[2], int (*)[2], int (*)[2], int (*)[2], int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (bubble..1(double (*)[2], int (*)[2], int (*)[2], int (*)[2], int, int)) [12/17=70.6%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1133,38)
+  CLONED FROM: bubble(double (*)[2], int (*)[2], int (*)[2], int (*)[2], int, int)(X,X,X,X,10,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1146,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between ten[i+1][1] (1147:13) and ten[i][1] (1151:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between ten[i+1][1] (1149:3) and ten[i][1] (1151:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between ten[i+1][1] (1150:3) and ten[i][1] (1150:3)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between ten[i+1][1] (1150:3) and ten[i][1] (1151:3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1165,3) ]
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1133,38):remark #34051: REGISTER ALLOCATION : [bubble..1] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:1133
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   11[ rax rdx rcx rsi rdi r8-r11 zmm0-zmm1]
+        
+    Routine temporaries
+        Total         :      26
+            Global    :      14
+            Local     :      12
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: power(double, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (power(double, int)) [13/17=76.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1102,40)
+  -> EXTERN: (1121,30) randlc(double *, double)
+  -> EXTERN: (1122,11) randlc(double *, double)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1120,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1102,40):remark #34051: REGISTER ALLOCATION : [power] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:1102
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    5[ rax rdi r12 zmm0-zmm1]
+        
+    Routine temporaries
+        Total         :      27
+            Global    :      11
+            Local     :      16
+        Regenerable   :       4
+        Spilled       :       1
+        
+    Routine stack
+        Variables     :      16 bytes*
+            Reads     :       3 [6.15e+00 ~ 5.9%]
+            Writes    :       2 [1.80e+00 ~ 1.7%]
+        Spills        :       8 bytes*
+            Reads     :       1 [9.00e-01 ~ 0.9%]
+            Writes    :       1 [9.00e-01 ~ 0.9%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: zran3(double ***, int, int, int, int, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (zran3(double ***, int, int, int, int, int, int)) [14/17=82.4%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(896,79)
+  -> (921,10) power(double, int) (isz = 29) (sz = 38)
+     [[ Unable to inline callsite  <1>]]
+  -> (922,10) power(double, int) (isz = 29) (sz = 38)
+     [[ Unable to inline callsite  <1>]]
+  -> (924,5) zero3(double ***, int, int, int) (isz = 44) (sz = 55)
+     [[ Unable to inline callsite  <1>]]
+  -> (928,10) power(double, int) (isz = 29) (sz = 38)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (934,14) randlc(double *, double)
+  -> EXTERN: (940,13) vranlc(int, double *, double, double *)
+  -> EXTERN: (941,22) randlc(double *, double)
+  -> EXTERN: (943,11) randlc(double *, double)
+  -> CP_CLONE (972,7) bubble..1(double (*)[2], int (*)[2], int (*)[2], int (*)[2], int, int) (isz = 215) (sz = 232)
+     [[ Unable to inline callsite  <1>]]
+  -> CP_CLONE (979,7) bubble..0(double (*)[2], int (*)[2], int (*)[2], int (*)[2], int, int) (isz = 215) (sz = 232)
+     [[ Unable to inline callsite  <1>]]
+  -> (1064,5) comm3(double ***, int, int, int, int) (isz = 174) (sz = 187)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(936,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between x1 (937:2) and x0 (943:11)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between x0 (943:11) and x1 (937:2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(938,2)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between xx (939:13) and x1 (941:22)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between x1 (941:22) and xx (939:13)
+      remark #15382: vectorization support: call to function vranlc(int, double *, double, double *) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(940,13) ]
+      remark #15382: vectorization support: call to function randlc(double *, double) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(941,22) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between xx (939:13) and x1 (941:22)
+      remark #15346: vector dependence: assumed OUTPUT dependence between x1 (941:22) and xx (939:13)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(954,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ ten j1 j2 j3 } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 10  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(964,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between ten[0][1] (968:7) and j3 (979:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between j3 (979:7) and ten[0][1] (968:7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(965,2)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between ten[0][1] (968:7) and j3 (979:7)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between j3 (979:7) and ten[0][1] (968:7)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(966,13)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed OUTPUT dependence between ten[0][1] (968:7) and j3 (979:7)
+         remark #17106: parallel dependence: assumed OUTPUT dependence between j3 (979:7) and ten[0][1] (968:7)
+         remark #15382: vectorization support: call to function bubble..1(double (*)[2], int (*)[2], int (*)[2], int (*)[2], int, int) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(972,7) ]
+         remark #15382: vectorization support: call to function bubble..0(double (*)[2], int (*)[2], int (*)[2], int (*)[2], int, int) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(979,7) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between ten[0][1] (968:7) and j3 (979:7)
+         remark #15346: vector dependence: assumed OUTPUT dependence between j3 (979:7) and ten[0][1] (968:7)
+         remark #25439: unrolled with remainder by 2  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(966,13)
+      <Remainder>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(990,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between i1 (991:2) and i1 (997:13)
+   remark #17106: parallel dependence: assumed FLOW dependence between i1 (997:13) and i1 (991:2)
+   remark #17106: parallel dependence: assumed ANTI dependence between i1 (991:2) and i1 (997:13)
+   remark #17106: parallel dependence: assumed ANTI dependence between i1 (991:2) and i1 (997:13)
+   remark #17106: parallel dependence: assumed FLOW dependence between i1 (997:13) and i1 (991:2)
+   remark #17106: parallel dependence: assumed ANTI dependence between i1 (991:2) and i1 (997:13)
+   remark #17106: parallel dependence: assumed ANTI dependence between i1 (991:2) and i1 (997:13)
+   remark #17106: parallel dependence: assumed FLOW dependence between i1 (997:13) and i1 (991:2)
+   remark #17106: parallel dependence: assumed ANTI dependence between i1 (991:2) and i1 (997:13)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between i1 (991:2) and i1 (997:13)
+   remark #15346: vector dependence: assumed FLOW dependence between i1 (997:13) and i1 (991:2)
+   remark #15346: vector dependence: assumed FLOW dependence between i1 (997:13) and i1 (991:2)
+   remark #15346: vector dependence: assumed ANTI dependence between i1 (991:2) and i1 (997:13)
+   remark #15346: vector dependence: assumed ANTI dependence between i1 (991:2) and i1 (997:13)
+   remark #15346: vector dependence: assumed FLOW dependence between i1 (997:13) and i1 (991:2)
+   remark #15346: vector dependence: assumed FLOW dependence between i1 (997:13) and i1 (991:2)
+   remark #15346: vector dependence: assumed ANTI dependence between i1 (991:2) and i1 (997:13)
+   remark #15346: vector dependence: assumed ANTI dependence between i1 (991:2) and i1 (997:13)
+   remark #15346: vector dependence: assumed FLOW dependence between i1 (997:13) and i1 (991:2)
+   remark #15346: vector dependence: assumed FLOW dependence between i1 (997:13) and i1 (991:2)
+   remark #15346: vector dependence: assumed ANTI dependence between i1 (991:2) and i1 (997:13)
+   remark #25436: completely unrolled by 10  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1051,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ n3 i1 i2 z n1 n2 i3 } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1052,2)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1053,13)
+         remark #25408: memset generated
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=1
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1053,13)
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25439: unrolled with remainder by 2  
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1053,13)
+         <Remainder>
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1058,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between (*(*(z+j3[i][0]*8)+j2[i][0]*8))[j1[i][0]] (1059:2) and (*(*(z+j3[i][0]*8)+j2[i][0]*8))[j1[i][0]] (1059:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between (*(*(z+j3[i][0]*8)+j2[i][0]*8))[j1[i][0]] (1059:2) and (*(*(z+j3[i][0]*8)+j2[i][0]*8))[j1[i][0]] (1059:2)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 4  
+   remark #25015: Estimate of max trip count of loop=10
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1058,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=10
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1061,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between (*(*(z+j3[i][1]*8)+j2[i][1]*8))[j1[i][1]] (1062:2) and (*(*(z+j3[i][1]*8)+j2[i][1]*8))[j1[i][1]] (1062:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between (*(*(z+j3[i][1]*8)+j2[i][1]*8))[j1[i][1]] (1062:2) and (*(*(z+j3[i][1]*8)+j2[i][1]*8))[j1[i][1]] (1062:2)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 4  
+   remark #25015: Estimate of max trip count of loop=10
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1061,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=10
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(954,5)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=10
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1051,5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1052,2)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1053,13)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed OUTPUT dependence between z[i3][i2][i1] (1053:13) and z[i3][i2][i1] (1054:3)
+         remark #17106: parallel dependence: assumed OUTPUT dependence between z[i3][i2][i1] (1054:3) and z[i3][i2][i1] (1053:13)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+         remark #25015: Estimate of max trip count of loop=1
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1053,13)
+            remark #17107: loop was not parallelized: inner loop
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25439: unrolled with remainder by 2  
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1053,13)
+         <Remainder>
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1053,13):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1053,13):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1053,13):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1053,13):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(896,79):remark #34051: REGISTER ALLOCATION : [zran3] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:896
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   18[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm2]
+        
+    Routine temporaries
+        Total         :     690
+            Global    :     159
+            Local     :     531
+        Regenerable   :     174
+        Spilled       :      25
+        
+    Routine stack
+        Variables     :     528 bytes*
+            Reads     :     106 [4.47e+02 ~ 6.8%]
+            Writes    :     148 [3.90e+02 ~ 5.9%]
+        Spills        :     216 bytes*
+            Reads     :      65 [4.74e+02 ~ 7.2%]
+            Writes    :      47 [4.99e+01 ~ 0.8%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: setup(int *, int *, int *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (setup(int *, int *, int *, int)) [15/17=88.2%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(334,54)
+  -> EXTERN: (364,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (365,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (366,2) printf(const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(341,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between nx[k] (342:2) and nx[k+1] (342:2)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between nx[k] (342:2) and nx[k+1] (342:2)
+   remark #25015: Estimate of max trip count of loop=12
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(347,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ lt k } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=12
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(347,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=12
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(347,5)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=12
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(347,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=12
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(334,54):remark #34051: REGISTER ALLOCATION : [setup] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:334
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   15[ rax rdx rcx rbx rbp rsi rdi r8-r15]
+        
+    Routine temporaries
+        Total         :     174
+            Global    :      32
+            Local     :     142
+        Regenerable   :      38
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :      28 bytes*
+            Reads     :       2 [2.16e+01 ~ 3.5%]
+            Writes    :       7 [0.00e+00 ~ 0.0%]
+        Spills        :      64 bytes*
+            Reads     :      14 [6.44e+00 ~ 1.1%]
+            Writes    :      14 [6.44e+00 ~ 1.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [16/17=94.1%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(77,34)
+  -> EXTERN: (106,5) timer_clear(int)
+  -> EXTERN: (107,5) timer_clear(int)
+  -> EXTERN: (109,5) timer_start(int)
+  -> EXTERN: (115,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (118,10) fopen(const char *__restrict__, const char *__restrict__)
+  -> EXTERN: (120,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (121,2) fscanf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (122,8) fgetc(FILE *)
+  -> EXTERN: (122,8) fgetc(FILE *)
+  -> EXTERN: (123,2) fscanf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (124,8) fgetc(FILE *)
+  -> EXTERN: (124,8) fgetc(FILE *)
+  -> EXTERN: (125,2) fscanf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (126,8) fgetc(FILE *)
+  -> EXTERN: (126,8) fgetc(FILE *)
+  -> EXTERN: (128,6) fscanf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (130,2) fclose(FILE *)
+  -> EXTERN: (132,2) printf(const char *__restrict__, ...)
+  -> (200,5) setup(int *, int *, int *, int) (isz = 116) (sz = 127)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (202,22) malloc(size_t)
+  -> EXTERN: (204,21) malloc(size_t)
+  -> EXTERN: (206,27) malloc(size_t)
+  -> EXTERN: (208,26) malloc(size_t)
+  -> EXTERN: (212,21) malloc(size_t)
+  -> EXTERN: (214,20) malloc(size_t)
+  -> EXTERN: (216,26) malloc(size_t)
+  -> EXTERN: (219,22) malloc(size_t)
+  -> EXTERN: (221,21) malloc(size_t)
+  -> EXTERN: (223,27) malloc(size_t)
+  -> EXTERN: (225,26) malloc(size_t)
+  -> (230,5) zero3(double ***, int, int, int) (isz = 44) (sz = 55)
+     [[ Unable to inline callsite  <1>]]
+  -> (231,5) zran3(double ***, int, int, int, int, int, int) (isz = 576) (sz = 593)
+     [[ Unable to inline callsite  <1>]]
+  -> (233,5) norm2u3(double ***, int, int, int, double *, double *, int, int, int) (isz = 84) (sz = 105)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (239,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (241,5) printf(const char *__restrict__, ...)
+  -> (243,5) resid(double ***, double ***, double ***, int, int, int, double *, int) (isz = 219) (sz = 238)
+     [[ Unable to inline callsite  <1>]]
+  -> (244,5) norm2u3(double ***, int, int, int, double *, double *, int, int, int) (isz = 84) (sz = 105)
+     [[ Unable to inline callsite  <1>]]
+  -> (249,5) mg3P(double ****, double ***, double ****, double *, double *, int, int, int, int) (isz = 198) (sz = 219)
+     [[ Unable to inline callsite  <1>]]
+  -> (250,5) resid(double ***, double ***, double ***, int, int, int, double *, int) (isz = 219) (sz = 238)
+     [[ Unable to inline callsite  <1>]]
+  -> (252,5) setup(int *, int *, int *, int) (isz = 116) (sz = 127)
+     [[ Unable to inline callsite  <1>]]
+  -> (254,5) zero3(double ***, int, int, int) (isz = 44) (sz = 55)
+     [[ Unable to inline callsite  <1>]]
+  -> (256,5) zran3(double ***, int, int, int, int, int, int) (isz = 576) (sz = 593)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (259,5) timer_stop(int)
+  -> EXTERN: (260,5) timer_start(int)
+  -> (262,5) resid(double ***, double ***, double ***, int, int, int, double *, int) (isz = 219) (sz = 238)
+     [[ Unable to inline callsite  <1>]]
+  -> (263,5) norm2u3(double ***, int, int, int, double *, double *, int, int, int) (isz = 84) (sz = 105)
+     [[ Unable to inline callsite  <1>]]
+  -> (266,2) mg3P(double ****, double ***, double ****, double *, double *, int, int, int, int) (isz = 198) (sz = 219)
+     [[ Unable to inline callsite  <1>]]
+  -> (267,2) resid(double ***, double ***, double ***, int, int, int, double *, int) (isz = 219) (sz = 238)
+     [[ Unable to inline callsite  <1>]]
+  -> (269,5) norm2u3(double ***, int, int, int, double *, double *, int, int, int) (isz = 84) (sz = 105)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (273,14) omp_get_num_threads(void)
+  -> EXTERN: (277,5) timer_stop(int)
+  -> EXTERN: (278,9) timer_read(int)
+  -> EXTERN: (279,13) timer_read(int)
+  -> EXTERN: (284,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (285,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (303,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (304,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (305,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (308,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (309,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (310,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (314,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (315,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (325,5) c_print_results(char *, char, int, int, int, int, int, double, double, char *, int, char *, char *, char *, char *, char *, char *, char *, char *, char *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(122,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(124,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(126,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(127,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between debug_vec[i] (128:6) and debug_vec[i] (128:6)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between debug_vec[i] (128:6) and debug_vec[i] (128:6)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fscanf(FILE *__restrict__, const char *__restrict__, ...) (128:6) and call:fscanf(FILE *__restrict__, const char *__restrict__, ...) (128:6)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fscanf(FILE *__restrict__, const char *__restrict__, ...) (128:6) and call:fscanf(FILE *__restrict__, const char *__restrict__, ...) (128:6)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 8  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(140,2)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 8  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(203,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=12
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(205,2)
+      remark #17102: loop was not parallelized: not a parallelization candidate
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(207,6)
+         remark #17102: loop was not parallelized: not a parallelization candidate
+         remark #15523: loop was not vectorized: loop control variable j was found, but loop iteration count cannot be computed before executing the loop
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(213,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(215,2)
+      remark #17102: loop was not parallelized: not a parallelization candidate
+      remark #15523: loop was not vectorized: loop control variable j was found, but loop iteration count cannot be computed before executing the loop
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(220,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=12
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(222,2)
+      remark #17102: loop was not parallelized: not a parallelization candidate
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(224,6)
+         remark #17102: loop was not parallelized: not a parallelization candidate
+         remark #15523: loop was not vectorized: loop control variable j was found, but loop iteration count cannot be computed before executing the loop
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(265,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable it was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(140,2)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=8
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(140,2)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=8
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(77,34):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c:77
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   16[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm1]
+        
+    Routine temporaries
+        Total         :     515
+            Global    :     120
+            Local     :     395
+        Regenerable   :     170
+        Spilled       :      20
+        
+    Routine stack
+        Variables     :     120 bytes*
+            Reads     :      44 [6.48e+01 ~ 0.8%]
+            Writes    :      20 [8.00e+00 ~ 0.1%]
+        Spills        :     200 bytes*
+            Reads     :      37 [2.91e+01 ~ 0.3%]
+            Writes    :      38 [2.27e+01 ~ 0.3%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: bubble(double (*)[2], int (*)[2], int (*)[2], int (*)[2], int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (bubble(double (*)[2], int (*)[2], int (*)[2], int (*)[2], int, int)) /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/MG/mg.c(1133,38)
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> Inlining the function will lead to incorrect program behavior.
+

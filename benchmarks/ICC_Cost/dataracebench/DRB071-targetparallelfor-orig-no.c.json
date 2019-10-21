@@ -1,0 +1,35 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB071-targetparallelfor-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"56",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB071-targetparallelfor-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"59",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB071-targetparallelfor-orig-no.c",
+"function":"main",
+"loop id":"3",
+"loop line":"62",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

@@ -1,0 +1,3267 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -c -qopenmp -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.o
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: AVI_open_output_file(char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_open_output_file(char *)) [1/62=1.6%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(217,1)
+  -> EXTERN: (227,20) malloc(size_t)
+  -> EXTERN: (233,4) memset(void *, int, size_t)
+  -> EXTERN: (242,16) open(const char *, int, ...)
+  -> EXTERN: (246,7) free(void *)
+  -> CP_CLONE (254,8) avi_write..1(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (257,7) close(int)
+  -> EXTERN: (259,7) free(void *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(253,4)
+   remark #25408: memset generated
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(233,4):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(233,4):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(253,4):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(217,1):remark #34051: REGISTER ALLOCATION : [AVI_open_output_file] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:217
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    6[ rax rdx rbp rsi rdi r12]
+        
+    Routine temporaries
+        Total         :      41
+            Global    :      14
+            Local     :      27
+        Regenerable   :      17
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :    2048 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: avi_write..1(int, char *, size_t)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (avi_write..1(int, char *, size_t)) [2/62=3.2%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(80,1)
+  CLONED FROM: avi_write(int, char *, size_t)(X,X,0x00000800,0x00000000)
+  -> EXTERN: (85,11) write(int, const void *, size_t)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(84,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(80,1):remark #34051: REGISTER ALLOCATION : [avi_write..1] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:80
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rsi rdi r12-r14]
+        
+    Routine temporaries
+        Total         :      21
+            Global    :      11
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_set_video(avi_t *, int, int, double, char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_set_video(avi_t *, int, int, double, char *)) [3/62=4.8%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(274,1)
+  -> EXTERN: (283,7) strncmp(const char *, const char *, size_t)
+  -> EXTERN: (284,6) memset(void *, int, size_t)
+  -> EXTERN: (286,6) memcpy(void *__restrict__, const void *__restrict__, size_t)
+  -> (291,4) avi_update_header(avi_t *) (isz = 1080) (sz = 1088)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(284,6):remark #34000: call to memset implemented inline with stores with proven (alignment, offset): (1, 0)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(286,6):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (1, 0), and destination (alignment, offset): (1, 0)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(274,1):remark #34051: REGISTER ALLOCATION : [AVI_set_video] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:274
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rcx rsi rdi r9 zmm0]
+        
+    Routine temporaries
+        Total         :      27
+            Global    :      12
+            Local     :      15
+        Regenerable   :       3
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: avi_update_header(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (avi_update_header(avi_t *)) [4/62=6.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(334,1)
+  -> (361,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (367,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (383,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (384,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (387,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (388,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (393,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (394,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (395,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (397,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (399,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (400,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (401,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (403,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (404,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (405,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (406,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (412,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (419,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (421,4) memcpy(void *__restrict__, const void *__restrict__, size_t)
+  -> (422,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (423,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (424,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (425,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (426,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (427,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (428,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (429,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (430,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (431,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (432,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (433,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (440,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (441,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (442,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (443,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (445,4) memcpy(void *__restrict__, const void *__restrict__, size_t)
+  -> (447,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (448,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (449,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (450,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (451,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (455,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (462,19) avi_sampsize(avi_t *, int) (isz = 14) (sz = 23)
+     [[ Unable to inline callsite  <1>]]
+  -> (465,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (472,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (477,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (480,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (481,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (482,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (485,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (486,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (487,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (488,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (489,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (490,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (493,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (495,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (496,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (503,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (506,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (508,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (518,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (523,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (536,8) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (537,8) exit(int)
+  -> (541,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (542,4) memset(void *, int, size_t)
+  -> EXTERN: (546,15) strlen(const char *)
+  -> EXTERN: (547,6) sprintf(char *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (548,6) memcpy(void *__restrict__, const void *__restrict__, size_t)
+  -> EXTERN: (548,37) strlen(const char *)
+  -> (556,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (562,9) lseek(int, __off_t, int)
+  -> CP_CLONE (563,9) avi_write..1(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (564,2) lseek(int, __off_t, int)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(460,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable j was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(421,4):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (1, 0), and destination (alignment, offset): (16, 0)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(445,4):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (1, 0), and destination (alignment, offset): (16, 12)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(542,4):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(542,4):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(548,6):remark #34014: optimization advice for memcpy: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(548,6):remark #34026: call to memcpy implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(334,1):remark #34051: REGISTER ALLOCATION : [avi_update_header] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:334
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   15[ rax rdx rcx rbx rbp rsi rdi r12-r15 zmm0-zmm3]
+        
+    Routine temporaries
+        Total         :     364
+            Global    :      37
+            Local     :     327
+        Regenerable   :     158
+        Spilled       :      11
+        
+    Routine stack
+        Variables     :    2048 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :      32 [7.99e+01 ~ 6.1%]
+        Spills        :      40 bytes*
+            Reads     :      10 [4.97e+01 ~ 3.8%]
+            Writes    :       8 [2.39e+01 ~ 1.8%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: avi_sampsize(avi_t *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (avi_sampsize(avi_t *, int)) [5/62=8.1%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(133,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(133,1):remark #34051: REGISTER ALLOCATION : [avi_sampsize] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:133
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    6[ rax rdx rcx rsi rdi r8]
+        
+    Routine temporaries
+        Total         :      25
+            Global    :       0
+            Local     :      25
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_set_audio(avi_t *, int, long, int, int, long)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_set_audio(avi_t *, int, long, int, int, long)) [6/62=9.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(295,1)
+  -> EXTERN: (305,6) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (306,6) exit(int)
+  -> (315,4) avi_update_header(avi_t *) (isz = 1080) (sz = 1088)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(295,1):remark #34051: REGISTER ALLOCATION : [AVI_set_audio] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:295
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rsi rdi r8-r11]
+        
+    Routine temporaries
+        Total         :      51
+            Global    :      13
+            Local     :      38
+        Regenerable   :       5
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: avi_write_data(avi_t *, char *, unsigned long, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (avi_write_data(avi_t *, char *, unsigned long, int, int)) /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(892,1)
+
+===========================================================================
+
+Begin optimization report for: avi_add_chunk(avi_t *, unsigned char *, unsigned char *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (avi_add_chunk(avi_t *, unsigned char *, unsigned char *, int)) [8/62=12.9%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(145,1)
+  -> EXTERN: (151,4) memcpy(void *__restrict__, const void *__restrict__, size_t)
+  -> (152,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> CP_CLONE (159,8) avi_write..0(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> (160,8) avi_write(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (162,7) lseek(int, __off_t, int)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(151,4):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (1, 0), and destination (alignment, offset): (16, 0)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(145,1):remark #34051: REGISTER ALLOCATION : [avi_add_chunk] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:145
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rcx rbp rsi rdi r12-r13]
+        
+    Routine temporaries
+        Total         :      43
+            Global    :      14
+            Local     :      29
+        Regenerable   :       8
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       8 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       1 [1.00e+00 ~ 2.2%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: avi_write..0(int, char *, size_t)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (avi_write..0(int, char *, size_t)) [9/62=14.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(80,1)
+  CLONED FROM: avi_write(int, char *, size_t)(X,X,0x00000008,0x00000000)
+  -> EXTERN: (85,11) write(int, const void *, size_t)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(84,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(80,1):remark #34051: REGISTER ALLOCATION : [avi_write..0] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:80
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rsi rdi r12-r14]
+        
+    Routine temporaries
+        Total         :      21
+            Global    :      11
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: avi_write(int, char *, size_t)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (avi_write(int, char *, size_t)) [10/62=16.1%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(80,1)
+  -> EXTERN: (85,11) write(int, const void *, size_t)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(84,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(80,1):remark #34051: REGISTER ALLOCATION : [avi_write] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:80
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rsi rdi r12-r15]
+        
+    Routine temporaries
+        Total         :      21
+            Global    :      12
+            Local     :       9
+        Regenerable   :       0
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      32 bytes*
+            Reads     :       4 [3.83e+00 ~ 5.0%]
+            Writes    :       4 [3.83e+00 ~ 5.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_write_frame(avi_t *, char *, long, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_write_frame(avi_t *, char *, long, int)) [11/62=17.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(929,1)
+  -> CP_CLONE (936,6) avi_write_data..0(avi_t *, char *, unsigned long, int, int) (isz = 71) (sz = 89)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(929,1):remark #34051: REGISTER ALLOCATION : [AVI_write_frame] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:929
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rsi rdi r8 r12-r14]
+        
+    Routine temporaries
+        Total         :      25
+            Global    :      14
+            Local     :      11
+        Regenerable   :       2
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: avi_write_data..0(avi_t *, char *, unsigned long, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (avi_write_data..0(avi_t *, char *, unsigned long, int, int)) [12/62=19.4%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(892,1)
+  CLONED FROM: avi_write_data(avi_t *, char *, unsigned long, int, int)(X,X,X,0,X)
+  -> EXTERN: (907,4) sprintf(char *__restrict__, const char *__restrict__, ...)
+  -> (910,10) avi_add_index_entry(avi_t *, unsigned char *, long, unsigned long, unsigned long) (isz = 68) (sz = 84)
+     [[ Unable to inline callsite  <1>]]
+  -> (912,10) avi_add_index_entry(avi_t *, unsigned char *, long, unsigned long, unsigned long) (isz = 68) (sz = 84)
+     [[ Unable to inline callsite  <1>]]
+  -> (919,10) avi_add_chunk(avi_t *, unsigned char *, unsigned char *, int) (isz = 48) (sz = 62)
+     [[ Unable to inline callsite  <1>]]
+  -> (921,10) avi_add_chunk(avi_t *, unsigned char *, unsigned char *, int) (isz = 48) (sz = 62)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(892,1):remark #34051: REGISTER ALLOCATION : [avi_write_data..0] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:892
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   12[ rax rdx rcx rsi rdi r8-r10 r12-r15]
+        
+    Routine temporaries
+        Total         :      52
+            Global    :      15
+            Local     :      37
+        Regenerable   :      14
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       5 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_dup_frame(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_dup_frame(avi_t *)) [13/62=21.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(945,1)
+  -> (949,7) avi_add_index_entry(avi_t *, unsigned char *, long, unsigned long, unsigned long) (isz = 68) (sz = 84)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(945,1):remark #34051: REGISTER ALLOCATION : [AVI_dup_frame] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:945
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rcx rsi rdi r8 r14]
+        
+    Routine temporaries
+        Total         :      22
+            Global    :      11
+            Local     :      11
+        Regenerable   :       5
+        Spilled       :       1
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_write_audio(avi_t *, char *, long)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_write_audio(avi_t *, char *, long)) [14/62=22.6%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(956,1)
+  -> CP_CLONE (959,8) avi_write_data..1(avi_t *, char *, unsigned long, int, int) (isz = 71) (sz = 89)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(956,1):remark #34051: REGISTER ALLOCATION : [AVI_write_audio] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:956
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rcx rsi rdi r8 r13-r14]
+        
+    Routine temporaries
+        Total         :      26
+            Global    :      12
+            Local     :      14
+        Regenerable   :       3
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: avi_write_data..1(avi_t *, char *, unsigned long, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (avi_write_data..1(avi_t *, char *, unsigned long, int, int)) [15/62=24.2%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(892,1)
+  CLONED FROM: avi_write_data(avi_t *, char *, unsigned long, int, int)(X,X,X,1,0)
+  -> EXTERN: (907,4) sprintf(char *__restrict__, const char *__restrict__, ...)
+  -> (910,10) avi_add_index_entry(avi_t *, unsigned char *, long, unsigned long, unsigned long) (isz = 68) (sz = 84)
+     [[ Unable to inline callsite  <1>]]
+  -> (912,10) avi_add_index_entry(avi_t *, unsigned char *, long, unsigned long, unsigned long) (isz = 68) (sz = 84)
+     [[ Unable to inline callsite  <1>]]
+  -> (919,10) avi_add_chunk(avi_t *, unsigned char *, unsigned char *, int) (isz = 48) (sz = 62)
+     [[ Unable to inline callsite  <1>]]
+  -> (921,10) avi_add_chunk(avi_t *, unsigned char *, unsigned char *, int) (isz = 48) (sz = 62)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(892,1):remark #34051: REGISTER ALLOCATION : [avi_write_data..1] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:892
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   11[ rax rdx rcx rsi rdi r8-r10 r13-r15]
+        
+    Routine temporaries
+        Total         :      47
+            Global    :      14
+            Local     :      33
+        Regenerable   :      12
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       5 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_append_audio(avi_t *, char *, long)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_append_audio(avi_t *, char *, long)) [16/62=25.8%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(966,1)
+  -> (976,12) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> (977,12) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> (980,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (987,3) lseek(int, __off_t, int)
+  -> (988,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> CP_CLONE (989,3) avi_write..2(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (991,3) lseek(int, __off_t, int)
+  -> (996,3) avi_write(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(966,1):remark #34051: REGISTER ALLOCATION : [AVI_append_audio] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:966
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   11[ rax rdx rcx rbx rbp rsi rdi r12-r15]
+        
+    Routine temporaries
+        Total         :      59
+            Global    :      19
+            Local     :      40
+        Regenerable   :       8
+        Spilled       :       7
+        
+    Routine stack
+        Variables     :       4 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       8 bytes*
+            Reads     :       1 [7.92e-01 ~ 1.1%]
+            Writes    :       1 [7.92e-01 ~ 1.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: avi_write..2(int, char *, size_t)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (avi_write..2(int, char *, size_t)) [17/62=27.4%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(80,1)
+  CLONED FROM: avi_write(int, char *, size_t)(X,X,0x00000004,0x00000000)
+  -> EXTERN: (85,11) write(int, const void *, size_t)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(84,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(80,1):remark #34051: REGISTER ALLOCATION : [avi_write..2] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:80
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rsi rdi r12-r14]
+        
+    Routine temporaries
+        Total         :      21
+            Global    :      11
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_bytes_remain(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_bytes_remain(avi_t *)) [18/62=29.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1004,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1004,1):remark #34051: REGISTER ALLOCATION : [AVI_bytes_remain] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1004
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      15
+            Global    :       7
+            Local     :       8
+        Regenerable   :       2
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_bytes_written(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_bytes_written(avi_t *)) [19/62=30.6%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1011,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1011,1):remark #34051: REGISTER ALLOCATION : [AVI_bytes_written] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1011
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       7
+            Local     :       7
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_set_audio_track(avi_t *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_set_audio_track(avi_t *, int)) [20/62=32.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1018,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1018,1):remark #34051: REGISTER ALLOCATION : [AVI_set_audio_track] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1018
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      12
+            Global    :       8
+            Local     :       4
+        Regenerable   :       2
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_get_audio_track(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_get_audio_track(avi_t *)) [21/62=33.9%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1028,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1028,1):remark #34051: REGISTER ALLOCATION : [AVI_get_audio_track] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1028
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       0
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_open_input_file(char *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_open_input_file(char *, int)) [22/62=35.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1072,1)
+  -> EXTERN: (1077,19) malloc(size_t)
+  -> EXTERN: (1083,3) memset(void *, int, size_t)
+  -> EXTERN: (1089,15) open(const char *, int, ...)
+  -> EXTERN: (1093,7) free(void *)
+  -> (1097,3) avi_parse_input_file(avi_t *, int) (isz = 1300) (sz = 1327)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1083,3):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1083,3):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1072,1):remark #34051: REGISTER ALLOCATION : [AVI_open_input_file] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1072
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rcx rsi rdi r14-r15]
+        
+    Routine temporaries
+        Total         :      28
+            Global    :      12
+            Local     :      16
+        Regenerable   :       7
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       8 bytes*
+            Reads     :       3 [0.00e+00 ~ 0.0%]
+            Writes    :       2 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: avi_parse_input_file(avi_t *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (avi_parse_input_file(avi_t *, int)) [23/62=37.1%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1131,1)
+  -> (1148,8) avi_read(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> (1148,44) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1150,8) strncasecmp(const char *, const char *, size_t)
+  -> EXTERN: (1151,8) strncasecmp(const char *, const char *, size_t)
+  -> (1151,43) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (1161,11) avi_read(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> (1163,11) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1166,10) strncasecmp(const char *, const char *, size_t)
+  -> (1168,14) avi_read(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> (1168,48) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1170,13) strncasecmp(const char *, const char *, size_t)
+  -> EXTERN: (1173,43) malloc(size_t)
+  -> (1174,30) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1178,22) lseek(int, __off_t, int)
+  -> (1180,17) avi_read(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> (1180,64) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1182,18) strncasecmp(const char *, const char *, size_t)
+  -> EXTERN: (1184,31) lseek(int, __off_t, int)
+  -> EXTERN: (1185,13) lseek(int, __off_t, int)
+  -> EXTERN: (1188,13) lseek(int, __off_t, int)
+  -> EXTERN: (1190,15) strncasecmp(const char *, const char *, size_t)
+  -> EXTERN: (1196,48) malloc(size_t)
+  -> (1197,26) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (1198,13) avi_read(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> (1198,62) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1201,10) lseek(int, __off_t, int)
+  -> (1204,25) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (1205,25) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1213,10) strncasecmp(const char *, const char *, size_t)
+  -> (1215,11) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1220,10) strncasecmp(const char *, const char *, size_t)
+  -> EXTERN: (1223,13) strncasecmp(const char *, const char *, size_t)
+  -> EXTERN: (1225,13) memcpy(void *__restrict__, const void *__restrict__, size_t)
+  -> (1231,21) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> (1232,21) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> (1234,33) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1240,19) strncasecmp(const char *, const char *, size_t)
+  -> EXTERN: (1248,7) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> (1252,41) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> (1252,67) avi_sampsize(avi_t *, int) (isz = 14) (sz = 23)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1265,15) strncasecmp(const char *, const char *, size_t)
+  -> (1270,27) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> (1271,27) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1276,6) memcpy(void *__restrict__, const void *__restrict__, size_t)
+  -> (1282,45) str2ushort(unsigned char *) (isz = 6) (sz = 12)
+     [[ Unable to inline callsite  <1>]]
+  -> (1287,45) str2ushort(unsigned char *) (isz = 6) (sz = 12)
+     [[ Unable to inline callsite  <1>]]
+  -> (1288,45) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> (1290,40) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> (1292,45) str2ushort(unsigned char *) (isz = 6) (sz = 12)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1306,4) free(void *)
+  -> (1308,43) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1325,4) lseek(int, __off_t, int)
+  -> EXTERN: (1344,14) strncasecmp(const char *, const char *, size_t)
+  -> (1345,25) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (1347,13) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> (1348,13) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1350,7) lseek(int, __off_t, int)
+  -> (1351,10) avi_read(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> (1351,41) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1352,11) strncasecmp(const char *, const char *, size_t)
+  -> (1353,7) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1359,10) lseek(int, __off_t, int)
+  -> (1360,13) avi_read(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> (1360,44) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1361,14) strncasecmp(const char *, const char *, size_t)
+  -> (1361,68) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1373,7) lseek(int, __off_t, int)
+  -> (1379,14) avi_read(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> (1380,14) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1384,13) strncasecmp(const char *, const char *, size_t)
+  -> EXTERN: (1386,13) lseek(int, __off_t, int)
+  -> (1397,5) avi_add_index_entry(avi_t *, unsigned char *, long, unsigned long, unsigned long) (isz = 68) (sz = 84)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1397,54) lseek(int, __off_t, int)
+  -> EXTERN: (1400,10) lseek(int, __off_t, int)
+  -> EXTERN: (1412,9) strncasecmp(const char *, const char *, size_t)
+  -> EXTERN: (1414,36) strncasecmp(const char *, const char *, size_t)
+  -> (1422,29) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1423,45) malloc(size_t)
+  -> (1424,28) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1428,55) malloc(size_t)
+  -> (1429,38) AVI_close(avi_t *) (isz = 25) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1441,9) strncasecmp(const char *, const char *, size_t)
+  -> (1442,36) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> (1443,36) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> (1444,36) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1451,11) strncasecmp(const char *, const char *, size_t)
+  -> (1452,43) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> (1453,43) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1466,4) lseek(int, __off_t, int)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1209,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable lasttag was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1318,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable j was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1343,7)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1375,7)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1408,4)
+   remark #25408: memset generated
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between nai[j] (1408:4) and nai[j] (1408:31)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between nai[j] (1408:31) and nai[j] (1408:4)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=8
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1408,4)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 2  
+      remark #25015: Estimate of max trip count of loop=12
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1408,4)
+   <Remainder>
+      remark #25015: Estimate of max trip count of loop=12
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1410,4)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between AVI->video_tag (1412:9) and call:strncasecmp(const char *, const char *, size_t) (1414:36)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1414,6)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25015: Estimate of max trip count of loop=4
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1418,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable j was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1426,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable j was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1434,4)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=8
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1434,4)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=8
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1438,4)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between AVI->video_tag (1441:9) and AVI->audio_index[j]->tot[nai[j]] (1454:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between AVI->audio_index[j]->tot[nai[j]] (1454:3) and AVI->video_tag (1441:9)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1449,6)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:strncasecmp(const char *, const char *, size_t) (1451:11) and call:str2ulong(unsigned char *) (1453:43)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:str2ulong(unsigned char *) (1453:43) and call:strncasecmp(const char *, const char *, size_t) (1451:11)
+      remark #15382: vectorization support: call to function str2ulong(unsigned char *) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1452,43) ]
+      remark #15382: vectorization support: call to function str2ulong(unsigned char *) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1453,43) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:strncasecmp(const char *, const char *, size_t) (1451:11) and call:str2ulong(unsigned char *) (1453:43)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:str2ulong(unsigned char *) (1453:43) and call:strncasecmp(const char *, const char *, size_t) (1451:11)
+      remark #25015: Estimate of max trip count of loop=4
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1462,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable j was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1180,13)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+   remark #17102: loop was not parallelized: not a parallelization candidate
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1225,13):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (1, 0), and destination (alignment, offset): (1, 0)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1276,6):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (1, 0), and destination (alignment, offset): (1, 0)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1408,4):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1131,1):remark #34051: REGISTER ALLOCATION : [avi_parse_input_file] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1131
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   17[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm1]
+        
+    Routine temporaries
+        Total         :     591
+            Global    :     162
+            Local     :     429
+        Regenerable   :     122
+        Spilled       :      36
+        
+    Routine stack
+        Variables     :     384 bytes*
+            Reads     :       9 [3.35e+00 ~ 1.3%]
+            Writes    :      12 [3.78e+00 ~ 1.4%]
+        Spills        :     240 bytes*
+            Reads     :      56 [1.02e+01 ~ 3.9%]
+            Writes    :      40 [7.78e+00 ~ 2.9%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: str2ulong(unsigned char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (str2ulong(unsigned char *)) [24/62=38.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(121,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(121,1):remark #34051: REGISTER ALLOCATION : [str2ulong] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:121
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    5[ rax rdx rcx rsi rdi]
+        
+    Routine temporaries
+        Total         :      20
+            Global    :       0
+            Local     :      20
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: avi_read(int, char *, size_t)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (avi_read(int, char *, size_t)) [25/62=40.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(64,1)
+  -> EXTERN: (69,11) read(int, void *, size_t)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(68,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(64,1):remark #34051: REGISTER ALLOCATION : [avi_read] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:64
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rsi rdi r12-r15]
+        
+    Routine temporaries
+        Total         :      22
+            Global    :      12
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      32 bytes*
+            Reads     :       8 [3.83e+00 ~ 6.4%]
+            Writes    :       4 [3.83e+00 ~ 6.4%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: str2ushort(unsigned char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (str2ushort(unsigned char *)) [26/62=41.9%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(125,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(125,1):remark #34051: REGISTER ALLOCATION : [str2ushort] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:125
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       0
+            Local     :      14
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: avi_add_index_entry(avi_t *, unsigned char *, long, unsigned long, unsigned long)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (avi_add_index_entry(avi_t *, unsigned char *, long, unsigned long, unsigned long)) [27/62=43.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(177,1)
+  -> EXTERN: (181,12) realloc(void *, size_t)
+  -> EXTERN: (195,4) memcpy(void *__restrict__, const void *__restrict__, size_t)
+  -> (196,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (197,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (198,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(195,4):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (1, 0), and destination (alignment, offset): (1, 0)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(177,1):remark #34051: REGISTER ALLOCATION : [avi_add_index_entry] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:177
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   11[ rax rdx rcx rbx rbp rsi rdi r8 r12-r14]
+        
+    Routine temporaries
+        Total         :      52
+            Global    :      15
+            Local     :      37
+        Regenerable   :       2
+        Spilled       :       5
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_close(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_close(avi_t *)) [28/62=45.2%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1040,1)
+  -> (1047,13) avi_close_output_file(avi_t *) (isz = 1155) (sz = 1164)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1053,4) close(int)
+  -> EXTERN: (1054,17) free(void *)
+  -> EXTERN: (1055,25) free(void *)
+  -> EXTERN: (1058,4) free(void *)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1040,1):remark #34051: REGISTER ALLOCATION : [AVI_close] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1040
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rbx rbp rdi]
+        
+    Routine temporaries
+        Total         :      20
+            Global    :      11
+            Local     :       9
+        Regenerable   :       1
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: avi_close_output_file(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (avi_close_output_file(avi_t *)) [29/62=46.8%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(579,1)
+  -> (603,10) avi_add_chunk(avi_t *, unsigned char *, unsigned char *, int) (isz = 48) (sz = 62)
+     [[ Unable to inline callsite  <1>]]
+  -> (629,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (635,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (651,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (652,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (655,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (656,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (661,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (662,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (663,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (665,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (671,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (672,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (673,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (675,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (676,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (677,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (678,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (684,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (691,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (693,4) memcpy(void *__restrict__, const void *__restrict__, size_t)
+  -> (694,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (695,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (696,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (697,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (698,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (699,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (700,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (701,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (702,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (703,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (704,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (705,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (712,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (713,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (714,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (715,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (717,4) memcpy(void *__restrict__, const void *__restrict__, size_t)
+  -> (719,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (720,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (721,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (722,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (723,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (727,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (736,14) avi_sampsize(avi_t *, int) (isz = 14) (sz = 23)
+     [[ Unable to inline callsite  <1>]]
+  -> (739,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (746,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (751,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (754,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (755,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (756,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (759,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (760,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (761,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (762,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (763,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (764,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (767,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (769,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (770,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (777,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (780,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (782,3) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (792,8) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (797,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (807,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (819,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (821,4) sprintf(char *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (822,4) memset(void *, int, size_t)
+  -> EXTERN: (823,4) memcpy(void *__restrict__, const void *__restrict__, size_t)
+  -> EXTERN: (823,35) strlen(const char *)
+  -> EXTERN: (848,7) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (849,7) exit(int)
+  -> (853,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (854,4) memset(void *, int, size_t)
+  -> (861,4) long2str(unsigned char *, int) (isz = 18) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (867,9) lseek(int, __off_t, int)
+  -> CP_CLONE (868,9) avi_write..1(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(731,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable j was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(693,4):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (1, 0), and destination (alignment, offset): (16, 0)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(717,4):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (1, 0), and destination (alignment, offset): (16, 12)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(822,4):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to increase the width of stores
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(822,4):remark #34000: call to memset implemented inline with stores with proven (alignment, offset): (4, 0)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(823,4):remark #34014: optimization advice for memcpy: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(823,4):remark #34026: call to memcpy implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(854,4):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(854,4):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(579,1):remark #34051: REGISTER ALLOCATION : [avi_close_output_file] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:579
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   15[ rax rdx rcx rbx rbp rsi rdi r12-r15 zmm0-zmm3]
+        
+    Routine temporaries
+        Total         :     391
+            Global    :      41
+            Local     :     350
+        Regenerable   :     159
+        Spilled       :      13
+        
+    Routine stack
+        Variables     :    2048 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :      31 [7.95e+01 ~ 5.8%]
+        Spills        :      56 bytes*
+            Reads     :      12 [5.13e+01 ~ 3.8%]
+            Writes    :      11 [2.64e+01 ~ 1.9%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: long2str(unsigned char *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (long2str(unsigned char *, int)) [30/62=48.4%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(110,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(110,1):remark #34051: REGISTER ALLOCATION : [long2str] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:110
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      13
+            Global    :       0
+            Local     :      13
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_open_fd(int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_open_fd(int, int)) [31/62=50.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1105,1)
+  -> EXTERN: (1110,19) malloc(size_t)
+  -> EXTERN: (1116,3) memset(void *, int, size_t)
+  -> (1123,3) avi_parse_input_file(avi_t *, int) (isz = 1300) (sz = 1327)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1116,3):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1116,3):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1105,1):remark #34051: REGISTER ALLOCATION : [AVI_open_fd] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1105
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    6[ rax rdx rbx rsi rdi r12]
+        
+    Routine temporaries
+        Total         :      21
+            Global    :      10
+            Local     :      11
+        Regenerable   :       4
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       8 bytes*
+            Reads     :       2 [0.00e+00 ~ 0.0%]
+            Writes    :       1 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_video_frames(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_video_frames(avi_t *)) [32/62=51.6%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1473,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1473,1):remark #34051: REGISTER ALLOCATION : [AVI_video_frames] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1473
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       0
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_video_width(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_video_width(avi_t *)) [33/62=53.2%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1477,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1477,1):remark #34051: REGISTER ALLOCATION : [AVI_video_width] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1477
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       0
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_video_height(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_video_height(avi_t *)) [34/62=54.8%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1481,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1481,1):remark #34051: REGISTER ALLOCATION : [AVI_video_height] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1481
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       0
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_frame_rate(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_frame_rate(avi_t *)) [35/62=56.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1485,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1485,1):remark #34051: REGISTER ALLOCATION : [AVI_frame_rate] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1485
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rdi zmm0]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       0
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_video_compressor(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_video_compressor(avi_t *)) [36/62=58.1%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1489,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1489,1):remark #34051: REGISTER ALLOCATION : [AVI_video_compressor] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1489
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       0
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_max_video_chunk(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_max_video_chunk(avi_t *)) [37/62=59.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1494,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1494,1):remark #34051: REGISTER ALLOCATION : [AVI_max_video_chunk] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1494
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       0
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_audio_tracks(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_audio_tracks(avi_t *)) [38/62=61.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1499,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1499,1):remark #34051: REGISTER ALLOCATION : [AVI_audio_tracks] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1499
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       0
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_audio_channels(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_audio_channels(avi_t *)) [39/62=62.9%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1504,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1504,1):remark #34051: REGISTER ALLOCATION : [AVI_audio_channels] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1504
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       0
+            Local     :      14
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_audio_mp3rate(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_audio_mp3rate(avi_t *)) [40/62=64.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1509,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1509,1):remark #34051: REGISTER ALLOCATION : [AVI_audio_mp3rate] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1509
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       0
+            Local     :      14
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_audio_bits(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_audio_bits(avi_t *)) [41/62=66.1%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1514,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1514,1):remark #34051: REGISTER ALLOCATION : [AVI_audio_bits] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1514
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       0
+            Local     :      14
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_audio_format(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_audio_format(avi_t *)) [42/62=67.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1519,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1519,1):remark #34051: REGISTER ALLOCATION : [AVI_audio_format] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1519
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       0
+            Local     :      14
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_audio_rate(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_audio_rate(avi_t *)) [43/62=69.4%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1524,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1524,1):remark #34051: REGISTER ALLOCATION : [AVI_audio_rate] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1524
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       0
+            Local     :      14
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_audio_bytes(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_audio_bytes(avi_t *)) [44/62=71.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1529,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1529,1):remark #34051: REGISTER ALLOCATION : [AVI_audio_bytes] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1529
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       0
+            Local     :      14
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_audio_chunks(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_audio_chunks(avi_t *)) [45/62=72.6%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1534,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1534,1):remark #34051: REGISTER ALLOCATION : [AVI_audio_chunks] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1534
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       0
+            Local     :      14
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_audio_codech_offset(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_audio_codech_offset(avi_t *)) [46/62=74.2%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1539,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1539,1):remark #34051: REGISTER ALLOCATION : [AVI_audio_codech_offset] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1539
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       0
+            Local     :      14
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_audio_codecf_offset(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_audio_codecf_offset(avi_t *)) [47/62=75.8%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1544,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1544,1):remark #34051: REGISTER ALLOCATION : [AVI_audio_codecf_offset] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1544
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       0
+            Local     :      14
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_video_codech_offset(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_video_codech_offset(avi_t *)) [48/62=77.4%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1549,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1549,1):remark #34051: REGISTER ALLOCATION : [AVI_video_codech_offset] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1549
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       0
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_video_codecf_offset(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_video_codecf_offset(avi_t *)) [49/62=79.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1554,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1554,1):remark #34051: REGISTER ALLOCATION : [AVI_video_codecf_offset] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1554
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       0
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_frame_size(avi_t *, long)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_frame_size(avi_t *, long)) [50/62=80.6%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1559,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1559,1):remark #34051: REGISTER ALLOCATION : [AVI_frame_size] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1559
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      17
+            Global    :       9
+            Local     :       8
+        Regenerable   :       3
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_audio_size(avi_t *, long)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_audio_size(avi_t *, long)) [51/62=82.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1568,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1568,1):remark #34051: REGISTER ALLOCATION : [AVI_audio_size] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1568
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      21
+            Global    :      10
+            Local     :      11
+        Regenerable   :       3
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_get_video_position(avi_t *, long)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_get_video_position(avi_t *, long)) [52/62=83.9%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1577,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1577,1):remark #34051: REGISTER ALLOCATION : [AVI_get_video_position] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1577
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      17
+            Global    :       9
+            Local     :       8
+        Regenerable   :       3
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_seek_start(avi_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_seek_start(avi_t *)) [53/62=85.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1587,1)
+  -> EXTERN: (1590,4) lseek(int, __off_t, int)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1587,1):remark #34051: REGISTER ALLOCATION : [AVI_seek_start] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1587
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    5[ rax rdx rsi rdi r13]
+        
+    Routine temporaries
+        Total         :      15
+            Global    :       7
+            Local     :       8
+        Regenerable   :       3
+        Spilled       :       1
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_set_video_position(avi_t *, long)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_set_video_position(avi_t *, long)) [54/62=87.1%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1596,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1596,1):remark #34051: REGISTER ALLOCATION : [AVI_set_video_position] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1596
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      16
+            Global    :       9
+            Local     :       7
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_set_audio_bitrate(avi_t *, long)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_set_audio_bitrate(avi_t *, long)) [55/62=88.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1606,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1606,1):remark #34051: REGISTER ALLOCATION : [AVI_set_audio_bitrate] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1606
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      16
+            Global    :       9
+            Local     :       7
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_read_frame(avi_t *, char *, int *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_read_frame(avi_t *, char *, int *)) [56/62=90.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1615,1)
+  -> EXTERN: (1622,4) lseek(int, __off_t, int)
+  -> (1623,8) avi_read(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1615,1):remark #34051: REGISTER ALLOCATION : [AVI_read_frame] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1615
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rbx rbp rsi rdi r8 r12]
+        
+    Routine temporaries
+        Total         :      31
+            Global    :      15
+            Local     :      16
+        Regenerable   :       4
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_set_audio_position(avi_t *, long)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_set_audio_position(avi_t *, long)) [57/62=91.9%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1633,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1646,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1633,1):remark #34051: REGISTER ALLOCATION : [AVI_set_audio_position] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1633
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rsi rdi r8-r11]
+        
+    Routine temporaries
+        Total         :      38
+            Global    :      13
+            Local     :      25
+        Regenerable   :       3
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_read_audio(avi_t *, char *, long)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_read_audio(avi_t *, char *, long)) [58/62=93.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1662,1)
+  -> EXTERN: (1685,7) lseek(int, __off_t, int)
+  -> (1686,11) avi_read(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1670,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1662,1):remark #34051: REGISTER ALLOCATION : [AVI_read_audio] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1662
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   14[ rax rdx rcx rbx rsi rdi r8-r15]
+        
+    Routine temporaries
+        Total         :      56
+            Global    :      20
+            Local     :      36
+        Regenerable   :       4
+        Spilled       :       5
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      40 bytes*
+            Reads     :      15 [3.39e+00 ~ 3.9%]
+            Writes    :       5 [3.39e+00 ~ 3.9%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_read_data(avi_t *, char *, long, char *, long, long *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_read_data(avi_t *, char *, long, char *, long, long *)) [59/62=95.2%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1705,1)
+  -> (1726,11) avi_read(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1730,10) strncasecmp(const char *, const char *, size_t)
+  -> EXTERN: (1732,10) lseek(int, __off_t, int)
+  -> (1736,11) str2ulong(unsigned char *) (isz = 16) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1738,10) strncasecmp(const char *, const char *, size_t)
+  -> EXTERN: (1744,13) lseek(int, __off_t, int)
+  -> (1747,13) avi_read(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1750,15) strncasecmp(const char *, const char *, size_t)
+  -> EXTERN: (1755,13) lseek(int, __off_t, int)
+  -> (1758,13) avi_read(int, char *, size_t) (isz = 23) (sz = 35)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1763,13) lseek(int, __off_t, int)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1720,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1705,1):remark #34051: REGISTER ALLOCATION : [AVI_read_data] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1705
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   13[ rax rdx rcx rbx rbp rsi rdi r8-r9 r12-r15]
+        
+    Routine temporaries
+        Total         :      96
+            Global    :      28
+            Local     :      68
+        Regenerable   :      26
+        Spilled       :       8
+        
+    Routine stack
+        Variables     :       8 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      56 bytes*
+            Reads     :      23 [3.98e+00 ~ 4.8%]
+            Writes    :       7 [5.04e+00 ~ 6.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_max_size()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_max_size()) [60/62=96.8%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1833,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1833,1):remark #34051: REGISTER ALLOCATION : [AVI_max_size] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1833
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    1[ rax]
+        
+    Routine temporaries
+        Total         :       8
+            Global    :       0
+            Local     :       8
+        Regenerable   :       2
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_strerror()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_strerror()) [61/62=98.4%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1812,1)
+  -> EXTERN: (1823,7) sprintf(char *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (1823,57) strerror(int)
+  -> EXTERN: (1823,66) __errno_location(void)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1812,1):remark #34051: REGISTER ALLOCATION : [AVI_strerror] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1812
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    6[ rax rdx rcx rsi rdi r14]
+        
+    Routine temporaries
+        Total         :      28
+            Global    :      12
+            Local     :      16
+        Regenerable   :       6
+        Spilled       :       1
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: AVI_print_error(char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (AVI_print_error(char *)) [62/62=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1792,1)
+  -> EXTERN: (1797,4) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (1807,7) perror(const char *)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c(1792,1):remark #34051: REGISTER ALLOCATION : [AVI_print_error] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/AVI/avilib.c:1792
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    5[ rax rdx rcx rsi rdi]
+        
+    Routine temporaries
+        Total         :      23
+            Global    :       9
+            Local     :      14
+        Regenerable   :       5
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> Inlining the function will lead to incorrect program behavior.
+

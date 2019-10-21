@@ -1,0 +1,13 @@
+#This is for a generic single-processor SGI workstation
+F77 	= f77
+FLINK	= f77
+FFLAGS	= 
+
+CFLAGS	= 
+C_LIB   = -lm
+
+BINDIR	= ../bin
+
+RAND   	= randdp
+
+WTIME	= wtime.c

@@ -1,0 +1,24 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB005-indirectaccess1-orig-yes.c",
+"function":"main",
+"loop id":"1",
+"loop line":"106",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB005-indirectaccess1-orig-yes.c",
+"function":"main",
+"loop id":"2",
+"loop line":"111",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

@@ -1,0 +1,68 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB046-doall2-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"58",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB046-doall2-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"59",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB046-doall2-orig-no.c",
+"function":"main",
+"loop id":"3",
+"loop line":"62",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 4":{
+"file":"./dataracebench/DRB046-doall2-orig-no.c",
+"function":"main",
+"loop id":"4",
+"loop line":"63",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 5":{
+"file":"./dataracebench/DRB046-doall2-orig-no.c",
+"function":"main",
+"loop id":"5",
+"loop line":"66",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 6":{
+"file":"./dataracebench/DRB046-doall2-orig-no.c",
+"function":"main",
+"loop id":"6",
+"loop line":"67",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

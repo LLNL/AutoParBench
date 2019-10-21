@@ -1,0 +1,513 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.o
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: main()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main()) [1/5=20.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(580,1)
+  -> EXTERN: (617,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (619,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (620,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (623,5) timer_clear()
+  -> (626,5) create_seq(double, double) (isz = 47) (sz = 54)
+     [[ Unable to inline callsite  <1>]]
+  -> (632,5) rank(int) (isz = 347) (sz = 352)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (637,24) printf(const char *__restrict__, ...)
+  -> EXTERN: (640,5) timer_start()
+  -> EXTERN: (647,28) printf(const char *__restrict__, ...)
+  -> (649,9) rank(int) (isz = 347) (sz = 352)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (652,13) omp_get_num_threads(void)
+  -> EXTERN: (657,5) timer_stop()
+  -> EXTERN: (658,19) timer_read()
+  -> (663,5) full_verify() (isz = 57) (sz = 60)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (670,5) c_print_results()
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(589,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(645,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(647,28) ]
+   remark #15382: vectorization support: call to function rank(int) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(649,9) ]
+   remark #15382: vectorization support: call to function omp_get_num_threads(void) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(652,13) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(589,5)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=5
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(589,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=5
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(580,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c:580
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   15[ rax rdx rcx rbx rsi rdi r8-r14 zmm0-zmm1]
+        
+    Routine temporaries
+        Total         :     149
+            Global    :      24
+            Local     :     125
+        Regenerable   :      73
+        Spilled       :       1
+        
+    Routine stack
+        Variables     :      24 bytes*
+            Reads     :       4 [1.00e+01 ~ 3.3%]
+            Writes    :       7 [0.00e+00 ~ 0.0%]
+        Spills        :      48 bytes*
+            Reads     :      11 [6.00e+00 ~ 2.0%]
+            Writes    :      11 [1.00e+00 ~ 0.3%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: rank(int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (rank(int)) [2/5=40.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(368,1)
+  -> EXTERN: (438,29) printf(const char *__restrict__, ...)
+  -> EXTERN: (449,29) printf(const char *__restrict__, ...)
+  -> EXTERN: (463,29) printf(const char *__restrict__, ...)
+  -> EXTERN: (474,29) printf(const char *__restrict__, ...)
+  -> EXTERN: (488,29) printf(const char *__restrict__, ...)
+  -> EXTERN: (500,29) printf(const char *__restrict__, ...)
+  -> EXTERN: (513,29) printf(const char *__restrict__, ...)
+  -> EXTERN: (524,29) printf(const char *__restrict__, ...)
+  -> EXTERN: (537,29) printf(const char *__restrict__, ...)
+  -> EXTERN: (548,29) printf(const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(385,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(389,5)
+   remark #25408: memset generated
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(393,3)
+   remark #25408: memset generated
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(397,5)
+<Distributed chunk1>
+   remark #25426: Loop Distributed (2 way) 
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(397,5)
+<Distributed chunk2>
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between prv_buff1[key_buff2[i]] (406:9) and prv_buff1[key_buff2[i]] (406:9)
+   remark #15346: vector dependence: assumed ANTI dependence between prv_buff1[key_buff2[i]] (406:9) and prv_buff1[key_buff2[i]] (406:9)
+   remark #25438: unrolled without remainder by 2  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(409,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between prv_buff1[i+1] (410:9) and prv_buff1[i] (410:9)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between prv_buff1[i+1] (410:9) and prv_buff1[i] (410:9)
+   remark #25439: unrolled with remainder by 2  
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(409,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(414,2)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ prv_buff1 } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+   remark #25015: Estimate of max trip count of loop=524288
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(427,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(488,29) ]
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(500,29) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(385,5)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=5
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(385,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=5
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(414,2)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=524288
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(414,2)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=524288
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(389,5):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(393,3):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(368,1):remark #34051: REGISTER ALLOCATION : [rank] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c:368
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   13[ rax rdx rcx rbx rbp rsi rdi r8-r13]
+        
+    Routine temporaries
+        Total         :     223
+            Global    :      45
+            Local     :     178
+        Regenerable   :      76
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :   2097200 bytes*
+            Reads     :      15 [1.32e+06 ~ 15.7%]
+            Writes    :      16 [1.08e+06 ~ 12.9%]
+        Spills        :      48 bytes*
+            Reads     :      18 [9.16e-01 ~ 0.0%]
+            Writes    :      18 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: create_seq(double, double)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (create_seq(double, double)) [3/5=60.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(303,1)
+  -> (311,10) randlc() (isz = 87) (sz = 96)
+     [[ Unable to inline callsite  <1>]]
+  -> (312,11) randlc() (isz = 87) (sz = 96)
+     [[ Unable to inline callsite  <1>]]
+  -> (313,15) randlc() (isz = 87) (sz = 96)
+     [[ Unable to inline callsite  <1>]]
+  -> (314,11) randlc() (isz = 87) (sz = 96)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(309,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15382: vectorization support: call to function randlc() cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(311,10) ]
+   remark #15382: vectorization support: call to function randlc() cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(312,11) ]
+   remark #15382: vectorization support: call to function randlc() cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(313,15) ]
+   remark #15382: vectorization support: call to function randlc() cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(314,11) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(303,1):remark #34051: REGISTER ALLOCATION : [create_seq] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c:303
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rsi rdi r12 zmm0-zmm1]
+        
+    Routine temporaries
+        Total         :      35
+            Global    :      18
+            Local     :      17
+        Regenerable   :      11
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :      16 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       2 [3.75e-01 ~ 0.0%]
+        Spills        :      24 bytes*
+            Reads     :       3 [3.00e+06 ~ 11.5%]
+            Writes    :       3 [3.00e+06 ~ 11.5%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: randlc()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (randlc()) [4/5=80.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(237,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(255,9)
+<Distributed chunk1>
+   remark #25084: Preprocess Loopnests: Moving Out Store    [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(257,11) ]
+   remark #25084: Preprocess Loopnests: Moving Out Store    [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(258,11) ]
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between T23 (258:11) and T23 (258:11)
+   remark #17106: parallel dependence: assumed FLOW dependence between T23 (258:11) and T23 (258:11)
+   remark #17106: parallel dependence: assumed FLOW dependence between T23 (258:11) and T23 (258:11)
+   remark #17106: parallel dependence: assumed ANTI dependence between T23 (258:11) and T23 (258:11)
+   remark #17106: parallel dependence: assumed ANTI dependence between T23 (258:11) and T23 (258:11)
+   remark #17106: parallel dependence: assumed FLOW dependence between T23 (258:11) and T23 (258:11)
+   remark #17106: parallel dependence: assumed FLOW dependence between T23 (258:11) and T23 (258:11)
+   remark #17106: parallel dependence: assumed ANTI dependence between T23 (258:11) and T23 (258:11)
+   remark #25426: Loop Distributed (2 way) 
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between T23 (258:11) and T23 (258:11)
+   remark #15346: vector dependence: assumed FLOW dependence between T23 (258:11) and T23 (258:11)
+   remark #15346: vector dependence: assumed FLOW dependence between T23 (258:11) and T23 (258:11)
+   remark #15346: vector dependence: assumed ANTI dependence between T23 (258:11) and T23 (258:11)
+   remark #15346: vector dependence: assumed ANTI dependence between T23 (258:11) and T23 (258:11)
+   remark #15346: vector dependence: assumed FLOW dependence between T23 (258:11) and T23 (258:11)
+   remark #15346: vector dependence: assumed FLOW dependence between T23 (258:11) and T23 (258:11)
+   remark #15346: vector dependence: assumed ANTI dependence between T23 (258:11) and T23 (258:11)
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(255,9)
+<Distributed chunk2>
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(255,9)
+<Remainder, Distributed chunk2>
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(260,9)
+<Distributed chunk1>
+   remark #25084: Preprocess Loopnests: Moving Out Store    [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(262,11) ]
+   remark #25084: Preprocess Loopnests: Moving Out Store    [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(263,11) ]
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between T46 (263:11) and T46 (263:11)
+   remark #17106: parallel dependence: assumed FLOW dependence between T46 (263:11) and T46 (263:11)
+   remark #17106: parallel dependence: assumed FLOW dependence between T46 (263:11) and T46 (263:11)
+   remark #17106: parallel dependence: assumed ANTI dependence between T46 (263:11) and T46 (263:11)
+   remark #17106: parallel dependence: assumed ANTI dependence between T46 (263:11) and T46 (263:11)
+   remark #17106: parallel dependence: assumed FLOW dependence between T46 (263:11) and T46 (263:11)
+   remark #17106: parallel dependence: assumed FLOW dependence between T46 (263:11) and T46 (263:11)
+   remark #17106: parallel dependence: assumed ANTI dependence between T46 (263:11) and T46 (263:11)
+   remark #25426: Loop Distributed (2 way) 
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between T46 (263:11) and T46 (263:11)
+   remark #15346: vector dependence: assumed FLOW dependence between T46 (263:11) and T46 (263:11)
+   remark #15346: vector dependence: assumed FLOW dependence between T46 (263:11) and T46 (263:11)
+   remark #15346: vector dependence: assumed ANTI dependence between T46 (263:11) and T46 (263:11)
+   remark #15346: vector dependence: assumed ANTI dependence between T46 (263:11) and T46 (263:11)
+   remark #15346: vector dependence: assumed FLOW dependence between T46 (263:11) and T46 (263:11)
+   remark #15346: vector dependence: assumed FLOW dependence between T46 (263:11) and T46 (263:11)
+   remark #15346: vector dependence: assumed ANTI dependence between T46 (263:11) and T46 (263:11)
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(260,9)
+<Distributed chunk2>
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(237,1):remark #34051: REGISTER ALLOCATION : [randlc] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c:237
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   18[ rax rdx rcx rsi rdi zmm0-zmm12]
+        
+    Routine temporaries
+        Total         :      53
+            Global    :      19
+            Local     :      34
+        Regenerable   :       2
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: full_verify()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (full_verify()) [5/5=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(329,1)
+  -> EXTERN: (351,9) printf(const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(337,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between key_buff2[i] (338:58) and key_buff_ptr_global[key_buff2[i]] (338:21)
+   remark #17106: parallel dependence: assumed FLOW dependence between key_buff_ptr_global[key_buff2[i]] (338:21) and key_buff2[i] (338:58)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between key_buff2[i] (338:58) and key_buff_ptr_global[key_buff2[i]] (338:21)
+   remark #15346: vector dependence: assumed FLOW dependence between key_buff_ptr_global[key_buff2[i]] (338:21) and key_buff2[i] (338:58)
+   remark #25438: unrolled without remainder by 2  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(344,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ j }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=8388607
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(344,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=8388607
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(344,5)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=8388607
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(344,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=8388607
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c(329,1):remark #34051: REGISTER ALLOCATION : [full_verify] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/IS/is.c:329
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   15[ rax rdx rcx rbx rbp rsi rdi r8-r15]
+        
+    Routine temporaries
+        Total         :     119
+            Global    :      30
+            Local     :      89
+        Regenerable   :      41
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :      24 bytes*
+            Reads     :       3 [3.05e+05 ~ 3.0%]
+            Writes    :       6 [0.00e+00 ~ 0.0%]
+        Spills        :      48 bytes*
+            Reads     :      12 [1.40e-01 ~ 0.0%]
+            Writes    :      12 [7.50e-01 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> Inlining the function will lead to incorrect program behavior.
+

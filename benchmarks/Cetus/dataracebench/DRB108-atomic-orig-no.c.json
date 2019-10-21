@@ -1,0 +1,13 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB108-atomic-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"105",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

@@ -1,0 +1,1154 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -c -qopenmp -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.o
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [1/21=4.8%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(83,1)
+  -> EXTERN: (88,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (89,5) exit(int)
+  -> (93,3) get_info(char **, int *, char *) (isz = 186) (sz = 195)
+     [[ Unable to inline callsite  <1>]]
+  -> (99,5) check_info(int, char) (isz = 27) (sz = 34)
+     [[ Unable to inline callsite  <1>]]
+  -> (103,3) read_info(int, char *) (isz = 69) (sz = 77)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (112,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (124,5) exit(int)
+  -> (132,5) write_info(int, char) (isz = 159) (sz = 166)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (139,3) exit(int)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(83,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:83
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    5[ rax rdx rcx rsi rdi]
+        
+    Routine temporaries
+        Total         :      44
+            Global    :      10
+            Local     :      34
+        Regenerable   :      20
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :      10 bytes*
+            Reads     :       8 [3.73e+00 ~ 18.1%]
+            Writes    :       2 [0.00e+00 ~ 0.0%]
+        Spills        :      16 bytes*
+            Reads     :       2 [2.00e+00 ~ 9.7%]
+            Writes    :       2 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: get_info(char **, int *, char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (get_info(char **, int *, char *)) [2/21=9.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(148,1)
+  -> EXTERN: (152,13) strcmp(const char *, const char *)
+  -> EXTERN: (152,39) strcmp(const char *, const char *)
+  -> EXTERN: (153,13) strcmp(const char *, const char *)
+  -> EXTERN: (153,39) strcmp(const char *, const char *)
+  -> EXTERN: (154,13) strcmp(const char *, const char *)
+  -> EXTERN: (154,39) strcmp(const char *, const char *)
+  -> EXTERN: (155,13) strcmp(const char *, const char *)
+  -> EXTERN: (155,39) strcmp(const char *, const char *)
+  -> EXTERN: (156,13) strcmp(const char *, const char *)
+  -> EXTERN: (156,39) strcmp(const char *, const char *)
+  -> EXTERN: (157,13) strcmp(const char *, const char *)
+  -> EXTERN: (157,39) strcmp(const char *, const char *)
+  -> EXTERN: (158,13) strcmp(const char *, const char *)
+  -> EXTERN: (158,39) strcmp(const char *, const char *)
+  -> EXTERN: (159,13) strcmp(const char *, const char *)
+  -> EXTERN: (159,39) strcmp(const char *, const char *)
+  -> EXTERN: (161,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (162,5) exit(int)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(148,1):remark #34051: REGISTER ALLOCATION : [get_info] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:148
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    6[ rax rdx rcx rsi rdi r8]
+        
+    Routine temporaries
+        Total         :     100
+            Global    :      24
+            Local     :      76
+        Regenerable   :      36
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: check_info(int, char)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (check_info(int, char)) [3/21=14.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(171,1)
+  -> EXTERN: (181,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (182,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (183,5) exit(int)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(171,1):remark #34051: REGISTER ALLOCATION : [check_info] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:171
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      18
+            Global    :       7
+            Local     :      11
+        Regenerable   :       6
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: read_info(int, char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (read_info(int, char *)) [4/21=19.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(198,1)
+  -> EXTERN: (202,8) fopen(const char *__restrict__, const char *__restrict__)
+  -> EXTERN: (220,19) fscanf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (222,13) printf(const char *__restrict__, ...)
+  -> EXTERN: (227,19) fscanf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (229,13) printf(const char *__restrict__, ...)
+  -> EXTERN: (235,9) printf(const char *__restrict__, ...)
+  -> EXTERN: (236,9) exit(int)
+  -> EXTERN: (241,3) fclose(FILE *)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(198,1):remark #34051: REGISTER ALLOCATION : [read_info] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:198
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rsi rdi r13-r15]
+        
+    Routine temporaries
+        Total         :      45
+            Global    :      15
+            Local     :      30
+        Regenerable   :      22
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: write_info(int, char)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (write_info(int, char)) [5/21=23.8%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(260,1)
+  -> EXTERN: (262,8) fopen(const char *__restrict__, const char *__restrict__)
+  -> EXTERN: (264,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (265,5) exit(int)
+  -> EXTERN: (277,11) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (279,11) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (288,11) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (289,11) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (297,11) printf(const char *__restrict__, ...)
+  -> EXTERN: (299,11) exit(int)
+  -> (305,5) write_sp_info(FILE *, char) (isz = 88) (sz = 95)
+     [[ Unable to inline callsite  <1>]]
+  -> (308,5) write_bt_info(FILE *, char) (isz = 88) (sz = 95)
+     [[ Unable to inline callsite  <1>]]
+  -> (311,5) write_lu_info(FILE *, char) (isz = 119) (sz = 126)
+     [[ Unable to inline callsite  <1>]]
+  -> (314,5) write_mg_info(FILE *, char) (isz = 129) (sz = 136)
+     [[ Unable to inline callsite  <1>]]
+  -> (317,5) write_is_info(FILE *, char) (isz = 20) (sz = 27)
+     [[ Unable to inline callsite  <1>]]
+  -> (320,5) write_ft_info(FILE *, char) (isz = 113) (sz = 120)
+     [[ Unable to inline callsite  <1>]]
+  -> (323,5) write_ep_info(FILE *, char) (isz = 68) (sz = 75)
+     [[ Unable to inline callsite  <1>]]
+  -> (326,5) write_cg_info(FILE *, char) (isz = 112) (sz = 119)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (329,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (330,5) exit(int)
+  -> (332,3) write_convertdouble_info(int, FILE *) (isz = 14) (sz = 21)
+     [[ Unable to inline callsite  <1>]]
+  -> (333,3) write_compiler_info(int, FILE *) (isz = 539) (sz = 546)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (334,3) fclose(FILE *)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(260,1):remark #34051: REGISTER ALLOCATION : [write_info] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:260
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rbp rsi rdi r12-r13]
+        
+    Routine temporaries
+        Total         :      74
+            Global    :      11
+            Local     :      63
+        Regenerable   :      27
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: write_cg_info(FILE *, char)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (write_cg_info(FILE *, char)) [6/21=28.6%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(483,1)
+  -> EXTERN: (505,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (506,5) exit(int)
+  -> EXTERN: (508,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (509,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (510,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (511,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (512,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(483,1):remark #34051: REGISTER ALLOCATION : [write_cg_info] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:483
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rsi rdi r12-r15]
+        
+    Routine temporaries
+        Total         :      49
+            Global    :      13
+            Local     :      36
+        Regenerable   :      21
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: write_convertdouble_info(int, FILE *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (write_convertdouble_info(int, FILE *)) [7/21=33.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(844,1)
+  -> EXTERN: (856,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(844,1):remark #34051: REGISTER ALLOCATION : [write_convertdouble_info] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:844
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rsi rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       8
+            Local     :       6
+        Regenerable   :       2
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: write_compiler_info(int, FILE *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (write_compiler_info(int, FILE *)) [8/21=38.1%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(591,1)
+  -> EXTERN: (600,13) fopen(const char *__restrict__, const char *__restrict__)
+  -> EXTERN: (602,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (607,5) exit(int)
+  -> EXTERN: (623,10) fgets(char *__restrict__, int, FILE *__restrict__)
+  -> EXTERN: (623,10) fgets(char *__restrict__, int, FILE *__restrict__)
+  -> (626,5) check_line(char *, char *, char *) (isz = 146) (sz = 159)
+     [[ Unable to inline callsite  <1>]]
+  -> (627,5) check_line(char *, char *, char *) (isz = 146) (sz = 159)
+     [[ Unable to inline callsite  <1>]]
+  -> (628,5) check_line(char *, char *, char *) (isz = 146) (sz = 159)
+     [[ Unable to inline callsite  <1>]]
+  -> (629,5) check_line(char *, char *, char *) (isz = 146) (sz = 159)
+     [[ Unable to inline callsite  <1>]]
+  -> (630,5) check_line(char *, char *, char *) (isz = 146) (sz = 159)
+     [[ Unable to inline callsite  <1>]]
+  -> (631,5) check_line(char *, char *, char *) (isz = 146) (sz = 159)
+     [[ Unable to inline callsite  <1>]]
+  -> (632,5) check_line(char *, char *, char *) (isz = 146) (sz = 159)
+     [[ Unable to inline callsite  <1>]]
+  -> (633,5) check_line(char *, char *, char *) (isz = 146) (sz = 159)
+     [[ Unable to inline callsite  <1>]]
+  -> (634,5) check_line(char *, char *, char *) (isz = 146) (sz = 159)
+     [[ Unable to inline callsite  <1>]]
+  -> (635,5) check_line(char *, char *, char *) (isz = 146) (sz = 159)
+     [[ Unable to inline callsite  <1>]]
+  -> (636,5) check_line(char *, char *, char *) (isz = 146) (sz = 159)
+     [[ Unable to inline callsite  <1>]]
+  -> (637,5) check_line(char *, char *, char *) (isz = 146) (sz = 159)
+     [[ Unable to inline callsite  <1>]]
+  -> (638,5) check_line(char *, char *, char *) (isz = 146) (sz = 159)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (642,10) time(time_t *)
+  -> EXTERN: (643,9) localtime(const time_t *)
+  -> EXTERN: (644,10) strftime(char *__restrict__, size_t, const char *__restrict__, const struct tm *__restrict__)
+  -> (655,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (656,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (657,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (658,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (659,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (660,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (661,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (662,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (663,4) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (666,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (667,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (668,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (669,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (670,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (671,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (672,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> (673,11) put_def_string(FILE *, char *, char *) (isz = 23) (sz = 32)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (676,11) printf(const char *__restrict__, ...)
+  -> EXTERN: (678,11) exit(int)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(623,3)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(591,1):remark #34051: REGISTER ALLOCATION : [write_compiler_info] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:591
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rbx rbp rsi rdi r8 r15]
+        
+    Routine temporaries
+        Total         :     195
+            Global    :      21
+            Local     :     174
+        Regenerable   :     152
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :    6008 bytes*
+            Reads     :       1 [5.43e+00 ~ 1.7%]
+            Writes    :      39 [3.87e+01 ~ 11.8%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: put_def_string(FILE *, char *, char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (put_def_string(FILE *, char *, char *)) [9/21=42.9%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(764,1)
+  -> EXTERN: (766,9) strlen(const char *)
+  -> EXTERN: (774,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(764,1):remark #34051: REGISTER ALLOCATION : [put_def_string] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:764
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rcx rsi rdi r8-r9]
+        
+    Routine temporaries
+        Total         :      23
+            Global    :      10
+            Local     :      13
+        Regenerable   :       4
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: check_line(char *, char *, char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (check_line(char *, char *, char *)) [10/21=47.6%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(684,1)
+  -> EXTERN: (694,8) __ctype_b_loc(void)
+  -> EXTERN: (696,10) __ctype_b_loc(void)
+  -> EXTERN: (696,10) __ctype_b_loc(void)
+  -> EXTERN: (700,10) __ctype_b_loc(void)
+  -> EXTERN: (700,10) __ctype_b_loc(void)
+  -> EXTERN: (704,3) strcpy(char *__restrict__, const char *__restrict__)
+  -> EXTERN: (706,7) strlen(const char *)
+  -> EXTERN: (707,11) strlen(const char *)
+  -> EXTERN: (708,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (717,5) exit(int)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(688,3)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable label was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(696,3)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable line was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(700,3)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable line was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(684,1):remark #34051: REGISTER ALLOCATION : [check_line] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:684
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rbx rbp rsi rdi r12 r15]
+        
+    Routine temporaries
+        Total         :      43
+            Global    :      18
+            Local     :      25
+        Regenerable   :       4
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: write_sp_info(FILE *, char)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (write_sp_info(FILE *, char)) [11/21=52.4%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(344,1)
+  -> EXTERN: (353,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (354,5) exit(int)
+  -> EXTERN: (356,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (357,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (358,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(344,1):remark #34051: REGISTER ALLOCATION : [write_sp_info] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:344
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rsi rdi r13-r15]
+        
+    Routine temporaries
+        Total         :      37
+            Global    :      12
+            Local     :      25
+        Regenerable   :      13
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: write_bt_info(FILE *, char)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (write_bt_info(FILE *, char)) [12/21=57.1%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(366,1)
+  -> EXTERN: (375,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (376,5) exit(int)
+  -> EXTERN: (378,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (379,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (380,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(366,1):remark #34051: REGISTER ALLOCATION : [write_bt_info] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:366
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rsi rdi r13-r15]
+        
+    Routine temporaries
+        Total         :      37
+            Global    :      12
+            Local     :      25
+        Regenerable   :      13
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: write_lu_info(FILE *, char)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (write_lu_info(FILE *, char)) [13/21=61.9%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(390,1)
+  -> EXTERN: (401,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (402,5) exit(int)
+  -> EXTERN: (408,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (409,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (410,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (411,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (413,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (414,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (415,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (417,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(390,1):remark #34051: REGISTER ALLOCATION : [write_lu_info] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:390
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rsi rdi r12-r15]
+        
+    Routine temporaries
+        Total         :      58
+            Global    :      12
+            Local     :      46
+        Regenerable   :      26
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: write_mg_info(FILE *, char)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (write_mg_info(FILE *, char)) [14/21=66.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(425,1)
+  -> EXTERN: (434,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (435,5) exit(int)
+  -> (437,15) ilog2(int) (isz = 20) (sz = 29)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (446,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (447,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (448,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (449,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (450,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (451,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (452,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (453,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (454,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (455,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(425,1):remark #34051: REGISTER ALLOCATION : [write_mg_info] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:425
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rsi rdi r12-r15]
+        
+    Routine temporaries
+        Total         :      74
+            Global    :      13
+            Local     :      61
+        Regenerable   :      35
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: ilog2(int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (ilog2(int)) [15/21=71.4%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(829,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(834,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between exp2 (835:5) and exp2 (836:5)
+   remark #17106: parallel dependence: assumed FLOW dependence between exp2 (836:5) and exp2 (835:5)
+   remark #17106: parallel dependence: assumed ANTI dependence between exp2 (835:5) and exp2 (836:5)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(835,26) ]
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(829,1):remark #34051: REGISTER ALLOCATION : [ilog2] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:829
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      13
+            Global    :       9
+            Local     :       4
+        Regenerable   :       2
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: write_is_info(FILE *, char)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (write_is_info(FILE *, char)) [16/21=76.2%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(464,1)
+  -> EXTERN: (472,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (473,5) exit(int)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(464,1):remark #34051: REGISTER ALLOCATION : [write_is_info] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:464
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      16
+            Global    :       7
+            Local     :       9
+        Regenerable   :       4
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: write_ft_info(FILE *, char)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (write_ft_info(FILE *, char)) [17/21=81.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(521,1)
+  -> EXTERN: (533,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (534,5) exit(int)
+  -> EXTERN: (539,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (540,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (541,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (542,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (543,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (544,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(521,1):remark #34051: REGISTER ALLOCATION : [write_ft_info] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:521
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rbp rsi rdi r12-r15]
+        
+    Routine temporaries
+        Total         :      57
+            Global    :      13
+            Local     :      44
+        Regenerable   :      22
+        Spilled       :       5
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: write_ep_info(FILE *, char)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (write_ep_info(FILE *, char)) [18/21=85.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(552,1)
+  -> EXTERN: (564,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (565,5) exit(int)
+  -> EXTERN: (568,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (569,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(552,1):remark #34051: REGISTER ALLOCATION : [write_ep_info] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:552
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rcx rsi rdi r14-r15]
+        
+    Routine temporaries
+        Total         :      30
+            Global    :      10
+            Local     :      20
+        Regenerable   :      10
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: check_include_line(char *, char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (check_include_line(char *, char *)) [19/21=90.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(722,1)
+  -> EXTERN: (731,8) __ctype_b_loc(void)
+  -> EXTERN: (733,10) __ctype_b_loc(void)
+  -> EXTERN: (733,10) __ctype_b_loc(void)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(725,3)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable include_string was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(733,3)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable line was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(737,3)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable filename was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(722,1):remark #34051: REGISTER ALLOCATION : [check_include_line] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:722
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rcx rbp rsi rdi r12]
+        
+    Routine temporaries
+        Total         :      33
+            Global    :      16
+            Local     :      17
+        Regenerable   :       5
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: put_string(FILE *, char *, char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (put_string(FILE *, char *, char *)) [20/21=95.2%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(748,1)
+  -> EXTERN: (750,9) strlen(const char *)
+  -> EXTERN: (758,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (759,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(748,1):remark #34051: REGISTER ALLOCATION : [put_string] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:748
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rsi rdi r8 r13-r15]
+        
+    Routine temporaries
+        Total         :      32
+            Global    :      12
+            Local     :      20
+        Regenerable   :      10
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: put_def_variable(FILE *, char *, char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (put_def_variable(FILE *, char *, char *)) [21/21=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(778,1)
+  -> EXTERN: (780,9) strlen(const char *)
+  -> EXTERN: (788,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c(778,1):remark #34051: REGISTER ALLOCATION : [put_def_variable] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/sys/setparams.c:778
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rcx rsi rdi r8-r9]
+        
+    Routine temporaries
+        Total         :      23
+            Global    :      10
+            Local     :      13
+        Regenerable   :       4
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> Inlining the function will lead to incorrect program behavior.
+

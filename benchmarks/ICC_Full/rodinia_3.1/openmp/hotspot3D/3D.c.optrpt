@@ -1,0 +1,880 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.o
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [1/8=12.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(202,1)
+  -> (205,9) usage(int, char **) (isz = 36) (sz = 42)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (209,22) atoi(const char *)
+  -> EXTERN: (215,19) atoi(const char *)
+  -> EXTERN: (216,19) atoi(const char *)
+  -> EXTERN: (217,18) atoi(const char *)
+  -> EXTERN: (239,23) calloc(size_t, size_t)
+  -> EXTERN: (240,24) malloc(size_t)
+  -> EXTERN: (241,22) calloc(size_t, size_t)
+  -> EXTERN: (242,23) calloc(size_t, size_t)
+  -> EXTERN: (244,29) calloc(size_t, size_t)
+  -> (247,5) readinput(float *, int, int, int, char *) (isz = 97) (sz = 110)
+     [[ Unable to inline callsite  <1>]]
+  -> (248,5) readinput(float *, int, int, int, char *) (isz = 97) (sz = 110)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (250,5) memcpy(void *__restrict__, const void *__restrict__, size_t)
+  -> EXTERN: (254,5) gettimeofday(struct timeval *__restrict__, __timezone_ptr_t)
+  -> (255,5) computeTempOMP(float *, float *, float *, int, int, int, float, float, float, float, float, int) (isz = 168) (sz = 195)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (256,5) gettimeofday(struct timeval *__restrict__, __timezone_ptr_t)
+  -> (258,5) computeTempCPU(float *, float *, float *, int, int, int, float, float, float, float, float, int) (isz = 158) (sz = 185)
+     [[ Unable to inline callsite  <1>]]
+  -> (260,17) accuracy(float *, float *, int) (isz = 36) (sz = 47)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (261,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (262,5) printf(const char *__restrict__, ...)
+  -> (263,5) writeoutput(float *, int, int, int, char *) (isz = 76) (sz = 89)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (264,5) free(void *)
+  -> EXTERN: (265,5) free(void *)
+  -> EXTERN: (265,20) free(void *)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(250,5):remark #34014: optimization advice for memcpy: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(250,5):remark #34014: optimization advice for memcpy: increase the source's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(250,5):remark #34026: call to memcpy implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(202,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c:202
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   29[ rax rdx rcx rbx rsi rdi r8-r10 r12-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     179
+            Global    :      40
+            Local     :     139
+        Regenerable   :      32
+        Spilled       :      20
+        
+    Routine stack
+        Variables     :      36 bytes*
+            Reads     :       6 [4.00e+00 ~ 1.8%]
+            Writes    :       2 [0.00e+00 ~ 0.0%]
+        Spills        :     120 bytes*
+            Reads     :      28 [2.80e+01 ~ 12.9%]
+            Writes    :      15 [1.50e+01 ~ 6.9%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: readinput(float *, int, int, int, char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (readinput(float *, int, int, int, char *)) [2/8=25.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(30,83)
+  -> EXTERN: (36,16) fopen(const char *__restrict__, const char *__restrict__)
+  -> (37,7) fatal(char *) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (44,17) fgets(char *__restrict__, int, FILE *__restrict__)
+  -> (44,51) fatal(char *) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (45,17) feof(FILE *)
+  -> (46,15) fatal(char *) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (47,18) sscanf(const char *__restrict__, const char *__restrict__, ...)
+  -> (48,15) fatal(char *) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (52,5) fclose(FILE *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(40,5)
+   remark #25095: Loop Interchange not done due to: User Function Inside Loop Nest
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 3 ) --> ( 1 3 2 ) 
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fgets(char *__restrict__, int, FILE *__restrict__) (44:17) and call:fatal(char *) (48:15)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fatal(char *) (48:15) and call:fgets(char *__restrict__, int, FILE *__restrict__) (44:17)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(41,7)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:fgets(char *__restrict__, int, FILE *__restrict__) (44:17) and call:fatal(char *) (48:15)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:fatal(char *) (48:15) and call:fgets(char *__restrict__, int, FILE *__restrict__) (44:17)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(42,9)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed OUTPUT dependence between call:fgets(char *__restrict__, int, FILE *__restrict__) (44:17) and call:fatal(char *) (48:15)
+         remark #17106: parallel dependence: assumed OUTPUT dependence between call:fatal(char *) (48:15) and call:fgets(char *__restrict__, int, FILE *__restrict__) (44:17)
+         remark #15382: vectorization support: call to function fgets(char *__restrict__, int, FILE *__restrict__) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(44,17) ]
+         remark #15382: vectorization support: call to function fatal(char *) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(44,51) ]
+         remark #15382: vectorization support: call to function fatal(char *) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(46,15) ]
+         remark #15382: vectorization support: call to function sscanf(const char *__restrict__, const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(47,18) ]
+         remark #15382: vectorization support: call to function fatal(char *) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(48,15) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:fgets(char *__restrict__, int, FILE *__restrict__) (44:17) and call:fatal(char *) (48:15)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:fatal(char *) (48:15) and call:fgets(char *__restrict__, int, FILE *__restrict__) (44:17)
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(30,83):remark #34051: REGISTER ALLOCATION : [readinput] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c:30
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   12[ rax rdx rcx rbx rbp rsi rdi r8 r12-r15]
+        
+    Routine temporaries
+        Total         :      57
+            Global    :      27
+            Local     :      30
+        Regenerable   :      20
+        Spilled       :      11
+        
+    Routine stack
+        Variables     :     260 bytes*
+            Reads     :       1 [1.25e+02 ~ 3.7%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      48 bytes*
+            Reads     :       6 [7.74e+01 ~ 2.3%]
+            Writes    :       6 [7.74e+01 ~ 2.3%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: usage(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (usage(int, char **)) [3/8=37.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(187,1)
+  -> EXTERN: (188,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (189,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (190,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (192,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (193,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (194,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (195,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (196,5) exit(int)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(187,1):remark #34051: REGISTER ALLOCATION : [usage] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c:187
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      41
+            Global    :       0
+            Local     :      41
+        Regenerable   :      16
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: computeTempOMP(float *, float *, float *, int, int, int, float, float, float, float, float, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (computeTempOMP(float *, float *, float *, int, int, int, float, float, float, float, float, int)) [4/8=50.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(138,1)
+  -> EXTERN: (155,9) printf(const char *__restrict__, ...)
+  -> EXTERN: (155,40) omp_get_num_threads(void)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(155,9)
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 3 4 ) --> ( 2 3 1 4 ) 
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between tOut_t[c] (172:25) and tOut_t[c] (172:25)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between tOut_t[c] (172:25) and tOut_t[c] (172:25)
+   remark #25261: Invariant Condition eliminated(Proven True) at line 170
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+   <Predicate Optimized v2>
+      remark #25422: Invariant Condition at line 169 hoisted out of this loop
+      remark #25422: Invariant Condition at line 171 hoisted out of this loop
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+      remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+   <Predicate Optimized v3>
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+      remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+   <Predicate Optimized v3>
+      remark #25422: Invariant Condition at line 171 hoisted out of this loop
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+      remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+   <Predicate Optimized v4>
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+      remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(161,17)
+      remark #25260: Invariant Condition eliminated(Proven False) at line 168
+      remark #25261: Invariant Condition eliminated(Proven True) at line 170
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+      <Predicate Optimized v2>
+         remark #25422: Invariant Condition at line 169 hoisted out of this loop
+         remark #25422: Invariant Condition at line 171 hoisted out of this loop
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+      <Predicate Optimized v3>
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+      <Predicate Optimized v3>
+         remark #25422: Invariant Condition at line 171 hoisted out of this loop
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+      <Predicate Optimized v4>
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(159,13)
+      remark #25101: Loop Interchange not done due to: Original Order seems proper
+      remark #25452: Original Order found to be proper, but by a close margin
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between tOut_t[c] (172:25) and tOut_t[c] (172:25)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between tOut_t[c] (172:25) and tOut_t[c] (172:25)
+      remark #25261: Invariant Condition eliminated(Proven True) at line 168
+      remark #25260: Invariant Condition eliminated(Proven False) at line 170
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+      <Predicate Optimized v2>
+         remark #25422: Invariant Condition at line 169 hoisted out of this loop
+         remark #25422: Invariant Condition at line 171 hoisted out of this loop
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+      <Predicate Optimized v3>
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+      <Predicate Optimized v3>
+         remark #25422: Invariant Condition at line 171 hoisted out of this loop
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+      <Predicate Optimized v4>
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(161,17)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between tOut_t[c] (172:25) and amb_temp (172:25)
+         remark #17106: parallel dependence: assumed ANTI dependence between amb_temp (172:25) and tOut_t[c] (172:25)
+         remark #25261: Invariant Condition eliminated(Proven True) at line 166
+         remark #25260: Invariant Condition eliminated(Proven False) at line 168
+         remark #25260: Invariant Condition eliminated(Proven False) at line 170
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+         <Predicate Optimized v2>
+            remark #17104: loop was not parallelized: existence of parallel dependence
+            remark #17106: parallel dependence: assumed FLOW dependence between tOut_t[c] (172:25) and amb_temp (172:25)
+            remark #17106: parallel dependence: assumed ANTI dependence between amb_temp (172:25) and tOut_t[c] (172:25)
+            remark #25422: Invariant Condition at line 169 hoisted out of this loop
+            remark #25422: Invariant Condition at line 171 hoisted out of this loop
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+            remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+         LOOP END
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+         <Predicate Optimized v3>
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+            remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+         LOOP END
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+         <Predicate Optimized v3>
+            remark #25422: Invariant Condition at line 171 hoisted out of this loop
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+            remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+         LOOP END
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(163,21)
+         <Predicate Optimized v4>
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed FLOW dependence between tOut_t[c] (172:25) and tIn_t[t] (172:25)
+            remark #15346: vector dependence: assumed ANTI dependence between tIn_t[t] (172:25) and tOut_t[c] (172:25)
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(138,1):remark #34051: REGISTER ALLOCATION : [computeTempOMP] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c:138
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   28[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm12]
+        
+    Routine temporaries
+        Total         :     707
+            Global    :     103
+            Local     :     604
+        Regenerable   :       7
+        Spilled       :      42
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :     288 bytes*
+            Reads     :     164 [1.52e+04 ~ 3.5%]
+            Writes    :     121 [6.44e+03 ~ 1.5%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: computeTempCPU(float *, float *, float *, int, int, int, float, float, float, float, float, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (computeTempCPU(float *, float *, float *, int, int, int, float, float, float, float, float, int)) [5/8=62.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(84,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(94,11)
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 3 4 ) --> ( 2 3 1 4 ) 
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between tOut[c] (110:21) and tOut[c] (110:21)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between tOut[c] (110:21) and tOut[c] (110:21)
+   remark #25261: Invariant Condition eliminated(Proven True) at line 106
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+   <Predicate Optimized v2>
+      remark #25422: Invariant Condition at line 105 hoisted out of this loop
+      remark #25422: Invariant Condition at line 107 hoisted out of this loop
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+      remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+   <Predicate Optimized v3>
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+      remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+   <Predicate Optimized v3>
+      remark #25422: Invariant Condition at line 107 hoisted out of this loop
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+      remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+   <Predicate Optimized v4>
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+      remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(97,13)
+      remark #25260: Invariant Condition eliminated(Proven False) at line 104
+      remark #25261: Invariant Condition eliminated(Proven True) at line 106
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+      <Predicate Optimized v2>
+         remark #25422: Invariant Condition at line 105 hoisted out of this loop
+         remark #25422: Invariant Condition at line 107 hoisted out of this loop
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+      <Predicate Optimized v3>
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+      <Predicate Optimized v3>
+         remark #25422: Invariant Condition at line 107 hoisted out of this loop
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+      <Predicate Optimized v4>
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(96,9)
+      remark #25101: Loop Interchange not done due to: Original Order seems proper
+      remark #25452: Original Order found to be proper, but by a close margin
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between tOut[c] (110:21) and tOut[c] (110:21)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between tOut[c] (110:21) and tOut[c] (110:21)
+      remark #25261: Invariant Condition eliminated(Proven True) at line 104
+      remark #25260: Invariant Condition eliminated(Proven False) at line 106
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+      <Predicate Optimized v2>
+         remark #25422: Invariant Condition at line 105 hoisted out of this loop
+         remark #25422: Invariant Condition at line 107 hoisted out of this loop
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+      <Predicate Optimized v3>
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+      <Predicate Optimized v3>
+         remark #25422: Invariant Condition at line 107 hoisted out of this loop
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+      <Predicate Optimized v4>
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+         remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(97,13)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between tOut[c] (110:21) and amb_temp (110:21)
+         remark #17106: parallel dependence: assumed ANTI dependence between amb_temp (110:21) and tOut[c] (110:21)
+         remark #25261: Invariant Condition eliminated(Proven True) at line 102
+         remark #25260: Invariant Condition eliminated(Proven False) at line 104
+         remark #25260: Invariant Condition eliminated(Proven False) at line 106
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+         <Predicate Optimized v2>
+            remark #17104: loop was not parallelized: existence of parallel dependence
+            remark #17106: parallel dependence: assumed FLOW dependence between tOut[c] (110:21) and amb_temp (110:21)
+            remark #17106: parallel dependence: assumed ANTI dependence between amb_temp (110:21) and tOut[c] (110:21)
+            remark #25422: Invariant Condition at line 105 hoisted out of this loop
+            remark #25422: Invariant Condition at line 107 hoisted out of this loop
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+            remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+         LOOP END
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+         <Predicate Optimized v3>
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+            remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+         LOOP END
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+         <Predicate Optimized v3>
+            remark #25422: Invariant Condition at line 107 hoisted out of this loop
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+            remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+         LOOP END
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(98,17)
+         <Predicate Optimized v4>
+            remark #15344: loop was not vectorized: vector dependence prevents vectorization
+            remark #15346: vector dependence: assumed FLOW dependence between tOut[c] (110:21) and tIn[t] (110:21)
+            remark #15346: vector dependence: assumed ANTI dependence between tIn[t] (110:21) and tOut[c] (110:21)
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(84,1):remark #34051: REGISTER ALLOCATION : [computeTempCPU] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c:84
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   28[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm12]
+        
+    Routine temporaries
+        Total         :     701
+            Global    :     101
+            Local     :     600
+        Regenerable   :       4
+        Spilled       :      37
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :     248 bytes*
+            Reads     :     155 [1.52e+04 ~ 3.5%]
+            Writes    :     106 [5.63e+03 ~ 1.3%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: accuracy(float *, float *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (accuracy(float *, float *, int)) [6/8=75.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(122,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(125,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ len arr2 arr1 i } lastprivate={ } firstlastprivate={ } reduction={ err }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 8  
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   remark #25457: Number of partial sums replaced: 1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(125,5)
+<Remainder>
+   remark #25436: completely unrolled by 7  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(125,5)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 8  
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   remark #25457: Number of partial sums replaced: 1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(125,5)
+<Remainder>
+   remark #25436: completely unrolled by 7  
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(122,1):remark #34051: REGISTER ALLOCATION : [accuracy] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c:122
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     267
+            Global    :      56
+            Local     :     211
+        Regenerable   :      43
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :      48 bytes*
+            Reads     :       3 [1.00e+01 ~ 5.8%]
+            Writes    :      10 [0.00e+00 ~ 0.0%]
+        Spills        :      72 bytes*
+            Reads     :      33 [8.81e+00 ~ 5.1%]
+            Writes    :      34 [1.04e+01 ~ 6.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: writeoutput(float *, int, int, int, char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (writeoutput(float *, int, int, int, char *)) [7/8=87.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(57,85)
+  -> EXTERN: (63,15) fopen(const char *__restrict__, const char *__restrict__)
+  -> EXTERN: (64,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (70,13) sprintf(char *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (71,13) fputs(const char *__restrict__, FILE *__restrict__)
+  -> EXTERN: (75,5) fclose(FILE *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(66,5)
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 3 ) --> ( 1 3 2 ) 
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:sprintf(char *__restrict__, const char *__restrict__, ...) (70:13) and call:fputs(const char *__restrict__, FILE *__restrict__) (71:13)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fputs(const char *__restrict__, FILE *__restrict__) (71:13) and call:sprintf(char *__restrict__, const char *__restrict__, ...) (70:13)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(67,7)
+      remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+      remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 ) --> ( 2 1 ) 
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:sprintf(char *__restrict__, const char *__restrict__, ...) (70:13) and call:fputs(const char *__restrict__, FILE *__restrict__) (71:13)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:fputs(const char *__restrict__, FILE *__restrict__) (71:13) and call:sprintf(char *__restrict__, const char *__restrict__, ...) (70:13)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(68,9)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed OUTPUT dependence between call:sprintf(char *__restrict__, const char *__restrict__, ...) (70:13) and call:fputs(const char *__restrict__, FILE *__restrict__) (71:13)
+         remark #17106: parallel dependence: assumed OUTPUT dependence between call:fputs(const char *__restrict__, FILE *__restrict__) (71:13) and call:sprintf(char *__restrict__, const char *__restrict__, ...) (70:13)
+         remark #15382: vectorization support: call to function sprintf(char *__restrict__, const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(70,13) ]
+         remark #15382: vectorization support: call to function fputs(const char *__restrict__, FILE *__restrict__) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(71,13) ]
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:sprintf(char *__restrict__, const char *__restrict__, ...) (70:13) and call:fputs(const char *__restrict__, FILE *__restrict__) (71:13)
+         remark #15346: vector dependence: assumed OUTPUT dependence between call:fputs(const char *__restrict__, FILE *__restrict__) (71:13) and call:sprintf(char *__restrict__, const char *__restrict__, ...) (70:13)
+         remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(57,85):remark #34051: REGISTER ALLOCATION : [writeoutput] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c:57
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   13[ rax rdx rcx rbx rbp rsi rdi r8 r12-r15 zmm0]
+        
+    Routine temporaries
+        Total         :      44
+            Global    :      22
+            Local     :      22
+        Regenerable   :      11
+        Spilled       :      12
+        
+    Routine stack
+        Variables     :     256 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      48 bytes*
+            Reads     :       7 [2.24e+02 ~ 9.0%]
+            Writes    :       6 [9.90e+01 ~ 4.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: fatal(char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (fatal(char *)) [8/8=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(26,1)
+  -> EXTERN: (27,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c(26,1):remark #34051: REGISTER ALLOCATION : [fatal] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot3D/3D.c:26
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       0
+            Local     :      14
+        Regenerable   :       3
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> Inlining the function will lead to incorrect program behavior.
+

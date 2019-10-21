@@ -1,0 +1,39 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB050-functionparameter-orig-yes.c",
+"function":"foo1",
+"loop id":"1",
+"loop line":"55",
+"loop column":"3",
+"pragma type":"parallel for simd",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"true",
+"shared":[".2"],
+"firstprivate":["c","o1","i","len","c","o1","i"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB050-functionparameter-orig-yes.c",
+"function":"main",
+"loop id":"1",
+"loop line":"67",
+"loop column":"3",
+"pragma type":"parallel for simd",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"shared":["c","o1"],
+"firstprivate":["i"]
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB050-functionparameter-orig-yes.c",
+"function":"main",
+"loop id":"2",
+"loop line":"74",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

@@ -1,0 +1,78 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/utilities/template-for-new-benchmark.c",
+"function":"init_array",
+"loop id":"1",
+"loop line":"27",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i","j"],
+"firstprivate":["n"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/utilities/template-for-new-benchmark.c",
+"function":"init_array",
+"loop id":"2",
+"loop line":"30",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j",
+"private":["j"]
+},
+"loop - object id : 3":{
+"file":"./dataracebench/utilities/template-for-new-benchmark.c",
+"function":"print_array",
+"loop id":"1",
+"loop line":"42",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 4":{
+"file":"./dataracebench/utilities/template-for-new-benchmark.c",
+"function":"print_array",
+"loop id":"2",
+"loop line":"43",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 5":{
+"file":"./dataracebench/utilities/template-for-new-benchmark.c",
+"function":"kernel_template",
+"loop id":"1",
+"loop line":"60",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i","j"],
+"firstprivate":["n"]
+},
+"loop - object id : 6":{
+"file":"./dataracebench/utilities/template-for-new-benchmark.c",
+"function":"kernel_template",
+"loop id":"2",
+"loop line":"63",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j",
+"private":["j"]
+}
+}

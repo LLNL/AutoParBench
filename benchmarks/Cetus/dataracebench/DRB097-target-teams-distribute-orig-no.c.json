@@ -1,0 +1,57 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB097-target-teams-distribute-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"109",
+"loop column":"2",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB097-target-teams-distribute-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"119",
+"loop column":"2",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i2",
+"private":["i","i2"],
+"reduction":["+:sum"]
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB097-target-teams-distribute-orig-no.c",
+"function":"main",
+"loop id":"3",
+"loop line":"126",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"],
+"reduction":["+:sum"]
+},
+"loop - object id : 4":{
+"file":"./dataracebench/DRB097-target-teams-distribute-orig-no.c",
+"function":"main",
+"loop id":"4",
+"loop line":"137",
+"loop column":"2",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"],
+"reduction":["+:sum2"]
+}
+}

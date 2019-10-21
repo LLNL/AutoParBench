@@ -1,0 +1,13 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB059-lastprivate-orig-no.c",
+"function":"foo",
+"loop id":"1",
+"loop line":"59",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

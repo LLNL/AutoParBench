@@ -1,0 +1,17 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB009-lastprivatemissing-orig-yes.c",
+"function":"main",
+"loop id":"1",
+"loop line":"55",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"],
+"firstprivate":["len"],
+"lastprivate":["x"]
+}
+}

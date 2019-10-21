@@ -1,0 +1,39 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB020-privatemissing-var-yes.c",
+"function":"main",
+"loop id":"1",
+"loop line":"113",
+"loop column":"2",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB020-privatemissing-var-yes.c",
+"function":"main",
+"loop id":"2",
+"loop line":"121",
+"loop column":"2",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i","tmp"]
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB020-privatemissing-var-yes.c",
+"function":"main",
+"loop id":"3",
+"loop line":"128",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

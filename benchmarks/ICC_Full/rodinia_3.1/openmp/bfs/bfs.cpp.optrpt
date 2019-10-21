@@ -1,0 +1,287 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.o
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [1/3=33.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(30,1)
+  -> (31,2) BFSGraph(int, char **) (isz = 366) (sz = 374)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(30,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp:30
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    5[ rax rdx rcx rsi rdi]
+        
+    Routine temporaries
+        Total         :      22
+            Global    :       8
+            Local     :      14
+        Regenerable   :      10
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :       4 bytes*
+            Reads     :       2 [0.00e+00 ~ 0.0%]
+            Writes    :       2 [0.00e+00 ~ 0.0%]
+        Spills        :      16 bytes*
+            Reads     :       2 [2.00e+00 ~ 18.2%]
+            Writes    :       2 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: BFSGraph(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (BFSGraph(int, char **)) [2/3=66.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(40,1)
+  -> (47,2) Usage(int, char **) (isz = 4) (sz = 11)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (48,2) exit(int)
+  -> EXTERN: (51,20) atoi(const char *)
+  -> EXTERN: (54,2) printf(const char *, ...)
+  -> EXTERN: (56,7) fopen(const char *, const char *)
+  -> EXTERN: (59,3) printf(const char *, ...)
+  -> EXTERN: (65,2) fscanf(FILE *, const char *, ...)
+  -> EXTERN: (68,32) malloc(size_t)
+  -> EXTERN: (69,31) malloc(size_t)
+  -> EXTERN: (70,40) malloc(size_t)
+  -> EXTERN: (71,34) malloc(size_t)
+  -> EXTERN: (77,3) fscanf(FILE *, const char *, ...)
+  -> EXTERN: (86,2) fscanf(FILE *, const char *, ...)
+  -> EXTERN: (93,2) fscanf(FILE *, const char *, ...)
+  -> EXTERN: (96,30) malloc(size_t)
+  -> EXTERN: (99,3) fscanf(FILE *, const char *, ...)
+  -> EXTERN: (100,3) fscanf(FILE *, const char *, ...)
+  -> EXTERN: (105,3) fclose(FILE *)
+  -> EXTERN: (109,23) malloc(size_t)
+  -> EXTERN: (114,2) printf(const char *, ...)
+  -> EXTERN: (118,29) omp_get_wtime()
+  -> EXTERN: (167,27) omp_get_wtime()
+  -> EXTERN: (168,9) printf(const char *, ...)
+  -> EXTERN: (174,14) fopen(const char *, const char *)
+  -> EXTERN: (176,3) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (177,2) fclose(FILE *)
+  -> EXTERN: (178,2) printf(const char *, ...)
+  -> EXTERN: (182,2) free(void *)
+  -> EXTERN: (183,2) free(void *)
+  -> EXTERN: (184,2) free(void *)
+  -> EXTERN: (185,2) free(void *)
+  -> EXTERN: (186,2) free(void *)
+  -> EXTERN: (187,2) free(void *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(75,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(97,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(110,2)
+   remark #25408: memset generated
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between h_cost[i] (110:2) and h_cost[i] (111:3)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between h_cost[i] (111:3) and h_cost[i] (110:2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(110,2)
+      remark #17109: LOOP WAS AUTO-PARALLELIZED
+      remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ no_of_nodes h_cost i } lastprivate={ } firstlastprivate={ } reduction={ }
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 2  
+      remark #25015: Estimate of max trip count of loop=24
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(110,2)
+   <Remainder>
+      remark #25015: Estimate of max trip count of loop=24
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(138,63)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(134,13)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between h_cost[id] (143:29) and h_cost[id] (143:29)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between h_cost[id] (143:29) and h_cost[id] (143:29)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(138,21)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between h_cost[id] (143:29) and h_cost[tid] (143:29)
+         remark #17106: parallel dependence: assumed ANTI dependence between h_cost[tid] (143:29) and h_cost[id] (143:29)
+         remark #17106: parallel dependence: assumed OUTPUT dependence between h_cost[id] (143:29) and h_cost[id] (143:29)
+         remark #17106: parallel dependence: assumed OUTPUT dependence between h_cost[id] (143:29) and h_cost[id] (143:29)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between h_cost[id] (143:29) and h_cost[tid] (143:29)
+         remark #15346: vector dependence: assumed ANTI dependence between h_cost[tid] (143:29) and h_cost[id] (143:29)
+         remark #25439: unrolled with remainder by 2  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(138,21)
+      <Remainder>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(154,13)
+      remark #17102: loop was not parallelized: not a parallelization candidate
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(154,13)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(175,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *, const char *, ...) (176:3) and call:fprintf(FILE *, const char *, ...) (176:3)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *, const char *, ...) (176:3) and call:fprintf(FILE *, const char *, ...) (176:3)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(110,2)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=24
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(110,2)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=24
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(110,2):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(110,2):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(40,1):remark #34051: REGISTER ALLOCATION : [_Z8BFSGraphiPPc] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp:40
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   16[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0]
+        
+    Routine temporaries
+        Total         :     267
+            Global    :      93
+            Local     :     174
+        Regenerable   :      86
+        Spilled       :      10
+        
+    Routine stack
+        Variables     :      68 bytes*
+            Reads     :      14 [3.33e+01 ~ 3.8%]
+            Writes    :      12 [2.74e+00 ~ 0.3%]
+        Spills        :     128 bytes*
+            Reads     :      31 [2.76e+01 ~ 3.1%]
+            Writes    :      25 [2.63e+01 ~ 3.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: Usage(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (Usage(int, char **)) [3/3=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(21,33)
+  -> EXTERN: (23,1) fprintf(FILE *, const char *, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp(21,33):remark #34051: REGISTER ALLOCATION : [_Z5UsageiPPc] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/bfs/bfs.cpp:21
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      16
+            Global    :       0
+            Local     :      16
+        Regenerable   :       3
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> Inlining the function will lead to incorrect program behavior.
+

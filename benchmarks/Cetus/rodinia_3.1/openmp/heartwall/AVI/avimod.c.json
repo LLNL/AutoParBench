@@ -1,0 +1,68 @@
+{
+"loop - object id : 1":{
+"file":"./rodinia_3.1/openmp/heartwall/AVI/avimod.c",
+"function":"chop_flip_image",
+"loop id":"1",
+"loop line":"7001",
+"loop column":"4",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./rodinia_3.1/openmp/heartwall/AVI/avimod.c",
+"function":"chop_flip_image",
+"loop id":"2",
+"loop line":"7005",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 3":{
+"file":"./rodinia_3.1/openmp/heartwall/AVI/avimod.c",
+"function":"chop_flip_image",
+"loop id":"3",
+"loop line":"7023",
+"loop column":"4",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 4":{
+"file":"./rodinia_3.1/openmp/heartwall/AVI/avimod.c",
+"function":"chop_flip_image",
+"loop id":"4",
+"loop line":"7027",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 5":{
+"file":"./rodinia_3.1/openmp/heartwall/AVI/avimod.c",
+"function":"chop_flip_image",
+"loop id":"5",
+"loop line":"7046",
+"loop column":"4",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 6":{
+"file":"./rodinia_3.1/openmp/heartwall/AVI/avimod.c",
+"function":"chop_flip_image",
+"loop id":"6",
+"loop line":"7050",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

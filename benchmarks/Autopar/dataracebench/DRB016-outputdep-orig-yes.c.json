@@ -1,0 +1,13 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB016-outputdep-orig-yes.c",
+"function":"main",
+"loop id":"1",
+"loop line":"60",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

@@ -1,0 +1,504 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.o
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: writeoutput(FLOAT *, int, int, char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (writeoutput(FLOAT *, int, int, char *)) [1/8=12.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(209,73)
+  -> EXTERN: (215,15) fopen(const char *, const char *)
+  -> EXTERN: (216,9) printf(const char *, ...)
+  -> EXTERN: (223,13) sprintf(char *, const char *, ...)
+  -> EXTERN: (224,13) fputs(const char *, FILE *)
+  -> EXTERN: (228,5) fclose(FILE *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(219,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:sprintf(char *, const char *, ...) (223:13) and call:fputs(const char *, FILE *) (224:13)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fputs(const char *, FILE *) (224:13) and call:sprintf(char *, const char *, ...) (223:13)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(220,9)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:sprintf(char *, const char *, ...) (223:13) and call:fputs(const char *, FILE *) (224:13)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:fputs(const char *, FILE *) (224:13) and call:sprintf(char *, const char *, ...) (223:13)
+      remark #15382: vectorization support: call to function sprintf(char *, const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(223,13) ]
+      remark #15382: vectorization support: call to function fputs(const char *, FILE *) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(224,13) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:sprintf(char *, const char *, ...) (223:13) and call:fputs(const char *, FILE *) (224:13)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:fputs(const char *, FILE *) (224:13) and call:sprintf(char *, const char *, ...) (223:13)
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(209,73):remark #34051: REGISTER ALLOCATION : [_Z11writeoutputPfiiPc] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp:209
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   12[ rax rdx rcx rbx rbp rsi rdi r12-r15 zmm0]
+        
+    Routine temporaries
+        Total         :      41
+            Global    :      21
+            Local     :      20
+        Regenerable   :      12
+        Spilled       :      10
+        
+    Routine stack
+        Variables     :     256 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      40 bytes*
+            Reads     :       5 [1.89e+01 ~ 3.7%]
+            Writes    :       5 [1.89e+01 ~ 3.7%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: get_time()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (get_time()) [2/8=25.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(8,1)
+  -> EXTERN: (10,5) gettimeofday(timeval *, timezone *)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(8,1):remark #34051: REGISTER ALLOCATION : [_Z8get_timev] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp:8
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      12
+            Global    :       6
+            Local     :       6
+        Regenerable   :       3
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :      16 bytes*
+            Reads     :       2 [2.00e+00 ~ 12.5%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: single_iteration(FLOAT *, FLOAT *, FLOAT *, int, int, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (single_iteration(FLOAT *, FLOAT *, FLOAT *, int, int, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT)) [3/8=37.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(56,1)
+  -> EXTERN: (66,2) omp_set_num_threads(int)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(69,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between result[r*col+c] (138:17) and result[r*col+c] (129:21)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between result[r*col+c] (129:21) and result[r*col+c] (138:17)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(135,9)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between result[r*col+c] (138:17) and result[r*col+c] (138:17)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between result[r*col+c] (138:17) and result[r*col+c] (138:17)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(136,13)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between result[r*col+c] (138:17) and temp[r*col+c] (138:17)
+         remark #17106: parallel dependence: assumed ANTI dependence between temp[r*col+c] (138:17) and result[r*col+c] (138:17)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between result[r*col+c] (138:17) and temp[r*col+c] (138:17)
+         remark #15346: vector dependence: assumed ANTI dependence between temp[r*col+c] (138:17) and result[r*col+c] (138:17)
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(78,13)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between *temp (82:25) and result[r*col+c] (129:21)
+      remark #17106: parallel dependence: assumed FLOW dependence between result[r*col+c] (129:21) and *temp (82:25)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(79,17)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed ANTI dependence between *temp (82:25) and result[r*col+c] (129:21)
+         remark #17106: parallel dependence: assumed FLOW dependence between result[r*col+c] (129:21) and *temp (82:25)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed ANTI dependence between *temp (82:25) and result[r*col+c] (129:21)
+         remark #15346: vector dependence: assumed FLOW dependence between result[r*col+c] (129:21) and *temp (82:25)
+      LOOP END
+   LOOP END
+LOOP END
+
+Fusion of IFs performed in _Z16single_iterationPfS_S_iifffff at line 81
+
+Fusion of IFs performed in _Z16single_iterationPfS_S_iifffff at line 93
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(56,1):remark #34051: REGISTER ALLOCATION : [_Z16single_iterationPfS_S_iifffff] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp:56
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm14]
+        
+    Routine temporaries
+        Total         :     260
+            Global    :      70
+            Local     :     190
+        Regenerable   :       6
+        Spilled       :      39
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :     264 bytes*
+            Reads     :      47 [4.60e+02 ~ 9.0%]
+            Writes    :      36 [2.04e+02 ~ 4.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: compute_tran_temp(FLOAT *, int, FLOAT *, FLOAT *, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (compute_tran_temp(FLOAT *, int, FLOAT *, FLOAT *, int, int)) [4/8=50.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(156,1)
+  -> (192,17) single_iteration(FLOAT *, FLOAT *, FLOAT *, int, int, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT) (isz = 577) (sz = 600)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(187,13)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15382: vectorization support: call to function single_iteration(FLOAT *, FLOAT *, FLOAT *, int, int, FLOAT, FLOAT, FLOAT, FLOAT, FLOAT) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(192,17) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(156,1):remark #34051: REGISTER ALLOCATION : [_Z17compute_tran_tempPfiS_S_ii] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp:156
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   28[ rax rdx rcx rbx rbp rsi rdi r8-r10 r12-r15 zmm0-zmm13]
+        
+    Routine temporaries
+        Total         :      59
+            Global    :      18
+            Local     :      41
+        Regenerable   :       8
+        Spilled       :      11
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      88 bytes*
+            Reads     :      11 [3.04e+01 ~ 17.4%]
+            Writes    :      11 [9.90e+00 ~ 5.7%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: fatal(char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (fatal(char *)) [5/8=62.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(204,1)
+  -> EXTERN: (205,2) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (206,2) exit(int)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(204,1):remark #34051: REGISTER ALLOCATION : [_Z5fatalPc] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp:204
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      15
+            Global    :       0
+            Local     :      15
+        Regenerable   :       4
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: read_input(FLOAT *, int, int, char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (read_input(FLOAT *, int, int, char *)) [6/8=75.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(232,1)
+  -> EXTERN: (238,7) fopen(const char *, const char *)
+  -> (240,3) fatal(char *) (isz = 6) (sz = 10)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (243,3) fgets(char *, int, FILE *)
+  -> EXTERN: (244,7) feof(FILE *)
+  -> (245,4) fatal(char *) (isz = 6) (sz = 10)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (246,8) sscanf(const char *, const char *, ...)
+  -> (247,4) fatal(char *) (isz = 6) (sz = 10)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (251,2) fclose(FILE *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(242,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fgets(char *, int, FILE *) (243:3) and call:fatal(char *) (247:4)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fatal(char *) (247:4) and call:fgets(char *, int, FILE *) (243:3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(245,4) ]
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(232,1):remark #34051: REGISTER ALLOCATION : [_Z10read_inputPfiiPc] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp:232
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rsi rdi r12-r15]
+        
+    Routine temporaries
+        Total         :      47
+            Global    :      17
+            Local     :      30
+        Regenerable   :      17
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :     260 bytes*
+            Reads     :       1 [5.00e+00 ~ 3.4%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       8 bytes*
+            Reads     :       1 [9.00e-01 ~ 0.6%]
+            Writes    :       1 [9.00e-01 ~ 0.6%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: usage(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (usage(int, char **)) [7/8=87.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(255,1)
+  -> EXTERN: (256,2) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (257,2) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (258,2) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (259,2) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (260,2) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (261,2) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (262,2) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (263,9) fprintf(FILE *, const char *, ...)
+  -> EXTERN: (264,2) exit(int)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(255,1):remark #34051: REGISTER ALLOCATION : [_Z5usageiPPc] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp:255
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      45
+            Global    :       0
+            Local     :      45
+        Regenerable   :      18
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [8/8=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(268,1)
+  -> (275,3) usage(int, char **) (isz = 41) (sz = 47)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (276,19) atoi(const char *)
+  -> EXTERN: (277,16) atoi(const char *)
+  -> EXTERN: (278,15) atoi(const char *)
+  -> EXTERN: (279,22) atoi(const char *)
+  -> (281,3) usage(int, char **) (isz = 41) (sz = 47)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (284,19) calloc(size_t, size_t)
+  -> EXTERN: (285,20) calloc(size_t, size_t)
+  -> EXTERN: (286,21) calloc(size_t, size_t)
+  -> (288,3) fatal(char *) (isz = 6) (sz = 10)
+     [[ Unable to inline callsite  <1>]]
+  -> (295,2) read_input(FLOAT *, int, int, char *) (isz = 57) (sz = 68)
+     [[ Unable to inline callsite  <1>]]
+  -> (296,2) read_input(FLOAT *, int, int, char *) (isz = 57) (sz = 68)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (298,2) printf(const char *, ...)
+  -> (300,28) get_time() (isz = 6) (sz = 11)
+     [[ Unable to inline callsite  <1>]]
+  -> (302,5) compute_tran_temp(FLOAT *, int, FLOAT *, FLOAT *, int, int) (isz = 64) (sz = 79)
+     [[ Unable to inline callsite  <1>]]
+  -> (304,26) get_time() (isz = 6) (sz = 11)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (306,5) printf(const char *, ...)
+  -> EXTERN: (307,5) printf(const char *, ...)
+  -> (309,5) writeoutput(FLOAT *, int, int, char *) (isz = 61) (sz = 72)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (321,2) free(void *)
+  -> EXTERN: (322,2) free(void *)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp(268,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp:268
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   14[ rax rdx rcx rbx rsi rdi r8-r10 r12-r15 zmm0]
+        
+    Routine temporaries
+        Total         :      96
+            Global    :      28
+            Local     :      68
+        Regenerable   :      23
+        Spilled       :      11
+        
+    Routine stack
+        Variables     :       4 bytes*
+            Reads     :       2 [0.00e+00 ~ 0.0%]
+            Writes    :       2 [0.00e+00 ~ 0.0%]
+        Spills        :      48 bytes*
+            Reads     :       9 [9.00e+00 ~ 9.0%]
+            Writes    :       6 [5.71e+00 ~ 5.7%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> Inlining the function will lead to incorrect program behavior.
+

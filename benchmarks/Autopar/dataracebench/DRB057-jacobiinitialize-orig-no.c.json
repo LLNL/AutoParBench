@@ -1,0 +1,52 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB057-jacobiinitialize-orig-no.c",
+"function":"initialize",
+"loop id":"1",
+"loop line":"67",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["xx","yy","i","j"],
+"firstprivate":["n","m"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB057-jacobiinitialize-orig-no.c",
+"function":"initialize",
+"loop id":"2",
+"loop line":"70",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j",
+"private":["xx","yy","j"],
+"firstprivate":["alpha","dx","dy"]
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB057-jacobiinitialize-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"86",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 4":{
+"file":"./dataracebench/DRB057-jacobiinitialize-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"87",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

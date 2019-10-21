@@ -1,0 +1,24 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB091-threadprivate2-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"62",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB091-threadprivate2-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"69",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

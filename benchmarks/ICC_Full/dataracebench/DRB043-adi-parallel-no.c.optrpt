@@ -1,0 +1,424 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.o
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: print_array(int, double (*)[500])
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (print_array(int, double (*)[500])) [1/4=25.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(43,1)
+  -> EXTERN: (49,7) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (51,9) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (53,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(47,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (49:7) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (51:9)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (51:9) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (49:7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(48,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (49:7) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (51:9)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (51:9) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (49:7)
+      remark #15382: vectorization support: call to function fprintf(FILE *__restrict__, const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(49,7) ]
+      remark #15382: vectorization support: call to function fprintf(FILE *__restrict__, const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(51,9) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (49:7) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (51:9)
+      remark #15346: vector dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (51:9) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (49:7)
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(43,1):remark #34051: REGISTER ALLOCATION : [print_array] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c:43
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   12[ rax rdx rcx rbx rbp rsi rdi r12-r15 zmm0]
+        
+    Routine temporaries
+        Total         :      38
+            Global    :      15
+            Local     :      23
+        Regenerable   :       8
+        Spilled       :       6
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: kernel_adi(int, int, double (*)[500], double (*)[500], double (*)[500])
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (kernel_adi(int, int, double (*)[500], double (*)[500], double (*)[500])) [2/4=50.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(59,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(69,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between B[c2][c8] (72:11) and X[499][c2] (96:9)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between X[499][c2] (96:9) and B[c2][c8] (72:11)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(70,7)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between B[c2][c8] (72:11) and X[c2][498-c8] (78:11)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between X[c2][498-c8] (78:11) and B[c2][c8] (72:11)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(71,9)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between B[c2][c8] (72:11) and A[c2][c8] (72:11)
+         remark #17106: parallel dependence: assumed ANTI dependence between A[c2][c8] (72:11) and B[c2][c8] (72:11)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between B[c2][c8] (72:11) and A[c2][c8] (72:11)
+         remark #15346: vector dependence: assumed ANTI dependence between A[c2][c8] (72:11) and B[c2][c8] (72:11)
+         remark #25439: unrolled with remainder by 4  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(71,9)
+      <Remainder>
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(74,9)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between X[c2][c8] (75:11) and X[c2][c8-1] (75:11)
+         remark #17106: parallel dependence: assumed ANTI dependence between X[c2][c8-1] (75:11) and X[c2][c8] (75:11)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between X[c2][c8] (75:11) and X[c2][c8-1] (75:11)
+         remark #15346: vector dependence: assumed ANTI dependence between X[c2][c8-1] (75:11) and X[c2][c8] (75:11)
+         remark #25439: unrolled with remainder by 4  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(74,9)
+      <Remainder>
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(77,9)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between X[c2][498-c8] (78:11) and A[c2][497-c8] (78:11)
+         remark #17106: parallel dependence: assumed ANTI dependence between A[c2][497-c8] (78:11) and X[c2][498-c8] (78:11)
+         remark #17106: parallel dependence: assumed ANTI dependence between X[c2][497-c8] (78:11) and X[c2][498-c8] (78:11)
+         remark #17106: parallel dependence: assumed FLOW dependence between X[c2][498-c8] (78:11) and X[c2][497-c8] (78:11)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between X[c2][498-c8] (78:11) and A[c2][497-c8] (78:11)
+         remark #15346: vector dependence: assumed ANTI dependence between A[c2][497-c8] (78:11) and X[c2][498-c8] (78:11)
+         remark #25439: unrolled with remainder by 4  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(77,9)
+      <Remainder>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(81,7)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between X[c2][499] (82:9) and B[c2][499] (82:9)
+      remark #17106: parallel dependence: assumed ANTI dependence between B[c2][499] (82:9) and X[c2][499] (82:9)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between X[c2][499] (82:9) and B[c2][499] (82:9)
+      remark #15346: vector dependence: assumed ANTI dependence between B[c2][499] (82:9) and X[c2][499] (82:9)
+      remark #25438: unrolled without remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(84,7)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between B[c8][c2] (86:11) and X[498-c8][c2] (92:11)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between X[498-c8][c2] (92:11) and B[c8][c2] (86:11)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(85,9)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between B[c8][c2] (86:11) and A[c8][c2] (86:11)
+         remark #17106: parallel dependence: assumed ANTI dependence between A[c8][c2] (86:11) and B[c8][c2] (86:11)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between B[c8][c2] (86:11) and A[c8][c2] (86:11)
+         remark #15346: vector dependence: assumed ANTI dependence between A[c8][c2] (86:11) and B[c8][c2] (86:11)
+         remark #25439: unrolled with remainder by 4  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(85,9)
+      <Remainder>
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(88,9)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between X[c8][c2] (89:11) and X[c8-1][c2] (89:11)
+         remark #17106: parallel dependence: assumed ANTI dependence between X[c8-1][c2] (89:11) and X[c8][c2] (89:11)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between X[c8][c2] (89:11) and X[c8-1][c2] (89:11)
+         remark #15346: vector dependence: assumed ANTI dependence between X[c8-1][c2] (89:11) and X[c8][c2] (89:11)
+         remark #25439: unrolled with remainder by 4  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(88,9)
+      <Remainder>
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(91,9)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between X[498-c8][c2] (92:11) and A[497-c8][c2] (92:11)
+         remark #17106: parallel dependence: assumed ANTI dependence between A[497-c8][c2] (92:11) and X[498-c8][c2] (92:11)
+         remark #17106: parallel dependence: assumed ANTI dependence between X[497-c8][c2] (92:11) and X[498-c8][c2] (92:11)
+         remark #17106: parallel dependence: assumed FLOW dependence between X[498-c8][c2] (92:11) and X[497-c8][c2] (92:11)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between X[498-c8][c2] (92:11) and A[497-c8][c2] (92:11)
+         remark #15346: vector dependence: assumed ANTI dependence between A[497-c8][c2] (92:11) and X[498-c8][c2] (92:11)
+         remark #25439: unrolled with remainder by 4  
+      LOOP END
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(91,9)
+      <Remainder>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(95,7)
+   <Multiversioned v1>
+      remark #25228: Loop multiversioned for Data Dependence
+      remark #17109: LOOP WAS AUTO-PARALLELIZED
+      remark #17101: parallel loop shared={ } private={ } firstprivate={ B X c2 c0 } lastprivate={ } firstlastprivate={ } reduction={ }
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25438: unrolled without remainder by 2  
+      remark #25015: Estimate of max trip count of loop=500
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(95,7)
+   <Multiversioned v2>
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between X[499][c2] (96:9) and B[499][c2] (96:9)
+      remark #17106: parallel dependence: assumed ANTI dependence between B[499][c2] (96:9) and X[499][c2] (96:9)
+      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+      remark #25438: unrolled without remainder by 2  
+      remark #25015: Estimate of max trip count of loop=500
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(95,7)
+<Multiversioned v1>
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 8  
+   remark #25015: Estimate of max trip count of loop=500
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(95,7)
+<Remainder, Multiversioned v1>
+   remark #25436: completely unrolled by 7  
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(59,1):remark #34051: REGISTER ALLOCATION : [kernel_adi] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c:59
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   23[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm7]
+        
+    Routine temporaries
+        Total         :     348
+            Global    :      67
+            Local     :     281
+        Regenerable   :      37
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :      44 bytes*
+            Reads     :       2 [5.00e+03 ~ 0.0%]
+            Writes    :       9 [0.00e+00 ~ 0.0%]
+        Spills        :      48 bytes*
+            Reads     :      12 [6.00e+00 ~ 0.0%]
+            Writes    :      12 [5.89e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: init_array(int, double (*)[500], double (*)[500], double (*)[500])
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (init_array(int, double (*)[500], double (*)[500], double (*)[500])) [3/4=75.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(22,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(29,7)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between X[c1][c2] (31:11) and B[c1][c2] (33:11)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between B[c1][c2] (33:11) and X[c1][c2] (31:11)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(30,9)
+   <Multiversioned v1>
+      remark #25228: Loop multiversioned for Data Dependence
+      remark #17109: LOOP WAS AUTO-PARALLELIZED
+      remark #17101: parallel loop shared={ } private={ } firstprivate={ X A B c2 c1 } lastprivate={ } firstlastprivate={ } reduction={ }
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25015: Estimate of max trip count of loop=500
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(30,9)
+   <Multiversioned v2>
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between X[c1][c2] (31:11) and B[c1][c2] (33:11)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between B[c1][c2] (33:11) and X[c1][c2] (31:11)
+      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+      remark #25015: Estimate of max trip count of loop=500
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(30,9)
+<Multiversioned v1>
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=500
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(22,1):remark #34051: REGISTER ALLOCATION : [init_array] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c:22
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   23[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm7]
+        
+    Routine temporaries
+        Total         :     171
+            Global    :      52
+            Local     :     119
+        Regenerable   :      40
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :      52 bytes*
+            Reads     :       2 [1.25e+01 ~ 1.9%]
+            Writes    :      10 [0.00e+00 ~ 0.0%]
+        Spills        :      72 bytes*
+            Reads     :      18 [6.00e+00 ~ 0.9%]
+            Writes    :      16 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [4/4=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(105,1)
+  -> EXTERN: (111,39) polybench_alloc_data(unsigned long long, int)
+  -> EXTERN: (114,39) polybench_alloc_data(unsigned long long, int)
+  -> EXTERN: (117,39) polybench_alloc_data(unsigned long long, int)
+  -> (120,3) init_array(int, double (*)[500], double (*)[500], double (*)[500]) (isz = 61) (sz = 72)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (122,3) polybench_timer_start()
+  -> (125,3) kernel_adi(int, int, double (*)[500], double (*)[500], double (*)[500]) (isz = 332) (sz = 345)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (127,3) polybench_timer_stop()
+  -> EXTERN: (129,3) polybench_timer_print()
+  -> EXTERN: (133,21) strcmp(const char *, const char *)
+  -> (134,5) print_array(int, double (*)[500]) (isz = 48) (sz = 55)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (136,3) free(void *)
+  -> EXTERN: (138,3) free(void *)
+  -> EXTERN: (140,3) free(void *)
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c(105,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.c:105
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   11[ rax rdx rcx rbx rsi rdi r8 r12-r15]
+        
+    Routine temporaries
+        Total         :      55
+            Global    :      15
+            Local     :      40
+        Regenerable   :      25
+        Spilled       :       5
+        
+    Routine stack
+        Variables     :       4 bytes*
+            Reads     :       2 [0.00e+00 ~ 0.0%]
+            Writes    :       2 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> Inlining the function will lead to incorrect program behavior.
+

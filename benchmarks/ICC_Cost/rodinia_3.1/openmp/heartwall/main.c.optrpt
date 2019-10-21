@@ -1,0 +1,914 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -c -qopenmp -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.o
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: kernel(public_struct, private_struct)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (kernel(public_struct, private_struct)) [1/3=33.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(10,28)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(84,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between d_in[col*public.in_mod_rows+row] (93:5) and public.d_frame[(*(private.d_Col+private.point_no*4)-25+col-1)*pu (93:5)
+   remark #17106: parallel dependence: assumed ANTI dependence between public.d_frame[(*(private.d_Col+private.point_no*4)-25+col-1)*pu (93:5) and d_in[col*public.in_mod_rows+row] (93:5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(85,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between d_in[col*public.in_mod_rows+row] (93:5) and public.d_frame[(*(private.d_Col+private.point_no*4)-25+col-1)*pu (93:5)
+      remark #17106: parallel dependence: assumed ANTI dependence between public.d_frame[(*(private.d_Col+private.point_no*4)-25+col-1)*pu (93:5) and d_in[col*public.in_mod_rows+row] (93:5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between d_in[col*public.in_mod_rows+row] (93:5) and public.d_frame[(*(private.d_Col+private.point_no*4)-25+col-1)*pu (93:5)
+      remark #15346: vector dependence: assumed ANTI dependence between public.d_frame[(*(private.d_Col+private.point_no*4)-25+col-1)*pu (93:5) and d_in[col*public.in_mod_rows+row] (93:5)
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(85,4)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(122,3)
+<Multiversioned v1>
+   remark #25228: Loop multiversioned for Data Dependence
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(123,4)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(123,4)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(122,3)
+<Multiversioned v2>
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between public.d_frame[(col+in2_collow-1)*public.frame_rows+row+in2_rowl (128:4) and private.d_in2_sqr[col*public.in2_rows+row] (130:4)
+   remark #17106: parallel dependence: assumed FLOW dependence between private.d_in2_sqr[col*public.in2_rows+row] (130:4) and public.d_frame[(col+in2_collow-1)*public.frame_rows+row+in2_rowl (128:4)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(123,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between public.d_frame[(col+in2_collow-1)*public.frame_rows+row+in2_rowl (128:4) and private.d_in2_sqr[col*public.in2_rows+row] (130:4)
+      remark #17106: parallel dependence: assumed FLOW dependence between private.d_in2_sqr[col*public.in2_rows+row] (130:4) and public.d_frame[(col+in2_collow-1)*public.frame_rows+row+in2_rowl (128:4)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between public.d_frame[(col+in2_collow-1)*public.frame_rows+row+in2_rowl (128:4) and private.d_in2_sqr[col*public.in2_rows+row] (130:4)
+      remark #15346: vector dependence: assumed FLOW dependence between private.d_in2_sqr[col*public.in2_rows+row] (130:4) and public.d_frame[(col+in2_collow-1)*public.frame_rows+row+in2_rowl (128:4)
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(123,4)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(145,3)
+<Multiversioned v1>
+   remark #25228: Loop multiversioned for Data Dependence
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between private.d_in_sqr[pointer] (156:4) and private.d_in_sqr[pointer] (156:4)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between private.d_in_sqr[pointer] (156:4) and private.d_in_sqr[pointer] (156:4)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(146,4)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 2  
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(146,4)
+   <Remainder>
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(145,3)
+<Multiversioned v2>
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between d_in[pointer] (154:4) and private.d_in_sqr[pointer] (156:4)
+   remark #17106: parallel dependence: assumed FLOW dependence between private.d_in_sqr[pointer] (156:4) and d_in[pointer] (154:4)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(146,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between d_in[pointer] (154:4) and private.d_in_sqr[pointer] (156:4)
+      remark #17106: parallel dependence: assumed FLOW dependence between private.d_in_sqr[pointer] (156:4) and d_in[pointer] (154:4)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between d_in[pointer] (154:4) and private.d_in_sqr[pointer] (156:4)
+      remark #15346: vector dependence: assumed FLOW dependence between private.d_in_sqr[pointer] (156:4) and d_in[pointer] (154:4)
+      remark #25439: unrolled with remainder by 2  
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(146,4)
+   <Remainder>
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(167,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 8  
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   remark #25457: Number of partial sums replaced: 1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(167,3)
+<Remainder>
+   remark #25436: completely unrolled by 7  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(172,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 8  
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   remark #25457: Number of partial sums replaced: 1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(172,3)
+<Remainder>
+   remark #25436: completely unrolled by 7  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(193,3)
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 3 4 ) --> ( 1 3 4 2 ) 
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between private.d_in_mod[public.in_mod_rows*(ja-1)+ia-1] (237:7) and private.d_conv[(col-1)*public.conv_rows+row-1] (241:5)
+   remark #17106: parallel dependence: assumed FLOW dependence between private.d_conv[(col-1)*public.conv_rows+row-1] (241:5) and private.d_in_mod[public.in_mod_rows*(ja-1)+ia-1] (237:7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(211,4)
+      remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+      remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 3 ) --> ( 2 3 1 ) 
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between private.d_in_mod[public.in_mod_rows*(ja-1)+ia-1] (237:7) and private.d_conv[(col-1)*public.conv_rows+row-1] (241:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between private.d_conv[(col-1)*public.conv_rows+row-1] (241:5) and private.d_in_mod[public.in_mod_rows*(ja-1)+ia-1] (237:7)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(233,5)
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(235,10) ]
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed ANTI dependence between ja (234:6) and ja (233:26)
+         remark #17106: parallel dependence: assumed FLOW dependence between ja (233:26) and ja (234:6)
+         remark #17106: parallel dependence: assumed FLOW dependence between ja (233:26) and ja (234:6)
+         remark #17106: parallel dependence: assumed ANTI dependence between ja (234:6) and ja (233:26)
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(235,6)
+            remark #17108: loop was not parallelized: insufficient computational work
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25439: unrolled with remainder by 8  
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+            remark #25457: Number of partial sums replaced: 1
+         LOOP END
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(235,6)
+         <Remainder>
+            remark #25436: completely unrolled by 7  
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(254,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between private.d_in2[(col-public.in2_pad_add_cols)*public.in2_rows+row- (264:5) and private.d_in2_pad[col*public.in2_pad_rows+row] (267:5)
+   remark #17106: parallel dependence: assumed FLOW dependence between private.d_in2_pad[col*public.in2_pad_rows+row] (267:5) and private.d_in2[(col-public.in2_pad_add_cols)*public.in2_rows+row- (264:5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(255,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between private.d_in2[(col-public.in2_pad_add_cols)*public.in2_rows+row- (264:5) and private.d_in2_pad[col*public.in2_pad_rows+row] (267:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between private.d_in2_pad[col*public.in2_pad_rows+row] (267:5) and private.d_in2[(col-public.in2_pad_add_cols)*public.in2_rows+row- (264:5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between private.d_in2[(col-public.in2_pad_add_cols)*public.in2_rows+row- (264:5) and private.d_in2_pad[col*public.in2_pad_rows+row] (267:5)
+      remark #15346: vector dependence: assumed FLOW dependence between private.d_in2_pad[col*public.in2_pad_rows+row] (267:5) and private.d_in2[(col-public.in2_pad_add_cols)*public.in2_rows+row- (264:5)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(277,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between private.d_in2_pad[position] (285:5) and private.d_in2_pad[position] (286:5)
+   remark #17106: parallel dependence: assumed ANTI dependence between private.d_in2_pad[position] (286:5) and private.d_in2_pad[position] (285:5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(284,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between sum (285:5) and sum (286:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between sum (286:5) and sum (285:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between sum (286:5) and sum (285:5)
+      remark #17106: parallel dependence: assumed ANTI dependence between sum (285:5) and sum (286:5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between sum (285:5) and sum (286:5)
+      remark #15346: vector dependence: assumed FLOW dependence between sum (286:5) and sum (285:5)
+      remark #15346: vector dependence: assumed FLOW dependence between sum (286:5) and sum (285:5)
+      remark #15346: vector dependence: assumed ANTI dependence between sum (285:5) and sum (286:5)
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(284,4)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(298,3)
+<Multiversioned v1>
+   remark #25228: Loop multiversioned for Data Dependence
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(299,4)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 8  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(299,4)
+   <Remainder>
+      remark #25436: completely unrolled by 7  
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(298,3)
+<Multiversioned v2>
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between private.d_in2_sub[col*public.in2_sub_rows+row] (312:4) and private.d_in2_pad[(col+public.in2_pad_cumv_sel2_collow-1)*public (312:4)
+   remark #17106: parallel dependence: assumed ANTI dependence between private.d_in2_pad[(col+public.in2_pad_cumv_sel2_collow-1)*public (312:4) and private.d_in2_sub[col*public.in2_sub_rows+row] (312:4)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(299,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between private.d_in2_sub[col*public.in2_sub_rows+row] (312:4) and private.d_in2_pad[(col+public.in2_pad_cumv_sel2_collow-1)*public (312:4)
+      remark #17106: parallel dependence: assumed ANTI dependence between private.d_in2_pad[(col+public.in2_pad_cumv_sel2_collow-1)*public (312:4) and private.d_in2_sub[col*public.in2_sub_rows+row] (312:4)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between private.d_in2_sub[col*public.in2_sub_rows+row] (312:4) and private.d_in2_pad[(col+public.in2_pad_cumv_sel2_collow-1)*public (312:4)
+      remark #15346: vector dependence: assumed ANTI dependence between private.d_in2_pad[(col+public.in2_pad_cumv_sel2_collow-1)*public (312:4) and private.d_in2_sub[col*public.in2_sub_rows+row] (312:4)
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(299,4)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(321,3)
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 ) --> ( 2 1 ) 
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(328,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between sum (329:5) and sum (330:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between sum (330:5) and sum (329:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between sum (330:5) and sum (329:5)
+      remark #17106: parallel dependence: assumed ANTI dependence between sum (329:5) and sum (330:5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between sum (329:5) and sum (330:5)
+      remark #15346: vector dependence: assumed FLOW dependence between sum (330:5) and sum (329:5)
+      remark #15346: vector dependence: assumed FLOW dependence between sum (330:5) and sum (329:5)
+      remark #15346: vector dependence: assumed ANTI dependence between sum (329:5) and sum (330:5)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(344,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between private.d_in2_sub[(col+public.in2_sub_cumh_sel_collow-1)*public. (358:4) and private.d_conv[col*public.in2_sub2_sqr_rows+row] (364:4)
+   remark #17106: parallel dependence: assumed FLOW dependence between private.d_conv[col*public.in2_sub2_sqr_rows+row] (364:4) and private.d_in2_sub[(col+public.in2_sub_cumh_sel_collow-1)*public. (358:4)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(345,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between private.d_in2_sub[(col+public.in2_sub_cumh_sel_collow-1)*public. (358:4) and private.d_conv[col*public.in2_sub2_sqr_rows+row] (364:4)
+      remark #17106: parallel dependence: assumed FLOW dependence between private.d_conv[col*public.in2_sub2_sqr_rows+row] (364:4) and private.d_in2_sub[(col+public.in2_sub_cumh_sel_collow-1)*public. (358:4)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between private.d_in2_sub[(col+public.in2_sub_cumh_sel_collow-1)*public. (358:4) and private.d_conv[col*public.in2_sub2_sqr_rows+row] (364:4)
+      remark #15346: vector dependence: assumed FLOW dependence between private.d_conv[col*public.in2_sub2_sqr_rows+row] (364:4) and private.d_in2_sub[(col+public.in2_sub_cumh_sel_collow-1)*public. (358:4)
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(345,4)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(378,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between private.d_in2_sqr[(col-public.in2_pad_add_cols)*public.in2_rows+ (388:5) and private.d_in2_pad[col*public.in2_pad_rows+row] (391:5)
+   remark #17106: parallel dependence: assumed FLOW dependence between private.d_in2_pad[col*public.in2_pad_rows+row] (391:5) and private.d_in2_sqr[(col-public.in2_pad_add_cols)*public.in2_rows+ (388:5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(379,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between private.d_in2_sqr[(col-public.in2_pad_add_cols)*public.in2_rows+ (388:5) and private.d_in2_pad[col*public.in2_pad_rows+row] (391:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between private.d_in2_pad[col*public.in2_pad_rows+row] (391:5) and private.d_in2_sqr[(col-public.in2_pad_add_cols)*public.in2_rows+ (388:5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between private.d_in2_sqr[(col-public.in2_pad_add_cols)*public.in2_rows+ (388:5) and private.d_in2_pad[col*public.in2_pad_rows+row] (391:5)
+      remark #15346: vector dependence: assumed FLOW dependence between private.d_in2_pad[col*public.in2_pad_rows+row] (391:5) and private.d_in2_sqr[(col-public.in2_pad_add_cols)*public.in2_rows+ (388:5)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(402,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between private.d_in2_pad[position] (410:5) and private.d_in2_pad[position] (411:5)
+   remark #17106: parallel dependence: assumed ANTI dependence between private.d_in2_pad[position] (411:5) and private.d_in2_pad[position] (410:5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(409,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between sum (410:5) and sum (411:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between sum (411:5) and sum (410:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between sum (411:5) and sum (410:5)
+      remark #17106: parallel dependence: assumed ANTI dependence between sum (410:5) and sum (411:5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between sum (410:5) and sum (411:5)
+      remark #15346: vector dependence: assumed FLOW dependence between sum (411:5) and sum (410:5)
+      remark #15346: vector dependence: assumed FLOW dependence between sum (411:5) and sum (410:5)
+      remark #15346: vector dependence: assumed ANTI dependence between sum (410:5) and sum (411:5)
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(409,4)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(423,3)
+<Multiversioned v1>
+   remark #25228: Loop multiversioned for Data Dependence
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(424,4)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 8  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(424,4)
+   <Remainder>
+      remark #25436: completely unrolled by 7  
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(423,3)
+<Multiversioned v2>
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between private.d_in2_sub[col*public.in2_sub_rows+row] (437:4) and private.d_in2_pad[(col+public.in2_pad_cumv_sel2_collow-1)*public (437:4)
+   remark #17106: parallel dependence: assumed ANTI dependence between private.d_in2_pad[(col+public.in2_pad_cumv_sel2_collow-1)*public (437:4) and private.d_in2_sub[col*public.in2_sub_rows+row] (437:4)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(424,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between private.d_in2_sub[col*public.in2_sub_rows+row] (437:4) and private.d_in2_pad[(col+public.in2_pad_cumv_sel2_collow-1)*public (437:4)
+      remark #17106: parallel dependence: assumed ANTI dependence between private.d_in2_pad[(col+public.in2_pad_cumv_sel2_collow-1)*public (437:4) and private.d_in2_sub[col*public.in2_sub_rows+row] (437:4)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between private.d_in2_sub[col*public.in2_sub_rows+row] (437:4) and private.d_in2_pad[(col+public.in2_pad_cumv_sel2_collow-1)*public (437:4)
+      remark #15346: vector dependence: assumed ANTI dependence between private.d_in2_pad[(col+public.in2_pad_cumv_sel2_collow-1)*public (437:4) and private.d_in2_sub[col*public.in2_sub_rows+row] (437:4)
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(424,4)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(446,3)
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 ) --> ( 2 1 ) 
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(453,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between sum (454:5) and sum (455:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between sum (455:5) and sum (454:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between sum (455:5) and sum (454:5)
+      remark #17106: parallel dependence: assumed ANTI dependence between sum (454:5) and sum (455:5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between sum (454:5) and sum (455:5)
+      remark #15346: vector dependence: assumed FLOW dependence between sum (455:5) and sum (454:5)
+      remark #15346: vector dependence: assumed FLOW dependence between sum (455:5) and sum (454:5)
+      remark #15346: vector dependence: assumed ANTI dependence between sum (454:5) and sum (455:5)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(471,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between private.d_conv[col*public.conv_rows+row] (500:4) and private.d_in2_sub[(col+public.in2_sub_cumh_sel2_collow-1)*public (500:4)
+   remark #17106: parallel dependence: assumed ANTI dependence between private.d_in2_sub[(col+public.in2_sub_cumh_sel2_collow-1)*public (500:4) and private.d_conv[col*public.conv_rows+row] (500:4)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(472,4)
+   <Multiversioned v1>
+      remark #25228: Loop multiversioned for Data Dependence
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(472,4)
+   <Multiversioned v2>
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between private.d_conv[col*public.conv_rows+row] (500:4) and private.d_in2_sub2_sqr[col*public.conv_rows+row] (500:4)
+      remark #17106: parallel dependence: assumed ANTI dependence between private.d_in2_sub2_sqr[col*public.conv_rows+row] (500:4) and private.d_conv[col*public.conv_rows+row] (500:4)
+      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(516,3)
+   remark #25408: memset generated
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between private.d_tMask[ei_new] (516:3) and private.d_tMask[ei_new] (517:4)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between private.d_tMask[ei_new] (517:4) and private.d_tMask[ei_new] (516:3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(516,3)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 2  
+      remark #25015: Estimate of max trip count of loop=24
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(516,3)
+   <Remainder>
+      remark #25015: Estimate of max trip count of loop=24
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(529,3)
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 3 4 ) --> ( 1 3 4 2 ) 
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between private.d_tMask[public.tMask_rows*(ja-1)+ia-1] (574:7) and private.d_mask_conv[(col-1)*public.conv_rows+row-1] (578:5)
+   remark #17106: parallel dependence: assumed FLOW dependence between private.d_mask_conv[(col-1)*public.conv_rows+row-1] (578:5) and private.d_tMask[public.tMask_rows*(ja-1)+ia-1] (574:7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(548,4)
+      remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+      remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 3 ) --> ( 2 3 1 ) 
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between private.d_tMask[public.tMask_rows*(ja-1)+ia-1] (574:7) and private.d_mask_conv[(col-1)*public.conv_rows+row-1] (578:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between private.d_mask_conv[(col-1)*public.conv_rows+row-1] (578:5) and private.d_tMask[public.tMask_rows*(ja-1)+ia-1] (574:7)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(570,5)
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(572,10) ]
+         remark #17108: loop was not parallelized: insufficient computational work
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(572,6)
+            remark #17108: loop was not parallelized: insufficient computational work
+            remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+            remark #25439: unrolled with remainder by 8  
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+            remark #25457: Number of partial sums replaced: 1
+         LOOP END
+
+         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(572,6)
+         <Remainder>
+            remark #25436: completely unrolled by 7  
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(594,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(594,3)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(637,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between d_in[col*public.in_mod_rows+row] (646:4) and public.d_frame[(*(private.d_Col+private.point_no*4)-25+col-1)*pu (646:4)
+   remark #17106: parallel dependence: assumed ANTI dependence between public.d_frame[(*(private.d_Col+private.point_no*4)-25+col-1)*pu (646:4) and d_in[col*public.in_mod_rows+row] (646:4)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(638,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between d_in[col*public.in_mod_rows+row] (646:4) and public.d_frame[(*(private.d_Col+private.point_no*4)-25+col-1)*pu (646:4)
+      remark #17106: parallel dependence: assumed ANTI dependence between public.d_frame[(*(private.d_Col+private.point_no*4)-25+col-1)*pu (646:4) and d_in[col*public.in_mod_rows+row] (646:4)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between d_in[col*public.in_mod_rows+row] (646:4) and public.d_frame[(*(private.d_Col+private.point_no*4)-25+col-1)*pu (646:4)
+      remark #15346: vector dependence: assumed ANTI dependence between public.d_frame[(*(private.d_Col+private.point_no*4)-25+col-1)*pu (646:4) and d_in[col*public.in_mod_rows+row] (646:4)
+      remark #25439: unrolled with remainder by 4  
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(638,4)
+   <Remainder>
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(516,3):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(516,3):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c(10,28):remark #34051: REGISTER ALLOCATION : [kernel] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/kernel.c:10
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :    1384
+            Global    :     496
+            Local     :     888
+        Regenerable   :      12
+        Spilled       :     161
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :    1232 bytes*
+            Reads     :     320 [1.05e+03 ~ 10.7%]
+            Writes    :     181 [3.02e+02 ~ 3.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [2/3=66.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(97,34)
+  -> EXTERN: (118,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (119,3) exit(int)
+  -> EXTERN: (125,28) AVI_open_input_file(char *, int)
+  -> EXTERN: (127,6) AVI_print_error(char *)
+  -> EXTERN: (132,18) AVI_video_frames(avi_t *)
+  -> EXTERN: (133,22) AVI_video_height(avi_t *)
+  -> EXTERN: (134,22) AVI_video_width(avi_t *)
+  -> EXTERN: (143,21) atoi(const char *)
+  -> EXTERN: (145,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (150,20) atoi(const char *)
+  -> EXTERN: (152,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (156,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (168,28) malloc(size_t)
+  -> EXTERN: (189,28) malloc(size_t)
+  -> EXTERN: (210,32) malloc(size_t)
+  -> EXTERN: (211,32) malloc(size_t)
+  -> EXTERN: (219,27) malloc(size_t)
+  -> EXTERN: (251,27) malloc(size_t)
+  -> EXTERN: (283,31) malloc(size_t)
+  -> EXTERN: (284,31) malloc(size_t)
+  -> EXTERN: (306,37) malloc(size_t)
+  -> EXTERN: (307,41) malloc(size_t)
+  -> EXTERN: (308,34) malloc(size_t)
+  -> EXTERN: (309,35) malloc(size_t)
+  -> EXTERN: (322,28) malloc(size_t)
+  -> EXTERN: (323,32) malloc(size_t)
+  -> EXTERN: (336,31) malloc(size_t)
+  -> EXTERN: (337,31) malloc(size_t)
+  -> EXTERN: (344,25) malloc(size_t)
+  -> EXTERN: (345,24) malloc(size_t)
+  -> EXTERN: (383,29) malloc(size_t)
+  -> EXTERN: (405,32) malloc(size_t)
+  -> EXTERN: (429,32) malloc(size_t)
+  -> EXTERN: (450,37) malloc(size_t)
+  -> EXTERN: (485,30) malloc(size_t)
+  -> EXTERN: (515,34) malloc(size_t)
+  -> EXTERN: (522,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (523,2) fflush(FILE *)
+  -> EXTERN: (536,20) get_frame(avi_t *, int, int, int, int)
+  -> EXTERN: (546,3) omp_set_num_threads(int)
+  -> (550,4) kernel(public_struct, private_struct) (isz = 1270) (sz = 1277)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (559,3) free(void *)
+  -> EXTERN: (565,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (566,3) fflush(FILE *)
+  -> EXTERN: (574,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (575,2) fflush(FILE *)
+  -> EXTERN: (603,2) free(void *)
+  -> EXTERN: (604,2) free(void *)
+  -> EXTERN: (605,2) free(void *)
+  -> EXTERN: (606,2) free(void *)
+  -> EXTERN: (607,2) free(void *)
+  -> EXTERN: (609,2) free(void *)
+  -> EXTERN: (610,2) free(void *)
+  -> EXTERN: (611,2) free(void *)
+  -> EXTERN: (612,2) free(void *)
+  -> EXTERN: (613,2) free(void *)
+  -> EXTERN: (620,3) free(void *)
+  -> EXTERN: (621,3) free(void *)
+  -> EXTERN: (622,3) free(void *)
+  -> EXTERN: (623,3) free(void *)
+  -> EXTERN: (625,3) free(void *)
+  -> EXTERN: (626,3) free(void *)
+  -> EXTERN: (628,3) free(void *)
+  -> EXTERN: (629,3) free(void *)
+  -> EXTERN: (631,3) free(void *)
+  -> EXTERN: (633,3) free(void *)
+  -> EXTERN: (635,3) free(void *)
+  -> EXTERN: (637,3) free(void *)
+  -> EXTERN: (639,3) free(void *)
+  -> EXTERN: (640,3) free(void *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(169,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 20  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(190,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 20  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(220,2)
+   remark #25399: memcopy generated
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(252,2)
+   remark #25399: memcopy generated
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(305,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=51
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(321,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=51
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(335,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=51
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(351,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #25427: Loop Statements Reordered
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 20  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(361,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #25427: Loop Statements Reordered
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=31
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(382,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=51
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(404,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=51
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(428,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=51
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(449,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=51
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(484,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=51
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(514,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=51
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(529,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(549,3)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15382: vectorization support: call to function kernel(public_struct, private_struct) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(550,4) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #25015: Estimate of max trip count of loop=51
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(619,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=51
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(220,2):remark #34014: optimization advice for memcpy: increase the destination's alignment to 16 (and use __assume_aligned) to increase the width of stores
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(220,2):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (1, 0)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(252,2):remark #34014: optimization advice for memcpy: increase the destination's alignment to 16 (and use __assume_aligned) to increase the width of stores
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(252,2):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (1, 0)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(550,4):remark #34014: optimization advice for memcpy: increase the destination's alignment to 16 (and use __assume_aligned) to increase the width of stores
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(550,4):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (1, 0)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(550,4):remark #34014: optimization advice for memcpy: increase the destination's alignment to 16 (and use __assume_aligned) to increase the width of stores
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(550,4):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (1, 0)
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(97,34):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c:97
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   21[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm6]
+        
+    Routine temporaries
+        Total         :     289
+            Global    :     112
+            Local     :     177
+        Regenerable   :      83
+        Spilled       :      17
+        
+    Routine stack
+        Variables     :    8556 bytes*
+            Reads     :      38 [3.56e+03 ~ 24.7%]
+            Writes    :     249 [1.88e+02 ~ 1.3%]
+        Spills        :      96 bytes*
+            Reads     :      30 [1.92e+01 ~ 0.1%]
+            Writes    :      19 [1.04e+01 ~ 0.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: write_data(char *, int, int, int, int *, int *, int, int *, int *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (write_data(char *, int, int, int, int *, int *, int, int *, int *)) [3/3=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(32,18)
+  -> EXTERN: (46,8) fopen(const char *__restrict__, const char *__restrict__)
+  -> EXTERN: (48,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (56,7) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (57,7) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (58,7) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (59,7) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (62,6) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (63,6) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (65,8) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (67,6) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (70,8) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (72,6) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (75,8) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (77,6) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (80,8) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (87,2) fclose(FILE *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(60,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (62:6) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (80:8)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (80:8) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (62:6)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(64,6)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (65:8) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (65:8)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (65:8) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (65:8)
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(68,6)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (70:8) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (70:8)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (70:8) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (70:8)
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(73,6)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (75:8) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (75:8)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (75:8) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (75:8)
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(78,6)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (80:8) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (80:8)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (80:8) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (80:8)
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c(32,18):remark #34051: REGISTER ALLOCATION : [write_data] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/rodinia_3.1/openmp/heartwall/main.c:32
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   13[ rax rdx rcx rbx rbp rsi rdi r8-r9 r12-r15]
+        
+    Routine temporaries
+        Total         :     112
+            Global    :      39
+            Local     :      73
+        Regenerable   :      45
+        Spilled       :      13
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      56 bytes*
+            Reads     :      19 [7.83e+01 ~ 6.1%]
+            Writes    :      12 [3.79e+01 ~ 3.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> Inlining the function will lead to incorrect program behavior.
+

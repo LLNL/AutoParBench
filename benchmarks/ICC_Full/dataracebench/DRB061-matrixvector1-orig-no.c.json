@@ -1,0 +1,72 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB061-matrixvector1-orig-no.c",
+"function":"init",
+"loop id":"1",
+"loop line":"57",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["j","i"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB061-matrixvector1-orig-no.c",
+"function":"init",
+"loop id":"2",
+"loop line":"58",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["j","i"]
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB061-matrixvector1-orig-no.c",
+"function":"mv",
+"loop id":"1",
+"loop line":"70",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["j","sum","i"]
+},
+"loop - object id : 4":{
+"file":"./dataracebench/DRB061-matrixvector1-orig-no.c",
+"function":"mv",
+"loop id":"2",
+"loop line":"73",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["j","sum","i"]
+},
+"loop - object id : 5":{
+"file":"./dataracebench/DRB061-matrixvector1-orig-no.c",
+"function":"print",
+"loop id":"1",
+"loop line":"85",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 6":{
+"file":"./dataracebench/DRB061-matrixvector1-orig-no.c",
+"function":"print",
+"loop id":"2",
+"loop line":"86",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

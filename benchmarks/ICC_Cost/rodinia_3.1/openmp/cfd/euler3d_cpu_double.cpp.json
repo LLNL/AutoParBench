@@ -1,0 +1,211 @@
+{
+"loop - object id : 1":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"copy<double>",
+"loop id":"1",
+"loop line":"57",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"true"
+},
+"loop - object id : 2":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"dump",
+"loop id":"1",
+"loop line":"71",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 3":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"dump",
+"loop id":"2",
+"loop line":"78",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 4":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"dump",
+"loop id":"3",
+"loop line":"80",
+"loop column":"4",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 5":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"dump",
+"loop id":"4",
+"loop line":"88",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 6":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"initialize_variables",
+"loop id":"1",
+"loop line":"105",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 7":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"initialize_variables",
+"loop id":"2",
+"loop line":"107",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 8":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"compute_step_factor",
+"loop id":"1",
+"loop line":"157",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 9":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"compute_flux",
+"loop id":"1",
+"loop line":"187",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 10":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"compute_flux",
+"loop id":"2",
+"loop line":"224",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 11":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"time_step",
+"loop id":"1",
+"loop line":"317",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 12":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"main",
+"loop id":"1",
+"loop line":"385",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 13":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"main",
+"loop id":"2",
+"loop line":"388",
+"loop column":"4",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 14":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"main",
+"loop id":"3",
+"loop line":"394",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 15":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"main",
+"loop id":"4",
+"loop line":"404",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 16":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"main",
+"loop id":"5",
+"loop line":"407",
+"loop column":"4",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 17":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"main",
+"loop id":"6",
+"loop line":"411",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 18":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"main",
+"loop id":"7",
+"loop line":"429",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 19":{
+"file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",
+"function":"main",
+"loop id":"8",
+"loop line":"436",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

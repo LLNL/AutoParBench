@@ -1,0 +1,37 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB050-functionparameter-orig-yes.c",
+"function":"foo1",
+"loop id":"1",
+"loop line":"55",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB050-functionparameter-orig-yes.c",
+"function":"main",
+"loop id":"1",
+"loop line":"69",
+"loop column":"3",
+"pragma type":"target parallel for",
+"ordered":"false",
+"offload":"true",
+"multiversioned":"false",
+"induction variable":"i",
+"map from":["c[0:len]","o1[0:len]"]
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB050-functionparameter-orig-yes.c",
+"function":"main",
+"loop id":"2",
+"loop line":"76",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

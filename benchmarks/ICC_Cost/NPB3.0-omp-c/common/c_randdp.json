@@ -1,0 +1,13 @@
+{
+"loop - object id : 1":{
+"file":"c_randdp.c",
+"function":"vranlc",
+"loop id":"1",
+"loop line":"118",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

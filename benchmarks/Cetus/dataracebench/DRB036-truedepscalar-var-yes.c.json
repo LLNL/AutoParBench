@@ -1,0 +1,24 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB036-truedepscalar-var-yes.c",
+"function":"main",
+"loop id":"1",
+"loop line":"112",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB036-truedepscalar-var-yes.c",
+"function":"main",
+"loop id":"2",
+"loop line":"119",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

@@ -1,0 +1,181 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -w -qopenmp -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -c
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [1/1=100.0%] ep.c(66,33)
+  -> EXTERN: (83,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (85,5) sprintf(char *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (89,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (106,5) vranlc(int, double *, double, double *)
+  -> EXTERN: (107,14) randlc(double *, double)
+  -> EXTERN: (111,12) log(double)
+  -> EXTERN: (113,5) timer_clear(int)
+  -> EXTERN: (114,5) timer_clear(int)
+  -> EXTERN: (115,5) timer_clear(int)
+  -> EXTERN: (116,5) timer_start(int)
+  -> EXTERN: (118,5) vranlc(int, double *, double, double *)
+  -> EXTERN: (125,7) randlc(double *, double)
+  -> EXTERN: (161,36) randlc(double *, double)
+  -> EXTERN: (163,18) randlc(double *, double)
+  -> EXTERN: (170,2) vranlc(int, double *, double, double *)
+  -> EXTERN: (185,20) log(double)
+  -> EXTERN: (200,16) omp_get_num_threads(void)
+  -> EXTERN: (208,5) timer_stop(int)
+  -> EXTERN: (209,10) timer_read(int)
+  -> EXTERN: (241,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (249,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (252,5) c_print_results(char *, char, int, int, int, int, int, double, double, char *, int, char *, char *, char *, char *, char *, char *, char *, char *, char *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ep.c(86,5)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #25453: Loop Reversed
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 13  
+LOOP END
+
+LOOP BEGIN at ep.c(109,5)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25438: unrolled without remainder by 2  
+   remark #25015: Estimate of max trip count of loop=131072
+LOOP END
+
+LOOP BEGIN at ep.c(124,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15382: vectorization support: call to function randlc(double *, double) cannot be vectorized   [ ep.c(125,7) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+LOOP END
+
+LOOP BEGIN at ep.c(134,5)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 10  
+LOOP END
+
+LOOP BEGIN at ep.c(150,5)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 10  
+LOOP END
+
+LOOP BEGIN at ep.c(152,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between t1 (154:2) and t1 (183:13)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between t1 (183:13) and t1 (154:2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ep.c(159,2)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ep.c(164,13) ]
+   LOOP END
+
+   LOOP BEGIN at ep.c(180,2)
+      remark #25084: Preprocess Loopnests: Moving Out Store    [ ep.c(185,3) ]
+      remark #25084: Preprocess Loopnests: Moving Out Store    [ ep.c(183,13) ]
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between qq[l] (189:3) and qq[l] (189:3)
+      remark #17106: parallel dependence: assumed ANTI dependence between qq[l] (189:3) and qq[l] (189:3)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between qq[l] (189:3) and qq[l] (189:3)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between qq[l] (189:3) and qq[l] (189:3)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between qq[l] (189:3) and qq[l] (189:3)
+      remark #15346: vector dependence: assumed ANTI dependence between qq[l] (189:3) and qq[l] (189:3)
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ep.c(197,7)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 10  
+LOOP END
+
+LOOP BEGIN at ep.c(204,5)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 10  
+LOOP END
+
+LOOP BEGIN at ep.c(248,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ ep.c(249,2) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+LOOP END
+
+LOOP BEGIN at ep.c(109,5)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+   remark #25015: Estimate of max trip count of loop=131072
+LOOP END
+
+LOOP BEGIN at ep.c(109,5)
+<Remainder>
+   remark #25015: Estimate of max trip count of loop=131072
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+ep.c(66,33):remark #34051: REGISTER ALLOCATION : [main] ep.c:66
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   22[ rax rdx rcx rbx rsi rdi r8-r9 r12-r15 zmm0-zmm9]
+        
+    Routine temporaries
+        Total         :     259
+            Global    :      69
+            Local     :     190
+        Regenerable   :     105
+        Spilled       :      17
+        
+    Routine stack
+        Variables     :     166 bytes*
+            Reads     :      35 [4.26e+05 ~ 3.4%]
+            Writes    :      40 [1.64e+05 ~ 1.3%]
+        Spills        :     176 bytes*
+            Reads     :      31 [8.19e+05 ~ 6.5%]
+            Writes    :      30 [8.19e+05 ~ 6.5%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================

@@ -1,0 +1,48 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB002-antidep1-var-yes.c",
+"function":"main",
+"loop id":"1",
+"loop line":"64",
+"loop column":"3",
+"pragma type":"parallel for simd",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i"
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB002-antidep1-var-yes.c",
+"function":"main",
+"loop id":"2",
+"loop line":"68",
+"loop column":"3",
+"pragma type":"simd",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i"
+},
+"ordered - object id : 3":{
+"pragma type":"ordered",
+"file":"./dataracebench/DRB002-antidep1-var-yes.c",
+"function":"main",
+"loop id":"3",
+"statement id":"1",
+"snippet line":"73",
+"snippet column":"13"
+},
+"loop - object id : 4":{
+"file":"./dataracebench/DRB002-antidep1-var-yes.c",
+"function":"main",
+"loop id":"3",
+"loop line":"72",
+"loop column":"3",
+"pragma type":"parallel for simd",
+"ordered":"true",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"dependence list":["ordered - object id : 3"]
+}
+}

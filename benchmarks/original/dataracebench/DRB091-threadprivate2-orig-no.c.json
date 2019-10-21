@@ -1,0 +1,30 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB091-threadprivate2-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"64",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"],
+"reduction":["+:sum0"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB091-threadprivate2-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"72",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"],
+"reduction":["+:sum1"]
+}
+}

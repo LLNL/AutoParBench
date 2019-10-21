@@ -1,0 +1,127 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -c -qopenmp -par-threshold0 -vec-threshold0 -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Simd/dataracebench/DRB049-fprintf-orig-no.o
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Simd/dataracebench/DRB049-fprintf-orig-no.c(55,1)
+  -> EXTERN: (66,11) fopen(const char *__restrict__, const char *__restrict__)
+  -> EXTERN: (69,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (74,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (77,3) fclose(FILE *)
+  -> EXTERN: (78,9) remove(const char *)
+  -> EXTERN: (81,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Simd/dataracebench/DRB049-fprintf-orig-no.c(63,3)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ A } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15388: vectorization support: reference A[i] has aligned access   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Simd/dataracebench/DRB049-fprintf-orig-no.c(64,5) ]
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.750 
+   remark #15478: estimated potential speedup: 2.630 
+   remark #15488: --- end vector cost summary ---
+   remark #25015: Estimate of max trip count of loop=62
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Simd/dataracebench/DRB049-fprintf-orig-no.c(63,3)
+<Remainder loop for vectorization>
+   remark #25436: completely unrolled by 8  
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Simd/dataracebench/DRB049-fprintf-orig-no.c(72,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (74:5) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (74:5)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (74:5) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (74:5)
+   remark #15527: loop was not vectorized: function call to fprintf(FILE *__restrict__, const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Simd/dataracebench/DRB049-fprintf-orig-no.c(74,5) ]
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Simd/dataracebench/DRB049-fprintf-orig-no.c(63,3)
+   remark #15389: vectorization support: reference at (64:5) has unaligned access   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Simd/dataracebench/DRB049-fprintf-orig-no.c(64,5) ]
+   remark #15381: vectorization support: unaligned access used inside loop body
+   remark #15305: vectorization support: vector length 4
+   remark #15399: vectorization support: unroll factor set to 4
+   remark #15309: vectorization support: normalized vectorization overhead 0.125
+   remark #15300: LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 1.500 
+   remark #15478: estimated potential speedup: 1.320 
+   remark #15488: --- end vector cost summary ---
+   remark #25015: Estimate of max trip count of loop=62
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Simd/dataracebench/DRB049-fprintf-orig-no.c(63,3)
+<Remainder loop for vectorization>
+   remark #25015: Estimate of max trip count of loop=1000
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Simd/dataracebench/DRB049-fprintf-orig-no.c(55,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Simd/dataracebench/DRB049-fprintf-orig-no.c:55
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   16[ rax rdx rcx rbx rsi rdi r8-r10 r12-r13 zmm0-zmm4]
+        
+    Routine temporaries
+        Total         :     127
+            Global    :      31
+            Local     :      96
+        Regenerable   :      51
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :    4032 bytes*
+            Reads     :       7 [2.90e+03 ~ 6.7%]
+            Writes    :      20 [5.00e+03 ~ 11.6%]
+        Spills        :      40 bytes*
+            Reads     :      10 [5.00e+00 ~ 0.0%]
+            Writes    :      10 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================

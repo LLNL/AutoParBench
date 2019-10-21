@@ -1,0 +1,46 @@
+{
+"loop - object id : 1":{
+"file":"./rodinia_3.1/openmp/b+tree/kernel/kernel_cpu.c",
+"function":"kernel_cpu",
+"loop id":"1",
+"loop line":"86",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./rodinia_3.1/openmp/b+tree/kernel/kernel_cpu.c",
+"function":"kernel_cpu",
+"loop id":"2",
+"loop line":"89",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 3":{
+"file":"./rodinia_3.1/openmp/b+tree/kernel/kernel_cpu.c",
+"function":"kernel_cpu",
+"loop id":"3",
+"loop line":"92",
+"loop column":"4",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 4":{
+"file":"./rodinia_3.1/openmp/b+tree/kernel/kernel_cpu.c",
+"function":"kernel_cpu",
+"loop id":"4",
+"loop line":"114",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

@@ -1,0 +1,279 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.o
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: print()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (print()) [1/4=25.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(81,1)
+  -> EXTERN: (85,7) printf(const char *, ...)
+  -> EXTERN: (87,5) printf(const char *, ...)
+  -> EXTERN: (88,5) printf(const char *, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(83,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *, ...) (85:7) and call:printf(const char *, ...) (88:5)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *, ...) (88:5) and call:printf(const char *, ...) (85:7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(84,5)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(85,7) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(81,1):remark #34051: REGISTER ALLOCATION : [print] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c:81
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rbx rbp rdi r14-r15 zmm0]
+        
+    Routine temporaries
+        Total         :      25
+            Global    :      12
+            Local     :      13
+        Regenerable   :       9
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: mv()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (mv()) [2/4=50.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(67,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(69,3)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ j sum i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=1000
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(72,5)
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25438: unrolled without remainder by 2  
+      remark #25015: Estimate of max trip count of loop=1000
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(69,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=1000
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(72,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25438: unrolled without remainder by 2  
+      remark #25015: Estimate of max trip count of loop=1000
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(67,1):remark #34051: REGISTER ALLOCATION : [mv] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c:67
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   14[ rax rdx rcx rbx rbp rsi rdi r8-r10 r12 zmm0-zmm2]
+        
+    Routine temporaries
+        Total         :     101
+            Global    :      28
+            Local     :      73
+        Regenerable   :      33
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :      28 bytes*
+            Reads     :       2 [2.00e+03 ~ 0.0%]
+            Writes    :       7 [0.00e+00 ~ 0.0%]
+        Spills        :      48 bytes*
+            Reads     :      12 [6.00e+00 ~ 0.0%]
+            Writes    :      12 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: init()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (init()) [3/4=75.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(54,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(56,3)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ j i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=1000
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(57,5)
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25438: unrolled without remainder by 2  
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      remark #25015: Estimate of max trip count of loop=1000
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(56,3)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=1000
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(57,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25438: unrolled without remainder by 2  
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      remark #25015: Estimate of max trip count of loop=1000
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(54,1):remark #34051: REGISTER ALLOCATION : [init] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c:54
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   17[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm1]
+        
+    Routine temporaries
+        Total         :      87
+            Global    :      28
+            Local     :      59
+        Regenerable   :      28
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :      24 bytes*
+            Reads     :       2 [2.00e+03 ~ 0.0%]
+            Writes    :       6 [0.00e+00 ~ 0.0%]
+        Spills        :      48 bytes*
+            Reads     :      12 [6.00e+00 ~ 0.0%]
+            Writes    :      12 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: main()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main()) [4/4=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(94,1)
+  -> (95,3) init() (isz = 38) (sz = 43)
+     [[ Unable to inline callsite  <1>]]
+  -> (96,3) mv() (isz = 37) (sz = 40)
+     [[ Unable to inline callsite  <1>]]
+  -> (97,3) print() (isz = 44) (sz = 49)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c(94,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB062-matrixvector2-orig-no.c:94
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      16
+            Global    :       6
+            Local     :      10
+        Regenerable   :      10
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       4 bytes*
+            Reads     :       2 [0.00e+00 ~ 0.0%]
+            Writes    :       2 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> Inlining the function will lead to incorrect program behavior.
+

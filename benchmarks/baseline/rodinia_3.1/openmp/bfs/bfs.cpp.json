@@ -1,0 +1,93 @@
+{
+"loop - object id : 1":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"1",
+"loop line":"0",
+"loop column":"0",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"2",
+"loop line":"0",
+"loop column":"0",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 3":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"3",
+"loop line":"0",
+"loop column":"0",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["no_of_nodes","h_cost","i"]
+},
+"loop - object id : 4":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"4",
+"loop line":"0",
+"loop column":"0",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 5":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"5",
+"loop line":"0",
+"loop column":"0",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"tid"
+},
+"loop - object id : 6":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"6",
+"loop line":"0",
+"loop column":"0",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 7":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"7",
+"loop line":"0",
+"loop column":"0",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"tid"
+},
+"loop - object id : 8":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"8",
+"loop line":"0",
+"loop column":"0",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

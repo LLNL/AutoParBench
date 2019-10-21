@@ -1,0 +1,81 @@
+{
+"loop - object id : 1":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"1",
+"loop line":"75",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"2",
+"loop line":"97",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 3":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"3",
+"loop line":"110",
+"loop column":"2",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"shared":[".2"],
+"firstprivate":["no_of_nodes","h_cost","i"]
+},
+"loop - object id : 4":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"4",
+"loop line":"134",
+"loop column":"13",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 5":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"5",
+"loop line":"138",
+"loop column":"63",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 6":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"6",
+"loop line":"154",
+"loop column":"13",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 7":{
+"file":"./rodinia_3.1/openmp/bfs/bfs.cpp",
+"function":"BFSGraph",
+"loop id":"7",
+"loop line":"175",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}
