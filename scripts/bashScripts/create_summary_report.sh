@@ -37,7 +37,7 @@ echo "" &>> ${THIS}/reports/Summary_Report.md
 echo "" &>> ${THIS}/reports/Summary_Report.md
 echo "<table>" &>> ${THIS}/reports/Summary_Report.md
 LABEL="DP"
-echo "<tr><th style="font-weight:bold" colspan="7"> ${1} </th></tr>" &>> ${THIS}/reports/Summary_Report.md
+echo "<tr><th style="font-weight:bold" colspan="8"> ${1} </th></tr>" &>> ${THIS}/reports/Summary_Report.md
 echo "<tr><th> ID </th><th> Filename </th><th> TP </th><th> TN </th><th> $LABEL </th><th> FP </th><th> FN </th><th> N/A </th></tr>" &>> ${THIS}/reports/Summary_Report.md
 COUNTER=1
 while IFS= read -r index
