@@ -10,7 +10,7 @@ Intel(R) Xeon(R) CPU E5-2686 v4
 
 <table>
 <tr><th style=font-weight:bold colspan=8> Autopar </th></tr>
-<tr><th> ID </th><th> Filename </th><th> TP </th><th> TN </th><th> DP </th><th> FP </th><th> FN </th><th> N/A </th></tr>
+<tr><th> ID </th><th> Filename </th><th> DP </th><th> TP </th><th> TN </th><th> FP </th><th> FN </th><th> N/A </th></tr>
 <tr><td>1</td><td>CPU/dataracebench/DRB001-antidep1-orig-yes.c</td><td> 0 </td><td> 1 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 0 </td></tr>
 <tr><td>2</td><td>CPU/dataracebench/DRB002-antidep1-var-yes.c</td><td> 0 </td><td> 1 </td><td> 1 </td><td> 0 </td><td> 1 </td><td> 0 </td></tr>
 <tr><td>3</td><td>CPU/dataracebench/DRB003-antidep2-orig-yes.c</td><td> 0 </td><td> 3 </td><td> 1 </td><td> 0 </td><td> 2 </td><td> 0 </td></tr>
@@ -123,7 +123,7 @@ Intel(R) Xeon(R) CPU E5-2686 v4
 
 <table>
 <tr><th style=font-weight:bold colspan=8> ICC Full </th></tr>
-<tr><th> ID </th><th> Filename </th><th> TP </th><th> TN </th><th> DP </th><th> FP </th><th> FN </th><th> N/A </th></tr>
+<tr><th> ID </th><th> Filename </th><th> DP </th><th> TP </th><th> TN </th><th> FP </th><th> FN </th><th> N/A </th></tr>
 <tr><td>1</td><td>CPU/dataracebench/DRB001-antidep1-orig-yes.c</td><td> 1 </td><td> 0 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 0 </td></tr>
 <tr><td>2</td><td>CPU/dataracebench/DRB002-antidep1-var-yes.c</td><td> 1 </td><td> 0 </td><td> 1 </td><td> 0 </td><td> 1 </td><td> 0 </td></tr>
 <tr><td>3</td><td>CPU/dataracebench/DRB003-antidep2-orig-yes.c</td><td> 2 </td><td> 1 </td><td> 1 </td><td> 0 </td><td> 2 </td><td> 0 </td></tr>
@@ -242,7 +242,7 @@ Intel(R) Xeon(R) CPU E5-2686 v4
 
 <table>
 <tr><th style=font-weight:bold colspan=8> ICC Cost </th></tr>
-<tr><th> ID </th><th> Filename </th><th> TP </th><th> TN </th><th> DP </th><th> FP </th><th> FN </th><th> N/A </th></tr>
+<tr><th> ID </th><th> Filename </th><th> DP </th><th> TP </th><th> TN </th><th> FP </th><th> FN </th><th> N/A </th></tr>
 <tr><td>1</td><td>CPU/dataracebench/DRB001-antidep1-orig-yes.c</td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td><td> 1 </td><td> 0 </td></tr>
 <tr><td>2</td><td>CPU/dataracebench/DRB002-antidep1-var-yes.c</td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td><td> 2 </td><td> 0 </td></tr>
 <tr><td>3</td><td>CPU/dataracebench/DRB003-antidep2-orig-yes.c</td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td><td> 5 </td><td> 0 </td></tr>
@@ -361,7 +361,7 @@ Intel(R) Xeon(R) CPU E5-2686 v4
 
 <table>
 <tr><th style=font-weight:bold colspan=8> Cetus </th></tr>
-<tr><th> ID </th><th> Filename </th><th> TP </th><th> TN </th><th> DP </th><th> FP </th><th> FN </th><th> N/A </th></tr>
+<tr><th> ID </th><th> Filename </th><th> DP </th><th> TP </th><th> TN </th><th> FP </th><th> FN </th><th> N/A </th></tr>
 <tr><td>1</td><td>CPU/dataracebench/DRB001-antidep1-orig-yes.c</td><td> 0 </td><td> 1 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 0 </td></tr>
 <tr><td>2</td><td>CPU/dataracebench/DRB002-antidep1-var-yes.c</td><td> 0 </td><td> 1 </td><td> 1 </td><td> 0 </td><td> 1 </td><td> 0 </td></tr>
 <tr><td>3</td><td>CPU/dataracebench/DRB003-antidep2-orig-yes.c</td><td> 0 </td><td> 3 </td><td> 1 </td><td> 0 </td><td> 2 </td><td> 0 </td></tr>
@@ -458,7 +458,7 @@ Intel(R) Xeon(R) CPU E5-2686 v4
 
 <table>
 <tr><th style=font-weight:bold colspan=8> Dawncc </th></tr>
-<tr><th> ID </th><th> Filename </th><th> TP </th><th> TN </th><th> DP </th><th> FP </th><th> FN </th><th> N/A </th></tr>
+<tr><th> ID </th><th> Filename </th><th> DP </th><th> TP </th><th> TN </th><th> FP </th><th> FN </th><th> N/A </th></tr>
 <tr><td>1</td><td>GPU/dataracebench/DRB001-antidep1-orig-yes.c</td><td> 0 </td><td> 1 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 0 </td></tr>
 <tr><td>2</td><td>GPU/dataracebench/DRB002-antidep1-var-yes.c</td><td> 0 </td><td> 0 </td><td> 2 </td><td> 0 </td><td> 1 </td><td> 0 </td></tr>
 <tr><td>3</td><td>GPU/dataracebench/DRB003-antidep2-orig-yes.c</td><td> 1 </td><td> 0 </td><td> 3 </td><td> 2 </td><td> 0 </td><td> 0 </td></tr>
@@ -481,7 +481,7 @@ Intel(R) Xeon(R) CPU E5-2686 v4
 
 <table>
 <tr><th style=font-weight:bold colspan=8> ICC Simd </th></tr>
-<tr><th> ID </th><th> Filename </th><th> TP </th><th> TN </th><th> DP </th><th> FP </th><th> FN </th><th> N/A </th></tr>
+<tr><th> ID </th><th> Filename </th><th> DP </th><th> TP </th><th> TN </th><th> FP </th><th> FN </th><th> N/A </th></tr>
 <tr><td>1</td><td>CPU_VECTORIZATION/dataracebench/DRB001-antidep1-orig-yes.c</td><td> 0 </td><td> 2 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td></tr>
 <tr><td>2</td><td>CPU_VECTORIZATION/dataracebench/DRB002-antidep1-var-yes.c</td><td> 0 </td><td> 2 </td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td></tr>
 <tr><td>3</td><td>CPU_VECTORIZATION/dataracebench/DRB003-antidep2-orig-yes.c</td><td> 1 </td><td> 2 </td><td> 1 </td><td> 0 </td><td> 2 </td><td> 0 </td></tr>
