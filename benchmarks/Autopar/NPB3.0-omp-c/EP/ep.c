@@ -268,7 +268,7 @@ c       vectorizable.
   for (i = 0; i <= 9; i += 1) {
     printf("%3d %15.0f\n",i,q[i]);
   }
-  c_print_results("EP",'A',28 + 1,0,0,nit,nthreads,tm,Mops,"Random numbers generated",verified,"3.0 structured","11 Sep 2019","(none)","(none)","-lm","(none)","(none)","(none)","randdp");
+  c_print_results("EP",'A',28 + 1,0,0,nit,nthreads,tm,Mops,"Random numbers generated",verified,"3.0 structured","21 Oct 2019","(none)","(none)","-lm","(none)","(none)","(none)","randdp");
   if (0 == 1) {
     printf("Total time:     %f",(timer_read(1)));
     printf("Gaussian pairs: %f",(timer_read(2)));

@@ -30,11 +30,6 @@ cd ${SCRIPTS}
 if [ -f "${THIS}/logs/autopar.log" ]; then
   rm ${THIS}/logs/autopar.log
 fi
-if [ -d "${SCRIPTS}/tmpFiles" ]; then
-  rm -r ${SCRIPTS}/tmpFiles
-fi
-mkdir ${SCRIPTS}/tmpFiles
-
 
 COMPILER="icc -qopenmp -w"
 if [ -d "${SCRIPTS}/../benchmarks/Autopar/NPB3.0-omp-c/" ]; then
