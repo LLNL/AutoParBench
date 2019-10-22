@@ -1,0 +1,17 @@
+<td>./CPU_VECTORIZATION/dataracebench/DRB001-antidep1-orig-yes.c</td><td> 0 </td><td> 2 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB002-antidep1-var-yes.c</td><td> 0 </td><td> 2 </td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB003-antidep2-orig-yes.c</td><td> 1 </td><td> 2 </td><td> 1 </td><td> 0 </td><td> 2 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB004-antidep2-var-yes.c</td><td> 1 </td><td> 2 </td><td> 1 </td><td> 0 </td><td> 2 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB005-indirectaccess1-orig-yes.c</td><td> 0 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB014-outofbounds-orig-yes.c</td><td> 0 </td><td> 2 </td><td> 1 </td><td> 0 </td><td> 1 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB020-privatemissing-var-yes.c</td><td> 1 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB028-privatemissing-orig-yes.c</td><td> 1 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB031-truedepfirstdimension-orig-yes.c</td><td> 1 </td><td> 2 </td><td> 1 </td><td> 0 </td><td> 2 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB037-truedepseconddimension-orig-yes.c</td><td> 1 </td><td> 1 </td><td> 1 </td><td> 0 </td><td> 3 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB045-doall1-orig-no.c</td><td> 0 </td><td> 2 </td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB046-doall2-orig-no.c</td><td> 2 </td><td> 2 </td><td> 0 </td><td> 0 </td><td> 2 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB047-doallchar-orig-no.c</td><td> 0 </td><td> 2 </td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB048-firstprivate-orig-no.c</td><td> 0 </td><td> 2 </td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB049-fprintf-orig-no.c</td><td> 0 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB050-functionparameter-orig-no.c</td><td> 0 </td><td> 2 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 0 </td>
+<td>./CPU_VECTORIZATION/dataracebench/DRB050-functionparameter-orig-yes.c</td><td> 0 </td><td> 1 </td><td> 2 </td><td> 0 </td><td> 0 </td><td> 0 </td>

@@ -1,0 +1,10 @@
+<td>./CPU/NPB3.0-omp-c/BT/bt.c</td><td> 109 </td><td> 35 </td><td> 46 </td><td> 11 </td><td> 24 </td><td> 0 </td>
+<td>./CPU/NPB3.0-omp-c/CG/cg.c</td><td> 12 </td><td> 10 </td><td> 15 </td><td> 1 </td><td> 4 </td><td> 0 </td>
+<td>./CPU/NPB3.0-omp-c/common/c_randdp.c</td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 0 </td>
+<td>./CPU/NPB3.0-omp-c/EP/ep.c</td><td> 5 </td><td> 1 </td><td> 4 </td><td> 0 </td><td> 1 </td><td> 0 </td>
+<td>./CPU/NPB3.0-omp-c/FT/ft.c</td><td> 14 </td><td> 1 </td><td> 24 </td><td> 5 </td><td> 9 </td><td> 0 </td>
+<td>./CPU/NPB3.0-omp-c/IS/is.c</td><td> 4 </td><td> 0 </td><td> 5 </td><td> 4 </td><td> 1 </td><td> 0 </td>
+<td>./CPU/NPB3.0-omp-c/LU/lu.c</td><td> 96 </td><td> 18 </td><td> 29 </td><td> 27 </td><td> 11 </td><td> 7 </td>
+<td>./CPU/NPB3.0-omp-c/MG/mg.c</td><td> 10 </td><td> 3 </td><td> 49 </td><td> 1 </td><td> 17 </td><td> 0 </td>
+<td>./CPU/NPB3.0-omp-c/SP/sp.c</td><td> 150 </td><td> 69 </td><td> 53 </td><td> 30 </td><td> 14 </td><td> 0 </td>
+<td>./CPU/NPB3.0-omp-c/sys/setparams.c</td><td> 0 </td><td> 0 </td><td> 8 </td><td> 0 </td><td> 0 </td><td> 0 </td>
