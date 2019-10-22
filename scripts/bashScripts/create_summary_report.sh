@@ -52,10 +52,16 @@ echo "</table>" &>> ${THIS}/reports/Summary_Report.md
 
 set_environment
 create_summary_header
+
+# CPU Threading 
 create_summary_report "Autopar" "summary_Autopar.txt"
 create_summary_report "ICC Full" "summary_ICC_Full.txt"
 create_summary_report "ICC Cost" "summary_ICC_Cost.txt"
 create_summary_report "Cetus" "summary_Cetus.txt"
-create_summary_report "ICC Simd" "summary_ICC_Simd.txt"
+
+# GPU Target
 create_summary_report "Dawncc" "summary_Dawncc.txt"
+
+# CPU Simd
+create_summary_report "ICC Simd" "summary_ICC_Simd.txt"
 
