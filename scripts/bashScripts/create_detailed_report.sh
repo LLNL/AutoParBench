@@ -49,6 +49,9 @@ do
   link_ref="[Reference](../../benchmarks/${REFERENCE}/${filename/.c/.c.json})"
 
   link_tool="[out](../../benchmarks/${TOOL}/${filename})"
+  if echo "$TOOL" | grep -q "ICC"; then
+    link_tool="[out](../../benchmarks/${TOOL}/${filename}.optrpt)"
+  fi
   link_tool_json="[json](../../benchmarks/${TOOL}/${filename/.c/.c.json})"
 
   link_ground_truth="(../../benchmarks/original/${filename})"

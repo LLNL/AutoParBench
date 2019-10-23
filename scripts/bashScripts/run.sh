@@ -27,3 +27,6 @@ bash create_source_jsons.sh
 #    parallelizable but not profitable loops
 bash create_ground_truth.sh
 
+# Produce the reports to be used
+bash create_reports.sh
+

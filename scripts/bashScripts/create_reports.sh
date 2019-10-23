@@ -16,6 +16,11 @@ fi
 mkdir "${DATE}"
 cd "${THIS}"
 
+#Generate all reports to be updated.
+./create_summary_report.sh
+./create_metric_report.sh
+./create_detailed_report.sh
+
 # Copy Detailed Report for each tool:
 cp "${THIS}/reports/Detailed-Report-Autopar.md" "${REPORTS_DIR}/${DATE}/."
 cp "${THIS}/reports/Detailed-Report-Cetus.md" "${REPORTS_DIR}/${DATE}/."
