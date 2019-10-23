@@ -45,8 +45,8 @@ do
   link_seq="[Sequential](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/sequential${filename})"
   link_ref="[Reference](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/${REFERENCE}${filename})"
 
-  link_tool="[out](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/${Tool}${filename})"
-  link_tool_json="[json](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/${Tool}${filename}.json)"
+  link_tool="[out](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/${TOOL}${filename})"
+  link_tool_json="[json](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/${TOOL}${filename}.json)"
 
   link_ground_truth="(https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/original${filename})"
 
