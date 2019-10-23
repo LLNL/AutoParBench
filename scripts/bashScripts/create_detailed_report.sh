@@ -40,6 +40,8 @@ do
   filename=${index%%|*}
   filename=${filename/.json/}
   filename=${filename/.\/CPU\//}
+  filename=${filename/.\/GPU\//}
+  filename=${filename/.\/CPU_VECTORIZATION\//}
   filename=${filename// /}
 
   info="${index#*|}"
