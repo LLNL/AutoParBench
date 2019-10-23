@@ -64,7 +64,7 @@ do
   COUNTER=$((COUNTER+1))
 done < "${THIS}/reports/detailed/detailed_report_${TOOL}.txt"
 
-
+echo "" &>> ${THIS}/reports/Detailed-Report.md
 echo "" &>> ${THIS}/reports/Detailed-Report.md
 }
 
