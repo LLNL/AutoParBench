@@ -29,6 +29,8 @@ echo "" &>> ${THIS}/reports/Detailed-Report.md
 create_detailed_report() {
 TOOL=${1}
 REFERENCE=${2}
+echo "### ${TOOL} Report" &>> ${THIS}/reports/Detailed-Report.md
+echo "" &>> ${THIS}/reports/Detailed-Report.md
 echo " ID | Filename | Original | Sequential | Reference | Loop ID | Line Number | ${TOOL} | Output | JSON | Ground Truth " &>> ${THIS}/reports/Detailed-Report.md
 echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report.md
 
@@ -72,3 +74,10 @@ set_environment
 create_detailed_header
 
 create_detailed_report "Autopar" "reference_cpu_threading"
+create_detailed_report "Cetus" "reference_cpu_threading"
+create_detailed_report "ICC_Full" "reference_cpu_threading"
+create_detailed_report "ICC_Cost" "reference_cpu_threading"
+
+create_detailed_report "ICC_Simd" "reference_cpu_simd"
+
+create_detailed_report "Dawncc" "reference_gpu_target"
