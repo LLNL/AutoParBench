@@ -37,7 +37,8 @@ while IFS= read -r index
 do
   filename=${index%%|*}
   filename=${filename/.json/}
-  filename=${filename/.\/CPU/}
+  filename=${filename/.\/CPU\//}
+  filename=${filename// /}
 
   info="${index#*|}"
 
@@ -56,7 +57,7 @@ do
   row_ground_truth="${index##*|}"
   row_ground_truth="${row_ground_truth/ /}"
   
-  echo "${COUNTER} | ${filename/.\//}| ${link_orig} | ${link_seq} | ${link_ref} |${row_data} | ${link_tool} | ${link_tool_json} | [${row_ground_truth}]$link_ground_truth " &>> ${THIS}/reports/Detailed-Report.md
+  echo "${COUNTER} | ${filename/.\//} | ${link_orig} | ${link_seq} | ${link_ref} |${row_data} | ${link_tool} | ${link_tool_json} | [${row_ground_truth}]${link_ground_truth}" &>> ${THIS}/reports/Detailed-Report.md
 
   COUNTER=$((COUNTER+1))
 done < "${THIS}/reports/detailed/detailed_report_${TOOL}.txt"
