@@ -43,10 +43,10 @@ do
 
   link_orig="[Original](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/original${filename})"
   link_seq="[Sequential](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/sequential${filename})"
-  link_ref="[Reference](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/${REFERENCE}${filename})"
+  link_ref="[Reference](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/${REFERENCE}${filename/.c/.c.json})"
 
   link_tool="[out](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/${TOOL}${filename})"
-  link_tool_json="[json](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/${TOOL}${filename}.json)"
+  link_tool_json="[json](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/${TOOL}${filename/.c/.c.json})"
 
   link_ground_truth="(https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/original${filename})"
 
