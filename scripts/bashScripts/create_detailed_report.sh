@@ -6,19 +6,14 @@ THIS=$(pwd)
 cd ../
 SCRIPTS=$(pwd)
 cd "${THIS}"
-ANALYZE_AUTOPAR=true
-ANALYZE_DAWNCC=true
-ANALYZE_ICC_COST=true
-ANALYZE_ICC_NOCOST=true
-ANALYZE_ICC_SIMD_NOCOST=true
-ANALYZE_CETUS=true
-if [ -f "${THIS}/reports/Detailed-Report-${TOOL}.md" ]; then
-  rm "${THIS}/reports/Detailed-Report-${TOOL}.md"
-fi
 }
 
 create_detailed_header() {
 TOOL=${1}
+if [ -f "${THIS}/reports/Detailed-Report-${TOOL}.md" ]; then
+  rm "${THIS}/reports/Detailed-Report-${TOOL}.md"
+fi
+
 echo "# Summary report" &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
 echo "" &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
 echo "## Evaluation platform" &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
@@ -49,14 +44,14 @@ do
 
   info="${index#*|}"
 
-  link_orig="[Original](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/original/${filename})"
-  link_seq="[Sequential](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/sequential/${filename})"
-  link_ref="[Reference](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/${REFERENCE}/${filename/.c/.c.json})"
+  link_orig="[Original](benchmarks/original/${filename})"
+  link_seq="[Sequential](benchmarks/sequential/${filename})"
+  link_ref="[Reference](benchmarks/${REFERENCE}/${filename/.c/.c.json})"
 
-  link_tool="[out](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/${TOOL}/${filename})"
-  link_tool_json="[json](https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/${TOOL}/${filename/.c/.c.json})"
+  link_tool="[out](benchmarks/${TOOL}/${filename})"
+  link_tool_json="[json](benchmarks/${TOOL}/${filename/.c/.c.json})"
 
-  link_ground_truth="(https://github.com/gleisonsdm/AutoParBench/tree/master/benchmarks/original/${filename})"
+  link_ground_truth="(benchmarks/original/${filename})"
 
   row_data="${index#*|}"
   row_data="${row_data/ | YES/}"
@@ -75,8 +70,6 @@ echo "" &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
 
 
 set_environment
-
-create_detailed_header
 
 create_detailed_report "Autopar" "reference_cpu_threading"
 create_detailed_report "Cetus" "reference_cpu_threading"
