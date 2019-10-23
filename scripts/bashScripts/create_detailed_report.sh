@@ -80,6 +80,6 @@ create_detailed_report "Cetus" "reference_cpu_threading"
 create_detailed_report "ICC_Full" "reference_cpu_threading"
 create_detailed_report "ICC_Cost" "reference_cpu_threading"
 
-create_detailed_report "ICC_Simd" "reference_cpu_simd"
+#create_detailed_report "ICC_Simd" "reference_cpu_simd"
 
-create_detailed_report "Dawncc" "reference_gpu_target"
+#create_detailed_report "Dawncc" "reference_gpu_target"
