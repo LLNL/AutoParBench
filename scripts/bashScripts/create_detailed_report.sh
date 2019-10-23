@@ -44,14 +44,14 @@ do
 
   info="${index#*|}"
 
-  link_orig="[Original](benchmarks/original/${filename})"
-  link_seq="[Sequential](benchmarks/sequential/${filename})"
-  link_ref="[Reference](benchmarks/${REFERENCE}/${filename/.c/.c.json})"
+  link_orig="[Original](../../benchmarks/original/${filename})"
+  link_seq="[Sequential](../../benchmarks/sequential/${filename})"
+  link_ref="[Reference](../../benchmarks/${REFERENCE}/${filename/.c/.c.json})"
 
-  link_tool="[out](benchmarks/${TOOL}/${filename})"
-  link_tool_json="[json](benchmarks/${TOOL}/${filename/.c/.c.json})"
+  link_tool="[out](../../benchmarks/${TOOL}/${filename})"
+  link_tool_json="[json](../../benchmarks/${TOOL}/${filename/.c/.c.json})"
 
-  link_ground_truth="(benchmarks/original/${filename})"
+  link_ground_truth="(../../benchmarks/original/${filename})"
 
   row_data="${index#*|}"
   row_data="${row_data/ | YES/}"
