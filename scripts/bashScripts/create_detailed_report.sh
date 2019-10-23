@@ -29,8 +29,8 @@ echo "" &>> ${THIS}/reports/Detailed-Report.md
 create_detailed_report() {
 TOOL=${1}
 REFERENCE=${2}
-echo " ID | Filename | Original | Sequential | Reference | Loop ID | Line Number | ${TOOL} | Ground Truth " &>> ${THIS}/reports/Detailed-Report.md
-echo " --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report.md
+echo " ID | Filename | Original | Sequential | Reference | Loop ID | Line Number | ${TOOL} | Output | JSON | Ground Truth " &>> ${THIS}/reports/Detailed-Report.md
+echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report.md
 
 COUNTER=1
 while IFS= read -r index
@@ -56,7 +56,7 @@ do
   row_ground_truth="${index##*|}"
   row_ground_truth="${row_ground_truth/ /}"
   
-  echo "${COUNTER} | ${filename/.\//}| ${link_orig} | ${link_seq} | ${link_ref} |${row_data} ${link_tool} ${link_tool_json} | [${row_ground_truth}]$link_ground_truth " &>> ${THIS}/reports/Detailed-Report.md
+  echo "${COUNTER} | ${filename/.\//}| ${link_orig} | ${link_seq} | ${link_ref} |${row_data} | ${link_tool} | ${link_tool_json} | [${row_ground_truth}]$link_ground_truth " &>> ${THIS}/reports/Detailed-Report.md
 
   COUNTER=$((COUNTER+1))
 done < "${THIS}/reports/detailed/detailed_report_${TOOL}.txt"
