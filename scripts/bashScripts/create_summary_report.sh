@@ -13,40 +13,38 @@ ANALYZE_ICC_COST=true
 ANALYZE_ICC_NOCOST=true
 ANALYZE_ICC_SIMD_NOCOST=true
 ANALYZE_CETUS=true
-if [ -f "${THIS}/reports/Summary_Report.md" ]; then
-  rm "${THIS}/reports/Summary_Report.md"
+if [ -f "${THIS}/reports/Summary-Report.md" ]; then
+  rm "${THIS}/reports/Summary-Report.md"
 fi
 
 }
 
 create_summary_header() {
 report_id=${1}
-echo "" &>> ${THIS}/reports/Summary_Report.md
-echo "" &>> ${THIS}/reports/Summary_Report.md
-echo "# Summary report ${report_id}" &>> ${THIS}/reports/Summary_Report.md
-echo "" &>> ${THIS}/reports/Summary_Report.md
-echo "## Evaluation platform" &>> ${THIS}/reports/Summary_Report.md
-echo "" &>> ${THIS}/reports/Summary_Report.md
-echo "Intel(R) Xeon(R) CPU E5-2686 v4" &>> ${THIS}/reports/Summary_Report.md
-echo "" &>> ${THIS}/reports/Summary_Report.md
+echo "# Summary report ${report_id}" &>> ${THIS}/reports/Summary-Report.md
+echo "" &>> ${THIS}/reports/Summary-Report.md
+echo "## Evaluation platform" &>> ${THIS}/reports/Summary-Report.md
+echo "" &>> ${THIS}/reports/Summary-Report.md
+echo "Intel(R) Xeon(R) CPU E5-2686 v4" &>> ${THIS}/reports/Summary-Report.md
+echo "" &>> ${THIS}/reports/Summary-Report.md
 }
 
 create_summary_report() {
 
-echo "" &>> ${THIS}/reports/Summary_Report.md
-echo "" &>> ${THIS}/reports/Summary_Report.md
-echo "<table>" &>> ${THIS}/reports/Summary_Report.md
-echo "<tr><th style="font-weight:bold" colspan="8"> ${1} </th></tr>" &>> ${THIS}/reports/Summary_Report.md
-echo "<tr><th> ID </th><th> Filename </th><th> DP </th><th> TP </th><th> TN </th><th> FP </th><th> FN </th><th> N/A </th></tr>" &>> ${THIS}/reports/Summary_Report.md
+echo "" &>> ${THIS}/reports/Summary-Report.md
+echo "" &>> ${THIS}/reports/Summary-Report.md
+echo "<table>" &>> ${THIS}/reports/Summary-Report.md
+echo "<tr><th style="font-weight:bold" colspan="8"> ${1} </th></tr>" &>> ${THIS}/reports/Summary-Report.md
+echo "<tr><th> ID </th><th> Filename </th><th> DP </th><th> TP </th><th> TN </th><th> FP </th><th> FN </th><th> N/A </th></tr>" &>> ${THIS}/reports/Summary-Report.md
 COUNTER=1
 while IFS= read -r index
 do
-  echo "<tr><td>${COUNTER}</td>${index/.\//}</tr>" &>> ${THIS}/reports/Summary_Report.md
+  echo "<tr><td>${COUNTER}</td>${index/.\//}</tr>" &>> ${THIS}/reports/Summary-Report.md
   COUNTER=$((COUNTER+1))
 done < "${THIS}/reports/summary/${2}"
 
 
-echo "</table>" &>> ${THIS}/reports/Summary_Report.md
+echo "</table>" &>> ${THIS}/reports/Summary-Report.md
 }
 
 set_environment

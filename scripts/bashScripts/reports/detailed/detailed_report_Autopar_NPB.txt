@@ -1,938 +1,938 @@
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0001 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0002 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0003 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0004 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0005 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0006 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0007 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0008 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0009 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0010 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0011 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0012 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0013 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0014 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0015 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0016 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0017 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0018 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0019 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0020 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0021 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0022 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0023 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0024 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0025 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0026 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0027 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0028 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0029 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0030 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0031 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0032 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0033 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0034 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0035 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0036 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0037 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0038 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0039 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0040 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0041 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0042 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0043 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0044 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0045 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0046 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0047 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0048 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0049 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0050 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0051 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0052 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0053 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0054 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0055 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0056 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0057 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0058 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0059 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0060 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0061 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0062 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0063 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0064 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0065 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0066 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0067 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0068 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0069 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0070 | FP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0071 | FP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0072 | FP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0073 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0074 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0075 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0076 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0077 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0078 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0079 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0080 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0081 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0082 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0083 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0084 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0085 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0086 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0087 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0088 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0089 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0090 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0091 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0092 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0093 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0094 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0095 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0096 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0097 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0098 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0099 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0100 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0101 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0102 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0103 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0104 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0105 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0106 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0107 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0108 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0109 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0110 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0111 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0112 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0113 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0114 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0115 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0116 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0117 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0118 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0119 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0120 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0121 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0122 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0123 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0124 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0125 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0126 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0127 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0128 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0129 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0130 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0131 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0132 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0133 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0134 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0135 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0136 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0137 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0138 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0139 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0140 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0141 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0142 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0143 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0144 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0145 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0146 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0147 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0148 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0149 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0150 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0151 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0152 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0153 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0154 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0155 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0156 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0157 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0158 | FP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0159 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0160 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0161 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0162 | FP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0163 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0164 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0165 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0166 | FP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0167 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0168 | FP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0169 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0170 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0171 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0172 | FP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0173 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0174 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0175 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0176 | FP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0177 | FP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0178 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0179 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0180 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0181 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0182 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0183 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0184 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0185 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0186 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0187 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0188 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0189 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0190 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0191 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0192 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0193 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0194 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0195 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0196 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0197 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0198 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0199 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0200 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0201 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0202 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0203 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0204 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0205 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0206 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0207 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0208 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0209 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0210 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0211 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0212 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0213 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0214 | TP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0215 | DP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0216 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0217 | FP
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0218 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0219 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0220 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0221 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0222 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0223 | TN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0224 | FN
-./CPU/NPB3.0-omp-c/BT/bt.c.json | 0225 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0001 | DP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0002 | DP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0003 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0004 | DP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0005 | DP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0006 | DP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0007 | DP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0008 | DP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0009 | TP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0010 | DP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0011 | TP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0012 | FN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0013 | DP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0014 | DP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0015 | DP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0016 | FN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0017 | TP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0018 | TP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0019 | TP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0020 | FN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0021 | TP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0022 | TP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0023 | TP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0024 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0025 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0026 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0027 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0028 | TP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0029 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0030 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0031 | FN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0032 | DP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0033 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0034 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0035 | TP
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0036 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0037 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0038 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0039 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0040 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0041 | TN
-./CPU/NPB3.0-omp-c/CG/cg.c.json | 0042 | FP
-./CPU/NPB3.0-omp-c/common/c_randdp.c.json | 0001 | TN
-./CPU/NPB3.0-omp-c/EP/ep.c.json | 0001 | DP
-./CPU/NPB3.0-omp-c/EP/ep.c.json | 0002 | TP
-./CPU/NPB3.0-omp-c/EP/ep.c.json | 0003 | TN
-./CPU/NPB3.0-omp-c/EP/ep.c.json | 0004 | DP
-./CPU/NPB3.0-omp-c/EP/ep.c.json | 0005 | DP
-./CPU/NPB3.0-omp-c/EP/ep.c.json | 0006 | FN
-./CPU/NPB3.0-omp-c/EP/ep.c.json | 0007 | TN
-./CPU/NPB3.0-omp-c/EP/ep.c.json | 0008 | TN
-./CPU/NPB3.0-omp-c/EP/ep.c.json | 0009 | DP
-./CPU/NPB3.0-omp-c/EP/ep.c.json | 0010 | DP
-./CPU/NPB3.0-omp-c/EP/ep.c.json | 0011 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0001 | FN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0002 | FN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0003 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0004 | DP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0005 | DP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0006 | DP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0007 | FP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0008 | FN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0009 | FN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0010 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0011 | DP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0012 | DP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0013 | DP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0014 | FP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0015 | FN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0016 | FN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0017 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0018 | DP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0019 | DP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0020 | DP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0021 | FP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0022 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0023 | FP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0024 | DP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0025 | FN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0026 | TP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0027 | DP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0028 | DP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0029 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0030 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0031 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0032 | FN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0033 | FN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0034 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0035 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0036 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0037 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0038 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0039 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0040 | FP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0041 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0042 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0043 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0044 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0045 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0046 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0047 | DP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0048 | DP
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0049 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0050 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0051 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0052 | TN
-./CPU/NPB3.0-omp-c/FT/ft.c.json | 0053 | TN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0001 | TN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0002 | TN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0003 | DP
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0004 | DP
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0005 | TN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0006 | FP
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0007 | FP
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0008 | DP
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0009 | FP
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0010 | FP
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0011 | FN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0012 | TN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0013 | DP
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0014 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0001 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0002 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0003 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0004 | FN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0005 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0006 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0007 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0008 | N/A
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0009 | N/A
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0010 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0011 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0012 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0013 | FN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0014 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0015 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0016 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0017 | N/A
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0018 | N/A
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0019 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0020 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0021 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0022 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0023 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0024 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0025 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0026 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0027 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0028 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0029 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0030 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0031 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0032 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0033 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0034 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0035 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0036 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0037 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0038 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0039 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0040 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0041 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0042 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0043 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0044 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0045 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0046 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0047 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0048 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0049 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0050 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0051 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0052 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0053 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0054 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0055 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0056 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0057 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0058 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0059 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0060 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0061 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0062 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0063 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0064 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0065 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0066 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0067 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0068 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0069 | FN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0070 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0071 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0072 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0073 | N/A
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0074 | N/A
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0075 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0076 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0077 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0078 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0079 | FN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0080 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0081 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0082 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0083 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0084 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0085 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0086 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0087 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0088 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0089 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0090 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0091 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0092 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0093 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0094 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0095 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0096 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0097 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0098 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0099 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0100 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0101 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0102 | N/A
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0103 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0104 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0105 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0106 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0107 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0108 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0109 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0110 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0111 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0112 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0113 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0114 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0115 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0116 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0117 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0118 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0119 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0120 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0121 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0122 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0123 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0124 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0125 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0126 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0127 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0128 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0129 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0130 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0131 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0132 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0133 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0134 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0135 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0136 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0137 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0138 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0139 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0140 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0141 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0142 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0143 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0144 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0145 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0146 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0147 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0148 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0149 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0150 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0151 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0152 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0153 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0154 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0155 | FP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0156 | FN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0157 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0158 | FN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0159 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0160 | FN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0161 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0162 | FN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0163 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0164 | FN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0165 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0166 | FN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0167 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0168 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0169 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0170 | TP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0171 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0172 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0173 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0174 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0175 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0176 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0177 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0178 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0179 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0180 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0181 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0182 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0183 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0184 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0185 | DP
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0186 | FN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0187 | TN
-./CPU/NPB3.0-omp-c/LU/lu.c.json | 0188 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0001 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0002 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0003 | TP
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0004 | DP
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0005 | DP
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0006 | DP
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0007 | FP
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0008 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0009 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0010 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0011 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0012 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0013 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0014 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0015 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0016 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0017 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0018 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0019 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0020 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0021 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0022 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0023 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0024 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0025 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0026 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0027 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0028 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0029 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0030 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0031 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0032 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0033 | DP
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0034 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0035 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0036 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0037 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0038 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0039 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0040 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0041 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0042 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0043 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0044 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0045 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0046 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0047 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0048 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0049 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0050 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0051 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0052 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0053 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0054 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0055 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0056 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0057 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0058 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0059 | FN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0060 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0061 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0062 | DP
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0063 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0064 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0065 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0066 | TP
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0067 | DP
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0068 | DP
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0069 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0070 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0071 | DP
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0072 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0073 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0074 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0075 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0076 | TP
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0077 | DP
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0078 | DP
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0079 | TN
-./CPU/NPB3.0-omp-c/MG/mg.c.json | 0080 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0001 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0002 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0003 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0004 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0005 | FN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0006 | FN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0007 | FN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0008 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0009 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0010 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0011 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0012 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0013 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0014 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0015 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0016 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0017 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0018 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0019 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0020 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0021 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0022 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0023 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0024 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0025 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0026 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0027 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0028 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0029 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0030 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0031 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0032 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0033 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0034 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0035 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0036 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0037 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0038 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0039 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0040 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0041 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0042 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0043 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0044 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0045 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0046 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0047 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0048 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0049 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0050 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0051 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0052 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0053 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0054 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0055 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0056 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0057 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0058 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0059 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0060 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0061 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0062 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0063 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0064 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0065 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0066 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0067 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0068 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0069 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0070 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0071 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0072 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0073 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0074 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0075 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0076 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0077 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0078 | FN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0079 | FN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0080 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0081 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0082 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0083 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0084 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0085 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0086 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0087 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0088 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0089 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0090 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0091 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0092 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0093 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0094 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0095 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0096 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0097 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0098 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0099 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0100 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0101 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0102 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0103 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0104 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0105 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0106 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0107 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0108 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0109 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0110 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0111 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0112 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0113 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0114 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0115 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0116 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0117 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0118 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0119 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0120 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0121 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0122 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0123 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0124 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0125 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0126 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0127 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0128 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0129 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0130 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0131 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0132 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0133 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0134 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0135 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0136 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0137 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0138 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0139 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0140 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0141 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0142 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0143 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0144 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0145 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0146 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0147 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0148 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0149 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0150 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0151 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0152 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0153 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0154 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0155 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0156 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0157 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0158 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0159 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0160 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0161 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0162 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0163 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0164 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0165 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0166 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0167 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0168 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0169 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0170 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0171 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0172 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0173 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0174 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0175 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0176 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0177 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0178 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0179 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0180 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0181 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0182 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0183 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0184 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0185 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0186 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0187 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0188 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0189 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0190 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0191 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0192 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0193 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0194 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0195 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0196 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0197 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0198 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0199 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0200 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0201 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0202 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0203 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0204 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0205 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0206 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0207 | FN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0208 | FN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0209 | FN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0210 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0211 | FN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0212 | FN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0213 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0214 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0215 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0216 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0217 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0218 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0219 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0220 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0221 | FN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0222 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0223 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0224 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0225 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0226 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0227 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0228 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0229 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0230 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0231 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0232 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0233 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0234 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0235 | FN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0236 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0237 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0238 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0239 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0240 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0241 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0242 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0243 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0244 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0245 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0246 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0247 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0248 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0249 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0250 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0251 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0252 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0253 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0254 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0255 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0256 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0257 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0258 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0259 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0260 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0261 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0262 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0263 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0264 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0265 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0266 | FN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0267 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0268 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0269 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0270 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0271 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0272 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0273 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0274 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0275 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0276 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0277 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0278 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0279 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0280 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0281 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0282 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0283 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0284 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0285 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0286 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0287 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0288 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0289 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0290 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0291 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0292 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0293 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0294 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0295 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0296 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0297 | FN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0298 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0299 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0300 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0301 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0302 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0303 | FP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0304 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0305 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0306 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0307 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0308 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0309 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0310 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0311 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0312 | TN
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0313 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0314 | TP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0315 | DP
-./CPU/NPB3.0-omp-c/SP/sp.c.json | 0316 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0001 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0002 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0003 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0004 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0005 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0006 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0007 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0008 | TN
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 1 | 190 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 2 | 191 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 3 | 192 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 4 | 193 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 5 | 1785 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 6 | 1786 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 7 | 1787 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 8 | 1808 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 9 | 1809 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 10 | 1810 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 11 | 1811 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 12 | 1822 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 13 | 1823 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 14 | 1824 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 15 | 1883 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 16 | 1884 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 17 | 1885 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 18 | 1895 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 19 | 1896 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 20 | 1897 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 21 | 1906 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 22 | 1907 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 23 | 1908 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 24 | 1909 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 25 | 1921 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 26 | 1922 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 27 | 1923 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 28 | 1933 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 29 | 1934 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 30 | 1935 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 31 | 1947 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 32 | 1948 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 33 | 1949 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 34 | 2003 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 35 | 2004 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 36 | 2005 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 37 | 2015 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 38 | 2016 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 39 | 2017 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 40 | 2026 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 41 | 2027 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 42 | 2028 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 43 | 2029 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 44 | 2041 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 45 | 2042 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 46 | 2043 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 47 | 2053 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 48 | 2054 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 49 | 2055 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 50 | 2067 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 51 | 2068 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 52 | 2069 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 53 | 2124 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 54 | 2125 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 55 | 2126 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 56 | 2136 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 57 | 2137 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 58 | 2138 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 59 | 2147 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 60 | 2148 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 61 | 2149 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 62 | 2150 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 63 | 2162 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 64 | 2163 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 65 | 2164 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 66 | 2174 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 67 | 2175 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 68 | 2176 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 69 | 2185 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 70 | 2186 | FP | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 71 | 2187 | FP | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 72 | 2188 | FP | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 73 | 234 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 74 | 238 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 75 | 240 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 76 | 242 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 77 | 246 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 78 | 254 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 79 | 255 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 80 | 318 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 81 | 319 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 82 | 320 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 83 | 321 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 84 | 332 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 85 | 335 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 86 | 338 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 87 | 342 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 88 | 348 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 89 | 359 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 90 | 396 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 91 | 406 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 92 | 407 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 93 | 414 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 94 | 431 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 95 | 434 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 96 | 437 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 97 | 441 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 98 | 447 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 99 | 458 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 100 | 495 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 101 | 505 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 102 | 506 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 103 | 513 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 104 | 531 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 105 | 534 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 106 | 537 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 107 | 541 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 108 | 547 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 109 | 558 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 110 | 595 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 111 | 605 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 112 | 606 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 113 | 613 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 114 | 630 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 115 | 631 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 116 | 632 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 117 | 633 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 118 | 657 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 119 | 693 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 120 | 694 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 121 | 695 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 122 | 696 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 123 | 708 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 124 | 711 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 125 | 714 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 126 | 717 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 127 | 722 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 128 | 727 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 129 | 732 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 130 | 758 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 131 | 760 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 132 | 763 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 133 | 776 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 134 | 778 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 135 | 781 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 136 | 793 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 137 | 795 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 138 | 798 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 139 | 810 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 140 | 812 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 141 | 815 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 142 | 827 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 143 | 829 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 144 | 832 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 145 | 844 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 146 | 846 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 147 | 849 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 148 | 873 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 149 | 874 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 150 | 875 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 151 | 876 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 152 | 877 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 153 | 891 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 154 | 892 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 155 | 893 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 156 | 894 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 157 | 921 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 158 | 922 | FP | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 159 | 923 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 160 | 1016 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 161 | 1205 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 162 | 1206 | FP | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 163 | 1207 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 164 | 1307 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 165 | 1308 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 166 | 1309 | FP | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 167 | 1499 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 168 | 1500 | FP | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 169 | 1501 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 170 | 1600 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 171 | 1601 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 172 | 1602 | FP | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 173 | 97 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 174 | 99 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 175 | 142 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 176 | 2861 | FP | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 177 | 2833 | FP | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 178 | 273 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 179 | 277 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 180 | 278 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 181 | 279 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 182 | 280 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 183 | 288 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 184 | 289 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 185 | 2423 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 186 | 2430 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 187 | 2593 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 188 | 2621 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 189 | 2640 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 190 | 2706 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 191 | 2708 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 192 | 2709 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 193 | 2710 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 194 | 2711 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 195 | 2744 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 196 | 2745 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 197 | 2761 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 198 | 2763 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 199 | 2764 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 200 | 2793 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 201 | 2794 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 202 | 3345 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 203 | 3347 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 204 | 3348 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 205 | 3349 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 206 | 3350 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 207 | 3383 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 208 | 3384 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 209 | 3400 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 210 | 3402 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 211 | 3403 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 212 | 3433 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 213 | 3434 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 214 | 3503 | TP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 215 | 3504 | DP | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 216 | 3505 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 217 | 3506 | FP | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 218 | 3507 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 219 | 3543 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 220 | 3544 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 221 | 3561 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 222 | 3563 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 223 | 3564 | TN | NO
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 224 | 3598 | FN | YES
+./CPU/NPB3.0-omp-c/BT/bt.c.json | 225 | 3599 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 1 | 379 | DP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 2 | 392 | DP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 3 | 401 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 4 | 423 | DP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 5 | 425 | DP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 6 | 491 | DP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 7 | 511 | DP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 8 | 537 | DP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 9 | 554 | TP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 10 | 556 | DP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 11 | 566 | TP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 12 | 175 | FN | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 13 | 176 | DP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 14 | 185 | DP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 15 | 189 | DP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 16 | 204 | FN | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 17 | 220 | TP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 18 | 230 | TP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 19 | 240 | TP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 20 | 255 | FN | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 21 | 272 | TP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 22 | 290 | TP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 23 | 636 | TP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 24 | 639 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 25 | 643 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 26 | 647 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 27 | 672 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 28 | 732 | TP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 29 | 738 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 30 | 744 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 31 | 757 | FN | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 32 | 758 | DP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 33 | 764 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 34 | 775 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 35 | 785 | TP | YES
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 36 | 791 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 37 | 797 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 38 | 810 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 39 | 850 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 40 | 858 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 41 | 881 | TN | NO
+./CPU/NPB3.0-omp-c/CG/cg.c.json | 42 | 910 | FP | NO
+./CPU/NPB3.0-omp-c/common/c_randdp.c.json | 1 | 118 | TN | NO
+./CPU/NPB3.0-omp-c/EP/ep.c.json | 1 | 87 | DP | YES
+./CPU/NPB3.0-omp-c/EP/ep.c.json | 2 | 111 | TP | YES
+./CPU/NPB3.0-omp-c/EP/ep.c.json | 3 | 126 | TN | NO
+./CPU/NPB3.0-omp-c/EP/ep.c.json | 4 | 136 | DP | YES
+./CPU/NPB3.0-omp-c/EP/ep.c.json | 5 | 153 | DP | YES
+./CPU/NPB3.0-omp-c/EP/ep.c.json | 6 | 156 | FN | YES
+./CPU/NPB3.0-omp-c/EP/ep.c.json | 7 | 163 | TN | NO
+./CPU/NPB3.0-omp-c/EP/ep.c.json | 8 | 184 | TN | NO
+./CPU/NPB3.0-omp-c/EP/ep.c.json | 9 | 202 | DP | YES
+./CPU/NPB3.0-omp-c/EP/ep.c.json | 10 | 210 | DP | YES
+./CPU/NPB3.0-omp-c/EP/ep.c.json | 11 | 254 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 1 | 512 | FN | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 2 | 522 | FN | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 3 | 523 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 4 | 525 | DP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 5 | 526 | DP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 6 | 541 | DP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 7 | 542 | FP | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 8 | 567 | FN | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 9 | 576 | FN | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 10 | 577 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 11 | 579 | DP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 12 | 580 | DP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 13 | 592 | DP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 14 | 593 | FP | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 15 | 617 | FN | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 16 | 626 | FN | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 17 | 627 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 18 | 629 | DP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 19 | 630 | DP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 20 | 642 | DP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 21 | 643 | FP | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 22 | 730 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 23 | 740 | FP | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 24 | 741 | DP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 25 | 865 | FN | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 26 | 417 | TP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 27 | 420 | DP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 28 | 423 | DP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 29 | 437 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 30 | 276 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 31 | 281 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 32 | 282 | FN | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 33 | 238 | FN | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 34 | 239 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 35 | 240 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 36 | 681 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 37 | 684 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 38 | 785 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 39 | 802 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 40 | 803 | FP | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 41 | 837 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 42 | 317 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 43 | 119 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 44 | 138 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 45 | 163 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 46 | 460 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 47 | 354 | DP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 48 | 361 | DP | YES
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 49 | 1062 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 50 | 1079 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 51 | 1096 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 52 | 1113 | TN | NO
+./CPU/NPB3.0-omp-c/FT/ft.c.json | 53 | 1130 | TN | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 1 | 309 | TN | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 2 | 337 | TN | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 3 | 344 | DP | YES
+./CPU/NPB3.0-omp-c/IS/is.c.json | 4 | 595 | DP | YES
+./CPU/NPB3.0-omp-c/IS/is.c.json | 5 | 653 | TN | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 6 | 255 | FP | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 7 | 260 | FP | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 8 | 386 | DP | YES
+./CPU/NPB3.0-omp-c/IS/is.c.json | 9 | 390 | FP | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 10 | 395 | FP | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 11 | 400 | FN | YES
+./CPU/NPB3.0-omp-c/IS/is.c.json | 12 | 412 | TN | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 13 | 418 | DP | YES
+./CPU/NPB3.0-omp-c/IS/is.c.json | 14 | 433 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 1 | 210 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 2 | 211 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 3 | 212 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 4 | 224 | FN | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 5 | 228 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 6 | 234 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 7 | 241 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 8 | N/A
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 9 | N/A
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 10 | 448 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 11 | 449 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 12 | 450 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 13 | 462 | FN | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 14 | 465 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 15 | 471 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 16 | 478 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 17 | N/A
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 18 | N/A
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 19 | 735 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 20 | 736 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 21 | 737 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 22 | 738 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 23 | 746 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 24 | 749 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 25 | 752 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 26 | 754 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 27 | 781 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 28 | 782 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 29 | 783 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 30 | 800 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 31 | 801 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 32 | 802 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 33 | 803 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 34 | 808 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 35 | 835 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 36 | 865 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 37 | 879 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 38 | 880 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 39 | 890 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 40 | 912 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 41 | 913 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 42 | 914 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 43 | 931 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 44 | 932 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 45 | 933 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 46 | 934 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 47 | 939 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 48 | 966 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 49 | 996 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 50 | 1011 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 51 | 1012 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 52 | 1022 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 53 | 1041 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 54 | 1042 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 55 | 1043 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 56 | 1057 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 57 | 1058 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 58 | 1063 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 59 | 1090 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 60 | 1120 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 61 | 1132 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 62 | 1133 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 63 | 1143 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 64 | 1177 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 65 | 1181 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 66 | 1183 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 67 | 1185 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 68 | 1187 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 69 | 1195 | FN | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 70 | 1221 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 71 | 1261 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 72 | 1262 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 73 | N/A
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 74 | N/A
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 75 | 2005 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 76 | 2010 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 77 | 2011 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 78 | 2012 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 79 | 2033 | FN | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 80 | 2082 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 81 | 2083 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 82 | 2088 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 83 | 2090 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 84 | 2113 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 85 | 2114 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 86 | 2131 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 87 | 2132 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 88 | 2139 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 89 | 2141 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 90 | 2153 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 91 | 2155 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 92 | 2167 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 93 | 2168 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 94 | 2186 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 95 | 2187 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 96 | 2194 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 97 | 2196 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 98 | 2208 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 99 | 2210 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 100 | 2222 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 101 | 2223 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 102 | N/A
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 103 | 2264 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 104 | 2266 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 105 | 2268 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 106 | 2270 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 107 | 2272 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 108 | 2274 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 109 | 2276 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 110 | 2278 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 111 | 2280 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 112 | 2283 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 113 | 2285 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 114 | 2287 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 115 | 2356 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 116 | 2357 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 117 | 2358 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 118 | 2359 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 119 | 2374 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 120 | 2375 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 121 | 2376 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 122 | 2395 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 123 | 2396 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 124 | 2397 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 125 | 2398 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 126 | 2406 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 127 | 2432 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 128 | 2462 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 129 | 2477 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 130 | 2478 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 131 | 2489 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 132 | 2511 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 133 | 2512 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 134 | 2513 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 135 | 2531 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 136 | 2532 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 137 | 2533 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 138 | 2534 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 139 | 2541 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 140 | 2566 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 141 | 2602 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 142 | 2616 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 143 | 2617 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 144 | 2627 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 145 | 2645 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 146 | 2646 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 147 | 2647 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 148 | 2662 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 149 | 2663 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 150 | 2669 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 151 | 2695 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 152 | 2725 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 153 | 2737 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 154 | 2738 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 155 | 2748 | FP | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 156 | 2787 | FN | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 157 | 2789 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 158 | 2800 | FN | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 159 | 2802 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 160 | 2808 | FN | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 161 | 2810 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 162 | 2819 | FN | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 163 | 2821 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 164 | 2827 | FN | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 165 | 2829 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 166 | 3006 | FN | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 167 | 3008 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 168 | 3012 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 169 | 3022 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 170 | 3071 | TP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 171 | 3072 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 172 | 3073 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 173 | 3074 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 174 | 3105 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 175 | 3119 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 176 | 3120 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 177 | 3121 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 178 | 3122 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 179 | 3129 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 180 | 3148 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 181 | 3171 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 182 | 3172 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 183 | 3173 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 184 | 3174 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 185 | 3247 | DP | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 186 | 3415 | FN | YES
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 187 | 3445 | TN | NO
+./CPU/NPB3.0-omp-c/LU/lu.c.json | 188 | 3464 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 1 | 1160 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 2 | 1183 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 3 | 879 | TP | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 4 | 880 | DP | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 5 | 889 | DP | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 6 | 897 | DP | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 7 | 898 | FP | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 8 | 670 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 9 | 671 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 10 | 672 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 11 | 677 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 12 | 683 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 13 | 689 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 14 | 695 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 15 | 731 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 16 | 732 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 17 | 733 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 18 | 738 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 19 | 744 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 20 | 745 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 21 | 750 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 22 | 759 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 23 | 760 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 24 | 761 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 25 | 766 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 26 | 773 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 27 | 774 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 28 | 780 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 29 | 122 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 30 | 124 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 31 | 126 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 32 | 127 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 33 | 140 | DP | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 34 | 203 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 35 | 205 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 36 | 207 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 37 | 213 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 38 | 215 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 39 | 220 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 40 | 222 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 41 | 224 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 42 | 265 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 43 | 393 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 44 | 406 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 45 | 827 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 46 | 828 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 47 | 829 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 48 | 1134 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 49 | 455 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 50 | 456 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 51 | 457 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 52 | 463 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 53 | 517 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 54 | 518 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 55 | 519 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 56 | 525 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 57 | 596 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 58 | 599 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 59 | 603 | FN | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 60 | 612 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 61 | 343 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 62 | 349 | DP | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 63 | 1101 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 64 | 1102 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 65 | 1103 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 66 | 1218 | TP | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 67 | 1219 | DP | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 68 | 1220 | DP | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 69 | 949 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 70 | 951 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 71 | 967 | DP | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 72 | 977 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 73 | 978 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 74 | 979 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 75 | 1003 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 76 | 1065 | TP | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 77 | 1066 | DP | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 78 | 1067 | DP | YES
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 79 | 1072 | TN | NO
+./CPU/NPB3.0-omp-c/MG/mg.c.json | 80 | 1075 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 1 | 185 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 2 | 186 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 3 | 187 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 4 | 188 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 5 | 1318 | FN | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 6 | 1319 | FN | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 7 | 1320 | FN | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 8 | 1347 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 9 | 1349 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 10 | 1350 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 11 | 1351 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 12 | 1362 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 13 | 1363 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 14 | 1364 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 15 | 1422 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 16 | 1424 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 17 | 1425 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 18 | 1433 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 19 | 1435 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 20 | 1436 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 21 | 1444 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 22 | 1446 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 23 | 1447 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 24 | 1448 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 25 | 1459 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 26 | 1461 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 27 | 1462 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 28 | 1471 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 29 | 1473 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 30 | 1474 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 31 | 1487 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 32 | 1488 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 33 | 1489 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 34 | 1543 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 35 | 1545 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 36 | 1546 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 37 | 1555 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 38 | 1557 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 39 | 1558 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 40 | 1566 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 41 | 1568 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 42 | 1569 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 43 | 1570 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 44 | 1581 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 45 | 1583 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 46 | 1584 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 47 | 1593 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 48 | 1595 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 49 | 1596 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 50 | 1609 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 51 | 1610 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 52 | 1611 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 53 | 1666 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 54 | 1668 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 55 | 1669 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 56 | 1678 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 57 | 1680 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 58 | 1681 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 59 | 1689 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 60 | 1691 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 61 | 1692 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 62 | 1693 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 63 | 1704 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 64 | 1706 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 65 | 1707 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 66 | 1716 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 67 | 1718 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 68 | 1719 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 69 | 1727 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 70 | 1729 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 71 | 1730 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 72 | 1731 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 73 | 233 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 74 | 237 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 75 | 239 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 76 | 241 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 77 | 244 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 78 | 252 | FN | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 79 | 253 | FN | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 80 | 312 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 81 | 313 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 82 | 314 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 83 | 315 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 84 | 325 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 85 | 327 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 86 | 330 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 87 | 334 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 88 | 340 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 89 | 350 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 90 | 387 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 91 | 397 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 92 | 398 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 93 | 405 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 94 | 420 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 95 | 422 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 96 | 425 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 97 | 429 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 98 | 434 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 99 | 445 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 100 | 482 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 101 | 492 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 102 | 493 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 103 | 500 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 104 | 516 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 105 | 518 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 106 | 521 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 107 | 525 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 108 | 531 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 109 | 542 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 110 | 579 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 111 | 589 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 112 | 590 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 113 | 597 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 114 | 612 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 115 | 613 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 116 | 614 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 117 | 615 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 118 | 638 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 119 | 673 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 120 | 674 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 121 | 675 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 122 | 689 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 123 | 691 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 124 | 693 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 125 | 696 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 126 | 701 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 127 | 706 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 128 | 711 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 129 | 738 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 130 | 740 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 131 | 743 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 132 | 755 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 133 | 757 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 134 | 760 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 135 | 772 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 136 | 774 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 137 | 777 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 138 | 789 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 139 | 791 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 140 | 794 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 141 | 806 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 142 | 808 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 143 | 811 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 144 | 823 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 145 | 825 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 146 | 828 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 147 | 849 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 148 | 851 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 149 | 852 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 150 | 853 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 151 | 865 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 152 | 867 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 153 | 868 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 154 | 869 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 155 | 895 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 156 | 896 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 157 | 898 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 158 | 908 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 159 | 924 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 160 | 925 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 161 | 937 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 162 | 938 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 163 | 939 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 164 | 951 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 165 | 952 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 166 | 969 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 167 | 970 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 168 | 971 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 169 | 1009 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 170 | 1010 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 171 | 1012 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 172 | 1022 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 173 | 1038 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 174 | 1039 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 175 | 1053 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 176 | 1054 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 177 | 1055 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 178 | 1067 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 179 | 1068 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 180 | 1084 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 181 | 1085 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 182 | 1086 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 183 | 1124 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 184 | 1125 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 185 | 1127 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 186 | 1137 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 187 | 1153 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 188 | 1154 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 189 | 1167 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 190 | 1168 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 191 | 1169 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 192 | 1181 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 193 | 1182 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 194 | 1198 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 195 | 1199 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 196 | 1200 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 197 | 87 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 198 | 89 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 199 | 136 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 200 | 1235 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 201 | 1236 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 202 | 1237 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 203 | 1274 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 204 | 1275 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 205 | 1276 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 206 | 271 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 207 | 275 | FN | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 208 | 276 | FN | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 209 | 277 | FN | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 210 | 278 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 211 | 286 | FN | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 212 | 287 | FN | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 213 | 1957 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 214 | 1958 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 215 | 1959 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 216 | 2006 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 217 | 2007 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 218 | 2008 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 219 | 2073 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 220 | 2080 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 221 | 2246 | FN | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 222 | 2276 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 223 | 2295 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 224 | 2348 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 225 | 2352 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 226 | 2353 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 227 | 2357 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 228 | 2364 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 229 | 2372 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 230 | 2389 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 231 | 2390 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 232 | 2394 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 233 | 2401 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 234 | 2410 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 235 | 2420 | FN | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 236 | 2422 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 237 | 2426 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 238 | 2427 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 239 | 2455 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 240 | 2456 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 241 | 2484 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 242 | 2486 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 243 | 2487 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 244 | 2494 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 245 | 2496 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 246 | 2497 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 247 | 2509 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 248 | 2513 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 249 | 2514 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 250 | 2515 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 251 | 2527 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 252 | 2529 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 253 | 2533 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 254 | 2534 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 255 | 2579 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 256 | 2583 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 257 | 2584 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 258 | 2588 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 259 | 2595 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 260 | 2603 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 261 | 2620 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 262 | 2621 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 263 | 2625 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 264 | 2632 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 265 | 2640 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 266 | 2649 | FN | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 267 | 2651 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 268 | 2655 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 269 | 2656 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 270 | 2683 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 271 | 2684 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 272 | 2711 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 273 | 2713 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 274 | 2714 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 275 | 2721 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 276 | 2723 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 277 | 2724 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 278 | 2736 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 279 | 2737 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 280 | 2741 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 281 | 2742 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 282 | 2754 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 283 | 2756 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 284 | 2760 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 285 | 2761 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 286 | 2805 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 287 | 2806 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 288 | 2807 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 289 | 2813 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 290 | 2820 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 291 | 2828 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 292 | 2844 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 293 | 2845 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 294 | 2849 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 295 | 2856 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 296 | 2865 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 297 | 2874 | FN | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 298 | 2877 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 299 | 2878 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 300 | 2879 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 301 | 2908 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 302 | 2909 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 303 | 2938 | FP | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 304 | 2940 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 305 | 2941 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 306 | 2948 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 307 | 2951 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 308 | 2952 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 309 | 2968 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 310 | 2970 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 311 | 2971 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 312 | 2972 | TN | NO
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 313 | 2986 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 314 | 2989 | TP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 315 | 2990 | DP | YES
+./CPU/NPB3.0-omp-c/SP/sp.c.json | 316 | 2991 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 1 | 725 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 2 | 733 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 3 | 737 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 4 | 688 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 5 | 696 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 6 | 700 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 7 | 834 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 8 | 623 | TN | NO

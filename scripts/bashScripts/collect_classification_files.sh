@@ -99,6 +99,8 @@ for f in ${TOOL_JSONS}; do
 #  echo "${file}"
   cd "${THIS}"
   LOG=$(./equivalence_checker.out -check "${reference}" "${f}")
+  LOG_DETAIL="${THIS}/tmp.txt"
+  ./equivalence_checker.out -check-detailed "${reference}" "${f}" &> "${LOG_DETAIL}"
   ./equivalence_checker.out -check "${reference}" "${f}" >> /dev/null
   if [[ $? -ne 0 ]];
   then
@@ -119,7 +121,6 @@ for f in ${TOOL_JSONS}; do
   COUNT_DP=0
   for l in ${LOG}; do
     COUNTER=$(printf %04d $COUNTER)
-    echo "${file} | ${COUNTER} | ${l}" &>> "${THIS}/reports/detailed/detailed_report_${NAME}.txt"
     echo "${l}" &>> "${THIS}/reports/report/report_${NAME}.txt"
     if [ "${l}" = "TP" ] ; then
       COUNT_TP=$((${COUNT_TP} + 1));
@@ -141,6 +142,15 @@ for f in ${TOOL_JSONS}; do
     fi
     COUNTER=$((10#$COUNTER + 1))
   done
+
+  COUNTER=1
+  while IFS= read -r index
+  do
+    echo "${file} | ${COUNTER} | ${index}" &>> "${THIS}/reports/detailed/detailed_report_${NAME}.txt"
+    COUNTER=$((COUNTER+1))
+  done < "${LOG_DETAIL}"
+  rm "${LOG_DETAIL}"
+
   echo "<td>${file/.json/}</td><td> ${COUNT_DP} </td><td> ${COUNT_TP} </td><td> ${COUNT_TN} </td><td> ${COUNT_FP} </td><td> ${COUNT_FN} </td><td> ${COUNT_NF} </td>" &>> "${THIS}/reports/summary/summary_${NAME}.txt"
 done
 }

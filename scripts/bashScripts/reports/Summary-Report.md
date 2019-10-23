@@ -1,5 +1,3 @@
-
-
 # Summary report 
 
 ## Evaluation platform

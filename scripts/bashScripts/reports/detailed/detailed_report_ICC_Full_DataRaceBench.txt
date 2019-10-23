@@ -1,487 +1,487 @@
-./CPU/dataracebench/DRB001-antidep1-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB001-antidep1-orig-yes.c.json | 0002 | TN
-./CPU/dataracebench/DRB002-antidep1-var-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB002-antidep1-var-yes.c.json | 0002 | TN
-./CPU/dataracebench/DRB002-antidep1-var-yes.c.json | 0003 | FN
-./CPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 0003 | TN
-./CPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 0004 | TP
-./CPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 0005 | FN
-./CPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 0006 | FN
-./CPU/dataracebench/DRB004-antidep2-var-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB004-antidep2-var-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB004-antidep2-var-yes.c.json | 0003 | TN
-./CPU/dataracebench/DRB004-antidep2-var-yes.c.json | 0004 | TP
-./CPU/dataracebench/DRB004-antidep2-var-yes.c.json | 0005 | FN
-./CPU/dataracebench/DRB004-antidep2-var-yes.c.json | 0006 | FN
-./CPU/dataracebench/DRB005-indirectaccess1-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB005-indirectaccess1-orig-yes.c.json | 0002 | FN
-./CPU/dataracebench/DRB006-indirectaccess2-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB006-indirectaccess2-orig-yes.c.json | 0002 | FN
-./CPU/dataracebench/DRB007-indirectaccess3-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB007-indirectaccess3-orig-yes.c.json | 0002 | TN
-./CPU/dataracebench/DRB008-indirectaccess4-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB008-indirectaccess4-orig-yes.c.json | 0002 | TN
-./CPU/dataracebench/DRB009-lastprivatemissing-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB010-lastprivatemissing-var-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB011-minusminus-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB011-minusminus-orig-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB012-minusminus-var-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB012-minusminus-var-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB013-nowait-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB013-nowait-orig-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB014-outofbounds-orig-yes.c.json | 0001 | TN
-./CPU/dataracebench/DRB014-outofbounds-orig-yes.c.json | 0002 | FN
-./CPU/dataracebench/DRB015-outofbounds-var-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB015-outofbounds-var-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB015-outofbounds-var-yes.c.json | 0003 | TN
-./CPU/dataracebench/DRB015-outofbounds-var-yes.c.json | 0004 | DP
-./CPU/dataracebench/DRB015-outofbounds-var-yes.c.json | 0005 | FN
-./CPU/dataracebench/DRB015-outofbounds-var-yes.c.json | 0006 | FN
-./CPU/dataracebench/DRB016-outputdep-orig-yes.c.json | 0001 | TP
-./CPU/dataracebench/DRB017-outputdep-var-yes.c.json | 0001 | TP
-./CPU/dataracebench/DRB018-plusplus-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB018-plusplus-orig-yes.c.json | 0002 | FN
-./CPU/dataracebench/DRB019-plusplus-var-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB019-plusplus-var-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB020-privatemissing-var-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB020-privatemissing-var-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB020-privatemissing-var-yes.c.json | 0003 | FN
-./CPU/dataracebench/DRB021-reductionmissing-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB021-reductionmissing-orig-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB021-reductionmissing-orig-yes.c.json | 0003 | DP
-./CPU/dataracebench/DRB021-reductionmissing-orig-yes.c.json | 0004 | DP
-./CPU/dataracebench/DRB022-reductionmissing-var-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB022-reductionmissing-var-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB022-reductionmissing-var-yes.c.json | 0003 | DP
-./CPU/dataracebench/DRB022-reductionmissing-var-yes.c.json | 0004 | DP
-./CPU/dataracebench/DRB024-simdtruedep-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB024-simdtruedep-orig-yes.c.json | 0002 | TN
-./CPU/dataracebench/DRB024-simdtruedep-orig-yes.c.json | 0003 | FN
-./CPU/dataracebench/DRB025-simdtruedep-var-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB025-simdtruedep-var-yes.c.json | 0002 | TN
-./CPU/dataracebench/DRB025-simdtruedep-var-yes.c.json | 0003 | TN
-./CPU/dataracebench/DRB026-targetparallelfor-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB026-targetparallelfor-orig-yes.c.json | 0002 | TN
-./CPU/dataracebench/DRB026-targetparallelfor-orig-yes.c.json | 0003 | TN
-./CPU/dataracebench/DRB028-privatemissing-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB028-privatemissing-orig-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB029-truedep1-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB029-truedep1-orig-yes.c.json | 0002 | TN
-./CPU/dataracebench/DRB030-truedep1-var-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB030-truedep1-var-yes.c.json | 0002 | TN
-./CPU/dataracebench/DRB030-truedep1-var-yes.c.json | 0003 | TN
-./CPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 0003 | TN
-./CPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 0004 | DP
-./CPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 0005 | FN
-./CPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 0006 | FN
-./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c.json | 0003 | TN
-./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c.json | 0004 | DP
-./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c.json | 0005 | TN
-./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c.json | 0006 | TN
-./CPU/dataracebench/DRB033-truedeplinear-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB033-truedeplinear-orig-yes.c.json | 0002 | TP
-./CPU/dataracebench/DRB034-truedeplinear-var-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB034-truedeplinear-var-yes.c.json | 0002 | TN
-./CPU/dataracebench/DRB034-truedeplinear-var-yes.c.json | 0003 | TN
-./CPU/dataracebench/DRB035-truedepscalar-orig-yes.c.json | 0001 | TN
-./CPU/dataracebench/DRB036-truedepscalar-var-yes.c.json | 0001 | TN
-./CPU/dataracebench/DRB036-truedepscalar-var-yes.c.json | 0002 | TN
-./CPU/dataracebench/DRB037-truedepseconddimension-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB037-truedepseconddimension-orig-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB037-truedepseconddimension-orig-yes.c.json | 0003 | FN
-./CPU/dataracebench/DRB037-truedepseconddimension-orig-yes.c.json | 0004 | TN
-./CPU/dataracebench/DRB037-truedepseconddimension-orig-yes.c.json | 0005 | FN
-./CPU/dataracebench/DRB037-truedepseconddimension-orig-yes.c.json | 0006 | FN
-./CPU/dataracebench/DRB038-truedepseconddimension-var-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB038-truedepseconddimension-var-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB038-truedepseconddimension-var-yes.c.json | 0003 | FN
-./CPU/dataracebench/DRB038-truedepseconddimension-var-yes.c.json | 0004 | TN
-./CPU/dataracebench/DRB038-truedepseconddimension-var-yes.c.json | 0005 | TN
-./CPU/dataracebench/DRB038-truedepseconddimension-var-yes.c.json | 0006 | TN
-./CPU/dataracebench/DRB040-truedepsingleelement-var-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB040-truedepsingleelement-var-yes.c.json | 0002 | TN
-./CPU/dataracebench/DRB040-truedepsingleelement-var-yes.c.json | 0003 | TN
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0001 | FN
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0002 | FN
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0003 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0004 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0005 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0006 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0007 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0008 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0009 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0010 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0011 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0012 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0013 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0014 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0015 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0016 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0017 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0018 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0019 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0020 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0021 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0022 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0023 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0024 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0025 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0026 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0027 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0028 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0029 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0030 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0031 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0032 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0033 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0034 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0035 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0036 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0037 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0038 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0039 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0040 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0041 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0042 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0043 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0044 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0045 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0046 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0047 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0048 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0049 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0050 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0051 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0052 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0053 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0054 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0055 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0056 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0057 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0058 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0059 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0060 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0061 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0062 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0063 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0064 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0065 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0066 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0067 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0068 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0069 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0070 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0071 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0072 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0073 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0074 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0075 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0076 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0077 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0078 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0079 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0080 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0081 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0082 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0083 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0084 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0085 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0086 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0087 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0088 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0089 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0090 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0091 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0092 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0093 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0094 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0095 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0096 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0097 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0098 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0099 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0100 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0101 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0102 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0103 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0104 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0105 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0106 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0107 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0108 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0109 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0110 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0111 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0112 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0113 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0114 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0115 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0116 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0117 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0118 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0119 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0120 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0121 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0122 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0123 | N/A
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0124 | DP
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0125 | DP
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0126 | FN
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0127 | FN
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0128 | FN
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0129 | FN
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0130 | FN
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0131 | FN
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0132 | FN
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0133 | FN
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0134 | FN
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0135 | TN
-./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 0136 | TN
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0001 | FN
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0003 | TN
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0004 | FN
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0005 | TN
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0006 | TN
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0007 | TN
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0008 | FN
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0009 | FN
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0010 | TN
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0011 | TN
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0012 | TN
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0013 | DP
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0014 | TN
-./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 0015 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0001 | FN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0002 | FN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0003 | FN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0004 | FN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0005 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0006 | FN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0007 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0008 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0009 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0010 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0011 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0012 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0013 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0014 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0015 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0016 | FN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0017 | FN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0018 | FN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0019 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0020 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0021 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0022 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0023 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0024 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0025 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0026 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0027 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0028 | FN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0029 | FN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0030 | TN
-./CPU/dataracebench/DRB044-adi-tile-no.c.json | 0031 | TN
-./CPU/dataracebench/DRB045-doall1-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB045-doall1-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB045-doall1-orig-no.c.json | 0003 | FN
-./CPU/dataracebench/DRB046-doall2-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB046-doall2-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB046-doall2-orig-no.c.json | 0003 | DP
-./CPU/dataracebench/DRB046-doall2-orig-no.c.json | 0004 | DP
-./CPU/dataracebench/DRB046-doall2-orig-no.c.json | 0005 | FN
-./CPU/dataracebench/DRB046-doall2-orig-no.c.json | 0006 | FN
-./CPU/dataracebench/DRB047-doallchar-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB047-doallchar-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB047-doallchar-orig-no.c.json | 0003 | FN
-./CPU/dataracebench/DRB048-firstprivate-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB048-firstprivate-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB048-firstprivate-orig-no.c.json | 0003 | FN
-./CPU/dataracebench/DRB049-fprintf-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB049-fprintf-orig-no.c.json | 0002 | FN
-./CPU/dataracebench/DRB050-functionparameter-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB050-functionparameter-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB050-functionparameter-orig-no.c.json | 0003 | FN
-./CPU/dataracebench/DRB050-functionparameter-orig-yes.c.json | 0001 | TP
-./CPU/dataracebench/DRB050-functionparameter-orig-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB050-functionparameter-orig-yes.c.json | 0003 | FN
-./CPU/dataracebench/DRB052-indirectaccesssharebase-orig-no.c.json | 0001 | FN
-./CPU/dataracebench/DRB052-indirectaccesssharebase-orig-no.c.json | 0002 | FN
-./CPU/dataracebench/DRB052-indirectaccesssharebase-orig-no.c.json | 0003 | FN
-./CPU/dataracebench/DRB053-inneronly1-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB053-inneronly1-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB053-inneronly1-orig-no.c.json | 0003 | TN
-./CPU/dataracebench/DRB053-inneronly1-orig-no.c.json | 0004 | DP
-./CPU/dataracebench/DRB053-inneronly1-orig-no.c.json | 0005 | TN
-./CPU/dataracebench/DRB053-inneronly1-orig-no.c.json | 0006 | TN
-./CPU/dataracebench/DRB054-inneronly2-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB054-inneronly2-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB054-inneronly2-orig-no.c.json | 0003 | TN
-./CPU/dataracebench/DRB054-inneronly2-orig-no.c.json | 0004 | DP
-./CPU/dataracebench/DRB054-inneronly2-orig-no.c.json | 0005 | TN
-./CPU/dataracebench/DRB054-inneronly2-orig-no.c.json | 0006 | TN
-./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 0001 | FN
-./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 0003 | TN
-./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 0004 | TN
-./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 0005 | TN
-./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 0006 | FN
-./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 0007 | TN
-./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 0008 | FN
-./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 0009 | FN
-./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 0010 | TN
-./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 0011 | TN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0001 | FN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0002 | FN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0003 | FN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0004 | FN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0005 | TN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0006 | FN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0007 | TN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0008 | TN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0009 | TN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0010 | TN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0011 | TN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0012 | TN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0013 | TN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0014 | TN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0015 | N/A
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0016 | N/A
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0017 | TN
-./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 0018 | TN
-./CPU/dataracebench/DRB057-jacobiinitialize-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB057-jacobiinitialize-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB057-jacobiinitialize-orig-no.c.json | 0003 | TN
-./CPU/dataracebench/DRB057-jacobiinitialize-orig-no.c.json | 0004 | TN
-./CPU/dataracebench/DRB058-jacobikernel-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB058-jacobikernel-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB058-jacobikernel-orig-no.c.json | 0003 | TN
-./CPU/dataracebench/DRB058-jacobikernel-orig-no.c.json | 0004 | FN
-./CPU/dataracebench/DRB058-jacobikernel-orig-no.c.json | 0005 | TP
-./CPU/dataracebench/DRB058-jacobikernel-orig-no.c.json | 0006 | DP
-./CPU/dataracebench/DRB058-jacobikernel-orig-no.c.json | 0007 | DP
-./CPU/dataracebench/DRB059-lastprivate-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 0001 | FN
-./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 0002 | FN
-./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 0003 | DP
-./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 0004 | DP
-./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 0005 | FN
-./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 0006 | FN
-./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 0007 | TN
-./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 0008 | TN
-./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 0009 | TN
-./CPU/dataracebench/DRB061-matrixvector1-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB061-matrixvector1-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB061-matrixvector1-orig-no.c.json | 0003 | DP
-./CPU/dataracebench/DRB061-matrixvector1-orig-no.c.json | 0004 | DP
-./CPU/dataracebench/DRB061-matrixvector1-orig-no.c.json | 0005 | TN
-./CPU/dataracebench/DRB061-matrixvector1-orig-no.c.json | 0006 | TN
-./CPU/dataracebench/DRB062-matrixvector2-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB062-matrixvector2-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB062-matrixvector2-orig-no.c.json | 0003 | DP
-./CPU/dataracebench/DRB062-matrixvector2-orig-no.c.json | 0004 | DP
-./CPU/dataracebench/DRB062-matrixvector2-orig-no.c.json | 0005 | TN
-./CPU/dataracebench/DRB062-matrixvector2-orig-no.c.json | 0006 | TN
-./CPU/dataracebench/DRB063-outeronly1-orig-no.c.json | 0001 | FN
-./CPU/dataracebench/DRB063-outeronly1-orig-no.c.json | 0002 | TN
-./CPU/dataracebench/DRB063-outeronly1-orig-no.c.json | 0003 | DP
-./CPU/dataracebench/DRB063-outeronly1-orig-no.c.json | 0004 | DP
-./CPU/dataracebench/DRB063-outeronly1-orig-no.c.json | 0005 | TN
-./CPU/dataracebench/DRB063-outeronly1-orig-no.c.json | 0006 | TN
-./CPU/dataracebench/DRB064-outeronly2-orig-no.c.json | 0001 | FN
-./CPU/dataracebench/DRB064-outeronly2-orig-no.c.json | 0002 | TN
-./CPU/dataracebench/DRB064-outeronly2-orig-no.c.json | 0003 | DP
-./CPU/dataracebench/DRB064-outeronly2-orig-no.c.json | 0004 | DP
-./CPU/dataracebench/DRB064-outeronly2-orig-no.c.json | 0005 | TN
-./CPU/dataracebench/DRB064-outeronly2-orig-no.c.json | 0006 | TN
-./CPU/dataracebench/DRB065-pireduction-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB066-pointernoaliasing-orig-no.c.json | 0001 | TP
-./CPU/dataracebench/DRB066-pointernoaliasing-orig-no.c.json | 0002 | TN
-./CPU/dataracebench/DRB067-restrictpointer1-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB067-restrictpointer1-orig-no.c.json | 0002 | TN
-./CPU/dataracebench/DRB068-restrictpointer2-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB068-restrictpointer2-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB068-restrictpointer2-orig-no.c.json | 0003 | TN
-./CPU/dataracebench/DRB070-simd1-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB070-simd1-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB070-simd1-orig-no.c.json | 0003 | TN
-./CPU/dataracebench/DRB071-targetparallelfor-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB071-targetparallelfor-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB071-targetparallelfor-orig-no.c.json | 0003 | TN
-./CPU/dataracebench/DRB073-doall2-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB073-doall2-orig-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB073-doall2-orig-yes.c.json | 0003 | DP
-./CPU/dataracebench/DRB073-doall2-orig-yes.c.json | 0004 | DP
-./CPU/dataracebench/DRB073-doall2-orig-yes.c.json | 0005 | TN
-./CPU/dataracebench/DRB073-doall2-orig-yes.c.json | 0006 | TN
-./CPU/dataracebench/DRB084-threadprivatemissing-orig-yes.c.json | 0001 | FN
-./CPU/dataracebench/DRB084-threadprivatemissing-orig-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB085-threadprivate-orig-no.c.json | 0001 | FN
-./CPU/dataracebench/DRB085-threadprivate-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB090-static-local-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB090-static-local-orig-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB090-static-local-orig-yes.c.json | 0003 | DP
-./CPU/dataracebench/DRB091-threadprivate2-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB091-threadprivate2-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB092-threadprivatemissing2-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB092-threadprivatemissing2-orig-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB093-doall2-collapse-orig-no.c.json | 0001 | TP
-./CPU/dataracebench/DRB093-doall2-collapse-orig-no.c.json | 0002 | TP
-./CPU/dataracebench/DRB093-doall2-collapse-orig-no.c.json | 0003 | TP
-./CPU/dataracebench/DRB093-doall2-collapse-orig-no.c.json | 0004 | TP
-./CPU/dataracebench/DRB093-doall2-collapse-orig-no.c.json | 0005 | TN
-./CPU/dataracebench/DRB093-doall2-collapse-orig-no.c.json | 0006 | TN
-./CPU/dataracebench/DRB094-doall2-ordered-orig-no.c.json | 0001 | TN
-./CPU/dataracebench/DRB094-doall2-ordered-orig-no.c.json | 0002 | TN
-./CPU/dataracebench/DRB095-doall2-taskloop-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB095-doall2-taskloop-orig-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB097-target-teams-distribute-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB097-target-teams-distribute-orig-no.c.json | 0002 | FN
-./CPU/dataracebench/DRB097-target-teams-distribute-orig-no.c.json | 0003 | DP
-./CPU/dataracebench/DRB097-target-teams-distribute-orig-no.c.json | 0004 | DP
-./CPU/dataracebench/DRB098-simd2-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB098-simd2-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB098-simd2-orig-no.c.json | 0003 | DP
-./CPU/dataracebench/DRB098-simd2-orig-no.c.json | 0004 | DP
-./CPU/dataracebench/DRB099-targetparallelfor2-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB099-targetparallelfor2-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB100-task-reference-orig-no.c.json | 0001 | FN
-./CPU/dataracebench/DRB100-task-reference-orig-no.c.json | 0002 | FN
-./CPU/dataracebench/DRB101-task-value-orig-no.c.json | 0001 | FN
-./CPU/dataracebench/DRB101-task-value-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB101-task-value-orig-no.c.json | 0003 | TN
-./CPU/dataracebench/DRB104-nowait-barrier-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB104-nowait-barrier-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB108-atomic-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB109-orderedmissing-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB110-ordered-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB111-linearmissing-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB111-linearmissing-orig-yes.c.json | 0002 | DP
-./CPU/dataracebench/DRB112-linear-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB112-linear-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB113-default-orig-no.c.json | 0001 | DP
-./CPU/dataracebench/DRB113-default-orig-no.c.json | 0002 | DP
-./CPU/dataracebench/DRB113-default-orig-no.c.json | 0003 | DP
-./CPU/dataracebench/DRB113-default-orig-no.c.json | 0004 | DP
-./CPU/dataracebench/DRB113-default-orig-no.c.json | 0005 | DP
-./CPU/dataracebench/DRB113-default-orig-no.c.json | 0006 | DP
-./CPU/dataracebench/DRB113-default-orig-no.c.json | 0007 | TN
-./CPU/dataracebench/DRB113-default-orig-no.c.json | 0008 | TN
-./CPU/dataracebench/DRB114-if-orig-yes.c.json | 0001 | DP
-./CPU/dataracebench/DRB114-if-orig-yes.c.json | 0002 | TN
-./CPU/dataracebench/utilities/polybench.c.json | 0001 | TP
-./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 0001 | TP
-./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 0002 | TP
-./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 0003 | TP
-./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 0004 | TP
-./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 0005 | TN
-./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 0006 | TN
+./CPU/dataracebench/DRB001-antidep1-orig-yes.c.json | 1 | 61 | DP | YES
+./CPU/dataracebench/DRB001-antidep1-orig-yes.c.json | 2 | 64 | TN | NO
+./CPU/dataracebench/DRB002-antidep1-var-yes.c.json | 1 | 64 | DP | YES
+./CPU/dataracebench/DRB002-antidep1-var-yes.c.json | 2 | 67 | TN | NO
+./CPU/dataracebench/DRB002-antidep1-var-yes.c.json | 3 | 71 | FN | YES
+./CPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 1 | 61 | DP | YES
+./CPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 2 | 63 | DP | YES
+./CPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 3 | 66 | TN | NO
+./CPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 4 | 68 | TP | YES
+./CPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 5 | 74 | FN | YES
+./CPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 6 | 76 | FN | YES
+./CPU/dataracebench/DRB004-antidep2-var-yes.c.json | 1 | 65 | DP | YES
+./CPU/dataracebench/DRB004-antidep2-var-yes.c.json | 2 | 67 | DP | YES
+./CPU/dataracebench/DRB004-antidep2-var-yes.c.json | 3 | 70 | TN | NO
+./CPU/dataracebench/DRB004-antidep2-var-yes.c.json | 4 | 72 | TP | YES
+./CPU/dataracebench/DRB004-antidep2-var-yes.c.json | 5 | 78 | FN | YES
+./CPU/dataracebench/DRB004-antidep2-var-yes.c.json | 6 | 80 | FN | YES
+./CPU/dataracebench/DRB005-indirectaccess1-orig-yes.c.json | 1 | 120 | DP | YES
+./CPU/dataracebench/DRB005-indirectaccess1-orig-yes.c.json | 2 | 126 | FN | YES
+./CPU/dataracebench/DRB006-indirectaccess2-orig-yes.c.json | 1 | 119 | DP | YES
+./CPU/dataracebench/DRB006-indirectaccess2-orig-yes.c.json | 2 | 126 | FN | YES
+./CPU/dataracebench/DRB007-indirectaccess3-orig-yes.c.json | 1 | 120 | DP | YES
+./CPU/dataracebench/DRB007-indirectaccess3-orig-yes.c.json | 2 | 125 | TN | NO
+./CPU/dataracebench/DRB008-indirectaccess4-orig-yes.c.json | 1 | 120 | DP | YES
+./CPU/dataracebench/DRB008-indirectaccess4-orig-yes.c.json | 2 | 125 | TN | NO
+./CPU/dataracebench/DRB009-lastprivatemissing-orig-yes.c.json | 1 | 58 | DP | YES
+./CPU/dataracebench/DRB010-lastprivatemissing-var-yes.c.json | 1 | 62 | DP | YES
+./CPU/dataracebench/DRB011-minusminus-orig-yes.c.json | 1 | 64 | DP | YES
+./CPU/dataracebench/DRB011-minusminus-orig-yes.c.json | 2 | 73 | DP | YES
+./CPU/dataracebench/DRB012-minusminus-var-yes.c.json | 1 | 64 | DP | YES
+./CPU/dataracebench/DRB012-minusminus-var-yes.c.json | 2 | 73 | DP | YES
+./CPU/dataracebench/DRB013-nowait-orig-yes.c.json | 1 | 66 | DP | YES
+./CPU/dataracebench/DRB013-nowait-orig-yes.c.json | 2 | 72 | DP | YES
+./CPU/dataracebench/DRB014-outofbounds-orig-yes.c.json | 1 | 74 | TN | NO
+./CPU/dataracebench/DRB014-outofbounds-orig-yes.c.json | 2 | 76 | FN | YES
+./CPU/dataracebench/DRB015-outofbounds-var-yes.c.json | 1 | 80 | DP | YES
+./CPU/dataracebench/DRB015-outofbounds-var-yes.c.json | 2 | 82 | DP | YES
+./CPU/dataracebench/DRB015-outofbounds-var-yes.c.json | 3 | 85 | TN | NO
+./CPU/dataracebench/DRB015-outofbounds-var-yes.c.json | 4 | 87 | DP | YES
+./CPU/dataracebench/DRB015-outofbounds-var-yes.c.json | 5 | 91 | FN | YES
+./CPU/dataracebench/DRB015-outofbounds-var-yes.c.json | 6 | 93 | FN | YES
+./CPU/dataracebench/DRB016-outputdep-orig-yes.c.json | 1 | 70 | TP | YES
+./CPU/dataracebench/DRB017-outputdep-var-yes.c.json | 1 | 68 | TP | YES
+./CPU/dataracebench/DRB018-plusplus-orig-yes.c.json | 1 | 67 | DP | YES
+./CPU/dataracebench/DRB018-plusplus-orig-yes.c.json | 2 | 71 | FN | YES
+./CPU/dataracebench/DRB019-plusplus-var-yes.c.json | 1 | 69 | DP | YES
+./CPU/dataracebench/DRB019-plusplus-var-yes.c.json | 2 | 73 | DP | YES
+./CPU/dataracebench/DRB020-privatemissing-var-yes.c.json | 1 | 61 | DP | YES
+./CPU/dataracebench/DRB020-privatemissing-var-yes.c.json | 2 | 65 | DP | YES
+./CPU/dataracebench/DRB020-privatemissing-var-yes.c.json | 3 | 72 | FN | YES
+./CPU/dataracebench/DRB021-reductionmissing-orig-yes.c.json | 1 | 63 | DP | YES
+./CPU/dataracebench/DRB021-reductionmissing-orig-yes.c.json | 2 | 65 | DP | YES
+./CPU/dataracebench/DRB021-reductionmissing-orig-yes.c.json | 3 | 69 | DP | YES
+./CPU/dataracebench/DRB021-reductionmissing-orig-yes.c.json | 4 | 70 | DP | YES
+./CPU/dataracebench/DRB022-reductionmissing-var-yes.c.json | 1 | 65 | DP | YES
+./CPU/dataracebench/DRB022-reductionmissing-var-yes.c.json | 2 | 67 | DP | YES
+./CPU/dataracebench/DRB022-reductionmissing-var-yes.c.json | 3 | 71 | DP | YES
+./CPU/dataracebench/DRB022-reductionmissing-var-yes.c.json | 4 | 73 | DP | YES
+./CPU/dataracebench/DRB024-simdtruedep-orig-yes.c.json | 1 | 59 | DP | YES
+./CPU/dataracebench/DRB024-simdtruedep-orig-yes.c.json | 2 | 65 | TN | NO
+./CPU/dataracebench/DRB024-simdtruedep-orig-yes.c.json | 3 | 69 | FN | YES
+./CPU/dataracebench/DRB025-simdtruedep-var-yes.c.json | 1 | 62 | DP | YES
+./CPU/dataracebench/DRB025-simdtruedep-var-yes.c.json | 2 | 68 | TN | NO
+./CPU/dataracebench/DRB025-simdtruedep-var-yes.c.json | 3 | 71 | TN | NO
+./CPU/dataracebench/DRB026-targetparallelfor-orig-yes.c.json | 1 | 59 | DP | YES
+./CPU/dataracebench/DRB026-targetparallelfor-orig-yes.c.json | 2 | 63 | TN | NO
+./CPU/dataracebench/DRB026-targetparallelfor-orig-yes.c.json | 3 | 66 | TN | NO
+./CPU/dataracebench/DRB028-privatemissing-orig-yes.c.json | 1 | 61 | DP | YES
+./CPU/dataracebench/DRB028-privatemissing-orig-yes.c.json | 2 | 65 | DP | YES
+./CPU/dataracebench/DRB029-truedep1-orig-yes.c.json | 1 | 60 | DP | YES
+./CPU/dataracebench/DRB029-truedep1-orig-yes.c.json | 2 | 63 | TN | NO
+./CPU/dataracebench/DRB030-truedep1-var-yes.c.json | 1 | 64 | DP | YES
+./CPU/dataracebench/DRB030-truedep1-var-yes.c.json | 2 | 67 | TN | NO
+./CPU/dataracebench/DRB030-truedep1-var-yes.c.json | 3 | 70 | TN | NO
+./CPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 1 | 60 | DP | YES
+./CPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 2 | 62 | DP | YES
+./CPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 3 | 65 | TN | NO
+./CPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 4 | 67 | DP | YES
+./CPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 5 | 71 | FN | YES
+./CPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 6 | 73 | FN | YES
+./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c.json | 1 | 63 | DP | YES
+./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c.json | 2 | 65 | DP | YES
+./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c.json | 3 | 68 | TN | NO
+./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c.json | 4 | 70 | DP | YES
+./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c.json | 5 | 73 | TN | NO
+./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c.json | 6 | 74 | TN | NO
+./CPU/dataracebench/DRB033-truedeplinear-orig-yes.c.json | 1 | 60 | DP | YES
+./CPU/dataracebench/DRB033-truedeplinear-orig-yes.c.json | 2 | 63 | TP | YES
+./CPU/dataracebench/DRB034-truedeplinear-var-yes.c.json | 1 | 62 | DP | YES
+./CPU/dataracebench/DRB034-truedeplinear-var-yes.c.json | 2 | 65 | TN | NO
+./CPU/dataracebench/DRB034-truedeplinear-var-yes.c.json | 3 | 68 | TN | NO
+./CPU/dataracebench/DRB035-truedepscalar-orig-yes.c.json | 1 | 63 | TN | NO
+./CPU/dataracebench/DRB036-truedepscalar-var-yes.c.json | 1 | 64 | TN | NO
+./CPU/dataracebench/DRB036-truedepscalar-var-yes.c.json | 2 | 70 | TN | NO
+./CPU/dataracebench/DRB037-truedepseconddimension-orig-yes.c.json | 1 | 61 | DP | YES
+./CPU/dataracebench/DRB037-truedepseconddimension-orig-yes.c.json | 2 | 63 | DP | YES
+./CPU/dataracebench/DRB037-truedepseconddimension-orig-yes.c.json | 3 | 67 | FN | YES
+./CPU/dataracebench/DRB037-truedepseconddimension-orig-yes.c.json | 4 | 68 | TN | NO
+./CPU/dataracebench/DRB037-truedepseconddimension-orig-yes.c.json | 5 | 72 | FN | YES
+./CPU/dataracebench/DRB037-truedepseconddimension-orig-yes.c.json | 6 | 74 | FN | YES
+./CPU/dataracebench/DRB038-truedepseconddimension-var-yes.c.json | 1 | 63 | DP | YES
+./CPU/dataracebench/DRB038-truedepseconddimension-var-yes.c.json | 2 | 65 | DP | YES
+./CPU/dataracebench/DRB038-truedepseconddimension-var-yes.c.json | 3 | 69 | FN | YES
+./CPU/dataracebench/DRB038-truedepseconddimension-var-yes.c.json | 4 | 70 | TN | NO
+./CPU/dataracebench/DRB038-truedepseconddimension-var-yes.c.json | 5 | 73 | TN | NO
+./CPU/dataracebench/DRB038-truedepseconddimension-var-yes.c.json | 6 | 74 | TN | NO
+./CPU/dataracebench/DRB040-truedepsingleelement-var-yes.c.json | 1 | 61 | DP | YES
+./CPU/dataracebench/DRB040-truedepsingleelement-var-yes.c.json | 2 | 66 | TN | NO
+./CPU/dataracebench/DRB040-truedepsingleelement-var-yes.c.json | 3 | 69 | TN | NO
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 1 | 29 | FN | YES
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 2 | 31 | FN | YES
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 3 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 4 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 5 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 6 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 7 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 8 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 9 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 10 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 11 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 12 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 13 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 14 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 15 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 16 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 17 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 18 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 19 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 20 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 21 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 22 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 23 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 24 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 25 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 26 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 27 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 28 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 29 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 30 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 31 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 32 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 33 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 34 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 35 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 36 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 37 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 38 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 39 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 40 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 41 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 42 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 43 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 44 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 45 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 46 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 47 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 48 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 49 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 50 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 51 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 52 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 53 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 54 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 55 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 56 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 57 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 58 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 59 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 60 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 61 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 62 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 63 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 64 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 65 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 66 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 67 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 68 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 69 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 70 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 71 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 72 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 73 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 74 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 75 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 76 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 77 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 78 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 79 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 80 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 81 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 82 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 83 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 84 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 85 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 86 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 87 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 88 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 89 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 90 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 91 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 92 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 93 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 94 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 95 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 96 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 97 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 98 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 99 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 100 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 101 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 102 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 103 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 104 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 105 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 106 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 107 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 108 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 109 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 110 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 111 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 112 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 113 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 114 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 115 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 116 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 117 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 118 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 119 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 120 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 121 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 122 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 123 | N/A
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 124 | 634 | DP | YES
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 125 | 636 | DP | YES
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 126 | 642 | FN | YES
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 127 | 644 | FN | YES
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 128 | 646 | FN | YES
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 129 | 652 | FN | YES
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 130 | 654 | FN | YES
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 131 | 659 | FN | YES
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 132 | 661 | FN | YES
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 133 | 663 | FN | YES
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 134 | 667 | FN | YES
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 135 | 611 | TN | NO
+./CPU/dataracebench/DRB041-3mm-parallel-no.c.json | 136 | 612 | TN | NO
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 1 | 30 | FN | YES
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 2 | 32 | DP | YES
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 3 | 71 | TN | NO
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 4 | 73 | FN | YES
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 5 | 74 | TN | NO
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 6 | 77 | TN | NO
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 7 | 80 | TN | NO
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 8 | 85 | FN | YES
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 9 | 89 | FN | YES
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 10 | 90 | TN | NO
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 11 | 93 | TN | NO
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 12 | 96 | TN | NO
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 13 | 101 | DP | YES
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 14 | 49 | TN | NO
+./CPU/dataracebench/DRB043-adi-parallel-no.c.json | 15 | 50 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 1 | 31 | FN | YES
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 2 | 33 | FN | YES
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 3 | 35 | FN | YES
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 4 | 37 | FN | YES
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 5 | 80 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 6 | 83 | FN | YES
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 7 | 84 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 8 | 85 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 9 | 86 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 10 | 91 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 11 | 92 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 12 | 93 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 13 | 98 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 14 | 99 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 15 | 100 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 16 | 108 | FN | YES
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 17 | 110 | FN | YES
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 18 | 116 | FN | YES
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 19 | 117 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 20 | 118 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 21 | 119 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 22 | 124 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 23 | 125 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 24 | 126 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 25 | 131 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 26 | 132 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 27 | 133 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 28 | 141 | FN | YES
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 29 | 143 | FN | YES
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 30 | 55 | TN | NO
+./CPU/dataracebench/DRB044-adi-tile-no.c.json | 31 | 56 | TN | NO
+./CPU/dataracebench/DRB045-doall1-orig-no.c.json | 1 | 56 | DP | YES
+./CPU/dataracebench/DRB045-doall1-orig-no.c.json | 2 | 61 | DP | YES
+./CPU/dataracebench/DRB045-doall1-orig-no.c.json | 3 | 65 | FN | YES
+./CPU/dataracebench/DRB046-doall2-orig-no.c.json | 1 | 60 | DP | YES
+./CPU/dataracebench/DRB046-doall2-orig-no.c.json | 2 | 62 | DP | YES
+./CPU/dataracebench/DRB046-doall2-orig-no.c.json | 3 | 66 | DP | YES
+./CPU/dataracebench/DRB046-doall2-orig-no.c.json | 4 | 68 | DP | YES
+./CPU/dataracebench/DRB046-doall2-orig-no.c.json | 5 | 72 | FN | YES
+./CPU/dataracebench/DRB046-doall2-orig-no.c.json | 6 | 74 | FN | YES
+./CPU/dataracebench/DRB047-doallchar-orig-no.c.json | 1 | 61 | DP | YES
+./CPU/dataracebench/DRB047-doallchar-orig-no.c.json | 2 | 64 | DP | YES
+./CPU/dataracebench/DRB047-doallchar-orig-no.c.json | 3 | 67 | FN | YES
+./CPU/dataracebench/DRB048-firstprivate-orig-no.c.json | 1 | 56 | DP | YES
+./CPU/dataracebench/DRB048-firstprivate-orig-no.c.json | 2 | 68 | DP | YES
+./CPU/dataracebench/DRB048-firstprivate-orig-no.c.json | 3 | 76 | FN | YES
+./CPU/dataracebench/DRB049-fprintf-orig-no.c.json | 1 | 64 | DP | YES
+./CPU/dataracebench/DRB049-fprintf-orig-no.c.json | 2 | 74 | FN | YES
+./CPU/dataracebench/DRB050-functionparameter-orig-no.c.json | 1 | 56 | DP | YES
+./CPU/dataracebench/DRB050-functionparameter-orig-no.c.json | 2 | 70 | DP | YES
+./CPU/dataracebench/DRB050-functionparameter-orig-no.c.json | 3 | 78 | FN | YES
+./CPU/dataracebench/DRB050-functionparameter-orig-yes.c.json | 1 | 55 | TP | YES
+./CPU/dataracebench/DRB050-functionparameter-orig-yes.c.json | 2 | 68 | DP | YES
+./CPU/dataracebench/DRB050-functionparameter-orig-yes.c.json | 3 | 76 | FN | YES
+./CPU/dataracebench/DRB052-indirectaccesssharebase-orig-no.c.json | 1 | 110 | FN | YES
+./CPU/dataracebench/DRB052-indirectaccesssharebase-orig-no.c.json | 2 | 116 | FN | YES
+./CPU/dataracebench/DRB052-indirectaccesssharebase-orig-no.c.json | 3 | 125 | FN | YES
+./CPU/dataracebench/DRB053-inneronly1-orig-no.c.json | 1 | 60 | DP | YES
+./CPU/dataracebench/DRB053-inneronly1-orig-no.c.json | 2 | 62 | DP | YES
+./CPU/dataracebench/DRB053-inneronly1-orig-no.c.json | 3 | 65 | TN | NO
+./CPU/dataracebench/DRB053-inneronly1-orig-no.c.json | 4 | 67 | DP | YES
+./CPU/dataracebench/DRB053-inneronly1-orig-no.c.json | 5 | 72 | TN | NO
+./CPU/dataracebench/DRB053-inneronly1-orig-no.c.json | 6 | 73 | TN | NO
+./CPU/dataracebench/DRB054-inneronly2-orig-no.c.json | 1 | 58 | DP | YES
+./CPU/dataracebench/DRB054-inneronly2-orig-no.c.json | 2 | 60 | DP | YES
+./CPU/dataracebench/DRB054-inneronly2-orig-no.c.json | 3 | 63 | TN | NO
+./CPU/dataracebench/DRB054-inneronly2-orig-no.c.json | 4 | 65 | DP | YES
+./CPU/dataracebench/DRB054-inneronly2-orig-no.c.json | 5 | 68 | TN | NO
+./CPU/dataracebench/DRB054-inneronly2-orig-no.c.json | 6 | 69 | TN | NO
+./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 1 | 29 | FN | YES
+./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 2 | 31 | DP | YES
+./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 3 | 68 | TN | NO
+./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 4 | 71 | TN | NO
+./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 5 | 74 | TN | NO
+./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 6 | 80 | FN | YES
+./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 7 | 82 | TN | NO
+./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 8 | 91 | FN | YES
+./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 9 | 98 | FN | YES
+./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 10 | 46 | TN | NO
+./CPU/dataracebench/DRB055-jacobi2d-parallel-no.c.json | 11 | 47 | TN | NO
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 1 | 31 | FN | YES
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 2 | 33 | FN | YES
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 3 | 35 | FN | YES
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 4 | 37 | FN | YES
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 5 | 80 | TN | NO
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 6 | 82 | FN | YES
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 7 | 83 | TN | NO
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 8 | 86 | TN | NO
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 9 | 93 | TN | NO
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 10 | 98 | TN | NO
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 11 | 100 | TN | NO
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 12 | 104 | TN | NO
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 13 | 108 | TN | NO
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 14 | 117 | TN | NO
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 15 | N/A
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 16 | N/A
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 17 | 54 | TN | NO
+./CPU/dataracebench/DRB056-jacobi2d-tile-no.c.json | 18 | 55 | TN | NO
+./CPU/dataracebench/DRB057-jacobiinitialize-orig-no.c.json | 1 | 69 | DP | YES
+./CPU/dataracebench/DRB057-jacobiinitialize-orig-no.c.json | 2 | 71 | DP | YES
+./CPU/dataracebench/DRB057-jacobiinitialize-orig-no.c.json | 3 | 86 | TN | NO
+./CPU/dataracebench/DRB057-jacobiinitialize-orig-no.c.json | 4 | 87 | TN | NO
+./CPU/dataracebench/DRB058-jacobikernel-orig-no.c.json | 1 | 70 | DP | YES
+./CPU/dataracebench/DRB058-jacobikernel-orig-no.c.json | 2 | 72 | DP | YES
+./CPU/dataracebench/DRB058-jacobikernel-orig-no.c.json | 3 | 103 | TN | NO
+./CPU/dataracebench/DRB058-jacobikernel-orig-no.c.json | 4 | 109 | FN | YES
+./CPU/dataracebench/DRB058-jacobikernel-orig-no.c.json | 5 | 111 | TP | YES
+./CPU/dataracebench/DRB058-jacobikernel-orig-no.c.json | 6 | 115 | DP | YES
+./CPU/dataracebench/DRB058-jacobikernel-orig-no.c.json | 7 | 117 | DP | YES
+./CPU/dataracebench/DRB059-lastprivate-orig-no.c.json | 1 | 60 | DP | YES
+./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 1 | 60 | FN | YES
+./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 2 | 62 | FN | YES
+./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 3 | 64 | DP | YES
+./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 4 | 76 | DP | YES
+./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 5 | 78 | FN | YES
+./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 6 | 80 | FN | YES
+./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 7 | 88 | TN | NO
+./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 8 | 89 | TN | NO
+./CPU/dataracebench/DRB060-matrixmultiply-orig-no.c.json | 9 | 90 | TN | NO
+./CPU/dataracebench/DRB061-matrixvector1-orig-no.c.json | 1 | 58 | DP | YES
+./CPU/dataracebench/DRB061-matrixvector1-orig-no.c.json | 2 | 60 | DP | YES
+./CPU/dataracebench/DRB061-matrixvector1-orig-no.c.json | 3 | 73 | DP | YES
+./CPU/dataracebench/DRB061-matrixvector1-orig-no.c.json | 4 | 77 | DP | YES
+./CPU/dataracebench/DRB061-matrixvector1-orig-no.c.json | 5 | 89 | TN | NO
+./CPU/dataracebench/DRB061-matrixvector1-orig-no.c.json | 6 | 90 | TN | NO
+./CPU/dataracebench/DRB062-matrixvector2-orig-no.c.json | 1 | 57 | DP | YES
+./CPU/dataracebench/DRB062-matrixvector2-orig-no.c.json | 2 | 59 | DP | YES
+./CPU/dataracebench/DRB062-matrixvector2-orig-no.c.json | 3 | 72 | DP | YES
+./CPU/dataracebench/DRB062-matrixvector2-orig-no.c.json | 4 | 76 | DP | YES
+./CPU/dataracebench/DRB062-matrixvector2-orig-no.c.json | 5 | 87 | TN | NO
+./CPU/dataracebench/DRB062-matrixvector2-orig-no.c.json | 6 | 88 | TN | NO
+./CPU/dataracebench/DRB063-outeronly1-orig-no.c.json | 1 | 72 | FN | YES
+./CPU/dataracebench/DRB063-outeronly1-orig-no.c.json | 2 | 73 | TN | NO
+./CPU/dataracebench/DRB063-outeronly1-orig-no.c.json | 3 | 59 | DP | YES
+./CPU/dataracebench/DRB063-outeronly1-orig-no.c.json | 4 | 61 | DP | YES
+./CPU/dataracebench/DRB063-outeronly1-orig-no.c.json | 5 | 80 | TN | NO
+./CPU/dataracebench/DRB063-outeronly1-orig-no.c.json | 6 | 81 | TN | NO
+./CPU/dataracebench/DRB064-outeronly2-orig-no.c.json | 1 | 72 | FN | YES
+./CPU/dataracebench/DRB064-outeronly2-orig-no.c.json | 2 | 73 | TN | NO
+./CPU/dataracebench/DRB064-outeronly2-orig-no.c.json | 3 | 59 | DP | YES
+./CPU/dataracebench/DRB064-outeronly2-orig-no.c.json | 4 | 61 | DP | YES
+./CPU/dataracebench/DRB064-outeronly2-orig-no.c.json | 5 | 80 | TN | NO
+./CPU/dataracebench/DRB064-outeronly2-orig-no.c.json | 6 | 81 | TN | NO
+./CPU/dataracebench/DRB065-pireduction-orig-no.c.json | 1 | 62 | DP | YES
+./CPU/dataracebench/DRB066-pointernoaliasing-orig-no.c.json | 1 | 58 | TP | YES
+./CPU/dataracebench/DRB066-pointernoaliasing-orig-no.c.json | 2 | 64 | TN | NO
+./CPU/dataracebench/DRB067-restrictpointer1-orig-no.c.json | 1 | 62 | DP | YES
+./CPU/dataracebench/DRB067-restrictpointer1-orig-no.c.json | 2 | 72 | TN | NO
+./CPU/dataracebench/DRB068-restrictpointer2-orig-no.c.json | 1 | 73 | DP | YES
+./CPU/dataracebench/DRB068-restrictpointer2-orig-no.c.json | 2 | 62 | DP | YES
+./CPU/dataracebench/DRB068-restrictpointer2-orig-no.c.json | 3 | 80 | TN | NO
+./CPU/dataracebench/DRB070-simd1-orig-no.c.json | 1 | 55 | DP | YES
+./CPU/dataracebench/DRB070-simd1-orig-no.c.json | 2 | 62 | DP | YES
+./CPU/dataracebench/DRB070-simd1-orig-no.c.json | 3 | 65 | TN | NO
+./CPU/dataracebench/DRB071-targetparallelfor-orig-no.c.json | 1 | 57 | DP | YES
+./CPU/dataracebench/DRB071-targetparallelfor-orig-no.c.json | 2 | 61 | DP | YES
+./CPU/dataracebench/DRB071-targetparallelfor-orig-no.c.json | 3 | 64 | TN | NO
+./CPU/dataracebench/DRB073-doall2-orig-yes.c.json | 1 | 60 | DP | YES
+./CPU/dataracebench/DRB073-doall2-orig-yes.c.json | 2 | 62 | DP | YES
+./CPU/dataracebench/DRB073-doall2-orig-yes.c.json | 3 | 66 | DP | YES
+./CPU/dataracebench/DRB073-doall2-orig-yes.c.json | 4 | 68 | DP | YES
+./CPU/dataracebench/DRB073-doall2-orig-yes.c.json | 5 | 71 | TN | NO
+./CPU/dataracebench/DRB073-doall2-orig-yes.c.json | 6 | 72 | TN | NO
+./CPU/dataracebench/DRB084-threadprivatemissing-orig-yes.c.json | 1 | 68 | FN | YES
+./CPU/dataracebench/DRB084-threadprivatemissing-orig-yes.c.json | 2 | 76 | DP | YES
+./CPU/dataracebench/DRB085-threadprivate-orig-no.c.json | 1 | 65 | FN | YES
+./CPU/dataracebench/DRB085-threadprivate-orig-no.c.json | 2 | 72 | DP | YES
+./CPU/dataracebench/DRB090-static-local-orig-yes.c.json | 1 | 65 | DP | YES
+./CPU/dataracebench/DRB090-static-local-orig-yes.c.json | 2 | 75 | DP | YES
+./CPU/dataracebench/DRB090-static-local-orig-yes.c.json | 3 | 87 | DP | YES
+./CPU/dataracebench/DRB091-threadprivate2-orig-no.c.json | 1 | 64 | DP | YES
+./CPU/dataracebench/DRB091-threadprivate2-orig-no.c.json | 2 | 72 | DP | YES
+./CPU/dataracebench/DRB092-threadprivatemissing2-orig-yes.c.json | 1 | 66 | DP | YES
+./CPU/dataracebench/DRB092-threadprivatemissing2-orig-yes.c.json | 2 | 74 | DP | YES
+./CPU/dataracebench/DRB093-doall2-collapse-orig-no.c.json | 1 | 57 | TP | YES
+./CPU/dataracebench/DRB093-doall2-collapse-orig-no.c.json | 2 | 58 | TP | YES
+./CPU/dataracebench/DRB093-doall2-collapse-orig-no.c.json | 3 | 62 | TP | YES
+./CPU/dataracebench/DRB093-doall2-collapse-orig-no.c.json | 4 | 63 | TP | YES
+./CPU/dataracebench/DRB093-doall2-collapse-orig-no.c.json | 5 | 66 | TN | NO
+./CPU/dataracebench/DRB093-doall2-collapse-orig-no.c.json | 6 | 67 | TN | NO
+./CPU/dataracebench/DRB094-doall2-ordered-orig-no.c.json | 1 | 59 | TN | NO
+./CPU/dataracebench/DRB094-doall2-ordered-orig-no.c.json | 2 | 60 | TN | NO
+./CPU/dataracebench/DRB095-doall2-taskloop-orig-yes.c.json | 1 | 63 | DP | YES
+./CPU/dataracebench/DRB095-doall2-taskloop-orig-yes.c.json | 2 | 64 | DP | YES
+./CPU/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c.json | 1 | 61 | DP | YES
+./CPU/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c.json | 2 | 62 | DP | YES
+./CPU/dataracebench/DRB097-target-teams-distribute-orig-no.c.json | 1 | 60 | DP | YES
+./CPU/dataracebench/DRB097-target-teams-distribute-orig-no.c.json | 2 | 67 | FN | YES
+./CPU/dataracebench/DRB097-target-teams-distribute-orig-no.c.json | 3 | 69 | DP | YES
+./CPU/dataracebench/DRB097-target-teams-distribute-orig-no.c.json | 4 | 74 | DP | YES
+./CPU/dataracebench/DRB098-simd2-orig-no.c.json | 1 | 59 | DP | YES
+./CPU/dataracebench/DRB098-simd2-orig-no.c.json | 2 | 61 | DP | YES
+./CPU/dataracebench/DRB098-simd2-orig-no.c.json | 3 | 69 | DP | YES
+./CPU/dataracebench/DRB098-simd2-orig-no.c.json | 4 | 70 | DP | YES
+./CPU/dataracebench/DRB099-targetparallelfor2-orig-no.c.json | 1 | 54 | DP | YES
+./CPU/dataracebench/DRB099-targetparallelfor2-orig-no.c.json | 2 | 64 | DP | YES
+./CPU/dataracebench/DRB100-task-reference-orig-no.c.json | 1 | 67 | FN | YES
+./CPU/dataracebench/DRB100-task-reference-orig-no.c.json | 2 | 75 | FN | YES
+./CPU/dataracebench/DRB101-task-value-orig-no.c.json | 1 | 67 | FN | YES
+./CPU/dataracebench/DRB101-task-value-orig-no.c.json | 2 | 74 | DP | YES
+./CPU/dataracebench/DRB101-task-value-orig-no.c.json | 3 | 83 | TN | NO
+./CPU/dataracebench/DRB104-nowait-barrier-orig-no.c.json | 1 | 62 | DP | YES
+./CPU/dataracebench/DRB104-nowait-barrier-orig-no.c.json | 2 | 68 | DP | YES
+./CPU/dataracebench/DRB108-atomic-orig-no.c.json | 1 | 54 | DP | YES
+./CPU/dataracebench/DRB109-orderedmissing-orig-yes.c.json | 1 | 55 | DP | YES
+./CPU/dataracebench/DRB110-ordered-orig-no.c.json | 1 | 55 | DP | YES
+./CPU/dataracebench/DRB111-linearmissing-orig-yes.c.json | 1 | 58 | DP | YES
+./CPU/dataracebench/DRB111-linearmissing-orig-yes.c.json | 2 | 66 | DP | YES
+./CPU/dataracebench/DRB112-linear-orig-no.c.json | 1 | 57 | DP | YES
+./CPU/dataracebench/DRB112-linear-orig-no.c.json | 2 | 65 | DP | YES
+./CPU/dataracebench/DRB113-default-orig-no.c.json | 1 | 59 | DP | YES
+./CPU/dataracebench/DRB113-default-orig-no.c.json | 2 | 61 | DP | YES
+./CPU/dataracebench/DRB113-default-orig-no.c.json | 3 | 68 | DP | YES
+./CPU/dataracebench/DRB113-default-orig-no.c.json | 4 | 70 | DP | YES
+./CPU/dataracebench/DRB113-default-orig-no.c.json | 5 | 74 | DP | YES
+./CPU/dataracebench/DRB113-default-orig-no.c.json | 6 | 76 | DP | YES
+./CPU/dataracebench/DRB113-default-orig-no.c.json | 7 | 79 | TN | NO
+./CPU/dataracebench/DRB113-default-orig-no.c.json | 8 | 80 | TN | NO
+./CPU/dataracebench/DRB114-if-orig-yes.c.json | 1 | 66 | DP | YES
+./CPU/dataracebench/DRB114-if-orig-yes.c.json | 2 | 70 | TN | NO
+./CPU/dataracebench/utilities/polybench.c.json | 1 | 95 | TP | YES
+./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 1 | 28 | TP | YES
+./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 2 | 29 | TP | YES
+./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 3 | 58 | TP | YES
+./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 4 | 59 | TP | YES
+./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 5 | 41 | TN | NO
+./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 6 | 42 | TN | NO

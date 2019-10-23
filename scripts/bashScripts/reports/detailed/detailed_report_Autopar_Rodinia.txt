@@ -1,128 +1,128 @@
-./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 0001 | TN
-./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 0002 | TN
-./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 0003 | DP
-./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 0004 | TN
-./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 0005 | FN
-./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 0006 | TN
-./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 0007 | FN
-./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 0008 | TN
-./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu_2.c.json | 0001 | FN
-./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu_2.c.json | 0002 | TN
-./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu_2.c.json | 0003 | TN
-./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu_2.c.json | 0004 | TN
-./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu_2.c.json | 0005 | TN
-./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu.c.json | 0001 | FN
-./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu.c.json | 0002 | TN
-./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu.c.json | 0003 | TN
-./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu.c.json | 0004 | TN
-./CPU/rodinia_3.1/openmp/b+tree/main.c.json | 0001 | TN
-./CPU/rodinia_3.1/openmp/b+tree/main.c.json | 0002 | TN
-./CPU/rodinia_3.1/openmp/b+tree/main.c.json | 0003 | TN
-./CPU/rodinia_3.1/openmp/b+tree/main.c.json | 0004 | TN
-./CPU/rodinia_3.1/openmp/b+tree/main.c.json | 0005 | TN
-./CPU/rodinia_3.1/openmp/b+tree/util/num/num.c.json | 0001 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0001 | FP
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0002 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0003 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0004 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0005 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0006 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0007 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0008 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0009 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0010 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0011 | DP
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0012 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0013 | FN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0014 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0015 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0016 | DP
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0017 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0018 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0019 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0020 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0021 | TN
-./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 0022 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0001 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0002 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0003 | FN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0004 | FN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0005 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0006 | FN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0007 | DP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0008 | DP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0009 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0010 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0011 | FP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0012 | DP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0013 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0014 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0015 | FP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0016 | FP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0017 | FN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0018 | FN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0019 | DP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0020 | FP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0021 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0022 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0023 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0024 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0025 | FP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0026 | FP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0027 | FN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0028 | FN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0029 | DP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0030 | FP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0031 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0032 | FN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0033 | DP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0034 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0035 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0036 | DP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0037 | DP
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0038 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0039 | TN
-./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 0040 | TN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0001 | FN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0002 | FN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0003 | TN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0004 | FP
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0005 | DP
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0006 | FN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0007 | FN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0008 | FN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0009 | FN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0010 | FN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0011 | FN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0012 | FN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0013 | FN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0014 | FN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0015 | TN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0016 | TN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0017 | TN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0018 | TN
-./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 0019 | TN
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0001 | DP
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0002 | TN
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0003 | TN
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0004 | TN
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0005 | TN
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0006 | TN
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0007 | FN
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0008 | TN
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0009 | TN
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0010 | TN
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0011 | TN
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0012 | TN
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0013 | TN
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0014 | TN
-./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 0015 | TN
-./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 0001 | TN
-./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 0002 | TN
-./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 0003 | FN
-./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 0004 | TN
-./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 0005 | TN
-./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 0006 | TN
-./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 0007 | FN
-./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 0008 | TN
-./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 0009 | TN
+./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 1 | 75 | TN | NO
+./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 2 | 97 | TN | NO
+./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 3 | 110 | DP | YES
+./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 4 | 125 | TN | NO
+./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 5 | 137 | FN | YES
+./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 6 | 141 | TN | NO
+./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 7 | 159 | FN | YES
+./CPU/rodinia_3.1/openmp/bfs/bfs.cpp.json | 8 | 180 | TN | NO
+./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu_2.c.json | 1 | 97 | FN | YES
+./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu_2.c.json | 2 | 100 | TN | NO
+./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu_2.c.json | 3 | 103 | TN | NO
+./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu_2.c.json | 4 | 131 | TN | NO
+./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu_2.c.json | 5 | 141 | TN | NO
+./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu.c.json | 1 | 87 | FN | YES
+./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu.c.json | 2 | 90 | TN | NO
+./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu.c.json | 3 | 93 | TN | NO
+./CPU/rodinia_3.1/openmp/b+tree/kernel/kernel_cpu.c.json | 4 | 115 | TN | NO
+./CPU/rodinia_3.1/openmp/b+tree/main.c.json | 1 | 165 | TN | NO
+./CPU/rodinia_3.1/openmp/b+tree/main.c.json | 2 | 475 | TN | NO
+./CPU/rodinia_3.1/openmp/b+tree/main.c.json | 3 | 450 | TN | NO
+./CPU/rodinia_3.1/openmp/b+tree/main.c.json | 4 | 263 | TN | NO
+./CPU/rodinia_3.1/openmp/b+tree/main.c.json | 5 | 389 | TN | NO
+./CPU/rodinia_3.1/openmp/b+tree/util/num/num.c.json | 1 | 34 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 1 | 253 | FP | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 2 | 1670 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 3 | 1722 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 4 | 1646 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 5 | 731 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 6 | 1159 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 7 | 1209 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 8 | 1318 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 9 | 1343 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 10 | 1377 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 11 | 1408 | DP | YES
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 12 | 1410 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 13 | 1414 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 14 | 1418 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 15 | 1426 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 16 | 1434 | DP | YES
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 17 | 1438 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 18 | 1449 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 19 | 1462 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 20 | 68 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 21 | 460 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c.json | 22 | 84 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 1 | 84 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 2 | 85 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 3 | 122 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 4 | 123 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 5 | 145 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 6 | 146 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 7 | 167 | DP | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 8 | 172 | DP | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 9 | 193 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 10 | 211 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 11 | 233 | FP | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 12 | 235 | DP | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 13 | 254 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 14 | 255 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 15 | 277 | FP | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 16 | 284 | FP | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 17 | 298 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 18 | 299 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 19 | 321 | DP | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 20 | 328 | FP | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 21 | 344 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 22 | 345 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 23 | 378 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 24 | 379 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 25 | 402 | FP | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 26 | 409 | FP | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 27 | 423 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 28 | 424 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 29 | 446 | DP | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 30 | 453 | FP | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 31 | 471 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 32 | 472 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 33 | 516 | DP | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 34 | 529 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 35 | 548 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 36 | 570 | DP | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 37 | 572 | DP | YES
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 38 | 594 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 39 | 637 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/kernel.c.json | 40 | 638 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 1 | 305 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 2 | 321 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 3 | 335 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 4 | 351 | FP | NO
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 5 | 361 | DP | YES
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 6 | 382 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 7 | 404 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 8 | 428 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 9 | 449 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 10 | 484 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 11 | 514 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 12 | 529 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 13 | 550 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 14 | 620 | FN | YES
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 15 | 60 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 16 | 64 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 17 | 68 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 18 | 73 | TN | NO
+./CPU/rodinia_3.1/openmp/heartwall/main.c.json | 19 | 78 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 1 | 125 | DP | YES
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 2 | 95 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 3 | 96 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 4 | 97 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 5 | 98 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 6 | 159 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 7 | 162 | FN | YES
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 8 | 164 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 9 | 166 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 10 | 40 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 11 | 41 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 12 | 42 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 13 | 66 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 14 | 67 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot3D/3D.c.json | 15 | 68 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 1 | 195 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 2 | 250 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 3 | 71 | FN | YES
+./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 4 | 80 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 5 | 81 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 6 | 137 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 7 | 139 | FN | YES
+./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 8 | 227 | TN | NO
+./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp.json | 9 | 228 | TN | NO

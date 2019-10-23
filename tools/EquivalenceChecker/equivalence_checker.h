@@ -51,6 +51,8 @@ class JSONParser {
     				 // Example: "a[i] += b[i];"
   } generic_obj; 
 
+  // Flag to add line number afther classification, for each loop.
+  bool detailed;
   //---------------------------------------------------------------------------
   //                       GLOBAL VARAIBLES
   //--------------------------------------------------------------------------- 
@@ -212,6 +214,11 @@ class JSONParser {
     readEquivalenceClasses("equivalent_pragmas.json");
     readFile(fileRef, true);
     readFile(fileTool, false);
+    detailed = false;
+    if (flag == "-check-detailed") {
+      detailed = true;
+      classify();
+    }
     if (flag == "-check")
       classify();
     if (flag == "-join")

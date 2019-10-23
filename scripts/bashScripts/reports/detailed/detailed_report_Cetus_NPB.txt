@@ -1,23 +1,23 @@
-./CPU/NPB3.0-omp-c/common/c_randdp.c.json | 0001 | TN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0001 | TN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0002 | TN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0003 | DP
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0004 | FN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0005 | TN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0006 | FP
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0007 | FP
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0008 | FN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0009 | FP
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0010 | FP
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0011 | FN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0012 | TN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0013 | FN
-./CPU/NPB3.0-omp-c/IS/is.c.json | 0014 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0001 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0002 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0003 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0004 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0005 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0006 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0007 | TN
-./CPU/NPB3.0-omp-c/sys/setparams.c.json | 0008 | TN
+./CPU/NPB3.0-omp-c/common/c_randdp.c.json | 1 | 118 | TN | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 1 | 309 | TN | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 2 | 337 | TN | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 3 | 344 | DP | YES
+./CPU/NPB3.0-omp-c/IS/is.c.json | 4 | 595 | FN | YES
+./CPU/NPB3.0-omp-c/IS/is.c.json | 5 | 653 | TN | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 6 | 255 | FP | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 7 | 260 | FP | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 8 | 386 | FN | YES
+./CPU/NPB3.0-omp-c/IS/is.c.json | 9 | 390 | FP | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 10 | 395 | FP | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 11 | 400 | FN | YES
+./CPU/NPB3.0-omp-c/IS/is.c.json | 12 | 412 | TN | NO
+./CPU/NPB3.0-omp-c/IS/is.c.json | 13 | 418 | FN | YES
+./CPU/NPB3.0-omp-c/IS/is.c.json | 14 | 433 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 1 | 725 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 2 | 733 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 3 | 737 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 4 | 688 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 5 | 696 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 6 | 700 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 7 | 834 | TN | NO
+./CPU/NPB3.0-omp-c/sys/setparams.c.json | 8 | 623 | TN | NO

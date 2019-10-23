@@ -476,38 +476,45 @@ void JSONParser::classify(parallel_loop *refData, parallel_loop *toolData) {
   }
   
   // Consider Implicit OpenMP Rules:
- if (toolData->induction_variable != std::string())
+  if (toolData->induction_variable != std::string())
     if (std::find(toolData->private_prag.begin(), toolData->private_prag.end(), toolData->induction_variable) == toolData->private_prag.end())
       toolData->private_prag.push_back(toolData->induction_variable); 
+
+  std::string more_info = std::string();
+  std::string ground_truth = std::string();
+  if (detailed == true) {
+    more_info = std::to_string(refData->loop_line) + " | ";
+    ground_truth = " | " + std::string(((refData->pragma_type != "NULL") ? "YES" : "NO"));
+  }
 
   // Is not possible to compare lines and/or columns, they will depend of the tool.
   // Checking the pragma type:
   if ((refData->pragma_type == "NULL") &&
       ((toolData->pragma_type == "NULL") || (toolData->multiversioned == true))) {
-    cout << "TN\n";
+    cout << more_info + "TN" + ground_truth + "\n";
     return;
   }
 
   if ((refData->pragma_type == "NULL") && (toolData->pragma_type != "NULL")) {
-    cout << "FP\n";
+    cout << more_info + "FP" + ground_truth + "\n";
     return;
   }
 
   if ((refData->pragma_type != "NULL") && (toolData->pragma_type == "NULL")) {
-    cout << "FN\n";
+    cout << more_info + "FN" + ground_truth + "\n";
     return;
   }
 
   // Check if the pragmas are equivalent
   if (!isEquivalent(getEquivalentAtTargetContext(refData->pragma_type, refData->offload),
       getEquivalentAtTargetContext(toolData->pragma_type, toolData->offload))) {
-    cout << "DP\n";
+    cout << more_info + "DP" + ground_truth + "\n";
     return;
   }
 
   // Check the ordered attribute: it need to be the same for both versions:
   if (refData->ordered != toolData->ordered) {
-    cout << "DP\n";
+    cout << more_info + "DP" + ground_truth + "\n";
     return;
   }
 
@@ -519,62 +526,62 @@ void JSONParser::classify(parallel_loop *refData, parallel_loop *toolData) {
   //appendVector(toolData->private_prag, toolData->first_private_prag);
   //appendVector(toolData->private_prag, toolData->last_private_prag);
   if (!equivalentVectors(refData->private_prag, toolData->private_prag)) {
-    cout << "DP\n";
+    cout << more_info + "DP" + ground_truth + "\n";
     return;
   }
 
   // Check if the first private clauses are equivalent.
   if (!equivalentVectors(refData->first_private_prag, toolData->first_private_prag)) {
-    cout << "DP\n";
+    cout << more_info + "DP" + ground_truth + "\n";
     return;
   }
 
   // Check if the last private clauses are equivalent.
   if (!equivalentVectors(refData->last_private_prag, toolData->last_private_prag)) {
-    cout << "DP\n";
+    cout << more_info + "DP" + ground_truth + "\n";
     return;
   }
 
   // Check if the linear private clauses are equivalent.
   if (!equivalentVectors(refData->linear_prag, toolData->linear_prag)) {
-    cout << "DP\n";
+    cout << more_info + "DP" + ground_truth + "\n";
     return;
   }
 
   // Check if the reduction clauses are equivalent.
   if (!equivalentReductions(refData->reduction_prag, refData->reduction_prag_op, toolData->reduction_prag, toolData->reduction_prag_op)) {
-    cout << "DP\n";
+    cout << more_info + "DP" + ground_truth + "\n";
     return;
   }
 
   // Check if the map:to clauses are equivalent.
   appendVector(toolData->map_to, toolData->map_tofrom);
   if (!equivalentVectors(refData->map_to, toolData->map_to)) {
-    cout << "DP\n";
+    cout << more_info + "DP" + ground_truth + "\n";
     return;
   }
 
   // Check if the map:from clauses are equivalent.
   appendVector(toolData->map_from, toolData->map_tofrom);
   if (!equivalentVectors(refData->map_from, toolData->map_from)) {
-    cout << "DP\n";
+    cout << more_info + "DP" + ground_truth + "\n";
     return;
   }
 
   // Check if the map:tofrom clauses are equivalent.
   if (!equivalentVectors(refData->map_tofrom, toolData->map_tofrom)) {
-    cout << "DP\n";
+    cout << more_info + "DP" + ground_truth + "\n";
     return;
   }
 
   // Check if the objects are equivalent
   if (!areObjectsEquivalent(refData->dependence_list, toolData->dependence_list)) {
-    cout << "DP\n";
+    cout << more_info + "DP" + ground_truth + "\n";
     return;
   }
 
   // Valid pragmas:
-  cout << "TP\n";
+  cout << more_info + "TP" + ground_truth + "\n";
 }
 
 void JSONParser::classify() {
@@ -817,8 +824,8 @@ std::string JSONParser::writeLoop(parallel_loop *data, bool reference, parallel_
   obj += "\"file\":\"" + data->filename + "\",\n";
   obj += "\"function\":\"" + data->loop_function + "\",\n";
   obj += "\"loop id\":\"" + std::to_string(data->loop_id) + "\",\n";
-  obj += "\"loop line\":\"0\",\n";
-  obj += "\"loop column\":\"0\",\n";
+  obj += "\"loop line\":\"" + std::to_string(data_ref->loop_line) + "\",\n";
+  obj += "\"loop column\":\"" + std::to_string(data_ref->loop_column) + "\",\n";
   obj += "\"pragma type\":\"" +  data->pragma_type + "\",\n";
   obj += "\"ordered\":\"" + std::string(data->ordered == true ? "true" : "false") + "\",\n";
   obj += "\"offload\":\"" + std::string(data->offload == true ? "true" : "false") + "\",\n";

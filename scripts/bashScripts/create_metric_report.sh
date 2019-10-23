@@ -13,19 +13,19 @@ ANALYZE_ICC_COST=true
 ANALYZE_ICC_NOCOST=true
 ANALYZE_ICC_SIMD_NOCOST=true
 ANALYZE_CETUS=true
-if [ -f "${THIS}/reports/Metrics_Report.md" ]; then
-  rm "${THIS}/reports/Metrics_Report.md"
+if [ -f "${THIS}/reports/Metrics-Report.md" ]; then
+  rm "${THIS}/reports/Metrics-Report.md"
 fi
 
 }
 
 create_metric_header() {
-echo "# Metric report" &>> ${THIS}/reports/Metrics_Report.md
-echo "" &>> ${THIS}/reports/Metrics_Report.md
-echo "## Evaluation platform" &>> ${THIS}/reports/Metrics_Report.md
-echo "" &>> ${THIS}/reports/Metrics_Report.md
-echo "Intel(R) Xeon(R) CPU E5-2686 v4" &>> ${THIS}/reports/Metrics_Report.md
-echo "" &>> ${THIS}/reports/Metrics_Report.md
+echo "# Metric report" &>> ${THIS}/reports/Metrics-Report.md
+echo "" &>> ${THIS}/reports/Metrics-Report.md
+echo "## Evaluation platform" &>> ${THIS}/reports/Metrics-Report.md
+echo "" &>> ${THIS}/reports/Metrics-Report.md
+echo "Intel(R) Xeon(R) CPU E5-2686 v4" &>> ${THIS}/reports/Metrics-Report.md
+echo "" &>> ${THIS}/reports/Metrics-Report.md
 }
 
 calculate_metrics() {
@@ -84,12 +84,12 @@ calculate_metrics() {
 
 create_metric_report() {
 # Step 5: Report the results with calculated metrics
-echo "## Metric report ${1}" &>> ${THIS}/reports/Metrics_Report.md
-echo "" &>> ${THIS}/reports/Metrics_Report.md
+echo "## Metric report ${1}" &>> ${THIS}/reports/Metrics-Report.md
+echo "" &>> ${THIS}/reports/Metrics-Report.md
 
 LABEL="Different Parallelization"
-echo " TOOL | Precision | Recall | Accuracy | F1 Score | True Positive | True Negative | False Positive | False Negative | Eliminated Loops | $LABEL " &>> ${THIS}/reports/Metrics_Report.md
-echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---" &>> ${THIS}/reports/Metrics_Report.md
+echo " TOOL | Precision | Recall | Accuracy | F1 Score | True Positive | True Negative | False Positive | False Negative | Eliminated Loops | $LABEL " &>> ${THIS}/reports/Metrics-Report.md
+echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---" &>> ${THIS}/reports/Metrics-Report.md
 echo "============================================="
 echo "## Metric report ${report_id}"
 echo "============================================="
@@ -97,65 +97,65 @@ echo "============================================="
 if [ "$ANALYZE_AUTOPAR" = true ] ; then
   echo "*** Autopar ***"
   calculate_metrics report_Autopar${2}.txt
-  echo " Autopar | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} | ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics_Report.md
+  echo " Autopar | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} | ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics-Report.md
 fi
 
 if [ "$ANALYZE_DAWNCC" = true ] ; then
   echo "*** Dawncc  ***"
   calculate_metrics report_Dawncc${2}.txt
-  echo " Dawnc | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics_Report.md
+  echo " Dawnc | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics-Report.md
 fi
 
 if [ "$ANALYZE_ICC_COST" = true ] ; then
   echo "*** ICC Cost ***"
   calculate_metrics report_ICC_Cost${2}.txt
-  echo " ICC Cost | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics_Report.md
+  echo " ICC Cost | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics-Report.md
 fi
 
 if [ "$ANALYZE_ICC_NOCOST" = true ] ; then
   echo "*** ICC Full ***"
   calculate_metrics report_ICC_Full${2}.txt
-  echo " ICC Full | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics_Report.md
+  echo " ICC Full | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics-Report.md
 fi
 
 if [ "$ANALYZE_ICC_SIMD_NOCOST" = true ] ; then
   echo "*** ICC Simd ***"
   calculate_metrics report_ICC_Simd${2}.txt
-  echo " ICC Simd | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics_Report.md
+  echo " ICC Simd | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics-Report.md
 fi
 
 if [ "$ANALYZE_CETUS" = true ] ; then
   echo "*** Cetus ***"
   calculate_metrics report_Cetus${2}.txt
-  echo " Cetus | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics_Report.md
+  echo " Cetus | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics-Report.md
 fi
 
-echo "" &>> ${THIS}/reports/Metrics_Report.md
-echo "" &>> ${THIS}/reports/Metrics_Report.md
+echo "" &>> ${THIS}/reports/Metrics-Report.md
+echo "" &>> ${THIS}/reports/Metrics-Report.md
 }
 
 create_footnode() {
-echo "" &>> ${THIS}/reports/Metrics_Report.md
-echo "## Metrics formula" &>> ${THIS}/reports/Metrics_Report.md
-echo "" &>> ${THIS}/reports/Metrics_Report.md
-echo "precision (P) = TP/(TP + FP)" &>> ${THIS}/reports/Metrics_Report.md
-echo "" &>> ${THIS}/reports/Metrics_Report.md
-echo "recall (R) = TP/(TP + FN)" &>> ${THIS}/reports/Metrics_Report.md
-echo "" &>> ${THIS}/reports/Metrics_Report.md
-echo "accuracy (A) = (TP+TN)/(TP+FP+TN+FN)" &>> ${THIS}/reports/Metrics_Report.md
-echo "" &>> ${THIS}/reports/Metrics_Report.md
-echo "F1 score (F1) = (2 * precision * recall)/(precision + recall)" &>> ${THIS}/reports/Metrics_Report.md
-echo "" &>> ${THIS}/reports/Metrics_Report.md
+echo "" &>> ${THIS}/reports/Metrics-Report.md
+echo "## Metrics formula" &>> ${THIS}/reports/Metrics-Report.md
+echo "" &>> ${THIS}/reports/Metrics-Report.md
+echo "precision (P) = TP/(TP + FP)" &>> ${THIS}/reports/Metrics-Report.md
+echo "" &>> ${THIS}/reports/Metrics-Report.md
+echo "recall (R) = TP/(TP + FN)" &>> ${THIS}/reports/Metrics-Report.md
+echo "" &>> ${THIS}/reports/Metrics-Report.md
+echo "accuracy (A) = (TP+TN)/(TP+FP+TN+FN)" &>> ${THIS}/reports/Metrics-Report.md
+echo "" &>> ${THIS}/reports/Metrics-Report.md
+echo "F1 score (F1) = (2 * precision * recall)/(precision + recall)" &>> ${THIS}/reports/Metrics-Report.md
+echo "" &>> ${THIS}/reports/Metrics-Report.md
 
-echo "" &>> ${THIS}/reports/Metrics_Report.md
-echo "## Tool version" &>> ${THIS}/reports/Metrics_Report.md
-echo "" &>> ${THIS}/reports/Metrics_Report.md
-echo " Tool | Version " &>> ${THIS}/reports/Metrics_Report.md
-echo " --- | --- " &>> ${THIS}/reports/Metrics_Report.md
-echo " Autopar (rose) | 0.9.10.235 " &>> ${THIS}/reports/Metrics_Report.md
-echo " DawnCC (clang) | 3.7.0 " &>> ${THIS}/reports/Metrics_Report.md
-echo " ICC | 19.0.4.243 " &>> ${THIS}/reports/Metrics_Report.md
-echo " Cetus | 1.4.4 " &>> ${THIS}/reports/Metrics_Report.md
+echo "" &>> ${THIS}/reports/Metrics-Report.md
+echo "## Tool version" &>> ${THIS}/reports/Metrics-Report.md
+echo "" &>> ${THIS}/reports/Metrics-Report.md
+echo " Tool | Version " &>> ${THIS}/reports/Metrics-Report.md
+echo " --- | --- " &>> ${THIS}/reports/Metrics-Report.md
+echo " Autopar (rose) | 0.9.10.235 " &>> ${THIS}/reports/Metrics-Report.md
+echo " DawnCC (clang) | 3.7.0 " &>> ${THIS}/reports/Metrics-Report.md
+echo " ICC | 19.0.4.243 " &>> ${THIS}/reports/Metrics-Report.md
+echo " Cetus | 1.4.4 " &>> ${THIS}/reports/Metrics-Report.md
 
 }
 
