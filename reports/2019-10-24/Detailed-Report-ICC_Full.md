@@ -1,4 +1,4 @@
-# Summary report
+# Detailed report
 
 ## Evaluation platform
 

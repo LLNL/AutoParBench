@@ -14,7 +14,7 @@ if [ -f "${THIS}/reports/Detailed-Report-${TOOL}.md" ]; then
   rm "${THIS}/reports/Detailed-Report-${TOOL}.md"
 fi
 
-echo "# Summary report" &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
+echo "# Detailed report" &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
 echo "" &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
 echo "## Evaluation platform" &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
 echo "" &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
