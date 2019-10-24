@@ -44,7 +44,7 @@ On the top level directory of this repository, please, type the following comman
  
  ```bash
    cd scripts/bashScripts
-   sudo ./run.sh
+   sudo bash run.sh
  ```
  
  To run all scripts of this framework together is necessary to have ICC installed on your
