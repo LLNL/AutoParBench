@@ -47,6 +47,10 @@ On the top level directory of this repository, please, type the following comman
    sudo ./run.sh
  ```
  
+ To run all scripts of this framework together is necessary to have ICC installed on your
+ local machine. This repository provides a docker image to the other tools, however, is
+ necessary to have a license of ICC. 
+ 
   ## Checking the results
 
 This repository has a tool evaluation dashboard, it can be access using the link [Tool Evaluation Dashboard](https://github.com/gleisonsdm/AutoParBench/blob/master/reports/Tool-Evaluation-Dashboard.md).
