@@ -46,3 +46,7 @@ On the top level directory of this repository, please, type the following comman
    cd scripts/bashScripts
    sudo ./run.sh
  ```
+ 
+  ## Checking the results
+
+This repository has a tool evaluation dashboard, it can be access using the link [Tool Evaluation Dashboard](https://github.com/gleisonsdm/AutoParBench/blob/master/reports/Tool-Evaluation-Dashboard.md).
