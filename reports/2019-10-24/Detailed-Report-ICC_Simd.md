@@ -4,9 +4,9 @@
 
 Intel(R) Xeon(R) CPU E5-2686 v4
 
-### ICC_Simd Report
+### ICC Simd Report
 
- ID | Filename | Original | Sequential | Reference | Loop ID | Line Number | ICC_Simd | Output | JSON | Ground Truth 
+ ID | Filename | Original | Sequential | Reference | Loop ID | Line Number | ICC Simd | Output | JSON | Ground Truth 
  --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
 1 | dataracebench/DRB001-antidep1-orig-yes.c | [Original](../../benchmarks/original/dataracebench/DRB001-antidep1-orig-yes.c) | [Sequential](../../benchmarks/sequential/dataracebench/DRB001-antidep1-orig-yes.c) | [Reference](../../benchmarks/reference_cpu_simd/dataracebench/DRB001-antidep1-orig-yes.c.json) | 1 | 61 | TP | [out](../../benchmarks/ICC_Simd/dataracebench/DRB001-antidep1-orig-yes.c.optrpt) | [json](../../benchmarks/ICC_Simd/dataracebench/DRB001-antidep1-orig-yes.c.json) | [YES](../../benchmarks/original/dataracebench/DRB001-antidep1-orig-yes.c)
 2 | dataracebench/DRB001-antidep1-orig-yes.c | [Original](../../benchmarks/original/dataracebench/DRB001-antidep1-orig-yes.c) | [Sequential](../../benchmarks/sequential/dataracebench/DRB001-antidep1-orig-yes.c) | [Reference](../../benchmarks/reference_cpu_simd/dataracebench/DRB001-antidep1-orig-yes.c.json) | 2 | 65 | TP | [out](../../benchmarks/ICC_Simd/dataracebench/DRB001-antidep1-orig-yes.c.optrpt) | [json](../../benchmarks/ICC_Simd/dataracebench/DRB001-antidep1-orig-yes.c.json) | [YES](../../benchmarks/original/dataracebench/DRB001-antidep1-orig-yes.c)

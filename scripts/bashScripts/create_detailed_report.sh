@@ -27,9 +27,9 @@ TOOL=${1}
 REFERENCE=${2}
 
 create_detailed_header "${TOOL}"
-echo "### ${TOOL} Report" &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
+echo "### ${TOOL/_/ } Report" &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
 echo "" &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
-echo " ID | Filename | Original | Sequential | Reference | Loop ID | Line Number | ${TOOL} | Output | JSON | Ground Truth " &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
+echo " ID | Filename | Original | Sequential | Reference | Loop ID | Line Number | ${TOOL/_/ } | Output | JSON | Ground Truth " &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
 echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
 
 COUNTER=1
