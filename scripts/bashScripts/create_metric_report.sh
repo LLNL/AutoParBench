@@ -57,27 +57,6 @@ calculate_metrics() {
     F1=".00000000"
   fi
 
-  #Step 4: Display the collected data
-  echo "============================================="
-  echo "=         COLLECTING STATISTICS             ="
-  echo "============================================="
-  echo "= TP => $TP"
-  echo "= TN => $TN"
-  echo "= FP => $FP"
-  echo "= FN => $FN"
-  echo "= DP => $DP"
-
-  echo "= N/A => $NF"
-  echo "= NUMBER OF LOOPS => $LOOPS"
-  echo "============================================="
-  echo "=                  METRICS                  ="
-  echo "============================================="
-  echo "= PRECISION => 0$PRECISION"
-  echo "= RECALL => 0$RECALL"
-  echo "= ACCURACY => 0$ACCURACY"
-  echo "= F1 => 0$F1"
-  echo "============================================="
-
   ARRAY_METRICS=(0$PRECISION 0$RECALL 0$ACCURACY 0$F1)
   ARRAY_STATS=($TP $TN $FP $FN $NF $DP)
 }
@@ -90,42 +69,33 @@ echo "" &>> ${THIS}/reports/Metrics-Report.md
 LABEL="Different Parallelization"
 echo " TOOL | Precision | Recall | Accuracy | F1 Score | True Positive | True Negative | False Positive | False Negative | Eliminated Loops | $LABEL " &>> ${THIS}/reports/Metrics-Report.md
 echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---" &>> ${THIS}/reports/Metrics-Report.md
-echo "============================================="
-echo "## Metric report ${report_id}"
-echo "============================================="
 
 if [ "$ANALYZE_AUTOPAR" = true ] ; then
-  echo "*** Autopar ***"
   calculate_metrics report_Autopar${2}.txt
   echo " Autopar | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} | ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics-Report.md
 fi
 
 if [ "$ANALYZE_DAWNCC" = true ] ; then
-  echo "*** Dawncc  ***"
   calculate_metrics report_Dawncc${2}.txt
   echo " Dawnc | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics-Report.md
 fi
 
 if [ "$ANALYZE_ICC_COST" = true ] ; then
-  echo "*** ICC Cost ***"
   calculate_metrics report_ICC_Cost${2}.txt
   echo " ICC Cost | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics-Report.md
 fi
 
 if [ "$ANALYZE_ICC_NOCOST" = true ] ; then
-  echo "*** ICC Full ***"
   calculate_metrics report_ICC_Full${2}.txt
   echo " ICC Full | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics-Report.md
 fi
 
 if [ "$ANALYZE_ICC_SIMD_NOCOST" = true ] ; then
-  echo "*** ICC Simd ***"
   calculate_metrics report_ICC_Simd${2}.txt
   echo " ICC Simd | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics-Report.md
 fi
 
 if [ "$ANALYZE_CETUS" = true ] ; then
-  echo "*** Cetus ***"
   calculate_metrics report_Cetus${2}.txt
   echo " Cetus | ${ARRAY_METRICS[0]} | ${ARRAY_METRICS[1]} | ${ARRAY_METRICS[2]} | ${ARRAY_METRICS[3]} | ${ARRAY_STATS[0]} | ${ARRAY_STATS[1]} | ${ARRAY_STATS[2]} | ${ARRAY_STATS[3]} | ${ARRAY_STATS[4]} |  ${ARRAY_STATS[5]} | " &>> ${THIS}/reports/Metrics-Report.md
 fi
