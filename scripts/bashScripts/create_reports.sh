@@ -48,7 +48,7 @@ echo "| [Summary Report](${DATE}/Summary-Report.md) |" &>> "${THIS}/reports/Tool
 echo "| [Autopar Report](${DATE}/Detailed-Report-Autopar.md) |" &>> "${THIS}/reports/Tool-Evaluation-Dashboard.md"
 echo "| [Cetus Report](${DATE}/Detailed-Report-Cetus.md) |" &>> "${THIS}/reports/Tool-Evaluation-Dashboard.md"
 echo "| [Dawncc Report](${DATE}/Detailed-Report-Dawncc.md) |" &>> "${THIS}/reports/Tool-Evaluation-Dashboard.md"
-echo "| [ICC Cost Report](${DATE}/Detailed-Report-ICC_cost.md) |" &>> "${THIS}/reports/Tool-Evaluation-Dashboard.md"
+echo "| [ICC Cost Report](${DATE}/Detailed-Report-ICC_Cost.md) |" &>> "${THIS}/reports/Tool-Evaluation-Dashboard.md"
 echo "| [ICC Full Report](${DATE}/Detailed-Report-ICC_Full.md) |" &>> "${THIS}/reports/Tool-Evaluation-Dashboard.md"
 echo "| [ICC Simd Report](${DATE}/Detailed-Report-ICC_Simd.md) |" &>> "${THIS}/reports/Tool-Evaluation-Dashboard.md"
 echo "" &>> "${THIS}/reports/Tool-Evaluation-Dashboard.md"
