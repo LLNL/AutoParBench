@@ -175,7 +175,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["lt","k"]
 },
 "loop - object id : 17":{
@@ -232,7 +231,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","r1","r2"],
+"shared":["r1","r2"],
 "firstprivate":["n1","r","i1","i2","i3"]
 },
 "loop - object id : 22":{
@@ -245,7 +244,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","r1","r2"],
+"shared":["r1","r2"],
 "firstprivate":["n1","c","r","u","i1","i2","i3"]
 },
 "loop - object id : 23":{
@@ -280,7 +279,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","u1","u2"],
+"shared":["u1","u2"],
 "firstprivate":["n1","u","i1","i2","i3"]
 },
 "loop - object id : 26":{
@@ -326,7 +325,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","x1","y1"],
+"shared":["x1","y1"],
 "firstprivate":["m1j","d2","d3","i1","d1","i2","i3","r","j1","j2","j3"]
 },
 "loop - object id : 30":{
@@ -372,7 +371,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","z1","z2","z3"],
+"shared":["z1","z2","z3"],
 "firstprivate":["mm1","z","i1","i2","i3"]
 },
 "loop - object id : 34":{
@@ -396,7 +395,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","z1"],
+"shared":["z1"],
 "firstprivate":["mm1","u","i1","i2","i3"]
 },
 "loop - object id : 36":{
@@ -409,7 +408,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","z2"],
+"shared":["z2"],
 "firstprivate":["mm1","u","i1","i2","i3"]
 },
 "loop - object id : 37":{
@@ -422,7 +421,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","z3"],
+"shared":["z3"],
 "firstprivate":["mm1","u","i1","i2","i3"]
 },
 "loop - object id : 38":{
@@ -589,7 +588,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i2","i1","r","n1","n2","i3"],
 "reduction":["tmp","s"]
 },
@@ -603,7 +601,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i2","i1","r","n1","n2","i3"],
 "reduction":["tmp","s"]
 },
@@ -617,7 +614,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i2","i1","r","n1","n2","i3"],
 "reduction":["tmp","s"]
 },
@@ -631,7 +627,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i1","i2","u","n1","n2","i3"]
 },
 "loop - object id : 56":{
@@ -644,7 +639,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i1","i2","u","n1","n2","i3"]
 },
 "loop - object id : 57":{
@@ -657,7 +651,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i1","i2","u","n1","n2","i3"]
 },
 "loop - object id : 58":{
@@ -771,7 +764,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i1","i2","z","n1","n2","i3"]
 },
 "loop - object id : 68":{
@@ -784,7 +776,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i1","i2","z","n1","n2","i3"]
 },
 "loop - object id : 69":{
@@ -797,7 +788,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i1","i2","z","n1","n2","i3"]
 },
 "loop - object id : 70":{
@@ -898,7 +888,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i1","i2","z","n1","n2","i3"]
 },
 "loop - object id : 79":{
@@ -911,7 +900,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i1","i2","z","n1","n2","i3"]
 },
 "loop - object id : 80":{
@@ -924,7 +912,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i1","i2","z","n1","n2","i3"]
 }
 }

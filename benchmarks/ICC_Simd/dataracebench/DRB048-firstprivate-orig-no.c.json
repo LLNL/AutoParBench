@@ -9,8 +9,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
-"firstprivate":["g","a","i","n","g","a","i"]
+"firstprivate":["g","a","i","n"]
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB048-firstprivate-orig-no.c",

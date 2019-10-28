@@ -9,7 +9,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["inLen","input","i"]
 },
 "loop - object id : 2":{
@@ -22,7 +21,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["inLen","i","output","input","outLen"]
 }
 }

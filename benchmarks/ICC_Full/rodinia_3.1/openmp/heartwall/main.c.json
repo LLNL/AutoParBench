@@ -64,7 +64,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"firstprivate":["public.d_endoRow","public.d_endoRow","_2"]
+"firstprivate":["public.d_endoRow","_2"]
 },
 "loop - object id : 15":{
 "file":"./rodinia_3.1/openmp/heartwall/main.c",
@@ -76,7 +76,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"firstprivate":["public.d_endoCol","public.d_endoCol","_2"]
+"firstprivate":["public.d_endoCol","_2"]
 },
 "loop - object id : 18":{
 "file":"./rodinia_3.1/openmp/heartwall/main.c",
@@ -150,7 +150,7 @@
 "offload":"false",
 "multiversioned":"false",
 "shared":["private.point_no","private.in_pointer","private.d_Row","private.d_Col","private.d_tRowLoc","private.d_tColLoc","private.d_T"],
-"firstprivate":["public.d_endoT","public.d_tEndoColLoc","public.d_tEndoRowLoc","public.d_endoCol","public.d_endoRow","public.d_endoRow","public.d_endoCol","public.d_tEndoRowLoc","public.d_tEndoColLoc","public.d_endoT","i"]
+"firstprivate":["public.d_endoT","public.d_tEndoColLoc","public.d_tEndoRowLoc","public.d_endoCol","public.d_endoRow","i"]
 },
 "loop - object id : 36":{
 "file":"./rodinia_3.1/openmp/heartwall/main.c",
@@ -163,7 +163,7 @@
 "offload":"false",
 "multiversioned":"false",
 "shared":["private.point_no","private.in_pointer","private.d_Row","private.d_Col","private.d_tRowLoc","private.d_tColLoc","private.d_T"],
-"firstprivate":["public.d_epiT","public.d_tEpiColLoc","public.d_tEpiRowLoc","public.d_epiCol","public.d_epiRow","public.d_epiRow","public.d_epiCol","public.d_tEpiRowLoc","public.d_tEpiColLoc","public.d_epiT","i"]
+"firstprivate":["public.d_epiT","public.d_tEpiColLoc","public.d_tEpiRowLoc","public.d_epiCol","public.d_epiRow","i"]
 },
 "loop - object id : 39":{
 "file":"./rodinia_3.1/openmp/heartwall/main.c",
@@ -275,7 +275,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","private.in_partial_sum","private.in_sqr_partial_sum","private.par_max_val","private.par_max_coo","private.d_in2","private.d_in2_sqr","private.d_in_mod","private.d_in_sqr","private.d_conv","private.d_in2_pad","private.d_in2_sub","private.d_in2_sub2_sqr","private.d_tMask","private.d_mask_conv"],
+"shared":["private.in_partial_sum","private.in_sqr_partial_sum","private.par_max_val","private.par_max_coo","private.d_in2","private.d_in2_sqr","private.d_in_mod","private.d_in_sqr","private.d_conv","private.d_in2_pad","private.d_in2_sub","private.d_in2_sub2_sqr","private.d_tMask","private.d_mask_conv"],
 "firstprivate":["public.allPoints","i"]
 }
 }

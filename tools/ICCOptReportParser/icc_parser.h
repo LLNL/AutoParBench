@@ -112,6 +112,9 @@ private:
   // Parser a clause description, changing the spaces to comas (a kind of small csv) 
   void parserClauses(std::string & str);
 
+  // Check if a value is just a number or not:
+  bool isNumeric(std::string str);
+
   // Parser a file description to devide information into small nodes, each node is associated with one loop.
   // One loop can have more than one description.
   void collectLoops(std::string & str); 

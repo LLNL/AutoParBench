@@ -9,7 +9,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","U2_V","u","len","i"]
 },
 "loop - object id : 2":{
@@ -22,7 +21,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","U2_V","u","len","i"]
 },
 "loop - object id : 3":{
@@ -35,7 +33,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","temp","U2_V","u","len","i"],
 "reduction":["sum"]
 },
@@ -49,7 +46,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","temp","U2_V","u","len","i"],
 "reduction":["sum"]
 }

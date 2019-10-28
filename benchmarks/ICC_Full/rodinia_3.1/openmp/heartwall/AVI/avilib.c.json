@@ -119,7 +119,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","nai"],
+"shared":["nai"],
 "firstprivate":["j"]
 },
 "loop - object id : 12":{
@@ -143,7 +143,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","nai"],
+"shared":["nai"],
 "firstprivate":["AVI","j","i"]
 },
 "loop - object id : 14":{
@@ -178,7 +178,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","tot","nai"],
+"shared":["tot","nai"],
 "firstprivate":["j"]
 },
 "loop - object id : 17":{

@@ -168,7 +168,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["k","j","ii","ii2","jj","ij2","kk","indexmap","i"]
 },
 "loop - object id : 16":{
@@ -181,7 +180,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["k","j","ii","ii2","jj","ij2","kk","indexmap","i"]
 },
 "loop - object id : 17":{
@@ -194,7 +192,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["k","j","ii","ii2","jj","ij2","kk","indexmap","i"]
 },
 "loop - object id : 18":{
@@ -253,7 +250,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","y0"],
+"shared":["y0"],
 "firstprivate":["fftblock","_2","i","jj","x","j","k"]
 },
 "loop - object id : 23":{
@@ -266,7 +263,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","y0"],
+"shared":["y0"],
 "firstprivate":["fftblock","_2","i","jj","x","j","k"]
 },
 "loop - object id : 24":{
@@ -279,7 +276,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","y0"],
+"shared":["y0"],
 "firstprivate":["fftblock","_2","i","jj","x","j","k"]
 },
 "loop - object id : 25":{
@@ -360,7 +357,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","y0"],
+"shared":["y0"],
 "firstprivate":["_2","i","ii","x","fftblock","j","k"]
 },
 "loop - object id : 32":{
@@ -373,7 +370,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","y0"],
+"shared":["y0"],
 "firstprivate":["_2","i","ii","x","fftblock","j","k"]
 },
 "loop - object id : 33":{
@@ -386,7 +383,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","y0"],
+"shared":["y0"],
 "firstprivate":["_2","i","ii","x","fftblock","j","k"]
 },
 "loop - object id : 34":{
@@ -467,7 +464,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","y0"],
+"shared":["y0"],
 "firstprivate":["_2","i","ii","x","fftblock","k","j"]
 },
 "loop - object id : 41":{
@@ -480,7 +477,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","y0"],
+"shared":["y0"],
 "firstprivate":["_2","i","ii","x","fftblock","k","j"]
 },
 "loop - object id : 42":{
@@ -493,7 +490,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2","y0"],
+"shared":["y0"],
 "firstprivate":["_2","i","ii","x","fftblock","k","j"]
 },
 "loop - object id : 43":{
@@ -583,7 +580,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"true",
-"shared":[".2"],
 "firstprivate":["fftblock","_2","y","x","i","j"]
 },
 "loop - object id : 51":{

@@ -9,8 +9,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
-"firstprivate":["m_pdv_sum","m_nvol","i","N","m_pdv_sum","m_nvol","i"]
+"firstprivate":["m_pdv_sum","m_nvol","i","N"]
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB066-pointernoaliasing-orig-no.c",

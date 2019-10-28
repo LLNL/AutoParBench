@@ -42,7 +42,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","i"]
 },
 "loop - object id : 5":{
@@ -55,7 +54,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","i"]
 },
 "loop - object id : 6":{
@@ -68,7 +66,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","i"]
 },
 "loop - object id : 7":{
@@ -81,7 +78,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","i"]
 },
 "loop - object id : 8":{
@@ -996,7 +992,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","n","i"]
 },
 "loop - object id : 91":{
@@ -1009,7 +1004,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","n","i"]
 },
 "loop - object id : 92":{
@@ -1022,7 +1016,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","n","i"]
 },
 "loop - object id : 93":{
@@ -1035,7 +1028,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","n","i"]
 },
 "loop - object id : 94":{
@@ -1048,7 +1040,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","n","i"]
 },
 "loop - object id : 95":{
@@ -1545,7 +1536,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","rho_inv","i"]
 },
 "loop - object id : 140":{
@@ -1558,7 +1548,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","rho_inv","i"]
 },
 "loop - object id : 141":{
@@ -1571,7 +1560,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","rho_inv","i"]
 },
 "loop - object id : 142":{
@@ -1628,7 +1616,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","uijk","up1","um1","tx2","dx1tx1","c2","dx2tx1","con43","xxcon2","dx3tx1","dx4tx1","c1","xxcon5","xxcon3","dx5tx1","xxcon4","i"]
 },
 "loop - object id : 147":{
@@ -1641,7 +1628,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","uijk","up1","um1","tx2","dx1tx1","c2","dx2tx1","con43","xxcon2","dx3tx1","dx4tx1","c1","xxcon5","xxcon3","dx5tx1","xxcon4","i"]
 },
 "loop - object id : 148":{
@@ -1654,7 +1640,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","uijk","up1","um1","tx2","dx1tx1","c2","dx2tx1","con43","xxcon2","dx3tx1","dx4tx1","c1","xxcon5","xxcon3","dx5tx1","xxcon4","i"]
 },
 "loop - object id : 149":{
@@ -1733,7 +1718,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","dssp","i"]
 },
 "loop - object id : 156":{
@@ -1746,7 +1730,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","dssp","i"]
 },
 "loop - object id : 157":{
@@ -1759,7 +1742,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","dssp","i"]
 },
 "loop - object id : 158":{
@@ -1772,7 +1754,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","dssp","i"]
 },
 "loop - object id : 159":{
@@ -1851,7 +1832,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","vijk","vp1","vm1","ty2","dy1ty1","yycon2","dy2ty1","c2","dy3ty1","con43","dy4ty1","c1","yycon5","yycon3","dy5ty1","yycon4","i"]
 },
 "loop - object id : 166":{
@@ -1864,7 +1844,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","vijk","vp1","vm1","ty2","dy1ty1","yycon2","dy2ty1","c2","dy3ty1","con43","dy4ty1","c1","yycon5","yycon3","dy5ty1","yycon4","i"]
 },
 "loop - object id : 167":{
@@ -1877,7 +1856,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","vijk","vp1","vm1","ty2","dy1ty1","yycon2","dy2ty1","c2","dy3ty1","con43","dy4ty1","c1","yycon5","yycon3","dy5ty1","yycon4","i"]
 },
 "loop - object id : 168":{
@@ -1956,7 +1934,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","dssp","i"]
 },
 "loop - object id : 175":{
@@ -1969,7 +1946,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","dssp","i"]
 },
 "loop - object id : 176":{
@@ -1982,7 +1958,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","dssp","i"]
 },
 "loop - object id : 177":{
@@ -1995,7 +1970,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","dssp","i"]
 },
 "loop - object id : 178":{
@@ -2074,7 +2048,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","wijk","wp1","wm1","tz2","dz1tz1","zzcon2","dz2tz1","dz3tz1","c2","dz4tz1","con43","c1","zzcon5","zzcon3","dz5tz1","zzcon4","i"]
 },
 "loop - object id : 185":{
@@ -2087,7 +2060,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","wijk","wp1","wm1","tz2","dz1tz1","zzcon2","dz2tz1","dz3tz1","c2","dz4tz1","con43","c1","zzcon5","zzcon3","dz5tz1","zzcon4","i"]
 },
 "loop - object id : 186":{
@@ -2100,7 +2072,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","wijk","wp1","wm1","tz2","dz1tz1","zzcon2","dz2tz1","dz3tz1","c2","dz4tz1","con43","c1","zzcon5","zzcon3","dz5tz1","zzcon4","i"]
 },
 "loop - object id : 187":{
@@ -2113,7 +2084,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","m","dssp","i"]
 },
 "loop - object id : 188":{
@@ -2126,7 +2096,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","m","dssp","i"]
 },
 "loop - object id : 189":{
@@ -2139,7 +2108,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","m","dssp","i"]
 },
 "loop - object id : 190":{
@@ -2152,7 +2120,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","m","dssp","i"]
 },
 "loop - object id : 191":{
@@ -2165,7 +2132,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","m","dssp","i"]
 },
 "loop - object id : 192":{
@@ -2178,7 +2144,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","m","dssp","i"]
 },
 "loop - object id : 193":{
@@ -2191,7 +2156,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","dssp","i"]
 },
 "loop - object id : 194":{
@@ -2204,7 +2168,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","dssp","i"]
 },
 "loop - object id : 195":{
@@ -2217,7 +2180,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","dssp","i"]
 },
 "loop - object id : 196":{
@@ -2230,7 +2192,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","k","m","dssp","i"]
 },
 "loop - object id : 197":{
@@ -2243,7 +2204,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","m","k","dssp","i"]
 },
 "loop - object id : 198":{
@@ -2256,7 +2216,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","m","k","dssp","i"]
 },
 "loop - object id : 199":{
@@ -2269,7 +2228,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","m","k","dssp","i"]
 },
 "loop - object id : 200":{
@@ -2282,7 +2240,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","m","k","dssp","i"]
 },
 "loop - object id : 201":{
@@ -2295,7 +2252,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","m","k","dssp","i"]
 },
 "loop - object id : 202":{
@@ -2308,7 +2264,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","m","k","dssp","i"]
 },
 "loop - object id : 203":{
@@ -2486,7 +2441,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["m","k","n","j","i"]
 },
 "loop - object id : 219":{
@@ -2499,7 +2453,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["m","k","n","j","i"]
 },
 "loop - object id : 220":{
@@ -2512,7 +2465,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["m","k","n","j","i"]
 },
 "loop - object id : 221":{
@@ -3031,7 +2983,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["m","k","n","i","j"]
 },
 "loop - object id : 268":{
@@ -3044,7 +2995,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["m","k","n","i","j"]
 },
 "loop - object id : 269":{
@@ -3057,7 +3007,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["m","k","n","i","j"]
 },
 "loop - object id : 270":{
@@ -3158,7 +3107,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["m","j","k","n","i"]
 },
 "loop - object id : 279":{
@@ -3171,7 +3119,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["m","j","k","n","i"]
 },
 "loop - object id : 280":{

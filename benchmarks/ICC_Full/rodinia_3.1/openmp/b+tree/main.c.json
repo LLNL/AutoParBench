@@ -647,7 +647,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["i"]
 },
 "loop - object id : 60":{
@@ -814,7 +813,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["count","_tmp","i"]
 },
 "loop - object id : 75":{
@@ -871,8 +869,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
-"firstprivate":["count","_tmp","_tmp","i"]
+"firstprivate":["count","_tmp","i"]
 },
 "loop - object id : 80":{
 "file":"./rodinia_3.1/openmp/b+tree/main.c",

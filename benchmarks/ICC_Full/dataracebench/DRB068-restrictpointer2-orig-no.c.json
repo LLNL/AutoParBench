@@ -9,7 +9,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n","a","b","c","i"]
 },
 "loop - object id : 2":{
@@ -22,7 +21,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n","c","b","a","i"]
 },
 "loop - object id : 3":{

@@ -9,8 +9,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"true",
-"shared":[".2"],
-"firstprivate":["c","o1","i","len","c","o1","i"]
+"firstprivate":["c","o1","i","len"]
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB050-functionparameter-orig-yes.c",

@@ -163,7 +163,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["k","j","ii","ii2","jj","ij2","kk","indexmap","i"]
 },
 "loop - object id : 16":{
@@ -176,7 +175,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["k","j","ii","ii2","jj","ij2","kk","indexmap","i"]
 },
 "loop - object id : 17":{
@@ -189,7 +187,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["k","j","ii","ii2","jj","ij2","kk","indexmap","i"]
 },
 "loop - object id : 18":{

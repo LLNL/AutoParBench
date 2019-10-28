@@ -9,7 +9,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","U2_V","b","len","i"]
 },
 "loop - object id : 2":{
@@ -22,7 +21,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["j","U2_V","b","len","i"]
 },
 "loop - object id : 3":{
@@ -46,7 +44,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"true",
-"shared":[".2"],
 "firstprivate":["len","b","U2_V","j","i"]
 },
 "loop - object id : 5":{

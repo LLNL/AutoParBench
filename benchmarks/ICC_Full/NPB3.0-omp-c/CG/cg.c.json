@@ -118,7 +118,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["naa","q","z","x","r","p","j"]
 },
 "loop - object id : 11":{
@@ -254,7 +253,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["colidx","n","i"]
 },
 "loop - object id : 22":{
@@ -311,7 +309,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n","rowstr","mark","j"]
 },
 "loop - object id : 27":{
@@ -357,7 +354,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["a","k","j"]
 },
 "loop - object id : 31":{
@@ -392,7 +388,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n","x","mark","i"]
 },
 "loop - object id : 34":{

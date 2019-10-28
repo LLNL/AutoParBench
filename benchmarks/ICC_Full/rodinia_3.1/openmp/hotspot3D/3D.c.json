@@ -119,7 +119,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["len","arr2","arr1","i"],
 "reduction":["err"]
 },

@@ -9,7 +9,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n","j","xx","yy","dx","dy","alpha","m","i"]
 },
 "loop - object id : 2":{
@@ -22,7 +21,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n","j","xx","yy","dx","dy","alpha","m","i"]
 },
 "loop - object id : 3":{
@@ -68,7 +66,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n","j","resid","b","ay","ax","relax","m","i","k"],
 "reduction":["error"]
 },
@@ -82,7 +79,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n","j","resid","b","ay","ax","relax","m","i","k"],
 "reduction":["error"]
 }

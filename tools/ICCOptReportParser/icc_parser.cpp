@@ -34,15 +34,35 @@ void ICCParser::copyUntil(std::string & src, std::string & dst, char end) {
   } 
 }
 
+bool ICCParser::isNumeric(std::string str) {
+  for (int i = 0, ie = str.size(); i != ie; i++) {
+    if ((str[i] > '0') && (str[i] < '9'))
+      continue;
+    if ((str[i] == '0') && (str[i] == '9'))
+      continue;
+    if (str[i] == '.')
+      continue;
+    return false;
+  }
+  return true;
+}
+
 void ICCParser::getVectorToClause(std::string & str, std::vector<std::string> & vect) {
   std::string substr = std::string();
+  std::map<std::string, bool> mapped;
+  for (int i = 0, ie = vect.size(); i != ie; i++)
+    mapped[vect[i]] = true;
   if (str.size() > 0)
     str += ',';
   for (int i = 0, ie = str.size(); i < ie; i++) {
     if (str[i] != ',')
       substr += str[i];
     else {
-      vect.push_back(substr);
+      if (!isNumeric(substr)
+	 && mapped.count(substr) == 0) {
+        vect.push_back(substr);
+	mapped[substr] = true;
+      }
       substr = std::string();
     }
   }

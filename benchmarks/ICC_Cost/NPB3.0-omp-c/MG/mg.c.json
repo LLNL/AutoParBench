@@ -570,7 +570,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i2","i1","r","n1","n2","i3"],
 "reduction":["tmp","s"]
 },
@@ -584,7 +583,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i2","i1","r","n1","n2","i3"],
 "reduction":["tmp","s"]
 },
@@ -598,7 +596,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["n3","i2","i1","r","n1","n2","i3"],
 "reduction":["tmp","s"]
 },

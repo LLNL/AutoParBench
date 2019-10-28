@@ -32,7 +32,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["b","a","i","i2"],
 "reduction":["sum"]
 },

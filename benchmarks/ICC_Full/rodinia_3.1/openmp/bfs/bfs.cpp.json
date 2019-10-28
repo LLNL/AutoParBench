@@ -31,7 +31,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["no_of_nodes","h_cost","i"]
 },
 "loop - object id : 4":{

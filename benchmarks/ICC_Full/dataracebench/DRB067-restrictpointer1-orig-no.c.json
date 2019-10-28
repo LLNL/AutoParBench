@@ -9,7 +9,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["length","newSxx","newSyy","i"]
 },
 "loop - object id : 2":{

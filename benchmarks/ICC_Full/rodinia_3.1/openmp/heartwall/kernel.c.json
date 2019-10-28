@@ -31,7 +31,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"true",
-"shared":[".2"],
 "firstprivate":["public.in2_cols","row","in2_rowlow","public.frame_rows","in2_collow","public.d_frame","public.in2_rows","private.d_in2","private.d_in2_sqr","col","temp"]
 },
 "loop - object id : 4":{
@@ -44,7 +43,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"true",
-"shared":[".2"],
 "firstprivate":["public.in2_cols","row","in2_rowlow","public.frame_rows","in2_collow","public.d_frame","public.in2_rows","private.d_in2","private.d_in2_sqr","col","temp"]
 },
 "loop - object id : 5":{
@@ -68,7 +66,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["pointer","public.in_mod_rows","d_in","private.d_in_mod","private.d_in_sqr","row","temp","col"]
 },
 "loop - object id : 7":{
@@ -81,7 +78,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["public.in_mod_elem","d_in","i"],
 "reduction":["in_final_sum"]
 },
@@ -95,7 +91,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["public.in_mod_elem","private.d_in_sqr","i"],
 "reduction":["in_sqr_final_sum"]
 },
@@ -142,7 +137,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["ia2","i","jb","public.in2_rows","private.d_in2","public.in_mod_rows","private.d_in_mod","ia","public.ioffset","public.joffset","ia1","ja1","ja","row","col"],
 "reduction":["s"]
 },
@@ -200,7 +194,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"true",
-"shared":[".2"],
 "firstprivate":["public.in2_sub_cols","row","public.in2_pad_cumv_sel2_rowlow","public.in2_pad_rows","public.in2_pad_cumv_sel2_collow","private.d_in2_pad","public.in2_pad_cumv_sel_rowlow","public.in2_pad_cumv_sel_collow","public.in2_sub_rows","private.d_in2_sub","col"]
 },
 "loop - object id : 18":{
@@ -213,7 +206,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"true",
-"shared":[".2"],
 "firstprivate":["public.in2_sub_cols","row","public.in2_pad_cumv_sel2_rowlow","public.in2_pad_rows","public.in2_pad_cumv_sel2_collow","private.d_in2_pad","public.in2_pad_cumv_sel_rowlow","public.in2_pad_cumv_sel_collow","public.in2_sub_rows","private.d_in2_sub","col"]
 },
 "loop - object id : 19":{
@@ -226,7 +218,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["position","sum","private.d_in2_sub","public.in2_sub_rows","public.in2_sub_elem","ei_new"]
 },
 "loop - object id : 20":{
@@ -316,7 +307,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"true",
-"shared":[".2"],
 "firstprivate":["public.in2_sub_cols","row","public.in2_pad_cumv_sel2_rowlow","public.in2_pad_rows","public.in2_pad_cumv_sel2_collow","private.d_in2_pad","public.in2_pad_cumv_sel_rowlow","public.in2_pad_cumv_sel_collow","public.in2_sub_rows","private.d_in2_sub","col"]
 },
 "loop - object id : 28":{
@@ -329,7 +319,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"true",
-"shared":[".2"],
 "firstprivate":["public.in2_sub_cols","row","public.in2_pad_cumv_sel2_rowlow","public.in2_pad_rows","public.in2_pad_cumv_sel2_collow","private.d_in2_pad","public.in2_pad_cumv_sel_rowlow","public.in2_pad_cumv_sel_collow","public.in2_sub_rows","private.d_in2_sub","col"]
 },
 "loop - object id : 29":{
@@ -342,7 +331,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["position","sum","private.d_in2_sub","public.in2_sub_rows","public.in2_sub_elem","ei_new"]
 },
 "loop - object id : 30":{
@@ -377,7 +365,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"true",
-"shared":[".2"],
 "firstprivate":["public.in_mod_elem","public.conv_rows","private.d_in2_sub2_sqr","public.in2_sub_cumh_sel2_rowlow","public.in2_sub_rows","public.in2_sub_cumh_sel2_collow","private.d_in2_sub","public.in2_sub_cumh_sel_rowlow","public.in2_sub_cumh_sel_collow","denomT","private.d_conv","row","col"]
 },
 "loop - object id : 33":{
@@ -390,7 +377,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["public.tMask_elem","private.d_tMask","ei_new"]
 },
 "loop - object id : 34":{
@@ -425,7 +411,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["ja2","ia1","public.tMask_rows","private.d_tMask","ia2","ja1","row","col","ia"],
 "lastprivate":["ia"],
 "reduction":["s","ja"]
@@ -440,7 +425,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":[".2"],
 "firstprivate":["ja2","ia1","public.tMask_rows","private.d_tMask","ia2","ja1","row","col","ia"],
 "lastprivate":["ia"],
 "reduction":["s","ja"]
