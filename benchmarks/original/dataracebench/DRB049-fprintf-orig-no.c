@@ -70,10 +70,8 @@ int main(int argc, char* argv[])
     fprintf(stderr,"Error in fopen()\n");
   }
 
-  #pragma omp parallel for private(i) ordered
   for (i=0; i<len; ++i)
   {
-    #pragma omp ordered
     fprintf(pfile, "%d\n", A[i] );
   }
 

@@ -61,9 +61,7 @@ int i;
   for (i=0;i<100;i++)
     a[i]=a[i]+1;
 
-  #pragma omp parallel for private(i) ordered
   for (i=0;i<100;i++)
-    #pragma omp ordered
     printf("%d\n",a[i]);
  
   return 0;

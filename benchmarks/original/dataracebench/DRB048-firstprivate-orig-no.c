@@ -72,10 +72,8 @@ int main()
 
   foo(a, 100, 7);
 
-  #pragma omp parallel for private(i) ordered
   for (i=0;i<n;i++)
   {
-    #pragma omp ordered
     printf("%d\n",a[i]);
   }
  return 0;

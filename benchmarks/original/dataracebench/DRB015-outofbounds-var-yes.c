@@ -87,11 +87,8 @@ int main(int argc, char* argv[])
     for (j=0;j<m;j++)
       b[i][j]=b[i-1][j];
 
-  #pragma omp parallel for private(i, j) ordered 
   for (i=0;i<n;i++)
-    #pragma omp parallel for private(j) ordered
     for (j=0;j<m;j++) 
-      #pragma omp ordered
       printf("%lf\n",b[i][j]);
 
   

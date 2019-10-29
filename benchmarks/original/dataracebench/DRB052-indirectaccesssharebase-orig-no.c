@@ -121,10 +121,8 @@ int main (int argc, char* argv[])
   }
 
   // verify the results, no overlapping of xa1 vs. xa2, no addition happens to the same element twice
-  #pragma omp parallel for private(i) ordered
   for (i =521; i<= 2025; ++i)
   {
-    #pragma omp ordered
     printf ("%f  ", base[i]);
     //assert (base[i]!=4.0);
   }

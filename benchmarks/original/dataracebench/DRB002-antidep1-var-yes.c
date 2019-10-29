@@ -67,9 +67,7 @@ int main(int argc, char* argv[])
   for (i=0;i< len -1 ;i++)
     a[i]=a[i+1]+1;
 
-  #pragma omp parallel for ordered private(i)
   for (i=0; i<len; i++)
-    #pragma omp ordered
     printf("%d\n", a[i]); 
 
   return 0;

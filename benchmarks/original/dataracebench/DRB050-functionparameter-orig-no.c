@@ -74,9 +74,7 @@ int main()
  
   foo1 (o1, c, 100);
 
-  #pragma omp parallel for private(i) ordered
   for (i = 0; i < len; ++i) {
-    #pragma omp ordered
     printf("%lf\n",o1[i]);
   }  
   return 0;

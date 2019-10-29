@@ -70,11 +70,8 @@ int main(int argc,char *argv[])
     }
   }
 
-  #pragma omp parallel for private(i, j) ordered
   for (i=0; i< len; i++)
-    #pragma omp parallel for private(j) ordered 
     for (j=0; j<len; j++)
-      #pragma omp ordered
       printf("%lf",a[i][j]); 
 
   printf ("a[10][10]=%f\n", a[10][10]);

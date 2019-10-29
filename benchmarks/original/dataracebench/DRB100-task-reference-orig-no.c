@@ -71,13 +71,11 @@ int main()
   }
   
   /* correctness checking */
-  #pragma omp parallel for private(i) ordered
   for (i=0; i<MYLEN; i++)
   {
     //assert (a[i]==i+1);
     if (a[i]!= i+1)
     {
-      #pragma omp ordered
       printf("warning: a[%d] = %d, not expected %d\n", i, a[i], i+1);
     }
   }
