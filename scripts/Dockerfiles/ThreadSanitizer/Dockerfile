@@ -38,9 +38,15 @@ RUN ["chmod","+x","llvm-config"]
 
 WORKDIR /usr/src/llvm-build/lib/clang/10.0.0/
 
-RUN cmake -DLLVM_CONFIG_PATH=/usr/src/llvm-build/bin/llvm-config ../../../../llvm-project/compiler-rt/
+RUN cmake -DLLVM_CONFIG_PATH=/usr/src/llvm-build/bin/llvm-config -DLIBOMP_TSAN_SUPPORT=1 ../../../../llvm-project/openmp
+#../../../../llvm-project/openmp
+#../../../../llvm-project/compiler-rt/
+
+RUN cmake --build . --target install
 
 RUN make -j4
+
+ENV LD_PRELOAD=/usr/local/lib/libomp.so
 
 #Go back to root folder
 WORKDIR /root
