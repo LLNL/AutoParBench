@@ -51,6 +51,8 @@ echo "| [Dawncc Report](${DATE}/Detailed-Report-Dawncc.md) |" &>> "${THIS}/repor
 echo "| [ICC Cost Report](${DATE}/Detailed-Report-ICC_Cost.md) |" &>> "${THIS}/reports/Tool-Evaluation-Dashboard.md"
 echo "| [ICC Full Report](${DATE}/Detailed-Report-ICC_Full.md) |" &>> "${THIS}/reports/Tool-Evaluation-Dashboard.md"
 echo "| [ICC Simd Report](${DATE}/Detailed-Report-ICC_Simd.md) |" &>> "${THIS}/reports/Tool-Evaluation-Dashboard.md"
+echo "| [Correctness Report](${DATE}/Correctness_Report.md) |" &>> "${THIS}/reports/Tool-Evaluation-Dashboard.md"
+echo "| [Data Race Report](${DATE}/DataRace_Report.md) |" &>> "${THIS}/reports/Tool-Evaluation-Dashboard.md"
 echo "" &>> "${THIS}/reports/Tool-Evaluation-Dashboard.md"
 }
 
@@ -63,6 +65,10 @@ cp "${THIS}/reports/Detailed-Report-ICC_Full.md" "${REPORTS_DIR}/${DATE}/."
 cp "${THIS}/reports/Detailed-Report-ICC_Cost.md" "${REPORTS_DIR}/${DATE}/."
 cp "${THIS}/reports/Detailed-Report-Dawncc.md" "${REPORTS_DIR}/${DATE}/."
 cp "${THIS}/reports/Detailed-Report-ICC_Simd.md" "${REPORTS_DIR}/${DATE}/."
+cp "${THIS}/reports/Correctness_Report.md" "${REPORTS_DIR}/${DATE}/."
+if [ -f "${THIS}/reports/DataRace_Report.md" ]; then
+  cp "${THIS}/reports/DataRace_Report.md" "${REPORTS_DIR}/${DATE}/."
+fi
 
 # Copy Metrics Report:
 cp "${THIS}/reports/Metrics-Report.md" "${REPORTS_DIR}/${DATE}/."

@@ -360,8 +360,6 @@ tmp_files=(
 ./benchmarks/original/NPB3.0-omp-c/LU/npbparams.h
 ./benchmarks/original/NPB3.0-omp-c/MG/npbparams.h
 ./benchmarks/original/NPB3.0-omp-c/SP/npbparams.h
-./benchmarks/original/dataracebench/DRB041-3mm-parallel-no.c
-./benchmarks/original/dataracebench/DRB055-jacobi2d-parallel-no.c
 ./benchmarks/original/rodinia_3.1/openmp/b+tree/output.txt
 ./benchmarks/original/rodinia_3.1/openmp/bfs/bfs
 ./benchmarks/original/rodinia_3.1/openmp/bfs/bfs_offload
