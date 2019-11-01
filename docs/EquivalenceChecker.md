@@ -8,7 +8,7 @@ This parser was tested on Ubuntu 18.04, using GCC-8. However, mirror changes may
 
 ## Compilation Process
 
-Users are able to compile this parser using a C++ compiler. The following example is using GCC-8 to compile this parser.
+Users are able to compile this parser using a C++ compiler. The following example is using G++-8 to compile this parser.
 To compile OpenMP Extractor, please, follow the steps.
 
 * Open your terminal.
