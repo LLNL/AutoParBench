@@ -33,4 +33,4 @@ These JSON objects are a representation of the target code snippets or loops. Th
 
 A plugin able to extract OpenMP is essential to provide feedback about automatic parallelization. The following link contains a class with information teaching basic steps when using/extending this tool:
 
-[Free Compiler Camp Class](http://freecompilercamp.org/openmp-extractor/)
+[Free Compiler Camp Classroom](http://freecompilercamp.org/openmp-extractor/)
