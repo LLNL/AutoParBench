@@ -13,6 +13,19 @@ Users are able to compile this parser using a C++ compiler. The following exampl
 * Go to the top lever directory of this repository.
 * Type the following commands into your terminal:
 
+```sh
 g++-8 tools/PragmaRemover/pragmaRemover.cpp -o pragmaRemover.out
+```
 
 After using it, we encorage you to remove the executable file.
+
+## Execution
+
+To execute the parser and strip off all OpenMP directives, it is just necessary to pass the target source code as a parameter. The
+following command-line reflects the use of the analysis:
+
+```sh
+./pragmaRemover.out test.c
+```
+
+Afther runnning it, the file test.c does not contains OpenMP directives.
