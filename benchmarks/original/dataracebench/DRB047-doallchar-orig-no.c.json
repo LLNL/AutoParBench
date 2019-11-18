@@ -25,27 +25,15 @@
 "induction variable":"i",
 "private":["i"]
 },
-"ordered - object id : 3":{
-"pragma type":"ordered",
-"file":"./dataracebench/DRB047-doallchar-orig-no.c",
-"function":"main",
-"loop id":"3",
-"statement id":"1",
-"snippet line":"68",
-"snippet column":"13"
-},
-"loop - object id : 4":{
+"loop - object id : 3":{
 "file":"./dataracebench/DRB047-doallchar-orig-no.c",
 "function":"main",
 "loop id":"3",
 "loop line":"67",
 "loop column":"3",
-"pragma type":"parallel for",
-"ordered":"true",
+"pragma type":"NULL",
+"ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"induction variable":"i",
-"private":["i"],
-"dependence list":["ordered - object id : 3"]
+"multiversioned":"false"
 }
 }

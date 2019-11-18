@@ -91,7 +91,7 @@
 "offload":"false",
 "multiversioned":"false",
 "induction variable":"c1",
-"private":["c2","c2"]
+"private":["c1","c2"]
 },
 "loop - object id : 9":{
 "file":"./dataracebench/DRB055-jacobi2d-parallel-no.c",

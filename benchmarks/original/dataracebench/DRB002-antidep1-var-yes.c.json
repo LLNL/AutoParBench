@@ -23,27 +23,15 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"ordered - object id : 3":{
-"pragma type":"ordered",
+"loop - object id : 3":{
 "file":"./dataracebench/DRB002-antidep1-var-yes.c",
 "function":"main",
 "loop id":"3",
-"statement id":"1",
-"snippet line":"72",
-"snippet column":"13"
-},
-"loop - object id : 4":{
-"file":"./dataracebench/DRB002-antidep1-var-yes.c",
-"function":"main",
-"loop id":"3",
-"loop line":"71",
+"loop line":"70",
 "loop column":"3",
-"pragma type":"parallel for",
-"ordered":"true",
+"pragma type":"NULL",
+"ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"induction variable":"i",
-"private":["i"],
-"dependence list":["ordered - object id : 3"]
+"multiversioned":"false"
 }
 }
