@@ -9,7 +9,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"true",
-"firstprivate":["c","o1","i","len","c","o1","i"]
+"firstprivate":["c","o1","i","len"]
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB050-functionparameter-orig-yes.c",
@@ -24,27 +24,15 @@
 "induction variable":"i",
 "private":["i"]
 },
-"ordered 3":{
-"pragma type":"ordered",
+"loop - object id : 3":{
 "file":"./dataracebench/DRB050-functionparameter-orig-yes.c",
 "function":"main",
 "loop id":"2",
-"statement id":"1",
-"snippet line":"0",
-"snippet column":"0"
-},
-"loop - object id : 4":{
-"file":"./dataracebench/DRB050-functionparameter-orig-yes.c",
-"function":"main",
-"loop id":"2",
-"loop line":"76",
+"loop line":"75",
 "loop column":"3",
-"pragma type":"parallel for",
-"ordered":"true",
+"pragma type":"NULL",
+"ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"induction variable":"i",
-"private":["i"],
-"dependence list":["ordered 3"]
+"multiversioned":"false"
 }
 }

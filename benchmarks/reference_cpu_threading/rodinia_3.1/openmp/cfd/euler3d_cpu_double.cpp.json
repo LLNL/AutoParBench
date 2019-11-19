@@ -156,7 +156,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"firstprivate":["nelr","nel","i","areas","last","nelr","j","nel","i","elements_surrounding_elements","last","nelr","j","k","nel","i","normals","last"]
+"firstprivate":["nelr","nel","i","areas","last","j","elements_surrounding_elements","k","normals"]
 },
 "loop - object id : 15":{
 "file":"./rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp",

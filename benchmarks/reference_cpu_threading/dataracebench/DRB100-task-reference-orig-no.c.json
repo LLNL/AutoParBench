@@ -12,27 +12,15 @@
 "induction variable":"i",
 "private":["i"]
 },
-"ordered 2":{
-"pragma type":"ordered",
+"loop - object id : 2":{
 "file":"./dataracebench/DRB100-task-reference-orig-no.c",
 "function":"main",
 "loop id":"2",
-"statement id":"1",
-"snippet line":"0",
-"snippet column":"0"
-},
-"loop - object id : 3":{
-"file":"./dataracebench/DRB100-task-reference-orig-no.c",
-"function":"main",
-"loop id":"2",
-"loop line":"75",
+"loop line":"74",
 "loop column":"3",
-"pragma type":"parallel for",
-"ordered":"true",
+"pragma type":"NULL",
+"ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"induction variable":"i",
-"private":["i"],
-"dependence list":["ordered 2"]
+"multiversioned":"false"
 }
 }

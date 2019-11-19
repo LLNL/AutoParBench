@@ -230,7 +230,8 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"induction variable":"c2"
+"induction variable":"c2",
+"private":["c2"]
 },
 "loop - object id : 19":{
 "file":"./dataracebench/DRB041-3mm-parallel-no.c",

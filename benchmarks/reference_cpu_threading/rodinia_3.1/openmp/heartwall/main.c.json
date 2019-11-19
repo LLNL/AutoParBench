@@ -9,7 +9,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"firstprivate":["public.d_endoRow","public.d_endoRow","_2"]
+"firstprivate":["public.d_endoRow","_2"]
 },
 "loop - object id : 2":{
 "file":"./rodinia_3.1/openmp/heartwall/main.c",
@@ -21,7 +21,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"firstprivate":["public.d_endoCol","public.d_endoCol","_2"]
+"firstprivate":["public.d_endoCol","_2"]
 },
 "loop - object id : 3":{
 "file":"./rodinia_3.1/openmp/heartwall/main.c",
@@ -91,7 +91,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"firstprivate":["public.d_endoT","public.d_tEndoColLoc","public.d_tEndoRowLoc","public.d_endoCol","public.d_endoRow","public.d_endoRow","public.d_endoCol","public.d_tEndoRowLoc","public.d_tEndoColLoc","public.d_endoT","i"]
+"firstprivate":["public.d_endoT","public.d_tEndoColLoc","public.d_tEndoRowLoc","public.d_endoCol","public.d_endoRow","i"]
 },
 "loop - object id : 9":{
 "file":"./rodinia_3.1/openmp/heartwall/main.c",
@@ -103,7 +103,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"firstprivate":["public.d_epiT","public.d_tEpiColLoc","public.d_tEpiRowLoc","public.d_epiCol","public.d_epiRow","public.d_epiRow","public.d_epiCol","public.d_tEpiRowLoc","public.d_tEpiColLoc","public.d_epiT","i"]
+"firstprivate":["public.d_epiT","public.d_tEpiColLoc","public.d_tEpiRowLoc","public.d_epiCol","public.d_epiRow","i"]
 },
 "loop - object id : 10":{
 "file":"./rodinia_3.1/openmp/heartwall/main.c",
