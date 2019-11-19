@@ -19,3 +19,11 @@ g++-8 tools/ICCOptReportParser/icc_parser.h tools/ICCOptReportParser/icc_parser.
 ```
 
 After using it, we encorage you to remove the executable file.
+
+## Execution
+
+To execute the parser and provide a JSON representation of the ".optrpt" file, it is just necessary to pass the target source code as a parameter. The following command-line reflects the use of the analysis:
+
+./icc_parser.out test.c
+
+Afther runnning it, the file test.c does not contains OpenMP directives.
