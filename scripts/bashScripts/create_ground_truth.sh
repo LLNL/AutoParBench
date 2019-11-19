@@ -26,10 +26,27 @@ cd "${SCRIPTS}/../benchmarks/original"
 CPU_reference_DIR=$(pwd)
 cd "${THIS}"
 
+cd "${SCRIPTS}/../benchmarks/sequential"
+CPU_sequential_DIR=$(pwd)
+cd "${THIS}"
+
 if [ -d "${BASELINEDIR}" ]; then
   rm -r "${BASELINEDIR}"
 fi
 cp -r "${CPU_reference_DIR}" "${BASELINEDIR}"
+
+for csource in $(find "${CPU_sequential_DIR}" -name "*.c" ); do
+  cp "${csource}" "${csource/sequential/reference_cpu_threading}"
+done
+for csource in $(find "${CPU_sequential_DIR}" -name "*.cpp" ); do
+  cp "${csource}" "${csource/sequential/reference_cpu_threading}"
+done
+for csource in $(find "${CPU_sequential_DIR}" -name "*.h" ); do
+  cp "${csource}" "${csource/sequential/reference_cpu_threading}"
+done
+for csource in $(find "${CPU_sequential_DIR}" -name "*.hpp" ); do
+  cp "${csource}" "${csource/sequential/reference_cpu_threading}"
+done
 
 if [ -f "${SCRIPTS}/../tools/EquivalenceChecker/equivalence_checker.out" ]; then
   rm "${SCRIPTS}/../tools/EquivalenceChecker/equivalence_checker.out"
@@ -51,5 +68,5 @@ for json in $(find "${BASELINEDIR}" -name "*.json" | sort); do
 done
 
 # remove temporary files
-find "${BASELINEDIR}" -type f ! \( -name '*.json' \) -delete
+#find "${BASELINEDIR}" -type f ! \( -name '*.json' \) -delete
 rm ${THIS}/equivalence_checker.out
