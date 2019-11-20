@@ -115,6 +115,9 @@ public:
 
     /*Recover C code */
     std::string getSourceSnippet(SourceRange sourceRange, bool allTokens, bool jsonForm) {
+      if (!sourceRange.isValid())
+	return std::string();
+
       SourceLocation bLoc(sourceRange.getBegin());
       SourceLocation eLoc(sourceRange.getEnd());
 	   
@@ -124,7 +127,10 @@ public:
       FileID FID = bLocInfo.first;
       unsigned bFileOffset = bLocInfo.second;
       unsigned eFileOffset = eLocInfo.second;
-      unsigned length = eFileOffset - bFileOffset;
+      int length = eFileOffset - bFileOffset;
+
+      if (length <= 0)
+	return std::string();
 
       bool Invalid = false;
       const char *BufStart = mng.getBufferData(FID, &Invalid).data();
@@ -137,14 +143,15 @@ public:
             break;
 	  if (BufStart[(bFileOffset + length)] == '}')
 	    break;
+	  if (length == eFileOffset)
+            break;
           length++;
 	}
       }
-      length++;
 
-      if (StringRef(BufStart + bFileOffset, length).size() < 2)
-        return std::string();
-      
+      if (length != eFileOffset)
+        length++;
+
       std::string snippet = StringRef(BufStart + bFileOffset, length).trim().str();
       snippet = replace_all(snippet, "\\", "\\\\");
       snippet = replace_all(snippet, "\"", "\\\"");
