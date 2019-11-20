@@ -142,6 +142,9 @@ public:
       }
       length++;
 
+      if (StringRef(BufStart + bFileOffset, length).size() < 2)
+        return std::string();
+      
       std::string snippet = StringRef(BufStart + bFileOffset, length).trim().str();
       snippet = replace_all(snippet, "\\", "\\\\");
       snippet = replace_all(snippet, "\"", "\\\"");
@@ -181,6 +184,9 @@ public:
      * The goal is be able to recover relative positions to statments when necessary, for example,
      * instructions inside a loop */
     void recoverCodeSnippetsID(Stmt *st, std::string functionName, long long int loopID) {
+      if (!st)
+	return;
+      
       map<Stmt*, long long int> mapped_statments;
       string snippet = getSourceSnippet(st->getSourceRange(), true, false);
       // The separator ref vector have the following format:
