@@ -288,9 +288,12 @@ public:
             }
 
 	    string dirname = mng.getFilename(D->getBeginLoc());
+
+	    if (dirname.rfind("/") == std::string::npos)
+              return true;
 	    dirname.erase(dirname.begin() + dirname.rfind("/"), dirname.end());
         
-	    if (this->json != std::string()) {
+	    if ((this->json != std::string()) && (dirname != std::string())) {
               string jsonName = dirname + "/" + this->json;
       	      jsonFile = new JSONParser(jsonName);
             }
