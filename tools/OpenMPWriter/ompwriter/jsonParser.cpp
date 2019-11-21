@@ -269,7 +269,7 @@ void JSONParser::readFile(std::string filename) {
 std::string JSONParser::getListofClauses(std::vector<std::string> & clauses) {
   std::string output = std::string();
   for (int i = 0, ie = clauses.size(); i != ie; i++) {
-    output += clauses[i];
+    output += clauses[i] + " ";
     if (i != (ie - 1))
       output += ",";
   }
