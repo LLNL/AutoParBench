@@ -52,6 +52,7 @@ void foo1(double o1[], double c[], int len)
 { 
   int i ;
 
+  #pragma omp parallel for private(i ) 
   for (i = 0; i < len; ++i) {
     double volnew_o8 = 0.5 * c[i];
     o1[i] = volnew_o8;
@@ -65,6 +66,7 @@ int main()
 {
   int i;
   int len = 100;
+  #pragma omp parallel for private(i ) 
   for (i = 0; i < len; ++i) {
     c[i] = i + 1.01;
     o1[i] = i + 1.01;

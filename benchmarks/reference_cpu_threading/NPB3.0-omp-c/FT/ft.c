@@ -232,6 +232,7 @@ c-------------------------------------------------------------------*/
 
     int i, j, k;
 
+    #pragma omp parallel for private(i ,j ,k ) 
     for (k = 0; k < d[2]; k++) {
 	for (j = 0; j < d[1]; j++) {
             for (i = 0; i < d[0]; i++) {
@@ -348,6 +349,7 @@ c-------------------------------------------------------------------*/
  1006 format(' WARNING: compiled for ', i5, ' processes. ',
      >       ' Will not verify. ')*/
 
+    #pragma omp parallel for firstprivate(_2 ,i ) 
     for (i = 0;i < 3 ; i++) {
 	dims[i][0] = NX;
 	dims[i][1] = NY;
@@ -355,6 +357,7 @@ c-------------------------------------------------------------------*/
     }
 
 
+    #pragma omp parallel for firstprivate(_2 ,i ) 
     for (i = 0; i < 3; i++) {
 	xstart[i] = 1;
 	xend[i]   = NX;
@@ -410,12 +413,15 @@ c The following magic formula does the trick:
 c mod(i-1+n/2, n) - n/2
 c-------------------------------------------------------------------*/
 
+    #pragma omp parallel for private(i ,j ,k ,ii ,ii2 ,jj ,ij2 ,kk ) 
     for (i = 0; i < dims[2][0]; i++) {
 	ii =  (i+1+xstart[2]-2+NX/2)%NX - NX/2;
 	ii2 = ii*ii;
+	#pragma omp parallel for firstprivate(k ,j ,ii ,ii2 ,jj ,ij2 ,kk ,indexmap ,i ) 
 	for (j = 0; j < dims[2][1]; j++) {
             jj = (j+1+ystart[2]-2+NY/2)%NY - NY/2;
             ij2 = jj*jj+ii2;
+            #pragma omp parallel for firstprivate(k ,j ,ii ,ii2 ,jj ,ij2 ,kk ,indexmap ,i ) 
             for (k = 0; k < dims[2][2]; k++) {
 		kk = (k+1+zstart[2]-2+NZ/2)%NZ - NZ/2;
 		indexmap[k][j][i] = kk*kk+ij2;
@@ -505,6 +511,7 @@ c-------------------------------------------------------------------*/
     int logd[3];
     int i, j, k, jj;
 
+    #pragma omp parallel for firstprivate(d ,i ) 
     for (i = 0; i < 3; i++) {
 	logd[i] = ilog2(d[i]);
     }
@@ -513,10 +520,13 @@ c-------------------------------------------------------------------*/
 dcomplex y0[NX][FFTBLOCKPAD];
 dcomplex y1[NX][FFTBLOCKPAD];
 
+    #pragma omp parallel for private(i ,j ,k ,jj ) 
     for (k = 0; k < d[2]; k++) {
 	for (jj = 0; jj <= d[1] - fftblock; jj+=fftblock) {
 /*          if (TIMERS_ENABLED == TRUE) timer_start(T_FFTCOPY); */
+            #pragma omp parallel for firstprivate(fftblock ,_2 ,i ,jj ,x ,j ,k ) 
             for (j = 0; j < fftblock; j++) {
+		#pragma omp parallel for firstprivate(fftblock ,_2 ,i ,jj ,x ,j ,k ) 
 		for (i = 0; i < d[0]; i++) {
 
 		    y0[i][j].real = x[k][j+jj][i].real;
@@ -532,6 +542,7 @@ dcomplex y1[NX][FFTBLOCKPAD];
 	    
 /*          if (TIMERS_ENABLED == TRUE) timer_stop(T_FFTLOW); */
 /*          if (TIMERS_ENABLED == TRUE) timer_start(T_FFTCOPY); */
+            #pragma omp parallel for firstprivate(fftblock ,_2 ,i ,jj ,x ,j ,k ) 
             for (j = 0; j < fftblock; j++) {
 		for (i = 0; i < d[0]; i++) {
 		  xout[k][j+jj][i].real = y0[i][j].real;
@@ -558,6 +569,7 @@ c-------------------------------------------------------------------*/
     int logd[3];
     int i, j, k, ii;
 
+    #pragma omp parallel for firstprivate(d ,i ) 
     for (i = 0; i < 3; i++) {
 	logd[i] = ilog2(d[i]);
     }
@@ -565,10 +577,13 @@ c-------------------------------------------------------------------*/
 dcomplex y0[NX][FFTBLOCKPAD];
 dcomplex y1[NX][FFTBLOCKPAD];
 
+    #pragma omp parallel for private(i ,j ,k ,ii ) 
     for (k = 0; k < d[2]; k++) {
         for (ii = 0; ii <= d[0] - fftblock; ii+=fftblock) {
 /*	    if (TIMERS_ENABLED == TRUE) timer_start(T_FFTCOPY); */
+	    #pragma omp parallel for firstprivate(_2 ,i ,ii ,x ,fftblock ,j ,k ) 
 	    for (j = 0; j < d[1]; j++) {
+		#pragma omp parallel for firstprivate(_2 ,i ,ii ,x ,fftblock ,j ,k ) 
 		for (i = 0; i < fftblock; i++) {
 		    y0[j][i].real = x[k][j][i+ii].real;
 		    y0[j][i].imag = x[k][j][i+ii].imag;
@@ -581,6 +596,7 @@ dcomplex y1[NX][FFTBLOCKPAD];
            
 /*          if (TIMERS_ENABLED == TRUE) timer_stop(T_FFTLOW); */
 /*          if (TIMERS_ENABLED == TRUE) timer_start(T_FFTCOPY); */
+           #pragma omp parallel for firstprivate(_2 ,i ,ii ,x ,fftblock ,j ,k ) 
            for (j = 0; j < d[1]; j++) {
 	       for (i = 0; i < fftblock; i++) {
 		   xout[k][j][i+ii].real = y0[j][i].real;
@@ -606,6 +622,7 @@ c-------------------------------------------------------------------*/
     int logd[3];
     int i, j, k, ii;
 
+    #pragma omp parallel for firstprivate(d ,i ) 
     for (i = 0;i < 3; i++) {
 	logd[i] = ilog2(d[i]);
     }
@@ -613,10 +630,13 @@ c-------------------------------------------------------------------*/
 dcomplex y0[NX][FFTBLOCKPAD];
 dcomplex y1[NX][FFTBLOCKPAD];
 
+    #pragma omp parallel for private(i ,j ,k ,ii ) 
     for (j = 0; j < d[1]; j++) {
         for (ii = 0; ii <= d[0] - fftblock; ii+=fftblock) {
 /*	    if (TIMERS_ENABLED == TRUE) timer_start(T_FFTCOPY); */
+	    #pragma omp parallel for firstprivate(_2 ,i ,ii ,x ,fftblock ,k ,j ) 
 	    for (k = 0; k < d[2]; k++) {
+		#pragma omp parallel for firstprivate(_2 ,i ,ii ,x ,fftblock ,k ,j ) 
 		for (i = 0; i < fftblock; i++) {
 		    y0[k][i].real = x[k][j][i+ii].real;
 		    y0[k][i].imag = x[k][j][i+ii].imag;
@@ -629,6 +649,7 @@ dcomplex y1[NX][FFTBLOCKPAD];
 		  d[2], y0, y1);
 /*           if (TIMERS_ENABLED == TRUE) timer_stop(T_FFTLOW); */
 /*           if (TIMERS_ENABLED == TRUE) timer_start(T_FFTCOPY); */
+           #pragma omp parallel for firstprivate(_2 ,i ,ii ,x ,fftblock ,k ,j ) 
            for (k = 0; k < d[2]; k++) {
 	       for (i = 0; i < fftblock; i++) {
 		   xout[k][j][i+ii].real = y0[k][i].real;
@@ -728,6 +749,7 @@ c   Copy Y to X.
 c-------------------------------------------------------------------*/
     if (m % 2 == 1) {
 	for (j = 0; j < n; j++) {
+	    #pragma omp parallel for firstprivate(fftblock ,_2 ,y ,x ,i ,j ) 
 	    for (i = 0; i < fftblock; i++) {
 		x[j][i].real = y[j][i].real;
 		x[j][i].imag = y[j][i].imag;
@@ -850,6 +872,7 @@ c-------------------------------------------------------------------*/
     chk.imag = 0.0;
 
 
+    #pragma omp parallel for 
     for (j = 1; j <= 1024; j++) {
 	q = j%NX+1;
 	if (q >= xstart[0] && q <= xend[0]) {

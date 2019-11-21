@@ -67,6 +67,7 @@ int main()
   int len=100; 
   int i,x=10;
 
+  #pragma omp parallel for firstprivate(i ) lastprivate(i ) 
   for (i=0;i<len;i++)
   {
     a[i] = x;

@@ -58,6 +58,7 @@ int main(int argc, char** argv)
   double x, interval_width;
   interval_width = 1.0/(double)num_steps;
 
+  #pragma omp parallel for private(i ,x ) reduction(+:pi) 
   for (i = 0; i < num_steps; i++) {
     x = (i+ 0.5) * interval_width;
     pi += 1.0 / (x*x + 1.0);

@@ -56,11 +56,14 @@ int main(int argc,char *argv[])
   double a[20][20];
   memset(a,0,(sizeof(a)));
 
+  #pragma omp parallel for private(i ,j ) 
   for (i = 0; i < 20; i++)
+    #pragma omp parallel for private(j ) 
     for (j = 0; j < 20; j++)
       a[i][j] = i * 20 + j;
 
   for (i = 0; i < 20 -1; i += 1) {
+    #pragma omp parallel for private(j ) 
     for (j = 0; j < 20; j += 1) {
       a[i][j] += a[i + 1][j];
     }

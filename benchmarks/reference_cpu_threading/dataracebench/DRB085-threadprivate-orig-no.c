@@ -61,12 +61,14 @@ int main()
 {
   int len=1000;
   int i, sum=0;
+  #pragma omp parallel for private(i ) reduction(+:sum0) 
   for (i=0;i<len;i++)
   {
        foo (i);
   }   
   sum=sum+sum0;
 /*  reference calculation */
+  #pragma omp parallel for private(i ) reduction(+:sum1) 
   for (i=0;i<len;i++)
   {
     sum1=sum1+i;

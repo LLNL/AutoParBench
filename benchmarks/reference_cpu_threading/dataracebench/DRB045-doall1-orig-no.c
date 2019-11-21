@@ -52,10 +52,12 @@ int a[100];
 int main()
 {
 int i;
+  #pragma omp parallel for private(i ) 
   for (i=0;i<100;i++)
     a[i]=i;
  
 
+  #pragma omp parallel for private(i ) 
   for (i=0;i<100;i++)
     a[i]=a[i]+1;
 

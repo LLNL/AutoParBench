@@ -91,6 +91,7 @@ void polybench_flush_cache()
   double tmp = 0.0;
 #ifdef _OPENMP
 #endif
+  #pragma omp parallel for reduction(+:tmp) 
   for (i = 0; i < cs; i++)
     tmp += flush[i];
   assert (tmp <= 10.0);

@@ -56,8 +56,11 @@ double a[N][M],b[M][K],c[N][K];
 int init()   
 {           
   int i,j,k;
+  #pragma omp parallel for private(i ,j ,k ) 
   for (i = 0; i < N; i++) 
+    #pragma omp parallel for private(j ,k ) 
     for (k = 0; k < K; k++) 
+      #pragma omp parallel for private(j ) 
       for (j = 0; j < M; j++) {
         c[i][j] = i * j;
         a[i][k] = i * j;
@@ -69,8 +72,11 @@ int init()
 int mmm()   
 {           
   int i,j,k;
+  #pragma omp parallel for private(i ,j ,k ) 
   for (i = 0; i < N; i++) 
+    #pragma omp parallel for private(j ,k ) 
     for (k = 0; k < K; k++) 
+      #pragma omp parallel for private(j ) 
       for (j = 0; j < M; j++)
         c[i][j]= c[i][j]+a[i][k]*b[k][j];
   return 0; 

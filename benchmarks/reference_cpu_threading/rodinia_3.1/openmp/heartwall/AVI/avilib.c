@@ -1405,12 +1405,14 @@ int avi_parse_input_file(avi_t *AVI, int getIndex)
    /* Now generate the video index and audio index arrays */
 
    nvi = 0;
+   #pragma omp parallel for firstprivate(j ) 
    for(j=0; j<AVI->anum; ++j) nai[j] = 0;
 
    for(i=0;i<AVI->n_idx;i++) {
      
      if(strncasecmp((char *)AVI->idx[i],(char *) AVI->video_tag,3) == 0) nvi++;
      
+     #pragma omp parallel for firstprivate(AVI ,j ,i ) 
      for(j=0; j<AVI->anum; ++j) if(strncasecmp((char *)AVI->idx[i], AVI->track[j].audio_tag,4) == 0) nai[j]++;
    }
    
@@ -1431,6 +1433,7 @@ int avi_parse_input_file(avi_t *AVI, int getIndex)
    }   
    
    nvi = 0;
+   #pragma omp parallel for firstprivate(j ) 
    for(j=0; j<AVI->anum; ++j) nai[j] = tot[j] = 0;
    
    ioff = idx_type == 1 ? 8 : AVI->movi_start+4;

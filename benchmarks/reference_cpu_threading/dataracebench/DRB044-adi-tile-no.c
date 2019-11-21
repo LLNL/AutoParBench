@@ -27,9 +27,13 @@ static void init_array(int n,double X[500 + 0][500 + 0],double A[500 + 0][500 + 
     int c2;
     int c4;
     if (n >= 1) {
+      #pragma omp parallel for private(c1 ,c4 ,c2 ,c3 ) 
       for (c1 = 0; c1 <= (((n + -1) * 16 < 0?((16 < 0?-((-(n + -1) + 16 + 1) / 16) : -((-(n + -1) + 16 - 1) / 16))) : (n + -1) / 16)); c1++) {
+        #pragma omp parallel for private(c2 ,c4 ,c3 ) 
         for (c2 = 0; c2 <= (((n + -1) * 16 < 0?((16 < 0?-((-(n + -1) + 16 + 1) / 16) : -((-(n + -1) + 16 - 1) / 16))) : (n + -1) / 16)); c2++) {
+      	  #pragma omp parallel for private(c3 ,c4 ) 
       	  for (c3 = 16 * c1; c3 <= ((16 * c1 + 15 < n + -1?16 * c1 + 15 : n + -1)); c3++) {
+	    #pragma omp parallel for private(c4 ) 
 	    for (c4 = 16 * c2; c4 <= ((16 * c2 + 15 < n + -1?16 * c2 + 15 : n + -1)); c4++) {
               X[c3][c4] = (((double )c3) * (c4 + 1) + 1) / n;
               A[c3][c4] = (((double )c3) * (c4 + 2) + 2) / n;
@@ -75,6 +79,7 @@ static void kernel_adi(int tsteps,int n,double X[500 + 0][500 + 0],double A[500 
     if (n >= 1 && tsteps >= 1) {
       for (c0 = 0; c0 <= tsteps + -1; c0++) {
         if (n >= 2) {
+          #pragma omp parallel for private(c2 ,c15 ,c9 ,c8 ) 
           for (c2 = 0; c2 <= (((n + -1) * 16 < 0?((16 < 0?-((-(n + -1) + 16 + 1) / 16) : -((-(n + -1) + 16 - 1) / 16))) : (n + -1) / 16)); c2++) {
             for (c8 = 0; c8 <= (((n + -1) * 16 < 0?((16 < 0?-((-(n + -1) + 16 + 1) / 16) : -((-(n + -1) + 16 - 1) / 16))) : (n + -1) / 16)); c8++) {
               for (c9 = (1 > 16 * c8?1 : 16 * c8); c9 <= ((16 * c8 + 15 < n + -1?16 * c8 + 15 : n + -1)); c9++) {
@@ -99,12 +104,15 @@ static void kernel_adi(int tsteps,int n,double X[500 + 0][500 + 0],double A[500 
             }
           }
         }
+        #pragma omp parallel for private(c2 ,c15 ) 
         for (c2 = 0; c2 <= (((n + -1) * 16 < 0?((16 < 0?-((-(n + -1) + 16 + 1) / 16) : -((-(n + -1) + 16 - 1) / 16))) : (n + -1) / 16)); c2++) {
+          #pragma omp parallel for 
           for (c15 = 16 * c2; c15 <= ((16 * c2 + 15 < n + -1?16 * c2 + 15 : n + -1)); c15++) {
             X[c15][n - 1] = X[c15][n - 1] / B[c15][n - 1];
           }
         }
         if (n >= 2) {
+          #pragma omp parallel for private(c2 ,c15 ,c9 ,c8 ) 
           for (c2 = 0; c2 <= (((n + -1) * 16 < 0?((16 < 0?-((-(n + -1) + 16 + 1) / 16) : -((-(n + -1) + 16 - 1) / 16))) : (n + -1) / 16)); c2++) {
             for (c8 = 0; c8 <= (((n + -1) * 16 < 0?((16 < 0?-((-(n + -1) + 16 + 1) / 16) : -((-(n + -1) + 16 - 1) / 16))) : (n + -1) / 16)); c8++) {
               for (c9 = (1 > 16 * c8?1 : 16 * c8); c9 <= ((16 * c8 + 15 < n + -1?16 * c8 + 15 : n + -1)); c9++) {
@@ -129,7 +137,9 @@ static void kernel_adi(int tsteps,int n,double X[500 + 0][500 + 0],double A[500 
             }
           }
         }
+        #pragma omp parallel for private(c2 ,c15 ) 
         for (c2 = 0; c2 <= (((n + -1) * 16 < 0?((16 < 0?-((-(n + -1) + 16 + 1) / 16) : -((-(n + -1) + 16 - 1) / 16))) : (n + -1) / 16)); c2++) {
+          #pragma omp parallel for 
           for (c15 = 16 * c2; c15 <= ((16 * c2 + 15 < n + -1?16 * c2 + 15 : n + -1)); c15++) {
             X[n - 1][c15] = X[n - 1][c15] / B[n - 1][c15];
           }

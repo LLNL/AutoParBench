@@ -54,6 +54,7 @@ void setup(int N)
   double * m_pdv_sum = (double* ) malloc (sizeof (double) * N );
   double * m_nvol = (double* ) malloc (sizeof (double) * N );
 
+  #pragma omp parallel for 
   for (int i=0; i < N; ++i ) 
   { 
     m_pdv_sum[ i ] = 0.0;

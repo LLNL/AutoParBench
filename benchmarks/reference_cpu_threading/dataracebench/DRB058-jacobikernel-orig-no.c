@@ -66,7 +66,9 @@ initialize ()
   dy = 2.0 / (m - 1);
 
 /* Initialize initial condition and RHS */
+  #pragma omp parallel for private(i ,j ,xx ,yy ) 
   for (i = 0; i < n; i++)
+    #pragma omp parallel for private(j ,xx ,yy ) 
     for (j = 0; j < m; j++)
     {
       xx = (int) (-1.0 + dx * (i - 1));       /* -1 < x < 1 */
@@ -103,11 +105,15 @@ jacobi ()
       error = 0.0;
 
       /* Copy new solution into old */
+        #pragma omp parallel for private(j ) 
         for (i = 0; i < n; i++)
+          #pragma omp parallel for 
           for (j = 0; j < m; j++)
             uold[i][j] = u[i][j];
 
+        #pragma omp parallel for private(j ,resid ) reduction(+:error) 
         for (i = 1; i < (n - 1); i++)
+      	  #pragma omp parallel for private(resid ) reduction(+:error) 
       	  for (j = 1; j < (m - 1); j++)
             {
               resid = (ax * (uold[i - 1][j] + uold[i + 1][j])

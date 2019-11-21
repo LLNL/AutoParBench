@@ -52,6 +52,7 @@ Example use of firstprivate()
 void foo(int * a, int n, int g)
 {
   int i;
+  #pragma omp parallel for private(i ) 
   for (i=0;i<n;i++)
   {
     a[i] = a[i]+g;
@@ -63,6 +64,7 @@ int main()
 {
   int i;
   int n = 100;
+  #pragma omp parallel for private(i ) 
   for (i=0;i<n;i++)
   {
     a[i] = i;

@@ -51,12 +51,14 @@ int a[100], b[100], c[100];
 int main()
 {
   int i;
+  #pragma omp parallel for private(i ) 
   for (i=0;i<100;i++) {
     a[i]= i * 40;
     b[i] = i - 1;
     c[i] = i;
  }
 
+  #pragma omp parallel for private(i ) 
   for (i=0;i<100;i++)
     a[i]=b[i]*c[i];
 

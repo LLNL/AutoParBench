@@ -57,9 +57,11 @@ int main(int argc, char* argv[])
     len = atoi(argv[1]);
   int a[len];
 
+  #pragma omp parallel for private(i ) 
   for (i=0;i<len;i++)
     a[i]=i;
 
+  #pragma omp parallel for private(tmp ) 
   for (i=0;i<len;i++)
   {
     tmp =a[i]+i;

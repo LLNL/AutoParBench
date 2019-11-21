@@ -50,6 +50,7 @@ THE POSSIBILITY OF SUCH DAMAGE.
 int main (void)
 {
   int a=0;
+  #pragma omp parallel for reduction(+:a) 
   for (int i = 0; i < 100; i++)
   {
     a += 1;

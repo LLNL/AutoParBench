@@ -56,9 +56,11 @@ int main(int argc, char* argv[])
 
   int a[2000];
 
+  #pragma omp parallel for private(i ) 
   for (i=0; i<2000; i++)
     a[i]=i; 
 
+  #pragma omp parallel for firstprivate(i ) 
   for (i=0;i<1000;i++)
     a[2*i+1]=a[i]+1;
 

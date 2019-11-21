@@ -65,7 +65,9 @@ initialize ()
   dy = 2.0 / (m - 1);
 
   /* Initialize initial condition and RHS */
+  #pragma omp parallel for private(i ,j ,xx ,yy ) 
   for (i = 0; i < n; i++)
+    #pragma omp parallel for private(j ,xx ,yy ) 
     for (j = 0; j < m; j++)
     {
       xx = (int) (-1.0 + dx * (i - 1));       /* -1 < x < 1 */

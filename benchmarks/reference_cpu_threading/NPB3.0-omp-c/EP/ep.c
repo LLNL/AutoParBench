@@ -83,6 +83,7 @@ c   point print statement (internal file)
     printf("\n\n NAS Parallel Benchmarks 3.0 structured OpenMP C version"
 	   " - EP Benchmark\n");
     sprintf(size, "%12.0f", pow(2.0, M+1));
+    #pragma omp parallel for firstprivate(j ) 
     for (j = 13; j >= 1; j--) {
 	if (size[j] == '.') size[j] = ' ';
     }
@@ -106,6 +107,7 @@ c   sure these initializations cannot be eliminated as dead code.
     vranlc(0, &(dum[0]), dum[1], &(dum[2]));
     dum[0] = randlc(&(dum[1]), dum[2]);
     
+    #pragma omp parallel for private(i ) 
     for (i = 0; i < 2*NK; i++) x[i] = -1.0e99;
     
     Mops = log(sqrt(fabs(max(1.0, 1.0))));
@@ -131,6 +133,7 @@ c   sure these initializations cannot be eliminated as dead code.
     sx = 0.0;
     sy = 0.0;
 
+    #pragma omp parallel for firstprivate(i ) 
     for ( i = 0; i <= NQ - 1; i++) {
 	q[i] = 0.0;
     }
@@ -147,8 +150,10 @@ c   have more numbers to generate than others
     int kk, i, ik, l;
     double qq[NQ];		/* private copy of q[0:NQ-1] */
 
+    #pragma omp parallel for firstprivate(i ) 
     for (i = 0; i < NQ; i++) qq[i] = 0.0;
 
+    #pragma omp parallel for reduction(+:sx) reduction(+:sy) 
     for (k = 1; k <= np; k++) {
 	kk = k_offset + k;
 	t1 = S;
@@ -194,6 +199,7 @@ c       vectorizable.
 	if (TIMERS_ENABLED == TRUE) timer_stop(2);
     }
     {
+      #pragma omp parallel for firstprivate(i ) 
       for (i = 0; i <= NQ - 1; i++) q[i] += qq[i];
     }
 #if defined(_OPENMP)
@@ -201,6 +207,7 @@ c       vectorizable.
 #endif /* _OPENMP */    
 } /* end of parallel region */    
 
+    #pragma omp parallel for firstprivate(i ) reduction(none:gc) 
     for (i = 0; i <= NQ-1; i++) {
         gc = gc + q[i];
     }

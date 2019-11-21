@@ -116,11 +116,13 @@ int main (int argc, char* argv[])
   int i;
 
   // initialize segments touched by indexSet
+  #pragma omp parallel for private(i ) 
   for (i =521; i<= 2025; ++i)
   {
     base[i]=0.5*i;
   }
 // default static even scheduling may not trigger data race, using static,1 instead.
+  #pragma omp parallel for private(i ) 
   for (i =0; i< N; ++i) 
   {
     int idx = indexSet[i];

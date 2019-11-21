@@ -58,6 +58,7 @@ int main(int argc, char* argv[])
   if (argc>1)
     len = atoi(argv[1]);
 
+  #pragma omp parallel for private(i ) lastprivate(x ) 
   for (i=0;i<len;i++)
     x=i;
   printf("x=%d",x);

@@ -53,6 +53,7 @@ int main()
   double a[len], b[len], c[len];
   int i,j=0;
 
+  #pragma omp parallel for private(i ) 
   for (i=0;i<len;i++)
   {
     a[i]=((double)i)/2.0; 
@@ -60,6 +61,7 @@ int main()
     c[i]=((double)i)/7.0; 
   }
 
+  #pragma omp parallel for private(i ) linear(j ) 
   for (i=0;i<len;i++)
   {
     c[j]+=a[i]*b[i];

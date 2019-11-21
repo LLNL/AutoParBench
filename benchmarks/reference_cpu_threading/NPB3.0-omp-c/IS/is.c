@@ -341,6 +341,7 @@ void full_verify()
 /*  Confirm keys correctly sorted: count incorrectly sorted keys, if any */
 
     j = 0;
+    #pragma omp parallel for firstprivate(i ) reduction(none:j) 
     for( i=1; i<NUM_KEYS; i++ )
         if( key_array[i-1] > key_array[i] )
             j++;
@@ -382,6 +383,7 @@ void rank( int iteration )
 
 /*  Determine where the partial verify test keys are, load into  */
 /*  top of array bucket_size                                     */
+    #pragma omp parallel for firstprivate(i ) 
     for( i=0; i<TEST_ARRAY_SIZE; i++ )
         partial_verify_vals[i] = key_array[test_index_array[i]];
 
@@ -394,6 +396,7 @@ void rank( int iteration )
       prv_buff1[i] = 0;
 
 /*  Copy keys into work array; keys in key_array will be reused each iter. */
+    #pragma omp for 
     for( i=0; i<NUM_KEYS; i++ ) {
         key_buff2[i] = key_array[i];
 
@@ -411,6 +414,7 @@ void rank( int iteration )
 
 
     {
+	#pragma omp parallel for firstprivate(i ) 
 	for( i=0; i<MAX_KEY; i++ )
 	    key_buff1[i] += prv_buff1[i];
     }
@@ -586,6 +590,7 @@ main( argc, argv )
 
 
 /*  Initialize the verification arrays if a valid class */
+    #pragma omp parallel for firstprivate(i ) 
     for( i=0; i<TEST_ARRAY_SIZE; i++ )
         switch( CLASS )
         {

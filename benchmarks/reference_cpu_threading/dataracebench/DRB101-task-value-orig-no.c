@@ -62,12 +62,14 @@ void gen_task(int i)
 int main()
 {
   int i=0;
+  #pragma omp parallel for private(i ) 
   for (i=0; i<MYLEN; i++)
   {
     gen_task(i);
   }
   
   /* checking control flow */
+  #pragma omp parallel for private(i ) 
   for (i=0; i<MYLEN; i++)
   {
     //assert (a[i]==i+1);

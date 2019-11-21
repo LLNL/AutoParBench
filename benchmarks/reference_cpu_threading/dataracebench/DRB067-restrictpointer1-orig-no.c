@@ -58,6 +58,7 @@ void foo(real8 * restrict newSxx, real8 * restrict newSyy, int length)
 {
   int i;
 
+  #pragma omp parallel for private(i ) 
   for (i = 0; i <= length - 1; i += 1) {
     newSxx[i] = 0.0;
     newSyy[i] = 0.0;

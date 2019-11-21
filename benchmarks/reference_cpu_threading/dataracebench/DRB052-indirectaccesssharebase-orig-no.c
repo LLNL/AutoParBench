@@ -106,11 +106,13 @@ int main (int argc, char* argv[])
   double * xa1 = base;
   double * xa2 = base + 1;
   int i;
+  #pragma omp parallel for private(i ) 
   for (i =521; i<= 2025; ++i)
   {
     base[i]=0.0;
   }
 
+  #pragma omp parallel for private(i ) 
   for (i =0; i< N; ++i) // this level of loop has no loop carried dependence
   {
     int idx = indexSet[i];

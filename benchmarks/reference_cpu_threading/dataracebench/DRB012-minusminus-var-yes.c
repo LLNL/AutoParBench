@@ -60,6 +60,7 @@ int main(int argc, char* argv[])
   int numNodes=len, numNodes2=0; 
   int x[len]; 
 
+  #pragma omp parallel for private(i ) 
   for (i=0; i< len; i++)
   {
     if (i%2==0)
@@ -68,6 +69,7 @@ int main(int argc, char* argv[])
       x[i]= -5;
   }
 
+  #pragma omp parallel for private(i ) reduction(+:numNodes2) 
   for (i=numNodes-1 ; i>-1 ; --i) {
     if (x[i]<=0) {
       numNodes2+=-1;

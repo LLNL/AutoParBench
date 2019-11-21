@@ -63,9 +63,11 @@ int main()
   int inLen=1000 ; 
   int outLen = 0;
 
+  #pragma omp parallel for private(i ) 
   for (i=0; i<inLen; ++i) 
     input[i]= i;  
 
+  #pragma omp parallel for private(i ) reduction(+:outLen) 
   for (i=0; i<inLen; ++i) 
   {
     output[outLen++] = input[i];

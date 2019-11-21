@@ -122,6 +122,7 @@ float accuracy(float *arr1, float *arr2, int len)
 {
     float err = 0.0; 
     int i;
+    #pragma omp parallel for firstprivate(len ,arr2 ,arr1 ,i ) reduction(none:err) 
     for(i = 0; i < len; i++)
     {
         err += (arr1[i]-arr2[i]) * (arr1[i]-arr2[i]);
@@ -156,6 +157,7 @@ void computeTempOMP(float *pIn, float* tIn, float *tOut,
 
         do {
             int z; 
+            #pragma omp parallel for 
             for (z = 0; z < nz; z++) {
                 int y;
                 for (y = 0; y < ny; y++) {

@@ -58,6 +58,7 @@ For gcc, you must use -std=c99 to compile this program.
 void init(int n, int * restrict  a, int * restrict b, int * restrict  c)
 {
   int i;
+  #pragma omp parallel for private(i ) 
   for (i = 0; i < n; i++) {
     a[i] = 1;
     b[i] = i;
@@ -68,6 +69,7 @@ void init(int n, int * restrict  a, int * restrict b, int * restrict  c)
 void foo(int n, int * restrict  a, int * restrict b, int * restrict  c)
 {
   int i;
+  #pragma omp parallel for private(i ) 
   for (i = 0; i < n; i++)
     a[i] = b[i] + c[i];  
 }

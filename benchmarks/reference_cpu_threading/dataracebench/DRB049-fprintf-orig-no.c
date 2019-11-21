@@ -60,6 +60,7 @@ int main(int argc, char* argv[])
 
   int A[1000];
 
+  #pragma omp parallel for private(i ) 
   for (i=0; i<len; i++)
     A[i]=i;
 
