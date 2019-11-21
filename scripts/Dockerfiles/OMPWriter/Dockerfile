@@ -57,9 +57,6 @@ RUN make clang -j4
 
 #Build LLVM then go back to root folder
 RUN make -j4
-workdir ${ROOT_FOLDER}
-
-RUN ls
 
 #NOTE: Remove the token when AutoParBench be a public repository
 RUN git clone https://github.com/gleisonsdm/AutoParBench.git ${OMPWRITER_PATH}
