@@ -280,7 +280,10 @@ std::string JSONParser::getListofClauses(std::vector<std::string> & ops,
 		                         std::vector<std::string> & clauses) {
   std::string output = std::string();
   for (int i = 0, ie = clauses.size(); i != ie; i++) {
-    output += "reduction(" + ops[i] + ":" + clauses[i] + ") ";
+    std::string op = ops[i];
+    if (op == "none")
+      op = "+";
+    output += "reduction(" + op + ":" + clauses[i] + ") ";
   }
   return output;
 }
