@@ -1,0 +1,26 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB100-task-reference-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"67",
+"loop column":"6",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB100-task-reference-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"74",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

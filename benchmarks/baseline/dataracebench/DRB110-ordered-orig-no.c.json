@@ -1,0 +1,24 @@
+{
+"ordered 1":{
+"pragma type":"ordered",
+"file":"./dataracebench/DRB110-ordered-orig-no.c",
+"function":"main",
+"loop id":"1",
+"statement id":"1",
+"snippet line":"0",
+"snippet column":"0"
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB110-ordered-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"55",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"true",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"dependence list":["ordered 1"]
+}
+}

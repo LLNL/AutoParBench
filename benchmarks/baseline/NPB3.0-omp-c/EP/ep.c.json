@@ -1,0 +1,133 @@
+{
+"loop - object id : 1":{
+"file":"./NPB3.0-omp-c/EP/ep.c",
+"function":"main",
+"loop id":"1",
+"loop line":"87",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["j"]
+},
+"loop - object id : 2":{
+"file":"./NPB3.0-omp-c/EP/ep.c",
+"function":"main",
+"loop id":"2",
+"loop line":"111",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"]
+},
+"loop - object id : 3":{
+"file":"./NPB3.0-omp-c/EP/ep.c",
+"function":"main",
+"loop id":"3",
+"loop line":"126",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 4":{
+"file":"./NPB3.0-omp-c/EP/ep.c",
+"function":"main",
+"loop id":"4",
+"loop line":"136",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["i"]
+},
+"loop - object id : 5":{
+"file":"./NPB3.0-omp-c/EP/ep.c",
+"function":"main",
+"loop id":"5",
+"loop line":"153",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["i"]
+},
+"loop - object id : 6":{
+"file":"./NPB3.0-omp-c/EP/ep.c",
+"function":"main",
+"loop id":"6",
+"loop line":"156",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"k",
+"reduction":["+:sx","+:sy"]
+},
+"loop - object id : 7":{
+"file":"./NPB3.0-omp-c/EP/ep.c",
+"function":"main",
+"loop id":"7",
+"loop line":"163",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 8":{
+"file":"./NPB3.0-omp-c/EP/ep.c",
+"function":"main",
+"loop id":"8",
+"loop line":"184",
+"loop column":"2",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 9":{
+"file":"./NPB3.0-omp-c/EP/ep.c",
+"function":"main",
+"loop id":"9",
+"loop line":"202",
+"loop column":"7",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["i"]
+},
+"loop - object id : 10":{
+"file":"./NPB3.0-omp-c/EP/ep.c",
+"function":"main",
+"loop id":"10",
+"loop line":"210",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["i"],
+"reduction":["gc"]
+},
+"loop - object id : 11":{
+"file":"./NPB3.0-omp-c/EP/ep.c",
+"function":"main",
+"loop id":"11",
+"loop line":"254",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

@@ -1,0 +1,26 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB067-restrictpointer1-orig-no.c",
+"function":"foo",
+"loop id":"1",
+"loop line":"62",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB067-restrictpointer1-orig-no.c",
+"function":"print",
+"loop id":"1",
+"loop line":"72",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

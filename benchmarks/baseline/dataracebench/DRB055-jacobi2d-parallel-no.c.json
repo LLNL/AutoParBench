@@ -1,0 +1,133 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB055-jacobi2d-parallel-no.c",
+"function":"init_array",
+"loop id":"1",
+"loop line":"29",
+"loop column":"7",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"c1",
+"private":["c1","c2"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB055-jacobi2d-parallel-no.c",
+"function":"init_array",
+"loop id":"2",
+"loop line":"31",
+"loop column":"9",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"c2",
+"private":["c2"]
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB055-jacobi2d-parallel-no.c",
+"function":"kernel_jacobi_2d_imper",
+"loop id":"1",
+"loop line":"68",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 4":{
+"file":"./dataracebench/DRB055-jacobi2d-parallel-no.c",
+"function":"kernel_jacobi_2d_imper",
+"loop id":"2",
+"loop line":"71",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 5":{
+"file":"./dataracebench/DRB055-jacobi2d-parallel-no.c",
+"function":"kernel_jacobi_2d_imper",
+"loop id":"3",
+"loop line":"74",
+"loop column":"11",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 6":{
+"file":"./dataracebench/DRB055-jacobi2d-parallel-no.c",
+"function":"kernel_jacobi_2d_imper",
+"loop id":"4",
+"loop line":"80",
+"loop column":"7",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"c1",
+"private":["c1","c2"]
+},
+"loop - object id : 7":{
+"file":"./dataracebench/DRB055-jacobi2d-parallel-no.c",
+"function":"kernel_jacobi_2d_imper",
+"loop id":"5",
+"loop line":"82",
+"loop column":"9",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 8":{
+"file":"./dataracebench/DRB055-jacobi2d-parallel-no.c",
+"function":"kernel_jacobi_2d_imper",
+"loop id":"6",
+"loop line":"91",
+"loop column":"11",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"c2",
+"private":["c2"]
+},
+"loop - object id : 9":{
+"file":"./dataracebench/DRB055-jacobi2d-parallel-no.c",
+"function":"kernel_jacobi_2d_imper",
+"loop id":"7",
+"loop line":"98",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"c2",
+"private":["c2"]
+},
+"loop - object id : 10":{
+"file":"./dataracebench/DRB055-jacobi2d-parallel-no.c",
+"function":"print_array",
+"loop id":"1",
+"loop line":"46",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 11":{
+"file":"./dataracebench/DRB055-jacobi2d-parallel-no.c",
+"function":"print_array",
+"loop id":"2",
+"loop line":"47",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}
