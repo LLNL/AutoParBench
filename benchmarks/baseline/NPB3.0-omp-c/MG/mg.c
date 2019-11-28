@@ -830,7 +830,7 @@ c-------------------------------------------------------------------*/
 
     n = nx*ny*nz;
 
-    #pragma omp parallel for private(i1 ,i2 ,i3 ,a ) reduction(m:x:tmp) 
+    #pragma omp parallel for private(i1 ,i2 ,i3 ,a ) reduction(+:tmp) reduction(+:s) 
     for (i3 = 1; i3 < n3-1; i3++) {
 	#pragma omp parallel for firstprivate(n3 ,i2 ,i1 ,r ,n1 ,n2 ,i3 ) reduction(+:tmp) reduction(+:s) 
 	for (i2 = 1; i2 < n2-1; i2++) {

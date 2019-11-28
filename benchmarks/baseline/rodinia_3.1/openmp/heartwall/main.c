@@ -302,7 +302,6 @@ int main(int argc, char *argv []){
 	//	SUMS
 	//======================================================================================================================================================
 
-	#pragma omp parallel for firstprivate(public.d_endoRow ,_2 ) 
 	for(i=0; i<public.allPoints; i++){
 		private[i].in_partial_sum = (fp *)malloc(sizeof(fp) * 2*public.tSize+1);
 		private[i].in_sqr_partial_sum = (fp *)malloc(sizeof(fp) * 2*public.tSize+1);
@@ -319,7 +318,6 @@ int main(int argc, char *argv []){
 	public.in2_elem = public.in2_rows * public.in2_cols;
 	public.in2_mem = sizeof(fp) * public.in2_elem;
 
-	#pragma omp parallel for firstprivate(public.d_endoCol ,_2 ) 
 	for(i=0; i<public.allPoints; i++){
 		private[i].d_in2 = (fp *)malloc(public.in2_mem);
 		private[i].d_in2_sqr = (fp *)malloc(public.in2_mem);
@@ -430,7 +428,6 @@ int main(int argc, char *argv []){
 	public.in2_sub_elem = public.in2_sub_rows * public.in2_sub_cols;
 	public.in2_sub_mem = sizeof(fp) * public.in2_sub_elem;
 
-	#pragma omp parallel for firstprivate(public.d_endoT ,public.d_tEndoColLoc ,public.d_tEndoRowLoc ,public.d_endoCol ,public.d_endoRow ,i ) 
 	for(i=0; i<public.allPoints; i++){
 		private[i].d_in2_sub = (fp *)malloc(public.in2_sub_mem);
 	}
@@ -452,7 +449,6 @@ int main(int argc, char *argv []){
 	public.in2_sub2_sqr_elem = public.in2_sub2_sqr_rows * public.in2_sub2_sqr_cols;
 	public.in2_sub2_sqr_mem = sizeof(fp) * public.in2_sub2_sqr_elem;
 
-	#pragma omp parallel for firstprivate(public.d_epiT ,public.d_tEpiColLoc ,public.d_tEpiRowLoc ,public.d_epiCol ,public.d_epiRow ,i ) 
 	for(i=0; i<public.allPoints; i++){
 		private[i].d_in2_sub2_sqr = (fp *)malloc(public.in2_sub2_sqr_mem);
 	}
@@ -535,7 +531,6 @@ int main(int argc, char *argv []){
 	//	KERNEL
 	//======================================================================================================================================================
 
-	#pragma omp parallel for firstprivate(i ) 
 	for(public.frame_no=0; public.frame_no<frames_processed; public.frame_no++){
 
 	//====================================================================================================

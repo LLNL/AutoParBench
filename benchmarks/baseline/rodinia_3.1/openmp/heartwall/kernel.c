@@ -119,9 +119,7 @@ void kernel(public_struct public,
 		in2_collow = private.d_Col[private.point_no] - public.sSize;
 
 		// work
-		#pragma omp parallel for firstprivate(public.in2_cols ,row ,in2_rowlow ,public.frame_rows ,in2_collow ,public.d_frame ,public.in2_rows ,private.d_in2 ,private.d_in2_sqr ,col ,temp ) 
 		for(col=0; col<public.in2_cols; col++){
-			#pragma omp parallel for firstprivate(public.in2_cols ,row ,in2_rowlow ,public.frame_rows ,in2_collow ,public.d_frame ,public.in2_rows ,private.d_in2 ,private.d_in2_sqr ,col ,temp ) 
 			for(row=0; row<public.in2_rows; row++){
 
 			// figure out corresponding location in old matrix and copy values to new matrix
@@ -145,7 +143,6 @@ void kernel(public_struct public,
 
 		// work
 		for(col=0; col<public.in_mod_cols; col++){
-			#pragma omp parallel for firstprivate(pointer ,public.in_mod_rows ,d_in ,private.d_in_mod ,private.d_in_sqr ,row ,temp ,col ) 
 			for(row=0; row<public.in_mod_rows; row++){
 
 			// rotated coordinates
@@ -167,13 +164,11 @@ void kernel(public_struct public,
 		//==================================================
 
 		in_final_sum = 0;
-		#pragma omp parallel for firstprivate(public.in_mod_elem ,d_in ,i ) reduction(+:in_final_sum) 
 		for(i = 0; i<public.in_mod_elem; i++){
 			in_final_sum = in_final_sum + d_in[i];
 		}
 
 		in_sqr_final_sum = 0;
-		#pragma omp parallel for firstprivate(public.in_mod_elem ,private.d_in_sqr ,i ) reduction(+:in_sqr_final_sum) 
 		for(i = 0; i<public.in_mod_elem; i++){
 			in_sqr_final_sum = in_sqr_final_sum + private.d_in_sqr[i];
 		}
@@ -237,7 +232,6 @@ void kernel(public_struct public,
 				// getting data
 				for(ja=ja1; ja<=ja2; ja++){
 					jb = jp1 - ja;
-					#pragma omp parallel for firstprivate(ia2 ,i ,jb ,public.in2_rows ,private.d_in2 ,public.in_mod_rows ,private.d_in_mod ,ia ,public.ioffset ,public.joffset ,ia1 ,ja1 ,ja ,row ,col ) reduction(+:s) 
 					for(ia=ia1; ia<=ia2; ia++){
 						ib = ip1 - ia;
 						s = s + private.d_in_mod[public.in_mod_rows*(ja-1)+ia-1] * private.d_in2[public.in2_rows*(jb-1)+ib-1];
@@ -301,9 +295,7 @@ void kernel(public_struct public,
 		//==================================================
 
 		// work
-		#pragma omp parallel for firstprivate(public.in2_sub_cols ,row ,public.in2_pad_cumv_sel2_rowlow ,public.in2_pad_rows ,public.in2_pad_cumv_sel2_collow ,private.d_in2_pad ,public.in2_pad_cumv_sel_rowlow ,public.in2_pad_cumv_sel_collow ,public.in2_sub_rows ,private.d_in2_sub ,col ) 
 		for(col=0; col<public.in2_sub_cols; col++){
-			#pragma omp parallel for firstprivate(public.in2_sub_cols ,row ,public.in2_pad_cumv_sel2_rowlow ,public.in2_pad_rows ,public.in2_pad_cumv_sel2_collow ,private.d_in2_pad ,public.in2_pad_cumv_sel_rowlow ,public.in2_pad_cumv_sel_collow ,public.in2_sub_rows ,private.d_in2_sub ,col ) 
 			for(row=0; row<public.in2_sub_rows; row++){
 
 			// figure out corresponding location in old matrix and copy values to new matrix
@@ -326,7 +318,6 @@ void kernel(public_struct public,
 		//	1) GET HORIZONTAL CUMULATIVE SUM						SAVE IN d_in2_sub
 		//==================================================
 
-		#pragma omp parallel for firstprivate(position ,sum ,private.d_in2_sub ,public.in2_sub_rows ,public.in2_sub_elem ,ei_new ) 
 		for(ei_new = 0; ei_new < public.in2_sub_rows; ei_new++){
 
 			// figure out row position
@@ -429,9 +420,7 @@ void kernel(public_struct public,
 		//==================================================
 
 		// work
-		#pragma omp parallel for firstprivate(public.in2_sub_cols ,row ,public.in2_pad_cumv_sel2_rowlow ,public.in2_pad_rows ,public.in2_pad_cumv_sel2_collow ,private.d_in2_pad ,public.in2_pad_cumv_sel_rowlow ,public.in2_pad_cumv_sel_collow ,public.in2_sub_rows ,private.d_in2_sub ,col ) 
 		for(col=0; col<public.in2_sub_cols; col++){
-			#pragma omp parallel for firstprivate(public.in2_sub_cols ,row ,public.in2_pad_cumv_sel2_rowlow ,public.in2_pad_rows ,public.in2_pad_cumv_sel2_collow ,private.d_in2_pad ,public.in2_pad_cumv_sel_rowlow ,public.in2_pad_cumv_sel_collow ,public.in2_sub_rows ,private.d_in2_sub ,col ) 
 			for(row=0; row<public.in2_sub_rows; row++){
 
 			// figure out corresponding location in old matrix and copy values to new matrix
@@ -454,7 +443,6 @@ void kernel(public_struct public,
 		//	1) GET HORIZONTAL CUMULATIVE SUM						SAVE IN d_in2_sub
 		//==================================================
 
-		#pragma omp parallel for firstprivate(position ,sum ,private.d_in2_sub ,public.in2_sub_rows ,public.in2_sub_elem ,ei_new ) 
 		for(ei_new = 0; ei_new < public.in2_sub_rows; ei_new++){
 
 			// figure out row position
@@ -481,7 +469,6 @@ void kernel(public_struct public,
 
 		// work
 		for(col=0; col<public.conv_cols; col++){
-			#pragma omp parallel for firstprivate(public.in_mod_elem ,public.conv_rows ,private.d_in2_sub2_sqr ,public.in2_sub_cumh_sel2_rowlow ,public.in2_sub_rows ,public.in2_sub_cumh_sel2_collow ,private.d_in2_sub ,public.in2_sub_cumh_sel_rowlow ,public.in2_sub_cumh_sel_collow ,denomT ,private.d_conv ,row ,col ) 
 			for(row=0; row<public.conv_rows; row++){
 
 			// figure out corresponding location in old matrix and copy values to new matrix
@@ -526,7 +513,6 @@ void kernel(public_struct public,
 		tMask_col = cent + private.d_tColLoc[pointer] - private.d_Col[private.point_no] - 1;
 
 		//work
-		#pragma omp parallel for firstprivate(public.tMask_elem ,private.d_tMask ,ei_new ) 
 		for(ei_new = 0; ei_new < public.tMask_elem; ei_new++){
 			private.d_tMask[ei_new] = 0;
 		}
@@ -581,10 +567,8 @@ void kernel(public_struct public,
 				s = 0;
 
 				// get data
-				#pragma omp parallel for firstprivate(ja2 ,ia1 ,public.tMask_rows ,private.d_tMask ,ia2 ,ja1 ,row ,col ,ia ) lastprivate(ia ) reduction(+:s) reduction(+:ja) 
 				for(ja=ja1; ja<=ja2; ja++){
 					jb = jp1 - ja;
-					#pragma omp parallel for firstprivate(ja2 ,ia1 ,public.tMask_rows ,private.d_tMask ,ia2 ,ja1 ,row ,col ,ia ) lastprivate(ia ) reduction(+:s) reduction(+:ja) 
 					for(ia=ia1; ia<=ia2; ia++){
 						ib = ip1 - ia;
 						s = s + private.d_tMask[public.tMask_rows*(ja-1)+ia-1] * 1;

@@ -1284,7 +1284,7 @@ c  local variables
 
   #pragma omp for 
   for (i = ist; i <= iend; i++) {
-    #pragma omp parallel for firstprivate(iend ,_2 ,ist ,j ,tmp1 ,tmp2 ,tmp3 ,k ,dz1 ,tz1 ,dy1 ,ty1 ,dx1 ,tx1 ,dt ,dz2 ,dy2 ,dx2 ,dz3 ,dy3 ,dx3 ,dz4 ,dy4 ,dx4 ,dz5 ,dy5 ,dx5 ,tz2 ,ty2 ,tx2 ,jst ,jend ,i ) 
+    #pragma omp parallel for firstprivate(iend ,ist ,j ,tmp1 ,tmp2 ,tmp3 ,k ,dz1 ,tz1 ,dy1 ,ty1 ,dx1 ,tx1 ,dt ,dz2 ,dy2 ,dx2 ,dz3 ,dy3 ,dx3 ,dz4 ,dy4 ,dx4 ,dz5 ,dy5 ,dx5 ,tz2 ,ty2 ,tx2 ,jst ,jend ,i ) 
     for (j = jst; j <= jend; j++) {
 
 /*--------------------------------------------------------------------
@@ -1654,7 +1654,7 @@ c  local variables
 #if defined(_OPENMP)  
   #pragma omp for 
   for (i = iend; i >= ist; i--) {
-      #pragma omp parallel for firstprivate(ist ,_2 ,iend ,j ,tmp1 ,tmp2 ,tmp3 ,k ,dz1 ,tz1 ,dy1 ,ty1 ,dx1 ,tx1 ,dt ,dz2 ,dy2 ,dx2 ,dz3 ,dy3 ,dx3 ,dz4 ,dy4 ,dx4 ,dz5 ,dy5 ,dx5 ,tx2 ,ty2 ,tz2 ,jst ,jend ,i ) 
+      #pragma omp parallel for firstprivate(ist ,iend ,j ,tmp1 ,tmp2 ,tmp3 ,k ,dz1 ,tz1 ,dy1 ,ty1 ,dx1 ,tx1 ,dt ,dz2 ,dy2 ,dx2 ,dz3 ,dy3 ,dx3 ,dz4 ,dy4 ,dx4 ,dz5 ,dy5 ,dx5 ,tx2 ,ty2 ,tz2 ,jst ,jend ,i ) 
       for (j = jend; j >= jst; j--) {
 #else	  
   for (i = ist; i <= iend; i++) {
