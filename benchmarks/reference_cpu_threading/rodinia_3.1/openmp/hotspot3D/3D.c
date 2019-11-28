@@ -122,7 +122,7 @@ float accuracy(float *arr1, float *arr2, int len)
 {
     float err = 0.0; 
     int i;
-    #pragma omp parallel for firstprivate(len ,arr2 ,arr1 ,i ) reduction(none:err) 
+    #pragma omp parallel for firstprivate(len ,arr2 ,arr1 ,i ) reduction(+:err) 
     for(i = 0; i < len; i++)
     {
         err += (arr1[i]-arr2[i]) * (arr1[i]-arr2[i]);

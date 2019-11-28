@@ -207,7 +207,7 @@ c       vectorizable.
 #endif /* _OPENMP */    
 } /* end of parallel region */    
 
-    #pragma omp parallel for firstprivate(i ) reduction(none:gc) 
+    #pragma omp parallel for firstprivate(i ) reduction(+:gc) 
     for (i = 0; i <= NQ-1; i++) {
         gc = gc + q[i];
     }

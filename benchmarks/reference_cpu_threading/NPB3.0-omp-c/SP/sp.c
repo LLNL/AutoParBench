@@ -179,7 +179,7 @@ static void add(void) {
 /*--------------------------------------------------------------------
 c addition of update to the vector u
 c-------------------------------------------------------------------*/
-  #pragma omp for 
+  #pragma omp parallel for firstprivate(i ,j ,k ,m ) 
   for (m = 0; m < 5; m++) {
     #pragma omp parallel for firstprivate(i ,j ,k ,m ) 
     for (i = 1; i <= grid_points[0]-2; i++) {
@@ -899,7 +899,7 @@ c     zap the whole left hand side for starters
 c-------------------------------------------------------------------*/
   #pragma omp parallel for firstprivate(k ,j ,i ,n ) 
   for (n = 0; n < 15; n++) {
-    #pragma omp for 
+    #pragma omp parallel for firstprivate(k ,j ,i ,n ) 
     for (i = 0; i < grid_points[0]; i++) {
       #pragma omp parallel for firstprivate(k ,j ,i ,n ) 
       for (j = 0; j < grid_points[1]; j++) {
@@ -917,7 +917,7 @@ c      convenient
 c-------------------------------------------------------------------*/
   #pragma omp parallel for firstprivate(i ,j ,k ,n ) 
   for (n = 0; n < 3; n++) {
-    #pragma omp for 
+    #pragma omp parallel for firstprivate(i ,j ,k ,n ) 
     for (i = 0; i < grid_points[0]; i++) {
       #pragma omp parallel for firstprivate(i ,j ,k ,n ) 
       for (j = 0; j < grid_points[1]; j++) {

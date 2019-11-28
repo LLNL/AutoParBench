@@ -341,7 +341,7 @@ void full_verify()
 /*  Confirm keys correctly sorted: count incorrectly sorted keys, if any */
 
     j = 0;
-    #pragma omp parallel for firstprivate(i ) reduction(none:j) 
+    #pragma omp parallel for firstprivate(i ) reduction(+:j) 
     for( i=1; i<NUM_KEYS; i++ )
         if( key_array[i-1] > key_array[i] )
             j++;

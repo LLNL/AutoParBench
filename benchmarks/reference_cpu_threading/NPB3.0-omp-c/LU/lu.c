@@ -1284,7 +1284,7 @@ c  local variables
 
   #pragma omp for 
   for (i = ist; i <= iend; i++) {
-    #pragma omp parallel for firstprivate(iend ,_2 ,ist ,j ,tmp1 ,tmp2 ,tmp3 ,k ,dz1 ,tz1 ,dy1 ,ty1 ,dx1 ,tx1 ,dt ,dz2 ,dy2 ,dx2 ,dz3 ,dy3 ,dx3 ,dz4 ,dy4 ,dx4 ,dz5 ,dy5 ,dx5 ,tz2 ,ty2 ,tx2 ,jst ,jend ,i ) 
+    #pragma omp parallel for firstprivate(iend ,ist ,j ,tmp1 ,tmp2 ,tmp3 ,k ,dz1 ,tz1 ,dy1 ,ty1 ,dx1 ,tx1 ,dt ,dz2 ,dy2 ,dx2 ,dz3 ,dy3 ,dx3 ,dz4 ,dy4 ,dx4 ,dz5 ,dy5 ,dx5 ,tz2 ,ty2 ,tx2 ,jst ,jend ,i ) 
     for (j = jst; j <= jend; j++) {
 
 /*--------------------------------------------------------------------
@@ -1654,7 +1654,7 @@ c  local variables
 #if defined(_OPENMP)  
   #pragma omp for 
   for (i = iend; i >= ist; i--) {
-      #pragma omp parallel for firstprivate(ist ,_2 ,iend ,j ,tmp1 ,tmp2 ,tmp3 ,k ,dz1 ,tz1 ,dy1 ,ty1 ,dx1 ,tx1 ,dt ,dz2 ,dy2 ,dx2 ,dz3 ,dy3 ,dx3 ,dz4 ,dy4 ,dx4 ,dz5 ,dy5 ,dx5 ,tx2 ,ty2 ,tz2 ,jst ,jend ,i ) 
+      #pragma omp parallel for firstprivate(ist ,iend ,j ,tmp1 ,tmp2 ,tmp3 ,k ,dz1 ,tz1 ,dy1 ,ty1 ,dx1 ,tx1 ,dt ,dz2 ,dy2 ,dx2 ,dz3 ,dy3 ,dx3 ,dz4 ,dy4 ,dx4 ,dz5 ,dy5 ,dx5 ,tx2 ,ty2 ,tz2 ,jst ,jend ,i ) 
       for (j = jend; j >= jst; j--) {
 #else	  
   for (i = ist; i <= iend; i++) {
@@ -2034,9 +2034,9 @@ c  local variables
 
   #pragma omp parallel for 
   for (i = ist; i <= iend; i++) {
-    #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,v ,nz0 ,jst ,jend ,i ) reduction(none:sum4) reduction(none:sum3) reduction(none:sum2) reduction(none:sum1) reduction(none:sum0) 
+    #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,v ,nz0 ,jst ,jend ,i ) reduction(+:sum4) reduction(+:sum3) reduction(+:sum2) reduction(+:sum1) reduction(+:sum0) 
     for (j = jst; j <= jend; j++) {
-      #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,v ,nz0 ,jst ,jend ,i ) reduction(none:sum4) reduction(none:sum3) reduction(none:sum2) reduction(none:sum1) reduction(none:sum0) 
+      #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,v ,nz0 ,jst ,jend ,i ) reduction(+:sum4) reduction(+:sum3) reduction(+:sum2) reduction(+:sum1) reduction(+:sum0) 
       for (k = 1; k <= nz0-2; k++) {
 	  sum0 = sum0 + v[i][j][k][0] * v[i][j][k][0];
 	  sum1 = sum1 + v[i][j][k][1] * v[i][j][k][1];
@@ -2140,9 +2140,9 @@ c   initialize
 
   frc1 = 0.0;
 
-  #pragma omp parallel for firstprivate(ibeg ,ifin1 ,j ,jbeg ,jfin1 ,i ) reduction(none:frc1) 
+  #pragma omp parallel for firstprivate(ibeg ,ifin1 ,j ,jbeg ,jfin1 ,i ) reduction(+:frc1) 
   for (i = ibeg; i <= ifin1; i++) {
-    #pragma omp parallel for firstprivate(ibeg ,ifin1 ,j ,jbeg ,jfin1 ,i ) reduction(none:frc1) 
+    #pragma omp parallel for firstprivate(ibeg ,ifin1 ,j ,jbeg ,jfin1 ,i ) reduction(+:frc1) 
     for (j = jbeg; j <= jfin1; j++) {
       frc1 = frc1 + (  phi1[i][j]
 		       + phi1[i+1][j]
@@ -2202,9 +2202,9 @@ c   initialize
 
 
   frc2 = 0.0;
-  #pragma omp parallel for firstprivate(ibeg ,ifin1 ,k ,ki1 ,ki2 ,i ) reduction(none:frc2) 
+  #pragma omp parallel for firstprivate(ibeg ,ifin1 ,k ,ki1 ,ki2 ,i ) reduction(+:frc2) 
   for (i = ibeg; i <= ifin1; i++) {
-    #pragma omp parallel for firstprivate(ibeg ,ifin1 ,k ,ki1 ,ki2 ,i ) reduction(none:frc2) 
+    #pragma omp parallel for firstprivate(ibeg ,ifin1 ,k ,ki1 ,ki2 ,i ) reduction(+:frc2) 
     for (k = ki1; k <= ki2-1; k++) {
       frc2 = frc2 + (  phi1[i][k]
 		       + phi1[i+1][k]

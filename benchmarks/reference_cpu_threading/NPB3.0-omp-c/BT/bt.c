@@ -184,13 +184,13 @@ c-------------------------------------------------------------------*/
 
   int i, j, k, m;
   
-  #pragma omp for 
+  #pragma omp parallel for private(j ,k ,m ,i ) 
   for (i = 1; i < grid_points[0]-1; i++) {
-    #pragma omp parallel for firstprivate(j ,k ,m ,i ) 
+    #pragma omp parallel for private(j ,k ,m ,i ) 
     for (j = 1; j < grid_points[1]-1; j++) {
-      #pragma omp parallel for firstprivate(j ,k ,m ,i ) 
+      #pragma omp parallel for private(j ,k ,m ,i ) 
       for (k = 1; k < grid_points[2]-1; k++) {
-	#pragma omp parallel for firstprivate(j ,k ,m ,i ) 
+	#pragma omp parallel for private(j ,k ,m ,i ) 
 	for (m = 0; m < 5; m++) {
 	  u[i][j][k][m] = u[i][j][k][m] + rhs[i][j][k][m];
 	}
@@ -227,7 +227,7 @@ c-------------------------------------------------------------------*/
   int i, j, k, m, d;
   double xi, eta, zeta, u_exact[5], add;
 
-  #pragma omp parallel for firstprivate(rms ,m ) 
+  #pragma omp parallel for private(m ) 
   for (m = 0; m < 5; m++) {
     rms[m] = 0.0;
   }
@@ -240,7 +240,7 @@ c-------------------------------------------------------------------*/
 	zeta = (double)k * dnzm1;
 	exact_solution(xi, eta, zeta, u_exact);
 
-	#pragma omp parallel for firstprivate(add ,rms ,m ,k ,j ,i ) 
+	#pragma omp parallel for private(add ,m)  firstprivate(k ,j ,i ) 
 	for (m = 0; m < 5; m++) {
 	  add = u[i][j][k][m] - u_exact[m];
 	  rms[m] = rms[m] + add*add;
@@ -249,9 +249,9 @@ c-------------------------------------------------------------------*/
     }
   }
 
-  #pragma omp parallel for firstprivate(d ,m ,rms ) 
+  #pragma omp parallel for private(d ,m ) 
   for (m = 0; m < 5; m++) {
-    #pragma omp parallel for firstprivate(m ,rms ) 
+    #pragma omp parallel for firstprivate(m ) 
     for (d = 0; d <= 2; d++) {
       rms[m] = rms[m] / (double)(grid_points[d]-2);
     }
@@ -270,7 +270,7 @@ static void rhs_norm(double rms[5]) {
   int i, j, k, d, m;
   double add;
 
-  #pragma omp parallel for firstprivate(rms ,m ) 
+  #pragma omp parallel for private(m ) 
   for (m = 0; m < 5; m++) {
     rms[m] = 0.0;
   }
@@ -278,7 +278,7 @@ static void rhs_norm(double rms[5]) {
   for (i = 1; i < grid_points[0]-1; i++) {
     for (j = 1; j < grid_points[1]-1; j++) {
       for (k = 1; k < grid_points[2]-1; k++) {
-	#pragma omp parallel for firstprivate(add ,rms ,m ,k ,j ,i ) 
+	#pragma omp parallel for private(add, m) firstprivate(k ,j ,i ) 
 	for (m = 0; m < 5; m++) {
 	  add = rhs[i][j][k][m];
 	  rms[m] = rms[m] + add*add;
@@ -287,9 +287,9 @@ static void rhs_norm(double rms[5]) {
     }
   }
 
-  #pragma omp parallel for firstprivate(d ,m ,rms ) 
+  #pragma omp parallel for private(d ,m ) 
   for (m = 0; m < 5; m++) {
-    #pragma omp parallel for firstprivate(m ,rms ) 
+    #pragma omp parallel for firstprivate(m ) 
     for (d = 0; d <= 2; d++) {
       rms[m] = rms[m] / (double)(grid_points[d]-2);
     }
@@ -317,13 +317,13 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c     initialize                                  
 c-------------------------------------------------------------------*/
-  #pragma omp parallel for 
+  #pragma omp parallel for private(j ,k ,m ,i )  
   for (i = 0; i < grid_points[0]; i++) {
-    #pragma omp parallel for firstprivate(j ,k ,m ,i ) 
+    #pragma omp parallel for private(j, k, m) firstprivate(i ) 
     for (j = 0; j < grid_points[1]; j++) {
-      #pragma omp parallel for firstprivate(j ,k ,m ,i ) 
+      #pragma omp parallel for private(k, m) firstprivate(j ,i ) 
       for (k = 0; k < grid_points[2]; k++) {
-	#pragma omp parallel for firstprivate(j ,k ,m ,i ) 
+	#pragma omp parallel for private(j, k, i) firstprivate(m ) 
 	for (m = 0; m < 5; m++) {
 	  forcing[i][j][k][m] = 0.0;
 	}
@@ -334,7 +334,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c     xi-direction flux differences                      
 c-------------------------------------------------------------------*/
-  #pragma omp parallel for 
+  #pragma omp parallel for private(m, i, k, j)
   for (j = 1; j < grid_points[1]-1; j++) {
     eta = (double)j * dnym1;
     
@@ -345,14 +345,14 @@ c-------------------------------------------------------------------*/
 	xi = (double)i * dnxm1;
 
 	exact_solution(xi, eta, zeta, dtemp);
-	#pragma omp parallel for firstprivate(m ,i ,k ,j ) 
+	#pragma omp parallel for firstprivate(i ,k ,j ) private(m)
 	for (m = 0; m < 5; m++) {
 	  ue[i][m] = dtemp[m];
 	}
 
 	dtpp = 1.0 / dtemp[0];
 
-	#pragma omp parallel for firstprivate(dtpp ,m ,i ,k ,j ) 
+	#pragma omp parallel for firstprivate(dtpp ,i ,k ,j ) private(m)
 	for (m = 1; m <= 4; m++) {
 	  buf[i][m] = dtpp * dtemp[m];
 	}
@@ -364,7 +364,7 @@ c-------------------------------------------------------------------*/
 		    buf[i][3]*ue[i][3]);
       }
                
-      #pragma omp parallel for firstprivate(dx1tx1 ,tx2 ,dx2tx1 ,xxcon1 ,c2 ,dx3tx1 ,xxcon2 ,dx4tx1 ,dx5tx1 ,xxcon5 ,xxcon4 ,xxcon3 ,c1 ,i ,k ,j ) 
+      #pragma omp parallel for private(i) firstprivate(dx1tx1 ,tx2 ,dx2tx1 ,xxcon1 ,c2 ,dx3tx1 ,xxcon2 ,dx4tx1 ,dx5tx1 ,xxcon5 ,xxcon4 ,xxcon3 ,c1 ,k ,j ) 
       for (i = 1; i < grid_points[0]-1; i++) {
 	im1 = i-1;
 	ip1 = i+1;
@@ -402,7 +402,7 @@ c-------------------------------------------------------------------*/
 c     Fourth-order dissipation                         
 c-------------------------------------------------------------------*/
 
-      #pragma omp parallel for firstprivate(dssp ,m ,k ,j ) 
+      #pragma omp parallel for private(m) firstprivate(dssp ,k ,j ) 
       for (m = 0; m < 5; m++) {
 	i = 1;
 	forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
@@ -413,9 +413,9 @@ c-------------------------------------------------------------------*/
 	    4.0*ue[i+1][m] +     ue[i+2][m]);
       }
 
-      #pragma omp parallel for firstprivate(dssp ,m ,k ,j ) 
+      #pragma omp parallel for private(m) firstprivate(dssp ,k ,j ) 
       for (m = 0; m < 5; m++) {
-	#pragma omp parallel for firstprivate(i ,dssp ,m ,k ,j ) 
+	#pragma omp parallel for private(i) firstprivate(dssp ,m ,k ,j ) 
 	for (i = 1*3; i <= grid_points[0]-3*1-1; i++) {
 	  forcing[i][j][k][m] = forcing[i][j][k][m] - dssp*
 	    (ue[i-2][m] - 4.0*ue[i-1][m] +
@@ -423,7 +423,7 @@ c-------------------------------------------------------------------*/
 	}
       }
 
-      #pragma omp parallel for firstprivate(dssp ,i ,m ,k ,j ) 
+      #pragma omp parallel for private(m, i) firstprivate(dssp ,k ,j ) 
       for (m = 0; m < 5; m++) {
 	i = grid_points[0]-3;
 	forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
@@ -440,7 +440,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c     eta-direction flux differences             
 c-------------------------------------------------------------------*/
-  #pragma omp parallel for 
+  #pragma omp parallel for private(m, j, k, i)  
   for (i = 1; i < grid_points[0]-1; i++) {
     xi = (double)i * dnxm1;
     
@@ -451,14 +451,14 @@ c-------------------------------------------------------------------*/
 	eta = (double)j * dnym1;
 
 	exact_solution(xi, eta, zeta, dtemp);
-	#pragma omp parallel for firstprivate(m ,j ,k ,i ) 
+	#pragma omp parallel for private(i, k, j) firstprivate(m) 
 	for (m = 0; m < 5; m++) {
 	  ue[j][m] = dtemp[m];
 	}
                   
 	dtpp = 1.0/dtemp[0];
 
-	#pragma omp parallel for firstprivate(dtpp ,m ,j ,k ,i ) 
+	#pragma omp parallel for private(m) firstprivate(dtpp ,j ,k ,i ) 
 	for (m = 1; m <= 4; m++) {
 	  buf[j][m] = dtpp * dtemp[m];
 	}
@@ -470,7 +470,7 @@ c-------------------------------------------------------------------*/
 		    buf[j][3]*ue[j][3]);
       }
 
-      #pragma omp parallel for firstprivate(dy1ty1 ,ty2 ,dy2ty1 ,yycon2 ,dy3ty1 ,yycon1 ,c2 ,dy4ty1 ,dy5ty1 ,yycon5 ,yycon4 ,yycon3 ,c1 ,j ,k ,i ) 
+      #pragma omp parallel for private(j) firstprivate(dy1ty1 ,ty2 ,dy2ty1 ,yycon2 ,dy3ty1 ,yycon1 ,c2 ,dy4ty1 ,dy5ty1 ,yycon5 ,yycon4 ,yycon3 ,c1 ,k ,i ) 
       for (j = 1; j < grid_points[1]-1; j++) {
 	jm1 = j-1;
 	jp1 = j+1;
@@ -508,7 +508,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c     Fourth-order dissipation                      
 c-------------------------------------------------------------------*/
-      #pragma omp parallel for firstprivate(dssp ,m ,k ,i ) 
+      #pragma omp parallel for private(m) firstprivate(dssp ,k ,i ) 
       for (m = 0; m < 5; m++) {
 	j = 1;
 	forcing[i][j][k][m] = forcing[i][j][k][m] - dssp *
@@ -958,7 +958,7 @@ c-------------------------------------------------------------------*/
   #pragma omp for 
   for (j = 1; j < grid_points[1]-1; j++) {
     for (k = 1; k < grid_points[2]-1; k++) {
-      #pragma omp parallel for firstprivate(_2 ,c2 ,c1 ,c3c4 ,con43 ,c1345 ,i ,k ,j ,tmp1 ,tmp2 ,tmp3 ) lastprivate(tmp1 ,tmp2 ,tmp3 ) 
+      #pragma omp parallel for firstprivate(c2 ,c1 ,c3c4 ,con43 ,c1345 ,i ,k ,j ,tmp1 ,tmp2 ,tmp3 ) lastprivate(tmp1 ,tmp2 ,tmp3 ) 
       for (i = 0; i < grid_points[0]; i++) {
 
 	tmp1 = 1.0 / u[i][j][k][0];
@@ -1052,7 +1052,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c     now jacobians set, so form left hand side in x direction
 c-------------------------------------------------------------------*/
-      #pragma omp parallel for firstprivate(_2 ,c2 ,c1 ,c3c4 ,con43 ,c1345 ,i ,k ,j ,tmp1 ,tmp2 ,tmp3 ) lastprivate(tmp1 ,tmp2 ,tmp3 ) 
+      #pragma omp parallel for firstprivate(c2 ,c1 ,c3c4 ,con43 ,c1345 ,i ,k ,j ,tmp1 ,tmp2 ,tmp3 ) lastprivate(tmp1 ,tmp2 ,tmp3 ) 
       for (i = 1; i < grid_points[0]-1; i++) {
 
 	tmp1 = dt * tx1;
@@ -1244,7 +1244,7 @@ c-------------------------------------------------------------------*/
   #pragma omp for 
   for (i = 1; i < grid_points[0]-1; i++) {
     for (j = 0; j < grid_points[1]; j++) {
-      #pragma omp parallel for firstprivate(_2 ,c2 ,c1 ,c3c4 ,con43 ,c1345 ,k ,j ,i ,tmp1 ,tmp2 ,tmp3 ) lastprivate(tmp1 ,tmp2 ,tmp3 ) 
+      #pragma omp parallel for firstprivate(c2 ,c1 ,c3c4 ,con43 ,c1345 ,k ,j ,i ,tmp1 ,tmp2 ,tmp3 ) lastprivate(tmp1 ,tmp2 ,tmp3 ) 
       for (k = 1; k < grid_points[2]-1; k++) {
 
 	tmp1 = 1.0 / u[i][j][k][0];
@@ -1346,7 +1346,7 @@ c     now joacobians set, so form left hand side in y direction
 c-------------------------------------------------------------------*/
   #pragma omp for 
   for (i = 1; i < grid_points[0]-1; i++) {
-    #pragma omp parallel for firstprivate(_2 ,c2 ,c1 ,c3c4 ,con43 ,c1345 ,k ,j ,i ,tmp1 ,tmp2 ,tmp3 ) lastprivate(tmp1 ,tmp2 ,tmp3 ) 
+    #pragma omp parallel for firstprivate(c2 ,c1 ,c3c4 ,con43 ,c1345 ,k ,j ,i ,tmp1 ,tmp2 ,tmp3 ) lastprivate(tmp1 ,tmp2 ,tmp3 ) 
     for (j = 1; j < grid_points[1]-1; j++) {
       for (k = 1; k < grid_points[2]-1; k++) {
 
@@ -1540,7 +1540,7 @@ c---------------------------------------------------------------------*/
   #pragma omp for 
   for (i = 1; i < grid_points[0]-1; i++) {
     for (j = 1; j < grid_points[1]-1; j++) {
-      #pragma omp parallel for firstprivate(_2 ,c2 ,c1 ,c3c4 ,con43 ,c4 ,c3 ,c1345 ,k ,j ,i ,tmp1 ,tmp2 ,tmp3 ) lastprivate(tmp1 ,tmp2 ,tmp3 ) 
+      #pragma omp parallel for firstprivate(c2 ,c1 ,c3c4 ,con43 ,c4 ,c3 ,c1345 ,k ,j ,i ,tmp1 ,tmp2 ,tmp3 ) lastprivate(tmp1 ,tmp2 ,tmp3 ) 
       for (k = 0; k < grid_points[2]; k++) {
 
 	tmp1 = 1.0 / u[i][j][k][0];
@@ -1641,7 +1641,7 @@ c     now jacobians set, so form left hand side in z direction
 c-------------------------------------------------------------------*/
   #pragma omp for 
   for (i = 1; i < grid_points[0]-1; i++) {
-    #pragma omp parallel for firstprivate(_2 ,c2 ,c1 ,c3c4 ,con43 ,c4 ,c3 ,c1345 ,k ,j ,i ,tmp1 ,tmp2 ,tmp3 ) lastprivate(tmp1 ,tmp2 ,tmp3 ) 
+    #pragma omp parallel for firstprivate(c2 ,c1 ,c3c4 ,con43 ,c4 ,c3 ,c1345 ,k ,j ,i ,tmp1 ,tmp2 ,tmp3 ) lastprivate(tmp1 ,tmp2 ,tmp3 ) 
     for (j = 1; j < grid_points[1]-1; j++) {
       for (k = 1; k < grid_points[2]-1; k++) {
 

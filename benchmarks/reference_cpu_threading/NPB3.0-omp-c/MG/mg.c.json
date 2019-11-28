@@ -512,7 +512,7 @@
 "multiversioned":"false",
 "induction variable":"i3",
 "private":["i1","i2","i3","a"],
-"reduction":["m:x:tmp"]
+"reduction":["tmp","s"]
 },
 "loop - object id : 46":{
 "file":"./NPB3.0-omp-c/MG/mg.c",
