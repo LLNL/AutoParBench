@@ -68,7 +68,7 @@ int main(int argc,char *argv[])
   }
   for (i = 0; i <= 19; i += 1) {
     for (j = 0; j <= 19; j += 1) {
-      printf("%d\n",a[i][j]);
+      printf("%lf\n",a[i][j]);
     }
   }
   return 0;

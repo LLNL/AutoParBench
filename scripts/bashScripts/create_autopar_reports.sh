@@ -33,8 +33,10 @@ fi
 
 COMPILER="icc -qopenmp -w"
 if [ -d "${SCRIPTS}/../benchmarks/Autopar/NPB3.0-omp-c/" ]; then
+  mkdir "${SCRIPTS}/../benchmarks/Autopar/NPB3.0-omp-c/bin"
   cd "${SCRIPTS}/../benchmarks/Autopar/NPB3.0-omp-c/"
   CLINK=${COMPILER} CC=${COMPILER} make suite
+  rm -r "${SCRIPTS}/../benchmarks/Autopar/NPB3.0-omp-c/bin"
 fi
 cd "${THIS}"
 

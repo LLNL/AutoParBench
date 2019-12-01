@@ -8,7 +8,7 @@
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"true"
+"multiversioned":"false"
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB014-outofbounds-orig-yes.c",

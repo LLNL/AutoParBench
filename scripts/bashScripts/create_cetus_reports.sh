@@ -31,10 +31,13 @@ cd ${SCRIPTS}
 if [ -f "${THIS}/logs/cetus.log" ]; then
   rm ${THIS}/logs/cetus.log
 fi
-#COMPILER="icc -qopenmp -w"
-#cd "${SCRIPTS}/../CETUS_results/NPB3.0-omp-c/"
-#CLINK=${COMPILER} CC=${COMPILER} make suite
-#cd "${SCRIPTS}"
+
+COMPILER="icc -qopenmp -w"
+cd "${SCRIPTS}/../benchmarks/Cetus/NPB3.0-omp-c/"
+mkdir "${SCRIPTS}/../benchmarks/Cetus/NPB3.0-omp-c/bin"
+CLINK=${COMPILER} CC=${COMPILER} make suite
+rm -r "${SCRIPTS}/../benchmarks/Cetus/NPB3.0-omp-c/bin"
+cd "${SCRIPTS}"
 
 cd ${OUTPUT_DIR}
 BENCHS=$(find . -name "*.c" | sort)

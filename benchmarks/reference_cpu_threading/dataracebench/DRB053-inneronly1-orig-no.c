@@ -71,7 +71,7 @@ int main(int argc,char *argv[])
 
   for (i = 0; i < 20; i++)
     for (j = 0; j < 20; j++)
-      printf("%d\n",a[i][j]);
+      printf("%lf\n",a[i][j]);
 
 
 

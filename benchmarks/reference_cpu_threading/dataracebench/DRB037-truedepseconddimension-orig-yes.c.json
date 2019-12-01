@@ -47,7 +47,7 @@
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"true"
+"multiversioned":"false"
 },
 "loop - object id : 5":{
 "file":"./dataracebench/DRB037-truedepseconddimension-orig-yes.c",

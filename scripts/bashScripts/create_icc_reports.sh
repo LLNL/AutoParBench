@@ -31,7 +31,9 @@ cd ${SCRIPTS}
 COMPILER="icc -qopenmp -w"
 if [ -d "${OUTPUT_DIR}/NPB3.0-omp-c/" ]; then
   cd "${OUTPUT_DIR}/NPB3.0-omp-c/"
+  mkdir "${OUTPUT_DIR}/NPB3.0-omp-c/bin"
   CLINK=${COMPILER} CC=${COMPILER} make suite
+  rm -r "${OUTPUT_DIR}/NPB3.0-omp-c/bin"
 cd "${SCRIPTS}"
 fi
 

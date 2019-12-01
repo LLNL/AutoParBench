@@ -589,7 +589,7 @@ void rank(int iteration)
 	{
 		passed_verification=0;
 	}
-	c_print_results("IS", 'A', 1<<23, 0, 0, 10, nthreads, timecounter, (((double)(10*(1<<23)))/timecounter)/1000000.0, "keys ranked", passed_verification, "3.0 structured", "11 Sep 2019", "(none)", "(none)", "-lm", "(none)", "(none)", "(none)", "randlc");
+	c_print_results("IS", 'A', 1<<23, 0, 0, 10, nthreads, timecounter, (((double)(10*(1<<23)))/timecounter)/1000000.0, "keys ranked", passed_verification, "3.0 structured", "01 Dec 2019", "(none)", "(none)", "-lm", "(none)", "(none)", "(none)", "randlc");
 	/*  */
 	return _ret_val_0;
 }

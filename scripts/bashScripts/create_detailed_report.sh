@@ -57,6 +57,7 @@ do
   link_ground_truth="(../../benchmarks/original/${filename})"
 
   row_data="${index#*|}"
+  echo "$row_data"
   row_data="${row_data/ | YES/}"
   row_data="${row_data/ | NO/}"
   row_ground_truth="${index##*|}"
@@ -75,6 +76,7 @@ echo "" &>> ${THIS}/reports/Detailed-Report-${TOOL}.md
 set_environment
 
 create_detailed_report "Autopar" "reference_cpu_threading"
+exit 0;
 create_detailed_report "Cetus" "reference_cpu_threading"
 create_detailed_report "ICC_Full" "reference_cpu_threading"
 create_detailed_report "ICC_Cost" "reference_cpu_threading"

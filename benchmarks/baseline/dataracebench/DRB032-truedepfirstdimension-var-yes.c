@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
 
   for (i=0; i<n; i++)
     for (j=0; j<m; j++)
-      printf("%d\n",b[i][j]);
+      printf("%lf\n",b[i][j]);
 
   return 0;
 }

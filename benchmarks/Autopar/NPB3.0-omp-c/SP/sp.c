@@ -126,7 +126,7 @@ c-------------------------------------------------------------------*/
    else {
     mflops = 0.0;
   }
-  c_print_results("SP",class,grid_points[0],grid_points[1],grid_points[2],niter,nthreads,tmax,mflops,"          floating point",verified,"3.0 structured","11 Sep 2019","(none)","(none)","-lm","(none)","(none)","(none)","(none)");
+  c_print_results("SP",class,grid_points[0],grid_points[1],grid_points[2],niter,nthreads,tmax,mflops,"          floating point",verified,"3.0 structured","01 Dec 2019","(none)","(none)","-lm","(none)","(none)","(none)","(none)");
 }
 /*--------------------------------------------------------------------
 --------------------------------------------------------------------*/

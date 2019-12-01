@@ -156,7 +156,7 @@ c-------------------------------------------------------------------*/
    else {
     mflops = 0.0;
   }
-  c_print_results("FT",class,256,256,128,niter,nthreads,total_time,mflops,"          floating point",verified,"3.0 structured","11 Sep 2019","(none)","(none)","-lm","(none)","(none)","(none)","randdp");
+  c_print_results("FT",class,256,256,128,niter,nthreads,total_time,mflops,"          floating point",verified,"3.0 structured","01 Dec 2019","(none)","(none)","-lm","(none)","(none)","(none)","randdp");
   if (0 == 1) 
     print_timers();
 }

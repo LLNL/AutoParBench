@@ -110,7 +110,7 @@ c   verification test
 --------------------------------------------------------------------*/
   verify(rsdnm,errnm,frc,&class,&verified);
   mflops = ((double )itmax) * (1984.77 * ((double )nx0) * ((double )ny0) * ((double )nz0) - 10923.3 * (((double )(nx0 + ny0 + nz0)) / 3.0 * (((double )(nx0 + ny0 + nz0)) / 3.0)) + 27770.9 * ((double )(nx0 + ny0 + nz0)) / 3.0 - 144010.0) / (maxtime * 1000000.0);
-  c_print_results("LU",class,nx0,ny0,nz0,itmax,nthreads,maxtime,mflops,"          floating point",verified,"3.0 structured","11 Sep 2019","(none)","(none)","-lm","(none)","(none)","(none)","(none)");
+  c_print_results("LU",class,nx0,ny0,nz0,itmax,nthreads,maxtime,mflops,"          floating point",verified,"3.0 structured","01 Dec 2019","(none)","(none)","-lm","(none)","(none)","(none)","(none)");
 }
 /*--------------------------------------------------------------------
 --------------------------------------------------------------------*/

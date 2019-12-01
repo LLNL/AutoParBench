@@ -52,7 +52,6 @@ void foo1(double o1[], double c[], int len)
 { 
   int i ;
 
-  #pragma omp parallel for firstprivate(c ,o1 ,i ,len ) 
   for (i = 0; i < len; ++i) {
     double volnew_o8 = 0.5 * c[i];
     o1[i] = volnew_o8;

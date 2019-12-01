@@ -29,7 +29,7 @@
 "file":"./dataracebench/DRB047-doallchar-orig-no.c",
 "function":"main",
 "loop id":"3",
-"loop line":"67",
+"loop line":"66",
 "loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",

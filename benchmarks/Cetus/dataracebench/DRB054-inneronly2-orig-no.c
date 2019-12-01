@@ -136,7 +136,7 @@ int main()
 		#pragma loop name main#2#0 
 		for (j=0; j<n; j ++ )
 		{
-			printf("%d\n", b[i][j]);
+			printf("%lf\n", b[i][j]);
 		}
 	}
 	_ret_val_0=0;

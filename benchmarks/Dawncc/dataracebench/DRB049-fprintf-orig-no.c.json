@@ -10,7 +10,7 @@
 "offload":"true",
 "multiversioned":"false",
 "induction variable":"i",
-"map tofrom":["A[0:1000]"]
+"map from":["A[0:1000]"]
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB049-fprintf-orig-no.c",

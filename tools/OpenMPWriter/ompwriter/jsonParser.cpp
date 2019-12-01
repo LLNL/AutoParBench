@@ -312,6 +312,8 @@ std::string JSONParser::generateOMPLoop(parallel_loop loop) {
     directive += "map(from:" + getListofClauses(loop.map_from) + ") ";
   if (loop.map_tofrom.size() > 0)
     directive += "map(tofrom:" + getListofClauses(loop.map_tofrom) + ") ";
+  if (loop.ordered)
+    directive += "ordered ";
   directive += "\n";
   return directive;
 }

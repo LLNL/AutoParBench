@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+#set -e
 
 run_ICC_parser () {
 ICC_DIR=${1}
@@ -52,11 +52,16 @@ setEnvironment () {
   COMPILER="icc -w -qopenmp -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5"
   cd "${SCRIPTS}/../benchmarks/ICC_Full/NPB3.0-omp-c"
   CLINK=${COMPILER} CC=${COMPILER} make veryclean
+  mkdir  "${SCRIPTS}/../benchmarks/ICC_Full/NPB3.0-omp-c/bin"
   CLINK=${COMPILER} CC=${COMPILER} make suite
+  rm -r "${SCRIPTS}/../benchmarks/ICC_Full/NPB3.0-omp-c/bin"
   cd "${THIS}"
   cd "${SCRIPTS}/../benchmarks/ICC_Cost/NPB3.0-omp-c"
   CLINK=${COMPILER} CC=${COMPILER} make veryclean
+  mkdir "${SCRIPTS}/../benchmarks/ICC_Cost/NPB3.0-omp-c/bin"
   CLINK=${COMPILER} CC=${COMPILER} make suite
+  rm -r "${SCRIPTS}/../benchmarks/ICC_Cost/NPB3.0-omp-c/bin"
+  
   if [ -f "${SCRIPTS}/../benchmarks/ICC_Full/NPB3.0-omp-c/bin/ipo_out.optrpt" ]; then
     rm "${SCRIPTS}/../benchmarks/ICC_Full/NPB3.0-omp-c/bin/ipo_out.optrpt"
   fi

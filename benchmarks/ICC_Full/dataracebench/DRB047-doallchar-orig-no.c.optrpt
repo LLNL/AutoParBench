@@ -33,7 +33,7 @@ Begin optimization report for: main()
     Report from: Interprocedural optimizations [ipo]
 
 INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(58,1)
-  -> EXTERN: (65,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (66,5) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
@@ -55,9 +55,9 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(64,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(65,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(65,5) ]
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(66,5) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 

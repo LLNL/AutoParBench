@@ -9,13 +9,13 @@ SCRIPTS=$(pwd)
 cd "${THIS}"
 
 # remove the output directory, if it exists
-if [ -d "${SCRIPTS}/../benchmarks/reference_cpu_threading" ]; then
-  rm -r "${SCRIPTS}/../benchmarks/reference_cpu_threading"
+if [ -d "${SCRIPTS}/../benchmarks/baseline" ]; then
+  rm -r "${SCRIPTS}/../benchmarks/baseline"
 fi
-mkdir "${SCRIPTS}/../benchmarks/reference_cpu_threading"
+mkdir "${SCRIPTS}/../benchmarks/baseline"
 
 # Map directoires
-cd "${SCRIPTS}/../benchmarks/reference_cpu_threading"
+cd "${SCRIPTS}/../benchmarks/baseline"
 BASELINEDIR=$(pwd)
 cd "${THIS}"
 
@@ -37,18 +37,17 @@ fi
 cp -r "${CPU_reference_DIR}" "${BASELINEDIR}"
 
 for csource in $(find "${CPU_sequential_DIR}" -name "*.c" ); do
-  cp "${csource}" "${csource/sequential/reference_cpu_threading}"
+  cp "${csource}" "${csource/sequential/baseline}"
 done
 for csource in $(find "${CPU_sequential_DIR}" -name "*.cpp" ); do
-  cp "${csource}" "${csource/sequential/reference_cpu_threading}"
+  cp "${csource}" "${csource/sequential/baseline}"
 done
 for csource in $(find "${CPU_sequential_DIR}" -name "*.h" ); do
-  cp "${csource}" "${csource/sequential/reference_cpu_threading}"
+  cp "${csource}" "${csource/sequential/baseline}"
 done
 for csource in $(find "${CPU_sequential_DIR}" -name "*.hpp" ); do
-  cp "${csource}" "${csource/sequential/reference_cpu_threading}"
+  cp "${csource}" "${csource/sequential/baseline}"
 done
-
 }
 
 generate_ground_truth_jsons() {
@@ -62,10 +61,11 @@ chmod +x ${THIS}/equivalence_checker.out
 
 # Join the manual JSON file and ICC without threshold to find all parallelizable but not profitable loops.
 for json in $(find "${BASELINEDIR}" -name "*.json" | sort); do
-  if [ -f "${json/reference_cpu_threading/ICC_Full}" ]; then
-    ./equivalence_checker.out -join "${json/reference_cpu_threading/original}" "${json/reference_cpu_threading/ICC_Full}" "${json}"
+   echo "Creating ${json}"
+   if [ -f "${json/baseline/ICC_Full}" ]; then
+    ./equivalence_checker.out -join "${json/baseline/original}" "${json/baseline/ICC_Full}" "${json}"
   else
-    ./equivalence_checker.out -join "${json/reference_cpu_threading/original}" "${jsonjson/reference_cpu_threading/original}" "${json}"
+    ./equivalence_checker.out -join "${json/baseline/original}" "${json/baseline/original}" "${json}"
   fi
 done
 }
@@ -125,7 +125,11 @@ cd "${THIS}"
 clean_environment() {
 # remove temporary files
 #find "${BASELINEDIR}" -type f ! \( -name '*.json' \) -delete
-rm ${THIS}/equivalence_checker.out
+find "${BASELINEDIR}" -type f \( -name '*.optrpt' \) -delete
+if [ -f "${THIS}/equivalence_checker.out" ]; then
+  rm ${THIS}/equivalence_checker.out
+fi
+
 }
 
 set_environment

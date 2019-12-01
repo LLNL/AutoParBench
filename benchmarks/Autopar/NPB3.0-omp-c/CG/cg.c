@@ -310,7 +310,7 @@ c-------------------------------------------------------------------*/
    else {
     mflops = 0.0;
   }
-  c_print_results("CG",class,14000,0,0,15,nthreads,t,mflops,"          floating point",verified,"3.0 structured","21 Oct 2019","(none)","(none)","-lm","(none)","(none)","(none)","randdp");
+  c_print_results("CG",class,14000,0,0,15,nthreads,t,mflops,"          floating point",verified,"3.0 structured","01 Dec 2019","(none)","(none)","-lm","(none)","(none)","(none)","randdp");
 }
 /*--------------------------------------------------------------------
 c-------------------------------------------------------------------*/

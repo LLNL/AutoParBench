@@ -402,6 +402,15 @@ tmp_files=(
 ./benchmarks/reference_cpu_threading/rodinia_3.1/openmp/cfd/density
 ./benchmarks/reference_cpu_threading/rodinia_3.1/openmp/cfd/density_energy
 ./benchmarks/reference_cpu_threading/rodinia_3.1/openmp/cfd/momentum
+./benchmarks/reference_cpu_threading/rodinia_3.1/openmp/b+tree/output.txt
+./benchmarks/reference_cpu_threading/rodinia_3.1/openmp/bfs/bfs
+./benchmarks/reference_cpu_threading/rodinia_3.1/openmp/bfs/bfs_offload
+./benchmarks/reference_cpu_threading/rodinia_3.1/openmp/bfs/result.txt
+./benchmarks/reference_cpu_threading/rodinia_3.1/openmp/cfd/euler3d_cpu
+./benchmarks/reference_cpu_threading/rodinia_3.1/openmp/cfd/euler3d_cpu_double
+./benchmarks/reference_cpu_threading/rodinia_3.1/openmp/heartwall/heartwall
+./benchmarks/reference_cpu_threading/rodinia_3.1/openmp/hotspot/hotspot
+./benchmarks/reference_cpu_threading/rodinia_3.1/openmp/hotspot3D/3D
 ./benchmarks/baseline/NPB3.0-omp-c/sys/setparams
 ./benchmarks/baseline/rodinia_3.1/openmp/heartwall/heartwall
 ./benchmarks/baseline/NPB3.0-omp-c/sys/setparams
@@ -413,6 +422,9 @@ tmp_files=(
 ./benchmarks/baseline/rodinia_3.1/openmp/bfs/result.txt
 ./benchmarks/baseline/rodinia_3.1/openmp/cfd/euler3d_cpu
 ./benchmarks/baseline/rodinia_3.1/openmp/cfd/euler3d_cpu_double
+./benchmarks/baseline/rodinia_3.1/openmp/b+tree/output.txt
+./benchmarks/baseline/rodinia_3.1/openmp/hotspot/hotspot
+./benchmarks/baseline/rodinia_3.1/openmp/hotspot3D/3D
 )
 }
 
@@ -467,34 +479,17 @@ rm polybench.o
 cd "${THIS}"
 }
 
-
 check_dataracebench() {
 cd "${OUTPUTS}"
 echo "<tr><th colspan='3'> DataRaceBench </th></tr>" &>> ${THIS}/reports/Correctness_Report.md
 for f in ${DATARACEBENCH[@]}; do
   ref_file=${f}
-  ICC_Full_file=${f/_ref_out.txt/_ICC_Full_out.txt}
-  orig_file=${f/_ref_out.txt/_orig_out.txt}
   ground_truth_file=${f/_ref_out.txt/_ground_truth_out.txt}
 
-  DIFF_ICC=$(diff "${OUTPUTS}/${ref_file}" "${OUTPUTS}/${ICC_Full_file}")
-  DIFF_ORIG=$(diff "${OUTPUTS}/${ref_file}" "${OUTPUTS}/${orig_file}")
-  DIFF_ORIG=$(diff "${OUTPUTS}/${ref_file}" "${OUTPUTS}/${ground_truth_file}")
+  DIFF_GT=$(diff "${OUTPUTS}/${ref_file}" "${OUTPUTS}/${ground_truth_file}")
 
   REPORT="<tr><td>${ref_file/_ref_out.txt/}</td>"
   if [ "$DIFF_GT" != "" ]
-  then
-    REPORT="${REPORT}<td>No</td>"
-  else
-    REPORT="${REPORT}<td>Yes</td>"
-  fi
-  if [ "$DIFF_ICC" != "" ]
-  then
-    REPORT="${REPORT}<td>No</td>"
-  else
-    REPORT="${REPORT}<td>Yes</td>"
-  fi
-  if [ "$DIFF_ORIG" != "" ]
   then
     REPORT="${REPORT}<td>No</td>"
   else
@@ -510,12 +505,8 @@ check_rodinia() {
 echo "<tr><th colspan='3'> Rodinia </th></tr>" &>> ${THIS}/reports/Correctness_Report.md
 for f in ${RODINIA[@]}; do
   ref_file=${f}
-  ICC_Full_file=${f/_ref_out.txt/_ICC_Full_out.txt}
-  orig_file=${f/_ref_out.txt/_orig_out.txt}
   ground_truth_file=${f/_ref_out.txt/_ground_truth_out.txt}
 
-  DIFF_ICC=$(diff "${OUTPUTS}/${ref_file}" "${OUTPUTS}/${ICC_Full_file}")
-  DIFF_ORIG=$(diff "${OUTPUTS}/${ref_file}" "${OUTPUTS}/${orig_file}")
   DIFF_GT=$(diff "${OUTPUTS}/${ref_file}" "${OUTPUTS}/${ground_truth_file}")
 
   REPORT="<tr><td>${ref_file/_ref_out.txt/}</td>"
@@ -525,18 +516,6 @@ for f in ${RODINIA[@]}; do
   else
     REPORT="${REPORT}<td>Yes</td>"
   fi 
-  if [ "$DIFF_ICC" != "" ]
-  then
-    REPORT="${REPORT}<td>No</td>"
-  else
-    REPORT="${REPORT}<td>Yes</td>"
-  fi
-  if [ "$DIFF_ORIG" != "" ]
-  then
-    REPORT="${REPORT}<td>No</td>"
-  else
-    REPORT="${REPORT}<td>Yes</td>"
-  fi
   REPORT="${REPORT}</tr>"
   echo "$REPORT" &>> ${THIS}/reports/Correctness_Report.md
 done
@@ -546,28 +525,22 @@ check_nas() {
 echo "<tr><th colspan='3'> NAS Parallel Benchmarks </th></tr>" &>> ${THIS}/reports/Correctness_Report.md
 for f in ${NAS[@]}; do
   ref_file=${f}
-  ICC_Full_file=${f/_ref_out.txt/_ICC_Full_out.txt}
-  orig_file=${f/_ref_out.txt/_orig_out.txt}
   ground_truth_file=${f/_ref_out.txt/_ground_truth_out.txt}
 
-  DIFF_ICC=$(echo "${OUTPUTS}/${ICC_Full_file}" | grep "Verification    =               SUCCESSFUL")
-  DIFF_ORIG=$(echo "${OUTPUTS}/${orig_file}" | grep "Verification    =               SUCCESSFUL")
-  DIFF_GT=$(echo "${OUTPUTS}/${ground_truth_file}" | grep "Verification    =               SUCCESSFUL")
-
+  VALID="true"
+  # If none word SUCCESSFUL or UNSUCCESSFUL were found, invalidate the result
+  DIFF_GT=$(cat "${OUTPUTS}/${ground_truth_file}" | grep "SUCCESSFUL")
+  if [ "$DIFF_GT" == "" ]; then
+     VALID="false"
+  fi
+  # If the word UNSUCCESSFUL were found, invalidate the result
+  DIFF_GT=$(cat "${OUTPUTS}/${ground_truth_file}" | grep "UNSUCCESSFUL")
+  if [ "$DIFF_GT" != "" ]; then
+     VALID="false"
+  fi
+  echo "DIFF OF (${OUTPUTS}/${ground_truth_file}) : $DIFF_GT"
   REPORT="<tr><td>${ref_file/_ref_out.txt/}</td>"
-  if [ "$DIFF_GT" != "" ]
-  then
-    REPORT="${REPORT}<td>No</td>"
-  else
-    REPORT="${REPORT}<td>Yes</td>"
-  fi
-  if [ "$DIFF_ICC" != "" ]
-  then
-    REPORT="${REPORT}<td>No</td>"
-  else
-    REPORT="${REPORT}<td>Yes</td>"
-  fi
-  if [ "$DIFF_ORIG" != "" ]
+  if [ "$VALID" != "true" ]
   then
     REPORT="${REPORT}<td>No</td>"
   else
@@ -584,7 +557,7 @@ check_outputs() {
   echo "" &>> ${THIS}/reports/Correctness_Report.md
   echo "This report was produced comparing if the output parallel programs are equal or different from the sequential one. Yes or No are the possible values, the next step is a manual inspection." &>> ${THIS}/reports/Correctness_Report.md
   echo "" &>> ${THIS}/reports/Correctness_Report.md
-  echo "<table><tr><th>Benchmark</th><th>Ground Truth</th><th>ICC Full</th><th>Original</th></tr>" &>> ${THIS}/reports/Correctness_Report.md
+  echo "<table><tr><th>Benchmark</th><th>Ground Truth</th></tr>" &>> ${THIS}/reports/Correctness_Report.md
   check_dataracebench
   check_rodinia
   check_nas
@@ -595,49 +568,27 @@ export PATH="/opt/intel/compilers_and_libraries_2019.4.243/linux/bin/intel64/:$P
 
 set_environment
 create_lists
-: <<'END'
 COMPILER="icc -qopenmp -w"
 COMPILERCPP="icc -qopenmp -w"
 COMPLINK="icc -qopenmp -w"
 COMPICC="icc -qopenmp -w "
 DIRECTORY="CPU_reference -w"
 DIRECTORY="sequential"
-run_NAS "ref"
-run_Rodinia "ref"
-run_dataracebench "ref"
+#run_NAS "ref"
+#run_Rodinia "ref"
+#run_dataracebench "ref"
 
 COMPILER="icc -qopenmp -w"
 COMPILERCPP="icc -qopenmp -w"
 COMPLINK="icc -qopenmp -w"
 COMPICC="icc -qopenmp -w "
 DIRECTORY="CPU_reference -w"
-DIRECTORY="original"
-run_NAS "orig"
-run_Rodinia "orig"
-run_dataracebench "orig"
-END
-COMPILER="icc -qopenmp -w"
-COMPILERCPP="icc -qopenmp -w"
-COMPLINK="icc -qopenmp -w"
-COMPICC="icc -qopenmp -w "
-DIRECTORY="CPU_reference -w"
-DIRECTORY="baseline"
-run_NAS "ground_truth"
-run_Rodinia "ground_truth"
-run_dataracebench "ground_truth"
-
-: <<'END'
-COMPILER="icc -w -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=3"
-COMPILERCPP="icc -w -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=3"
-COMPLINK="icc -w -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=3"
-COMPICC="icc -w -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=3"
-DIRECTORY="sequential"
-run_NAS "ICC_Full" 
-run_Rodinia "ICC_Full"
-run_dataracebench "ICC_Full"
+DIRECTORY="reference_cpu_threading"
+#run_NAS "ground_truth"
+#run_Rodinia "ground_truth"
+#run_dataracebench "ground_truth"
 
 check_outputs
-END
 clean_environment
 exit 0;
 

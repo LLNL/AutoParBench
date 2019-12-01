@@ -61,6 +61,7 @@ int main()
     a[i]=i;
   for (i=0;i<100;i++)
     a[i]=a[i]+1;
+
   for (i=0;i<100;i++)
     printf("%c\n",a[i]);
   return 0;

@@ -5,11 +5,10 @@
 "loop id":"1",
 "loop line":"55",
 "loop column":"3",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"true",
-"firstprivate":["c","o1","i","len"]
+"multiversioned":"false"
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB050-functionparameter-orig-yes.c",

@@ -138,7 +138,7 @@ int main(int argc, char * argv[])
 		#pragma loop name main#2#0 
 		for (j=0; j<20; j ++ )
 		{
-			printf("%d\n", a[i][j]);
+			printf("%lf\n", a[i][j]);
 		}
 	}
 	_ret_val_0=0;

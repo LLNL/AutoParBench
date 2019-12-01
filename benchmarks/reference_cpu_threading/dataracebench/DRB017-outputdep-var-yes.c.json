@@ -5,11 +5,9 @@
 "loop id":"1",
 "loop line":"68",
 "loop column":"3",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["len","a","i"],
-"lastprivate":["i"]
+"multiversioned":"false"
 }
 }
