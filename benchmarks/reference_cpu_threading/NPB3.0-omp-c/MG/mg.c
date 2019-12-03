@@ -137,7 +137,7 @@ c---------------------------------------------------------------------*/
 	ny[lt] = NY_DEFAULT;
 	nz[lt] = NZ_DEFAULT;
 
-	#pragma omp parallel for firstprivate(i ) 
+	#pragma omp parallel for  
 	for (i = 0; i <= 7; i++) {
 	    debug_vec[i] = DEBUG_DEFAULT;
 	}
@@ -345,7 +345,7 @@ c-------------------------------------------------------------------*/
 	nz[k] = nz[k+1]/2;
     }
 
-    #pragma omp parallel for firstprivate(lt ,k ) 
+    #pragma omp parallel for firstprivate(lt ) 
     for (k = 1; k <= lt; k++) {
 	m1[k] = nx[k]+2;
 	m2[k] = nz[k]+2;
@@ -454,14 +454,14 @@ c-------------------------------------------------------------------*/
     #pragma omp parallel for private(i1 ,i2 ,i3 ,r1 ,r2 ) 
     for (i3 = 1; i3 < n3-1; i3++) {
 	for (i2 = 1; i2 < n2-1; i2++) {
-            #pragma omp parallel for firstprivate(n1 ,r ,i1 ,i2 ,i3 ) 
+            #pragma omp parallel for firstprivate(n1 ,r ,i2 ,i3 ) 
             for (i1 = 0; i1 < n1; i1++) {
 		r1[i1] = r[i3][i2-1][i1] + r[i3][i2+1][i1]
 		    + r[i3-1][i2][i1] + r[i3+1][i2][i1];
 		r2[i1] = r[i3-1][i2-1][i1] + r[i3-1][i2+1][i1]
 		    + r[i3+1][i2-1][i1] + r[i3+1][i2+1][i1];
 	    }
-            #pragma omp parallel for firstprivate(n1 ,c ,r ,u ,i1 ,i2 ,i3 ) 
+            #pragma omp parallel for firstprivate(n1 ,c ,r ,u ,i2 ,i3 ) 
             for (i1 = 1; i1 < n1-1; i1++) {
 		u[i3][i2][i1] = u[i3][i2][i1]
 		    + c[0] * r[i3][i2][i1]
@@ -518,7 +518,7 @@ c-------------------------------------------------------------------*/
     #pragma omp parallel for private(i1 ,i2 ,i3 ,u1 ,u2 ) 
     for (i3 = 1; i3 < n3-1; i3++) {
 	for (i2 = 1; i2 < n2-1; i2++) {
-            #pragma omp parallel for firstprivate(n1 ,u ,i1 ,i2 ,i3 ) 
+            #pragma omp parallel for firstprivate(n1 ,u ,i2 ,i3 ) 
             for (i1 = 0; i1 < n1; i1++) {
 		u1[i1] = u[i3][i2-1][i1] + u[i3][i2+1][i1]
 		       + u[i3-1][i2][i1] + u[i3+1][i2][i1];
@@ -595,7 +595,7 @@ c-------------------------------------------------------------------*/
     } else {
         d3 = 1;
     }
-    #pragma omp parallel for private(j1 ,j2 ,j3 ,i1 ,i2 ,i3 ,x1 ,y1 ,x2 ,y2 ) 
+    #pragma omp parallel for private(j1 ,j2 ,i1 ,i2 ,i3 ,x1 ,y1 ,x2 ,y2 ) 
     for (j3 = 1; j3 < m3j-1; j3++) {
 	i3 = 2*j3-d3;
 /*C        i3 = 2*j3-1*/
@@ -603,7 +603,7 @@ c-------------------------------------------------------------------*/
             i2 = 2*j2-d2;
 /*C           i2 = 2*j2-1*/
 
-            #pragma omp parallel for firstprivate(m1j ,d2 ,d3 ,i1 ,d1 ,i2 ,i3 ,r ,j1 ,j2 ,j3 ) 
+            #pragma omp parallel for firstprivate(m1j ,d2 ,d3 ,i1 ,d1 ,i2 ,i3 ,r ,j2 ,j3 ) 
             for (j1 = 1; j1 < m1j; j1++) {
 		i1 = 2*j1-d1;
 /*C             i1 = 2*j1-1*/
@@ -670,10 +670,10 @@ c      parameter( m=535 )
     double z1[M], z2[M], z3[M];
 
     if ( n1 != 3 && n2 != 3 && n3 != 3 ) {
-	#pragma omp parallel for private(i1 ,i2 ,i3 ,z1 ,z2 ,z3 ) 
+	#pragma omp parallel for private(i1 ,i2 ,z1 ,z2 ,z3 ) 
 	for (i3 = 0; i3 < mm3-1; i3++) {
             for (i2 = 0; i2 < mm2-1; i2++) {
-		#pragma omp parallel for firstprivate(mm1 ,z ,i1 ,i2 ,i3 ) 
+		#pragma omp parallel for firstprivate(mm1 ,z ,i2 ,i3 ) 
 		for (i1 = 0; i1 < mm1; i1++) {
 		    z1[i1] = z[i3][i2+1][i1] + z[i3][i2][i1];
 		    z2[i1] = z[i3+1][i2][i1] + z[i3][i2][i1];
@@ -685,21 +685,21 @@ c      parameter( m=535 )
 		    u[2*i3][2*i2][2*i1+1] = u[2*i3][2*i2][2*i1+1]
 			+0.5*(z[i3][i2][i1+1]+z[i3][i2][i1]);
 		}
-		#pragma omp parallel for firstprivate(mm1 ,u ,i1 ,i2 ,i3 ) 
+		#pragma omp parallel for firstprivate(mm1 ,u ,i2 ,i3 ) 
 		for (i1 = 0; i1 < mm1-1; i1++) {
 		    u[2*i3][2*i2+1][2*i1] = u[2*i3][2*i2+1][2*i1]
 			+0.5 * z1[i1];
 		    u[2*i3][2*i2+1][2*i1+1] = u[2*i3][2*i2+1][2*i1+1]
 			+0.25*( z1[i1] + z1[i1+1] );
 		}
-		#pragma omp parallel for firstprivate(mm1 ,u ,i1 ,i2 ,i3 ) 
+		#pragma omp parallel for firstprivate(mm1 ,u ,i2 ,i3 ) 
 		for (i1 = 0; i1 < mm1-1; i1++) {
 		    u[2*i3+1][2*i2][2*i1] = u[2*i3+1][2*i2][2*i1]
 			+0.5 * z2[i1];
 		    u[2*i3+1][2*i2][2*i1+1] = u[2*i3+1][2*i2][2*i1+1]
 			+0.25*( z2[i1] + z2[i1+1] );
 		}
-		#pragma omp parallel for firstprivate(mm1 ,u ,i1 ,i2 ,i3 ) 
+		#pragma omp parallel for firstprivate(mm1 ,u ,i2 ,i3 ) 
 		for (i1 = 0; i1 < mm1-1; i1++) {
 		    u[2*i3+1][2*i2+1][2*i1] = u[2*i3+1][2*i2+1][2*i1]
 			+0.25* z3[i1];
@@ -734,7 +734,7 @@ c      parameter( m=535 )
 	}
          
     {
-	#pragma omp parallel for private(i1 ,i2 ,i3 ) 
+	#pragma omp parallel for private(i1 ,i2) 
 	for ( i3 = d3; i3 <= mm3-1; i3++) {
             for ( i2 = d2; i2 <= mm2-1; i2++) {
 		for ( i1 = d1; i1 <= mm1-1; i1++) {
@@ -762,7 +762,7 @@ c      parameter( m=535 )
 		}
 	    }
 	}
-	#pragma omp parallel for private(i1 ,i2 ,i3 ) 
+	#pragma omp parallel for private(i1 ,i2) 
 	for ( i3 = 1; i3 <= mm3-1; i3++) {
             for ( i2 = d2; i2 <= mm2-1; i2++) {
 		for ( i1 = d1; i1 <= mm1-1; i1++) {
@@ -830,11 +830,11 @@ c-------------------------------------------------------------------*/
 
     n = nx*ny*nz;
 
-    #pragma omp parallel for private(i1 ,i2 ,i3 ,a ) reduction(+:tmp) reduction(+:s) 
+    #pragma omp parallel for private(i1 ,i2 ,a ) reduction(+:tmp) reduction(+:s) 
     for (i3 = 1; i3 < n3-1; i3++) {
-	#pragma omp parallel for firstprivate(n3 ,i2 ,i1 ,r ,n1 ,n2 ,i3 ) reduction(+:tmp) reduction(+:s) 
+	#pragma omp parallel for firstprivate(n3 ,i1 ,r ,n1 ,n2 ,i3 ) reduction(+:tmp) reduction(+:s) 
 	for (i2 = 1; i2 < n2-1; i2++) {
-            #pragma omp parallel for firstprivate(n3 ,i2 ,i1 ,r ,n1 ,n2 ,i3 ) reduction(+:tmp) reduction(+:s) 
+            #pragma omp parallel for firstprivate(n3 ,i2 ,r ,n1 ,n2 ,i3 ) reduction(+:tmp) reduction(+:s) 
             for (i1 = 1; i1 < n1-1; i1++) {
 		s = s + r[i3][i2][i1] * r[i3][i2][i1];
 		a = fabs(r[i3][i2][i1]);
@@ -885,7 +885,7 @@ c-------------------------------------------------------------------*/
 {
     #pragma omp parallel for private(i1 ,i2 ,i3 ) 
     for ( i3 = 1; i3 < n3-1; i3++) {
-	#pragma omp parallel for firstprivate(n3 ,i1 ,i2 ,u ,n1 ,n2 ,i3 ) 
+	#pragma omp parallel for firstprivate(n3 ,i1 ,u ,n1 ,n2 ,i3 ) 
 	for ( i2 = 1; i2 < n2-1; i2++) {
 	    u[i3][i2][n1-1] = u[i3][i2][1];
 	    u[i3][i2][0] = u[i3][i2][n1-2];
@@ -895,7 +895,7 @@ c-------------------------------------------------------------------*/
     /* axis = 2 */
 //#pragma omp for
 //    for ( i3 = 1; i3 < n3-1; i3++) {
-	#pragma omp parallel for firstprivate(n3 ,i1 ,i2 ,u ,n1 ,n2 ,i3 ) 
+	#pragma omp parallel for firstprivate(n3 ,i2 ,u ,n1 ,n2 ,i3 ) 
 	for ( i1 = 0; i1 < n1; i1++) {
 	    u[i3][n2-1][i1] = u[i3][1][i1];
 	    u[i3][0][i1] = u[i3][n2-2][i1];
@@ -903,7 +903,7 @@ c-------------------------------------------------------------------*/
     }
 
     /* axis = 3 */
-    #pragma omp parallel for private(i1 ,i2 ,i3 ) 
+    #pragma omp parallel for private(i1 ,i3 ) 
     for ( i2 = 0; i2 < n2; i2++) {
 	for ( i1 = 0; i1 < n1; i1++) {
 	    u[n3-1][i2][i1] = u[1][i2][i1];
@@ -974,7 +974,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c     each processor looks for twenty candidates
 c-------------------------------------------------------------------*/
-    #pragma omp parallel for firstprivate(i ) 
+    #pragma omp parallel for 
     for (i = 0; i < MM; i++) {
 	ten[i][1] = 0.0;
 	j1[i][1] = 0;
@@ -1074,9 +1074,9 @@ c-------------------------------------------------------------------*/
 
     #pragma omp parallel for private(i2 ,i1 ) 
     for (i3 = 0; i3 < n3; i3++) {
-	#pragma omp parallel for firstprivate(n3 ,i1 ,i2 ,z ,n1 ,n2 ,i3 ) 
+	#pragma omp parallel for firstprivate(n3 ,i1 ,z ,n1 ,n2 ,i3 ) 
 	for (i2 = 0; i2 < n2; i2++) {
-            #pragma omp parallel for firstprivate(n3 ,i1 ,i2 ,z ,n1 ,n2 ,i3 ) 
+            #pragma omp parallel for firstprivate(n3 ,i2 ,z ,n1 ,n2 ,i3 ) 
             for (i1 = 0; i1 < n1; i1++) {
 		z[i3][i2][i1] = 0.0;
 	    }
@@ -1229,9 +1229,9 @@ c-------------------------------------------------------------------*/
     int i1, i2, i3;
     #pragma omp parallel for private(i1 ,i2 ,i3 ) 
     for (i3 = 0;i3 < n3; i3++) {
-	#pragma omp parallel for firstprivate(n3 ,i1 ,i2 ,z ,n1 ,n2 ,i3 ) 
+	#pragma omp parallel for firstprivate(i3 ) 
 	for (i2 = 0; i2 < n2; i2++) {
-            #pragma omp parallel for firstprivate(n3 ,i1 ,i2 ,z ,n1 ,n2 ,i3 ) 
+            #pragma omp parallel for firstprivate(i2 ,i3 ) 
             for (i1 = 0; i1 < n1; i1++) {
 		z[i3][i2][i1] = 0.0;
 	    }

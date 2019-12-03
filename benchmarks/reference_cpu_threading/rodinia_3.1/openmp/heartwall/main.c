@@ -358,7 +358,7 @@ int main(int argc, char *argv []){
 		private[i].d_T = public.d_endoT;														// templates
 	}
 
-	#pragma omp parallel for firstprivate(i ) 
+	#pragma omp parallel for  
 	for(i=public.endoPoints; i<public.allPoints; i++){
 		private[i].point_no = i-public.endoPoints;
 		private[i].in_pointer = private[i].point_no * public.in_mod_elem;
@@ -380,7 +380,7 @@ int main(int argc, char *argv []){
 	public.conv_elem = public.conv_rows * public.conv_cols;												// number of elements
 	public.conv_mem = sizeof(fp) * public.conv_elem;
 
-	#pragma omp parallel for firstprivate(i ) 
+	#pragma omp parallel for  
 	for(i=0; i<public.allPoints; i++){
 		private[i].d_conv = (fp *)malloc(public.conv_mem);
 	}
@@ -403,7 +403,7 @@ int main(int argc, char *argv []){
 	public.in2_pad_elem = public.in2_pad_rows * public.in2_pad_cols;
 	public.in2_pad_mem = sizeof(fp) * public.in2_pad_elem;
 
-	#pragma omp parallel for firstprivate(i ) 
+	#pragma omp parallel for 
 	for(i=0; i<public.allPoints; i++){
 		private[i].d_in2_pad = (fp *)malloc(public.in2_pad_mem);
 	}
@@ -484,7 +484,7 @@ int main(int argc, char *argv []){
 	public.tMask_elem = public.tMask_rows * public.tMask_cols;
 	public.tMask_mem = sizeof(fp) * public.tMask_elem;
 
-	#pragma omp parallel for firstprivate(i ) 
+	#pragma omp parallel for  
 	for(i=0; i<public.allPoints; i++){
 		private[i].d_tMask = (fp *)malloc(public.tMask_mem);
 	}
@@ -515,7 +515,7 @@ int main(int argc, char *argv []){
 		public.mask_conv_joffset = public.mask_conv_joffset + 1;
 	}
 
-	#pragma omp parallel for firstprivate(i ) 
+	#pragma omp parallel for  
 	for(i=0; i<public.allPoints; i++){
 		private[i].d_mask_conv = (fp *)malloc(public.mask_conv_mem);
 	}
@@ -622,7 +622,7 @@ int main(int argc, char *argv []){
 	//	POINTERS
 	//====================================================================================================
 
-	#pragma omp parallel for firstprivate(i ) 
+	#pragma omp parallel for  
 	for(i=0; i<public.allPoints; i++){
 		free(private[i].in_partial_sum);
 		free(private[i].in_sqr_partial_sum);

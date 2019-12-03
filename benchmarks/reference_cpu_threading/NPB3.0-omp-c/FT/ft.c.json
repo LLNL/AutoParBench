@@ -113,6 +113,30 @@
 },
 "loop - object id : 11":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"setup",
+"loop id":"1",
+"loop line":"353",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i"
+},
+"loop - object id : 12":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"setup",
+"loop id":"2",
+"loop line":"361",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i"
+},
+"loop - object id : 13":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"compute_indexmap",
 "loop id":"1",
 "loop line":"417",
@@ -124,10 +148,38 @@
 "induction variable":"i",
 "private":["i","j","k","ii","ii2","jj","ij2","kk"]
 },
-"loop - object id : 12":{
+"loop - object id : 14":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"compute_indexmap",
 "loop id":"2",
+"loop line":"421",
+"loop column":"2",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j",
+"private":["j"],
+"firstprivate":["k","ii","ii2","jj","ij2","kk","i"]
+},
+"loop - object id : 15":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"compute_indexmap",
+"loop id":"3",
+"loop line":"425",
+"loop column":"13",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"k",
+"private":["k"],
+"firstprivate":["j","ii","ii2","jj","ij2","kk","i"]
+},
+"loop - object id : 16":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"compute_indexmap",
+"loop id":"4",
 "loop line":"439",
 "loop column":"5",
 "pragma type":"NULL",
@@ -135,7 +187,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 13":{
+"loop - object id : 17":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"print_timers",
 "loop id":"1",
@@ -146,10 +198,22 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 14":{
+"loop - object id : 18":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"cffts1",
 "loop id":"1",
+"loop line":"515",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i"
+},
+"loop - object id : 19":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts1",
+"loop id":"2",
 "loop line":"524",
 "loop column":"5",
 "pragma type":"parallel for",
@@ -159,10 +223,10 @@
 "induction variable":"k",
 "private":["i","j","k","jj"]
 },
-"loop - object id : 15":{
+"loop - object id : 20":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"cffts1",
-"loop id":"2",
+"loop id":"3",
 "loop line":"525",
 "loop column":"2",
 "pragma type":"NULL",
@@ -170,10 +234,75 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 16":{
+"loop - object id : 21":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts1",
+"loop id":"4",
+"loop line":"528",
+"loop column":"13",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j",
+"private":["j"],
+"firstprivate":["i","jj","k"]
+},
+"loop - object id : 22":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts1",
+"loop id":"5",
+"loop line":"530",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"],
+"firstprivate":["jj","j","k"]
+},
+"loop - object id : 23":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts1",
+"loop id":"6",
+"loop line":"546",
+"loop column":"13",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j",
+"private":["j"],
+"firstprivate":["fftblock","i","jj","x","k"]
+},
+"loop - object id : 24":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts1",
+"loop id":"7",
+"loop line":"547",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 25":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"cffts2",
 "loop id":"1",
+"loop line":"573",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i"
+},
+"loop - object id : 26":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts2",
+"loop id":"2",
 "loop line":"581",
 "loop column":"5",
 "pragma type":"parallel for",
@@ -183,10 +312,10 @@
 "induction variable":"k",
 "private":["i","j","k","ii"]
 },
-"loop - object id : 17":{
+"loop - object id : 27":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"cffts2",
-"loop id":"2",
+"loop id":"3",
 "loop line":"582",
 "loop column":"9",
 "pragma type":"NULL",
@@ -194,10 +323,75 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 18":{
+"loop - object id : 28":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts2",
+"loop id":"4",
+"loop line":"585",
+"loop column":"6",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j",
+"private":["j"],
+"firstprivate":["i","ii","x","fftblock","k"]
+},
+"loop - object id : 29":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts2",
+"loop id":"5",
+"loop line":"587",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"],
+"firstprivate":["ii","x","fftblock","j","k"]
+},
+"loop - object id : 30":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts2",
+"loop id":"6",
+"loop line":"600",
+"loop column":"12",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j",
+"private":["j"],
+"firstprivate":["i","ii","x","fftblock","k"]
+},
+"loop - object id : 31":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts2",
+"loop id":"7",
+"loop line":"601",
+"loop column":"9",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 32":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"cffts3",
 "loop id":"1",
+"loop line":"626",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i"
+},
+"loop - object id : 33":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts3",
+"loop id":"2",
 "loop line":"634",
 "loop column":"5",
 "pragma type":"parallel for",
@@ -207,10 +401,10 @@
 "induction variable":"j",
 "private":["i","j","k","ii"]
 },
-"loop - object id : 19":{
+"loop - object id : 34":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"cffts3",
-"loop id":"2",
+"loop id":"3",
 "loop line":"635",
 "loop column":"9",
 "pragma type":"NULL",
@@ -218,7 +412,60 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 20":{
+"loop - object id : 35":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts3",
+"loop id":"4",
+"loop line":"638",
+"loop column":"6",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"k",
+"private":["k"],
+"firstprivate":["i","ii","j"]
+},
+"loop - object id : 36":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts3",
+"loop id":"5",
+"loop line":"640",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"],
+"firstprivate":["ii","k","j"]
+},
+"loop - object id : 37":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts3",
+"loop id":"6",
+"loop line":"653",
+"loop column":"12",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"k",
+"private":["k"],
+"firstprivate":["i","ii","x","fftblock","j"]
+},
+"loop - object id : 38":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cffts3",
+"loop id":"7",
+"loop line":"654",
+"loop column":"9",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 39":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"fft_init",
 "loop id":"1",
@@ -229,7 +476,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 21":{
+"loop - object id : 40":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"fft_init",
 "loop id":"2",
@@ -240,7 +487,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 22":{
+"loop - object id : 41":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"cfftz",
 "loop id":"1",
@@ -251,7 +498,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 23":{
+"loop - object id : 42":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"cfftz",
 "loop id":"2",
@@ -262,7 +509,21 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 24":{
+"loop - object id : 43":{
+"file":"./NPB3.0-omp-c/FT/ft.c",
+"function":"cfftz",
+"loop id":"3",
+"loop line":"753",
+"loop column":"6",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"],
+"firstprivate":["fftblock","j"]
+},
+"loop - object id : 44":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"fftz2",
 "loop id":"1",
@@ -273,7 +534,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 25":{
+"loop - object id : 45":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"fftz2",
 "loop id":"2",
@@ -284,7 +545,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 26":{
+"loop - object id : 46":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"fftz2",
 "loop id":"3",
@@ -295,7 +556,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 27":{
+"loop - object id : 47":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"ilog2",
 "loop id":"1",
@@ -306,7 +567,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 28":{
+"loop - object id : 48":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"checksum",
 "loop id":"1",
@@ -318,7 +579,7 @@
 "multiversioned":"false",
 "induction variable":"j"
 },
-"loop - object id : 29":{
+"loop - object id : 49":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"verify",
 "loop id":"1",
@@ -329,7 +590,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 30":{
+"loop - object id : 50":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"verify",
 "loop id":"2",
@@ -340,7 +601,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 31":{
+"loop - object id : 51":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"verify",
 "loop id":"3",
@@ -351,7 +612,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 32":{
+"loop - object id : 52":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"verify",
 "loop id":"4",
@@ -362,7 +623,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 33":{
+"loop - object id : 53":{
 "file":"./NPB3.0-omp-c/FT/ft.c",
 "function":"verify",
 "loop id":"5",

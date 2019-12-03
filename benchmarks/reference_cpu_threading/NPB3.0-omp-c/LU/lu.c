@@ -206,9 +206,9 @@ c  local variables
 
   #pragma omp for 
   for (i = ist; i <= iend; i++) {
-    #pragma omp parallel for firstprivate(iend ,ist ,j ,m ,ldz ,k ,v ,omega ,jst ,jend ,i ) 
+    #pragma omp parallel for private(j) firstprivate(m ,k , i ) 
     for (j = jst; j <= jend; j++) {
-      #pragma omp parallel for firstprivate(iend ,ist ,j ,m ,ldz ,k ,v ,omega ,jst ,jend ,i ) 
+      #pragma omp parallel for private(m) firstprivate(j ,k ,i ) 
       for (m = 0; m < 5; m++) {
 	v[i][j][k][m] = v[i][j][k][m]
 	  - omega * (  ldz[i][j][m][0] * v[i][j][k-1][0]
@@ -220,7 +220,6 @@ c  local variables
     }
   }
 
-  #pragma omp for 
   for (i = ist; i <= iend; i++) {
     
 #if defined(_OPENMP)      
@@ -441,11 +440,11 @@ c  local variables
   double tmp, tmp1;
   double tmat[5][5];
 
-  #pragma omp for 
+  #pragma omp parallel for 
   for (i = iend; i >= ist; i--) {
-    #pragma omp parallel for firstprivate(ist ,iend ,j ,m ,udz ,k ,v ,omega ,tv ,jst ,jend ,i ) 
+    #pragma omp parallel for private(j) firstprivate(k ,omega ,i) 
     for (j = jend; j >= jst; j--) {
-      #pragma omp parallel for firstprivate(ist ,iend ,j ,m ,udz ,k ,v ,omega ,tv ,jst ,jend ,i ) 
+      #pragma omp parallel for private(m) firstprivate(k, j, omega, i) 
       for (m = 0; m < 5; m++) {
 	tv[i][j][m] = 
 	  omega * (  udz[i][j][m][0] * v[i][j][k+1][0]
@@ -457,7 +456,6 @@ c  local variables
     }
   }
 
-  #pragma omp for 
   for (i = iend; i >= ist; i--) {
 #if defined(_OPENMP)      
     if (i != iend) {
@@ -728,11 +726,11 @@ c  local variables
 
   #pragma omp parallel for 
   for (i = 0; i < nx; i++) {
-    #pragma omp parallel for firstprivate(nx ,m ,k ,j ,nz ,ny ,i ) 
+    #pragma omp parallel for private(j) firstprivate(nx ,m ,k ,nz ,ny ,i ) 
     for (j = 0; j < ny; j++) {
-      #pragma omp parallel for firstprivate(nx ,m ,k ,j ,nz ,ny ,i ) 
+      #pragma omp parallel for private(k) firstprivate(nx ,m ,j ,nz ,ny ,i ) 
       for (k = 0; k < nz; k++) {
-	#pragma omp parallel for firstprivate(nx ,m ,k ,j ,nz ,ny ,i ) 
+	#pragma omp parallel for private(m) firstprivate(nx ,k ,j ,nz ,ny ,i ) 
 	for (m = 0; m < 5; m++) {
 	  frct[i][j][k][m] = 0.0;
 	}
@@ -744,11 +742,11 @@ c  local variables
   for (i = 0; i < nx; i++) {
     iglob = i;
     xi = ( (double)(iglob) ) / ( nx0 - 1 );
-    #pragma omp parallel for firstprivate(nx ,m ,k ,j ,xi ,eta ,zeta ,nx0 ,ny0 ,nz ,ny ,i ) 
+    #pragma omp parallel for private(j, zeta) firstprivate(nx ,m ,k ,xi ,eta ,nx0 ,ny0 ,nz ,ny ,i ) 
     for (j = 0; j < ny; j++) {
       jglob = j;
       eta = ( (double)(jglob) ) / ( ny0 - 1 );
-      #pragma omp parallel for firstprivate(nx ,m ,k ,j ,xi ,eta ,zeta ,nx0 ,ny0 ,nz ,ny ,i ) 
+      #pragma omp parallel for private(k, zeta) firstprivate(nx ,m ,j ,xi ,eta ,nx0 ,ny0 ,nz ,ny ,i ) 
       for (k = 0; k < nz; k++) {
 	zeta = ( (double)(k) ) / ( nz - 1 );
 	for (m = 0; m < 5; m++) {
@@ -779,9 +777,9 @@ c   xi-direction flux differences
 
   #pragma omp parallel for 
   for (i = L1; i <= L2; i++) {
-    #pragma omp parallel for firstprivate(L2 ,nx ,j ,k ,u21 ,q ,nz ,jst ,jend ,i ) 
+    #pragma omp parallel for private(j) firstprivate(L2 ,nx ,k ,u21 ,q ,nz ,jst ,jend ,i ) 
     for (j = jst; j <= jend; j++) {
-      #pragma omp parallel for firstprivate(L2 ,nx ,j ,k ,u21 ,q ,nz ,jst ,jend ,i ) 
+      #pragma omp parallel for private(k) firstprivate(L2 ,nx ,j ,u21 ,q ,nz ,jst ,jend ,i ) 
       for (k = 1; k < nz - 1; k++) {
 	flux[i][j][k][0] = rsd[i][j][k][1];
 	u21 = rsd[i][j][k][1] / rsd[i][j][k][0];
@@ -800,17 +798,17 @@ c   xi-direction flux differences
 
   #pragma omp parallel for 
   for (j = jst; j <= jend; j++) {
-    #pragma omp parallel for firstprivate(jend ,m ,i ,jst ,k ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,iend1 ,nx ,nz ,j ) 
+    #pragma omp parallel for firstprivate(jend ,m ,i ,jst ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,iend1 ,nx ,nz ,j ) 
     for (k = 1; k <= nz - 2; k++) {
-      #pragma omp parallel for firstprivate(jend ,m ,i ,jst ,k ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,iend1 ,nx ,nz ,j ) 
+      #pragma omp parallel for firstprivate(jend ,m ,jst ,k ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,iend1 ,nx ,nz ,j ) 
       for (i = ist; i <= iend; i++) {
-	#pragma omp parallel for firstprivate(jend ,m ,i ,jst ,k ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,iend1 ,nx ,nz ,j ) 
+	#pragma omp parallel for firstprivate(jend ,i ,jst ,k ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,iend1 ,nx ,nz ,j ) 
 	for (m = 0; m < 5; m++) {
 	  frct[i][j][k][m] =  frct[i][j][k][m]
 	    - tx2 * ( flux[i+1][j][k][m] - flux[i-1][j][k][m] );
 	}
       }
-      #pragma omp parallel for firstprivate(jend ,m ,i ,jst ,k ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,iend1 ,nx ,nz ,j ) 
+      #pragma omp parallel for firstprivate(jend ,m ,jst ,k ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,iend1 ,nx ,nz ,j ) 
       for (i = ist; i <= L2; i++) {
 	tmp = 1.0 / rsd[i][j][k][0];
 
@@ -838,7 +836,7 @@ c   xi-direction flux differences
 	  + C1 * C5 * tx3 * ( u51i - u51im1 );
       }
 
-      #pragma omp parallel for firstprivate(jend ,m ,i ,jst ,k ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,iend1 ,nx ,nz ,j ) 
+      #pragma omp parallel for firstprivate(jend ,m ,jst ,k ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,iend1 ,nx ,nz ,j ) 
       for (i = ist; i <= iend; i++) {
 	frct[i][j][k][0] = frct[i][j][k][0]
 	  + dx1 * tx1 * (            rsd[i-1][j][k][0]
@@ -917,9 +915,9 @@ c   eta-direction flux differences
 
   #pragma omp parallel for 
   for (i = ist; i <= iend; i++) {
-    #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,ny ,u31 ,q ,nz ,L2 ,i ) 
+    #pragma omp parallel for firstprivate(iend ,ist ,k ,ny ,u31 ,q ,nz ,L2 ,i ) 
     for (j = L1; j <= L2; j++) {
-      #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,ny ,u31 ,q ,nz ,L2 ,i ) 
+      #pragma omp parallel for firstprivate(iend ,ist ,j ,ny ,u31 ,q ,nz ,L2 ,i ) 
       for (k = 1; k <= nz - 2; k++) {
 	flux[i][j][k][0] = rsd[i][j][k][2];
 	u31 = rsd[i][j][k][2] / rsd[i][j][k][0];
@@ -938,17 +936,17 @@ c   eta-direction flux differences
 
   #pragma omp parallel for 
   for (i = ist; i <= iend; i++) {
-    #pragma omp parallel for firstprivate(iend ,m ,j ,ist ,k ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,jend1 ,ny ,nz ,i ) 
+    #pragma omp parallel for firstprivate(iend ,m ,j ,ist ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,jend1 ,ny ,nz ,i ) 
     for (k = 1; k <= nz - 2; k++) {
-      #pragma omp parallel for firstprivate(iend ,m ,j ,ist ,k ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,jend1 ,ny ,nz ,i ) 
+      #pragma omp parallel for firstprivate(iend ,m ,ist ,k ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,jend1 ,ny ,nz ,i ) 
       for (j = jst; j <= jend; j++) {
-	#pragma omp parallel for firstprivate(iend ,m ,j ,ist ,k ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,jend1 ,ny ,nz ,i ) 
+	#pragma omp parallel for firstprivate(iend ,j ,ist ,k ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,jend1 ,ny ,nz ,i ) 
 	for (m = 0; m < 5; m++) {
 	  frct[i][j][k][m] =  frct[i][j][k][m]
 	    - ty2 * ( flux[i][j+1][k][m] - flux[i][j-1][k][m] );
 	}
       }
-      #pragma omp parallel for firstprivate(iend ,m ,j ,ist ,k ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,jend1 ,ny ,nz ,i ) 
+      #pragma omp parallel for firstprivate(iend ,m ,ist ,k ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,jend1 ,ny ,nz ,i ) 
       for (j = jst; j <= L2; j++) {
 	tmp = 1.0 / rsd[i][j][k][0];
 
@@ -976,7 +974,7 @@ c   eta-direction flux differences
 	  + C1 * C5 * ty3 * ( u51j - u51jm1 );
       }
 
-      #pragma omp parallel for firstprivate(iend ,m ,j ,ist ,k ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,jend1 ,ny ,nz ,i ) 
+      #pragma omp parallel for firstprivate(iend ,m ,ist ,k ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,jend1 ,ny ,nz ,i ) 
       for (j = jst; j <= jend; j++) {
 	frct[i][j][k][0] = frct[i][j][k][0]
 	  + dy1 * ty1 * (            rsd[i][j-1][k][0]
@@ -1054,7 +1052,7 @@ c   zeta-direction flux differences
   #pragma omp parallel for 
   for (i = ist; i <= iend; i++) {
     for (j = jst; j <= jend; j++) {
-      #pragma omp parallel for firstprivate(nz ,ist ,jst ,u41 ,q ,k ,j ,i ) 
+      #pragma omp parallel for firstprivate(nz ,ist ,jst ,u41 ,q ,j ,i ) 
       for (k = 0; k <= nz-1; k++) {
 	flux[i][j][k][0] = rsd[i][j][k][3];
 	u41 = rsd[i][j][k][3] / rsd[i][j][k][0];
@@ -1069,15 +1067,15 @@ c   zeta-direction flux differences
 	flux[i][j][k][4] = ( C1 * rsd[i][j][k][4] - C2 * q ) * u41;
       }
 
-      #pragma omp parallel for firstprivate(nz ,ist ,jst ,m ,tz2 ,k ,j ,i ) 
+      #pragma omp parallel for firstprivate(nz ,ist ,jst ,m ,tz2 ,j ,i ) 
       for (k = 1; k <= nz - 2; k++) {
-	#pragma omp parallel for firstprivate(nz ,ist ,jst ,m ,tz2 ,k ,j ,i ) 
+	#pragma omp parallel for firstprivate(nz ,ist ,jst ,tz2 ,k ,j ,i ) 
 	for (m = 0; m < 5; m++) {
 	  frct[i][j][k][m] =  frct[i][j][k][m]
 	    - tz2 * ( flux[i][j][k+1][m] - flux[i][j][k-1][m] );
 	}
       }
-      #pragma omp parallel for firstprivate(nz ,ist ,jst ,u21k ,u31k ,u41k ,u51k ,tmp ,u21km1 ,u31km1 ,u41km1 ,u51km1 ,tz3 ,k ,j ,i ) 
+      #pragma omp parallel for firstprivate(nz ,ist ,jst ,u21k ,u31k ,u41k ,u51k ,tmp ,u21km1 ,u31km1 ,u41km1 ,u51km1 ,tz3 ,j ,i ) 
       for (k = 1; k <= nz-1; k++) {
 	tmp = 1.0 / rsd[i][j][k][0];
 
@@ -1105,7 +1103,7 @@ c   zeta-direction flux differences
 	  + C1 * C5 * tz3 * ( u51k - u51km1 );
       }
 
-      #pragma omp parallel for firstprivate(nz ,ist ,jst ,tz1 ,dz1 ,dz2 ,tz3 ,dz3 ,dz4 ,dz5 ,k ,j ,i ) 
+      #pragma omp parallel for firstprivate(nz ,ist ,jst ,tz1 ,dz1 ,dz2 ,tz3 ,dz3 ,dz4 ,dz5 ,j ,i ) 
       for (k = 1; k <= nz - 2; k++) {
 	frct[i][j][k][0] = frct[i][j][k][0]
 	  + dz1 * tz1 * (            rsd[i][j][k+1][0]
@@ -1148,9 +1146,9 @@ c   fourth-order dissipation
 		     +           rsd[i][j][4][m] );
       }
 
-      #pragma omp parallel for firstprivate(nz ,ist ,jst ,m ,dssp ,k ,j ,i ) 
+      #pragma omp parallel for firstprivate(nz ,ist ,jst ,m ,dssp ,j ,i ) 
       for (k = 3; k <= nz - 4; k++) {
-	#pragma omp parallel for firstprivate(nz ,ist ,jst ,m ,dssp ,k ,j ,i ) 
+	#pragma omp parallel for firstprivate(nz ,ist ,jst ,dssp ,k ,j ,i ) 
 	for (m = 0; m < 5; m++) {
 	  frct[i][j][k][m] = frct[i][j][k][m]
 	    - dsspm * (           rsd[i][j][k-2][m]
@@ -1195,7 +1193,7 @@ c  local variables
   double  tmp;
   double  u000ijk[5];
 
-  #pragma omp parallel for firstprivate(m ) 
+  #pragma omp parallel for
   for (m = 0; m < 5; m++) {
     errnm[m] = 0.0;
   }
@@ -1206,7 +1204,7 @@ c  local variables
       jglob = j;
       for (k = 1; k <= nz-2; k++) {
 	exact( iglob, jglob, k, u000ijk );
-	#pragma omp parallel for firstprivate(ist ,tmp ,m ,jst ,k ,j ,i ) 
+	#pragma omp parallel for firstprivate(ist ,tmp ,jst ,k ,j ,i ) 
 	for (m = 0; m < 5; m++) {
 	  tmp = ( u000ijk[m] - u[i][j][k][m] );
 	  errnm[m] = errnm[m] + tmp *tmp;
@@ -1215,7 +1213,7 @@ c  local variables
     }
   }
 
-  #pragma omp parallel for firstprivate(nz0 ,ny0 ,nx0 ,m ) 
+  #pragma omp parallel for firstprivate(nz0 ,ny0 ,nx0 ) 
   for (m = 0; m < 5; m++) {
     errnm[m] = sqrt ( errnm[m] / ( (nx0-2)*(ny0-2)*(nz0-2) ) );
   }
@@ -1242,7 +1240,7 @@ c  local variables
   eta  = ((double)j) / (ny0 - 1);
   zeta = ((double)k) / (nz - 1);
 
-  #pragma omp parallel for firstprivate(zeta ,eta ,xi ,u000ijk ,m ) 
+  #pragma omp parallel for firstprivate(zeta ,eta ,xi ,u000ijk ) 
   for (m = 0; m < 5; m++) {
     u000ijk[m] =  ce[m][0]
       + ce[m][1] * xi
@@ -1284,7 +1282,7 @@ c  local variables
 
   #pragma omp for 
   for (i = ist; i <= iend; i++) {
-    #pragma omp parallel for firstprivate(iend ,ist ,j ,tmp1 ,tmp2 ,tmp3 ,k ,dz1 ,tz1 ,dy1 ,ty1 ,dx1 ,tx1 ,dt ,dz2 ,dy2 ,dx2 ,dz3 ,dy3 ,dx3 ,dz4 ,dy4 ,dx4 ,dz5 ,dy5 ,dx5 ,tz2 ,ty2 ,tx2 ,jst ,jend ,i ) 
+    #pragma omp parallel for firstprivate(iend ,ist ,tmp1 ,tmp2 ,tmp3 ,k ,dz1 ,tz1 ,dy1 ,ty1 ,dx1 ,tx1 ,dt ,dz2 ,dy2 ,dx2 ,dz3 ,dy3 ,dx3 ,dz4 ,dy4 ,dx4 ,dz5 ,dy5 ,dx5 ,tz2 ,ty2 ,tx2 ,jst ,jend ,i ) 
     for (j = jst; j <= jend; j++) {
 
 /*--------------------------------------------------------------------
@@ -1652,9 +1650,9 @@ c  local variables
   c34 = C3 * C4;
 
 #if defined(_OPENMP)  
-  #pragma omp for 
+  #pragma omp parallel for firstprivate(ist ,iend ,tmp1 ,tmp2 ,tmp3 ,k ,dz1 ,tz1 ,dy1 ,ty1 ,dx1 ,tx1 ,dt ,dz2 ,dy2 ,dx2 ,dz3 ,dy3 ,dx3 ,dz4 ,dy4 ,dx4 ,dz5 ,dy5 ,dx5 ,tx2 ,ty2 ,tz2 ,jst ,jend )
   for (i = iend; i >= ist; i--) {
-      #pragma omp parallel for firstprivate(ist ,iend ,j ,tmp1 ,tmp2 ,tmp3 ,k ,dz1 ,tz1 ,dy1 ,ty1 ,dx1 ,tx1 ,dt ,dz2 ,dy2 ,dx2 ,dz3 ,dy3 ,dx3 ,dz4 ,dy4 ,dx4 ,dz5 ,dy5 ,dx5 ,tx2 ,ty2 ,tz2 ,jst ,jend ,i ) 
+      #pragma omp parallel for firstprivate(ist ,iend ,tmp1 ,tmp2 ,tmp3 ,k ,dz1 ,tz1 ,dy1 ,ty1 ,dx1 ,tx1 ,dt ,dz2 ,dy2 ,dx2 ,dz3 ,dy3 ,dx3 ,dz4 ,dy4 ,dx4 ,dz5 ,dy5 ,dx5 ,tx2 ,ty2 ,tz2 ,jst ,jend ,i ) 
       for (j = jend; j >= jst; j--) {
 #else	  
   for (i = ist; i <= iend; i++) {
@@ -2027,16 +2025,16 @@ c  local variables
   int i, j, k, m;
   double sum0=0.0, sum1=0.0, sum2=0.0, sum3=0.0, sum4=0.0;
 
-  #pragma omp parallel for firstprivate(sum ,m ) 
+  #pragma omp parallel for
   for (m = 0; m < 5; m++) {
     sum[m] = 0.0;
   }
 
   #pragma omp parallel for 
   for (i = ist; i <= iend; i++) {
-    #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,v ,nz0 ,jst ,jend ,i ) reduction(+:sum4) reduction(+:sum3) reduction(+:sum2) reduction(+:sum1) reduction(+:sum0) 
+    #pragma omp parallel for firstprivate(iend ,ist ,k ,v ,nz0 ,jst ,jend ,i ) reduction(+:sum4) reduction(+:sum3) reduction(+:sum2) reduction(+:sum1) reduction(+:sum0) 
     for (j = jst; j <= jend; j++) {
-      #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,v ,nz0 ,jst ,jend ,i ) reduction(+:sum4) reduction(+:sum3) reduction(+:sum2) reduction(+:sum1) reduction(+:sum0) 
+      #pragma omp parallel for firstprivate(iend ,ist ,j ,v ,nz0 ,jst ,jend ,i ) reduction(+:sum4) reduction(+:sum3) reduction(+:sum2) reduction(+:sum1) reduction(+:sum0) 
       for (k = 1; k <= nz0-2; k++) {
 	  sum0 = sum0 + v[i][j][k][0] * v[i][j][k][0];
 	  sum1 = sum1 + v[i][j][k][1] * v[i][j][k][1];
@@ -2055,7 +2053,7 @@ c  local variables
       sum[4] += sum4;
   }
   
-  #pragma omp parallel for firstprivate(nz0 ,ny0 ,nx0 ,sum ,m ) 
+  #pragma omp parallel for firstprivate(nz0 ,ny0 ,nx0 ,sum ) 
   for (m = 0;  m < 5; m++) {
     sum[m] = sqrt ( sum[m] / ( (nx0-2)*(ny0-2)*(nz0-2) ) );
   }
@@ -2105,18 +2103,18 @@ c   set up the sub-domains for integeration in each processor
 /*--------------------------------------------------------------------
 c   initialize
 --------------------------------------------------------------------*/
-  #pragma omp parallel for firstprivate(k ,i ) 
+  #pragma omp parallel for 
   for (i = 0; i <= ISIZ2+1; i++) {
-    #pragma omp parallel for firstprivate(k ,i ) 
+    #pragma omp parallel for firstprivate(i ) 
     for (k = 0; k <= ISIZ3+1; k++) {
       phi1[i][k] = 0.0;
       phi2[i][k] = 0.0;
     }
   }
-  #pragma omp parallel for firstprivate(ibeg ,ifin ,j ,jbeg ,ki1 ,ki2 ,jfin ,i ) 
+  #pragma omp parallel for firstprivate(ibeg ,ifin ,j ,jbeg ,ki1 ,ki2 ,jfin) 
   for (i = ibeg; i <= ifin; i++) {
     iglob = i;
-    #pragma omp parallel for firstprivate(ibeg ,ifin ,j ,jbeg ,ki1 ,ki2 ,jfin ,i ) 
+    #pragma omp parallel for firstprivate(ibeg ,ifin ,jbeg ,ki1 ,ki2 ,jfin ,i ) 
     for (j = jbeg; j <= jfin; j++) {
       jglob = j;
 
@@ -2140,9 +2138,9 @@ c   initialize
 
   frc1 = 0.0;
 
-  #pragma omp parallel for firstprivate(ibeg ,ifin1 ,j ,jbeg ,jfin1 ,i ) reduction(+:frc1) 
+  #pragma omp parallel for firstprivate(ibeg ,ifin1 ,j ,jbeg ,jfin1 ) reduction(+:frc1) 
   for (i = ibeg; i <= ifin1; i++) {
-    #pragma omp parallel for firstprivate(ibeg ,ifin1 ,j ,jbeg ,jfin1 ,i ) reduction(+:frc1) 
+    #pragma omp parallel for firstprivate(ibeg ,ifin1 ,jbeg ,jfin1 ,i ) reduction(+:frc1) 
     for (j = jbeg; j <= jfin1; j++) {
       frc1 = frc1 + (  phi1[i][j]
 		       + phi1[i+1][j]
@@ -2160,9 +2158,9 @@ c   initialize
 /*--------------------------------------------------------------------
 c   initialize
 --------------------------------------------------------------------*/
-  #pragma omp parallel for firstprivate(k ,i ) 
+  #pragma omp parallel for 
   for (i = 0; i <= ISIZ2+1; i++) {
-    #pragma omp parallel for firstprivate(k ,i ) 
+    #pragma omp parallel for  
     for (k = 0; k <= ISIZ3+1; k++) {
       phi1[i][k] = 0.0;
       phi2[i][k] = 0.0;
@@ -2170,10 +2168,10 @@ c   initialize
   }
   jglob = jbeg;
   if (jglob == ji1) {
-    #pragma omp parallel for firstprivate(ibeg ,ifin ,k ,jbeg ,ki1 ,ki2 ,i ) 
+    #pragma omp parallel for firstprivate(ibeg ,ifin ,k ,jbeg ,ki1 ,ki2) 
     for (i = ibeg; i <= ifin; i++) {
       iglob = i;
-      #pragma omp parallel for firstprivate(ibeg ,ifin ,k ,jbeg ,ki1 ,ki2 ,i ) 
+      #pragma omp parallel for firstprivate(ibeg ,ifin ,jbeg ,ki1 ,ki2 ,i ) 
       for (k = ki1; k <= ki2; k++) {
 	phi1[i][k] = C2*(  u[i][jbeg][k][4]
 			  - 0.50 * (  pow2(u[i][jbeg][k][1])
@@ -2186,10 +2184,10 @@ c   initialize
 
   jglob = jfin;
   if (jglob == ji2) {
-    #pragma omp parallel for firstprivate(ibeg ,ifin ,k ,jfin ,ki1 ,ki2 ,i ) 
+    #pragma omp parallel for firstprivate(ibeg ,ifin ,k ,jfin ,ki1 ,ki2) 
     for (i = ibeg; i <= ifin; i++) {
       iglob = i;
-      #pragma omp parallel for firstprivate(ibeg ,ifin ,k ,jfin ,ki1 ,ki2 ,i ) 
+      #pragma omp parallel for firstprivate(ibeg ,ifin ,jfin ,ki1 ,ki2 ,i ) 
       for (k = ki1; k <= ki2; k++) {
 	phi2[i][k] = C2*(  u[i][jfin][k][4]
 			  - 0.50 * (  pow2(u[i][jfin][k][1])
@@ -2202,9 +2200,9 @@ c   initialize
 
 
   frc2 = 0.0;
-  #pragma omp parallel for firstprivate(ibeg ,ifin1 ,k ,ki1 ,ki2 ,i ) reduction(+:frc2) 
+  #pragma omp parallel for firstprivate(ibeg ,ifin1 ,k ,ki1 ,ki2) reduction(+:frc2) 
   for (i = ibeg; i <= ifin1; i++) {
-    #pragma omp parallel for firstprivate(ibeg ,ifin1 ,k ,ki1 ,ki2 ,i ) reduction(+:frc2) 
+    #pragma omp parallel for firstprivate(ibeg ,ifin1 ,ki1 ,ki2 ,i ) reduction(+:frc2) 
     for (k = ki1; k <= ki2-1; k++) {
       frc2 = frc2 + (  phi1[i][k]
 		       + phi1[i+1][k]
@@ -2223,9 +2221,9 @@ c   initialize
 /*--------------------------------------------------------------------
 c   initialize
 --------------------------------------------------------------------*/
-  #pragma omp parallel for firstprivate(k ,i ) 
+  #pragma omp parallel for
   for (i = 0; i <= ISIZ2+1; i++) {
-    #pragma omp parallel for firstprivate(k ,i ) 
+    #pragma omp parallel for firstprivate(i ) 
     for (k = 0; k <= ISIZ3+1; k++) {
       phi1[i][k] = 0.0;
       phi2[i][k] = 0.0;
@@ -2395,11 +2393,11 @@ c  local variables
 
   #pragma omp parallel for 
   for (i = 0; i <= nx-1; i++) {
-    #pragma omp parallel for firstprivate(nx ,j ,k ,m ,nz ,ny ,i ) 
+    #pragma omp parallel for firstprivate(i ) 
     for (j = 0; j <= ny-1; j++) {
-      #pragma omp parallel for firstprivate(nx ,j ,k ,m ,nz ,ny ,i ) 
+      #pragma omp parallel for firstprivate(j ,i ) 
       for (k = 0; k <= nz-1; k++) {
-	#pragma omp parallel for firstprivate(nx ,j ,k ,m ,nz ,ny ,i ) 
+	#pragma omp parallel for firstprivate(j ,k ,i ) 
 	for (m = 0; m < 5; m++) {
 	  rsd[i][j][k][m] = - frct[i][j][k][m];
 	}
@@ -2416,9 +2414,9 @@ c   xi-direction flux differences
 
   #pragma omp parallel for 
   for (i = L1; i <= L2; i++) {
-    #pragma omp parallel for firstprivate(L2 ,nx ,j ,k ,u21 ,q ,nz ,jst ,jend ,i ) 
+    #pragma omp parallel for firstprivate(i ) 
     for (j = jst; j <= jend; j++) {
-      #pragma omp parallel for firstprivate(L2 ,nx ,j ,k ,u21 ,q ,nz ,jst ,jend ,i ) 
+      #pragma omp parallel for firstprivate(j ,i ) 
       for (k = 1; k <= nz - 2; k++) {
 	flux[i][j][k][0] = u[i][j][k][1];
 	u21 = u[i][j][k][1] / u[i][j][k][0];
@@ -2439,11 +2437,11 @@ c   xi-direction flux differences
 
   #pragma omp parallel for 
   for (j = jst; j <= jend; j++) {
-    #pragma omp parallel for firstprivate(jend ,m ,i ,jst ,k ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,nx ,nz ,j ) 
+    #pragma omp parallel for firstprivate(j) 
     for (k = 1; k <= nz - 2; k++) {
-      #pragma omp parallel for firstprivate(jend ,m ,i ,jst ,k ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,nx ,nz ,j ) 
+      #pragma omp parallel for firstprivate(j ,k) 
       for (i = ist; i <= iend; i++) {
-	#pragma omp parallel for firstprivate(jend ,m ,i ,jst ,k ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,nx ,nz ,j ) 
+	#pragma omp parallel for firstprivate(j,i,k) 
 	for (m = 0; m < 5; m++) {
 	  rsd[i][j][k][m] =  rsd[i][j][k][m]
 	    - tx2 * ( flux[i+1][j][k][m] - flux[i-1][j][k][m] );
@@ -2452,7 +2450,7 @@ c   xi-direction flux differences
 
       L2 = nx-1;
 
-      #pragma omp parallel for firstprivate(jend ,m ,i ,jst ,k ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,nx ,nz ,j ) 
+      #pragma omp parallel for firstprivate(j ,k) 
       for (i = ist; i <= L2; i++) {
 	tmp = 1.0 / u[i][j][k][0];
 
@@ -2479,7 +2477,7 @@ c   xi-direction flux differences
 	  + C1 * C5 * tx3 * ( u51i - u51im1 );
       }
 
-      #pragma omp parallel for firstprivate(jend ,m ,i ,jst ,k ,u21i ,u31i ,u41i ,u51i ,tmp ,u21im1 ,u31im1 ,u41im1 ,u51im1 ,tx2 ,ist ,iend ,tx3 ,L2 ,tx1 ,dx1 ,dx2 ,dx3 ,dx4 ,dx5 ,dssp ,nx ,nz ,j ) 
+      #pragma omp parallel for firstprivate(j ,k) 
       for (i = ist; i <= iend; i++) {
 	rsd[i][j][k][0] = rsd[i][j][k][0]
 	  + dx1 * tx1 * (            u[i-1][j][k][0]
@@ -2560,9 +2558,9 @@ c   eta-direction flux differences
 
   #pragma omp parallel for 
   for (i = ist; i <= iend; i++) {
-    #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,ny ,u31 ,q ,nz ,L2 ,i ) 
+    #pragma omp parallel for firstprivate(i) 
     for (j = L1; j <= L2; j++) {
-      #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,ny ,u31 ,q ,nz ,L2 ,i ) 
+      #pragma omp parallel for firstprivate(j,i) 
       for (k = 1; k <= nz - 2; k++) {
 	flux[i][j][k][0] = u[i][j][k][2];
 	u31 = u[i][j][k][2] / u[i][j][k][0];
@@ -2582,11 +2580,11 @@ c   eta-direction flux differences
 
   #pragma omp parallel for 
   for (i = ist; i <= iend; i++) {
-    #pragma omp parallel for firstprivate(iend ,m ,j ,ist ,k ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,ny ,nz ,i ) 
+    #pragma omp parallel for firstprivate(i) 
     for (k = 1; k <= nz - 2; k++) {
-      #pragma omp parallel for firstprivate(iend ,m ,j ,ist ,k ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,ny ,nz ,i ) 
+      #pragma omp parallel for firstprivate(i ,k) 
       for (j = jst; j <= jend; j++) {
-	#pragma omp parallel for firstprivate(iend ,m ,j ,ist ,k ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,ny ,nz ,i ) 
+	#pragma omp parallel for firstprivate(j ,i ,k) 
 	for (m = 0; m < 5; m++) {
 	  rsd[i][j][k][m] =  rsd[i][j][k][m]
 	    - ty2 * ( flux[i][j+1][k][m] - flux[i][j-1][k][m] );
@@ -2594,7 +2592,7 @@ c   eta-direction flux differences
       }
 
       L2 = ny-1;
-      #pragma omp parallel for firstprivate(iend ,m ,j ,ist ,k ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,ny ,nz ,i ) 
+      #pragma omp parallel for firstprivate(i ,k) 
       for (j = jst; j <= L2; j++) {
 	tmp = 1.0 / u[i][j][k][0];
 
@@ -2620,7 +2618,7 @@ c   eta-direction flux differences
 	  + C1 * C5 * ty3 * ( u51j - u51jm1 );
       }
 
-      #pragma omp parallel for firstprivate(iend ,m ,j ,ist ,k ,u21j ,u31j ,u41j ,u51j ,tmp ,u21jm1 ,u31jm1 ,u41jm1 ,u51jm1 ,ty2 ,jst ,jend ,ty3 ,L2 ,ty1 ,dy1 ,dy2 ,dy3 ,dy4 ,dy5 ,dssp ,ny ,nz ,i ) 
+      #pragma omp parallel for firstprivate(i ,k) 
       for (j = jst; j <= jend; j++) {
 
 	rsd[i][j][k][0] = rsd[i][j][k][0]
@@ -2702,7 +2700,7 @@ c   zeta-direction flux differences
   #pragma omp parallel for 
   for (i = ist; i <= iend; i++) {
     for (j = jst; j <= jend; j++) {
-      #pragma omp parallel for firstprivate(nz ,ist ,jst ,u41 ,q ,k ,j ,i ) 
+      #pragma omp parallel for firstprivate(j ,i) 
       for (k = 0; k <= nz-1; k++) {
 	flux[i][j][k][0] = u[i][j][k][3];
 	u41 = u[i][j][k][3] / u[i][j][k][0];
@@ -2718,16 +2716,16 @@ c   zeta-direction flux differences
 	flux[i][j][k][4] = ( C1 * u[i][j][k][4] - C2 * q ) * u41;
       }
 
-      #pragma omp parallel for firstprivate(nz ,ist ,jst ,m ,tz2 ,k ,j ,i ) 
+      #pragma omp parallel for firstprivate(j ,i) 
       for (k = 1; k <= nz - 2; k++) {
-	#pragma omp parallel for firstprivate(nz ,ist ,jst ,m ,tz2 ,k ,j ,i ) 
+	#pragma omp parallel for firstprivate(k ,j ,i) 
 	for (m = 0; m < 5; m++) {
 	  rsd[i][j][k][m] =  rsd[i][j][k][m]
 	    - tz2 * ( flux[i][j][k+1][m] - flux[i][j][k-1][m] );
 	}
       }
 
-      #pragma omp parallel for firstprivate(nz ,ist ,jst ,u21k ,u31k ,u41k ,u51k ,tmp ,u21km1 ,u31km1 ,u41km1 ,u51km1 ,tz3 ,k ,j ,i ) 
+      #pragma omp parallel for firstprivate(j ,i) 
       for (k = 1; k <= nz-1; k++) {
 	tmp = 1.0 / u[i][j][k][0];
 
@@ -2754,7 +2752,7 @@ c   zeta-direction flux differences
 	  + C1 * C5 * tz3 * ( u51k - u51km1 );
       }
 
-      #pragma omp parallel for firstprivate(nz ,ist ,jst ,tz1 ,dz1 ,dz2 ,tz3 ,dz3 ,dz4 ,dz5 ,k ,j ,i ) 
+      #pragma omp parallel for firstprivate(j ,i) 
       for (k = 1; k <= nz - 2; k++) {
 	rsd[i][j][k][0] = rsd[i][j][k][0]
 	  + dz1 * tz1 * (            u[i][j][k-1][0]
@@ -2797,9 +2795,9 @@ c   fourth-order dissipation
 		     +           u[i][j][4][m] );
       }
 
-      #pragma omp parallel for firstprivate(nz ,ist ,jst ,m ,dssp ,k ,j ,i ) 
+      #pragma omp parallel for firstprivate(j ,i) 
       for (k = 3; k <= nz - 4; k++) {
-	#pragma omp parallel for firstprivate(nz ,ist ,jst ,m ,dssp ,k ,j ,i ) 
+	#pragma omp parallel for firstprivate(k ,j ,i) 
 	for (m = 0; m < 5; m++) {
 	  rsd[i][j][k][m] = rsd[i][j][k][m]
 	    - dssp * (            u[i][j][k-2][m]
@@ -3082,7 +3080,7 @@ c  local variables
 	    exact (iglob,ny0-1,k,ue_iny0k);
 	    exact (iglob,jglob,0,ue_ij1);
 	    exact (iglob,jglob,nz-1,ue_ijnz);
-	    #pragma omp parallel for firstprivate(pxi ,peta ,pzeta ,xi ,eta ,zeta ,m ,i ,k ,j ) 
+	    #pragma omp parallel for firstprivate(pxi ,peta ,pzeta ,xi ,eta ,zeta ,i ,k ,j ) 
 	    for (m = 0; m < 5; m++) {
 	      pxi =   ( 1.0 - xi ) * ue_1jk[m]
 		+ xi   * ue_nx0jk[m];
@@ -3130,13 +3128,13 @@ c   initialize a,b,c,d to zero (guarantees that page tables have been
 c   formed, if applicable on given architecture, before timestepping).
 --------------------------------------------------------------------*/
 {
-  #pragma omp parallel for firstprivate(j ,k ,m ,i ) 
+  #pragma omp parallel for firstprivate(j ,k ,m ) 
   for (i = 0; i < ISIZ1; i++) {
-    #pragma omp parallel for private(istep ,i ,j ,k ,m ) 
+    #pragma omp parallel for private(istep ,i ,k ,m ) 
     for (j = 0; j < ISIZ2; j++) {
-      #pragma omp parallel for firstprivate(j ,k ,m ,i ) 
+      #pragma omp parallel for firstprivate(j ,m ,i ) 
       for (k = 0; k < 5; k++) {
-	#pragma omp parallel for firstprivate(j ,k ,m ,i ) 
+	#pragma omp parallel for firstprivate(j ,k ,i ) 
 	for (m = 0; m < 5; m++) {
 	  a[i][j][k][m] = 0.0;
 	  b[i][j][k][m] = 0.0;
@@ -3179,13 +3177,13 @@ c   the timestep loop
 /*--------------------------------------------------------------------
 c   perform SSOR iteration
 --------------------------------------------------------------------*/
-    #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,m ,dt ,nz ,jst ,jend ,i ,istep ) 
+    #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,m ,dt ,nz ,jst ,jend ,istep ) 
     for (i = ist; i <= iend; i++) {
-      #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,m ,dt ,nz ,jst ,jend ,i ,istep ) 
+      #pragma omp parallel for firstprivate(iend ,ist ,k ,m ,dt ,nz ,jst ,jend ,i ,istep ) 
       for (j = jst; j <= jend; j++) {
-	#pragma omp parallel for private(istep ,i ,j ,k ,m ) 
+	#pragma omp parallel for private(istep ,i ,j ,m ) 
 	for (k = 1; k <= nz - 2; k++) {
-	  #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,m ,dt ,nz ,jst ,jend ,i ,istep ) 
+	  #pragma omp parallel for firstprivate(iend ,ist ,j ,k ,dt ,nz ,jst ,jend ,i ,istep ) 
 	  for (m = 0; m < 5; m++) {
 	    rsd[i][j][k][m] = dt * rsd[i][j][k][m];
 	  }
@@ -3308,7 +3306,7 @@ c   tolerance level
   *class = 'U';
   *verified = TRUE;
 
-  #pragma omp parallel for firstprivate(m ) 
+  #pragma omp parallel for  
   for (m = 0; m < 5; m++) {
     xcrref[m] = 1.0;
     xceref[m] = 1.0;
@@ -3477,7 +3475,7 @@ c    64X64X64 or 102X102X102 or 162X162X162
 /*--------------------------------------------------------------------
 c    Compute the difference of solution values and the known reference values.
 --------------------------------------------------------------------*/
-  #pragma omp parallel for firstprivate(xcr ,xce ,m ) 
+  #pragma omp parallel for  
   for (m = 0; m < 5; m++) {
            
     xcrdif[m] = fabs((xcr[m]-xcrref[m])/xcrref[m]);

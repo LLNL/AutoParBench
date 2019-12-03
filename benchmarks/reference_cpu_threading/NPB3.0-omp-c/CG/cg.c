@@ -170,9 +170,9 @@ c        Shift the col index vals from actual (firstcol --> lastcol )
 c        to local, i.e., (1 --> lastcol-firstcol+1)
 c---------------------------------------------------------------------*/
 {	
-    #pragma omp parallel for private(i ,j ,k ) 
+    #pragma omp parallel for
     for (j = 1; j <= lastrow - firstrow + 1; j++) {
-	#pragma omp parallel for private(i ,j ,k ) 
+	#pragma omp parallel for 
 	for (k = rowstr[j]; k < rowstr[j+1]; k++) {
             colidx[k] = colidx[k] - firstcol + 1;
 	}
@@ -181,11 +181,11 @@ c---------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c  set starting vector to (1, 1, .... 1)
 c-------------------------------------------------------------------*/
-    #pragma omp parallel for firstprivate(j ) 
+    #pragma omp parallel for  
     for (i = 1; i <= NA+1; i++) {
 	x[i] = 1.0;
     }
-      #pragma omp parallel for private(j ) reduction(+:norm_temp11) reduction(+:norm_temp12) 
+      #pragma omp parallel for   
       for (j = 1; j <= lastcol-firstcol+1; j++) {
          q[j] = 0.0;
          z[j] = 0.0;
@@ -201,7 +201,7 @@ c  Do one iteration untimed to init all code and data page tables
 c---->                    (then reinit, start timing, to niter its)
 c-------------------------------------------------------------------*/
 
-    #pragma omp parallel for private(j ) 
+    #pragma omp parallel for 
     for (it = 1; it <= 1; it++) {
 
 /*--------------------------------------------------------------------
@@ -368,7 +368,7 @@ c---------------------------------------------------------------------*/
 c  Initialize the CG algorithm:
 c-------------------------------------------------------------------*/
 {
-    #pragma omp parallel for private(j ,sum ) 
+    #pragma omp parallel for  
     for (j = 1; j <= naa+1; j++) {
 	q[j] = 0.0;
 	z[j] = 0.0;
@@ -381,7 +381,7 @@ c-------------------------------------------------------------------*/
 c  rho = r.r
 c  Now, obtain the norm of r: First, sum squares of r elements locally...
 c-------------------------------------------------------------------*/
-    #pragma omp parallel for private(j ,sum ) reduction(+:rho) 
+    #pragma omp parallel for reduction(+:rho) 
     for (j = 1; j <= lastcol-firstcol+1; j++) {
 	rho = rho + r[j]*r[j];
     }
@@ -411,10 +411,10 @@ C        on the Cray t3d - overall speed of code is 1.5 times faster.
 */
 
 /* rolled version */    
-	#pragma omp parallel for private(j ,k ,sum ,alpha ,beta ) 
+	#pragma omp parallel for private(sum) 
 	for (j = 1; j <= lastrow-firstrow+1; j++) {
             sum = 0.0;
-	    #pragma omp parallel for firstprivate(sum ,k ,rowstr ,colidx ,p ,a ,q ,j ,cgit ) 
+	    #pragma omp parallel for reduction(+:sum)  
 	    for (k = rowstr[j]; k < rowstr[j+1]; k++) {
 		sum = sum + a[k]*p[colidx[k]];
 	    }
@@ -476,7 +476,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c  Obtain p.q
 c-------------------------------------------------------------------*/
-	#pragma omp parallel for private(j ,k ,sum ,alpha ,beta ) reduction(+:d) 
+	#pragma omp parallel for reduction(+:d) 
 	for (j = 1; j <= lastcol-firstcol+1; j++) {
             d = d + p[j]*q[j];
 	}
@@ -495,7 +495,7 @@ c-------------------------------------------------------------------*/
 c  Obtain z = z + alpha*p
 c  and    r = r - alpha*q
 c---------------------------------------------------------------------*/
-	#pragma omp parallel for private(j ,k ,sum ,alpha ,beta ) reduction(+:rho) 
+	#pragma omp parallel for  
 	for (j = 1; j <= lastcol-firstcol+1; j++) {
             z[j] = z[j] + alpha*p[j];
             r[j] = r[j] - alpha*q[j];
@@ -520,7 +520,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c  p = r + beta*p
 c-------------------------------------------------------------------*/
-	#pragma omp parallel for private(j ,k ,sum ,alpha ,beta ) reduction(+:rho) 
+	#pragma omp parallel for  
 	for (j = 1; j <= lastcol-firstcol+1; j++) {
             p[j] = r[j] + beta*p[j];
 	}
@@ -536,10 +536,10 @@ c---------------------------------------------------------------------*/
     sum = 0.0;
     
 {
-    #pragma omp parallel for private(j ,d ) 
+    #pragma omp parallel for private(d) 
     for (j = 1; j <= lastrow-firstrow+1; j++) {
 	d = 0.0;
-	#pragma omp parallel for firstprivate(d ,k ,rowstr ,colidx ,z ,a ,r ,j ) 
+	#pragma omp parallel for reduction(+:d) 
 	for (k = rowstr[j]; k <= rowstr[j+1]-1; k++) {
             d = d + a[k]*z[colidx[k]];
 	}
@@ -549,7 +549,7 @@ c---------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c  At this point, r contains A.z
 c-------------------------------------------------------------------*/
-    #pragma omp parallel for private(j ,d ) reduction(+:sum) 
+    #pragma omp parallel for private(d ) reduction(+:sum) 
     for (j = 1; j <= lastcol-firstcol+1; j++) {
 	d = x[j] - r[j];
 	sum = sum + d*d;
@@ -619,7 +619,7 @@ c-------------------------------------------------------------------*/
 c  Initialize colidx(n+1 .. 2n) to zero.
 c  Used by sprnvc to mark nonzero positions
 c---------------------------------------------------------------------*/
-    #pragma omp parallel for private(i ) 
+    #pragma omp parallel for 
     for (i = 1; i <= n; i++) {
 	colidx[n+i] = 0;
     }
@@ -715,7 +715,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c     ...count the number of triples in each row
 c-------------------------------------------------------------------*/
-    #pragma omp parallel for private(j ) 
+    #pragma omp parallel for  
     for (j = 1; j <= n; j++) {
 	rowstr[j] = 0;
 	mark[j] = FALSE;
@@ -740,9 +740,9 @@ c---------------------------------------------------------------------*/
 /*---------------------------------------------------------------------
 c     ... preload data pages
 c---------------------------------------------------------------------*/
-      #pragma omp parallel for private(k ,j ) 
+      #pragma omp parallel for  
       for(j = 0;j <= nrows-1;j++) {
-         #pragma omp parallel for firstprivate(a ,k ,j ) 
+         #pragma omp parallel for firstprivate(j) 
          for(k = rowstr[j];k <= rowstr[j+1]-1;k++)
 	       a[k] = 0.0;
       }
@@ -769,7 +769,7 @@ c-------------------------------------------------------------------*/
 c       ... generate the actual output rows by adding elements
 c-------------------------------------------------------------------*/
     nza = 0;
-    #pragma omp parallel for private(i ) 
+    #pragma omp parallel for  
     for (i = 1; i <= n; i++) {
 	x[i] = 0.0;
 	mark[i] = FALSE;

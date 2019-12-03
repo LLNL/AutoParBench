@@ -25,9 +25,9 @@ void init_array(int n, DATA_TYPE POLYBENCH_2D(C,N,N,n,n))
 {
   int i, j;
 
-  #pragma omp parallel for firstprivate(j ,C ,i ) 
+  #pragma omp parallel for private(j ,i ) 
   for (i = 0; i < n; i++)
-    #pragma omp parallel for firstprivate(j ,C ,i ) 
+    #pragma omp parallel for private(j) firstprivate(i ) 
     for (j = 0; j < n; j++)
       C[i][j] = 42;
 }
@@ -56,9 +56,9 @@ void kernel_template(int n, DATA_TYPE POLYBENCH_2D(C,N,N,n,n))
 {
   int i, j;
 
-  #pragma omp parallel for firstprivate(j ,C ,i ) 
+  #pragma omp parallel for private(j ,i ) 
   for (i = 0; i < _PB_N; i++)
-    #pragma omp parallel for firstprivate(j ,C ,i ) 
+    #pragma omp parallel for private(j) firstprivate(i ) 
     for (j = 0; j < _PB_N; j++)
       C[i][j] += 42;
 
