@@ -152,6 +152,12 @@ print_map() {
   COUNTER=1;
   while IFS= read -r index
   do
+    # Skip rows of rotinia's data
+    if echo "${map[$index]}" | grep -q "rodinia_3.1/data"; then
+      continue
+    fi
+    
+    # Print the data
     echo "${COUNTER} | ${map[$index]}" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
     COUNTER=$((COUNTER+1))
   done < "${SCRIPTS}/list_ordered.txt"
