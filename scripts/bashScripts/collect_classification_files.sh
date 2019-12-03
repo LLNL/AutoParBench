@@ -43,7 +43,7 @@ CETUS_JSON=$(find "${BENCHMARKS}/Cetus" -name "*.json" | sort)
 
 #Collect jsons for dataracebench
 DATARACEBENCH_BASELINE_JSON=$(find "${BENCHMARKS}/reference_cpu_threading/dataracebench" -name "*.json" | sort)
-DATARACEBENCH_AUTOPAR_JSON=$(find "${BENCHMARKS}/Autopar" -name "*.json" | sort)
+DATARACEBENCH_AUTOPAR_JSON=$(find "${BENCHMARKS}/Autopar/dataracebench" -name "*.json" | sort)
 DATARACEBENCH_ICC_NOCOST_JSON=$(find "${BENCHMARKS}/ICC_Full/dataracebench" -name "*.json" | sort)
 DATARACEBENCH_ICC_COST_JSON=$(find "${BENCHMARKS}/ICC_Cost/dataracebench" -name "*.json" | sort)
 DATARACEBENCH_CETUS_JSON=$(find "${BENCHMARKS}/Cetus/dataracebench" -name "*.json" | sort)
