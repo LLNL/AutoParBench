@@ -85,6 +85,7 @@
 ./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c.json | 5 | 73 | TN | NO
 ./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c.json | 6 | 74 | TN | NO
 ./CPU/dataracebench/DRB033-truedeplinear-orig-yes.c.json | 1 | 60 | DP | YES
+./CPU/dataracebench/DRB033-truedeplinear-orig-yes.c.json | 2 | 63 | TN | NO
 ./CPU/dataracebench/DRB034-truedeplinear-var-yes.c.json | 1 | 62 | DP | YES
 ./CPU/dataracebench/DRB034-truedeplinear-var-yes.c.json | 2 | 65 | TN | NO
 ./CPU/dataracebench/DRB034-truedeplinear-var-yes.c.json | 3 | 68 | TN | NO
@@ -478,5 +479,9 @@
 ./CPU/dataracebench/DRB114-if-orig-yes.c.json | 1 | 66 | DP | YES
 ./CPU/dataracebench/DRB114-if-orig-yes.c.json | 2 | 70 | TN | NO
 ./CPU/dataracebench/utilities/polybench.c.json | 1 | 95 | TP | YES
-./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 1 | 43 | TN | NO
-./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 2 | 44 | TN | NO
+./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 1 | 29 | DP | YES
+./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 2 | 31 | DP | YES
+./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 3 | 60 | DP | YES
+./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 4 | 62 | DP | YES
+./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 5 | 43 | TN | NO
+./CPU/dataracebench/utilities/template-for-new-benchmark.c.json | 6 | 44 | TN | NO

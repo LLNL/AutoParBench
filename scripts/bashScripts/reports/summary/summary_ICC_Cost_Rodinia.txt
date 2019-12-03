@@ -6,8 +6,8 @@
 <td>./CPU/rodinia_3.1/openmp/b+tree/util/num/num.c</td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 0 </td>
 <td>./CPU/rodinia_3.1/openmp/cfd/euler3d_cpu.cpp</td><td> 0 </td><td> 0 </td><td> 21 </td><td> 0 </td><td> 0 </td><td> 1 </td>
 <td>./CPU/rodinia_3.1/openmp/cfd/euler3d_cpu_double.cpp</td><td> 0 </td><td> 0 </td><td> 18 </td><td> 0 </td><td> 0 </td><td> 1 </td>
-<td>./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c</td><td> 0 </td><td> 0 </td><td> 18 </td><td> 0 </td><td> 0 </td><td> 1 </td>
+<td>./CPU/rodinia_3.1/openmp/heartwall/AVI/avilib.c</td><td> 0 </td><td> 0 </td><td> 18 </td><td> 0 </td><td> 3 </td><td> 1 </td>
 <td>./CPU/rodinia_3.1/openmp/heartwall/kernel.c</td><td> 0 </td><td> 0 </td><td> 40 </td><td> 0 </td><td> 0 </td><td> 0 </td>
-<td>./CPU/rodinia_3.1/openmp/heartwall/main.c</td><td> 0 </td><td> 0 </td><td> 12 </td><td> 0 </td><td> 1 </td><td> 0 </td>
-<td>./CPU/rodinia_3.1/openmp/hotspot3D/3D.c</td><td> 0 </td><td> 0 </td><td> 13 </td><td> 0 </td><td> 1 </td><td> 0 </td>
+<td>./CPU/rodinia_3.1/openmp/heartwall/main.c</td><td> 0 </td><td> 0 </td><td> 12 </td><td> 0 </td><td> 7 </td><td> 0 </td>
+<td>./CPU/rodinia_3.1/openmp/hotspot3D/3D.c</td><td> 0 </td><td> 0 </td><td> 13 </td><td> 0 </td><td> 2 </td><td> 0 </td>
 <td>./CPU/rodinia_3.1/openmp/hotspot/hotspot_openmp.cpp</td><td> 0 </td><td> 0 </td><td> 9 </td><td> 0 </td><td> 0 </td><td> 0 </td>

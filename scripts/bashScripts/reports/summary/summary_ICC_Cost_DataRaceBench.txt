@@ -28,7 +28,7 @@
 <td>./CPU/dataracebench/DRB030-truedep1-var-yes.c</td><td> 0 </td><td> 0 </td><td> 2 </td><td> 0 </td><td> 1 </td><td> 0 </td>
 <td>./CPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c</td><td> 2 </td><td> 0 </td><td> 3 </td><td> 0 </td><td> 1 </td><td> 0 </td>
 <td>./CPU/dataracebench/DRB032-truedepfirstdimension-var-yes.c</td><td> 0 </td><td> 0 </td><td> 3 </td><td> 0 </td><td> 3 </td><td> 0 </td>
-<td>./CPU/dataracebench/DRB033-truedeplinear-orig-yes.c</td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td>
+<td>./CPU/dataracebench/DRB033-truedeplinear-orig-yes.c</td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td><td> 1 </td><td> 0 </td>
 <td>./CPU/dataracebench/DRB034-truedeplinear-var-yes.c</td><td> 0 </td><td> 0 </td><td> 2 </td><td> 0 </td><td> 1 </td><td> 0 </td>
 <td>./CPU/dataracebench/DRB035-truedepscalar-orig-yes.c</td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 0 </td>
 <td>./CPU/dataracebench/DRB036-truedepscalar-var-yes.c</td><td> 0 </td><td> 0 </td><td> 2 </td><td> 0 </td><td> 0 </td><td> 0 </td>
@@ -88,4 +88,4 @@
 <td>./CPU/dataracebench/DRB113-default-orig-no.c</td><td> 4 </td><td> 0 </td><td> 2 </td><td> 0 </td><td> 2 </td><td> 0 </td>
 <td>./CPU/dataracebench/DRB114-if-orig-yes.c</td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td><td> 1 </td><td> 0 </td>
 <td>./CPU/dataracebench/utilities/polybench.c</td><td> 0 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td>
-<td>./CPU/dataracebench/utilities/template-for-new-benchmark.c</td><td> 0 </td><td> 0 </td><td> 2 </td><td> 0 </td><td> 0 </td><td> 0 </td>
+<td>./CPU/dataracebench/utilities/template-for-new-benchmark.c</td><td> 4 </td><td> 0 </td><td> 2 </td><td> 0 </td><td> 0 </td><td> 0 </td>
