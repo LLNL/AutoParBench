@@ -58,7 +58,7 @@ add_common_info() {
     filename_id=${filename_id/.\//}
     filename_id=${filename_id// /}
    
-    if echo "$filename_id" | grep -q "rodinia_3.1/data"; then
+    if echo "${index}" | grep -q "rodinia_3.1/data"; then
       continue
     fi
 
@@ -113,10 +113,13 @@ read_file() {
     filename=${filename/.\/CPU_VECTORIZATION\//}
     filename=${filename// /}
 
-    if echo "$filename_id" | grep -q "rodinia_3.1/data"; then
+    if echo "${index}" | grep -q "rodinia_3.1/data"; then
       continue
     fi
 
+    if [ "${map[$index]}" == "" ]; then
+      continue
+    fi
     link_tool="[out](../../benchmarks/${TOOL_DIR}/${filename})"
     if echo "$input" | grep -q "ICC"; then
       link_tool="[out](../../benchmarks/${TOOL_DIR}/${filename}.optrpt)"
@@ -131,6 +134,10 @@ read_file() {
   done < "${input}"
 
   for index in "${!map[@]}"; do
+    if echo "${index}" | grep -q "rodinia_3.1/data"; then
+      continue
+    fi
+
     if [ "${map_used[$index]}" == "false" ]; then
       row="${map[$index]} | Not Available - -"
       map[$index]="${row}"
@@ -144,6 +151,9 @@ print_map() {
   BENCHMARK="${1}"
 
   for index in "${!map[@]}"; do
+    if echo "$index" | grep -q "rodinia_3.1/data"; then
+      continue
+    fi 
     echo "${index}" &>> "${SCRIPTS}/list_index.txt"
   done
   
@@ -152,11 +162,6 @@ print_map() {
   COUNTER=1;
   while IFS= read -r index
   do
-    # Skip rows of rotinia's data
-    if echo "${map[$index]}" | grep -q "rodinia_3.1/data"; then
-      continue
-    fi
-    
     # Print the data
     echo "${COUNTER} | ${map[$index]}" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
     COUNTER=$((COUNTER+1))
