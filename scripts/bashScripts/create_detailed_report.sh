@@ -57,7 +57,10 @@ add_common_info() {
     filename_id=${filename_id/.json/}
     filename_id=${filename_id/.\//}
     filename_id=${filename_id// /}
-
+   
+    if echo "$filename_id" | grep -q "rodinia_3.1/data"; then
+      continue
+    fi
 
     link_orig="[Original](../../benchmarks/original/${filename})"
     link_seq="[Sequential](../../benchmarks/sequential/${filename})"
@@ -109,6 +112,10 @@ read_file() {
     filename=${filename/.\/GPU\//}
     filename=${filename/.\/CPU_VECTORIZATION\//}
     filename=${filename// /}
+
+    if echo "$filename_id" | grep -q "rodinia_3.1/data"; then
+      continue
+    fi
 
     link_tool="[out](../../benchmarks/${TOOL_DIR}/${filename})"
     if echo "$input" | grep -q "ICC"; then
@@ -164,8 +171,8 @@ create_detailed_report() {
   create_detailed_header "${BENCHMARK}"
   echo "### DataRaceBench Report" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
-  echo " Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | Autopar | ICC Full | ICC Cost | Cetus " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
-  echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
+  echo " ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | Autopar | ICC Full | ICC Cost | Cetus " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
+  echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
 
   print_map "${BENCHMARK}" 
   unset map
@@ -181,8 +188,8 @@ create_detailed_report() {
   create_detailed_header "${BENCHMARK}"
   echo "### NPB Report" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
-  echo " Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | Autopar | ICC Full | ICC Cost | Cetus " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
-  echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
+  echo " ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | Autopar | ICC Full | ICC Cost | Cetus " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
+  echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
 
   print_map "${BENCHMARK}" 
   unset map
@@ -198,8 +205,8 @@ create_detailed_report() {
   create_detailed_header "${BENCHMARK}"
   echo "### Rodinia Report" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
-  echo " Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | Autopar | ICC Full | ICC Cost | Cetus " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
-  echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
+  echo " ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | Autopar | ICC Full | ICC Cost | Cetus " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
+  echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
 
   print_map "${BENCHMARK}"
   unset map
@@ -212,8 +219,8 @@ create_detailed_report() {
   create_detailed_header "${BENCHMARK}"
   echo "### DataRaceBench Report" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
-  echo " Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | DawnCC " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
-  echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
+  echo " ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | DawnCC " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
+  echo " --- | --- | --- | --- | --- | --- | --- | --- | ---  " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
 
   print_map "${BENCHMARK}"
   unset map
@@ -225,8 +232,8 @@ create_detailed_report() {
   create_detailed_header "${BENCHMARK}"
   echo "### DataRaceBench Report" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
-  echo " Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | ICC Simd " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
-  echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
+  echo " ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | ICC Simd " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
+  echo " --- | --- | --- | --- | --- | --- | --- | --- | ---  " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
 
   print_map "${BENCHMARK}"
   unset map
