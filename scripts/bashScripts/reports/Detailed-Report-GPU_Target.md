@@ -6,8 +6,8 @@ Intel(R) Xeon(R) CPU E5-2686 v4
 
 ### DataRaceBench Report
 
- Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | DawnCC 
- --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 
+ ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | DawnCC 
+ --- | --- | --- | --- | --- | --- | --- | --- | ---  
 1 | GPU/dataracebench/DRB001-antidep1-orig-yes.c | 1 | 62 | [YES](../../benchmarks/reference_gpu_target/dataracebench/DRB001-antidep1-orig-yes.c) | [Reference JSON](../../benchmarks/reference_gpu_target/dataracebench/DRB001-antidep1-orig-yes.c.json) | [Original](../../benchmarks/original/dataracebench/DRB001-antidep1-orig-yes.c) | [Sequential](../../benchmarks/sequential/dataracebench/DRB001-antidep1-orig-yes.c) | TP  [out](../../benchmarks/Dawncc/dataracebench/DRB001-antidep1-orig-yes.c) [json](../../benchmarks/Dawncc/dataracebench/DRB001-antidep1-orig-yes.c.json)
 2 | GPU/dataracebench/DRB001-antidep1-orig-yes.c | 2 | 65 | [NO](../../benchmarks/reference_gpu_target/dataracebench/DRB001-antidep1-orig-yes.c) | [Reference JSON](../../benchmarks/reference_gpu_target/dataracebench/DRB001-antidep1-orig-yes.c.json) | [Original](../../benchmarks/original/dataracebench/DRB001-antidep1-orig-yes.c) | [Sequential](../../benchmarks/sequential/dataracebench/DRB001-antidep1-orig-yes.c) | TN  [out](../../benchmarks/Dawncc/dataracebench/DRB001-antidep1-orig-yes.c) [json](../../benchmarks/Dawncc/dataracebench/DRB001-antidep1-orig-yes.c.json)
 3 | GPU/dataracebench/DRB002-antidep1-var-yes.c | 1 | 65 | [YES](../../benchmarks/reference_gpu_target/dataracebench/DRB002-antidep1-var-yes.c) | [Reference JSON](../../benchmarks/reference_gpu_target/dataracebench/DRB002-antidep1-var-yes.c.json) | [Original](../../benchmarks/original/dataracebench/DRB002-antidep1-var-yes.c) | [Sequential](../../benchmarks/sequential/dataracebench/DRB002-antidep1-var-yes.c) | TP  [out](../../benchmarks/Dawncc/dataracebench/DRB002-antidep1-var-yes.c) [json](../../benchmarks/Dawncc/dataracebench/DRB002-antidep1-var-yes.c.json)
