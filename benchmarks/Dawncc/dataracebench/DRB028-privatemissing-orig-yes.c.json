@@ -10,20 +10,19 @@
 "offload":"true",
 "multiversioned":"false",
 "induction variable":"i",
-"map tofrom":["a[0:len]"]
+"map tofrom":["a[0:100]"]
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB028-privatemissing-orig-yes.c",
 "function":"main",
 "loop id":"2",
-"loop line":"66",
+"loop line":"68",
 "loop column":"3",
 "pragma type":"target parallel for",
 "ordered":"false",
 "offload":"true",
 "multiversioned":"false",
 "induction variable":"i",
-"private":["tmp"],
-"map tofrom":["a[0:len]"]
+"map tofrom":["a[0:100]"]
 }
 }
