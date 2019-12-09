@@ -61,7 +61,6 @@ int main(int argc, char *argv[]) {
       {
       #pragma omp target parallel for 
       for (i = 0; i < n; i++)
-        #pragma omp parallel for 
         for (j = 0; j < m; j++)
           b[i][j] = 0.5;
     }

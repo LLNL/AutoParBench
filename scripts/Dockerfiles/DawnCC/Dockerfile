@@ -4,8 +4,13 @@ FROM ubuntu:cosmic as build
 # install build dependencies
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
+RUN apt-get install apt-utils -y
 RUN apt-get upgrade -y
-RUN apt-get install -y make vim cmake git wget gcc-5 g++-5 python zip unzip
+RUN apt-get install libexpat1 -y
+RUN apt-get install -y make vim cmake git wget zip unzip
+RUN apt-get install -y gcc-5 g++-5
+RUN apt-get install -y libomp-dev
+RUN apt-get install -y python
 
 # use gcc 5
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 100

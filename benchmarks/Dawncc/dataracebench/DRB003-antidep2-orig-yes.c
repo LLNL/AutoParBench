@@ -60,7 +60,6 @@ int main(int argc, char *argv[]) {
   {
   #pragma omp target parallel for 
   for (i = 0; i < len; i++)
-    #pragma omp parallel for 
     for (j = 0; j < len; j++)
       a[i][j] = (i * len + j + 0.5);
 }

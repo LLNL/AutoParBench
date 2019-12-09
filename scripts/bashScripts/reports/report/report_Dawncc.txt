@@ -4,7 +4,7 @@ FN
 TN
 TN
 DP
-FP
+TN
 TN
 FP
 TN
@@ -27,7 +27,7 @@ TN
 DP
 DP
 FP
-FP
+TN
 TN
 FN
 TN
