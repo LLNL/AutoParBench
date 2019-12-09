@@ -6,9 +6,9 @@
 ./GPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 1 | 62 | DP | YES
 ./GPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 2 | 63 | TN | NO
 ./GPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 3 | 67 | TN | NO
-./GPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 4 | 68 | FP | NO
-./GPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 5 | 73 | TN | NO
-./GPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 6 | 74 | TN | NO
+./GPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 4 | 69 | DP | YES
+./GPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 5 | 74 | TN | NO
+./GPU/dataracebench/DRB003-antidep2-orig-yes.c.json | 6 | 75 | TN | NO
 ./GPU/dataracebench/DRB004-antidep2-var-yes.c.json | 1 | 66 | FN | YES
 ./GPU/dataracebench/DRB004-antidep2-var-yes.c.json | 2 | 67 | TN | NO
 ./GPU/dataracebench/DRB004-antidep2-var-yes.c.json | 3 | 71 | TN | NO

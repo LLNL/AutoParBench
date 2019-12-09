@@ -475,7 +475,7 @@ Intel(R) Xeon(R) CPU E5-2686 v4
 <tr><th> ID </th><th> Filename </th><th> DP </th><th> TP </th><th> TN </th><th> FP </th><th> FN </th><th> N/A </th></tr>
 <tr><td>1</td><td>GPU/dataracebench/DRB001-antidep1-orig-yes.c</td><td> 0 </td><td> 1 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 0 </td></tr>
 <tr><td>2</td><td>GPU/dataracebench/DRB002-antidep1-var-yes.c</td><td> 0 </td><td> 0 </td><td> 2 </td><td> 0 </td><td> 1 </td><td> 0 </td></tr>
-<tr><td>3</td><td>GPU/dataracebench/DRB003-antidep2-orig-yes.c</td><td> 1 </td><td> 0 </td><td> 4 </td><td> 1 </td><td> 0 </td><td> 0 </td></tr>
+<tr><td>3</td><td>GPU/dataracebench/DRB003-antidep2-orig-yes.c</td><td> 2 </td><td> 0 </td><td> 4 </td><td> 0 </td><td> 0 </td><td> 0 </td></tr>
 <tr><td>4</td><td>GPU/dataracebench/DRB004-antidep2-var-yes.c</td><td> 0 </td><td> 0 </td><td> 4 </td><td> 0 </td><td> 2 </td><td> 0 </td></tr>
 <tr><td>5</td><td>GPU/dataracebench/DRB005-indirectaccess1-orig-yes.c</td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 2 </td><td> 0 </td></tr>
 <tr><td>6</td><td>GPU/dataracebench/DRB014-outofbounds-orig-yes.c</td><td> 0 </td><td> 0 </td><td> 2 </td><td> 0 </td><td> 2 </td><td> 0 </td></tr>

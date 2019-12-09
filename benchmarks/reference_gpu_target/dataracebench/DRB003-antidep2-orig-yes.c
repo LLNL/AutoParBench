@@ -65,6 +65,7 @@ int main(int argc,char *argv[])
 
   #pragma omp target data map(tofrom:a[0:20][0:20])
   for (i = 0; i < len - 1; i += 1) {
+    #pragma omp target parallel for
     for (j = 0; j < len ; j += 1) {
       a[i][j] += a[i + 1][j];
     }
