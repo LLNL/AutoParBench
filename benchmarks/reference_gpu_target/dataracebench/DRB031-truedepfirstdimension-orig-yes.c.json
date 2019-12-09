@@ -5,10 +5,13 @@
 "loop id":"1",
 "loop line":"64",
 "loop column":"3",
-"pragma type":"NULL",
+"pragma type":"parallel for",
 "ordered":"false",
-"offload":"false",
-"multiversioned":"false"
+"offload":"true",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["j"],
+"map from":["b[0:1000][0:1000]"]
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB031-truedepfirstdimension-orig-yes.c",

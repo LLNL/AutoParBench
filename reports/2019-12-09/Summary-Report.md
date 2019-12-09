@@ -481,7 +481,7 @@ Intel(R) Xeon(R) CPU E5-2686 v4
 <tr><td>6</td><td>GPU/dataracebench/DRB014-outofbounds-orig-yes.c</td><td> 0 </td><td> 0 </td><td> 2 </td><td> 0 </td><td> 2 </td><td> 0 </td></tr>
 <tr><td>7</td><td>GPU/dataracebench/DRB020-privatemissing-var-yes.c</td><td> 0 </td><td> 0 </td><td> 1 </td><td> 0 </td><td> 2 </td><td> 0 </td></tr>
 <tr><td>8</td><td>GPU/dataracebench/DRB028-privatemissing-orig-yes.c</td><td> 2 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td><td> 0 </td></tr>
-<tr><td>9</td><td>GPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c</td><td> 0 </td><td> 0 </td><td> 4 </td><td> 1 </td><td> 1 </td><td> 0 </td></tr>
+<tr><td>9</td><td>GPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c</td><td> 1 </td><td> 0 </td><td> 4 </td><td> 0 </td><td> 1 </td><td> 0 </td></tr>
 <tr><td>10</td><td>GPU/dataracebench/DRB037-truedepseconddimension-orig-yes.c</td><td> 0 </td><td> 0 </td><td> 4 </td><td> 0 </td><td> 2 </td><td> 0 </td></tr>
 <tr><td>11</td><td>GPU/dataracebench/DRB045-doall1-orig-no.c</td><td> 0 </td><td> 2 </td><td> 1 </td><td> 0 </td><td> 0 </td><td> 0 </td></tr>
 <tr><td>12</td><td>GPU/dataracebench/DRB046-doall2-orig-no.c</td><td> 0 </td><td> 0 </td><td> 4 </td><td> 0 </td><td> 2 </td><td> 0 </td></tr>

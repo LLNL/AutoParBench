@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
   {
   #pragma omp target
   {
-  #pragma parallel for private(j)
+  #pragma omp parallel for private(j)
   for (i=0; i<n; i++)
     for (j=0; j<m; j++)
       b[i][j] = 0.5; 

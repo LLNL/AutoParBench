@@ -26,7 +26,7 @@
 ./GPU/dataracebench/DRB020-privatemissing-var-yes.c.json | 3 | 74 | TN | NO
 ./GPU/dataracebench/DRB028-privatemissing-orig-yes.c.json | 1 | 61 | DP | YES
 ./GPU/dataracebench/DRB028-privatemissing-orig-yes.c.json | 2 | 66 | DP | YES
-./GPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 1 | 64 | FP | NO
+./GPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 1 | 64 | DP | YES
 ./GPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 2 | 65 | TN | NO
 ./GPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 3 | 72 | TN | NO
 ./GPU/dataracebench/DRB031-truedepfirstdimension-orig-yes.c.json | 4 | 74 | FN | YES
