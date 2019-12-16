@@ -1,6 +1,6 @@
 # Tool Evaluation Dashboard
 
-## AutoParBench version (1.0.23)
+## AutoParBench version (1.0.24)
 | Report |
 | --- |
 | [Metric Report](2019-12-16/Metrics-Report.md) |

@@ -4,7 +4,7 @@
 
 Intel(R) Xeon(R) CPU E5-2686 v4
 
-### Rodinia Report
+## Table Columns Description
 
 * ID : Unique id, to provide fast/easy identification.
 * Filename : Name of the file, with the directory and reference group (CPU, GPU, CPU Simd).
@@ -17,6 +17,8 @@ Intel(R) Xeon(R) CPU E5-2686 v4
 * ICC Full : Links to ICC Full 's output, JSON file and the classification of this loop after equivalence checking.
 * ICC Cost : Links to ICC Cost's output, JSON file and the classification of this loop after equivalence checking.
 * Cetus : Links to Cetus's output, JSON file and the classification of this loop after equivalence checking.
+
+### Rodinia Report
 
  ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | Autopar | ICC Full | ICC Cost | Cetus 
  --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- 

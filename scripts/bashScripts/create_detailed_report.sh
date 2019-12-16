@@ -24,6 +24,8 @@ echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
 
 add_description() {
 file="${1}"
+echo "## Table Columns Description" &>> "${file}"
+echo "" &>> "${file}"
 echo "* ID : Unique id, to provide fast/easy identification." &>> "${file}"
 echo "* Filename : Name of the file, with the directory and reference group (CPU, GPU, CPU Simd)." &>> "${file}"
 echo "* Loop ID : Unique id for each loop at the same source code file." &>> "${file}"
@@ -196,9 +198,9 @@ create_detailed_report() {
 
   BENCHMARK="CPU_Dataracebench"
   create_detailed_header "${BENCHMARK}"
+  add_description ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "### DataRaceBench Report" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
-  add_description ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo " ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | Autopar | ICC Full | ICC Cost | Cetus " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
 
@@ -214,9 +216,9 @@ create_detailed_report() {
 
   BENCHMARK="CPU_NPB"
   create_detailed_header "${BENCHMARK}"
+  add_description ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "### NPB Report" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
-  add_description ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo " ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | Autopar | ICC Full | ICC Cost | Cetus " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
 
@@ -232,9 +234,9 @@ create_detailed_report() {
 
   BENCHMARK="CPU_Rodinia"
   create_detailed_header "${BENCHMARK}"
+  add_description ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "### Rodinia Report" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
-  add_description ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo " ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | Autopar | ICC Full | ICC Cost | Cetus " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
 
