@@ -4,6 +4,20 @@
 
 Intel(R) Xeon(R) CPU E5-2686 v4
 
+## Table Columns Description
+
+* ID : Unique id, to provide fast/easy identification.
+* Filename : Name of the file, with the directory and reference group (CPU, GPU, CPU Simd).
+* Loop ID : Unique id for each loop at the same source code file.
+* Line Number : Line number of this loop at ground truth file.
+* JSON Reference : JSON representation of the source file, containing extracted OpenMP constructions as JSON objects.
+* Original : Manually annotated reference files, with minor changes to our proposes and to simplify the way users can run our framework. These files contain the code provided by an expert. For Dataracebench, they were modified to avoid race conditions and dump out results.
+* Sequential : Benchmarks with all OpenMP directives/clauses removed. These files were generated using our scripts.
+* Autopar : Links to Autopar's output, JSON file and the classification of this loop after equivalence checking.
+* ICC Full : Links to ICC Full 's output, JSON file and the classification of this loop after equivalence checking.
+* ICC Cost : Links to ICC Cost's output, JSON file and the classification of this loop after equivalence checking.
+* Cetus : Links to Cetus's output, JSON file and the classification of this loop after equivalence checking.
+
 ### DataRaceBench Report
 
  ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | DawnCC 

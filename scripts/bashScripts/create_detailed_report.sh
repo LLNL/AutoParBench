@@ -249,6 +249,7 @@ create_detailed_report() {
 
   BENCHMARK="GPU_Target"
   create_detailed_header "${BENCHMARK}"
+  add_description ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "### DataRaceBench Report" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo " ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | DawnCC " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
@@ -262,6 +263,7 @@ create_detailed_report() {
   read_file "${THIS}/reports/detailed/detailed_report_ICC_Simd.txt" "ICC_Simd"
   BENCHMARK="CPU_Vectorization"
   create_detailed_header "${BENCHMARK}"
+  add_description ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "### DataRaceBench Report" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo " ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | ICC Simd " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
