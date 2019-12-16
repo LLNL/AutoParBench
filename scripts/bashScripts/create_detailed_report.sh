@@ -22,6 +22,22 @@ echo "Intel(R) Xeon(R) CPU E5-2686 v4" &>> ${THIS}/reports/Detailed-Report-${BEN
 echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
 }
 
+add_description() {
+file="${1}"
+echo "* ID : Unique id, to provide fast/easy identification." &>> "${file}"
+echo "* Filename : Name of the file, with the directory and reference group (CPU, GPU, CPU Simd)." &>> "${file}"
+echo "* Loop ID : Unique id for each loop at the same source code file." &>> "${file}"
+echo "* Line Number : Line number of this loop at ground truth file." &>> "${file}"
+echo "* JSON Reference : JSON representation of the source file, containing extracted OpenMP constructions as JSON objects." &>> "${file}"
+echo "* Original : Manually annotated reference files, with minor changes to our proposes and to simplify the way users can run our framework. These files contain the code provided by an expert. For Dataracebench, they were modified to avoid race conditions and dump out results." &>> "${file}"
+echo "* Sequential : Benchmarks with all OpenMP directives/clauses removed. These files were generated using our scripts." &>> "${file}"
+echo "* Autopar : Links to Autopar's output, JSON file and the classification of this loop after equivalence checking." &>> "${file}" 
+echo "* ICC Full : Links to ICC Full 's output, JSON file and the classification of this loop after equivalence checking." &>> "${file}"
+echo "* ICC Cost : Links to ICC Cost's output, JSON file and the classification of this loop after equivalence checking." &>> "${file}"
+echo "* Cetus : Links to Cetus's output, JSON file and the classification of this loop after equivalence checking." &>> "${file}"
+echo "" &>> "${file}"
+}
+
 add_common_info() {
   input=${1}
   reference=${2}
@@ -182,6 +198,7 @@ create_detailed_report() {
   create_detailed_header "${BENCHMARK}"
   echo "### DataRaceBench Report" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
+  add_description ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo " ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | Autopar | ICC Full | ICC Cost | Cetus " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
 
@@ -199,6 +216,7 @@ create_detailed_report() {
   create_detailed_header "${BENCHMARK}"
   echo "### NPB Report" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
+  add_description ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo " ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | Autopar | ICC Full | ICC Cost | Cetus " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
 
@@ -216,6 +234,7 @@ create_detailed_report() {
   create_detailed_header "${BENCHMARK}"
   echo "### Rodinia Report" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo "" &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
+  add_description ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo " ID | Filename | Loop ID | Line Number | Ground Truth | JSON Reference | Original | Sequential | Autopar | ICC Full | ICC Cost | Cetus " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
   echo " --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- " &>> ${THIS}/reports/Detailed-Report-${BENCHMARK}.md
 
