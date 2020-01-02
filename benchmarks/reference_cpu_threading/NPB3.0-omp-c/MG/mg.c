@@ -270,9 +270,9 @@ c---------------------------------------------------------------------*/
     norm2u3(r[lt],n1,n2,n3,&rnm2,&rnmu,nx[lt],ny[lt],nz[lt]);
 
 {   
-#if defined(_OPENMP)
-  nthreads = omp_get_num_threads();
-#endif /* _OPENMP */
+//#if defined(_OPENMP)
+//  nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */
 } /* end parallel */
 
     timer_stop(T_BENCH);

@@ -202,9 +202,9 @@ c       vectorizable.
       #pragma omp parallel for
       for (i = 0; i <= NQ - 1; i++) q[i] += qq[i];
     }
-#if defined(_OPENMP)
-    nthreads = omp_get_num_threads();
-#endif /* _OPENMP */    
+//#if defined(_OPENMP)
+//    nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */    
 } /* end of parallel region */    
 
     #pragma omp parallel for private(i ) reduction(+:gc) 

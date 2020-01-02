@@ -38,10 +38,10 @@
 /* global variables */
 #include "applu.h"
 
-#if defined(_OPENMP)
+//#if defined(_OPENMP)
 /* for thread synchronization */
-static boolean flag[ISIZ1/2*2+1];
-#endif /* _OPENMP */
+//static boolean flag[ISIZ1/2*2+1];
+//#endif /* _OPENMP */
 
 /* function declarations */
 static void blts (int nx, int ny, int nz, int k,
@@ -134,9 +134,9 @@ c   compute the forcing term based on prescribed exact solution
   
 {  
   
-#if defined(_OPENMP)  
-  nthreads = omp_get_num_threads();
-#endif /* _OPENMP */  
+//#if defined(_OPENMP)  
+//  nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */  
 }
 
 /*--------------------------------------------------------------------
@@ -222,18 +222,18 @@ c  local variables
 
   for (i = ist; i <= iend; i++) {
     
-#if defined(_OPENMP)      
-    if (i != ist) {
-	while (flag[i-1] == 0) {
-	    ;
-	}
-    }
-    if (i != iend) {
-	while (flag[i] == 1) {
-	    ;
-	}
-    }
-#endif /* _OPENMP */
+//#if defined(_OPENMP)      
+//   if (i != ist) {
+//	while (flag[i-1] == 0) {
+//	    ;
+//	}
+//    }
+//    if (i != iend) {
+//	while (flag[i] == 1) {
+//	    ;
+//	}
+//    }
+//#endif /* _OPENMP */
     
     for (j = jst; j <= jend; j++) {
       for (m = 0; m < 5; m++) {
@@ -401,10 +401,10 @@ c   back substitution
 	/ tmat[0][0];
     }
     
-#if defined(_OPENMP)    
-    if (i != ist) flag[i-1] = 0;
-    if (i != iend) flag[i] = 1;
-#endif /* _OPENMP */    
+//#if defined(_OPENMP)    
+//   if (i != ist) flag[i-1] = 0;
+//    if (i != iend) flag[i] = 1;
+//#endif /* _OPENMP */    
   }
 }
 
@@ -457,18 +457,18 @@ c  local variables
   }
 
   for (i = iend; i >= ist; i--) {
-#if defined(_OPENMP)      
-    if (i != iend) {
-      while (flag[i+1] == 0) {
-	;
-      }
-    }
-    if (i != ist) {
-      while (flag[i] == 1) {
-	;
-      }
-    }
-#endif /* _OPENMP */
+//#if defined(_OPENMP)      
+//    if (i != iend) {
+//      while (flag[i+1] == 0) {
+//	;
+//      }
+////    }
+//    if (i != ist) {
+//      while (flag[i] == 1) {
+//	;
+//     }
+//    }
+//#endif /* _OPENMP */
     
     for (j = jend; j >= jst; j--) {
       for (m = 0; m < 5; m++) {
@@ -639,10 +639,10 @@ c   back substitution
       v[i][j][k][4] = v[i][j][k][4] - tv[i][j][4];
     }
     
-#if defined(_OPENMP)    
-    if (i != iend) flag[i+1] = 0;
-    if (i != ist) flag[i] = 1;
-#endif /* _OPENMP */    
+//#if defined(_OPENMP)    
+//    if (i != iend) flag[i+1] = 0;
+//    if (i != ist) flag[i] = 1;
+//#endif /* _OPENMP */    
   }
 }
 

@@ -288,9 +288,9 @@ c-------------------------------------------------------------------*/
 	}
     } /* end of main iter inv pow meth */
 {
-#if defined(_OPENMP)
-    nthreads = omp_get_num_threads();
-#endif /* _OPENMP */
+//#if defined(_OPENMP)
+//    nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */
 } /* end parallel */
 
     timer_stop( 1 );
