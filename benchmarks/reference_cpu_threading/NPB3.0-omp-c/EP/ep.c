@@ -153,7 +153,7 @@ c   have more numbers to generate than others
     #pragma omp parallel for 
     for (i = 0; i < NQ; i++) qq[i] = 0.0;
 
-    #pragma omp parallel for reduction(+:sx) reduction(+:sy) 
+    //#pragma omp parallel for copyin(x, qq) private(x1, x2, t1, t2, t3, t4, ik, kk, i, l) reduction(+:sx) reduction(+:sy) 
     for (k = 1; k <= np; k++) {
 	kk = k_offset + k;
 	t1 = S;

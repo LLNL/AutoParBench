@@ -303,7 +303,8 @@ c-------------------------------------------------------------------*/
 
     printf(" Benchmark completed\n");
 
-    epsilon = 1.0e-10;
+    //epsilon = 1.0e-10;
+    epsilon = 1.0e-2;
     if (class != 'U') {
 	if (fabs(zeta - zeta_verify_value) <= epsilon) {
             verified = TRUE;
@@ -414,7 +415,6 @@ C        on the Cray t3d - overall speed of code is 1.5 times faster.
 	#pragma omp parallel for private(sum) 
 	for (j = 1; j <= lastrow-firstrow+1; j++) {
             sum = 0.0;
-	    #pragma omp parallel for reduction(+:sum)  
 	    for (k = rowstr[j]; k < rowstr[j+1]; k++) {
 		sum = sum + a[k]*p[colidx[k]];
 	    }
@@ -483,7 +483,6 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c  Obtain alpha = rho / (p.q)
 c-------------------------------------------------------------------*/
-//#pragma omp single	
 	alpha = rho0 / d;
 
 /*--------------------------------------------------------------------
@@ -509,12 +508,10 @@ c---------------------------------------------------------------------*/
 	for (j = 1; j <= lastcol-firstcol+1; j++) {*/
             rho = rho + r[j]*r[j];
 	}
-//#pragma omp barrier
 
 /*--------------------------------------------------------------------
 c  Obtain beta:
 c-------------------------------------------------------------------*/
-//#pragma omp single	
 	beta = rho / rho0;
 
 /*--------------------------------------------------------------------
@@ -539,7 +536,6 @@ c---------------------------------------------------------------------*/
     #pragma omp parallel for private(d) 
     for (j = 1; j <= lastrow-firstrow+1; j++) {
 	d = 0.0;
-	#pragma omp parallel for reduction(+:d) 
 	for (k = rowstr[j]; k <= rowstr[j+1]-1; k++) {
             d = d + a[k]*z[colidx[k]];
 	}
@@ -549,7 +545,7 @@ c---------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c  At this point, r contains A.z
 c-------------------------------------------------------------------*/
-    #pragma omp parallel for private(d ) reduction(+:sum) 
+    #pragma omp parallel for private(d) reduction(+:sum) 
     for (j = 1; j <= lastcol-firstcol+1; j++) {
 	d = x[j] - r[j];
 	sum = sum + d*d;
