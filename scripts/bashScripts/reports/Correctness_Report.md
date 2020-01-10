@@ -16,7 +16,7 @@ This report was produced comparing if the output parallel programs are equal or 
 <tr><td>./DRB009-lastprivatemissing-orig-yes</td><td>Yes</td></tr>
 <tr><td>./DRB010-lastprivatemissing-var-yes</td><td>Yes</td></tr>
 <tr><td>./DRB011-minusminus-orig-yes</td><td>Yes</td></tr>
-<tr><td>./DRB012-minusminus-var-yes</td><td>No</td></tr>
+<tr><td>./DRB012-minusminus-var-yes</td><td>Yes</td></tr>
 <tr><td>./DRB013-nowait-orig-yes</td><td>Yes</td></tr>
 <tr><td>./DRB014-outofbounds-orig-yes</td><td>Yes</td></tr>
 <tr><td>./DRB015-outofbounds-var-yes</td><td>Yes</td></tr>
@@ -40,7 +40,7 @@ This report was produced comparing if the output parallel programs are equal or 
 <tr><td>./DRB035-truedepscalar-orig-yes</td><td>Yes</td></tr>
 <tr><td>./DRB036-truedepscalar-var-yes</td><td>Yes</td></tr>
 <tr><td>./DRB037-truedepseconddimension-orig-yes</td><td>Yes</td></tr>
-<tr><td>./DRB038-truedepseconddimension-var-yes</td><td>No</td></tr>
+<tr><td>./DRB038-truedepseconddimension-var-yes</td><td>Yes</td></tr>
 <tr><td>./DRB040-truedepsingleelement-var-yes</td><td>No</td></tr>
 <tr><td>./DRB041-3mm-parallel-no</td><td>Yes</td></tr>
 <tr><td>./DRB043-adi-parallel-no</td><td>Yes</td></tr>
