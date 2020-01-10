@@ -58,10 +58,10 @@ int init()
   for (i = 0; i < N; i++) {
     #pragma omp parallel for private(j ) 
     for (j = 0; j < N; j++) {
-        a[i][j] = i * j;
+        a[i][j] = i * j + 0.01;
     }
-    v_out[i] = i * j;
-    v[i] = i * j;
+    v_out[i] = i * j + 0.01;
+    v[i] = i * j + 0.01;
   }
   return 0;
 }
@@ -72,7 +72,7 @@ void mv()
   #pragma omp parallel for private(i ,j ) 
   for (i = 0; i < N; i++)
   {         
-    float sum = 0.0;
+    double sum = 0.0;
     #pragma omp parallel for reduction(+:sum)
     for (j = 0; j < N; j++)
     { 

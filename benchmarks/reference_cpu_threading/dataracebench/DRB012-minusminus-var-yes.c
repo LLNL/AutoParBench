@@ -74,6 +74,7 @@ int main(int argc, char* argv[])
     if (x[i]<=0) {
       numNodes2-- ;
     }
-  }         
+  }    
+   printf ("numNodes2 = %d\n", numNodes2);  
   return 0;
 } 

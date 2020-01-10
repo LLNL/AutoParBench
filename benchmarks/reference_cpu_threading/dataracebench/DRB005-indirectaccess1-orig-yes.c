@@ -129,7 +129,7 @@ int main (int argc, char* argv[])
     xa2[idx]+= 3.0 + i;
   }
 
-  printf("x1[999]=%f xa2[1285]=%f\n", xa1[999], xa2[1285]);
+  printf("x1[999]=%lf xa2[1285]=%lf\n", xa1[999], xa2[1285]);
   free (base);
   return  0;
 }

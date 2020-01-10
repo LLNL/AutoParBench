@@ -67,7 +67,7 @@ int main(int argc,char *argv[])
     }
   }
 
-  printf ("a[10][10]=%f\n", a[10][10]);
+  printf ("a[10][10]=%lf\n", a[10][10]);
   return 0;
 }
 

@@ -59,6 +59,9 @@ int main (int argc, char* argv[])
   a[0] = 2;
 
   for (i=0;i<len;i++)
+    a[i] = i;
+
+  for (i=0;i<len;i++)
     a[i]=a[i]+a[0];
 
   for (i=0;i<len;i++)
