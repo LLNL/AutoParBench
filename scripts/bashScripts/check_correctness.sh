@@ -95,6 +95,7 @@ echo "./mg.A"
 chmod +x sp.A 
 echo "./sp.A"
 ./sp.A &> ${OUTPUTS}/sp_${OUTREF}_out.txt
+exit 0;
 cd "${SCRIPTS}"
 }
 
@@ -209,7 +210,6 @@ DATARACEBENCH=(
 ./DRB048-firstprivate-orig-no_ref_out.txt
 ./DRB049-fprintf-orig-no_ref_out.txt
 ./DRB050-functionparameter-orig-no_ref_out.txt
-./DRB050-functionparameter-orig-yes_ref_out.txt
 ./DRB052-indirectaccesssharebase-orig-no_ref_out.txt
 ./DRB053-inneronly1-orig-no_ref_out.txt
 ./DRB054-inneronly2-orig-no_ref_out.txt
@@ -242,10 +242,7 @@ DATARACEBENCH=(
 ./DRB097-target-teams-distribute-orig-no_ref_out.txt
 ./DRB098-simd2-orig-no_ref_out.txt
 ./DRB099-targetparallelfor2-orig-no_ref_out.txt
-./DRB100-task-reference-orig-no_ref_out.txt
-./DRB101-task-value-orig-no_ref_out.txt
 ./DRB104-nowait-barrier-orig-no_ref_out.txt
-./DRB108-atomic-orig-no_ref_out.txt
 ./DRB109-orderedmissing-orig-yes_ref_out.txt
 ./DRB110-ordered-orig-no_ref_out.txt
 ./DRB111-linearmissing-orig-yes_ref_out.txt
@@ -312,7 +309,6 @@ dataracebench_micro_list=(
 ./DRB048-firstprivate-orig-no.c
 ./DRB049-fprintf-orig-no.c
 ./DRB050-functionparameter-orig-no.c
-./DRB050-functionparameter-orig-yes.c
 ./DRB052-indirectaccesssharebase-orig-no.c
 ./DRB053-inneronly1-orig-no.c
 ./DRB054-inneronly2-orig-no.c
@@ -343,10 +339,7 @@ dataracebench_micro_list=(
 ./DRB097-target-teams-distribute-orig-no.c
 ./DRB098-simd2-orig-no.c
 ./DRB099-targetparallelfor2-orig-no.c
-./DRB100-task-reference-orig-no.c
-./DRB101-task-value-orig-no.c
 ./DRB104-nowait-barrier-orig-no.c
-./DRB108-atomic-orig-no.c
 ./DRB109-orderedmissing-orig-yes.c
 ./DRB110-ordered-orig-no.c
 ./DRB111-linearmissing-orig-yes.c
@@ -572,21 +565,19 @@ COMPILER="icc -qopenmp -w"
 COMPILERCPP="icc -qopenmp -w"
 COMPLINK="icc -qopenmp -w"
 COMPICC="icc -qopenmp -w "
-DIRECTORY="CPU_reference -w"
 DIRECTORY="sequential"
-#run_NAS "ref"
-#run_Rodinia "ref"
-#run_dataracebench "ref"
+run_NAS "ref"
+run_Rodinia "ref"
+run_dataracebench "ref"
 
 COMPILER="icc -qopenmp -w"
 COMPILERCPP="icc -qopenmp -w"
 COMPLINK="icc -qopenmp -w"
 COMPICC="icc -qopenmp -w "
-DIRECTORY="CPU_reference -w"
 DIRECTORY="reference_cpu_threading"
-#run_NAS "ground_truth"
-#run_Rodinia "ground_truth"
-#run_dataracebench "ground_truth"
+run_NAS "ground_truth"
+run_Rodinia "ground_truth"
+run_dataracebench "ground_truth"
 
 check_outputs
 clean_environment

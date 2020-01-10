@@ -68,9 +68,9 @@ int main()
   {
     for(i = 0; i < len; i++)
       a[i] = b + a[i]*5;
-
-    error = a[9] + 1;
   }
+
+  error = a[9] + 1;
 
   printf ("error = %d\n", error);
   return 0;

@@ -50,6 +50,7 @@ Matrix-vector multiplication: inner level parallelization.
 #define N 1000
 double a[N][N],v[N],v_out[N];
 
+
 int init()
 {
   int i,j,k;
@@ -72,7 +73,7 @@ void mv()
   for (i = 0; i < N; i++)
   {         
     float sum = 0.0;
-    #pragma omp parallel for private(j ) reduction(+:sum) 
+    #pragma omp parallel for reduction(+:sum)
     for (j = 0; j < N; j++)
     { 
       sum += a[i][j]*v[j];

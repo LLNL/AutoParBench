@@ -149,6 +149,7 @@ c   have more numbers to generate than others
 
     for (i = 0; i < NQ; i++) qq[i] = 0.0;
 
+    //#pragma omp parallel for copyin(x, qq) private(x1, x2, t1, t2, t3, t4, ik, kk, i, l) reduction(+:sx) reduction(+:sy) 
     for (k = 1; k <= np; k++) {
 	kk = k_offset + k;
 	t1 = S;
@@ -196,9 +197,9 @@ c       vectorizable.
     {
       for (i = 0; i <= NQ - 1; i++) q[i] += qq[i];
     }
-#if defined(_OPENMP)
-    nthreads = omp_get_num_threads();
-#endif /* _OPENMP */    
+//#if defined(_OPENMP)
+//    nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */    
 } /* end of parallel region */    
 
     for (i = 0; i <= NQ-1; i++) {

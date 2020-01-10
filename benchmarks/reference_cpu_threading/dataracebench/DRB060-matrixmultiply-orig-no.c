@@ -47,32 +47,31 @@ THE POSSIBILITY OF SUCH DAMAGE.
 /*
 Classic i-k-j matrix multiplication
 */
+#include <stdio.h>
 
 #define N 100
 #define M 100 
 #define K 100
 double a[N][M],b[M][K],c[N][K];
-
+            
 int init()   
 {           
   int i,j,k;
-  #pragma omp parallel for private(i ,j ,k ) 
+  #pragma omp parallel for 
   for (i = 0; i < N; i++) 
-    #pragma omp parallel for private(j ,k ) 
-    for (k = 0; k < K; k++) 
-      #pragma omp parallel for private(j ) 
-      for (j = 0; j < M; j++) {
-        c[i][j] = i * j;
-        a[i][k] = i * j;
-        b[k][j] = i * j;
-      }
+    #pragma omp parallel for
+    for (j = 0; j < M; j++) {
+      a[i][j] = (double)i * j;
+      b[i][j] = (double)i * j;
+      c[i][j] = (double)i * j;
+    }
   return 0; 
 } 
-           
+
 int mmm()   
 {           
   int i,j,k;
-  #pragma omp parallel for private(i ,j ,k ) 
+  #pragma omp parallel for private(j,k)
   for (i = 0; i < N; i++) 
     for (k = 0; k < K; k++) 
       for (j = 0; j < M; j++)
@@ -84,13 +83,10 @@ int print()
 {           
   int i,j,k;
   for (i = 0; i < N; i++) 
-    for (k = 0; k < K; k++) 
-      for (j = 0; j < M; j++)
-        printf("%lf %lf %lf\n", c[i][j],a[i][k],b[k][j]);
+    for (j = 0; j < M; j++)
+      printf("%lf %lf %lf\n", c[i][j],a[i][j],b[i][j]);
   return 0; 
 } 
-
-
 
 int main()
 {

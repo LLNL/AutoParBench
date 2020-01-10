@@ -56,7 +56,7 @@ The compiler/runtime copies the local value back to the shared one within the la
 void foo()
 {
   int i,x;
-  #pragma omp parallel for private(i ) lastprivate(x ) 
+  #pragma omp parallel for lastprivate (x)
   for (i=0;i<100;i++)
     x=i;
   printf("x=%d",x);

@@ -49,7 +49,6 @@ A loop with loop-carried anti-dependence.
 Data race pair: a[i+1]@67:10 vs. a[i]@67:5
 */
 #include <stdlib.h>
-#include <stdio.h>
 int main(int argc, char* argv[])
 {   
   int i;
@@ -67,7 +66,7 @@ int main(int argc, char* argv[])
     a[i]=a[i+1]+1;
 
   for (i=0; i<len; i++)
-    printf("%d\n", a[i]); 
+    printf("%d\n", a[i]);
 
   return 0;
 } 

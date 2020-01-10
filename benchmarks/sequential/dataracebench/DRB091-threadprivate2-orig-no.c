@@ -62,9 +62,9 @@ int main()
     for (i=0;i<len;i++)
     {
       sum0=sum0+i;
-    }   
-  }
-  sum= sum+sum0;
+    }  
+  } 
+  sum= sum+sum0;  
   /*  reference calculation */
   for (i=0;i<len;i++)
   {

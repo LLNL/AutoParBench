@@ -49,19 +49,26 @@ Two loops are associated with omp taskloop due to collapse(2).
 Both loop index variables are private.
 taskloop requires OpenMP 4.5 compilers.
 */
+#if (_OPENMP<201511)
+#error "An OpenMP 4.5 compiler is needed to compile this test."
+#endif
 
 #include <stdio.h>
 int a[100][100];
 int main()
 {
   int i, j;
-  {
-    #pragma omp parallel for private(j ) 
-    for (i = 0; i < 100; i++)
-      #pragma omp parallel for private(j ) 
-      for (j = 0; j < 100; j++)
-        a[i][j]+=1; 
-  }
+  #pragma omp parallel for
+  for (i = 0; i < 100; i++)
+    #pragma omp parallel for
+    for (j = 0; j < 100; j++)
+      a[i][j] = i + j; 
+
+  #pragma omp parallel for collapse(2)
+  for (i = 0; i < 100; i++)
+    for (j = 0; j < 100; j++)
+      a[i][j]+=1; 
+
   printf ("a[50][50]=%d\n", a[50][50]);
   return 0;
 }

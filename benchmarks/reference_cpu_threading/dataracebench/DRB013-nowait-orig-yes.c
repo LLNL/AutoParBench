@@ -62,17 +62,18 @@ int main()
   int len = 1000;
   int a[len], b=5;
 
-  #pragma omp parallel for private(i ) 
+  #pragma omp parallel for
   for (i=0; i<len; i++)
     a[i]= i;
  
+  #pragma omp parallel shared(b, error) 
   {
-    #pragma omp parallel for private(i ) 
+    #pragma omp for 
     for(i = 0; i < len; i++)
       a[i] = b + a[i]*5;
-
-    error = a[9] + 1;
   }
+
+  error = a[9] + 1;
 
   printf ("error = %d\n", error);
   return 0;

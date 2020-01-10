@@ -83,7 +83,7 @@ int main()
   int i, j;
   for (i = 0; i < n; i++) {
     for (j = 0; j < m; j++) {
-       printf("%lf %lf\n", u[i][j], f[i][j]); 
+       printf("%lf %lf\n", u[i][j], f[i][j]);
     }
   }
 

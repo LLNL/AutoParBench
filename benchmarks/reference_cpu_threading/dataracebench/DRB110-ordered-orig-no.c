@@ -51,9 +51,8 @@ THE POSSIBILITY OF SUCH DAMAGE.
 int main()
 {
   int x =0;
-  #pragma omp parallel for ordered
+  #pragma omp parallel for reduction(+:x)
   for (int i = 0; i < 100; ++i) {
-    #pragma omp ordered
     x++;
   }
   assert (x==100);

@@ -49,7 +49,6 @@ A loop with loop-carried anti-dependence.
 Data race pair: a[i+1]@64:10 vs. a[i]@64:5
 */
 #include <stdio.h>
-#include <stdlib.h>
 int main(int argc, char* argv[])
 {   
   int i;
@@ -57,7 +56,7 @@ int main(int argc, char* argv[])
 
   int a[1000];
 
-  #pragma omp parallel for private(i ) 
+  #pragma omp parallel for
   for (i=0; i<len; i++)
     a[i]= i; 
 

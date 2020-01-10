@@ -59,14 +59,14 @@ int main(int argc, char* argv[])
   int n=len, m=len;
   double b[len][len];
 
-  #pragma omp parallel for private(i ,j ) 
+  #pragma omp parallel for
   for (i=0; i<n; i++)
-    #pragma omp parallel for private(j ) 
+    #pragma omp parallel for
     for (j=0; j<m; j++)
       b[i][j] = 0.5; 
-
+ 
   for (i=1;i<n;i++)
-    #pragma omp parallel for private(j ) 
+    #pragma omp parallel for
     for (j=1;j<m;j++)
       b[i][j]=b[i-1][j-1];
 

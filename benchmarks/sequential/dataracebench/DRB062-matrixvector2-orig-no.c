@@ -50,6 +50,7 @@ Matrix-vector multiplication: inner level parallelization.
 #define N 1000
 double a[N][N],v[N],v_out[N];
 
+
 int init()
 {
   int i,j,k;

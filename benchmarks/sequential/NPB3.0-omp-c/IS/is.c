@@ -33,9 +33,9 @@
 #include "npbparams.h"
 #include <stdlib.h>
 #include <stdio.h>
-#if defined(_OPENMP)
-#include <omp.h>
-#endif /* _OPENMP */
+//#if defined(_OPENMP)
+//#include <omp.h>
+//#endif /* _OPENMP */
 
 
 /*****************************************************************/
@@ -648,9 +648,9 @@ main( argc, argv )
 	
         rank( iteration );
 	
-#if defined(_OPENMP)	
-	nthreads = omp_get_num_threads();
-#endif /* _OPENMP */	
+//#if defined(_OPENMP)	
+//	nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */	
     }
 
 /*  End of timing, obtain maximum time of all processors */

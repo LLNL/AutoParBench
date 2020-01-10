@@ -51,24 +51,19 @@ Data race pair: a[i+1]@66:5 vs. a[i]@66:12
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-
-void task(int *a, int i) {
-  a[i+1]=a[i]+1; 
-}
-
 int main(int argc, char* argv[])
 {
   int i;
   int len=100;
   int a[100];
 
-  #pragma omp parallel for private(i ) 
+  #pragma omp parallel for
   for (i=0;i<len;i++)
     a[i]=i;
    
   srand(time(NULL));
   for (i=0;i<len-1;i++)
-    task(&a[0], i);
+    a[i+1]=a[i]+1;
 
   printf("a[50]=%d\n", a[50]);   
   return 0;

@@ -50,7 +50,6 @@ This is a variable-length array version in C99.
 Data race pair: a[i][j]@70:7 vs. a[i+1][j]@70:18
 */
 #include <stdlib.h>
-#include <stdio.h>
 int main(int argc,char *argv[])
 {
   int i, j;
@@ -61,14 +60,14 @@ int main(int argc,char *argv[])
 
   double a[len][len];
 
-  #pragma omp parallel for private(i ,j ) 
+  #pragma omp parallel for
   for (i=0; i< len; i++)
-    #pragma omp parallel for private(j ) 
+    #pragma omp parallel for
     for (j=0; j<len; j++)
       a[i][j] = 0.5; 
 
   for (i = 0; i < len - 1; i += 1) {
-    #pragma omp parallel for 
+    #pragma omp parallel for
     for (j = 0; j < len ; j += 1) {
       a[i][j] += a[i + 1][j];
     }
@@ -77,6 +76,7 @@ int main(int argc,char *argv[])
   for (i=0; i< len; i++)
     for (j=0; j<len; j++)
       printf("%lf\n",a[i][j]); 
+
   return 0;
 }
 

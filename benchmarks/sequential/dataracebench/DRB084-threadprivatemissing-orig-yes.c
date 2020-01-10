@@ -67,9 +67,8 @@ int main()
   for (i=1;i<=1000;i++)
   {
      foo (i);
-  }   
-  sum=sum+sum0;
-
+  }  
+  sum= sum+sum0;
 /*  reference calculation */
   for (i=1;i<=1000;i++)
   {

@@ -54,9 +54,9 @@ double a[N][N],v[N],v_out[N];
 int init()
 {
   int i,j,k;
-  #pragma omp parallel for private(i ,j ) 
+  #pragma omp parallel for private(i ,j )
   for (i = 0; i < N; i++) {
-    #pragma omp parallel for private(j ) 
+    #pragma omp parallel for private(j )
     for (j = 0; j < N; j++) {
         a[i][j] = i * j;
     }
@@ -69,11 +69,11 @@ int init()
 int mv()
 {           
   int i,j;
-  #pragma omp parallel for private(i ,j ) 
+  #pragma omp parallel for private (i,j)
   for (i = 0; i < N; i++)
   {         
     float sum = 0.0;
-    #pragma omp parallel for private(j ) reduction(+:sum) 
+    #pragma omp parallel for reduction(+:sum)
     for (j = 0; j < N; j++)
     { 
       sum += a[i][j]*v[j];

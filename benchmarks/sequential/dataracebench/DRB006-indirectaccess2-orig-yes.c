@@ -104,21 +104,21 @@ int indexSet[N] = {
 
 int main (int argc, char* argv[])
 {
-  double * xa1 = (double*) malloc(sizeof(double)* (2013+1+12));
-  double * xa2 = (double*) malloc(sizeof(double)* (2013+1+12));
+  double * base = (double*) malloc(sizeof(double)* (2013+12+1));
 
-  if ((xa1 == 0) || (xa2 == 0))
+  if (base == 0)
   {
     printf ("Error in malloc(). Aborting ...\n");
     return 1;  
   }
+  double * xa1 = base;
+  double * xa2 = xa1 + 12;
   int i;
 
   // initialize segments touched by indexSet
   for (i =521; i<= 2025; ++i)
   {
-    xa1[i]=0.5*i;
-    xa2[i]=1.5*i;
+    base[i]=0.5*i;
   }
 
   for (i =0; i< N; ++i) 
@@ -128,8 +128,7 @@ int main (int argc, char* argv[])
     xa2[idx]+= 3.0;
   }
   printf("x1[999]=%f xa2[1285]=%f\n", xa1[999], xa2[1285]);
-  free (xa1);
-  free (xa2);
+  free (base);
   return  0;
 }
 

@@ -61,16 +61,15 @@ int main(int argc, char* argv[])
 
   int a[len];
 
-  for (i=0;i<len;i++)
-  { 
+  for (i=0;i<len;i++) { 
     a[i] = tmp;
     tmp =a[i]+i;
-  }
+  } 
 
   for (i=0;i<len;i++) {
     printf("%d\n", a[i]);
-  }
-     
+  }  
+
   return 0;      
 }
 

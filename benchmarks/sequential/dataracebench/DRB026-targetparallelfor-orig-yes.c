@@ -57,13 +57,11 @@ int main(int argc, char* argv[])
 
   for (i=0; i<len; i++)
     a[i]= i;
-  
 
   for (i=0;i< len -1 ;i++)
     a[i]=a[i+1]+1;
 
   for (i=0; i<len; i++)
-    printf("%d\n", a[i]);
-
+    printf("%d\n",a[i]);
   return 0;
 }

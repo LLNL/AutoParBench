@@ -70,10 +70,8 @@ int main(int argc, char* argv[])
 
   for (i=numNodes-1 ; i>-1 ; --i) {
     if (x[i]<=0) {
-      numNodes2+=-1;
+      numNodes2-- ;
     }
-  }
-
-  printf("%d\n", numNodes2);         
+  }         
   return 0;
 } 

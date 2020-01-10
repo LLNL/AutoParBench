@@ -57,21 +57,19 @@ int main(int argc, char* argv[])
 {
   int i,j;
   int n=1000, m=1000;
-  #pragma omp parallel for private(i ,j ) 
-  for (i=0;i<n;i++)
-    #pragma omp parallel for private(j ) 
-    for (j=1;j<m;j++)
-      b[i][j]= i * m + j;
 
-  #pragma omp parallel for private(i ,j ) 
+  #pragma omp parallel for
+  for (i=0;i<n;i++)
+    #pragma omp parallel for
+    for (j=0;j<m;j++)
+      b[i][j] = i + j;
+
+  #pragma omp parallel for
   for (i=0;i<n;i++)
     for (j=1;j<m;j++)
       b[i][j]=b[i][j-1];
 
-  for (i=0;i<n;i++)
-    for (j=1;j<m;j++)
-      printf("%lf\n",b[i][j]);
-
+  printf("b[500][500]=%f\n", b[500][500]);
   return 0;
 }
 

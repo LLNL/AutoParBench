@@ -61,10 +61,9 @@ int main()
   for (i=0; i<len; i++)
     a[i]= i;
  
-  {
-    for(i = 0; i < len; i++)
-      a[i] = b + a[i]*5;
-  }
+  
+  for(i = 0; i < len; i++)
+    a[i] = b + a[i]*5;
 
   error = a[9] + 1;
   assert (error == 51);

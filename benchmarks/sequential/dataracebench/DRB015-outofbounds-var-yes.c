@@ -65,7 +65,6 @@ This causes loop-carried data dependence between i=2 and i=1.
 Data race pair: b[i][j]@80:7 vs. b[i][j-1]@80:15
 */
 #include <stdlib.h>
-#include <stdio.h>
 int main(int argc, char* argv[]) 
 {
   int i,j;
@@ -75,20 +74,14 @@ int main(int argc, char* argv[])
 
   int n=len, m=len;
   double b[n][m];
-
-  for (i=0;i<n;i++)
+  
+  for (i=1;i<n;i++)
     for (j=0;j<m;j++) 
-      b[i][j] = i * m + j; 
+      b[i][j]=i + j;
 
   for (i=1;i<n;i++)
-    for (j=0;j<m;j++)
-      b[i][j]=b[i-1][j];
-
-  for (i=0;i<n;i++)
-    for (j=0;j<m;j++) 
-      printf("%lf\n",b[i][j]);
-
-  
+    for (j=0;j<m-1;j++) // Note there will be out of bound access
+      b[i][j]=b[i][j+1];
 
  return 0;     
 }

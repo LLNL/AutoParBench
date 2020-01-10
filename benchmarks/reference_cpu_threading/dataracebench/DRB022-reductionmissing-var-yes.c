@@ -61,15 +61,15 @@ int main(int argc, char* argv[])
     len = atoi(argv[1]);
   float u[len][len];
 
-  #pragma omp parallel for private(i ,j ) 
+  #pragma omp parallel for
   for (i = 0; i < len; i++)
-    #pragma omp parallel for private(j ) 
+    #pragma omp parallel for
     for (j = 0; j < len; j++)
         u[i][j] = 0.5;
 
-  #pragma omp parallel for private(i ,temp ,j ) reduction(+:sum) 
+  #pragma omp parallel for private (temp) reduction(+:sum)
   for (i = 0; i < len; i++)
-    #pragma omp parallel for private(temp ,j ) reduction(+:sum) 
+    #pragma omp parallel for private (temp) reduction(+:sum)
     for (j = 0; j < len; j++)
     {
       temp = u[i][j];

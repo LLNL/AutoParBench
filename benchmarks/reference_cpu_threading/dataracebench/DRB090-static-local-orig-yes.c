@@ -61,16 +61,17 @@ int main(int argc, char* argv[])
   int len=100;
   int a[len], b[len];
 
-  #pragma omp parallel for private(i ) 
+  #pragma omp parallel for
   for (i=0;i<len;i++)
   {
-	  a[i]=i;
-	  b[i]=i;
+     a[i]=i;
+     b[i]=i;
   } 
-  /* static storage for a local variable */
+/* static storage for a local variable */
+#pragma omp parallel 
   {
     static int tmp;
-    #pragma omp parallel for private(i ,tmp ) 
+#pragma omp for private(tmp)
     for (i=0;i<len;i++)
     {
       tmp = a[i]+i;
@@ -79,9 +80,10 @@ int main(int argc, char* argv[])
   }
 
 /* automatic storage for a local variable */
+#pragma omp parallel 
   {
     int tmp;
-    #pragma omp parallel for private(i ,tmp ) 
+#pragma omp for private(tmp)
     for (i=0;i<len;i++)
     {
       tmp = b[i]+i;

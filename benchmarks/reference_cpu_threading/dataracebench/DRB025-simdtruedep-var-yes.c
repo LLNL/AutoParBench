@@ -58,7 +58,7 @@ int main(int argc, char* argv[])
     len = atoi(argv[1]);
 
   int a[len], b[len];
-  #pragma omp parallel for private(i ) 
+  #pragma omp parallel for
   for (i=0;i<len;i++)
   {
     a[i]=i;
@@ -68,8 +68,8 @@ int main(int argc, char* argv[])
   for (i=0;i<len-1;i++)
     a[i+1]=a[i]*b[i];
 
-  for (i=0;i<len;i++) {
-    printf("%d %d\n", a[i], b[i]);
-  }
+  for (i=0;i<len;i++)
+    printf("i=%d a[%d]=%d\n",i,i,a[i]);
+
   return 0;
 }

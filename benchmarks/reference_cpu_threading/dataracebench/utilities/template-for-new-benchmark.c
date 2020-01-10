@@ -12,7 +12,7 @@
 #include <math.h>
 
 /* Include polybench common header. */
-#include "../polybench/polybench.h"
+#include <polybench.h>
 
 /* Include benchmark-specific header. */
 /* Default data type is double, default size is N=1024. */
@@ -24,10 +24,9 @@ static
 void init_array(int n, DATA_TYPE POLYBENCH_2D(C,N,N,n,n))
 {
   int i, j;
-
-  #pragma omp parallel for private(j ,i ) 
+  #pragma omp parallel for
   for (i = 0; i < n; i++)
-    #pragma omp parallel for private(j) firstprivate(i ) 
+    #pragma omp parallel for
     for (j = 0; j < n; j++)
       C[i][j] = 42;
 }
@@ -40,7 +39,9 @@ void print_array(int n, DATA_TYPE POLYBENCH_2D(C,N,N,n,n))
 {
   int i, j;
 
+  #pragma omp parallel for
   for (i = 0; i < n; i++)
+    #pragma omp parallel for
     for (j = 0; j < n; j++) {
 	fprintf (stderr, DATA_PRINTF_MODIFIER, C[i][j]);
 	if (i % 20 == 0) fprintf (stderr, "\n");
@@ -56,12 +57,11 @@ void kernel_template(int n, DATA_TYPE POLYBENCH_2D(C,N,N,n,n))
 {
   int i, j;
 
-  #pragma omp parallel for private(j ,i ) 
+  #pragma omp parallel for
   for (i = 0; i < _PB_N; i++)
-    #pragma omp parallel for private(j) firstprivate(i ) 
+    #pragma omp parallel for
     for (j = 0; j < _PB_N; j++)
       C[i][j] += 42;
-
 }
 
 

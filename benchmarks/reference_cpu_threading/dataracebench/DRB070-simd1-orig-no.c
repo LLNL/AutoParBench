@@ -48,6 +48,7 @@ THE POSSIBILITY OF SUCH DAMAGE.
 One dimension array computation with a vetorization directive
 */
 int a[100], b[100], c[100];
+
 int main()
 {
   int i;

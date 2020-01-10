@@ -56,17 +56,13 @@ int main (int argc, char* argv[])
   if (argc>1)
     len = atoi(argv[1]);
   int a[len];
-
-  for (i=0;i<len;i++)
-    a[i]=i;
-
   a[0] = 2;
 
   for (i=0;i<len;i++)
     a[i]=a[i]+a[0];
-  
+
   for (i=0;i<len;i++)
-    printf("%d\n", a[i]);
- 
+    printf("%d\n",a[i]);
+
   return 0;
 }

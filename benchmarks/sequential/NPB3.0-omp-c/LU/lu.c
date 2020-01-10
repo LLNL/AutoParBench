@@ -38,10 +38,10 @@
 /* global variables */
 #include "applu.h"
 
-#if defined(_OPENMP)
+//#if defined(_OPENMP)
 /* for thread synchronization */
-static boolean flag[ISIZ1/2*2+1];
-#endif /* _OPENMP */
+//static boolean flag[ISIZ1/2*2+1];
+//#endif /* _OPENMP */
 
 /* function declarations */
 static void blts (int nx, int ny, int nz, int k,
@@ -134,9 +134,9 @@ c   compute the forcing term based on prescribed exact solution
   
 {  
   
-#if defined(_OPENMP)  
-  nthreads = omp_get_num_threads();
-#endif /* _OPENMP */  
+//#if defined(_OPENMP)  
+//  nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */  
 }
 
 /*--------------------------------------------------------------------
@@ -219,18 +219,18 @@ c  local variables
 
   for (i = ist; i <= iend; i++) {
     
-#if defined(_OPENMP)      
-    if (i != ist) {
-	while (flag[i-1] == 0) {
-	    ;
-	}
-    }
-    if (i != iend) {
-	while (flag[i] == 1) {
-	    ;
-	}
-    }
-#endif /* _OPENMP */
+//#if defined(_OPENMP)      
+//   if (i != ist) {
+//	while (flag[i-1] == 0) {
+//	    ;
+//	}
+//    }
+//    if (i != iend) {
+//	while (flag[i] == 1) {
+//	    ;
+//	}
+//    }
+//#endif /* _OPENMP */
     
     for (j = jst; j <= jend; j++) {
       for (m = 0; m < 5; m++) {
@@ -398,10 +398,10 @@ c   back substitution
 	/ tmat[0][0];
     }
     
-#if defined(_OPENMP)    
-    if (i != ist) flag[i-1] = 0;
-    if (i != iend) flag[i] = 1;
-#endif /* _OPENMP */    
+//#if defined(_OPENMP)    
+//   if (i != ist) flag[i-1] = 0;
+//    if (i != iend) flag[i] = 1;
+//#endif /* _OPENMP */    
   }
 }
 
@@ -451,18 +451,18 @@ c  local variables
   }
 
   for (i = iend; i >= ist; i--) {
-#if defined(_OPENMP)      
-    if (i != iend) {
-      while (flag[i+1] == 0) {
-	;
-      }
-    }
-    if (i != ist) {
-      while (flag[i] == 1) {
-	;
-      }
-    }
-#endif /* _OPENMP */
+//#if defined(_OPENMP)      
+//    if (i != iend) {
+//      while (flag[i+1] == 0) {
+//	;
+//      }
+////    }
+//    if (i != ist) {
+//      while (flag[i] == 1) {
+//	;
+//     }
+//    }
+//#endif /* _OPENMP */
     
     for (j = jend; j >= jst; j--) {
       for (m = 0; m < 5; m++) {
@@ -633,10 +633,10 @@ c   back substitution
       v[i][j][k][4] = v[i][j][k][4] - tv[i][j][4];
     }
     
-#if defined(_OPENMP)    
-    if (i != iend) flag[i+1] = 0;
-    if (i != ist) flag[i] = 1;
-#endif /* _OPENMP */    
+//#if defined(_OPENMP)    
+//    if (i != iend) flag[i+1] = 0;
+//    if (i != ist) flag[i] = 1;
+//#endif /* _OPENMP */    
   }
 }
 
@@ -892,6 +892,7 @@ c   eta-direction flux differences
   L2 = ny-1;
 
   for (i = ist; i <= iend; i++) {
+    //firstprivate(iend ,ist ,k ,ny ,u31 ,q ,nz ,L2 ,i ) 
     for (j = L1; j <= L2; j++) {
       for (k = 1; k <= nz - 2; k++) {
 	flux[i][j][k][0] = rsd[i][j][k][2];
@@ -1604,13 +1605,13 @@ c  local variables
   c1345 = C1 * C3 * C4 * C5;
   c34 = C3 * C4;
 
-#if defined(_OPENMP)  
+//#if defined(_OPENMP)  
   for (i = iend; i >= ist; i--) {
       for (j = jend; j >= jst; j--) {
-#else	  
+/*#else	  
   for (i = ist; i <= iend; i++) {
     for (j = jst; j <= jend; j++) {
-#endif	
+#endif*/	
 
 /*--------------------------------------------------------------------
 c   form the block daigonal
@@ -2326,7 +2327,7 @@ c  local variables
   for (i = 0; i <= nx-1; i++) {
     for (j = 0; j <= ny-1; j++) {
       for (k = 0; k <= nz-1; k++) {
-	for (m = 0; m < 5; m++) {
+      	for (m = 0; m < 5; m++) {
 	  rsd[i][j][k][m] = - frct[i][j][k][m];
 	}
       }
@@ -2495,7 +2496,7 @@ c   eta-direction flux differences
   }
 
   for (i = ist; i <= iend; i++) {
-    for (k = 1; k <= nz - 2; k++) {
+      for (k = 1; k <= nz - 2; k++) {
       for (j = jst; j <= jend; j++) {
 	for (m = 0; m < 5; m++) {
 	  rsd[i][j][k][m] =  rsd[i][j][k][m]
@@ -3116,7 +3117,6 @@ c   perform the upper triangular solution
 /*--------------------------------------------------------------------
 c   update the variables
 --------------------------------------------------------------------*/
-
     for (i = ist; i <= iend; i++) {
       for (j = jst; j <= jend; j++) {
 	for (k = 1; k <= nz-2; k++) {
@@ -3439,7 +3439,6 @@ c    Output the comparison of computed results to known cases.
     printf("              %20.13e%20.13e%20.13e\n",
 	   xci, xciref, xcidif);
   }
-
   if (*class  ==  'U') {
     printf(" No reference values provided\n");
     printf(" No verification performed\n");

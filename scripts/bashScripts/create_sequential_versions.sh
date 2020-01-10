@@ -13,7 +13,7 @@ if [ -d "${BENCHMARKS}/sequential" ]; then
 fi
 
 echo "Copying benchmarks"
-cp -r "${BENCHMARKS}/original" "${BENCHMARKS}/sequential"
+cp -r "${BENCHMARKS}/reference_cpu_threading" "${BENCHMARKS}/sequential"
 
 echo "Removing pragmas"
 cd ${BENCHMARKS}/sequential
