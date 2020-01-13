@@ -201,7 +201,6 @@ c  Do one iteration untimed to init all code and data page tables
 c---->                    (then reinit, start timing, to niter its)
 c-------------------------------------------------------------------*/
 
-    //#pragma omp parallel for 
     for (it = 1; it <= 1; it++) {
 
 /*--------------------------------------------------------------------
@@ -217,6 +216,7 @@ c  So, first: (z.z)
 c-------------------------------------------------------------------*/
 	norm_temp11 = 0.0;
 	norm_temp12 = 0.0;
+        #pragma omp parallel for reduction(+:norm_temp11) reduction(+:norm_temp12)
 	for (j = 1; j <= lastcol-firstcol+1; j++) {
             norm_temp11 = norm_temp11 + x[j]*z[j];
             norm_temp12 = norm_temp12 + z[j]*z[j];
