@@ -1,6 +1,6 @@
 # AutoParBench
 
-A benchmark framework to evaluate compilers and tools designed to automatically insert OpenMP directives. The goal is to generate actional information (bug reports and feature requests) for compiler and tool developers. We also want to drive the research for automatic parallelization using OpenMP and make OpenMP more declarative to reduce the burdens on OpenMP users.
+A benchmark framework to evaluate compilers and tools designed to automatically insert OpenMP directives. The goal is to generate actionable information (bug reports and feature requests) for compiler and tool developers. We also want to drive the research for automatic parallelization using OpenMP and make OpenMP more declarative to reduce the burdens on OpenMP users.
 
 ## Repository structure
 
