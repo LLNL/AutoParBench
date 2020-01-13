@@ -38,7 +38,7 @@ This repository contains the following content:
   * OpenMPExtractor
   * PragmaRemover
   
- ## Running the framweork
+ ## Running the framework
   
 On the top level directory of this repository, please, type the following commands:
  
