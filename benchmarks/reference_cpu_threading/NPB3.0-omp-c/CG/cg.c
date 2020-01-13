@@ -201,7 +201,7 @@ c  Do one iteration untimed to init all code and data page tables
 c---->                    (then reinit, start timing, to niter its)
 c-------------------------------------------------------------------*/
 
-    #pragma omp parallel for 
+    //#pragma omp parallel for 
     for (it = 1; it <= 1; it++) {
 
 /*--------------------------------------------------------------------
@@ -303,8 +303,8 @@ c-------------------------------------------------------------------*/
 
     printf(" Benchmark completed\n");
 
-    //epsilon = 1.0e-10;
-    epsilon = 1.0e-2;
+    epsilon = 1.0e-10;
+    //epsilon = 1.0e-2;
     if (class != 'U') {
 	if (fabs(zeta - zeta_verify_value) <= epsilon) {
             verified = TRUE;
@@ -494,7 +494,7 @@ c-------------------------------------------------------------------*/
 c  Obtain z = z + alpha*p
 c  and    r = r - alpha*q
 c---------------------------------------------------------------------*/
-	#pragma omp parallel for  
+	#pragma omp parallel for reduction(+:rho) 
 	for (j = 1; j <= lastcol-firstcol+1; j++) {
             z[j] = z[j] + alpha*p[j];
             r[j] = r[j] - alpha*q[j];
