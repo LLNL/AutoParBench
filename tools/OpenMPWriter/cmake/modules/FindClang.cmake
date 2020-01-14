@@ -1,3 +1,8 @@
+#//******************************************************************************************************************//
+#// Copyright (c) 2020, Lawrence Livermore National Security, LLC.
+#// and Federal University of Minas Gerais
+#// SPDX-License-Identifier: (BSD-3-Clause)
+#//*****************************************************************************************************************//
 
 if (NOT LLVM_INCLUDE_DIRS OR NOT LLVM_LIBRARY_DIRS)
    message(FATAL_ERROR "No LLVM and Clang support requires LLVM")
