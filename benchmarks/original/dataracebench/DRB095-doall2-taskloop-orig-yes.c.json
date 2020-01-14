@@ -3,26 +3,23 @@
 "file":"./dataracebench/DRB095-doall2-taskloop-orig-yes.c",
 "function":"main",
 "loop id":"1",
-"loop line":"63",
-"loop column":"5",
-"pragma type":"parallel for",
+"loop line":"68",
+"loop column":"7",
+"pragma type":"taskloop",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"induction variable":"i",
-"private":["j"]
+"induction variable":"i"
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB095-doall2-taskloop-orig-yes.c",
 "function":"main",
 "loop id":"2",
-"loop line":"64",
-"loop column":"7",
-"pragma type":"parallel for",
+"loop line":"69",
+"loop column":"9",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"induction variable":"j",
-"private":["j"]
+"multiversioned":"false"
 }
 }

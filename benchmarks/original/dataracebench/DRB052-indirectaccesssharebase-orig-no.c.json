@@ -5,12 +5,10 @@
 "loop id":"1",
 "loop line":"110",
 "loop column":"3",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"induction variable":"i",
-"private":["i"]
+"multiversioned":"false"
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB052-indirectaccesssharebase-orig-no.c",
@@ -22,8 +20,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"induction variable":"i",
-"private":["i"]
+"induction variable":"i"
 },
 "loop - object id : 3":{
 "file":"./dataracebench/DRB052-indirectaccesssharebase-orig-no.c",

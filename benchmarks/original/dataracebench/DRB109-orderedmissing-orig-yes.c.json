@@ -6,10 +6,9 @@
 "loop line":"55",
 "loop column":"3",
 "pragma type":"parallel for",
-"ordered":"false",
+"ordered":"true",
 "offload":"false",
 "multiversioned":"false",
-"induction variable":"i",
-"reduction":["+:x"]
+"induction variable":"i"
 }
 }

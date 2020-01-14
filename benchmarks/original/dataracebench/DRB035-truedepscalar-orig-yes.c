@@ -60,6 +60,7 @@ int main(int argc, char* argv[])
 
   int a[100];
 
+#pragma omp parallel for
   for (i=0;i<len;i++)
   { 
     a[i] = tmp;

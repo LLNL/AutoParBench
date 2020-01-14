@@ -50,29 +50,13 @@ Matrix-vector multiplication: inner level parallelization.
 #define N 1000
 double a[N][N],v[N],v_out[N];
 
-int init()
-{
-  int i,j,k;
-  #pragma omp parallel for private(i, j)
-  for (i = 0; i < N; i++) {
-    #pragma omp parallel for private(j)
-    for (j = 0; j < N; j++) {
-        a[i][j] = i * j;
-    }
-    v_out[i] = i * j;
-    v[i] = i * j;
-  }
-  return 0;
-}
-
 void mv()
 {           
   int i,j;
-  #pragma omp parallel for private(i, j)
   for (i = 0; i < N; i++)
   {         
     float sum = 0.0;
-    #pragma omp parallel for private(j) reduction(+:sum)
+#pragma omp parallel for reduction(+:sum)
     for (j = 0; j < N; j++)
     { 
       sum += a[i][j]*v[j];
@@ -81,23 +65,8 @@ void mv()
   }         
 }
 
-int print()
-{
-  int i,j,k;
-  for (i = 0; i < N; i++) {
-    for (j = 0; j < N; j++) {
-      printf("%lf\n", a[i][j]);
-    }
-    printf("%lf\n",v_out[i]);
-    printf("%lf\n",v[i]);
-  }
-  return 0;
-}
-
 int main()
 {
-  init();
   mv();
-  print();
   return 0;
 }

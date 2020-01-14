@@ -3,39 +3,35 @@
 "file":"./dataracebench/DRB090-static-local-orig-yes.c",
 "function":"main",
 "loop id":"1",
-"loop line":"65",
+"loop line":"64",
 "loop column":"3",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"induction variable":"i",
-"private":["i"]
+"multiversioned":"false"
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB090-static-local-orig-yes.c",
 "function":"main",
 "loop id":"2",
-"loop line":"75",
+"loop line":"71",
 "loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"induction variable":"i",
-"private":["i","tmp"]
+"induction variable":"i"
 },
 "loop - object id : 3":{
 "file":"./dataracebench/DRB090-static-local-orig-yes.c",
 "function":"main",
 "loop id":"3",
-"loop line":"87",
+"loop line":"83",
 "loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"induction variable":"i",
-"private":["i","tmp"]
+"induction variable":"i"
 }
 }

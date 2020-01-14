@@ -55,31 +55,12 @@ For gcc, you must use -std=c99 to compile this program.
 #include <stdlib.h>
 #include <stdio.h>
 
-void init(int n, int * restrict  a, int * restrict b, int * restrict  c)
-{
-  int i;
-#pragma omp parallel for private(i) 
-  for (i = 0; i < n; i++) {
-    a[i] = 1;
-    b[i] = i;
-    c[i] = i * i;  
-  }
-}
-
 void foo(int n, int * restrict  a, int * restrict b, int * restrict  c)
 {
   int i;
-#pragma omp parallel for private(i)
+#pragma omp parallel for 
   for (i = 0; i < n; i++)
     a[i] = b[i] + c[i];  
-}
-
-void print(int n, int * restrict  a, int * restrict b, int * restrict  c)
-{
-  int i;
-  for (i = 0; i < n; i++) {
-    printf("%d %d %d\n", a[i], b[i], c[i]);
-  }
 }
 
 int main()
@@ -108,9 +89,7 @@ int main()
     return 1;
   }
 
-  init (n, a, b,c);
   foo (n, a, b,c);
-  print (n, a, b,c);
 
   free (a);
   free (b);

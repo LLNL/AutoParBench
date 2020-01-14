@@ -63,13 +63,13 @@ int main()
   int inLen=1000 ; 
   int outLen = 0;
 
-  #pragma omp parallel for private(i)
   for (i=0; i<inLen; ++i) 
     input[i]= i;  
 
+#pragma omp parallel for
   for (i=0; i<inLen; ++i) 
   {
-    output[outLen++] = input[i];
+    output[outLen++] = input[i] ;
   }  
 
   printf("output[500]=%d\n",output[500]);

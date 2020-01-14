@@ -3,14 +3,12 @@
 "file":"./dataracebench/DRB024-simdtruedep-orig-yes.c",
 "function":"main",
 "loop id":"1",
-"loop line":"59",
+"loop line":"58",
 "loop column":"3",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"induction variable":"i",
-"private":["i"]
+"multiversioned":"false"
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB024-simdtruedep-orig-yes.c",
@@ -18,10 +16,11 @@
 "loop id":"2",
 "loop line":"65",
 "loop column":"3",
-"pragma type":"NULL",
+"pragma type":"simd",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false"
+"multiversioned":"false",
+"induction variable":"i"
 },
 "loop - object id : 3":{
 "file":"./dataracebench/DRB024-simdtruedep-orig-yes.c",

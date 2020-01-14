@@ -62,16 +62,16 @@ int main()
   int len = 1000;
   int a[len], b=5;
 
-  #pragma omp parallel for private(i)
   for (i=0; i<len; i++)
     a[i]= i;
  
-  #pragma omp parallel shared(b, error) 
+#pragma omp parallel shared(b, error) 
   {
-    #pragma omp for private(i)
+#pragma omp for nowait
     for(i = 0; i < len; i++)
       a[i] = b + a[i]*5;
 
+#pragma omp single
     error = a[9] + 1;
   }
 

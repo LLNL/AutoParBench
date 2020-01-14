@@ -3,14 +3,12 @@
 "file":"./dataracebench/DRB071-targetparallelfor-orig-no.c",
 "function":"main",
 "loop id":"1",
-"loop line":"57",
+"loop line":"56",
 "loop column":"3",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"induction variable":"i",
-"private":["i"]
+"multiversioned":"false"
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB071-targetparallelfor-orig-no.c",
@@ -20,20 +18,9 @@
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
-"offload":"false",
+"offload":"true",
 "multiversioned":"false",
 "induction variable":"i",
-"private":["i"]
-},
-"loop - object id : 3":{
-"file":"./dataracebench/DRB071-targetparallelfor-orig-no.c",
-"function":"main",
-"loop id":"3",
-"loop line":"64",
-"loop column":"3",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
+"map tofrom":["a[0:len]"]
 }
 }

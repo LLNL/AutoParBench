@@ -44,9 +44,6 @@ IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-
 /*
 One dimension array computation
 with finer granularity than traditional 4 bytes.
@@ -57,14 +54,8 @@ char a[100];
 int main()
 {
   int i;
-  #pragma omp parallel for private(i)
-  for (i=0;i<100;i++)
-    a[i]=i;
-  #pragma omp parallel for private(i)
+#pragma omp parallel for
   for (i=0;i<100;i++)
     a[i]=a[i]+1;
-
-  for (i=0;i<100;i++)
-    printf("%c\n",a[i]);
   return 0;
 } 

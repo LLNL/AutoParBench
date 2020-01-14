@@ -3,14 +3,15 @@
 "file":"./dataracebench/DRB099-targetparallelfor2-orig-no.c",
 "function":"foo",
 "loop id":"1",
-"loop line":"54",
+"loop line":"55",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
-"offload":"false",
+"offload":"true",
 "multiversioned":"false",
 "induction variable":"i",
-"private":["i"]
+"map to":["a[0:N]"],
+"map from":["b[0:N]"]
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB099-targetparallelfor2-orig-no.c",
@@ -18,11 +19,9 @@
 "loop id":"1",
 "loop line":"64",
 "loop column":"3",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"induction variable":"i",
-"private":["i"]
+"multiversioned":"false"
 }
 }

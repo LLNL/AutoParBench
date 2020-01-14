@@ -56,12 +56,10 @@ int main(int argc, char* argv[])
   int tmp;
   int len=100;
   int a[100];
-
-  #pragma omp parallel for private(i)
   for (i=0;i<len;i++)
     a[i]=i;
 
-  #pragma omp parallel for private(i, tmp)
+#pragma omp parallel for
   for (i=0;i<len;i++)
   {
     tmp =a[i]+i;

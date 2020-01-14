@@ -1,15 +1,11 @@
 {
-"loop - object id : 1":{
-"file":"./dataracebench/DRB108-atomic-orig-no.c",
-"function":"main",
-"loop id":"1",
-"loop line":"54",
-"loop column":"3",
-"pragma type":"parallel for",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false",
-"induction variable":"i",
-"reduction":["+:a"]
+"atomic - object id : 1":{
+"pragma type":"atomic",
+"file":"",
+"function":"",
+"loop id":"0",
+"statement id":"0",
+"snippet line":"55",
+"snippet column":"9"
 }
 }

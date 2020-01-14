@@ -10,7 +10,6 @@
 "offload":"false",
 "multiversioned":"false",
 "induction variable":"i",
-"private":["i"],
-"lastprivate":["x"]
+"private":["i"]
 }
 }

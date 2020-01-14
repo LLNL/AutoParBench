@@ -46,6 +46,9 @@ THE POSSIBILITY OF SUCH DAMAGE.
 /*
    omp for loop is allowed to use the linear clause, an OpenMP 4.5 addition.
 */
+#if (_OPENMP<201511)
+#error "An OpenMP 4.5 compiler is needed to compile this test."
+#endif
 #include <stdio.h>
 int main()
 {
@@ -53,7 +56,6 @@ int main()
   double a[len], b[len], c[len];
   int i,j=0;
 
-  #pragma omp parallel for private(i)
   for (i=0;i<len;i++)
   {
     a[i]=((double)i)/2.0; 
@@ -61,7 +63,7 @@ int main()
     c[i]=((double)i)/7.0; 
   }
 
-  #pragma omp parallel for private(i) linear(j)
+#pragma omp parallel for linear(j)
   for (i=0;i<len;i++)
   {
     c[j]+=a[i]*b[i];

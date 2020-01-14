@@ -51,20 +51,8 @@ int a[100], b[100], c[100];
 int main()
 {
   int i;
-  #pragma omp parallel for private(i)
-  for (i=0;i<100;i++) {
-    a[i]= i * 40;
-    b[i] = i - 1;
-    c[i] = i;
- }
-
-  #pragma omp parallel for private(i)
+#pragma omp simd
   for (i=0;i<100;i++)
     a[i]=b[i]*c[i];
-
-  for (i=0;i<100;i++) {
-    printf("%d %d %d\n", a[i], b[i], c[i]);
-  }
- 
   return 0;
 }

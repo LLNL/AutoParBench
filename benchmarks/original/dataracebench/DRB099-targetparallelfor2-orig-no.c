@@ -50,7 +50,8 @@ use of omp target + map + array sections derived from pointers
 void foo (double* a, double* b, int N)
 {
   int i; 
-  #pragma omp parallel for private(i)
+#pragma omp target map(to:a[0:N]) map(from:b[0:N])
+#pragma omp parallel for
   for (i=0;i< N ;i++)
     b[i]=a[i]*(double)i;
 }
@@ -60,7 +61,6 @@ int main(int argc, char* argv[])
   int i;
   int len = 1000;
   double a[len], b[len];
-  #pragma omp parallel for private(i)
   for (i=0; i<len; i++)
   {
     a[i]= ((double)i)/2.0;

@@ -7,27 +7,21 @@ Markus Schordan, and Ian Karlin
 schordan1@llnl.gov, karlin1@llnl.gov)
 LLNL-CODE-732144
 All rights reserved.
-
 This file is part of DataRaceBench. For details, see
 https://github.com/LLNL/dataracebench. Please also see the LICENSE file
 for our additional BSD notice.
-
 Redistribution and use in source and binary forms, with
 or without modification, are permitted provided that the following
 conditions are met:
-
 * Redistributions of source code must retain the above copyright
   notice, this list of conditions and the disclaimer below.
-
 * Redistributions in binary form must reproduce the above copyright
   notice, this list of conditions and the disclaimer (as noted below)
   in the documentation and/or other materials provided with the
   distribution.
-
 * Neither the name of the LLNS/LLNL nor the names of its contributors
   may be used to endorse or promote products derived from this
   software without specific prior written permission.
-
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
 CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
 INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
@@ -43,42 +37,24 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 */
-/*
- * Cover the implicitly determined rule: In an orphaned task generating construct, 
- * formal arguments passed by reference are firstprivate.
- * This requires OpenMP 4.5 to work. 
- * Earlier OpenMP does not allow a reference type for a variable within firstprivate(). 
- * */
-#include <stdio.h>
-#define MYLEN 100
-int a[MYLEN];
 
-void gen_task(int i)
-{
-    a[i]= i+1;
-}
+/*
+A master directive is used to protect memory accesses.
+*/
+#include <omp.h>
+#include <stdio.h>
 
 int main()
 {
-  int i=0;
-  #pragma omp parallel
+  int k;
+
+#pragma omp parallel
   {
-     #pragma omp for private(i)
-     for (i=0; i<MYLEN; i++)
-     {
-       gen_task(i);
-     }
-  }
-  
-  /* correctness checking */
-  for (i=0; i<MYLEN; i++)
-  {
-    //assert (a[i]==i+1);
-    if (a[i]!= i+1)
+#pragma omp master
     {
-      printf("warning: a[%d] = %d, not expected %d\n", i, a[i], i+1);
+      k = omp_get_num_threads();
+      printf ("Number of Threads requested = %i\n",k);
     }
   }
   return 0;
 }
-

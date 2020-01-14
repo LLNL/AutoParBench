@@ -3,52 +3,46 @@
 "file":"./dataracebench/DRB098-simd2-orig-no.c",
 "function":"main",
 "loop id":"1",
-"loop line":"59",
+"loop line":"58",
 "loop column":"3",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"induction variable":"i",
-"private":["i","j"]
+"multiversioned":"false"
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB098-simd2-orig-no.c",
 "function":"main",
 "loop id":"2",
-"loop line":"61",
+"loop line":"59",
 "loop column":"5",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"induction variable":"j",
-"private":["j"]
+"multiversioned":"false"
 },
 "loop - object id : 3":{
 "file":"./dataracebench/DRB098-simd2-orig-no.c",
 "function":"main",
 "loop id":"3",
-"loop line":"69",
+"loop line":"67",
 "loop column":"3",
-"pragma type":"parallel for",
+"pragma type":"simd",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"induction variable":"i",
-"private":["j"]
+"induction variable":"i"
 },
 "loop - object id : 4":{
 "file":"./dataracebench/DRB098-simd2-orig-no.c",
 "function":"main",
 "loop id":"4",
-"loop line":"70",
+"loop line":"68",
 "loop column":"5",
-"pragma type":"parallel for",
+"pragma type":"simd",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"induction variable":"j",
-"private":["j"]
+"induction variable":"j"
 }
 }

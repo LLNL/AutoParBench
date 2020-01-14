@@ -43,8 +43,7 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 */
-#include <stdio.h>
-#include <stdlib.h>
+
 /* 
 Simplest one dimension array computation
 */
@@ -52,17 +51,8 @@ int a[100];
 int main()
 {
 int i;
-  #pragma omp parallel for private(i)
-  for (i=0;i<100;i++)
-    a[i]=i;
- 
-
-  #pragma omp parallel for private(i)
+#pragma omp parallel for
   for (i=0;i<100;i++)
     a[i]=a[i]+1;
-
-  for (i=0;i<100;i++)
-    printf("%d\n",a[i]);
- 
   return 0;
 } 

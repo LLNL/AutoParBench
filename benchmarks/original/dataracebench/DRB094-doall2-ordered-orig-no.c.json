@@ -1,20 +1,40 @@
 {
-"loop - object id : 1":{
-"file":"./dataracebench/DRB094-doall2-ordered-orig-no.c",
-"function":"main",
-"loop id":"1",
-"loop line":"59",
-"loop column":"3",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 2":{
+"ordered - object id : 1":{
+"pragma type":"ordered",
 "file":"./dataracebench/DRB094-doall2-ordered-orig-no.c",
 "function":"main",
 "loop id":"2",
-"loop line":"60",
+"statement id":"1",
+"snippet line":"67",
+"snippet column":"9"
+},
+"ordered - object id : 2":{
+"pragma type":"ordered",
+"file":"./dataracebench/DRB094-doall2-ordered-orig-no.c",
+"function":"main",
+"loop id":"2",
+"statement id":"1",
+"snippet line":"69",
+"snippet column":"9"
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB094-doall2-ordered-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"63",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"true",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"dependence list":["ordered - object id : 1","ordered - object id : 2"]
+},
+"loop - object id : 4":{
+"file":"./dataracebench/DRB094-doall2-ordered-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"64",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",

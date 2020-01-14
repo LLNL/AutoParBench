@@ -44,9 +44,6 @@ IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-
 /*
  Example use of fprintf
 */
@@ -60,7 +57,6 @@ int main(int argc, char* argv[])
 
   int A[1000];
 
-  #pragma omp parallel for private(i)
   for (i=0; i<len; i++)
     A[i]=i;
 
@@ -70,6 +66,7 @@ int main(int argc, char* argv[])
     fprintf(stderr,"Error in fopen()\n");
   }
 
+#pragma omp parallel for
   for (i=0; i<len; ++i)
   {
     fprintf(pfile, "%d\n", A[i] );

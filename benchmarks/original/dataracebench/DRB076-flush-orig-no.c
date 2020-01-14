@@ -45,46 +45,29 @@ THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 /*
- * Cover an implicitly determined rule: In a task generating construct, 
- * a variable without applicable rules is firstprivate.
- * */
-#include <stdio.h>
+This benchmark is extracted from flush_nolist.1c of OpenMP
+Application Programming Interface Examples Version 4.5.0 .
 
-#define MYLEN 100
-int a[MYLEN];
-int b[MYLEN];
+We privatize variable i to fix data races in the original example.
+Once i is privatized, flush is no longer needed.
+*/
 
-void gen_task(int i)
+#include<stdio.h>
+#include<assert.h>
+void f1(int *q)
 {
-    a[i]= i+1;
+  *q = 1;
 }
 
 int main()
-{
-  int i=0;
-  #pragma omp parallel
-  #pragma omp for private(i)
-  for (i=0; i<MYLEN; i++)
+{ 
+  int i=0, sum=0; 
+  #pragma omp parallel reduction(+:sum) num_threads(10) private(i)
   {
-    gen_task(i);
+     f1(&i);
+     sum+= i; 
   }
-  
-  /* checking control flow */
-  #pragma omp parallel for private(i)
-  for (i=0; i<MYLEN; i++)
-  {
-    //assert (a[i]==i+1);
-    if (a[i]!= i+1)
-    {
-      b[i] = a[i];
-    }
-  }
-
-  for (i=0; i<MYLEN; i++)
-  {
-    printf("%d %d\n", a[i], b[i]);
-  }
-  
-  return 0;
+  assert (sum==10);
+  printf("sum=%d\n", sum);
+  return 0;   
 }
-

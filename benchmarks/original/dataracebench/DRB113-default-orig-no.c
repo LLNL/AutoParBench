@@ -55,31 +55,16 @@ int b[100][100];
 int main()
 {
   int i,j;
-  #pragma omp parallel for shared(a) private(i, j)
-  for (i=0;i<100;i++) {
-    #pragma omp parallel for shared(a) private(j)
-    for (j=0;j<100;j++) {
-      a[i][j] = i;
-      b[i][j] = i;
-    }
-  }
-
-  #pragma omp parallel for shared(a) private(i, j)
+#pragma omp parallel for default(none) shared(a) private(i,j)
   for (i=0;i<100;i++)
-    #pragma omp parallel for shared(a) private(j)
     for (j=0;j<100;j++)
       a[i][j]=a[i][j]+1;
 
-  #pragma omp parallel for private(i, j)
+#pragma omp parallel for default(shared) private(i,j)
   for (i=0;i<100;i++)
-    #pragma omp parallel for private(j)
     for (j=0;j<100;j++)
       b[i][j]=b[i][j]+1;
 
-  for (i=0;i<100;i++)
-    for (j=0;j<100;j++)
-      printf("%d %d\n", a[i][j], b[i][j]);
-  
   return 0;
 }
 

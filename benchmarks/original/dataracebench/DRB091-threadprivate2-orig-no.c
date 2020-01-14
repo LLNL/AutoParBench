@@ -53,22 +53,25 @@ This is the case for a variable referenced within a construct.
 #include <assert.h>
 
 int sum0=0, sum1=0;
+#pragma omp threadprivate(sum0)
 
 int main()
 {
   int len=1000;
   int i, sum=0;
-  #pragma omp parallel 
+#pragma omp parallel copyin(sum0)
   {
-    #pragma omp for private(i) reduction(+:sum0)
+#pragma omp for
     for (i=0;i<len;i++)
     {
       sum0=sum0+i;
     }   
-  }
-  sum= sum+sum0;
+#pragma omp critical
+    {
+      sum= sum+sum0;
+    } 
+  }  
   /*  reference calculation */
-  #pragma omp parallel for private(i) reduction(+:sum1)
   for (i=0;i<len;i++)
   {
     sum1=sum1+i;

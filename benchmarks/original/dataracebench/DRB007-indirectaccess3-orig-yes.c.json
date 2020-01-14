@@ -3,14 +3,12 @@
 "file":"./dataracebench/DRB007-indirectaccess3-orig-yes.c",
 "function":"main",
 "loop id":"1",
-"loop line":"120",
+"loop line":"119",
 "loop column":"3",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"induction variable":"i",
-"private":["i"]
+"multiversioned":"false"
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB007-indirectaccess3-orig-yes.c",
@@ -18,9 +16,10 @@
 "loop id":"2",
 "loop line":"125",
 "loop column":"3",
-"pragma type":"NULL",
+"pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false"
+"multiversioned":"false",
+"induction variable":"i"
 }
 }

@@ -64,11 +64,10 @@ int main(int argc, char* argv[])
 
   int input[inLen]; 
   int output[inLen];
-
-  #pragma omp parallel for private(i)
   for (i=0; i<inLen; ++i) 
     input[i]=i; 
 
+#pragma omp parallel for
   for (i=0; i<inLen; ++i) {
     output[outLen++] = input[i] ;
   }  

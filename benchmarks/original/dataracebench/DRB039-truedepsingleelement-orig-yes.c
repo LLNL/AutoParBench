@@ -43,37 +43,24 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 */
-#include <stdio.h>
-#include <stdlib.h>
-/* 
-Arrays passed as function parameters
+
+/*
+Data race pair: a[i]@62:5 vs. a[0]@62:15
 */
-void foo1(double o1[], double c[], int len)
-{ 
-  int i ;
-
-  for (i = 0; i < len; ++i) {
-    double volnew_o8 = 0.5 * c[i];
-    o1[i] = volnew_o8;
-  } 
-}
-
-int main()
+#include <stdlib.h>
+#include <stdio.h>
+int main (int argc, char* argv[])
 {
-  double o1[101];
-  double c[101];
-  int i;
-  int len = 100;
-  #pragma omp parallel for private(i)
-  for (i = 0; i < len; ++i) {
-    c[i] = i + 1.01;
-    o1[i] = i + 1.01;
-  } 
- 
-  foo1 (&o1[1], &o1[0], 100);
+  int len=1000;
+  int i; 
 
-  for (i = 0; i < len; ++i) {
-    printf("%lf\n",o1[i]);
-  }  
+  int a[1000];
+  a[0] = 2;
+
+#pragma omp parallel for
+  for (i=0;i<len;i++)
+    a[i]=a[i]+a[0];
+
+  printf("a[500]=%d\n", a[500]);
   return 0;
 }

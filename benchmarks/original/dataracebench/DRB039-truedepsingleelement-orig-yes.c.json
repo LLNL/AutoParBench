@@ -1,0 +1,14 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB039-truedepsingleelement-orig-yes.c",
+"function":"main",
+"loop id":"1",
+"loop line":"61",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i"
+}
+}

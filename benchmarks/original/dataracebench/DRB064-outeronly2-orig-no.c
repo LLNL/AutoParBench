@@ -50,45 +50,20 @@ Only the outmost loop can be parallelized.
 The inner loop has loop carried true data dependence.
 However, the loop is not parallelized so no race condition.
 */
+int n=100, m=100;
 double b[100][100];
-#define N 100
-int init()
-{
-  int i,j,k;
-  #pragma omp parallel for private(i, j)
-  for (i = 0; i < N; i++) {
-    #pragma omp parallel for private(j)
-    for (j = 0; j < N; j++) {
-      b[i][j] = i * j;
-    }
-  }
-  return 0;
-}
 
-void foo(int n, int m)
+void foo()
 {
   int i,j;
-  #pragma omp parallel for private(i, j)
+#pragma omp parallel for private(j)
   for (i=0;i<n;i++)
     for (j=1;j<m;j++) // Be careful about bounds of j
       b[i][j]=b[i][j-1];
 }
 
-int print()
-{
-  int i,j,k;
-  for (i = 0; i < N; i++) {
-    for (j = 0; j < N; j++) {
-      printf("%lf\n", b[i][j]);
-    }
-  }
-  return 0;
-}
-
 int main()
 {
-  init();
-  foo(100, 100);
-  print();
+  foo();
   return 0;
 }

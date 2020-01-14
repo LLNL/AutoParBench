@@ -65,6 +65,7 @@ int main(int argc, char* argv[])
   int a[len];
   int i,x=10;
 
+#pragma omp parallel for 
   for (i=0;i<len;i++)
   {
     a[i] = x;

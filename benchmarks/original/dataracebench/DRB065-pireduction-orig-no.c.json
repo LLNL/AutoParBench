@@ -10,7 +10,7 @@
 "offload":"false",
 "multiversioned":"false",
 "induction variable":"i",
-"private":["i","x"],
+"private":["x"],
 "reduction":["+:pi"]
 }
 }

@@ -25,9 +25,8 @@ static void init_array(int n,double A[500 + 0][500 + 0],double B[500 + 0][500 + 
     int c2;
     int c1;
     if (n >= 1) {
-     #pragma omp parallel for private(c1, c2)
+#pragma omp parallel for private(c2)
       for (c1 = 0; c1 <= n + -1; c1++) {
-	#pragma omp parallel for private(c2)
         for (c2 = 0; c2 <= n + -1; c2++) {
           A[c1][c2] = (((double )c1) * (c2 + 2) + 2) / n;
           B[c1][c2] = (((double )c1) * (c2 + 3) + 3) / n;
@@ -76,7 +75,7 @@ static void kernel_jacobi_2d_imper(int tsteps,int n,double A[500 + 0][500 + 0],d
           }
         }
       }
-#pragma omp parallel for private(c1, c2)
+#pragma omp parallel for private(c2)
       for (c1 = ((((2 * c0 + 2) * 3 < 0?-(-(2 * c0 + 2) / 3) : ((3 < 0?(-(2 * c0 + 2) + - 3 - 1) / - 3 : (2 * c0 + 2 + 3 - 1) / 3)))) > c0 + -9?(((2 * c0 + 2) * 3 < 0?-(-(2 * c0 + 2) / 3) : ((3 < 0?(-(2 * c0 + 2) + - 3 - 1) / - 3 : (2 * c0 + 2 + 3 - 1) / 3)))) : c0 + -9); c1 <= (((((2 * c0 + 498) * 3 < 0?((3 < 0?-((-(2 * c0 + 498) + 3 + 1) / 3) : -((-(2 * c0 + 498) + 3 - 1) / 3))) : (2 * c0 + 498) / 3)) < c0?(((2 * c0 + 498) * 3 < 0?((3 < 0?-((-(2 * c0 + 498) + 3 + 1) / 3) : -((-(2 * c0 + 498) + 3 - 1) / 3))) : (2 * c0 + 498) / 3)) : c0)); c1++) {
         B[-2 * c0 + 3 * c1][1] = 0.2 * (A[-2 * c0 + 3 * c1][1] + A[-2 * c0 + 3 * c1][1 - 1] + A[-2 * c0 + 3 * c1][1 + 1] + A[1 + (-2 * c0 + 3 * c1)][1] + A[-2 * c0 + 3 * c1 - 1][1]);
         for (c2 = 2 * c0 + -2 * c1 + 2; c2 <= 2 * c0 + -2 * c1 + 498; c2++) {
@@ -87,14 +86,12 @@ static void kernel_jacobi_2d_imper(int tsteps,int n,double A[500 + 0][500 + 0],d
       }
       if (c0 >= 499) {
         if ((2 * c0 + 1) % 3 == 0) {
-	  #pragma omp parallel for private(c2)
           for (c2 = ((2 * c0 + -992) * 3 < 0?-(-(2 * c0 + -992) / 3) : ((3 < 0?(-(2 * c0 + -992) + - 3 - 1) / - 3 : (2 * c0 + -992 + 3 - 1) / 3))); c2 <= (((2 * c0 + 499) * 3 < 0?((3 < 0?-((-(2 * c0 + 499) + 3 + 1) / 3) : -((-(2 * c0 + 499) + 3 - 1) / 3))) : (2 * c0 + 499) / 3)); c2++) {
             A[498][(-2 * c0 + 3 * c2 + 995) / 3] = B[498][(-2 * c0 + 3 * c2 + 995) / 3];
           }
         }
       }
     }
-    #pragma omp parallel for private(c2)
     for (c2 = 20; c2 <= 517; c2++) {
       A[498][c2 + -19] = B[498][c2 + -19];
     }
@@ -129,7 +126,8 @@ int main(int argc,char **argv)
   ;
 /* Prevent dead-code elimination. All live-out data must be printed
      by the function call in argument. */
-  print_array(n, *A);
+  if (argc > 42 && !strcmp(argv[0],"")) 
+    print_array(n, *A);
 /* Be clean. */
   free(((void *)A));
   ;

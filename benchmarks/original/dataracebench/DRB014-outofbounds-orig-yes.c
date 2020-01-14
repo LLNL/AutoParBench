@@ -64,17 +64,15 @@ For example, an array of 4x4:
 Data race pair: b[i][j]@75 vs. b[i][j-1]@75.
 */
 #include <stdio.h>
-#include <stdlib.h>
 int main(int argc, char* argv[]) 
 {
   int i,j;
   int n=100, m=100;
   double b[n][m];
-
+#pragma omp parallel for private(j)
   for (i=1;i<n;i++)
-    #pragma omp parallel for private(j)
-    for (j=0;j<m;j++)
-      b[i][j]=b[i-1][j];
+    for (j=0;j<m;j++) // Note there will be out of bound access
+      b[i][j]=b[i][j-1];
 
   printf ("b[50][50]=%f\n",b[50][50]);
 
