@@ -298,8 +298,8 @@ c-------------------------------------------------------------------*/
 
     printf(" Benchmark completed\n");
 
-    //epsilon = 1.0e-10;
-    epsilon = 1.0e-2;
+    epsilon = 1.0e-10;
+    //epsilon = 1.0e-2;
     if (class != 'U') {
 	if (fabs(zeta - zeta_verify_value) <= epsilon) {
             verified = TRUE;
