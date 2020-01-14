@@ -1,3 +1,9 @@
+#//******************************************************************************************************************//
+#// Copyright (c) 2020, Lawrence Livermore National Security, LLC.
+#// and Federal University of Minas Gerais
+#// SPDX-License-Identifier: (BSD-3-Clause)
+#//*****************************************************************************************************************//
+
 # STAGE 1: build c_func_name_extract
 FROM ubuntu:cosmic as build
 

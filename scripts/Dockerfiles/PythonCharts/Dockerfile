@@ -1,3 +1,9 @@
+#//******************************************************************************************************************//
+#// Copyright (c) 2020, Lawrence Livermore National Security, LLC.
+#// and Federal University of Minas Gerais
+#// SPDX-License-Identifier: (BSD-3-Clause)
+#//*****************************************************************************************************************//
+
 # STAGE 1: build PRAGMA FINDER
 FROM ubuntu:bionic as build
 
