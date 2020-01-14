@@ -32,50 +32,52 @@ Begin optimization report for: print()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (print()) [1/5=20.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(75,1)
-  -> EXTERN: (79,7) printf(const char *, ...)
+INLINE REPORT: (print()) [1/5=20.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(76,1)
+  -> EXTERN: (80,7) printf(const char *, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(77,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(78,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *, ...) (79:7) and call:printf(const char *, ...) (79:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *, ...) (79:7) and call:printf(const char *, ...) (79:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *, ...) (80:7) and call:printf(const char *, ...) (80:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *, ...) (80:7) and call:printf(const char *, ...) (80:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=100
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(78,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(79,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(79,7) ]
+      remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(80,7) ]
       remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #25015: Estimate of max trip count of loop=100
    LOOP END
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(75,1):remark #34051: REGISTER ALLOCATION : [print] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c:75
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(76,1):remark #34051: REGISTER ALLOCATION : [print] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c:76
 
     Hardware registers
         Reserved     :    2[ rsp rip]
         Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
         Callee-save  :    6[ rbx rbp r12-r15]
-        Assigned     :    8[ rax rdx rbx rbp rdi r14-r15 zmm0]
+        Assigned     :   12[ rax rdx rcx rbx rbp rsi rdi r12-r15 zmm0]
         
     Routine temporaries
-        Total         :      17
-            Global    :      12
+        Total         :      19
+            Global    :      14
             Local     :       5
         Regenerable   :       5
-        Spilled       :       4
+        Spilled       :       6
         
     Routine stack
         Variables     :       0 bytes*
             Reads     :       0 [0.00e+00 ~ 0.0%]
             Writes    :       0 [0.00e+00 ~ 0.0%]
-        Spills        :       0 bytes*
-            Reads     :       0 [0.00e+00 ~ 0.0%]
-            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      48 bytes*
+            Reads     :       6 [5.40e+00 ~ 0.0%]
+            Writes    :       6 [5.40e+00 ~ 0.0%]
     
     Notes
     
@@ -89,36 +91,36 @@ Begin optimization report for: foo..0(int, int)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (foo..0(int, int)) [2/5=40.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(67,1)
+INLINE REPORT: (foo..0(int, int)) [2/5=40.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(68,1)
   CLONED FROM: foo(int, int)(100,100)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(69,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(70,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (70:5) and b[i][j] (70:5)
-   remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (70:5) and b[i][j-1] (70:5)
+   remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (71:5) and b[i][j] (71:5)
+   remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (71:5) and b[i][j-1] (71:5)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(70,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(71,5)
       remark #25401: memcopy(with guard) generated
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (70:5) and b[i][j] (70:5)
-      remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (70:5) and b[i][j-1] (70:5)
+      remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (71:5) and b[i][j] (71:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (71:5) and b[i][j-1] (71:5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(70,5)
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(71,5)
       <Multiversioned v2>
          remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (71:7) and b[i][j-1] (71:7)
-         remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (71:7) and b[i][j] (71:7)
+         remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (72:7) and b[i][j-1] (72:7)
+         remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (72:7) and b[i][j] (72:7)
          remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
          remark #25439: unrolled with remainder by 2  
       LOOP END
 
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(70,5)
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(71,5)
       <Remainder, Multiversioned v2>
       LOOP END
    LOOP END
@@ -126,7 +128,7 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(67,1):remark #34051: REGISTER ALLOCATION : [foo..0] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c:67
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(68,1):remark #34051: REGISTER ALLOCATION : [foo..0] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c:68
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -161,61 +163,71 @@ Begin optimization report for: init()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (init()) [3/5=60.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(56,1)
+INLINE REPORT: (init()) [3/5=60.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(57,1)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(58,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(59,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
-   remark #17101: parallel loop shared={ } private={ } firstprivate={ j i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ n j m i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=100
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(59,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(60,5)
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-      remark #25438: unrolled without remainder by 2  
+      remark #25439: unrolled with remainder by 2  
+      remark #25015: Estimate of max trip count of loop=100
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(60,5)
+   <Remainder>
       remark #25015: Estimate of max trip count of loop=100
    LOOP END
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(58,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(59,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=100
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(59,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(60,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-      remark #25438: unrolled without remainder by 2  
+      remark #25439: unrolled with remainder by 2  
+      remark #25015: Estimate of max trip count of loop=100
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(60,5)
+   <Remainder>
       remark #25015: Estimate of max trip count of loop=100
    LOOP END
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(56,1):remark #34051: REGISTER ALLOCATION : [init] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c:56
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(57,1):remark #34051: REGISTER ALLOCATION : [init] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c:57
 
     Hardware registers
         Reserved     :    2[ rsp rip]
         Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
         Callee-save  :    6[ rbx rbp r12-r15]
-        Assigned     :   15[ rax rdx rcx rbx rbp rsi rdi r8-r13 zmm0-zmm1]
+        Assigned     :   17[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm1]
         
     Routine temporaries
-        Total         :      83
-            Global    :      23
-            Local     :      60
-        Regenerable   :      28
-        Spilled       :       0
+        Total         :     108
+            Global    :      39
+            Local     :      69
+        Regenerable   :      31
+        Spilled       :       1
         
     Routine stack
-        Variables     :      24 bytes*
-            Reads     :       2 [2.00e+02 ~ 0.1%]
-            Writes    :       6 [0.00e+00 ~ 0.0%]
-        Spills        :      48 bytes*
-            Reads     :      12 [6.00e+00 ~ 0.0%]
-            Writes    :      12 [0.00e+00 ~ 0.0%]
+        Variables     :      36 bytes*
+            Reads     :       2 [1.80e+02 ~ 0.2%]
+            Writes    :       9 [0.00e+00 ~ 0.0%]
+        Spills        :      56 bytes*
+            Reads     :      13 [6.90e+00 ~ 0.0%]
+            Writes    :      13 [6.30e+00 ~ 0.0%]
     
     Notes
     
@@ -229,18 +241,18 @@ Begin optimization report for: main()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main()) [4/5=80.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(86,1)
-  -> (87,3) init() (isz = 30) (sz = 35)
+INLINE REPORT: (main()) [4/5=80.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(87,1)
+  -> (88,3) init() (isz = 30) (sz = 35)
      [[ Unable to inline callsite  <1>]]
-  -> CP_CLONE (88,3) foo..0(int, int) (isz = 29) (sz = 36)
+  -> CP_CLONE (89,3) foo..0(int, int) (isz = 29) (sz = 36)
      [[ Unable to inline callsite  <1>]]
-  -> (89,3) print() (isz = 32) (sz = 37)
+  -> (90,3) print() (isz = 32) (sz = 37)
      [[ Unable to inline callsite  <1>]]
 
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(86,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c:86
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(87,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c:87
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -275,38 +287,38 @@ Begin optimization report for: foo(int, int)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (foo(int, int)) [5/5=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(67,1)
+INLINE REPORT: (foo(int, int)) [5/5=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(68,1)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(69,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(70,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (70:5) and b[i][j] (70:5)
-   remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (70:5) and b[i][j-1] (70:5)
+   remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (71:5) and b[i][j] (71:5)
+   remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (71:5) and b[i][j-1] (71:5)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=100
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(70,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(71,5)
       remark #25401: memcopy(with guard) generated
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (70:5) and b[i][j] (70:5)
-      remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (70:5) and b[i][j-1] (70:5)
+      remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (71:5) and b[i][j] (71:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (71:5) and b[i][j-1] (71:5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=100
 
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(70,5)
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(71,5)
       <Multiversioned v2>
          remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (71:7) and b[i][j-1] (71:7)
-         remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (71:7) and b[i][j] (71:7)
+         remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (72:7) and b[i][j-1] (72:7)
+         remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (72:7) and b[i][j] (72:7)
          remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
          remark #25439: unrolled with remainder by 2  
          remark #25015: Estimate of max trip count of loop=100
       LOOP END
 
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(70,5)
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(71,5)
       <Remainder, Multiversioned v2>
          remark #25015: Estimate of max trip count of loop=100
       LOOP END
@@ -315,8 +327,8 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(70,5):remark #34026: call to memcpy implemented as a call to optimized library version
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(67,1):remark #34051: REGISTER ALLOCATION : [foo] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c:67
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(71,5):remark #34026: call to memcpy implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c(68,1):remark #34051: REGISTER ALLOCATION : [foo] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB064-outeronly2-orig-no.c:68
 
     Hardware registers
         Reserved     :    2[ rsp rip]

@@ -148,9 +148,9 @@ c-------------------------------------------------------------------*/
   }
   
 {   
-#if defined(_OPENMP)
-  nthreads = omp_get_num_threads();
-#endif /* _OPENMP */
+//#if defined(_OPENMP)
+//  nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */
 } /* end parallel */
 
   timer_stop(1);
@@ -318,6 +318,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c     xi-direction flux differences                      
 c-------------------------------------------------------------------*/
+  //#pragma omp parallel for firstprivate(dx1tx1 ,tx2 ,dx2tx1 ,xxcon1 ,c2 ,dx3tx1 ,xxcon2 ,dx4tx1 ,dx5tx1 ,xxcon5 ,xxcon4 ,xxcon3 ,c1)
   for (j = 1; j < grid_points[1]-1; j++) {
     eta = (double)j * dnym1;
     
@@ -416,6 +417,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c     eta-direction flux differences             
 c-------------------------------------------------------------------*/
+  //#pragma omp parallel for private(xi, zeta, eta)  
   for (i = 1; i < grid_points[0]-1; i++) {
     xi = (double)i * dnxm1;
     
@@ -515,6 +517,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c     zeta-direction flux differences                      
 c-------------------------------------------------------------------*/
+  //#pragma omp parallel for private(xi, eta, zeta)
   for (i = 1; i < grid_points[0]-1; i++) {
     xi = (double)i * dnxm1;
     
@@ -1466,6 +1469,7 @@ c-------------------------------------------------------------------*/
 c     Compute the indices for storing the block-diagonal matrix;
 c     determine c (labeled f) and s jacobians
 c---------------------------------------------------------------------*/
+  //#pragma omp parallel for private(tmp1, tmp2, tmp3) 
   for (i = 1; i < grid_points[0]-1; i++) {
     for (j = 1; j < grid_points[1]-1; j++) {
       for (k = 0; k < grid_points[2]; k++) {

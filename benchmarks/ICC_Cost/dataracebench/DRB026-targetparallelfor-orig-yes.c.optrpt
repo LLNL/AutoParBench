@@ -33,7 +33,7 @@ Begin optimization report for: main(int, char **)
     Report from: Interprocedural optimizations [ipo]
 
 INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB026-targetparallelfor-orig-yes.c(53,1)
-  -> EXTERN: (66,5) printf(const char *, ...)
+  -> EXTERN: (65,5) printf(const char *, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
@@ -46,20 +46,20 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataraceben
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB026-targetparallelfor-orig-yes.c(62,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB026-targetparallelfor-orig-yes.c(61,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed ANTI dependence between a[i+1] (63:5) and a[i] (63:5)
+   remark #17106: parallel dependence: assumed ANTI dependence between a[i+1] (62:5) and a[i] (62:5)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB026-targetparallelfor-orig-yes.c(62,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB026-targetparallelfor-orig-yes.c(61,3)
 <Remainder>
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB026-targetparallelfor-orig-yes.c(65,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB026-targetparallelfor-orig-yes.c(64,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB026-targetparallelfor-orig-yes.c(66,5) ]
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB026-targetparallelfor-orig-yes.c(65,5) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 

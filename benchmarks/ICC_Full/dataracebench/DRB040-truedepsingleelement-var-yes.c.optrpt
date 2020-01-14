@@ -35,48 +35,48 @@ Begin optimization report for: main(int, char **)
 INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(52,1)
   -> EXTERN: (57,11) atoi(const char *)
   -> EXTERN: (58,7) _vla_alloc(long)
-  -> EXTERN: (69,5) printf(const char *, ...)
-  -> EXTERN: (71,3) _vla_free(void *, long)
+  -> EXTERN: (68,5) printf(const char *, ...)
+  -> EXTERN: (70,3) _vla_free(void *, long)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(60,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(61,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ len a i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(60,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(61,3)
 <Remainder>
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(65,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(64,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between a[i] (66:5) and a[0] (66:5)
+   remark #17106: parallel dependence: assumed FLOW dependence between a[i] (65:5) and a[0] (65:5)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between a[i] (66:5) and a[0] (66:5)
+   remark #15346: vector dependence: assumed FLOW dependence between a[i] (65:5) and a[0] (65:5)
    remark #25439: unrolled with remainder by 2  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(65,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(64,3)
 <Remainder>
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(68,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(67,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(69,5) ]
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(68,5) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(60,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(61,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(60,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB040-truedepsingleelement-var-yes.c(61,3)
 <Remainder>
 LOOP END
 

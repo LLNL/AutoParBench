@@ -24,5 +24,31 @@
 "multiversioned":"false",
 "induction variable":"j",
 "private":["j"]
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB095-doall2-taskloop-orig-yes.c",
+"function":"main",
+"loop id":"3",
+"loop line":"127",
+"loop column":"2",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i","j"]
+},
+"loop - object id : 4":{
+"file":"./dataracebench/DRB095-doall2-taskloop-orig-yes.c",
+"function":"main",
+"loop id":"4",
+"loop line":"133",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j",
+"private":["j"]
 }
 }

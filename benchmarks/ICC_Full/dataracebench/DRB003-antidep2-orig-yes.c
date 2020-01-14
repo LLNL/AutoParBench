@@ -49,7 +49,7 @@ A two-level loop nest with loop carried anti-dependence on the outer level.
 Data race pair: a[i][j]@67:7 vs. a[i+1][j]@67:18
 */
 #include <stdio.h>
-#include <stdlib.h>
+
 int main(int argc,char *argv[])
 {
   int i, j;
@@ -59,7 +59,7 @@ int main(int argc,char *argv[])
 
   for (i=0; i< len; i++)
     for (j=0; j<len; j++)
-      a[i][j] = (i * len + j + 0.5); 
+      a[i][j] = 0.5; 
 
   for (i = 0; i < len - 1; i += 1) {
     for (j = 0; j < len ; j += 1) {
@@ -67,11 +67,7 @@ int main(int argc,char *argv[])
     }
   }
 
-  for (i=0; i< len; i++)
-    for (j=0; j<len; j++)
-      printf("%lf",a[i][j]); 
-
-  printf ("a[10][10]=%f\n", a[10][10]);
+  printf ("a[10][10]=%lf\n", a[10][10]);
   return 0;
 }
 

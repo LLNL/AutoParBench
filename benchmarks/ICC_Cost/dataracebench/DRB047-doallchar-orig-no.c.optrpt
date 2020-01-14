@@ -32,12 +32,18 @@ Begin optimization report for: main()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB047-doallchar-orig-no.c(58,1)
-  -> EXTERN: (66,5) printf(const char *__restrict__, ...)
+INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB047-doallchar-orig-no.c(55,1)
+  -> EXTERN: (64,5) printf(const char *, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB047-doallchar-orig-no.c(57,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=100
+LOOP END
 
 LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB047-doallchar-orig-no.c(60,3)
    remark #17108: loop was not parallelized: insufficient computational work
@@ -46,22 +52,15 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataraceben
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB047-doallchar-orig-no.c(62,3)
-   remark #17108: loop was not parallelized: insufficient computational work
-   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-   remark #25438: unrolled without remainder by 2  
-   remark #25015: Estimate of max trip count of loop=100
-LOOP END
-
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB047-doallchar-orig-no.c(65,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB047-doallchar-orig-no.c(63,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB047-doallchar-orig-no.c(66,5) ]
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB047-doallchar-orig-no.c(64,5) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB047-doallchar-orig-no.c(58,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB047-doallchar-orig-no.c:58
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB047-doallchar-orig-no.c(55,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB047-doallchar-orig-no.c:55
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -70,10 +69,10 @@ LOOP END
         Assigned     :    6[ rax rdx rcx rsi rdi r12]
         
     Routine temporaries
-        Total         :      28
+        Total         :      36
             Global    :      11
-            Local     :      17
-        Regenerable   :      14
+            Local     :      25
+        Regenerable   :      15
         Spilled       :       1
         
     Routine stack

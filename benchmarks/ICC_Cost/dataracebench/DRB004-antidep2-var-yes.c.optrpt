@@ -32,68 +32,68 @@ Begin optimization report for: main(int, char **)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(55,1)
-  -> EXTERN: (60,11) atoi(const char *)
-  -> EXTERN: (62,10) _vla_alloc(long)
-  -> EXTERN: (76,7) printf(const char *__restrict__, ...)
+INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(54,1)
+  -> EXTERN: (59,11) atoi(const char *)
+  -> EXTERN: (61,10) _vla_alloc(long)
+  -> EXTERN: (75,7) printf(const char *, ...)
   -> EXTERN: (77,3) _vla_free(void *, long)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(64,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(63,3)
    remark #25236: Loop with pragma of trip count = 20 ignored for large value
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=20
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(65,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(64,5)
       remark #17108: loop was not parallelized: insufficient computational work
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25439: unrolled with remainder by 2  
    LOOP END
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(65,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(64,5)
    <Remainder>
    LOOP END
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(68,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(67,3)
    remark #25236: Loop with pragma of trip count = 20 ignored for large value
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed ANTI dependence between a[i+1][j] (70:7) and a[i][j] (70:7)
+   remark #17106: parallel dependence: assumed ANTI dependence between a[i+1][j] (69:7) and a[i][j] (69:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(69,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(68,5)
       remark #17108: loop was not parallelized: insufficient computational work
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25439: unrolled with remainder by 8  
    LOOP END
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(69,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(68,5)
    <Remainder>
       remark #25436: completely unrolled by 7  
    LOOP END
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(74,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(73,3)
    remark #25236: Loop with pragma of trip count = 20 ignored for large value
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *__restrict__, ...) (76:7) and call:printf(const char *__restrict__, ...) (76:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *__restrict__, ...) (76:7) and call:printf(const char *__restrict__, ...) (76:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *, ...) (75:7) and call:printf(const char *, ...) (75:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *, ...) (75:7) and call:printf(const char *, ...) (75:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(75,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(74,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(76,7) ]
+      remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(75,7) ]
       remark #15344: loop was not vectorized: vector dependence prevents vectorization
    LOOP END
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(55,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c:55
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c(54,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB004-antidep2-var-yes.c:54
 
     Hardware registers
         Reserved     :    2[ rsp rip]

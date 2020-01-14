@@ -33,7 +33,7 @@ Begin optimization report for: main()
     Report from: Interprocedural optimizations [ipo]
 
 INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB092-threadprivatemissing2-orig-yes.c(61,1)
-  -> EXTERN: (75,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (76,3) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
@@ -49,8 +49,8 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataraceben
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB092-threadprivatemissing2-orig-yes.c(71,3)
-   remark #25084: Preprocess Loopnests: Moving Out Store    [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB092-threadprivatemissing2-orig-yes.c(73,5) ]
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB092-threadprivatemissing2-orig-yes.c(72,3)
+   remark #25084: Preprocess Loopnests: Moving Out Store    [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB092-threadprivatemissing2-orig-yes.c(74,5) ]
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25438: unrolled without remainder by 2  

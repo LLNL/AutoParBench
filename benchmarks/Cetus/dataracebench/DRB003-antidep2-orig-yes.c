@@ -95,7 +95,6 @@ Data race pair: a[i][j]@67:7 vs. a[i+1][j]@67:18
 
 */
 #include <stdio.h>
-#include <stdlib.h>
 int main(int argc, char * argv[])
 {
 	int i, j;
@@ -114,7 +113,7 @@ int main(int argc, char * argv[])
 		#pragma omp parallel for private(j)
 		for (j=0; j<len; j ++ )
 		{
-			a[i][j]=(((i*len)+j)+0.5);
+			a[i][j]=0.5;
 		}
 	}
 	#pragma cetus private(i, j) 
@@ -130,18 +129,7 @@ int main(int argc, char * argv[])
 			a[i][j]+=a[i+1][j];
 		}
 	}
-	#pragma cetus private(i, j) 
-	#pragma loop name main#2 
-	for (i=0; i<len; i ++ )
-	{
-		#pragma cetus private(j) 
-		#pragma loop name main#2#0 
-		for (j=0; j<len; j ++ )
-		{
-			printf("%lf", a[i][j]);
-		}
-	}
-	printf("a[10][10]=%f\n", a[10][10]);
+	printf("a[10][10]=%lf\n", a[10][10]);
 	_ret_val_0=0;
 	return _ret_val_0;
 }

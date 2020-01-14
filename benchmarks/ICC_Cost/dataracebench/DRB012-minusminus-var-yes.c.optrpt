@@ -35,8 +35,8 @@ Begin optimization report for: main(int, char **)
 INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB012-minusminus-var-yes.c(53,1)
   -> EXTERN: (58,11) atoi(const char *)
   -> EXTERN: (61,7) _vla_alloc(long)
-  -> EXTERN: (77,3) _vla_free(void *, long)
-  -> EXTERN: (77,3) printf(const char *, ...)
+  -> EXTERN: (76,4) _vla_free(void *, long)
+  -> EXTERN: (76,4) printf(const char *, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]

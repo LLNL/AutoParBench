@@ -1,0 +1,39 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB070-simd1-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"56",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB070-simd1-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"63",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i"]
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB070-simd1-orig-no.c",
+"function":"main",
+"loop id":"3",
+"loop line":"66",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

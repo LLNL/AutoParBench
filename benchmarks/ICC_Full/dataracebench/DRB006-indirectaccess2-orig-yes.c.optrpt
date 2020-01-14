@@ -33,44 +33,42 @@ Begin optimization report for: main(int, char **)
     Report from: Interprocedural optimizations [ipo]
 
 INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB006-indirectaccess2-orig-yes.c(106,1)
-  -> EXTERN: (107,28) malloc(size_t)
-  -> EXTERN: (108,28) malloc(size_t)
-  -> EXTERN: (112,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (107,29) malloc(size_t)
+  -> EXTERN: (111,5) printf(const char *__restrict__, ...)
   -> EXTERN: (130,3) printf(const char *__restrict__, ...)
   -> EXTERN: (131,3) free(void *)
-  -> EXTERN: (132,3) free(void *)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB006-indirectaccess2-orig-yes.c(118,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB006-indirectaccess2-orig-yes.c(119,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
-   remark #17101: parallel loop shared={ } private={ } firstprivate={ xa1 xa2 i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ base i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
    remark #25015: Estimate of max trip count of loop=1505
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB006-indirectaccess2-orig-yes.c(118,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB006-indirectaccess2-orig-yes.c(119,3)
 <Remainder>
    remark #25015: Estimate of max trip count of loop=1505
 LOOP END
 
 LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB006-indirectaccess2-orig-yes.c(124,3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between xa1[idx] (127:5) and xa1[idx] (127:5)
-   remark #15346: vector dependence: assumed ANTI dependence between xa1[idx] (127:5) and xa1[idx] (127:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between base[idx] (127:5) and base[idx+12] (128:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between base[idx+12] (128:5) and base[idx] (127:5)
    remark #25438: unrolled without remainder by 2  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB006-indirectaccess2-orig-yes.c(118,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB006-indirectaccess2-orig-yes.c(119,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
    remark #25015: Estimate of max trip count of loop=1505
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB006-indirectaccess2-orig-yes.c(118,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB006-indirectaccess2-orig-yes.c(119,3)
 <Remainder>
    remark #25015: Estimate of max trip count of loop=1505
 LOOP END
@@ -83,22 +81,22 @@ LOOP END
         Reserved     :    2[ rsp rip]
         Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
         Callee-save  :    6[ rbx rbp r12-r15]
-        Assigned     :   20[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm5]
+        Assigned     :   19[ rax rdx rcx rbx rsi rdi r8-r10 r12-r15 zmm0-zmm5]
         
     Routine temporaries
-        Total         :     159
-            Global    :      34
-            Local     :     125
-        Regenerable   :      60
-        Spilled       :       1
+        Total         :     140
+            Global    :      28
+            Local     :     112
+        Regenerable   :      52
+        Spilled       :       0
         
     Routine stack
-        Variables     :      40 bytes*
-            Reads     :       4 [2.82e+03 ~ 6.4%]
-            Writes    :       9 [0.00e+00 ~ 0.0%]
-        Spills        :      48 bytes*
-            Reads     :      16 [5.00e+00 ~ 0.0%]
-            Writes    :      11 [0.00e+00 ~ 0.0%]
+        Variables     :      32 bytes*
+            Reads     :       4 [2.97e+03 ~ 8.3%]
+            Writes    :       8 [0.00e+00 ~ 0.0%]
+        Spills        :      40 bytes*
+            Reads     :      15 [5.00e+00 ~ 0.0%]
+            Writes    :      10 [0.00e+00 ~ 0.0%]
     
     Notes
     

@@ -116,17 +116,17 @@ Begin optimization report for: main(int, char **)
 INLINE REPORT: (main(int, char **)) [2/2=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB099-targetparallelfor2-orig-no.c(58,1)
   -> EXTERN: (61,10) _vla_alloc(long)
   -> EXTERN: (61,18) _vla_alloc(long)
-  -> (68,3) foo(double *, double *, int) (isz = 18) (sz = 27)
+  -> (69,3) foo(double *, double *, int) (isz = 18) (sz = 27)
      [[ Unable to inline callsite  <1>]]
-  -> EXTERN: (70,3) _vla_free(void *, long)
-  -> EXTERN: (70,3) _vla_free(void *, long)
-  -> EXTERN: (70,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (71,3) _vla_free(void *, long)
+  -> EXTERN: (71,3) _vla_free(void *, long)
+  -> EXTERN: (71,3) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB099-targetparallelfor2-orig-no.c(62,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB099-targetparallelfor2-orig-no.c(63,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ } private={ } firstprivate={ a b i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
@@ -134,13 +134,13 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB099-targetparallelfor2-orig-no.c(62,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB099-targetparallelfor2-orig-no.c(63,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 8  
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB099-targetparallelfor2-orig-no.c(62,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB099-targetparallelfor2-orig-no.c(63,3)
 <Remainder>
    remark #25436: completely unrolled by 7  
 LOOP END

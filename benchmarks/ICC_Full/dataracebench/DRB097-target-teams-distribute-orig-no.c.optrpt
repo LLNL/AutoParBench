@@ -35,9 +35,9 @@ Begin optimization report for: main(int, char **)
 INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB097-target-teams-distribute-orig-no.c(53,1)
   -> EXTERN: (57,10) _vla_alloc(long)
   -> EXTERN: (57,18) _vla_alloc(long)
-  -> EXTERN: (72,3) _vla_free(void *, long)
-  -> EXTERN: (72,3) _vla_free(void *, long)
-  -> EXTERN: (72,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (73,3) _vla_free(void *, long)
+  -> EXTERN: (73,3) _vla_free(void *, long)
+  -> EXTERN: (73,3) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]

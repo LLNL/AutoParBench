@@ -1,0 +1,91 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB058-jacobikernel-orig-no.c",
+"function":"initialize",
+"loop id":"1",
+"loop line":"71",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["xx","yy"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB058-jacobikernel-orig-no.c",
+"function":"initialize",
+"loop id":"2",
+"loop line":"73",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j",
+"private":["xx","yy"]
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB058-jacobikernel-orig-no.c",
+"function":"jacobi",
+"loop id":"1",
+"loop line":"104",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 4":{
+"file":"./dataracebench/DRB058-jacobikernel-orig-no.c",
+"function":"jacobi",
+"loop id":"2",
+"loop line":"110",
+"loop column":"9",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i"
+},
+"loop - object id : 5":{
+"file":"./dataracebench/DRB058-jacobikernel-orig-no.c",
+"function":"jacobi",
+"loop id":"3",
+"loop line":"112",
+"loop column":"11",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j"
+},
+"loop - object id : 6":{
+"file":"./dataracebench/DRB058-jacobikernel-orig-no.c",
+"function":"jacobi",
+"loop id":"4",
+"loop line":"116",
+"loop column":"9",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["resid"],
+"reduction":["+:error"]
+},
+"loop - object id : 7":{
+"file":"./dataracebench/DRB058-jacobikernel-orig-no.c",
+"function":"jacobi",
+"loop id":"5",
+"loop line":"118",
+"loop column":"11",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j",
+"private":["resid"],
+"reduction":["+:error"]
+}
+}

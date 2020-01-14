@@ -110,10 +110,10 @@ int init()
 		#pragma omp parallel for lastprivate(j)
 		for (j=0; j<100; j ++ )
 		{
-			a[i][j]=(i*j);
+			a[i][j]=((i*j)+0.01);
 		}
-		v_out[i]=(i*j);
-		v[i]=(i*j);
+		v_out[i]=((i*j)+0.01);
+		v[i]=((i*j)+0.01);
 	}
 	_ret_val_0=0;
 	return _ret_val_0;
@@ -129,7 +129,7 @@ int mv()
 	#pragma omp parallel for private(i, j)
 	for (i=0; i<100; i ++ )
 	{
-		float sum = 0.0;
+		double sum = 0.0;
 		#pragma cetus private(j) 
 		#pragma loop name mv#0#0 
 		#pragma cetus reduction(+: sum) 

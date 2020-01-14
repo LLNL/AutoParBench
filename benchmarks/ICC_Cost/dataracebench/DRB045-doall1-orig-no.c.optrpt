@@ -32,8 +32,8 @@ Begin optimization report for: main()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB045-doall1-orig-no.c(53,1)
-  -> EXTERN: (63,5) printf(const char *__restrict__, ...)
+INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB045-doall1-orig-no.c(52,1)
+  -> EXTERN: (62,5) printf(const char *, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
@@ -46,22 +46,22 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataraceben
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB045-doall1-orig-no.c(59,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB045-doall1-orig-no.c(58,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25438: unrolled without remainder by 2  
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB045-doall1-orig-no.c(62,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB045-doall1-orig-no.c(61,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB045-doall1-orig-no.c(63,5) ]
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB045-doall1-orig-no.c(62,5) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB045-doall1-orig-no.c(53,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB045-doall1-orig-no.c:53
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB045-doall1-orig-no.c(52,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB045-doall1-orig-no.c:52
 
     Hardware registers
         Reserved     :    2[ rsp rip]

@@ -48,27 +48,5 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false"
-},
-"loop - object id : 5":{
-"file":"./dataracebench/DRB037-truedepseconddimension-orig-yes.c",
-"function":"main",
-"loop id":"5",
-"loop line":"136",
-"loop column":"2",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 6":{
-"file":"./dataracebench/DRB037-truedepseconddimension-orig-yes.c",
-"function":"main",
-"loop id":"6",
-"loop line":"140",
-"loop column":"3",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
 }
 }

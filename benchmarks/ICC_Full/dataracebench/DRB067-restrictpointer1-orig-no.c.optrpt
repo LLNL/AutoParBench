@@ -32,22 +32,22 @@ Begin optimization report for: print(real8 *__restrict__, real8 *__restrict__, i
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (print(real8 *__restrict__, real8 *__restrict__, int)) [1/3=33.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB067-restrictpointer1-orig-no.c(68,1)
-  -> EXTERN: (72,5) printf(const char *, ...)
+INLINE REPORT: (print(real8 *__restrict__, real8 *__restrict__, int)) [1/3=33.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB067-restrictpointer1-orig-no.c(69,1)
+  -> EXTERN: (73,5) printf(const char *, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB067-restrictpointer1-orig-no.c(71,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB067-restrictpointer1-orig-no.c(72,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB067-restrictpointer1-orig-no.c(72,5) ]
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB067-restrictpointer1-orig-no.c(73,5) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB067-restrictpointer1-orig-no.c(68,1):remark #34051: REGISTER ALLOCATION : [print] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB067-restrictpointer1-orig-no.c:68
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB067-restrictpointer1-orig-no.c(69,1):remark #34051: REGISTER ALLOCATION : [print] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB067-restrictpointer1-orig-no.c:69
 
     Hardware registers
         Reserved     :    2[ rsp rip]

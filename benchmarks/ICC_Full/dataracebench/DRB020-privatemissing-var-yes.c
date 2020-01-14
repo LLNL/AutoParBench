@@ -65,7 +65,7 @@ int main(int argc, char* argv[])
     tmp =a[i]+i;
     a[i] = tmp;
   }
-  
+
   for (i=0;i<len;i++)
     printf("%d\n", a[i]);
 

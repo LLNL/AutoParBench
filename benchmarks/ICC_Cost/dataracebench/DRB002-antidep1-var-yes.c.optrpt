@@ -32,46 +32,46 @@ Begin optimization report for: main(int, char **)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(54,1)
-  -> EXTERN: (59,11) atoi(const char *)
-  -> EXTERN: (61,7) _vla_alloc(long)
-  -> EXTERN: (70,5) printf(const char *__restrict__, ...)
-  -> EXTERN: (72,3) _vla_free(void *, long)
+INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(53,1)
+  -> EXTERN: (58,11) atoi(const char *)
+  -> EXTERN: (60,7) _vla_alloc(long)
+  -> EXTERN: (69,5) printf(const char *, ...)
+  -> EXTERN: (71,3) _vla_free(void *, long)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(63,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(62,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(63,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(62,3)
 <Remainder>
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(66,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(65,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed ANTI dependence between a[i+1] (67:5) and a[i] (67:5)
+   remark #17106: parallel dependence: assumed ANTI dependence between a[i+1] (66:5) and a[i] (66:5)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(66,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(65,3)
 <Remainder>
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(69,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(68,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(70,5) ]
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(69,5) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(54,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c:54
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c(53,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB002-antidep1-var-yes.c:53
 
     Hardware registers
         Reserved     :    2[ rsp rip]

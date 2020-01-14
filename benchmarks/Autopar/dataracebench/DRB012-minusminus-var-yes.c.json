@@ -25,6 +25,6 @@
 "multiversioned":"false",
 "induction variable":"i",
 "private":["i"],
-"reduction":["+:numNodes2"]
+"reduction":["-:numNodes2"]
 }
 }

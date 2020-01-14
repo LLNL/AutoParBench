@@ -25,9 +25,9 @@
 #include "npbparams.h"
 #include <stdlib.h>
 #include <stdio.h>
-#if defined(_OPENMP)
-#include <omp.h>
-#endif /* _OPENMP */
+//#if defined(_OPENMP)
+//#include <omp.h>
+//#endif /* _OPENMP */
 /*****************************************************************/
 /* For serial IS, buckets are not really req'd to solve NPB1 IS  */
 /* spec, but their use on some machines improves performance, on */
@@ -510,8 +510,9 @@ char **argv;
     if ('A' != 'S') 
       printf("        %d\n",iteration);
     rank(iteration);
-#if defined(_OPENMP)	
-#endif /* _OPENMP */	
+//#if defined(_OPENMP)	
+//	nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */	
   }
 /*  End of timing, obtain maximum time of all processors */
   timer_stop(0);
@@ -522,7 +523,7 @@ char **argv;
 /*  The final printout  */
   if (passed_verification != 5 * 10 + 1) 
     passed_verification = 0;
-  c_print_results("IS",'A',1 << 23,0,0,10,nthreads,timecounter,((double )(10 * (1 << 23))) / timecounter / 1000000.,"keys ranked",passed_verification,"3.0 structured","01 Dec 2019","(none)","(none)","-lm","(none)","(none)","(none)","randlc");
+  c_print_results("IS",'A',1 << 23,0,0,10,nthreads,timecounter,((double )(10 * (1 << 23))) / timecounter / 1000000.,"keys ranked",passed_verification,"3.0 structured","14 Jan 2020","(none)","(none)","-lm","(none)","(none)","(none)","randlc");
 /**************************/
 /*  E N D  P R O G R A M  */
 }

@@ -3,13 +3,13 @@
 "file":"./dataracebench/DRB006-indirectaccess2-orig-yes.c",
 "function":"main",
 "loop id":"1",
-"loop line":"118",
+"loop line":"119",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"firstprivate":["xa1","xa2","i"]
+"firstprivate":["base","i"]
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB006-indirectaccess2-orig-yes.c",

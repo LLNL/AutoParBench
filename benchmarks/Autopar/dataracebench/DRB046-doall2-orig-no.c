@@ -43,8 +43,6 @@ Only one loop is associated with the omp for construct.
 The inner loop's loop iteration variable needs an explicit private() clause, 
 otherwise it will be shared by default. 
 */
-#include <stdio.h>
-#include <stdlib.h>
 #include <omp.h> 
 int a[100][100];
 
@@ -58,7 +56,7 @@ int main()
     
 #pragma omp parallel for private (j)
     for (j = 0; j <= 99; j += 1) {
-      a[i][j] = i * 200 + j;
+      a[i][j] = i + j;
     }
   }
   
@@ -72,7 +70,7 @@ int main()
   }
   for (i = 0; i <= 99; i += 1) {
     for (j = 0; j <= 99; j += 1) {
-      printf("%d",a[i][j]);
+      printf("%d\n",a[i][j]);
     }
   }
   return 0;

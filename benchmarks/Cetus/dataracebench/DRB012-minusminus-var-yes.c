@@ -130,10 +130,10 @@ int main(int argc, char * argv[])
 	{
 		if (x[i]<=0)
 		{
-			numNodes2+=( - 1);
+			numNodes2 -- ;
 		}
 	}
-	printf("%d\n", numNodes2);
+	printf("numNodes2 = %d\n", numNodes2);
 	_ret_val_0=0;
 	return _ret_val_0;
 }

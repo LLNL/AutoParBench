@@ -3,7 +3,7 @@
 "file":"./dataracebench/utilities/polybench.c",
 "function":"polybench_flush_cache",
 "loop id":"1",
-"loop line":"94",
+"loop line":"92",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",

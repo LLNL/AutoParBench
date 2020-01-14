@@ -43,15 +43,13 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 */
-#include <stdio.h>
-#include <stdlib.h>
+
 /* 
 Arrays passed as function parameters
 */
 void foo1(double o1[], double c[], int len)
 { 
   int i ;
-
   for (i = 0; i < len; ++i) {
     double volnew_o8 = 0.5 * c[i];
     o1[i] = volnew_o8;
@@ -60,20 +58,18 @@ void foo1(double o1[], double c[], int len)
 
 double o1[100];
 double c[100];
-
 int main()
 {
   int i;
-  int len = 100;
-  for (i = 0; i < len; ++i) {
+  for (i = 0; i < 100; ++i) {
     c[i] = i + 1.01;
     o1[i] = i + 1.01;
   } 
- 
+
   foo1 (o1, c, 100);
 
-  for (i = 0; i < len; ++i) {
+  for (i = 0; i < 100; ++i) {
     printf("%lf\n",o1[i]);
-  }  
+  }
   return 0;
 }

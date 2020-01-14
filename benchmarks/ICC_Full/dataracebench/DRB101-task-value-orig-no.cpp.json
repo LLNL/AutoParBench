@@ -1,0 +1,24 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB101-task-value-orig-no.cpp",
+"function":"main",
+"loop id":"1",
+"loop line":"64",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB101-task-value-orig-no.cpp",
+"function":"main",
+"loop id":"2",
+"loop line":"70",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

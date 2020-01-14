@@ -32,16 +32,16 @@ Begin optimization report for: main()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main()) [1/3=33.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(63,1)
-  -> CP_CLONE (71,3) foo..0(int *, int, int) (isz = 17) (sz = 26)
+INLINE REPORT: (main()) [1/3=33.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(62,1)
+  -> CP_CLONE (67,3) foo..0(int *, int, int) (isz = 17) (sz = 26)
      [[ Unable to inline callsite  <1>]]
-  -> EXTERN: (75,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (70,5) printf(const char *, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(66,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(64,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
@@ -49,26 +49,26 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(73,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(69,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(75,5) ]
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(70,5) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(66,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(64,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(66,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(64,3)
 <Remainder>
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(63,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c:63
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(62,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c:62
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -85,7 +85,7 @@ LOOP END
         
     Routine stack
         Variables     :      24 bytes*
-            Reads     :       4 [2.00e+02 ~ 9.9%]
+            Reads     :       4 [2.00e+02 ~ 9.6%]
             Writes    :       7 [0.00e+00 ~ 0.0%]
         Spills        :      40 bytes*
             Reads     :      10 [5.00e+00 ~ 0.2%]
@@ -103,14 +103,14 @@ Begin optimization report for: foo..0(int *, int, int)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (foo..0(int *, int, int)) [2/3=66.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(53,1)
+INLINE REPORT: (foo..0(int *, int, int)) [2/3=66.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(52,1)
   CLONED FROM: foo(int *, int, int)(X,100,X)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(55,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(54,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ } private={ } firstprivate={ g a i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
@@ -118,20 +118,20 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(55,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(54,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(55,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(54,3)
 <Remainder>
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(53,1):remark #34051: REGISTER ALLOCATION : [foo..0] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c:53
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(52,1):remark #34051: REGISTER ALLOCATION : [foo..0] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c:52
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -166,35 +166,35 @@ Begin optimization report for: foo(int *, int, int)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (foo(int *, int, int)) [3/3=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(53,1)
+INLINE REPORT: (foo(int *, int, int)) [3/3=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(52,1)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(55,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(54,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ n g a i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(55,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(54,3)
 <Remainder>
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(55,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(54,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(55,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(54,3)
 <Remainder>
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(53,1):remark #34051: REGISTER ALLOCATION : [foo] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c:53
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c(52,1):remark #34051: REGISTER ALLOCATION : [foo] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB048-firstprivate-orig-no.c:52
 
     Hardware registers
         Reserved     :    2[ rsp rip]

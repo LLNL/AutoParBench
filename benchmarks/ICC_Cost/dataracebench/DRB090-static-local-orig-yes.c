@@ -63,10 +63,10 @@ int main(int argc, char* argv[])
 
   for (i=0;i<len;i++)
   {
-	  a[i]=i;
-	  b[i]=i;
+     a[i]=i;
+     b[i]=i;
   } 
-  /* static storage for a local variable */
+/* static storage for a local variable */
   {
     static int tmp;
     for (i=0;i<len;i++)

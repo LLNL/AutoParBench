@@ -37,8 +37,6 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 */
-#include <stdio.h>
-#include <stdlib.h>
 /*
 Example use of firstprivate()
 */
@@ -58,14 +56,13 @@ int a[100];
 int main()
 {
   int i;
-  int n = 100;
   
 #pragma omp parallel for private (i)
-  for (i = 0; i <= n - 1; i += 1) {
+  for (i = 0; i <= 99; i += 1) {
     a[i] = i;
   }
   foo(a,100,7);
-  for (i = 0; i <= n - 1; i += 1) {
+  for (i = 0; i <= 99; i += 1) {
     printf("%d\n",a[i]);
   }
   return 0;

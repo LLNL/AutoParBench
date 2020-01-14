@@ -50,7 +50,6 @@ This is a variable-length array version in C99.
 Data race pair: a[i][j]@70:7 vs. a[i+1][j]@70:18
 */
 #include <stdlib.h>
-#include <stdio.h>
 int main(int argc,char *argv[])
 {
   int i, j;
@@ -74,6 +73,7 @@ int main(int argc,char *argv[])
   for (i=0; i< len; i++)
     for (j=0; j<len; j++)
       printf("%lf\n",a[i][j]); 
+
   return 0;
 }
 

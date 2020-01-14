@@ -32,24 +32,24 @@ Begin optimization report for: main()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main()) [1/2=50.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(61,1)
-  -> (66,8) foo(int) (isz = 0) (sz = 5)
+INLINE REPORT: (main()) [1/2=50.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(62,1)
+  -> (68,8) foo(int) (isz = 0) (sz = 5)
      [[ Unable to inline callsite  <1>]]
-  -> EXTERN: (74,3) printf(const char *__restrict__, ...)
-  -> EXTERN: (75,3) __assert_fail(const char *, const char *, unsigned int, const char *)
+  -> EXTERN: (79,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (80,3) __assert_fail(const char *, const char *, unsigned int, const char *)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(64,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(66,5)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function foo(int) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(66,8) ]
+   remark #15382: vectorization support: call to function foo(int) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(68,8) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(70,3)
-   remark #25084: Preprocess Loopnests: Moving Out Store    [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(72,5) ]
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(75,3)
+   remark #25084: Preprocess Loopnests: Moving Out Store    [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(77,5) ]
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25438: unrolled without remainder by 2  
@@ -60,7 +60,7 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(61,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c:61
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(62,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c:62
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -95,12 +95,12 @@ Begin optimization report for: foo(int)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (foo(int)) [2/2=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(56,1)
+INLINE REPORT: (foo(int)) [2/2=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(57,1)
 
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(56,1):remark #34051: REGISTER ALLOCATION : [foo] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c:56
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c(57,1):remark #34051: REGISTER ALLOCATION : [foo] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB085-threadprivate-orig-no.c:57
 
     Hardware registers
         Reserved     :    2[ rsp rip]

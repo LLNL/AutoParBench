@@ -35,51 +35,50 @@ Begin optimization report for: main(int, char **)
 INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c(98,1)
   -> EXTERN: (99,29) malloc(size_t)
   -> EXTERN: (102,5) printf(const char *__restrict__, ...)
-  -> EXTERN: (124,5) printf(const char *__restrict__, ...)
-  -> EXTERN: (128,3) free(void *)
+  -> EXTERN: (126,5) __assert_fail(const char *, const char *, unsigned int, const char *)
+  -> EXTERN: (129,3) free(void *)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c(109,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c(110,3)
    remark #25408: memset generated
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
    remark #25015: Estimate of max trip count of loop=1
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c(114,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c(115,3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed OUTPUT dependence between base[idx] (117:5) and base[idx+1] (118:5)
-   remark #15346: vector dependence: assumed OUTPUT dependence between base[idx+1] (118:5) and base[idx] (117:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between base[idx] (118:5) and base[idx+12] (119:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between base[idx+12] (119:5) and base[idx] (118:5)
    remark #25438: unrolled without remainder by 2  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c(122,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c(123,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c(124,5) ]
-   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c(126,5) ]
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c(109,3):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c(109,3):remark #34026: call to memset implemented as a call to optimized library version
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c(110,3):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c(110,3):remark #34026: call to memset implemented as a call to optimized library version
 /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c(98,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB052-indirectaccesssharebase-orig-no.c:98
 
     Hardware registers
         Reserved     :    2[ rsp rip]
         Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
         Callee-save  :    6[ rbx rbp r12-r15]
-        Assigned     :   12[ rax rdx rcx rsi rdi r12-r13 zmm0-zmm4]
+        Assigned     :   12[ rax rdx rcx rsi rdi r13 zmm0-zmm5]
         
     Routine temporaries
-        Total         :      50
-            Global    :      12
-            Local     :      38
-        Regenerable   :      23
-        Spilled       :       2
+        Total         :      55
+            Global    :      13
+            Local     :      42
+        Regenerable   :      29
+        Spilled       :       1
         
     Routine stack
         Variables     :       4 bytes*

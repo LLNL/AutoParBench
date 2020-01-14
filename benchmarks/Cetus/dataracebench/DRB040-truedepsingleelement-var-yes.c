@@ -104,6 +104,7 @@ int main(int argc, char * argv[])
 	{
 		len=atoi(argv[1]);
 	}
+	a[0]=2;
 	#pragma cetus private(i) 
 	#pragma loop name main#0 
 	#pragma cetus parallel 
@@ -112,7 +113,6 @@ int main(int argc, char * argv[])
 	{
 		a[i]=i;
 	}
-	a[0]=2;
 	#pragma cetus private(i) 
 	#pragma loop name main#1 
 	for (i=0; i<len; i ++ )

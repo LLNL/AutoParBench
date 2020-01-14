@@ -113,8 +113,9 @@ c-------------------------------------------------------------------*/
     adi();
   }
 {
-#if defined(_OPENMP)
-#endif /* _OPENMP */  
+//#if defined(_OPENMP)
+//  nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */  
 /* end parallel */
   }
   timer_stop(1);
@@ -126,7 +127,7 @@ c-------------------------------------------------------------------*/
    else {
     mflops = 0.0;
   }
-  c_print_results("SP",class,grid_points[0],grid_points[1],grid_points[2],niter,nthreads,tmax,mflops,"          floating point",verified,"3.0 structured","01 Dec 2019","(none)","(none)","-lm","(none)","(none)","(none)","(none)");
+  c_print_results("SP",class,grid_points[0],grid_points[1],grid_points[2],niter,nthreads,tmax,mflops,"          floating point",verified,"3.0 structured","28 Nov 2019","(none)","(none)","-lm","(none)","(none)","(none)","(none)");
 }
 /*--------------------------------------------------------------------
 --------------------------------------------------------------------*/
@@ -241,8 +242,11 @@ static void rhs_norm(double rms[5])
   for (m = 0; m <= 4; m += 1) {
     rms[m] = 0.0;
   }
+//#pragma omp parallel for 
   for (i = 0; i <= grid_points[0] - 2; i += 1) {
+//#pragma omp parallel for  
     for (j = 0; j <= grid_points[1] - 2; j += 1) {
+//#pragma omp parallel for 
       for (k = 0; k <= grid_points[2] - 2; k += 1) {
         
 #pragma omp parallel for private (add,m)

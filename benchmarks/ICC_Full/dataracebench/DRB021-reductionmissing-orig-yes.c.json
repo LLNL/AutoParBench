@@ -17,7 +17,7 @@
 "function":"main",
 "loop id":"2",
 "loop line":"63",
-"loop column":"5",
+"loop column":"6",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",

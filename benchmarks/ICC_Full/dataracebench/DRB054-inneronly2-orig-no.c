@@ -54,7 +54,7 @@ int main()
   int n=100, m=100;
   double b[n][m];
 
-  for(i=0;i<n; i++) 
+  for(i=0;i<n; i++)
     for(j=0;j<n; j++) 
       b[i][j]=(double)(i*j);
 
@@ -62,9 +62,9 @@ int main()
     for (j=1;j<m;j++)
       b[i][j]=b[i-1][j-1];
 
-  for(i=0;i<n; i++) 
+  for(i=0;i<n; i++)
     for(j=0;j<n; j++) 
-      printf("%lf\n", b[i][j]);
+      printf("%lf\n",b[i][j]);
 
   return 0;
 }

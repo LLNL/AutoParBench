@@ -37,8 +37,6 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 */
-#include <stdio.h>
-#include <stdlib.h>
 /* 
 Arrays passed as function parameters
 */
@@ -60,15 +58,14 @@ double c[100];
 int main()
 {
   int i;
-  int len = 100;
   
 #pragma omp parallel for private (i)
-  for (i = 0; i <= len - 1; i += 1) {
+  for (i = 0; i <= 99; i += 1) {
     c[i] = i + 1.01;
     o1[i] = i + 1.01;
   }
   foo1(o1,c,100);
-  for (i = 0; i <= len - 1; i += 1) {
+  for (i = 0; i <= 99; i += 1) {
     printf("%lf\n",o1[i]);
   }
   return 0;

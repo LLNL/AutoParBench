@@ -32,19 +32,19 @@ Begin optimization report for: main(int, char **)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB049-fprintf-orig-no.c(55,1)
-  -> EXTERN: (66,11) fopen(const char *__restrict__, const char *__restrict__)
-  -> EXTERN: (69,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
-  -> EXTERN: (74,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
-  -> EXTERN: (77,3) fclose(FILE *)
-  -> EXTERN: (78,9) remove(const char *)
-  -> EXTERN: (81,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB049-fprintf-orig-no.c(52,1)
+  -> EXTERN: (63,11) fopen(const char *__restrict__, const char *__restrict__)
+  -> EXTERN: (66,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (71,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (74,3) fclose(FILE *)
+  -> EXTERN: (75,9) remove(const char *)
+  -> EXTERN: (78,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB049-fprintf-orig-no.c(63,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB049-fprintf-orig-no.c(60,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ A } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
@@ -52,27 +52,27 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB049-fprintf-orig-no.c(72,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB049-fprintf-orig-no.c(69,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (74:5) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (74:5)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (74:5) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (74:5)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (71:5) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (71:5)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (71:5) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (71:5)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB049-fprintf-orig-no.c(63,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB049-fprintf-orig-no.c(60,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB049-fprintf-orig-no.c(63,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB049-fprintf-orig-no.c(60,3)
 <Remainder>
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB049-fprintf-orig-no.c(55,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB049-fprintf-orig-no.c:55
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB049-fprintf-orig-no.c(52,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB049-fprintf-orig-no.c:52
 
     Hardware registers
         Reserved     :    2[ rsp rip]

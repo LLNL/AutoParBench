@@ -58,8 +58,6 @@ void polybench_flush_cache()
   double *flush = (double *)(calloc(cs,sizeof(double )));
   int i;
   double tmp = 0.0;
-#ifdef _OPENMP
-#endif
   
 #pragma omp parallel for private (i) reduction (+:tmp) firstprivate (cs)
   for (i = 0; i <= cs - 1; i += 1) {
@@ -70,7 +68,7 @@ void polybench_flush_cache()
     if (tmp <= 10.0) 
       ;
      else 
-      __assert_fail("tmp <= 10.0","polybench.c",96,__PRETTY_FUNCTION__);
+      __assert_fail("tmp <= 10.0","polybench.c",94,__PRETTY_FUNCTION__);
   })));
   free(flush);
 }
@@ -80,30 +78,10 @@ void polybench_flush_cache()
 /* Restore to standard scheduler policy. */
 #endif
 #ifdef POLYBENCH_PAPI
-# ifdef _OPENMP
-# endif
-# ifdef _OPENMP
-# endif
-# ifdef _OPENMP
-# endif
-# ifdef _OPENMP
-# endif
 # ifndef POLYBENCH_NO_FLUSH_CACHE
 # endif
-# ifdef _OPENMP
-# endif
-# ifdef _OPENMP
-# endif
-# ifdef _OPENMP
-# endif
-# ifdef _OPENMP
-# endif
-# ifdef _OPENMP
 #ifdef POLYBENCH_PAPI_VERBOSE
 #endif
-#endif
-# ifdef _OPENMP
-# endif
 #endif
 /* ! POLYBENCH_PAPI */
 

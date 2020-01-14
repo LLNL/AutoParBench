@@ -74,14 +74,14 @@ Begin optimization report for: polybench_flush_cache()
 
 INLINE REPORT: (polybench_flush_cache()) [2/8=25.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(87,1)
   -> EXTERN: (89,29) calloc(size_t, size_t)
-  -> EXTERN: (96,3) __assert_fail(const char *, const char *, unsigned int, const char *)
-  -> EXTERN: (97,3) free(void *)
+  -> EXTERN: (94,3) __assert_fail(const char *, const char *, unsigned int, const char *)
+  -> EXTERN: (95,3) free(void *)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(94,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(92,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ } private={ } firstprivate={ flush i } lastprivate={ } firstlastprivate={ } reduction={ tmp }
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
@@ -91,7 +91,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataraceben
    remark #25015: Estimate of max trip count of loop=4194560
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(94,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(92,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 8  
    remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
@@ -99,7 +99,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataraceben
    remark #25015: Estimate of max trip count of loop=4194560
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(94,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(92,3)
 <Remainder>
    remark #25436: completely unrolled by 7  
 LOOP END
@@ -141,14 +141,14 @@ Begin optimization report for: polybench_prepare_instruments()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (polybench_prepare_instruments()) [3/8=37.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(310,1)
-  -> (312,3) polybench_flush_cache() (isz = 38) (sz = 41)
+INLINE REPORT: (polybench_prepare_instruments()) [3/8=37.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(276,1)
+  -> (278,3) polybench_flush_cache() (isz = 38) (sz = 41)
      [[ Unable to inline callsite  <1>]]
 
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(310,1):remark #34051: REGISTER ALLOCATION : [polybench_prepare_instruments] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c:310
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(276,1):remark #34051: REGISTER ALLOCATION : [polybench_prepare_instruments] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c:276
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -183,16 +183,16 @@ Begin optimization report for: polybench_timer_start()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (polybench_timer_start()) [4/8=50.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(321,1)
-  -> (322,3) polybench_prepare_instruments() (isz = 0) (sz = 3)
+INLINE REPORT: (polybench_timer_start()) [4/8=50.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(287,1)
+  -> (288,3) polybench_prepare_instruments() (isz = 0) (sz = 3)
      [[ Unable to inline callsite  <1>]]
-  -> (324,23) rtclock() (isz = 0) (sz = 4)
+  -> (290,23) rtclock() (isz = 0) (sz = 4)
      [[ Unable to inline callsite  <1>]]
 
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(321,1):remark #34051: REGISTER ALLOCATION : [polybench_timer_start] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c:321
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(287,1):remark #34051: REGISTER ALLOCATION : [polybench_timer_start] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c:287
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -227,14 +227,14 @@ Begin optimization report for: polybench_timer_stop()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (polybench_timer_stop()) [5/8=62.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(332,1)
-  -> (334,21) rtclock() (isz = 0) (sz = 4)
+INLINE REPORT: (polybench_timer_stop()) [5/8=62.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(298,1)
+  -> (300,21) rtclock() (isz = 0) (sz = 4)
      [[ Unable to inline callsite  <1>]]
 
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(332,1):remark #34051: REGISTER ALLOCATION : [polybench_timer_stop] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c:332
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(298,1):remark #34051: REGISTER ALLOCATION : [polybench_timer_stop] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c:298
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -269,13 +269,13 @@ Begin optimization report for: polybench_timer_print()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (polybench_timer_print()) [6/8=75.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(345,1)
-  -> EXTERN: (358,7) printf(const char *__restrict__, ...)
+INLINE REPORT: (polybench_timer_print()) [6/8=75.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(311,1)
+  -> EXTERN: (324,7) printf(const char *__restrict__, ...)
 
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(345,1):remark #34051: REGISTER ALLOCATION : [polybench_timer_print] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c:345
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(311,1):remark #34051: REGISTER ALLOCATION : [polybench_timer_print] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c:311
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -310,15 +310,15 @@ Begin optimization report for: xmalloc(size_t)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (xmalloc(size_t)) [7/8=87.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(370,1)
-  -> EXTERN: (372,13) posix_memalign(void **, size_t, size_t)
-  -> EXTERN: (375,7) fprintf(FILE *__restrict__, const char *__restrict__, ...)
-  -> EXTERN: (376,7) exit(int)
+INLINE REPORT: (xmalloc(size_t)) [7/8=87.5%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(336,1)
+  -> EXTERN: (338,13) posix_memalign(void **, size_t, size_t)
+  -> EXTERN: (341,7) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (342,7) exit(int)
 
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(370,1):remark #34051: REGISTER ALLOCATION : [xmalloc] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c:370
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(336,1):remark #34051: REGISTER ALLOCATION : [xmalloc] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c:336
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -353,14 +353,14 @@ Begin optimization report for: polybench_alloc_data(unsigned long long, int)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (polybench_alloc_data(unsigned long long, int)) [8/8=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(383,1)
-  -> (387,15) xmalloc(size_t) (isz = 19) (sz = 26)
+INLINE REPORT: (polybench_alloc_data(unsigned long long, int)) [8/8=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(349,1)
+  -> (353,15) xmalloc(size_t) (isz = 19) (sz = 26)
      [[ Unable to inline callsite  <1>]]
 
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(383,1):remark #34051: REGISTER ALLOCATION : [polybench_alloc_data] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c:383
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c(349,1):remark #34051: REGISTER ALLOCATION : [polybench_alloc_data] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/utilities/polybench.c:349
 
     Hardware registers
         Reserved     :    2[ rsp rip]

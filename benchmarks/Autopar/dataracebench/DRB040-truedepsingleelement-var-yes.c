@@ -50,12 +50,12 @@ int main(int argc,char *argv[])
   if (argc > 1) 
     len = atoi(argv[1]);
   int a[len];
+  a[0] = 2;
   
 #pragma omp parallel for private (i)
   for (i = 0; i <= len - 1; i += 1) {
     a[i] = i;
   }
-  a[0] = 2;
   for (i = 0; i <= len - 1; i += 1) {
     a[i] = a[i] + a[0];
   }

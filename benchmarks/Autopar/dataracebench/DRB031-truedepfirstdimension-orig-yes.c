@@ -68,10 +68,6 @@ int main(int argc,char *argv[])
       b[i][j] = b[i - 1][j - 1];
     }
   }
-  for (i = 0; i <= n - 1; i += 1) {
-    for (j = 0; j <= m - 1; j += 1) {
-      printf("b[%d][%d]=%f\n",i,j,b[i][j]);
-    }
-  }
+  printf("b[500][500]=%f\n",b[500][500]);
   return 0;
 }

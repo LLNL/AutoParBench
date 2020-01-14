@@ -106,15 +106,15 @@ int main(int argc, char * argv[])
 	#pragma loop name main#0 
 	#pragma cetus parallel 
 	#pragma omp parallel for private(i, j)
-	for (i=0; i<20; i ++ )
+	for (i=0; i<20; i+=1)
 	{
 		#pragma cetus private(j) 
 		#pragma loop name main#0#0 
 		#pragma cetus parallel 
 		#pragma omp parallel for private(j)
-		for (j=0; j<20; j ++ )
+		for (j=0; j<20; j+=1)
 		{
-			a[i][j]=((i*20)+j);
+			a[i][j]+=((i+j)+0.1);
 		}
 	}
 	#pragma cetus private(i, j) 
@@ -132,11 +132,11 @@ int main(int argc, char * argv[])
 	}
 	#pragma cetus private(i, j) 
 	#pragma loop name main#2 
-	for (i=0; i<20; i ++ )
+	for (i=0; i<20; i+=1)
 	{
 		#pragma cetus private(j) 
 		#pragma loop name main#2#0 
-		for (j=0; j<20; j ++ )
+		for (j=0; j<20; j+=1)
 		{
 			printf("%lf\n", a[i][j]);
 		}

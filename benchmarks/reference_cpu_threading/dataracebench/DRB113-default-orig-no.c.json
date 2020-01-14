@@ -1,0 +1,98 @@
+{
+"loop - object id : 1":{
+"file":"./dataracebench/DRB113-default-orig-no.c",
+"function":"main",
+"loop id":"1",
+"loop line":"60",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i","j"]
+},
+"loop - object id : 2":{
+"file":"./dataracebench/DRB113-default-orig-no.c",
+"function":"main",
+"loop id":"2",
+"loop line":"62",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j",
+"private":["j"]
+},
+"loop - object id : 3":{
+"file":"./dataracebench/DRB113-default-orig-no.c",
+"function":"main",
+"loop id":"3",
+"loop line":"69",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i"
+},
+"loop - object id : 4":{
+"file":"./dataracebench/DRB113-default-orig-no.c",
+"function":"main",
+"loop id":"4",
+"loop line":"71",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j"
+},
+"loop - object id : 5":{
+"file":"./dataracebench/DRB113-default-orig-no.c",
+"function":"main",
+"loop id":"5",
+"loop line":"75",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"i"
+},
+"loop - object id : 6":{
+"file":"./dataracebench/DRB113-default-orig-no.c",
+"function":"main",
+"loop id":"6",
+"loop line":"77",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"induction variable":"j"
+},
+"loop - object id : 7":{
+"file":"./dataracebench/DRB113-default-orig-no.c",
+"function":"main",
+"loop id":"7",
+"loop line":"80",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 8":{
+"file":"./dataracebench/DRB113-default-orig-no.c",
+"function":"main",
+"loop id":"8",
+"loop line":"81",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+}
+}

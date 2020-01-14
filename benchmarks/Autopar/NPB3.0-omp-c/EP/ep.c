@@ -170,6 +170,7 @@ c   have more numbers to generate than others
     for (i = 0; i <= 9; i += 1) {
       qq[i] = 0.0;
     }
+//#pragma omp parallel for copyin(x, qq) private(x1, x2, t1, t2, t3, t4, ik, kk, i, l) reduction(+:sx) reduction(+:sy) 
     for (k = 1; k <= np; k += 1) {
       kk = k_offset + k;
       t1 = 271828183.0;
@@ -226,8 +227,9 @@ c       vectorizable.
         q[i] += qq[i];
       }
     }
-#if defined(_OPENMP)
-#endif /* _OPENMP */    
+//#if defined(_OPENMP)
+//    nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */    
 /* end of parallel region */
   }
   
@@ -268,7 +270,7 @@ c       vectorizable.
   for (i = 0; i <= 9; i += 1) {
     printf("%3d %15.0f\n",i,q[i]);
   }
-  c_print_results("EP",'A',28 + 1,0,0,nit,nthreads,tm,Mops,"Random numbers generated",verified,"3.0 structured","01 Dec 2019","(none)","(none)","-lm","(none)","(none)","(none)","randdp");
+  c_print_results("EP",'A',28 + 1,0,0,nit,nthreads,tm,Mops,"Random numbers generated",verified,"3.0 structured","14 Jan 2020","(none)","(none)","-lm","(none)","(none)","(none)","randdp");
   if (0 == 1) {
     printf("Total time:     %f",(timer_read(1)));
     printf("Gaussian pairs: %f",(timer_read(2)));

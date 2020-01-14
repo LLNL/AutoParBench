@@ -59,6 +59,7 @@ int main(int argc, char* argv[])
   int i;
   int len = 1000;
   double a[len], b[len];
+
   for (i=0; i<len; i++)
   {
     a[i]= ((double)i)/2.0;

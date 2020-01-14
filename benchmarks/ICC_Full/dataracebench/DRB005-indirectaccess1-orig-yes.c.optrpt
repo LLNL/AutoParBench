@@ -57,8 +57,8 @@ LOOP END
 
 LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB005-indirectaccess1-orig-yes.c(124,3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed ANTI dependence between base[idx] (127:5) and base[idx+2014] (128:5)
-   remark #15346: vector dependence: assumed FLOW dependence between base[idx+2014] (128:5) and base[idx] (127:5)
+   remark #15346: vector dependence: assumed ANTI dependence between base[idx] (127:5) and base[idx+12] (128:5)
+   remark #15346: vector dependence: assumed FLOW dependence between base[idx+12] (128:5) and base[idx] (127:5)
 LOOP END
 
 LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB005-indirectaccess1-orig-yes.c(119,3)

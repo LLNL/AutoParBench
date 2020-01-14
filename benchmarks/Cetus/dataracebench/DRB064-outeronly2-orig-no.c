@@ -96,6 +96,7 @@ The inner loop has loop carried true data dependence.
 However, the loop is not parallelized so no race condition.
 
 */
+int n = 100, m = 100;
 double b[100][100];
 int init()
 {
@@ -105,13 +106,13 @@ int init()
 	#pragma loop name init#0 
 	#pragma cetus parallel 
 	#pragma omp parallel for private(i, j)
-	for (i=0; i<100; i ++ )
+	for (i=0; i<n; i ++ )
 	{
 		#pragma cetus private(j) 
 		#pragma loop name init#0#0 
 		#pragma cetus parallel 
 		#pragma omp parallel for private(j)
-		for (j=0; j<100; j ++ )
+		for (j=0; j<m; j ++ )
 		{
 			b[i][j]=(i*j);
 		}
@@ -146,11 +147,11 @@ int print()
 	int _ret_val_0;
 	#pragma cetus private(i, j) 
 	#pragma loop name print#0 
-	for (i=0; i<100; i ++ )
+	for (i=0; i<n; i ++ )
 	{
 		#pragma cetus private(j) 
 		#pragma loop name print#0#0 
-		for (j=0; j<100; j ++ )
+		for (j=0; j<m; j ++ )
 		{
 			printf("%lf\n", b[i][j]);
 		}

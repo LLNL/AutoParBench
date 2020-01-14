@@ -44,12 +44,22 @@ The corresponding loop iteration variables are private.
 ordered(n) is an OpenMP 4.5 addition. 
 */
 #include <stdio.h>
+#include <omp.h> 
 int a[100][100];
 
 int main()
 {
   int i;
   int j;
+  
+#pragma omp parallel for private (i,j)
+  for (i = 0; i <= 99; i += 1) {
+    
+#pragma omp parallel for private (j)
+    for (j = 0; j <= 99; j += 1) {
+      a[i][j] = i + j;
+    }
+  }
   for (i = 0; i <= 99; i += 1) {
     for (j = 0; j <= 99; j += 1) {
       a[i][j] = a[i][j] + 1;

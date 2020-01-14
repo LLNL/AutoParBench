@@ -94,19 +94,19 @@ LOOP END
         Assigned     :   14[ rax rdx rcx rbx rsi rdi r8-r15]
         
     Routine temporaries
-        Total         :     152
-            Global    :      45
-            Local     :     107
-        Regenerable   :      44
-        Spilled       :       3
+        Total         :     154
+            Global    :      46
+            Local     :     108
+        Regenerable   :      45
+        Spilled       :       2
         
     Routine stack
         Variables     :      48 bytes*
-            Reads     :       4 [9.41e+00 ~ 4.0%]
+            Reads     :       4 [9.41e+00 ~ 3.8%]
             Writes    :      11 [0.00e+00 ~ 0.0%]
-        Spills        :      64 bytes*
-            Reads     :      14 [5.00e+00 ~ 2.1%]
-            Writes    :      14 [0.00e+00 ~ 0.0%]
+        Spills        :      56 bytes*
+            Reads     :      12 [5.90e+00 ~ 2.4%]
+            Writes    :      12 [9.00e-01 ~ 0.4%]
     
     Notes
     

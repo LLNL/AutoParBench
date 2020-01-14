@@ -141,9 +141,9 @@ c-------------------------------------------------------------------*/
     adi();
   }
   {    
-#if defined(_OPENMP)
-  nthreads = omp_get_num_threads();
-#endif /* _OPENMP */  
+//#if defined(_OPENMP)
+//  nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */  
   } /* end parallel */
 
   timer_stop(1);
@@ -269,8 +269,11 @@ static void rhs_norm(double rms[5]) {
     rms[m] = 0.0;
   }
 
+  //#pragma omp parallel for 
   for (i = 0; i <= grid_points[0]-2; i++) {
+    //#pragma omp parallel for  
     for (j = 0; j <= grid_points[1]-2; j++) {
+      //#pragma omp parallel for 
       for (k = 0; k <= grid_points[2]-2; k++) {
 	for (m = 0; m < 5; m++) {
 	  add = rhs[m][i][j][k];
@@ -487,7 +490,7 @@ c-------------------------------------------------------------------*/
       }
 
       for (m = 0; m < 5; m++) {
-	for (j = 3; j <= grid_points[1]-4; j++) {
+      	for (j = 3; j <= grid_points[1]-4; j++) {
 	  forcing[m][i][j][k] = forcing[m][i][j][k] - dssp*
 	    (ue[m][j-2] - 4.0*ue[m][j-1] +
 	     6.0*ue[m][j] - 4.0*ue[m][j+1] + ue[m][j+2]);
@@ -1315,7 +1318,6 @@ c copy the exact forcing term to the right hand side;  because
 c this forcing term is known, we can store it on the whole grid
 c including the boundary                   
 c-------------------------------------------------------------------*/
-
   for (m = 0; m < 5; m++) {
     for (i = 0; i <= grid_points[0]-1; i++) {
       for (j = 0; j <= grid_points[1]-1; j++) {
@@ -1562,7 +1564,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c      compute zeta-direction fluxes 
 c-------------------------------------------------------------------*/
-  for (i = 1; i <= grid_points[0]-2; i++) {
+ for (i = 1; i <= grid_points[0]-2; i++) {
     for (j = 1; j <= grid_points[1]-2; j++) {
       for (k = 1; k <= grid_points[2]-2; k++) {
 	wijk = ws[i][j][k];

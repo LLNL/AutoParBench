@@ -128,7 +128,7 @@ int main()
 		}
 		else
 		{
-			__assert_fail("error == 51", "DRB104-nowait-barrier-orig-no.c", 70, __PRETTY_FUNCTION__);
+			__assert_fail("error == 51", "DRB104-nowait-barrier-orig-no.c", 69, __PRETTY_FUNCTION__);
 		}
 	}));
 	printf("error = %d\n", error);

@@ -3,7 +3,7 @@
 "file":"./dataracebench/DRB003-antidep2-orig-yes.c",
 "function":"main",
 "loop id":"1",
-"loop line":"109",
+"loop line":"108",
 "loop column":"2",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -16,7 +16,7 @@
 "file":"./dataracebench/DRB003-antidep2-orig-yes.c",
 "function":"main",
 "loop id":"2",
-"loop line":"115",
+"loop line":"114",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -29,7 +29,7 @@
 "file":"./dataracebench/DRB003-antidep2-orig-yes.c",
 "function":"main",
 "loop id":"3",
-"loop line":"122",
+"loop line":"121",
 "loop column":"2",
 "pragma type":"NULL",
 "ordered":"false",
@@ -40,7 +40,7 @@
 "file":"./dataracebench/DRB003-antidep2-orig-yes.c",
 "function":"main",
 "loop id":"4",
-"loop line":"128",
+"loop line":"127",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -48,27 +48,5 @@
 "multiversioned":"false",
 "induction variable":"j",
 "private":["j"]
-},
-"loop - object id : 5":{
-"file":"./dataracebench/DRB003-antidep2-orig-yes.c",
-"function":"main",
-"loop id":"5",
-"loop line":"135",
-"loop column":"2",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 6":{
-"file":"./dataracebench/DRB003-antidep2-orig-yes.c",
-"function":"main",
-"loop id":"6",
-"loop line":"139",
-"loop column":"3",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
 }
 }

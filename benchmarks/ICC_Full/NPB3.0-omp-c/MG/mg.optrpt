@@ -1443,7 +1443,6 @@ INLINE REPORT: (main(int, char **)) [16/17=94.1%] mg.c(77,34)
      [[ Unable to inline callsite  <1>]]
   -> (269,5) norm2u3(double ***, int, int, int, double *, double *, int, int, int) (isz = 84) (sz = 105)
      [[ Unable to inline callsite  <1>]]
-  -> EXTERN: (273,14) omp_get_num_threads(void)
   -> EXTERN: (277,5) timer_stop(int)
   -> EXTERN: (278,9) timer_read(int)
   -> EXTERN: (279,13) timer_read(int)
@@ -1556,9 +1555,9 @@ mg.c(77,34):remark #34051: REGISTER ALLOCATION : [main] mg.c:77
         Assigned     :   16[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm1]
         
     Routine temporaries
-        Total         :     454
-            Global    :     110
-            Local     :     344
+        Total         :     451
+            Global    :     108
+            Local     :     343
         Regenerable   :     146
         Spilled       :      25
         

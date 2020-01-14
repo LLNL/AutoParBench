@@ -37,8 +37,6 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 */
-#include <stdio.h>
-#include <stdlib.h>
 /*
 One dimension array computation
 with finer granularity than traditional 4 bytes.
@@ -53,7 +51,7 @@ int main()
   
 #pragma omp parallel for private (i)
   for (i = 0; i <= 99; i += 1) {
-    a[i] = i;
+    a[i] = (i % 120);
   }
   
 #pragma omp parallel for private (i)

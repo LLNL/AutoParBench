@@ -3,40 +3,33 @@
 "file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
 "function":"init",
 "loop id":"1",
-"loop line":"56",
+"loop line":"59",
 "loop column":"3",
-"pragma type":"NULL",
+"pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false"
+"multiversioned":"false",
+"induction variable":"i",
+"private":["i","j"]
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
 "function":"init",
 "loop id":"2",
-"loop line":"57",
+"loop line":"62",
 "loop column":"5",
-"pragma type":"NULL",
+"pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false"
+"multiversioned":"false",
+"induction variable":"j",
+"private":["j"]
 },
 "loop - object id : 3":{
 "file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
-"function":"init",
-"loop id":"3",
-"loop line":"58",
-"loop column":"7",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 4":{
-"file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
 "function":"mmm",
 "loop id":"1",
-"loop line":"75",
+"loop line":"78",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -45,22 +38,22 @@
 "induction variable":"i",
 "private":["i","j","k"]
 },
-"loop - object id : 5":{
+"loop - object id : 4":{
 "file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
 "function":"mmm",
 "loop id":"2",
-"loop line":"76",
+"loop line":"79",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 6":{
+"loop - object id : 5":{
 "file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
 "function":"mmm",
 "loop id":"3",
-"loop line":"79",
+"loop line":"82",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -69,34 +62,23 @@
 "induction variable":"j",
 "private":["j"]
 },
-"loop - object id : 7":{
+"loop - object id : 6":{
 "file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
 "function":"print",
 "loop id":"1",
-"loop line":"92",
+"loop line":"95",
 "loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 8":{
+"loop - object id : 7":{
 "file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
 "function":"print",
 "loop id":"2",
-"loop line":"93",
+"loop line":"96",
 "loop column":"5",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 9":{
-"file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
-"function":"print",
-"loop id":"3",
-"loop line":"94",
-"loop column":"7",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",

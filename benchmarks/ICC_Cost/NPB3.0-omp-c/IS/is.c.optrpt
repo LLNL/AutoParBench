@@ -46,7 +46,6 @@ INLINE REPORT: (main()) [1/5=20.0%] /home/gleison/Desktop/AutoParBench/benchmark
   -> EXTERN: (647,28) printf(const char *__restrict__, ...)
   -> (649,9) rank(int) (isz = 347) (sz = 352)
      [[ Unable to inline callsite  <1>]]
-  -> EXTERN: (652,13) omp_get_num_threads(void)
   -> EXTERN: (657,5) timer_stop()
   -> EXTERN: (658,19) timer_read()
   -> (663,5) full_verify() (isz = 57) (sz = 60)
@@ -67,7 +66,6 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-
    remark #17104: loop was not parallelized: existence of parallel dependence
    remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/IS/is.c(647,28) ]
    remark #15382: vectorization support: call to function rank(int) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/IS/is.c(649,9) ]
-   remark #15382: vectorization support: call to function omp_get_num_threads(void) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/NPB3.0-omp-c/IS/is.c(652,13) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 
@@ -82,9 +80,9 @@ LOOP END
         Assigned     :   12[ rax rdx rcx rsi rdi r8-r12 zmm0-zmm1]
         
     Routine temporaries
-        Total         :      82
-            Global    :      14
-            Local     :      68
+        Total         :      79
+            Global    :      12
+            Local     :      67
         Regenerable   :      49
         Spilled       :       2
         

@@ -48,27 +48,5 @@
 "multiversioned":"false",
 "shared":["a"],
 "firstprivate":["j","i"]
-},
-"loop - object id : 5":{
-"file":"./dataracebench/DRB003-antidep2-orig-yes.c",
-"function":"main",
-"loop id":"5",
-"loop line":"70",
-"loop column":"3",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 6":{
-"file":"./dataracebench/DRB003-antidep2-orig-yes.c",
-"function":"main",
-"loop id":"6",
-"loop line":"71",
-"loop column":"5",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
 }
 }

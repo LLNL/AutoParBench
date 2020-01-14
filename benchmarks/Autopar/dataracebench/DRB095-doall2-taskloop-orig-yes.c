@@ -54,15 +54,22 @@ int main()
 {
   int i;
   int j;
-{
-    
+  
 #pragma omp parallel for private (i,j)
-    for (i = 0; i <= 99; i += 1) {
-      
+  for (i = 0; i <= 99; i += 1) {
+    
 #pragma omp parallel for private (j)
-      for (j = 0; j <= 99; j += 1) {
-        a[i][j] += 1;
-      }
+    for (j = 0; j <= 99; j += 1) {
+      a[i][j] = i + j;
+    }
+  }
+  
+#pragma omp parallel for private (i,j)
+  for (i = 0; i <= 99; i += 1) {
+    
+#pragma omp parallel for private (j)
+    for (j = 0; j <= 99; j += 1) {
+      a[i][j] += 1;
     }
   }
   printf("a[50][50]=%d\n",a[50][50]);

@@ -130,17 +130,7 @@ int main(int argc, char * argv[])
 			b[i][j]=b[i-1][j-1];
 		}
 	}
-	#pragma cetus private(i, j) 
-	#pragma loop name main#2 
-	for (i=0; i<n; i ++ )
-	{
-		#pragma cetus private(j) 
-		#pragma loop name main#2#0 
-		for (j=0; j<m; j ++ )
-		{
-			printf("b[%d][%d]=%f\n", i, j, b[i][j]);
-		}
-	}
+	printf("b[500][500]=%f\n", b[500][500]);
 	_ret_val_0=0;
 	return _ret_val_0;
 }

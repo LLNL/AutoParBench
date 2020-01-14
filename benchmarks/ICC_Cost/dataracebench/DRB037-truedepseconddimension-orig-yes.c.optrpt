@@ -33,85 +33,50 @@ Begin optimization report for: main(int, char **)
     Report from: Interprocedural optimizations [ipo]
 
 INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(57,1)
-  -> EXTERN: (70,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (69,3) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(60,3)
-   remark #17109: LOOP WAS AUTO-PARALLELIZED
-   remark #17101: parallel loop shared={ } private={ } firstprivate={ j i } lastprivate={ } firstlastprivate={ } reduction={ }
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(61,3)
+   remark #17108: loop was not parallelized: insufficient computational work
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=1000
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(61,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(62,5)
+      remark #17108: loop was not parallelized: insufficient computational work
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-      remark #25439: unrolled with remainder by 2  
-      remark #25015: Estimate of max trip count of loop=999
-   LOOP END
-
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(61,5)
-   <Remainder>
-      remark #25015: Estimate of max trip count of loop=999
+      remark #25438: unrolled without remainder by 2  
+      remark #25015: Estimate of max trip count of loop=1000
    LOOP END
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(64,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(65,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (65:5) and b[i][j] (65:5)
-   remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (65:5) and b[i][j-1] (65:5)
+   remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (66:5) and b[i][j] (66:5)
+   remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (66:5) and b[i][j-1] (66:5)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(65,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(66,5)
       remark #25401: memcopy(with guard) generated
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (65:5) and b[i][j] (65:5)
-      remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (65:5) and b[i][j-1] (65:5)
+      remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (66:5) and b[i][j] (66:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (66:5) and b[i][j-1] (66:5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(65,5)
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(66,5)
       <Multiversioned v2>
          remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (66:7) and b[i][j-1] (66:7)
-         remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (66:7) and b[i][j] (66:7)
+         remark #17106: parallel dependence: assumed FLOW dependence between b[i][j] (67:7) and b[i][j-1] (67:7)
+         remark #17106: parallel dependence: assumed ANTI dependence between b[i][j-1] (67:7) and b[i][j] (67:7)
          remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
          remark #25439: unrolled with remainder by 2  
       LOOP END
 
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(65,5)
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(66,5)
       <Remainder, Multiversioned v2>
       LOOP END
-   LOOP END
-LOOP END
-
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(68,3)
-   remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *__restrict__, ...) (70:7) and call:printf(const char *__restrict__, ...) (70:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *__restrict__, ...) (70:7) and call:printf(const char *__restrict__, ...) (70:7)
-   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
-
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(69,5)
-      remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(70,7) ]
-      remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   LOOP END
-LOOP END
-
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(60,3)
-   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
-   remark #25015: Estimate of max trip count of loop=1000
-
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(61,5)
-      remark #17107: loop was not parallelized: inner loop
-      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-      remark #25439: unrolled with remainder by 2  
-      remark #25015: Estimate of max trip count of loop=999
-   LOOP END
-
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB037-truedepseconddimension-orig-yes.c(61,5)
-   <Remainder>
-      remark #25015: Estimate of max trip count of loop=999
    LOOP END
 LOOP END
 
@@ -123,22 +88,22 @@ LOOP END
         Reserved     :    2[ rsp rip]
         Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
         Callee-save  :    6[ rbx rbp r12-r15]
-        Assigned     :   16[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm1]
+        Assigned     :    9[ rax rdx rcx rsi rdi r8-r9 zmm0-zmm1]
         
     Routine temporaries
-        Total         :     117
-            Global    :      34
-            Local     :      83
-        Regenerable   :      42
-        Spilled       :       1
+        Total         :      39
+            Global    :      16
+            Local     :      23
+        Regenerable   :      15
+        Spilled       :       0
         
     Routine stack
-        Variables     :      28 bytes*
-            Reads     :       4 [2.00e+03 ~ 0.0%]
-            Writes    :       8 [0.00e+00 ~ 0.0%]
-        Spills        :      48 bytes*
-            Reads     :      11 [9.05e+02 ~ 0.0%]
-            Writes    :      11 [8.10e+02 ~ 0.0%]
+        Variables     :       4 bytes*
+            Reads     :       2 [0.00e+00 ~ 0.0%]
+            Writes    :       2 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
     
     Notes
     

@@ -121,8 +121,9 @@ c-------------------------------------------------------------------*/
     adi();
   }
 {
-#if defined(_OPENMP)
-#endif /* _OPENMP */
+//#if defined(_OPENMP)
+//  nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */
 /* end parallel */
   }
   timer_stop(1);
@@ -136,7 +137,7 @@ c-------------------------------------------------------------------*/
    else {
     mflops = 0.0;
   }
-  c_print_results("BT",class,grid_points[0],grid_points[1],grid_points[2],niter,nthreads,tmax,mflops,"          floating point",verified,"3.0 structured","01 Dec 2019","(none)","(none)","-lm","(none)","(none)","(none)","(none)");
+  c_print_results("BT",class,grid_points[0],grid_points[1],grid_points[2],niter,nthreads,tmax,mflops,"          floating point",verified,"3.0 structured","14 Jan 2020","(none)","(none)","-lm","(none)","(none)","(none)","(none)");
 }
 /*--------------------------------------------------------------------
 c-------------------------------------------------------------------*/
@@ -312,6 +313,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c     xi-direction flux differences                      
 c-------------------------------------------------------------------*/
+//#pragma omp parallel for firstprivate(dx1tx1 ,tx2 ,dx2tx1 ,xxcon1 ,c2 ,dx3tx1 ,xxcon2 ,dx4tx1 ,dx5tx1 ,xxcon5 ,xxcon4 ,xxcon3 ,c1)
     for (j = 1; j <= grid_points[1] - 1 - 1; j += 1) {
       eta = ((double )j) * dnym1;
       for (k = 1; k <= grid_points[2] - 1 - 1; k += 1) {
@@ -378,6 +380,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c     eta-direction flux differences             
 c-------------------------------------------------------------------*/
+//#pragma omp parallel for private(xi, zeta, eta)  
     for (i = 1; i <= grid_points[0] - 1 - 1; i += 1) {
       xi = ((double )i) * dnxm1;
       for (k = 1; k <= grid_points[2] - 1 - 1; k += 1) {
@@ -444,6 +447,7 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c     zeta-direction flux differences                      
 c-------------------------------------------------------------------*/
+//#pragma omp parallel for private(xi, eta, zeta)
     for (i = 1; i <= grid_points[0] - 1 - 1; i += 1) {
       xi = ((double )i) * dnxm1;
       for (j = 1; j <= grid_points[1] - 1 - 1; j += 1) {
@@ -1154,6 +1158,7 @@ c-------------------------------------------------------------------*/
 c     Compute the indices for storing the block-diagonal matrix;
 c     determine c (labeled f) and s jacobians
 c---------------------------------------------------------------------*/
+//#pragma omp parallel for private(tmp1, tmp2, tmp3) 
   
 #pragma omp parallel for private (tmp1,tmp2,tmp3,i,j,k)
   for (i = 1; i <= grid_points[0] - 1 - 1; i += 1) {

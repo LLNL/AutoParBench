@@ -34,9 +34,9 @@ Begin optimization report for: main()
 
 INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB104-nowait-barrier-orig-no.c(56,1)
   -> EXTERN: (59,7) _vla_alloc(long)
-  -> EXTERN: (70,3) __assert_fail(const char *, const char *, unsigned int, const char *)
-  -> EXTERN: (71,3) _vla_free(void *, long)
-  -> EXTERN: (71,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (69,3) __assert_fail(const char *, const char *, unsigned int, const char *)
+  -> EXTERN: (70,3) _vla_free(void *, long)
+  -> EXTERN: (70,3) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
@@ -49,7 +49,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataraceben
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB104-nowait-barrier-orig-no.c(65,5)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB104-nowait-barrier-orig-no.c(65,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25438: unrolled without remainder by 2  

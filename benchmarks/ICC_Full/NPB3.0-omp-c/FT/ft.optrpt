@@ -1376,7 +1376,6 @@ INLINE REPORT: (main(int, char **)) [18/20=90.0%] ft.c(75,33)
      [[ Unable to inline callsite  <1>]]
   -> (193,5) verify(int, int, int, int, boolean *, char *) (isz = 351) (sz = 366)
      [[ Unable to inline callsite  <1>]]
-  -> EXTERN: (198,16) omp_get_num_threads(void)
   -> EXTERN: (202,5) timer_stop(int)
   -> EXTERN: (203,18) timer_read(int)
   -> EXTERN: (213,5) c_print_results(char *, char, int, int, int, int, int, double, double, char *, int, char *, char *, char *, char *, char *, char *, char *, char *, char *)
@@ -1414,9 +1413,9 @@ ft.c(75,33):remark #34051: REGISTER ALLOCATION : [main] ft.c:75
         Assigned     :   11[ rax rdx rcx rsi rdi r8-r10 r12 zmm0-zmm1]
         
     Routine temporaries
-        Total         :      95
-            Global    :      24
-            Local     :      71
+        Total         :      92
+            Global    :      22
+            Local     :      70
         Regenerable   :      57
         Spilled       :       1
         

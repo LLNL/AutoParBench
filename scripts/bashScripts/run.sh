@@ -27,13 +27,8 @@ sudo bash create_cetus_reports.sh
 # Generate JSONs to represent source codes 
 sudo bash create_source_jsons.sh
 
-# Generate the ground truth
-#  - Manual version
-#  - Then, uses ICC without threshold to find all
-#    parallelizable but not profitable loops
-#bash create_ground_truth.sh
-
-bash collect_classification_files.sh
+# Collect files after classification
+sudo bash collect_classification_files.sh
 
 # Produce the reports to be used
 sudo bash create_reports.sh

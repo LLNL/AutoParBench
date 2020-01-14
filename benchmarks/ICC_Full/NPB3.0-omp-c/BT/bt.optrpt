@@ -143,47 +143,47 @@ Begin optimization report for: compute_rhs(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (compute_rhs(void)) [2/28=7.1%] bt.c(1744,31)
+INLINE REPORT: (compute_rhs(void)) [2/28=7.1%] bt.c(1748,31)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(1753,3)
+LOOP BEGIN at bt.c(1757,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ j k rho_inv i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1754,5)
+   LOOP BEGIN at bt.c(1758,5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1755,7)
+      LOOP BEGIN at bt.c(1759,7)
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25015: Estimate of max trip count of loop=65
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1775,3)
+LOOP BEGIN at bt.c(1779,3)
    remark #25101: Loop Interchange not done due to: Original Order seems proper
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1776,5)
+   LOOP BEGIN at bt.c(1780,5)
       remark #17108: loop was not parallelized: insufficient computational work
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1777,7)
+      LOOP BEGIN at bt.c(1781,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=65
 
-         LOOP BEGIN at bt.c(1778,2)
+         LOOP BEGIN at bt.c(1782,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
@@ -192,17 +192,17 @@ LOOP BEGIN at bt.c(1775,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1788,3)
+LOOP BEGIN at bt.c(1792,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ j k uijk up1 um1 tx2 dx1tx1 c2 dx2tx1 con43 xxcon2 dx3tx1 dx4tx1 c1 xxcon5 xxcon3 dx5tx1 xxcon4 i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1789,5)
+   LOOP BEGIN at bt.c(1793,5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1790,7)
+      LOOP BEGIN at bt.c(1794,7)
          remark #25427: Loop Statements Reordered
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25015: Estimate of max trip count of loop=65
@@ -210,64 +210,64 @@ LOOP BEGIN at bt.c(1788,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1848,3)
+LOOP BEGIN at bt.c(1852,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1849,5)
-      remark #25420: Collapsed with loop at line 1850 
+   LOOP BEGIN at bt.c(1853,5)
+      remark #25420: Collapsed with loop at line 1854 
       remark #17108: loop was not parallelized: insufficient computational work
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25439: unrolled with remainder by 4  
       remark #25015: Estimate of max trip count of loop=5
 
-      LOOP BEGIN at bt.c(1850,7)
+      LOOP BEGIN at bt.c(1854,7)
          remark #25421: Loop eliminated in Collapsing 
 
       LOOP END
    LOOP END
 
-   LOOP BEGIN at bt.c(1849,5)
+   LOOP BEGIN at bt.c(1853,5)
    <Remainder>
       remark #25015: Estimate of max trip count of loop=5
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1859,3)
+LOOP BEGIN at bt.c(1863,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1860,5)
-      remark #25420: Collapsed with loop at line 1861 
+   LOOP BEGIN at bt.c(1864,5)
+      remark #25420: Collapsed with loop at line 1865 
       remark #17108: loop was not parallelized: insufficient computational work
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25015: Estimate of max trip count of loop=5
 
-      LOOP BEGIN at bt.c(1861,7)
+      LOOP BEGIN at bt.c(1865,7)
          remark #25421: Loop eliminated in Collapsing 
 
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1869,3)
+LOOP BEGIN at bt.c(1873,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ j k m dssp i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1870,5)
+   LOOP BEGIN at bt.c(1874,5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1871,7)
-         remark #25420: Collapsed with loop at line 1872 
+      LOOP BEGIN at bt.c(1875,7)
+         remark #25420: Collapsed with loop at line 1876 
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25015: Estimate of max trip count of loop=5
 
-         LOOP BEGIN at bt.c(1872,2)
+         LOOP BEGIN at bt.c(1876,2)
             remark #25421: Loop eliminated in Collapsing 
 
          LOOP END
@@ -275,59 +275,59 @@ LOOP BEGIN at bt.c(1869,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1883,3)
+LOOP BEGIN at bt.c(1887,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1884,5)
-      remark #25420: Collapsed with loop at line 1885 
+   LOOP BEGIN at bt.c(1888,5)
+      remark #25420: Collapsed with loop at line 1889 
       remark #17108: loop was not parallelized: insufficient computational work
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25015: Estimate of max trip count of loop=5
 
-      LOOP BEGIN at bt.c(1885,7)
+      LOOP BEGIN at bt.c(1889,7)
          remark #25421: Loop eliminated in Collapsing 
 
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1894,3)
+LOOP BEGIN at bt.c(1898,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1895,5)
-      remark #25420: Collapsed with loop at line 1896 
+   LOOP BEGIN at bt.c(1899,5)
+      remark #25420: Collapsed with loop at line 1900 
       remark #17108: loop was not parallelized: insufficient computational work
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25439: unrolled with remainder by 4  
       remark #25015: Estimate of max trip count of loop=5
 
-      LOOP BEGIN at bt.c(1896,7)
+      LOOP BEGIN at bt.c(1900,7)
          remark #25421: Loop eliminated in Collapsing 
 
       LOOP END
    LOOP END
 
-   LOOP BEGIN at bt.c(1895,5)
+   LOOP BEGIN at bt.c(1899,5)
    <Remainder>
       remark #25015: Estimate of max trip count of loop=5
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1907,3)
+LOOP BEGIN at bt.c(1911,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ j k vijk vp1 vm1 ty2 dy1ty1 yycon2 dy2ty1 c2 dy3ty1 con43 dy4ty1 c1 yycon5 yycon3 dy5ty1 yycon4 i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1908,5)
+   LOOP BEGIN at bt.c(1912,5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1909,7)
+      LOOP BEGIN at bt.c(1913,7)
          remark #25427: Loop Statements Reordered
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25015: Estimate of max trip count of loop=65
@@ -335,64 +335,64 @@ LOOP BEGIN at bt.c(1907,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1962,3)
+LOOP BEGIN at bt.c(1966,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1963,5)
-      remark #25420: Collapsed with loop at line 1964 
+   LOOP BEGIN at bt.c(1967,5)
+      remark #25420: Collapsed with loop at line 1968 
       remark #17108: loop was not parallelized: insufficient computational work
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25439: unrolled with remainder by 4  
       remark #25015: Estimate of max trip count of loop=5
 
-      LOOP BEGIN at bt.c(1964,7)
+      LOOP BEGIN at bt.c(1968,7)
          remark #25421: Loop eliminated in Collapsing 
 
       LOOP END
    LOOP END
 
-   LOOP BEGIN at bt.c(1963,5)
+   LOOP BEGIN at bt.c(1967,5)
    <Remainder>
       remark #25015: Estimate of max trip count of loop=5
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1973,3)
+LOOP BEGIN at bt.c(1977,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1974,5)
-      remark #25420: Collapsed with loop at line 1975 
+   LOOP BEGIN at bt.c(1978,5)
+      remark #25420: Collapsed with loop at line 1979 
       remark #17108: loop was not parallelized: insufficient computational work
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25015: Estimate of max trip count of loop=5
 
-      LOOP BEGIN at bt.c(1975,7)
+      LOOP BEGIN at bt.c(1979,7)
          remark #25421: Loop eliminated in Collapsing 
 
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1983,3)
+LOOP BEGIN at bt.c(1987,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ j k m dssp i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1984,5)
+   LOOP BEGIN at bt.c(1988,5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1985,7)
-         remark #25420: Collapsed with loop at line 1986 
+      LOOP BEGIN at bt.c(1989,7)
+         remark #25420: Collapsed with loop at line 1990 
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25015: Estimate of max trip count of loop=5
 
-         LOOP BEGIN at bt.c(1986,2)
+         LOOP BEGIN at bt.c(1990,2)
             remark #25421: Loop eliminated in Collapsing 
 
          LOOP END
@@ -400,59 +400,59 @@ LOOP BEGIN at bt.c(1983,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1997,3)
+LOOP BEGIN at bt.c(2001,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1998,5)
-      remark #25420: Collapsed with loop at line 1999 
+   LOOP BEGIN at bt.c(2002,5)
+      remark #25420: Collapsed with loop at line 2003 
       remark #17108: loop was not parallelized: insufficient computational work
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25015: Estimate of max trip count of loop=5
 
-      LOOP BEGIN at bt.c(1999,7)
+      LOOP BEGIN at bt.c(2003,7)
          remark #25421: Loop eliminated in Collapsing 
 
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2008,3)
+LOOP BEGIN at bt.c(2012,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2009,5)
-      remark #25420: Collapsed with loop at line 2010 
+   LOOP BEGIN at bt.c(2013,5)
+      remark #25420: Collapsed with loop at line 2014 
       remark #17108: loop was not parallelized: insufficient computational work
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25439: unrolled with remainder by 4  
       remark #25015: Estimate of max trip count of loop=5
 
-      LOOP BEGIN at bt.c(2010,7)
+      LOOP BEGIN at bt.c(2014,7)
          remark #25421: Loop eliminated in Collapsing 
 
       LOOP END
    LOOP END
 
-   LOOP BEGIN at bt.c(2009,5)
+   LOOP BEGIN at bt.c(2013,5)
    <Remainder>
       remark #25015: Estimate of max trip count of loop=5
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2021,3)
+LOOP BEGIN at bt.c(2025,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ j k wijk wp1 wm1 tz2 dz1tz1 zzcon2 dz2tz1 dz3tz1 c2 dz4tz1 con43 c1 zzcon5 zzcon3 dz5tz1 zzcon4 i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2022,5)
+   LOOP BEGIN at bt.c(2026,5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2023,7)
+      LOOP BEGIN at bt.c(2027,7)
          remark #25427: Loop Statements Reordered
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25015: Estimate of max trip count of loop=65
@@ -460,56 +460,56 @@ LOOP BEGIN at bt.c(2021,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2077,3)
+LOOP BEGIN at bt.c(2081,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ j m dssp i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2078,5)
+   LOOP BEGIN at bt.c(2082,5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2079,7)
+      LOOP BEGIN at bt.c(2083,7)
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2088,3)
+LOOP BEGIN at bt.c(2092,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ j m dssp i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2089,5)
+   LOOP BEGIN at bt.c(2093,5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2090,7)
+      LOOP BEGIN at bt.c(2094,7)
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2098,3)
+LOOP BEGIN at bt.c(2102,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ j k m dssp i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2099,5)
+   LOOP BEGIN at bt.c(2103,5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2100,7)
-         remark #25420: Collapsed with loop at line 2101 
+      LOOP BEGIN at bt.c(2104,7)
+         remark #25420: Collapsed with loop at line 2105 
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25015: Estimate of max trip count of loop=5
 
-         LOOP BEGIN at bt.c(2101,2)
+         LOOP BEGIN at bt.c(2105,2)
             remark #25421: Loop eliminated in Collapsing 
 
          LOOP END
@@ -517,90 +517,90 @@ LOOP BEGIN at bt.c(2098,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2112,3)
+LOOP BEGIN at bt.c(2116,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ j m k dssp i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2113,5)
+   LOOP BEGIN at bt.c(2117,5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2114,7)
+      LOOP BEGIN at bt.c(2118,7)
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2123,3)
+LOOP BEGIN at bt.c(2127,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ j m k dssp i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2124,5)
+   LOOP BEGIN at bt.c(2128,5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2125,7)
+      LOOP BEGIN at bt.c(2129,7)
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2133,3)
+LOOP BEGIN at bt.c(2137,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2137:4) and rhs[i][j][k][m] (2137:4)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2137:4) and rhs[i][j][k][m] (2137:4)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2141:4) and rhs[i][j][k][m] (2141:4)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2141:4) and rhs[i][j][k][m] (2141:4)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2134,5)
-      remark #25420: Collapsed with loop at line 2135 
+   LOOP BEGIN at bt.c(2138,5)
+      remark #25420: Collapsed with loop at line 2139 
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2137:4) and rhs[i][j][k][m] (2137:4)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2137:4) and rhs[i][j][k][m] (2137:4)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2141:4) and rhs[i][j][k][m] (2141:4)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2141:4) and rhs[i][j][k][m] (2141:4)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2136,2)
+      LOOP BEGIN at bt.c(2140,2)
          remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #17106: parallel dependence: assumed FLOW dependence between rhs[i][j][k][m] (2137:4) and rhs[i][j][k][m] (2137:4)
-         remark #17106: parallel dependence: assumed ANTI dependence between rhs[i][j][k][m] (2137:4) and rhs[i][j][k][m] (2137:4)
-         remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2137:4) and rhs[i][j][k][m] (2137:4)
-         remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2137:4) and rhs[i][j][k][m] (2137:4)
+         remark #17106: parallel dependence: assumed FLOW dependence between rhs[i][j][k][m] (2141:4) and rhs[i][j][k][m] (2141:4)
+         remark #17106: parallel dependence: assumed ANTI dependence between rhs[i][j][k][m] (2141:4) and rhs[i][j][k][m] (2141:4)
+         remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2141:4) and rhs[i][j][k][m] (2141:4)
+         remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2141:4) and rhs[i][j][k][m] (2141:4)
          remark #15344: loop was not vectorized: vector dependence prevents vectorization
-         remark #15346: vector dependence: assumed FLOW dependence between rhs[i][j][k][m] (2137:4) and rhs[i][j][k][m] (2137:4)
-         remark #15346: vector dependence: assumed ANTI dependence between rhs[i][j][k][m] (2137:4) and rhs[i][j][k][m] (2137:4)
+         remark #15346: vector dependence: assumed FLOW dependence between rhs[i][j][k][m] (2141:4) and rhs[i][j][k][m] (2141:4)
+         remark #15346: vector dependence: assumed ANTI dependence between rhs[i][j][k][m] (2141:4) and rhs[i][j][k][m] (2141:4)
          remark #25439: unrolled with remainder by 2  
          remark #25015: Estimate of max trip count of loop=65
       LOOP END
 
-      LOOP BEGIN at bt.c(2136,2)
+      LOOP BEGIN at bt.c(2140,2)
       <Remainder>
          remark #25015: Estimate of max trip count of loop=65
       LOOP END
 
-      LOOP BEGIN at bt.c(2135,7)
+      LOOP BEGIN at bt.c(2139,7)
          remark #25421: Loop eliminated in Collapsing 
 
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1753,3)
+LOOP BEGIN at bt.c(1757,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1754,5)
+   LOOP BEGIN at bt.c(1758,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1755,7)
+      LOOP BEGIN at bt.c(1759,7)
          remark #17107: loop was not parallelized: inner loop
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25015: Estimate of max trip count of loop=65
@@ -608,16 +608,16 @@ LOOP BEGIN at bt.c(1753,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1788,3)
+LOOP BEGIN at bt.c(1792,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1789,5)
+   LOOP BEGIN at bt.c(1793,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1790,7)
+      LOOP BEGIN at bt.c(1794,7)
          remark #17107: loop was not parallelized: inner loop
          remark #25427: Loop Statements Reordered
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
@@ -626,16 +626,16 @@ LOOP BEGIN at bt.c(1788,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1869,3)
+LOOP BEGIN at bt.c(1873,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1870,5)
+   LOOP BEGIN at bt.c(1874,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1871,7)
+      LOOP BEGIN at bt.c(1875,7)
          remark #17107: loop was not parallelized: inner loop
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25015: Estimate of max trip count of loop=5
@@ -643,16 +643,16 @@ LOOP BEGIN at bt.c(1869,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1907,3)
+LOOP BEGIN at bt.c(1911,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1908,5)
+   LOOP BEGIN at bt.c(1912,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1909,7)
+      LOOP BEGIN at bt.c(1913,7)
          remark #17107: loop was not parallelized: inner loop
          remark #25427: Loop Statements Reordered
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
@@ -661,16 +661,16 @@ LOOP BEGIN at bt.c(1907,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1983,3)
+LOOP BEGIN at bt.c(1987,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1984,5)
+   LOOP BEGIN at bt.c(1988,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1985,7)
+      LOOP BEGIN at bt.c(1989,7)
          remark #17107: loop was not parallelized: inner loop
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25015: Estimate of max trip count of loop=5
@@ -678,16 +678,16 @@ LOOP BEGIN at bt.c(1983,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2021,3)
+LOOP BEGIN at bt.c(2025,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2022,5)
+   LOOP BEGIN at bt.c(2026,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2023,7)
+      LOOP BEGIN at bt.c(2027,7)
          remark #17107: loop was not parallelized: inner loop
          remark #25427: Loop Statements Reordered
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
@@ -696,16 +696,16 @@ LOOP BEGIN at bt.c(2021,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2077,3)
+LOOP BEGIN at bt.c(2081,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2078,5)
+   LOOP BEGIN at bt.c(2082,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2079,7)
+      LOOP BEGIN at bt.c(2083,7)
          remark #17107: loop was not parallelized: inner loop
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
@@ -713,16 +713,16 @@ LOOP BEGIN at bt.c(2077,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2088,3)
+LOOP BEGIN at bt.c(2092,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2089,5)
+   LOOP BEGIN at bt.c(2093,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2090,7)
+      LOOP BEGIN at bt.c(2094,7)
          remark #17107: loop was not parallelized: inner loop
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
@@ -730,16 +730,16 @@ LOOP BEGIN at bt.c(2088,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2098,3)
+LOOP BEGIN at bt.c(2102,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2099,5)
+   LOOP BEGIN at bt.c(2103,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2100,7)
+      LOOP BEGIN at bt.c(2104,7)
          remark #17107: loop was not parallelized: inner loop
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25015: Estimate of max trip count of loop=5
@@ -747,16 +747,16 @@ LOOP BEGIN at bt.c(2098,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2112,3)
+LOOP BEGIN at bt.c(2116,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2113,5)
+   LOOP BEGIN at bt.c(2117,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2114,7)
+      LOOP BEGIN at bt.c(2118,7)
          remark #17107: loop was not parallelized: inner loop
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
@@ -764,16 +764,16 @@ LOOP BEGIN at bt.c(2112,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2123,3)
+LOOP BEGIN at bt.c(2127,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2124,5)
+   LOOP BEGIN at bt.c(2128,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2125,7)
+      LOOP BEGIN at bt.c(2129,7)
          remark #17107: loop was not parallelized: inner loop
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
@@ -783,7 +783,7 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(1744,31):remark #34051: REGISTER ALLOCATION : [compute_rhs] bt.c:1744
+bt.c(1748,31):remark #34051: REGISTER ALLOCATION : [compute_rhs] bt.c:1748
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -818,13 +818,13 @@ Begin optimization report for: exact_solution(double, double, double, double *)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (exact_solution(double, double, double, double *)) [3/28=10.7%] bt.c(632,24)
+INLINE REPORT: (exact_solution(double, double, double, double *)) [3/28=10.7%] bt.c(635,24)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(643,3)
+LOOP BEGIN at bt.c(646,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
@@ -832,7 +832,7 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(632,24):remark #34051: REGISTER ALLOCATION : [exact_solution] bt.c:632
+bt.c(635,24):remark #34051: REGISTER ALLOCATION : [exact_solution] bt.c:635
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -980,75 +980,75 @@ Begin optimization report for: verify(int, char *, boolean *)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (verify(int, char *, boolean *)) [5/28=17.9%] bt.c(2344,71)
-  -> (2366,3) error_norm(double *) (isz = 151) (sz = 156)
+INLINE REPORT: (verify(int, char *, boolean *)) [5/28=17.9%] bt.c(2348,71)
+  -> (2370,3) error_norm(double *) (isz = 151) (sz = 156)
      [[ Unable to inline callsite  <1>]]
-  -> (2367,3) compute_rhs(void) (isz = 2791) (sz = 2794)
+  -> (2371,3) compute_rhs(void) (isz = 2791) (sz = 2794)
      [[ Unable to inline callsite  <1>]]
-  -> (2369,3) rhs_norm(double *) (isz = 139) (sz = 144)
+  -> (2373,3) rhs_norm(double *) (isz = 139) (sz = 144)
      [[ Unable to inline callsite  <1>]]
-  -> EXTERN: (2553,5) printf(const char *__restrict__, ...)
-  -> EXTERN: (2554,5) printf(const char *__restrict__, ...)
-  -> EXTERN: (2558,7) printf(const char *__restrict__, ...)
-  -> EXTERN: (2561,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2557,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2558,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2562,7) printf(const char *__restrict__, ...)
   -> EXTERN: (2565,5) printf(const char *__restrict__, ...)
-  -> EXTERN: (2567,5) printf(const char *__restrict__, ...)
-  -> EXTERN: (2571,7) printf(const char *__restrict__, ...)
-  -> EXTERN: (2574,7) printf(const char *__restrict__, ...)
-  -> EXTERN: (2577,7) printf(const char *__restrict__, ...)
-  -> EXTERN: (2583,5) printf(const char *__restrict__, ...)
-  -> EXTERN: (2585,5) printf(const char *__restrict__, ...)
-  -> EXTERN: (2590,7) printf(const char *__restrict__, ...)
-  -> EXTERN: (2593,7) printf(const char *__restrict__, ...)
-  -> EXTERN: (2596,7) printf(const char *__restrict__, ...)
-  -> EXTERN: (2602,5) printf(const char *__restrict__, ...)
-  -> EXTERN: (2603,5) printf(const char *__restrict__, ...)
-  -> EXTERN: (2605,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2569,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2571,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2575,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (2578,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (2581,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (2587,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2589,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2594,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (2597,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (2600,7) printf(const char *__restrict__, ...)
+  -> EXTERN: (2606,5) printf(const char *__restrict__, ...)
   -> EXTERN: (2607,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2609,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2611,5) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(2371,3)
+LOOP BEGIN at bt.c(2375,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(2378,3)
+LOOP BEGIN at bt.c(2382,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(2541,3)
+LOOP BEGIN at bt.c(2545,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(2569,3)
+LOOP BEGIN at bt.c(2573,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ bt.c(2571,7) ]
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ bt.c(2574,7) ]
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ bt.c(2577,7) ]
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ bt.c(2575,7) ]
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ bt.c(2578,7) ]
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ bt.c(2581,7) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(2588,3)
+LOOP BEGIN at bt.c(2592,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ bt.c(2590,7) ]
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ bt.c(2593,7) ]
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ bt.c(2596,7) ]
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ bt.c(2594,7) ]
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ bt.c(2597,7) ]
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ bt.c(2600,7) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
    remark #25436: completely unrolled by 5  
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(2344,71):remark #34051: REGISTER ALLOCATION : [verify] bt.c:2344
+bt.c(2348,71):remark #34051: REGISTER ALLOCATION : [verify] bt.c:2348
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -1180,13 +1180,13 @@ Begin optimization report for: z_backsubstitute(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (z_backsubstitute(void)) [7/28=25.0%] bt.c(3428,36)
+INLINE REPORT: (z_backsubstitute(void)) [7/28=25.0%] bt.c(3432,36)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(3442,3)
+LOOP BEGIN at bt.c(3446,3)
    remark #25101: Loop Interchange not done due to: Original Order seems proper
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17109: LOOP WAS AUTO-PARALLELIZED
@@ -1194,83 +1194,83 @@ LOOP BEGIN at bt.c(3442,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(3443,5)
+   LOOP BEGIN at bt.c(3447,5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(3444,7)
+      LOOP BEGIN at bt.c(3448,7)
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=65
 
-         LOOP BEGIN at bt.c(3445,2)
+         LOOP BEGIN at bt.c(3449,2)
             remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
             remark #25436: completely unrolled by 5  
 
-            LOOP BEGIN at bt.c(3446,4)
+            LOOP BEGIN at bt.c(3450,4)
                remark #15344: loop was not vectorized: vector dependence prevents vectorization
-               remark #15346: vector dependence: assumed FLOW dependence between rhs[i][j][k][m] (3447:6) and rhs[i][j][k][m] (3447:6)
-               remark #15346: vector dependence: assumed ANTI dependence between rhs[i][j][k][m] (3447:6) and rhs[i][j][k][m] (3447:6)
+               remark #15346: vector dependence: assumed FLOW dependence between rhs[i][j][k][m] (3451:6) and rhs[i][j][k][m] (3451:6)
+               remark #15346: vector dependence: assumed ANTI dependence between rhs[i][j][k][m] (3451:6) and rhs[i][j][k][m] (3451:6)
                remark #25436: completely unrolled by 5  
             LOOP END
 
-            LOOP BEGIN at bt.c(3446,4)
+            LOOP BEGIN at bt.c(3450,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(3446,4)
+            LOOP BEGIN at bt.c(3450,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(3446,4)
+            LOOP BEGIN at bt.c(3450,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(3446,4)
+            LOOP BEGIN at bt.c(3450,4)
             LOOP END
          LOOP END
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(3442,3)
+LOOP BEGIN at bt.c(3446,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(3443,5)
+   LOOP BEGIN at bt.c(3447,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(3444,7)
+      LOOP BEGIN at bt.c(3448,7)
          remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #17106: parallel dependence: assumed FLOW dependence between rhs[i][j][k][m] (3447:6) and rhs[i][j][k+1][n] (3447:6)
+         remark #17106: parallel dependence: assumed FLOW dependence between rhs[i][j][k][m] (3451:6) and rhs[i][j][k+1][n] (3451:6)
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=65
 
-         LOOP BEGIN at bt.c(3445,2)
+         LOOP BEGIN at bt.c(3449,2)
             remark #17107: loop was not parallelized: inner loop
             remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
             remark #25436: completely unrolled by 5  
 
-            LOOP BEGIN at bt.c(3446,4)
+            LOOP BEGIN at bt.c(3450,4)
                remark #17104: loop was not parallelized: existence of parallel dependence
-               remark #17106: parallel dependence: assumed FLOW dependence between rhs[i][j][k][m] (3447:6) and rhs[i][j][k][m] (3447:6)
-               remark #17106: parallel dependence: assumed ANTI dependence between rhs[i][j][k][m] (3447:6) and rhs[i][j][k][m] (3447:6)
-               remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (3447:6) and rhs[i][j][k][m] (3447:6)
-               remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (3447:6) and rhs[i][j][k][m] (3447:6)
+               remark #17106: parallel dependence: assumed FLOW dependence between rhs[i][j][k][m] (3451:6) and rhs[i][j][k][m] (3451:6)
+               remark #17106: parallel dependence: assumed ANTI dependence between rhs[i][j][k][m] (3451:6) and rhs[i][j][k][m] (3451:6)
+               remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (3451:6) and rhs[i][j][k][m] (3451:6)
+               remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (3451:6) and rhs[i][j][k][m] (3451:6)
                remark #15344: loop was not vectorized: vector dependence prevents vectorization
-               remark #15346: vector dependence: assumed FLOW dependence between rhs[i][j][k][m] (3447:6) and rhs[i][j][k][m] (3447:6)
-               remark #15346: vector dependence: assumed ANTI dependence between rhs[i][j][k][m] (3447:6) and rhs[i][j][k][m] (3447:6)
+               remark #15346: vector dependence: assumed FLOW dependence between rhs[i][j][k][m] (3451:6) and rhs[i][j][k][m] (3451:6)
+               remark #15346: vector dependence: assumed ANTI dependence between rhs[i][j][k][m] (3451:6) and rhs[i][j][k][m] (3451:6)
                remark #25436: completely unrolled by 5  
             LOOP END
 
-            LOOP BEGIN at bt.c(3446,4)
+            LOOP BEGIN at bt.c(3450,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(3446,4)
+            LOOP BEGIN at bt.c(3450,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(3446,4)
+            LOOP BEGIN at bt.c(3450,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(3446,4)
+            LOOP BEGIN at bt.c(3450,4)
             LOOP END
          LOOP END
       LOOP END
@@ -1279,7 +1279,7 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(3428,36):remark #34051: REGISTER ALLOCATION : [z_backsubstitute] bt.c:3428
+bt.c(3432,36):remark #34051: REGISTER ALLOCATION : [z_backsubstitute] bt.c:3432
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -1314,61 +1314,61 @@ Begin optimization report for: binvrhs(double (*)[5], double *)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (binvrhs(double (*)[5], double *)) [8/28=28.6%] bt.c(3106,54)
+INLINE REPORT: (binvrhs(double (*)[5], double *)) [8/28=28.6%] bt.c(3110,54)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(3118,3)
+LOOP BEGIN at bt.c(3122,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 4  
 LOOP END
 
-LOOP BEGIN at bt.c(3125,3)
+LOOP BEGIN at bt.c(3129,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between lhs[1][_2+1] (3125:3) and lhs[_2+1] (3125:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (3125:3) and lhs[1][_2+1] (3125:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between lhs[1][_2+1] (3129:3) and lhs[_2+1] (3129:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (3129:3) and lhs[1][_2+1] (3129:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between lhs[1][_2+1] (3125:3) and lhs[_2+1] (3125:3)
-   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (3125:3) and lhs[1][_2+1] (3125:3)
+   remark #15346: vector dependence: assumed FLOW dependence between lhs[1][_2+1] (3129:3) and lhs[_2+1] (3129:3)
+   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (3129:3) and lhs[1][_2+1] (3129:3)
    remark #25436: completely unrolled by 4  
 LOOP END
 
-LOOP BEGIN at bt.c(3132,3)
+LOOP BEGIN at bt.c(3136,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between lhs[2][_2+1] (3132:3) and lhs[_2+1] (3132:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (3132:3) and lhs[2][_2+1] (3132:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between lhs[2][_2+1] (3136:3) and lhs[_2+1] (3136:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (3136:3) and lhs[2][_2+1] (3136:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between lhs[2][_2+1] (3132:3) and lhs[_2+1] (3132:3)
-   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (3132:3) and lhs[2][_2+1] (3132:3)
+   remark #15346: vector dependence: assumed FLOW dependence between lhs[2][_2+1] (3136:3) and lhs[_2+1] (3136:3)
+   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (3136:3) and lhs[2][_2+1] (3136:3)
    remark #25436: completely unrolled by 4  
 LOOP END
 
-LOOP BEGIN at bt.c(3139,3)
+LOOP BEGIN at bt.c(3143,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between lhs[3][_2+1] (3139:3) and lhs[_2+1] (3139:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (3139:3) and lhs[3][_2+1] (3139:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between lhs[3][_2+1] (3143:3) and lhs[_2+1] (3143:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (3143:3) and lhs[3][_2+1] (3143:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between lhs[3][_2+1] (3139:3) and lhs[_2+1] (3139:3)
-   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (3139:3) and lhs[3][_2+1] (3139:3)
+   remark #15346: vector dependence: assumed FLOW dependence between lhs[3][_2+1] (3143:3) and lhs[_2+1] (3143:3)
+   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (3143:3) and lhs[3][_2+1] (3143:3)
    remark #25436: completely unrolled by 4  
 LOOP END
 
-LOOP BEGIN at bt.c(3146,3)
+LOOP BEGIN at bt.c(3150,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between lhs[4][_2+1] (3146:3) and lhs[_2+1] (3146:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (3146:3) and lhs[4][_2+1] (3146:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between lhs[4][_2+1] (3150:3) and lhs[_2+1] (3150:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (3150:3) and lhs[4][_2+1] (3150:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between lhs[4][_2+1] (3146:3) and lhs[_2+1] (3146:3)
-   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (3146:3) and lhs[4][_2+1] (3146:3)
+   remark #15346: vector dependence: assumed FLOW dependence between lhs[4][_2+1] (3150:3) and lhs[_2+1] (3150:3)
+   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (3150:3) and lhs[4][_2+1] (3150:3)
    remark #25436: completely unrolled by 4  
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(3106,54):remark #34051: REGISTER ALLOCATION : [binvrhs] bt.c:3106
+bt.c(3110,54):remark #34051: REGISTER ALLOCATION : [binvrhs] bt.c:3110
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -1403,25 +1403,25 @@ Begin optimization report for: matmul_sub(double (*)[5], double (*)[5], double (
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (matmul_sub(double (*)[5], double (*)[5], double (*)[5])) [9/28=32.1%] bt.c(2794,31)
+INLINE REPORT: (matmul_sub(double (*)[5], double (*)[5], double (*)[5])) [9/28=32.1%] bt.c(2798,31)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(2805,3)
+LOOP BEGIN at bt.c(2809,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between cblock[j] (2806:5) and cblock[4][j] (2826:5)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between cblock[4][j] (2826:5) and cblock[j] (2806:5)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between cblock[j] (2810:5) and cblock[4][j] (2830:5)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between cblock[4][j] (2830:5) and cblock[j] (2810:5)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed OUTPUT dependence between cblock[j] (2806:5) and cblock[4][j] (2826:5)
-   remark #15346: vector dependence: assumed OUTPUT dependence between cblock[4][j] (2826:5) and cblock[j] (2806:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between cblock[j] (2810:5) and cblock[4][j] (2830:5)
+   remark #15346: vector dependence: assumed OUTPUT dependence between cblock[4][j] (2830:5) and cblock[j] (2810:5)
    remark #25436: completely unrolled by 5  
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(2794,31):remark #34051: REGISTER ALLOCATION : [matmul_sub] bt.c:2794
+bt.c(2798,31):remark #34051: REGISTER ALLOCATION : [matmul_sub] bt.c:2798
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -1456,25 +1456,25 @@ Begin optimization report for: matvec_sub(double (*)[5], double *, double *)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (matvec_sub(double (*)[5], double *, double *)) [10/28=35.7%] bt.c(2766,77)
+INLINE REPORT: (matvec_sub(double (*)[5], double *, double *)) [10/28=35.7%] bt.c(2770,77)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(2777,3)
+LOOP BEGIN at bt.c(2781,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between bvec[i] (2782:5) and *avec (2782:5)
-   remark #17106: parallel dependence: assumed ANTI dependence between *avec (2782:5) and bvec[i] (2782:5)
+   remark #17106: parallel dependence: assumed FLOW dependence between bvec[i] (2786:5) and *avec (2786:5)
+   remark #17106: parallel dependence: assumed ANTI dependence between *avec (2786:5) and bvec[i] (2786:5)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between bvec[i] (2782:5) and *avec (2782:5)
-   remark #15346: vector dependence: assumed ANTI dependence between *avec (2782:5) and bvec[i] (2782:5)
+   remark #15346: vector dependence: assumed FLOW dependence between bvec[i] (2786:5) and *avec (2786:5)
+   remark #15346: vector dependence: assumed ANTI dependence between *avec (2786:5) and bvec[i] (2786:5)
    remark #25436: completely unrolled by 5  
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(2766,77):remark #34051: REGISTER ALLOCATION : [matvec_sub] bt.c:2766
+bt.c(2770,77):remark #34051: REGISTER ALLOCATION : [matvec_sub] bt.c:2770
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -1509,235 +1509,235 @@ Begin optimization report for: binvcrhs(double (*)[5], double (*)[5], double *)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (binvcrhs(double (*)[5], double (*)[5], double *)) [11/28=39.3%] bt.c(2837,69)
+INLINE REPORT: (binvcrhs(double (*)[5], double (*)[5], double *)) [11/28=39.3%] bt.c(2841,69)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(2849,3)
-   remark #17108: loop was not parallelized: insufficient computational work
-   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-   remark #25436: completely unrolled by 4  
-LOOP END
-
 LOOP BEGIN at bt.c(2853,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-   remark #25436: completely unrolled by 5  
+   remark #25436: completely unrolled by 4  
 LOOP END
 
-LOOP BEGIN at bt.c(2861,3)
-   remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between lhs[1][_2+1] (2861:3) and lhs[_2+1] (2861:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (2861:3) and lhs[1][_2+1] (2861:3)
-   remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between lhs[1][_2+1] (2861:3) and lhs[_2+1] (2861:3)
-   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (2861:3) and lhs[1][_2+1] (2861:3)
-   remark #25436: completely unrolled by 4  
+LOOP BEGIN at bt.c(2857,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
 LOOP END
 
 LOOP BEGIN at bt.c(2865,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between c[1][_2] (2865:3) and c[_2] (2865:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between c[_2] (2865:3) and c[1][_2] (2865:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between lhs[1][_2+1] (2865:3) and lhs[_2+1] (2865:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (2865:3) and lhs[1][_2+1] (2865:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between c[1][_2] (2865:3) and c[_2] (2865:3)
-   remark #15346: vector dependence: assumed ANTI dependence between c[_2] (2865:3) and c[1][_2] (2865:3)
-   remark #25436: completely unrolled by 5  
+   remark #15346: vector dependence: assumed FLOW dependence between lhs[1][_2+1] (2865:3) and lhs[_2+1] (2865:3)
+   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (2865:3) and lhs[1][_2+1] (2865:3)
+   remark #25436: completely unrolled by 4  
 LOOP END
 
-LOOP BEGIN at bt.c(2873,3)
+LOOP BEGIN at bt.c(2869,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between lhs[2][_2+1] (2873:3) and lhs[_2+1] (2873:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (2873:3) and lhs[2][_2+1] (2873:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between c[1][_2] (2869:3) and c[_2] (2869:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between c[_2] (2869:3) and c[1][_2] (2869:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between lhs[2][_2+1] (2873:3) and lhs[_2+1] (2873:3)
-   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (2873:3) and lhs[2][_2+1] (2873:3)
-   remark #25436: completely unrolled by 4  
+   remark #15346: vector dependence: assumed FLOW dependence between c[1][_2] (2869:3) and c[_2] (2869:3)
+   remark #15346: vector dependence: assumed ANTI dependence between c[_2] (2869:3) and c[1][_2] (2869:3)
+   remark #25436: completely unrolled by 5  
 LOOP END
 
 LOOP BEGIN at bt.c(2877,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between c[2][_2] (2877:3) and c[_2] (2877:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between c[_2] (2877:3) and c[2][_2] (2877:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between lhs[2][_2+1] (2877:3) and lhs[_2+1] (2877:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (2877:3) and lhs[2][_2+1] (2877:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between c[2][_2] (2877:3) and c[_2] (2877:3)
-   remark #15346: vector dependence: assumed ANTI dependence between c[_2] (2877:3) and c[2][_2] (2877:3)
-   remark #25436: completely unrolled by 5  
+   remark #15346: vector dependence: assumed FLOW dependence between lhs[2][_2+1] (2877:3) and lhs[_2+1] (2877:3)
+   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (2877:3) and lhs[2][_2+1] (2877:3)
+   remark #25436: completely unrolled by 4  
 LOOP END
 
-LOOP BEGIN at bt.c(2885,3)
+LOOP BEGIN at bt.c(2881,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between lhs[3][_2+1] (2885:3) and lhs[_2+1] (2885:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (2885:3) and lhs[3][_2+1] (2885:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between c[2][_2] (2881:3) and c[_2] (2881:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between c[_2] (2881:3) and c[2][_2] (2881:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between lhs[3][_2+1] (2885:3) and lhs[_2+1] (2885:3)
-   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (2885:3) and lhs[3][_2+1] (2885:3)
-   remark #25436: completely unrolled by 4  
+   remark #15346: vector dependence: assumed FLOW dependence between c[2][_2] (2881:3) and c[_2] (2881:3)
+   remark #15346: vector dependence: assumed ANTI dependence between c[_2] (2881:3) and c[2][_2] (2881:3)
+   remark #25436: completely unrolled by 5  
 LOOP END
 
 LOOP BEGIN at bt.c(2889,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between c[3][_2] (2889:3) and c[_2] (2889:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between c[_2] (2889:3) and c[3][_2] (2889:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between lhs[3][_2+1] (2889:3) and lhs[_2+1] (2889:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (2889:3) and lhs[3][_2+1] (2889:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between c[3][_2] (2889:3) and c[_2] (2889:3)
-   remark #15346: vector dependence: assumed ANTI dependence between c[_2] (2889:3) and c[3][_2] (2889:3)
-   remark #25436: completely unrolled by 5  
+   remark #15346: vector dependence: assumed FLOW dependence between lhs[3][_2+1] (2889:3) and lhs[_2+1] (2889:3)
+   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (2889:3) and lhs[3][_2+1] (2889:3)
+   remark #25436: completely unrolled by 4  
 LOOP END
 
-LOOP BEGIN at bt.c(2897,3)
+LOOP BEGIN at bt.c(2893,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between lhs[4][_2+1] (2897:3) and lhs[_2+1] (2897:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (2897:3) and lhs[4][_2+1] (2897:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between c[3][_2] (2893:3) and c[_2] (2893:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between c[_2] (2893:3) and c[3][_2] (2893:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between lhs[4][_2+1] (2897:3) and lhs[_2+1] (2897:3)
-   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (2897:3) and lhs[4][_2+1] (2897:3)
-   remark #25436: completely unrolled by 4  
+   remark #15346: vector dependence: assumed FLOW dependence between c[3][_2] (2893:3) and c[_2] (2893:3)
+   remark #15346: vector dependence: assumed ANTI dependence between c[_2] (2893:3) and c[3][_2] (2893:3)
+   remark #25436: completely unrolled by 5  
 LOOP END
 
 LOOP BEGIN at bt.c(2901,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between c[4][_2] (2901:3) and c[_2] (2901:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between c[_2] (2901:3) and c[4][_2] (2901:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between lhs[4][_2+1] (2901:3) and lhs[_2+1] (2901:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between lhs[_2+1] (2901:3) and lhs[4][_2+1] (2901:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between c[4][_2] (2901:3) and c[_2] (2901:3)
-   remark #15346: vector dependence: assumed ANTI dependence between c[_2] (2901:3) and c[4][_2] (2901:3)
-   remark #25436: completely unrolled by 5  
+   remark #15346: vector dependence: assumed FLOW dependence between lhs[4][_2+1] (2901:3) and lhs[_2+1] (2901:3)
+   remark #15346: vector dependence: assumed ANTI dependence between lhs[_2+1] (2901:3) and lhs[4][_2+1] (2901:3)
+   remark #25436: completely unrolled by 4  
 LOOP END
 
-LOOP BEGIN at bt.c(2913,3)
-   remark #17108: loop was not parallelized: insufficient computational work
-   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-   remark #25436: completely unrolled by 5  
-LOOP END
-
-LOOP BEGIN at bt.c(2924,3)
+LOOP BEGIN at bt.c(2905,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between c[_2] (2924:3) and c[1][_2] (2924:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between c[1][_2] (2924:3) and c[_2] (2924:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between c[4][_2] (2905:3) and c[_2] (2905:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between c[_2] (2905:3) and c[4][_2] (2905:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between c[_2] (2924:3) and c[1][_2] (2924:3)
-   remark #15346: vector dependence: assumed ANTI dependence between c[1][_2] (2924:3) and c[_2] (2924:3)
+   remark #15346: vector dependence: assumed FLOW dependence between c[4][_2] (2905:3) and c[_2] (2905:3)
+   remark #15346: vector dependence: assumed ANTI dependence between c[_2] (2905:3) and c[4][_2] (2905:3)
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(2935,3)
+LOOP BEGIN at bt.c(2917,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(2946,3)
-   remark #17108: loop was not parallelized: insufficient computational work
-   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-   remark #25436: completely unrolled by 5  
-LOOP END
-
-LOOP BEGIN at bt.c(2957,3)
-   remark #17108: loop was not parallelized: insufficient computational work
-   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-   remark #25436: completely unrolled by 5  
-LOOP END
-
-LOOP BEGIN at bt.c(2968,3)
-   remark #17108: loop was not parallelized: insufficient computational work
-   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-   remark #25436: completely unrolled by 5  
-LOOP END
-
-LOOP BEGIN at bt.c(2978,3)
+LOOP BEGIN at bt.c(2928,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between c[_2] (2978:3) and c[2][_2] (2978:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between c[2][_2] (2978:3) and c[_2] (2978:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between c[_2] (2928:3) and c[1][_2] (2928:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between c[1][_2] (2928:3) and c[_2] (2928:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between c[_2] (2978:3) and c[2][_2] (2978:3)
-   remark #15346: vector dependence: assumed ANTI dependence between c[2][_2] (2978:3) and c[_2] (2978:3)
+   remark #15346: vector dependence: assumed FLOW dependence between c[_2] (2928:3) and c[1][_2] (2928:3)
+   remark #15346: vector dependence: assumed ANTI dependence between c[1][_2] (2928:3) and c[_2] (2928:3)
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(2988,3)
+LOOP BEGIN at bt.c(2939,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(2998,3)
+LOOP BEGIN at bt.c(2950,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(3008,3)
+LOOP BEGIN at bt.c(2961,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(3018,3)
+LOOP BEGIN at bt.c(2972,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(3027,3)
+LOOP BEGIN at bt.c(2982,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between c[_2] (3027:3) and c[3][_2] (3027:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between c[3][_2] (3027:3) and c[_2] (3027:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between c[_2] (2982:3) and c[2][_2] (2982:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between c[2][_2] (2982:3) and c[_2] (2982:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between c[_2] (3027:3) and c[3][_2] (3027:3)
-   remark #15346: vector dependence: assumed ANTI dependence between c[3][_2] (3027:3) and c[_2] (3027:3)
+   remark #15346: vector dependence: assumed FLOW dependence between c[_2] (2982:3) and c[2][_2] (2982:3)
+   remark #15346: vector dependence: assumed ANTI dependence between c[2][_2] (2982:3) and c[_2] (2982:3)
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(3036,3)
+LOOP BEGIN at bt.c(2992,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(3045,3)
+LOOP BEGIN at bt.c(3002,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(3054,3)
+LOOP BEGIN at bt.c(3012,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(3063,3)
+LOOP BEGIN at bt.c(3022,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(3071,3)
+LOOP BEGIN at bt.c(3031,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between c[_2] (3071:3) and c[4][_2] (3071:3)
-   remark #17106: parallel dependence: assumed ANTI dependence between c[4][_2] (3071:3) and c[_2] (3071:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between c[_2] (3031:3) and c[3][_2] (3031:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between c[3][_2] (3031:3) and c[_2] (3031:3)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed FLOW dependence between c[_2] (3071:3) and c[4][_2] (3071:3)
-   remark #15346: vector dependence: assumed ANTI dependence between c[4][_2] (3071:3) and c[_2] (3071:3)
+   remark #15346: vector dependence: assumed FLOW dependence between c[_2] (3031:3) and c[3][_2] (3031:3)
+   remark #15346: vector dependence: assumed ANTI dependence between c[3][_2] (3031:3) and c[_2] (3031:3)
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(3079,3)
+LOOP BEGIN at bt.c(3040,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(3087,3)
+LOOP BEGIN at bt.c(3049,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
 LOOP END
 
-LOOP BEGIN at bt.c(3095,3)
+LOOP BEGIN at bt.c(3058,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+LOOP BEGIN at bt.c(3067,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+LOOP BEGIN at bt.c(3075,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between c[_2] (3075:3) and c[4][_2] (3075:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between c[4][_2] (3075:3) and c[_2] (3075:3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between c[_2] (3075:3) and c[4][_2] (3075:3)
+   remark #15346: vector dependence: assumed ANTI dependence between c[4][_2] (3075:3) and c[_2] (3075:3)
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+LOOP BEGIN at bt.c(3083,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+LOOP BEGIN at bt.c(3091,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25436: completely unrolled by 5  
+LOOP END
+
+LOOP BEGIN at bt.c(3099,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25436: completely unrolled by 5  
@@ -1745,7 +1745,7 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(2837,69):remark #34051: REGISTER ALLOCATION : [binvcrhs] bt.c:2837
+bt.c(2841,69):remark #34051: REGISTER ALLOCATION : [binvcrhs] bt.c:2841
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -1780,83 +1780,83 @@ Begin optimization report for: z_solve_cell(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (z_solve_cell(void)) [12/28=42.9%] bt.c(3459,32)
-  -> (3488,7) binvcrhs(double (*)[5], double (*)[5], double *) (isz = 2146) (sz = 2155)
+INLINE REPORT: (z_solve_cell(void)) [12/28=42.9%] bt.c(3463,32)
+  -> (3492,7) binvcrhs(double (*)[5], double (*)[5], double *) (isz = 2146) (sz = 2155)
      [[ Unable to inline callsite  <1>]]
-  -> (3508,2) matvec_sub(double (*)[5], double *, double *) (isz = 55) (sz = 64)
+  -> (3512,2) matvec_sub(double (*)[5], double *, double *) (isz = 55) (sz = 64)
      [[ Unable to inline callsite  <1>]]
-  -> (3515,2) matmul_sub(double (*)[5], double (*)[5], double (*)[5]) (isz = 232) (sz = 241)
+  -> (3519,2) matmul_sub(double (*)[5], double (*)[5], double (*)[5]) (isz = 232) (sz = 241)
      [[ Unable to inline callsite  <1>]]
-  -> (3523,2) binvcrhs(double (*)[5], double (*)[5], double *) (isz = 2146) (sz = 2155)
+  -> (3527,2) binvcrhs(double (*)[5], double (*)[5], double *) (isz = 2146) (sz = 2155)
      [[ Unable to inline callsite  <1>]]
-  -> (3540,7) matvec_sub(double (*)[5], double *, double *) (isz = 55) (sz = 64)
+  -> (3544,7) matvec_sub(double (*)[5], double *, double *) (isz = 55) (sz = 64)
      [[ Unable to inline callsite  <1>]]
-  -> (3548,7) matmul_sub(double (*)[5], double (*)[5], double (*)[5]) (isz = 232) (sz = 241)
+  -> (3552,7) matmul_sub(double (*)[5], double (*)[5], double (*)[5]) (isz = 232) (sz = 241)
      [[ Unable to inline callsite  <1>]]
-  -> (3555,7) binvrhs(double (*)[5], double *) (isz = 817) (sz = 824)
+  -> (3559,7) binvrhs(double (*)[5], double *) (isz = 817) (sz = 824)
      [[ Unable to inline callsite  <1>]]
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(3481,3)
+LOOP BEGIN at bt.c(3485,3)
    remark #25095: Loop Interchange not done due to: User Function Inside Loop Nest
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3488:7) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3488:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3488:7) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3488:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3492:7) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3492:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3492:7) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3492:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(3482,5)
+   LOOP BEGIN at bt.c(3486,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #15382: vectorization support: call to function binvcrhs(double (*)[5], double (*)[5], double *) cannot be vectorized   [ bt.c(3488,7) ]
+      remark #15382: vectorization support: call to function binvcrhs(double (*)[5], double (*)[5], double *) cannot be vectorized   [ bt.c(3492,7) ]
       remark #15344: loop was not vectorized: vector dependence prevents vectorization
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(3499,3)
+LOOP BEGIN at bt.c(3503,3)
    remark #25095: Loop Interchange not done due to: User Function Inside Loop Nest
    remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 3 ) --> ( 2 3 1 ) 
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (3508:2) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3523:2)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3523:2) and call:matvec_sub(double (*)[5], double *, double *) (3508:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (3512:2) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3527:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3527:2) and call:matvec_sub(double (*)[5], double *, double *) (3512:2)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(3500,7)
+   LOOP BEGIN at bt.c(3504,7)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (3508:2) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3523:2)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3523:2) and call:matvec_sub(double (*)[5], double *, double *) (3508:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (3512:2) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3527:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3527:2) and call:matvec_sub(double (*)[5], double *, double *) (3512:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at bt.c(3501,4)
+      LOOP BEGIN at bt.c(3505,4)
          remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #15382: vectorization support: call to function matvec_sub(double (*)[5], double *, double *) cannot be vectorized   [ bt.c(3508,2) ]
-         remark #15382: vectorization support: call to function matmul_sub(double (*)[5], double (*)[5], double (*)[5]) cannot be vectorized   [ bt.c(3515,2) ]
-         remark #15382: vectorization support: call to function binvcrhs(double (*)[5], double (*)[5], double *) cannot be vectorized   [ bt.c(3523,2) ]
+         remark #15382: vectorization support: call to function matvec_sub(double (*)[5], double *, double *) cannot be vectorized   [ bt.c(3512,2) ]
+         remark #15382: vectorization support: call to function matmul_sub(double (*)[5], double (*)[5], double (*)[5]) cannot be vectorized   [ bt.c(3519,2) ]
+         remark #15382: vectorization support: call to function binvcrhs(double (*)[5], double (*)[5], double *) cannot be vectorized   [ bt.c(3527,2) ]
          remark #15344: loop was not vectorized: vector dependence prevents vectorization
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(3534,3)
+LOOP BEGIN at bt.c(3538,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (3540:7) and call:binvrhs(double (*)[5], double *) (3555:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvrhs(double (*)[5], double *) (3555:7) and call:matvec_sub(double (*)[5], double *, double *) (3540:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (3544:7) and call:binvrhs(double (*)[5], double *) (3559:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvrhs(double (*)[5], double *) (3559:7) and call:matvec_sub(double (*)[5], double *, double *) (3544:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(3535,5)
+   LOOP BEGIN at bt.c(3539,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #15382: vectorization support: call to function matvec_sub(double (*)[5], double *, double *) cannot be vectorized   [ bt.c(3540,7) ]
-      remark #15382: vectorization support: call to function matmul_sub(double (*)[5], double (*)[5], double (*)[5]) cannot be vectorized   [ bt.c(3548,7) ]
-      remark #15382: vectorization support: call to function binvrhs(double (*)[5], double *) cannot be vectorized   [ bt.c(3555,7) ]
+      remark #15382: vectorization support: call to function matvec_sub(double (*)[5], double *, double *) cannot be vectorized   [ bt.c(3544,7) ]
+      remark #15382: vectorization support: call to function matmul_sub(double (*)[5], double (*)[5], double (*)[5]) cannot be vectorized   [ bt.c(3552,7) ]
+      remark #15382: vectorization support: call to function binvrhs(double (*)[5], double *) cannot be vectorized   [ bt.c(3559,7) ]
       remark #15344: loop was not vectorized: vector dependence prevents vectorization
    LOOP END
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(3459,32):remark #34051: REGISTER ALLOCATION : [z_solve_cell] bt.c:3459
+bt.c(3463,32):remark #34051: REGISTER ALLOCATION : [z_solve_cell] bt.c:3463
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -1891,41 +1891,41 @@ Begin optimization report for: lhsz(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (lhsz(void)) [13/28=46.4%] bt.c(1454,24)
+INLINE REPORT: (lhsz(void)) [13/28=46.4%] bt.c(1457,24)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(1469,3)
+LOOP BEGIN at bt.c(1473,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1473:2) and tmp1 (1473:2)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1473:2) and tmp1 (1473:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1477:2) and tmp1 (1477:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1477:2) and tmp1 (1477:2)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1470,5)
+   LOOP BEGIN at bt.c(1474,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1473:2) and tmp1 (1473:2)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1473:2) and tmp1 (1473:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1477:2) and tmp1 (1477:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1477:2) and tmp1 (1477:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1471,7)
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1473,2) ]
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1474,2) ]
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1475,2) ]
+      LOOP BEGIN at bt.c(1475,7)
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1477,2) ]
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1478,2) ]
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1479,2) ]
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=64
 
-         LOOP BEGIN at bt.c(1477,2)
+         LOOP BEGIN at bt.c(1481,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
          LOOP END
 
-         LOOP BEGIN at bt.c(1525,2)
+         LOOP BEGIN at bt.c(1529,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
@@ -1934,58 +1934,58 @@ LOOP BEGIN at bt.c(1469,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1569,3)
+LOOP BEGIN at bt.c(1573,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1573:2) and tmp1 (1573:2)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1573:2) and tmp1 (1573:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1577:2) and tmp1 (1577:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1577:2) and tmp1 (1577:2)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1570,5)
+   LOOP BEGIN at bt.c(1574,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1573:2) and tmp1 (1573:2)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1573:2) and tmp1 (1573:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1577:2) and tmp1 (1577:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1577:2) and tmp1 (1577:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1571,7)
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1573,2) ]
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1574,2) ]
+      LOOP BEGIN at bt.c(1575,7)
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1577,2) ]
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1578,2) ]
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=64
 
-         LOOP BEGIN at bt.c(1579,2)
+         LOOP BEGIN at bt.c(1583,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1624,2)
+         LOOP BEGIN at bt.c(1628,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1639,2)
+         LOOP BEGIN at bt.c(1643,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1668,2)
+         LOOP BEGIN at bt.c(1672,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1679,2)
+         LOOP BEGIN at bt.c(1683,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1724,2)
+         LOOP BEGIN at bt.c(1728,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
@@ -1996,7 +1996,7 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(1454,24):remark #34051: REGISTER ALLOCATION : [lhsz] bt.c:1454
+bt.c(1457,24):remark #34051: REGISTER ALLOCATION : [lhsz] bt.c:1457
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -2031,18 +2031,18 @@ Begin optimization report for: z_solve(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (z_solve(void)) [14/28=50.0%] bt.c(3405,27)
-  -> (3420,3) lhsz(void) (isz = 2246) (sz = 2249)
+INLINE REPORT: (z_solve(void)) [14/28=50.0%] bt.c(3409,27)
+  -> (3424,3) lhsz(void) (isz = 2246) (sz = 2249)
      [[ Unable to inline callsite  <1>]]
-  -> (3421,3) z_solve_cell(void) (isz = 241) (sz = 244)
+  -> (3425,3) z_solve_cell(void) (isz = 241) (sz = 244)
      [[ Unable to inline callsite  <1>]]
-  -> (3422,3) z_backsubstitute(void) (isz = 96) (sz = 99)
+  -> (3426,3) z_backsubstitute(void) (isz = 96) (sz = 99)
      [[ Unable to inline callsite  <1>]]
 
 
     Report from: Code generation optimizations [cg]
 
-bt.c(3405,27):remark #34051: REGISTER ALLOCATION : [z_solve] bt.c:3405
+bt.c(3409,27):remark #34051: REGISTER ALLOCATION : [z_solve] bt.c:3409
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -2077,88 +2077,88 @@ Begin optimization report for: y_backsubstitute(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (y_backsubstitute(void)) [15/28=53.6%] bt.c(3275,36)
+INLINE REPORT: (y_backsubstitute(void)) [15/28=53.6%] bt.c(3279,36)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(3289,3)
+LOOP BEGIN at bt.c(3293,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between rhs[i][j][k][m] (3294:6) and rhs[i][j+1][k][n] (3294:6)
+   remark #17106: parallel dependence: assumed FLOW dependence between rhs[i][j][k][m] (3298:6) and rhs[i][j+1][k][n] (3298:6)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(3290,5)
+   LOOP BEGIN at bt.c(3294,5)
       remark #17109: LOOP WAS AUTO-PARALLELIZED
       remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ m k n i j } lastprivate={ } firstlastprivate={ } reduction={ }
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(3291,7)
+      LOOP BEGIN at bt.c(3295,7)
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=65
 
-         LOOP BEGIN at bt.c(3292,2)
+         LOOP BEGIN at bt.c(3296,2)
             remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
             remark #25436: completely unrolled by 5  
 
-            LOOP BEGIN at bt.c(3293,4)
+            LOOP BEGIN at bt.c(3297,4)
                remark #15344: loop was not vectorized: vector dependence prevents vectorization
-               remark #15346: vector dependence: assumed FLOW dependence between rhs[i][j][k][m] (3294:6) and rhs[i][j][k][m] (3294:6)
-               remark #15346: vector dependence: assumed ANTI dependence between rhs[i][j][k][m] (3294:6) and rhs[i][j][k][m] (3294:6)
+               remark #15346: vector dependence: assumed FLOW dependence between rhs[i][j][k][m] (3298:6) and rhs[i][j][k][m] (3298:6)
+               remark #15346: vector dependence: assumed ANTI dependence between rhs[i][j][k][m] (3298:6) and rhs[i][j][k][m] (3298:6)
                remark #25436: completely unrolled by 5  
             LOOP END
 
-            LOOP BEGIN at bt.c(3293,4)
+            LOOP BEGIN at bt.c(3297,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(3293,4)
+            LOOP BEGIN at bt.c(3297,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(3293,4)
+            LOOP BEGIN at bt.c(3297,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(3293,4)
+            LOOP BEGIN at bt.c(3297,4)
             LOOP END
          LOOP END
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(3290,5)
+LOOP BEGIN at bt.c(3294,5)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(3291,7)
+   LOOP BEGIN at bt.c(3295,7)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(3292,2)
+      LOOP BEGIN at bt.c(3296,2)
          remark #17107: loop was not parallelized: inner loop
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25436: completely unrolled by 5  
 
-         LOOP BEGIN at bt.c(3293,4)
+         LOOP BEGIN at bt.c(3297,4)
             remark #17104: loop was not parallelized: existence of parallel dependence
-            remark #17106: parallel dependence: assumed FLOW dependence between rhs[i][j][k][m] (3294:6) and rhs[i][j][k][m] (3294:6)
-            remark #17106: parallel dependence: assumed ANTI dependence between rhs[i][j][k][m] (3294:6) and rhs[i][j][k][m] (3294:6)
-            remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (3294:6) and rhs[i][j][k][m] (3294:6)
-            remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (3294:6) and rhs[i][j][k][m] (3294:6)
+            remark #17106: parallel dependence: assumed FLOW dependence between rhs[i][j][k][m] (3298:6) and rhs[i][j][k][m] (3298:6)
+            remark #17106: parallel dependence: assumed ANTI dependence between rhs[i][j][k][m] (3298:6) and rhs[i][j][k][m] (3298:6)
+            remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (3298:6) and rhs[i][j][k][m] (3298:6)
+            remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (3298:6) and rhs[i][j][k][m] (3298:6)
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
          LOOP END
 
-         LOOP BEGIN at bt.c(3293,4)
+         LOOP BEGIN at bt.c(3297,4)
          LOOP END
 
-         LOOP BEGIN at bt.c(3293,4)
+         LOOP BEGIN at bt.c(3297,4)
          LOOP END
 
-         LOOP BEGIN at bt.c(3293,4)
+         LOOP BEGIN at bt.c(3297,4)
          LOOP END
 
-         LOOP BEGIN at bt.c(3293,4)
+         LOOP BEGIN at bt.c(3297,4)
          LOOP END
       LOOP END
    LOOP END
@@ -2166,7 +2166,7 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(3275,36):remark #34051: REGISTER ALLOCATION : [y_backsubstitute] bt.c:3275
+bt.c(3279,36):remark #34051: REGISTER ALLOCATION : [y_backsubstitute] bt.c:3279
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -2201,81 +2201,81 @@ Begin optimization report for: y_solve_cell(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (y_solve_cell(void)) [16/28=57.1%] bt.c(3306,32)
-  -> (3332,7) binvcrhs(double (*)[5], double (*)[5], double *) (isz = 2146) (sz = 2155)
+INLINE REPORT: (y_solve_cell(void)) [16/28=57.1%] bt.c(3310,32)
+  -> (3336,7) binvcrhs(double (*)[5], double (*)[5], double *) (isz = 2146) (sz = 2155)
      [[ Unable to inline callsite  <1>]]
-  -> (3351,2) matvec_sub(double (*)[5], double *, double *) (isz = 55) (sz = 64)
+  -> (3355,2) matvec_sub(double (*)[5], double *, double *) (isz = 55) (sz = 64)
      [[ Unable to inline callsite  <1>]]
-  -> (3357,2) matmul_sub(double (*)[5], double (*)[5], double (*)[5]) (isz = 232) (sz = 241)
+  -> (3361,2) matmul_sub(double (*)[5], double (*)[5], double (*)[5]) (isz = 232) (sz = 241)
      [[ Unable to inline callsite  <1>]]
-  -> (3365,2) binvcrhs(double (*)[5], double (*)[5], double *) (isz = 2146) (sz = 2155)
+  -> (3369,2) binvcrhs(double (*)[5], double (*)[5], double *) (isz = 2146) (sz = 2155)
      [[ Unable to inline callsite  <1>]]
-  -> (3379,7) matvec_sub(double (*)[5], double *, double *) (isz = 55) (sz = 64)
+  -> (3383,7) matvec_sub(double (*)[5], double *, double *) (isz = 55) (sz = 64)
      [[ Unable to inline callsite  <1>]]
-  -> (3387,7) matmul_sub(double (*)[5], double (*)[5], double (*)[5]) (isz = 232) (sz = 241)
+  -> (3391,7) matmul_sub(double (*)[5], double (*)[5], double (*)[5]) (isz = 232) (sz = 241)
      [[ Unable to inline callsite  <1>]]
-  -> (3394,7) binvrhs(double (*)[5], double *) (isz = 817) (sz = 824)
+  -> (3398,7) binvrhs(double (*)[5], double *) (isz = 817) (sz = 824)
      [[ Unable to inline callsite  <1>]]
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(3325,3)
+LOOP BEGIN at bt.c(3329,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3332:7) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3332:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3332:7) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3332:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3336:7) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3336:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3336:7) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3336:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(3326,5)
+   LOOP BEGIN at bt.c(3330,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #15382: vectorization support: call to function binvcrhs(double (*)[5], double (*)[5], double *) cannot be vectorized   [ bt.c(3332,7) ]
+      remark #15382: vectorization support: call to function binvcrhs(double (*)[5], double (*)[5], double *) cannot be vectorized   [ bt.c(3336,7) ]
       remark #15344: loop was not vectorized: vector dependence prevents vectorization
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(3342,3)
+LOOP BEGIN at bt.c(3346,3)
    remark #25095: Loop Interchange not done due to: User Function Inside Loop Nest
    remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 3 ) --> ( 2 1 3 ) 
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (3351:2) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3365:2)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3365:2) and call:matvec_sub(double (*)[5], double *, double *) (3351:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (3355:2) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3369:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3369:2) and call:matvec_sub(double (*)[5], double *, double *) (3355:2)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(3343,5)
+   LOOP BEGIN at bt.c(3347,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (3351:2) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3365:2)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3365:2) and call:matvec_sub(double (*)[5], double *, double *) (3351:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (3355:2) and call:binvcrhs(double (*)[5], double (*)[5], double *) (3369:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (3369:2) and call:matvec_sub(double (*)[5], double *, double *) (3355:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at bt.c(3344,7)
+      LOOP BEGIN at bt.c(3348,7)
          remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #15382: vectorization support: call to function matvec_sub(double (*)[5], double *, double *) cannot be vectorized   [ bt.c(3351,2) ]
-         remark #15382: vectorization support: call to function matmul_sub(double (*)[5], double (*)[5], double (*)[5]) cannot be vectorized   [ bt.c(3357,2) ]
-         remark #15382: vectorization support: call to function binvcrhs(double (*)[5], double (*)[5], double *) cannot be vectorized   [ bt.c(3365,2) ]
+         remark #15382: vectorization support: call to function matvec_sub(double (*)[5], double *, double *) cannot be vectorized   [ bt.c(3355,2) ]
+         remark #15382: vectorization support: call to function matmul_sub(double (*)[5], double (*)[5], double (*)[5]) cannot be vectorized   [ bt.c(3361,2) ]
+         remark #15382: vectorization support: call to function binvcrhs(double (*)[5], double (*)[5], double *) cannot be vectorized   [ bt.c(3369,2) ]
          remark #15344: loop was not vectorized: vector dependence prevents vectorization
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(3373,3)
+LOOP BEGIN at bt.c(3377,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (3379:7) and call:binvrhs(double (*)[5], double *) (3394:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvrhs(double (*)[5], double *) (3394:7) and call:matvec_sub(double (*)[5], double *, double *) (3379:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (3383:7) and call:binvrhs(double (*)[5], double *) (3398:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvrhs(double (*)[5], double *) (3398:7) and call:matvec_sub(double (*)[5], double *, double *) (3383:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(3374,5)
+   LOOP BEGIN at bt.c(3378,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #15382: vectorization support: call to function matvec_sub(double (*)[5], double *, double *) cannot be vectorized   [ bt.c(3379,7) ]
-      remark #15382: vectorization support: call to function matmul_sub(double (*)[5], double (*)[5], double (*)[5]) cannot be vectorized   [ bt.c(3387,7) ]
-      remark #15382: vectorization support: call to function binvrhs(double (*)[5], double *) cannot be vectorized   [ bt.c(3394,7) ]
+      remark #15382: vectorization support: call to function matvec_sub(double (*)[5], double *, double *) cannot be vectorized   [ bt.c(3383,7) ]
+      remark #15382: vectorization support: call to function matmul_sub(double (*)[5], double (*)[5], double (*)[5]) cannot be vectorized   [ bt.c(3391,7) ]
+      remark #15382: vectorization support: call to function binvrhs(double (*)[5], double *) cannot be vectorized   [ bt.c(3398,7) ]
       remark #15344: loop was not vectorized: vector dependence prevents vectorization
    LOOP END
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(3306,32):remark #34051: REGISTER ALLOCATION : [y_solve_cell] bt.c:3306
+bt.c(3310,32):remark #34051: REGISTER ALLOCATION : [y_solve_cell] bt.c:3310
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -2310,41 +2310,41 @@ Begin optimization report for: lhsy(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (lhsy(void)) [17/28=60.7%] bt.c(1162,24)
+INLINE REPORT: (lhsy(void)) [17/28=60.7%] bt.c(1165,24)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(1177,3)
+LOOP BEGIN at bt.c(1180,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1181:2) and tmp1 (1181:2)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1181:2) and tmp1 (1181:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1184:2) and tmp1 (1184:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1184:2) and tmp1 (1184:2)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1178,5)
+   LOOP BEGIN at bt.c(1181,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1181:2) and tmp1 (1181:2)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1181:2) and tmp1 (1181:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1184:2) and tmp1 (1184:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1184:2) and tmp1 (1184:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1179,7)
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1181,2) ]
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1182,2) ]
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1183,2) ]
+      LOOP BEGIN at bt.c(1182,7)
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1184,2) ]
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1185,2) ]
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1186,2) ]
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=64
 
-         LOOP BEGIN at bt.c(1185,2)
+         LOOP BEGIN at bt.c(1188,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
          LOOP END
 
-         LOOP BEGIN at bt.c(1234,2)
+         LOOP BEGIN at bt.c(1237,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
@@ -2353,58 +2353,58 @@ LOOP BEGIN at bt.c(1177,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(1278,3)
+LOOP BEGIN at bt.c(1281,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1282:2) and tmp1 (1282:2)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1282:2) and tmp1 (1282:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1285:2) and tmp1 (1285:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1285:2) and tmp1 (1285:2)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(1279,5)
+   LOOP BEGIN at bt.c(1282,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1282:2) and tmp1 (1282:2)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1282:2) and tmp1 (1282:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1285:2) and tmp1 (1285:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (1285:2) and tmp1 (1285:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(1280,7)
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1282,2) ]
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1283,2) ]
+      LOOP BEGIN at bt.c(1283,7)
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1285,2) ]
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(1286,2) ]
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=64
 
-         LOOP BEGIN at bt.c(1288,2)
+         LOOP BEGIN at bt.c(1291,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1333,2)
+         LOOP BEGIN at bt.c(1336,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1348,2)
+         LOOP BEGIN at bt.c(1351,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1377,2)
+         LOOP BEGIN at bt.c(1380,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1388,2)
+         LOOP BEGIN at bt.c(1391,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1433,2)
+         LOOP BEGIN at bt.c(1436,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
@@ -2415,7 +2415,7 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(1162,24):remark #34051: REGISTER ALLOCATION : [lhsy] bt.c:1162
+bt.c(1165,24):remark #34051: REGISTER ALLOCATION : [lhsy] bt.c:1165
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -2450,18 +2450,18 @@ Begin optimization report for: y_solve(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (y_solve(void)) [18/28=64.3%] bt.c(3251,27)
-  -> (3266,3) lhsy(void) (isz = 2245) (sz = 2248)
+INLINE REPORT: (y_solve(void)) [18/28=64.3%] bt.c(3255,27)
+  -> (3270,3) lhsy(void) (isz = 2245) (sz = 2248)
      [[ Unable to inline callsite  <1>]]
-  -> (3267,3) y_solve_cell(void) (isz = 241) (sz = 244)
+  -> (3271,3) y_solve_cell(void) (isz = 241) (sz = 244)
      [[ Unable to inline callsite  <1>]]
-  -> (3268,3) y_backsubstitute(void) (isz = 96) (sz = 99)
+  -> (3272,3) y_backsubstitute(void) (isz = 96) (sz = 99)
      [[ Unable to inline callsite  <1>]]
 
 
     Report from: Code generation optimizations [cg]
 
-bt.c(3251,27):remark #34051: REGISTER ALLOCATION : [y_solve] bt.c:3251
+bt.c(3255,27):remark #34051: REGISTER ALLOCATION : [y_solve] bt.c:3255
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -2496,90 +2496,90 @@ Begin optimization report for: x_backsubstitute(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (x_backsubstitute(void)) [19/28=67.9%] bt.c(2640,36)
+INLINE REPORT: (x_backsubstitute(void)) [19/28=67.9%] bt.c(2644,36)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(2654,3)
+LOOP BEGIN at bt.c(2658,3)
    remark #25101: Loop Interchange not done due to: Original Order seems proper
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between rhs[i][j][k][m] (2659:6) and rhs[i+1][j][k][n] (2659:6)
+   remark #17106: parallel dependence: assumed FLOW dependence between rhs[i][j][k][m] (2663:6) and rhs[i+1][j][k][n] (2663:6)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(2655,5)
+   LOOP BEGIN at bt.c(2659,5)
       remark #17109: LOOP WAS AUTO-PARALLELIZED
       remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ m k n j i } lastprivate={ } firstlastprivate={ } reduction={ }
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2656,7)
+      LOOP BEGIN at bt.c(2660,7)
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=65
 
-         LOOP BEGIN at bt.c(2657,2)
+         LOOP BEGIN at bt.c(2661,2)
             remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
             remark #25436: completely unrolled by 5  
 
-            LOOP BEGIN at bt.c(2658,4)
+            LOOP BEGIN at bt.c(2662,4)
                remark #15344: loop was not vectorized: vector dependence prevents vectorization
-               remark #15346: vector dependence: assumed FLOW dependence between rhs[i][j][k][m] (2659:6) and rhs[i][j][k][m] (2659:6)
-               remark #15346: vector dependence: assumed ANTI dependence between rhs[i][j][k][m] (2659:6) and rhs[i][j][k][m] (2659:6)
+               remark #15346: vector dependence: assumed FLOW dependence between rhs[i][j][k][m] (2663:6) and rhs[i][j][k][m] (2663:6)
+               remark #15346: vector dependence: assumed ANTI dependence between rhs[i][j][k][m] (2663:6) and rhs[i][j][k][m] (2663:6)
                remark #25436: completely unrolled by 5  
             LOOP END
 
-            LOOP BEGIN at bt.c(2658,4)
+            LOOP BEGIN at bt.c(2662,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(2658,4)
+            LOOP BEGIN at bt.c(2662,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(2658,4)
+            LOOP BEGIN at bt.c(2662,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(2658,4)
+            LOOP BEGIN at bt.c(2662,4)
             LOOP END
          LOOP END
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2655,5)
+LOOP BEGIN at bt.c(2659,5)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(2656,7)
+   LOOP BEGIN at bt.c(2660,7)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(2657,2)
+      LOOP BEGIN at bt.c(2661,2)
          remark #17107: loop was not parallelized: inner loop
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25436: completely unrolled by 5  
 
-         LOOP BEGIN at bt.c(2658,4)
+         LOOP BEGIN at bt.c(2662,4)
             remark #17104: loop was not parallelized: existence of parallel dependence
-            remark #17106: parallel dependence: assumed FLOW dependence between rhs[i][j][k][m] (2659:6) and rhs[i][j][k][m] (2659:6)
-            remark #17106: parallel dependence: assumed ANTI dependence between rhs[i][j][k][m] (2659:6) and rhs[i][j][k][m] (2659:6)
-            remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2659:6) and rhs[i][j][k][m] (2659:6)
-            remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2659:6) and rhs[i][j][k][m] (2659:6)
+            remark #17106: parallel dependence: assumed FLOW dependence between rhs[i][j][k][m] (2663:6) and rhs[i][j][k][m] (2663:6)
+            remark #17106: parallel dependence: assumed ANTI dependence between rhs[i][j][k][m] (2663:6) and rhs[i][j][k][m] (2663:6)
+            remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2663:6) and rhs[i][j][k][m] (2663:6)
+            remark #17106: parallel dependence: assumed OUTPUT dependence between rhs[i][j][k][m] (2663:6) and rhs[i][j][k][m] (2663:6)
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
          LOOP END
 
-         LOOP BEGIN at bt.c(2658,4)
+         LOOP BEGIN at bt.c(2662,4)
          LOOP END
 
-         LOOP BEGIN at bt.c(2658,4)
+         LOOP BEGIN at bt.c(2662,4)
          LOOP END
 
-         LOOP BEGIN at bt.c(2658,4)
+         LOOP BEGIN at bt.c(2662,4)
          LOOP END
 
-         LOOP BEGIN at bt.c(2658,4)
+         LOOP BEGIN at bt.c(2662,4)
          LOOP END
       LOOP END
    LOOP END
@@ -2587,7 +2587,7 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(2640,36):remark #34051: REGISTER ALLOCATION : [x_backsubstitute] bt.c:2640
+bt.c(2644,36):remark #34051: REGISTER ALLOCATION : [x_backsubstitute] bt.c:2644
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -2622,79 +2622,79 @@ Begin optimization report for: x_solve_cell(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (x_solve_cell(void)) [20/28=71.4%] bt.c(2671,32)
-  -> (2697,7) binvcrhs(double (*)[5], double (*)[5], double *) (isz = 2146) (sz = 2155)
+INLINE REPORT: (x_solve_cell(void)) [20/28=71.4%] bt.c(2675,32)
+  -> (2701,7) binvcrhs(double (*)[5], double (*)[5], double *) (isz = 2146) (sz = 2155)
      [[ Unable to inline callsite  <1>]]
-  -> (2714,2) matvec_sub(double (*)[5], double *, double *) (isz = 55) (sz = 64)
+  -> (2718,2) matvec_sub(double (*)[5], double *, double *) (isz = 55) (sz = 64)
      [[ Unable to inline callsite  <1>]]
-  -> (2720,2) matmul_sub(double (*)[5], double (*)[5], double (*)[5]) (isz = 232) (sz = 241)
+  -> (2724,2) matmul_sub(double (*)[5], double (*)[5], double (*)[5]) (isz = 232) (sz = 241)
      [[ Unable to inline callsite  <1>]]
-  -> (2729,2) binvcrhs(double (*)[5], double (*)[5], double *) (isz = 2146) (sz = 2155)
+  -> (2733,2) binvcrhs(double (*)[5], double (*)[5], double *) (isz = 2146) (sz = 2155)
      [[ Unable to inline callsite  <1>]]
-  -> (2743,7) matvec_sub(double (*)[5], double *, double *) (isz = 55) (sz = 64)
+  -> (2747,7) matvec_sub(double (*)[5], double *, double *) (isz = 55) (sz = 64)
      [[ Unable to inline callsite  <1>]]
-  -> (2749,7) matmul_sub(double (*)[5], double (*)[5], double (*)[5]) (isz = 232) (sz = 241)
+  -> (2753,7) matmul_sub(double (*)[5], double (*)[5], double (*)[5]) (isz = 232) (sz = 241)
      [[ Unable to inline callsite  <1>]]
-  -> (2756,7) binvrhs(double (*)[5], double *) (isz = 817) (sz = 824)
+  -> (2760,7) binvrhs(double (*)[5], double *) (isz = 817) (sz = 824)
      [[ Unable to inline callsite  <1>]]
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(2690,3)
+LOOP BEGIN at bt.c(2694,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (2697:7) and call:binvcrhs(double (*)[5], double (*)[5], double *) (2697:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (2697:7) and call:binvcrhs(double (*)[5], double (*)[5], double *) (2697:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (2701:7) and call:binvcrhs(double (*)[5], double (*)[5], double *) (2701:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (2701:7) and call:binvcrhs(double (*)[5], double (*)[5], double *) (2701:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(2691,5)
+   LOOP BEGIN at bt.c(2695,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #15382: vectorization support: call to function binvcrhs(double (*)[5], double (*)[5], double *) cannot be vectorized   [ bt.c(2697,7) ]
+      remark #15382: vectorization support: call to function binvcrhs(double (*)[5], double (*)[5], double *) cannot be vectorized   [ bt.c(2701,7) ]
       remark #15344: loop was not vectorized: vector dependence prevents vectorization
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2707,3)
+LOOP BEGIN at bt.c(2711,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (2714:2) and call:binvcrhs(double (*)[5], double (*)[5], double *) (2729:2)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (2729:2) and call:matvec_sub(double (*)[5], double *, double *) (2714:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (2718:2) and call:binvcrhs(double (*)[5], double (*)[5], double *) (2733:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (2733:2) and call:matvec_sub(double (*)[5], double *, double *) (2718:2)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(2708,5)
+   LOOP BEGIN at bt.c(2712,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (2714:2) and call:binvcrhs(double (*)[5], double (*)[5], double *) (2729:2)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (2729:2) and call:matvec_sub(double (*)[5], double *, double *) (2714:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (2718:2) and call:binvcrhs(double (*)[5], double (*)[5], double *) (2733:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvcrhs(double (*)[5], double (*)[5], double *) (2733:2) and call:matvec_sub(double (*)[5], double *, double *) (2718:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at bt.c(2709,7)
+      LOOP BEGIN at bt.c(2713,7)
          remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #15382: vectorization support: call to function matvec_sub(double (*)[5], double *, double *) cannot be vectorized   [ bt.c(2714,2) ]
-         remark #15382: vectorization support: call to function matmul_sub(double (*)[5], double (*)[5], double (*)[5]) cannot be vectorized   [ bt.c(2720,2) ]
-         remark #15382: vectorization support: call to function binvcrhs(double (*)[5], double (*)[5], double *) cannot be vectorized   [ bt.c(2729,2) ]
+         remark #15382: vectorization support: call to function matvec_sub(double (*)[5], double *, double *) cannot be vectorized   [ bt.c(2718,2) ]
+         remark #15382: vectorization support: call to function matmul_sub(double (*)[5], double (*)[5], double (*)[5]) cannot be vectorized   [ bt.c(2724,2) ]
+         remark #15382: vectorization support: call to function binvcrhs(double (*)[5], double (*)[5], double *) cannot be vectorized   [ bt.c(2733,2) ]
          remark #15344: loop was not vectorized: vector dependence prevents vectorization
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(2737,3)
+LOOP BEGIN at bt.c(2741,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (2743:7) and call:binvrhs(double (*)[5], double *) (2756:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvrhs(double (*)[5], double *) (2756:7) and call:matvec_sub(double (*)[5], double *, double *) (2743:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:matvec_sub(double (*)[5], double *, double *) (2747:7) and call:binvrhs(double (*)[5], double *) (2760:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:binvrhs(double (*)[5], double *) (2760:7) and call:matvec_sub(double (*)[5], double *, double *) (2747:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(2738,5)
+   LOOP BEGIN at bt.c(2742,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #15382: vectorization support: call to function matvec_sub(double (*)[5], double *, double *) cannot be vectorized   [ bt.c(2743,7) ]
-      remark #15382: vectorization support: call to function matmul_sub(double (*)[5], double (*)[5], double (*)[5]) cannot be vectorized   [ bt.c(2749,7) ]
-      remark #15382: vectorization support: call to function binvrhs(double (*)[5], double *) cannot be vectorized   [ bt.c(2756,7) ]
+      remark #15382: vectorization support: call to function matvec_sub(double (*)[5], double *, double *) cannot be vectorized   [ bt.c(2747,7) ]
+      remark #15382: vectorization support: call to function matmul_sub(double (*)[5], double (*)[5], double (*)[5]) cannot be vectorized   [ bt.c(2753,7) ]
+      remark #15382: vectorization support: call to function binvrhs(double (*)[5], double *) cannot be vectorized   [ bt.c(2760,7) ]
       remark #15344: loop was not vectorized: vector dependence prevents vectorization
    LOOP END
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(2671,32):remark #34051: REGISTER ALLOCATION : [x_solve_cell] bt.c:2671
+bt.c(2675,32):remark #34051: REGISTER ALLOCATION : [x_solve_cell] bt.c:2675
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -2729,87 +2729,87 @@ Begin optimization report for: lhsx(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (lhsx(void)) [21/28=75.0%] bt.c(880,24)
+INLINE REPORT: (lhsx(void)) [21/28=75.0%] bt.c(883,24)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(894,3)
+LOOP BEGIN at bt.c(897,3)
    remark #25101: Loop Interchange not done due to: Original Order seems proper
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (898:2) and tmp1 (991:2)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (991:2) and tmp1 (898:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (901:2) and tmp1 (994:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (994:2) and tmp1 (901:2)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(895,5)
+   LOOP BEGIN at bt.c(898,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (898:2) and tmp1 (991:2)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (991:2) and tmp1 (898:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (901:2) and tmp1 (994:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between tmp1 (994:2) and tmp1 (901:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=64
 
-      LOOP BEGIN at bt.c(896,7)
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(898,2) ]
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(899,2) ]
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(900,2) ]
+      LOOP BEGIN at bt.c(899,7)
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(901,2) ]
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(902,2) ]
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(903,2) ]
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=65
 
-         LOOP BEGIN at bt.c(904,2)
+         LOOP BEGIN at bt.c(907,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
          LOOP END
 
-         LOOP BEGIN at bt.c(949,2)
+         LOOP BEGIN at bt.c(952,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
          LOOP END
       LOOP END
 
-      LOOP BEGIN at bt.c(989,7)
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(991,2) ]
-         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(992,2) ]
+      LOOP BEGIN at bt.c(992,7)
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(994,2) ]
+         remark #25084: Preprocess Loopnests: Moving Out Store    [ bt.c(995,2) ]
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=65
 
-         LOOP BEGIN at bt.c(997,2)
+         LOOP BEGIN at bt.c(1000,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1042,2)
+         LOOP BEGIN at bt.c(1045,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1057,2)
+         LOOP BEGIN at bt.c(1060,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1086,2)
+         LOOP BEGIN at bt.c(1089,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1097,2)
+         LOOP BEGIN at bt.c(1100,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
 
-         LOOP BEGIN at bt.c(1142,2)
+         LOOP BEGIN at bt.c(1145,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
@@ -2820,7 +2820,7 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(880,24):remark #34051: REGISTER ALLOCATION : [lhsx] bt.c:880
+bt.c(883,24):remark #34051: REGISTER ALLOCATION : [lhsx] bt.c:883
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -2855,18 +2855,18 @@ Begin optimization report for: x_solve(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (x_solve(void)) [22/28=78.6%] bt.c(2614,27)
-  -> (2631,3) lhsx(void) (isz = 2215) (sz = 2218)
+INLINE REPORT: (x_solve(void)) [22/28=78.6%] bt.c(2618,27)
+  -> (2635,3) lhsx(void) (isz = 2215) (sz = 2218)
      [[ Unable to inline callsite  <1>]]
-  -> (2632,3) x_solve_cell(void) (isz = 241) (sz = 244)
+  -> (2636,3) x_solve_cell(void) (isz = 241) (sz = 244)
      [[ Unable to inline callsite  <1>]]
-  -> (2633,3) x_backsubstitute(void) (isz = 96) (sz = 99)
+  -> (2637,3) x_backsubstitute(void) (isz = 96) (sz = 99)
      [[ Unable to inline callsite  <1>]]
 
 
     Report from: Code generation optimizations [cg]
 
-bt.c(2614,27):remark #34051: REGISTER ALLOCATION : [x_solve] bt.c:2614
+bt.c(2618,27):remark #34051: REGISTER ALLOCATION : [x_solve] bt.c:2618
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -2951,50 +2951,50 @@ Begin optimization report for: initialize(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (initialize(void)) [24/28=85.7%] bt.c(657,30)
-  -> (701,4) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
+INLINE REPORT: (initialize(void)) [24/28=85.7%] bt.c(660,30)
+  -> (704,4) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
      [[ Unable to inline callsite  <1>]]
-  -> (706,4) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
+  -> (709,4) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
      [[ Unable to inline callsite  <1>]]
-  -> (711,4) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
+  -> (714,4) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
      [[ Unable to inline callsite  <1>]]
-  -> (744,7) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
+  -> (747,7) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
      [[ Unable to inline callsite  <1>]]
-  -> (761,7) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
+  -> (764,7) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
      [[ Unable to inline callsite  <1>]]
-  -> (777,7) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
+  -> (780,7) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
      [[ Unable to inline callsite  <1>]]
-  -> (793,7) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
+  -> (796,7) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
      [[ Unable to inline callsite  <1>]]
-  -> (809,7) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
+  -> (812,7) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
      [[ Unable to inline callsite  <1>]]
-  -> (825,7) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
+  -> (828,7) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
      [[ Unable to inline callsite  <1>]]
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(677,3)
+LOOP BEGIN at bt.c(680,3)
    remark #25101: Loop Interchange not done due to: Original Order seems proper
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=64
 
-   LOOP BEGIN at bt.c(678,5)
+   LOOP BEGIN at bt.c(681,5)
       remark #17108: loop was not parallelized: insufficient computational work
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=64
 
-      LOOP BEGIN at bt.c(679,7)
-         remark #25420: Collapsed with loop at line 680 
+      LOOP BEGIN at bt.c(682,7)
+         remark #25420: Collapsed with loop at line 683 
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25438: unrolled without remainder by 2  
          remark #25015: Estimate of max trip count of loop=320
 
-         LOOP BEGIN at bt.c(680,2)
+         LOOP BEGIN at bt.c(683,2)
             remark #25421: Loop eliminated in Collapsing 
 
          LOOP END
@@ -3002,47 +3002,47 @@ LOOP BEGIN at bt.c(677,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(691,3)
+LOOP BEGIN at bt.c(694,3)
    remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (701:4) and call:exact_solution(double, double, double, double *) (711:4)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (711:4) and call:exact_solution(double, double, double, double *) (701:4)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (704:4) and call:exact_solution(double, double, double, double *) (714:4)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (714:4) and call:exact_solution(double, double, double, double *) (704:4)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(694,5)
+   LOOP BEGIN at bt.c(697,5)
       remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
       remark #25452: Original Order found to be proper, but by a close margin
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (701:4) and call:exact_solution(double, double, double, double *) (711:4)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (711:4) and call:exact_solution(double, double, double, double *) (701:4)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (704:4) and call:exact_solution(double, double, double, double *) (714:4)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (714:4) and call:exact_solution(double, double, double, double *) (704:4)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at bt.c(697,7)
+      LOOP BEGIN at bt.c(700,7)
          remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (701:4) and call:exact_solution(double, double, double, double *) (711:4)
-         remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (711:4) and call:exact_solution(double, double, double, double *) (701:4)
+         remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (704:4) and call:exact_solution(double, double, double, double *) (714:4)
+         remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (714:4) and call:exact_solution(double, double, double, double *) (704:4)
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-         LOOP BEGIN at bt.c(700,2)
+         LOOP BEGIN at bt.c(703,2)
             remark #17104: loop was not parallelized: existence of parallel dependence
-            remark #15382: vectorization support: call to function exact_solution(double, double, double, double *) cannot be vectorized   [ bt.c(701,4) ]
+            remark #15382: vectorization support: call to function exact_solution(double, double, double, double *) cannot be vectorized   [ bt.c(704,4) ]
             remark #15344: loop was not vectorized: vector dependence prevents vectorization
          LOOP END
 
-         LOOP BEGIN at bt.c(705,2)
+         LOOP BEGIN at bt.c(708,2)
             remark #17104: loop was not parallelized: existence of parallel dependence
-            remark #15382: vectorization support: call to function exact_solution(double, double, double, double *) cannot be vectorized   [ bt.c(706,4) ]
+            remark #15382: vectorization support: call to function exact_solution(double, double, double, double *) cannot be vectorized   [ bt.c(709,4) ]
             remark #15344: loop was not vectorized: vector dependence prevents vectorization
          LOOP END
 
-         LOOP BEGIN at bt.c(710,2)
+         LOOP BEGIN at bt.c(713,2)
             remark #17104: loop was not parallelized: existence of parallel dependence
-            remark #15382: vectorization support: call to function exact_solution(double, double, double, double *) cannot be vectorized   [ bt.c(711,4) ]
+            remark #15382: vectorization support: call to function exact_solution(double, double, double, double *) cannot be vectorized   [ bt.c(714,4) ]
             remark #15344: loop was not vectorized: vector dependence prevents vectorization
          LOOP END
 
-         LOOP BEGIN at bt.c(715,2)
+         LOOP BEGIN at bt.c(718,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
@@ -3051,19 +3051,19 @@ LOOP BEGIN at bt.c(691,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(740,3)
+LOOP BEGIN at bt.c(743,3)
    remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (744:7) and call:exact_solution(double, double, double, double *) (744:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (744:7) and call:exact_solution(double, double, double, double *) (744:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (747:7) and call:exact_solution(double, double, double, double *) (747:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (747:7) and call:exact_solution(double, double, double, double *) (747:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(742,5)
+   LOOP BEGIN at bt.c(745,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at bt.c(745,7)
+      LOOP BEGIN at bt.c(748,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
@@ -3071,19 +3071,19 @@ LOOP BEGIN at bt.c(740,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(757,3)
+LOOP BEGIN at bt.c(760,3)
    remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (761:7) and call:exact_solution(double, double, double, double *) (761:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (761:7) and call:exact_solution(double, double, double, double *) (761:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (764:7) and call:exact_solution(double, double, double, double *) (764:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (764:7) and call:exact_solution(double, double, double, double *) (764:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(759,5)
+   LOOP BEGIN at bt.c(762,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at bt.c(762,7)
+      LOOP BEGIN at bt.c(765,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
@@ -3091,19 +3091,19 @@ LOOP BEGIN at bt.c(757,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(773,3)
+LOOP BEGIN at bt.c(776,3)
    remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (777:7) and call:exact_solution(double, double, double, double *) (777:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (777:7) and call:exact_solution(double, double, double, double *) (777:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (780:7) and call:exact_solution(double, double, double, double *) (780:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (780:7) and call:exact_solution(double, double, double, double *) (780:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(775,5)
+   LOOP BEGIN at bt.c(778,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at bt.c(778,7)
+      LOOP BEGIN at bt.c(781,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
@@ -3111,19 +3111,19 @@ LOOP BEGIN at bt.c(773,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(789,3)
+LOOP BEGIN at bt.c(792,3)
    remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (793:7) and call:exact_solution(double, double, double, double *) (793:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (793:7) and call:exact_solution(double, double, double, double *) (793:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (796:7) and call:exact_solution(double, double, double, double *) (796:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (796:7) and call:exact_solution(double, double, double, double *) (796:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(791,5)
+   LOOP BEGIN at bt.c(794,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at bt.c(794,7)
+      LOOP BEGIN at bt.c(797,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
@@ -3131,19 +3131,19 @@ LOOP BEGIN at bt.c(789,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(805,3)
+LOOP BEGIN at bt.c(808,3)
    remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (809:7) and call:exact_solution(double, double, double, double *) (809:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (809:7) and call:exact_solution(double, double, double, double *) (809:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (812:7) and call:exact_solution(double, double, double, double *) (812:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (812:7) and call:exact_solution(double, double, double, double *) (812:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(807,5)
+   LOOP BEGIN at bt.c(810,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at bt.c(810,7)
+      LOOP BEGIN at bt.c(813,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
@@ -3151,19 +3151,19 @@ LOOP BEGIN at bt.c(805,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(821,3)
+LOOP BEGIN at bt.c(824,3)
    remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (825:7) and call:exact_solution(double, double, double, double *) (825:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (825:7) and call:exact_solution(double, double, double, double *) (825:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (828:7) and call:exact_solution(double, double, double, double *) (828:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (828:7) and call:exact_solution(double, double, double, double *) (828:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at bt.c(823,5)
+   LOOP BEGIN at bt.c(826,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at bt.c(826,7)
+      LOOP BEGIN at bt.c(829,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
@@ -3173,7 +3173,7 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(657,30):remark #34051: REGISTER ALLOCATION : [initialize] bt.c:657
+bt.c(660,30):remark #34051: REGISTER ALLOCATION : [initialize] bt.c:660
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -3209,11 +3209,11 @@ Begin optimization report for: exact_rhs(void)
     Report from: Interprocedural optimizations [ipo]
 
 INLINE REPORT: (exact_rhs(void)) [25/28=89.3%] bt.c(292,29)
-  -> (330,2) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
+  -> (331,2) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
      [[ Unable to inline callsite  <1>]]
-  -> (428,2) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
+  -> (430,2) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
      [[ Unable to inline callsite  <1>]]
-  -> (527,2) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
+  -> (530,2) exact_solution(double, double, double, double *) (isz = 62) (sz = 73)
      [[ Unable to inline callsite  <1>]]
 
 
@@ -3246,66 +3246,66 @@ LOOP BEGIN at bt.c(308,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(321,3)
+LOOP BEGIN at bt.c(322,3)
    remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (330:2) and call:exact_solution(double, double, double, double *) (330:2)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (330:2) and call:exact_solution(double, double, double, double *) (330:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (331:2) and call:exact_solution(double, double, double, double *) (331:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (331:2) and call:exact_solution(double, double, double, double *) (331:2)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(324,5)
+   LOOP BEGIN at bt.c(325,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (330:2) and call:exact_solution(double, double, double, double *) (330:2)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (330:2) and call:exact_solution(double, double, double, double *) (330:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (331:2) and call:exact_solution(double, double, double, double *) (331:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (331:2) and call:exact_solution(double, double, double, double *) (331:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(327,7)
+      LOOP BEGIN at bt.c(328,7)
          remark #17104: loop was not parallelized: existence of parallel dependence
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=64
 
-         LOOP BEGIN at bt.c(331,2)
+         LOOP BEGIN at bt.c(332,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
          LOOP END
 
-         LOOP BEGIN at bt.c(337,2)
+         LOOP BEGIN at bt.c(338,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
       LOOP END
 
-      LOOP BEGIN at bt.c(348,7)
+      LOOP BEGIN at bt.c(349,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25015: Estimate of max trip count of loop=64
       LOOP END
 
-      LOOP BEGIN at bt.c(385,7)
+      LOOP BEGIN at bt.c(386,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
       LOOP END
 
-      LOOP BEGIN at bt.c(396,2)
+      LOOP BEGIN at bt.c(397,2)
          remark #25444: Loopnest Interchanged: ( 1 2 ) --> ( 2 1 )
          remark #17108: loop was not parallelized: insufficient computational work
-         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ bt.c(396,2) ]
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ bt.c(397,2) ]
          remark #25015: Estimate of max trip count of loop=64
 
-         LOOP BEGIN at bt.c(395,7)
+         LOOP BEGIN at bt.c(396,7)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
          LOOP END
       LOOP END
 
-      LOOP BEGIN at bt.c(403,7)
+      LOOP BEGIN at bt.c(404,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
@@ -3313,64 +3313,64 @@ LOOP BEGIN at bt.c(321,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(419,3)
+LOOP BEGIN at bt.c(421,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (428:2) and call:exact_solution(double, double, double, double *) (428:2)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (428:2) and call:exact_solution(double, double, double, double *) (428:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (430:2) and call:exact_solution(double, double, double, double *) (430:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (430:2) and call:exact_solution(double, double, double, double *) (430:2)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(422,5)
+   LOOP BEGIN at bt.c(424,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (428:2) and call:exact_solution(double, double, double, double *) (428:2)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (428:2) and call:exact_solution(double, double, double, double *) (428:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (430:2) and call:exact_solution(double, double, double, double *) (430:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (430:2) and call:exact_solution(double, double, double, double *) (430:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(425,7)
+      LOOP BEGIN at bt.c(427,7)
          remark #17104: loop was not parallelized: existence of parallel dependence
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=64
 
-         LOOP BEGIN at bt.c(429,2)
+         LOOP BEGIN at bt.c(431,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
          LOOP END
 
-         LOOP BEGIN at bt.c(435,2)
+         LOOP BEGIN at bt.c(437,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
       LOOP END
 
-      LOOP BEGIN at bt.c(446,7)
+      LOOP BEGIN at bt.c(448,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25015: Estimate of max trip count of loop=64
       LOOP END
 
-      LOOP BEGIN at bt.c(483,7)
+      LOOP BEGIN at bt.c(485,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
       LOOP END
 
-      LOOP BEGIN at bt.c(494,2)
+      LOOP BEGIN at bt.c(496,2)
          remark #25444: Loopnest Interchanged: ( 1 2 ) --> ( 2 1 )
          remark #17108: loop was not parallelized: insufficient computational work
-         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ bt.c(494,2) ]
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ bt.c(496,2) ]
          remark #25015: Estimate of max trip count of loop=64
 
-         LOOP BEGIN at bt.c(493,7)
+         LOOP BEGIN at bt.c(495,7)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
          LOOP END
       LOOP END
 
-      LOOP BEGIN at bt.c(501,7)
+      LOOP BEGIN at bt.c(503,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
@@ -3378,64 +3378,64 @@ LOOP BEGIN at bt.c(419,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(518,3)
+LOOP BEGIN at bt.c(521,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (527:2) and call:exact_solution(double, double, double, double *) (527:2)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (527:2) and call:exact_solution(double, double, double, double *) (527:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (530:2) and call:exact_solution(double, double, double, double *) (530:2)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (530:2) and call:exact_solution(double, double, double, double *) (530:2)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(521,5)
+   LOOP BEGIN at bt.c(524,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (527:2) and call:exact_solution(double, double, double, double *) (527:2)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (527:2) and call:exact_solution(double, double, double, double *) (527:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (530:2) and call:exact_solution(double, double, double, double *) (530:2)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between call:exact_solution(double, double, double, double *) (530:2) and call:exact_solution(double, double, double, double *) (530:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(524,7)
+      LOOP BEGIN at bt.c(527,7)
          remark #17104: loop was not parallelized: existence of parallel dependence
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=64
 
-         LOOP BEGIN at bt.c(528,2)
+         LOOP BEGIN at bt.c(531,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
          LOOP END
 
-         LOOP BEGIN at bt.c(534,2)
+         LOOP BEGIN at bt.c(537,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 4  
          LOOP END
       LOOP END
 
-      LOOP BEGIN at bt.c(545,7)
+      LOOP BEGIN at bt.c(548,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25015: Estimate of max trip count of loop=64
       LOOP END
 
-      LOOP BEGIN at bt.c(582,7)
+      LOOP BEGIN at bt.c(585,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
       LOOP END
 
-      LOOP BEGIN at bt.c(593,2)
+      LOOP BEGIN at bt.c(596,2)
          remark #25444: Loopnest Interchanged: ( 1 2 ) --> ( 2 1 )
          remark #17108: loop was not parallelized: insufficient computational work
-         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ bt.c(593,2) ]
+         remark #15541: outer loop was not auto-vectorized: consider using SIMD directive   [ bt.c(596,2) ]
          remark #25015: Estimate of max trip count of loop=64
 
-         LOOP BEGIN at bt.c(592,7)
+         LOOP BEGIN at bt.c(595,7)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
          LOOP END
       LOOP END
 
-      LOOP BEGIN at bt.c(600,7)
+      LOOP BEGIN at bt.c(603,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
@@ -3443,24 +3443,24 @@ LOOP BEGIN at bt.c(518,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(616,3)
+LOOP BEGIN at bt.c(619,3)
    remark #25101: Loop Interchange not done due to: Original Order seems proper
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(617,5)
+   LOOP BEGIN at bt.c(620,5)
       remark #17108: loop was not parallelized: insufficient computational work
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(618,7)
+      LOOP BEGIN at bt.c(621,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=65
 
-         LOOP BEGIN at bt.c(619,2)
+         LOOP BEGIN at bt.c(622,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
@@ -3506,13 +3506,13 @@ Begin optimization report for: lhsinit(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (lhsinit(void)) [26/28=92.9%] bt.c(837,27)
+INLINE REPORT: (lhsinit(void)) [26/28=92.9%] bt.c(840,27)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(848,3)
+LOOP BEGIN at bt.c(851,3)
    remark #25101: Loop Interchange not done due to: Original Order seems proper
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17109: LOOP WAS AUTO-PARALLELIZED
@@ -3520,57 +3520,57 @@ LOOP BEGIN at bt.c(848,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(849,5)
+   LOOP BEGIN at bt.c(852,5)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(850,7)
+      LOOP BEGIN at bt.c(853,7)
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=65
 
-         LOOP BEGIN at bt.c(851,2)
+         LOOP BEGIN at bt.c(854,2)
             remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
             remark #25436: completely unrolled by 5  
 
-            LOOP BEGIN at bt.c(852,4)
+            LOOP BEGIN at bt.c(855,4)
                remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
                remark #25436: completely unrolled by 5  
             LOOP END
 
-            LOOP BEGIN at bt.c(852,4)
+            LOOP BEGIN at bt.c(855,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(852,4)
+            LOOP BEGIN at bt.c(855,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(852,4)
+            LOOP BEGIN at bt.c(855,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(852,4)
+            LOOP BEGIN at bt.c(855,4)
             LOOP END
          LOOP END
       LOOP END
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(865,3)
+LOOP BEGIN at bt.c(868,3)
    remark #25101: Loop Interchange not done due to: Original Order seems proper
    remark #25452: Original Order found to be proper, but by a close margin
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(866,5)
+   LOOP BEGIN at bt.c(869,5)
       remark #17108: loop was not parallelized: insufficient computational work
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(867,7)
+      LOOP BEGIN at bt.c(870,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=65
 
-         LOOP BEGIN at bt.c(868,2)
+         LOOP BEGIN at bt.c(871,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
             remark #25436: completely unrolled by 5  
@@ -3579,41 +3579,41 @@ LOOP BEGIN at bt.c(865,3)
    LOOP END
 LOOP END
 
-LOOP BEGIN at bt.c(848,3)
+LOOP BEGIN at bt.c(851,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=65
 
-   LOOP BEGIN at bt.c(849,5)
+   LOOP BEGIN at bt.c(852,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
       remark #25015: Estimate of max trip count of loop=65
 
-      LOOP BEGIN at bt.c(850,7)
+      LOOP BEGIN at bt.c(853,7)
          remark #17107: loop was not parallelized: inner loop
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
          remark #25015: Estimate of max trip count of loop=65
 
-         LOOP BEGIN at bt.c(851,2)
+         LOOP BEGIN at bt.c(854,2)
             remark #17107: loop was not parallelized: inner loop
             remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
             remark #25436: completely unrolled by 5  
 
-            LOOP BEGIN at bt.c(852,4)
+            LOOP BEGIN at bt.c(855,4)
                remark #17107: loop was not parallelized: inner loop
                remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
                remark #25436: completely unrolled by 5  
             LOOP END
 
-            LOOP BEGIN at bt.c(852,4)
+            LOOP BEGIN at bt.c(855,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(852,4)
+            LOOP BEGIN at bt.c(855,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(852,4)
+            LOOP BEGIN at bt.c(855,4)
             LOOP END
 
-            LOOP BEGIN at bt.c(852,4)
+            LOOP BEGIN at bt.c(855,4)
             LOOP END
          LOOP END
       LOOP END
@@ -3622,7 +3622,7 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(837,27):remark #34051: REGISTER ALLOCATION : [lhsinit] bt.c:837
+bt.c(840,27):remark #34051: REGISTER ALLOCATION : [lhsinit] bt.c:840
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -3657,41 +3657,41 @@ Begin optimization report for: set_constants(void)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (set_constants(void)) [27/28=96.4%] bt.c(2147,33)
+INLINE REPORT: (set_constants(void)) [27/28=96.4%] bt.c(2151,33)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at bt.c(2152,3)
+LOOP BEGIN at bt.c(2156,3)
    remark #25399: memcopy generated
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
    remark #25015: Estimate of max trip count of loop=1
 LOOP END
 
-LOOP BEGIN at bt.c(2166,3)
+LOOP BEGIN at bt.c(2170,3)
    remark #25399: memcopy generated
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
    remark #25015: Estimate of max trip count of loop=1
 LOOP END
 
-LOOP BEGIN at bt.c(2180,3)
+LOOP BEGIN at bt.c(2184,3)
    remark #25399: memcopy generated
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
    remark #25015: Estimate of max trip count of loop=1
 LOOP END
 
-LOOP BEGIN at bt.c(2194,3)
+LOOP BEGIN at bt.c(2198,3)
    remark #25399: memcopy generated
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
    remark #25015: Estimate of max trip count of loop=1
 LOOP END
 
-LOOP BEGIN at bt.c(2208,3)
+LOOP BEGIN at bt.c(2212,3)
    remark #25399: memcopy generated
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
@@ -3700,12 +3700,12 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-bt.c(2152,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 0)
-bt.c(2166,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 8)
-bt.c(2180,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 16)
-bt.c(2194,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 24)
-bt.c(2208,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 0)
-bt.c(2147,33):remark #34051: REGISTER ALLOCATION : [set_constants] bt.c:2147
+bt.c(2156,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 0)
+bt.c(2170,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 8)
+bt.c(2184,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 16)
+bt.c(2198,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 24)
+bt.c(2212,3):remark #34000: call to memcpy implemented inline with loads and stores with proven source (alignment, offset): (16, 0), and destination (alignment, offset): (32, 0)
+bt.c(2151,33):remark #34051: REGISTER ALLOCATION : [set_constants] bt.c:2151
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -3775,7 +3775,6 @@ INLINE REPORT: (main(int, char **)) [28/28=100.0%] bt.c(74,33)
   -> EXTERN: (145,7) printf(const char *__restrict__, ...)
   -> (147,5) adi(void) (isz = 4) (sz = 7)
      [[ Unable to inline callsite  <1>]]
-  -> EXTERN: (152,14) omp_get_num_threads(void)
   -> EXTERN: (156,3) timer_stop(int)
   -> EXTERN: (157,10) timer_read(int)
   -> (159,3) verify(int, char *, boolean *) (isz = 460) (sz = 469)
@@ -3814,9 +3813,9 @@ bt.c(74,33):remark #34051: REGISTER ALLOCATION : [main] bt.c:74
         Assigned     :   13[ rax rdx rcx rsi rdi r8-r10 r12-r13 zmm0-zmm2]
         
     Routine temporaries
-        Total         :     160
-            Global    :      38
-            Local     :     122
+        Total         :     157
+            Global    :      36
+            Local     :     121
         Regenerable   :      70
         Spilled       :       4
         

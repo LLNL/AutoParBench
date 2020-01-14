@@ -125,7 +125,7 @@ int main(int argc, char * argv[])
 	#pragma loop name main#2 
 	for (i=0; i<len; i ++ )
 	{
-		printf("%d %d\n", a[i], b[i]);
+		printf("i=%d a[%d]=%d\n", i, i, a[i]);
 	}
 	_ret_val_0=0;
 	return _ret_val_0;

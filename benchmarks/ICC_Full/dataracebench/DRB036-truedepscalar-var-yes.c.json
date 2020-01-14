@@ -14,7 +14,7 @@
 "file":"./dataracebench/DRB036-truedepscalar-var-yes.c",
 "function":"main",
 "loop id":"2",
-"loop line":"70",
+"loop line":"69",
 "loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",

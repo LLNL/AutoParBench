@@ -49,6 +49,8 @@ Two-dimensional array computation:
 collapse(2) is used to associate two loops with omp for. 
 The corresponding loop iteration variables are private. 
 */
+#include <stdio.h>
+
 int a[100][100];
 int main()
 {

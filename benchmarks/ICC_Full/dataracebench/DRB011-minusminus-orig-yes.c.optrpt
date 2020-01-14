@@ -81,9 +81,9 @@ LOOP END
         Assigned     :   14[ rax rdx rcx rbx rsi rdi r8-r15]
         
     Routine temporaries
-        Total         :     185
+        Total         :     184
             Global    :      42
-            Local     :     143
+            Local     :     142
         Regenerable   :      76
         Spilled       :       1
         

@@ -14,7 +14,7 @@ c  in this directory. Do not modify it by hand.
 #define	INORM_DEFAULT	250
 #define	DT_DEFAULT	2.0
 #define	CONVERTDOUBLE	FALSE
-#define COMPILETIME "01 Dec 2019"
+#define COMPILETIME "28 Nov 2019"
 #define NPBVERSION "3.0 structured"
 #define CS1 "(none)"
 #define CS2 "(none)"

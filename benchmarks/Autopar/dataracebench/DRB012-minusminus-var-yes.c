@@ -62,12 +62,12 @@ int main(int argc,char *argv[])
       x[i] = - 5;
   }
   
-#pragma omp parallel for private (i) reduction (+:numNodes2)
+#pragma omp parallel for private (i) reduction (-:numNodes2)
   for (i = numNodes - 1; i >= 0; i += -1) {
     if (x[i] <= 0) {
-      numNodes2 += - 1;
+      numNodes2--;
     }
   }
-  printf("%d\n",numNodes2);
+  printf("numNodes2 = %d\n",numNodes2);
   return 0;
 }

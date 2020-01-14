@@ -52,6 +52,7 @@ Use threadprivate to avoid data races.
 #include <assert.h>
 
 int sum0=0, sum1=0;
+
 void foo (int i)
 {
   sum0=sum0+i;
@@ -61,11 +62,15 @@ int main()
 {
   int len=1000;
   int i, sum=0;
-  for (i=0;i<len;i++)
   {
+    for (i=0;i<len;i++)
+    {
        foo (i);
-  }   
-  sum=sum+sum0;
+    }   
+    {
+      sum= sum+sum0;
+    } 
+  }  
 /*  reference calculation */
   for (i=0;i<len;i++)
   {

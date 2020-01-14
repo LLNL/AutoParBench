@@ -33,7 +33,7 @@ Begin optimization report for: main()
     Report from: Interprocedural optimizations [ipo]
 
 INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB092-threadprivatemissing2-orig-yes.c(61,1)
-  -> EXTERN: (75,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (76,3) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
@@ -50,8 +50,8 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB092-threadprivatemissing2-orig-yes.c(71,3)
-   remark #25084: Preprocess Loopnests: Moving Out Store    [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB092-threadprivatemissing2-orig-yes.c(73,5) ]
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB092-threadprivatemissing2-orig-yes.c(72,3)
+   remark #25084: Preprocess Loopnests: Moving Out Store    [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB092-threadprivatemissing2-orig-yes.c(74,5) ]
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ sum1 }
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
@@ -74,7 +74,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    remark #25436: completely unrolled by 7  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB092-threadprivatemissing2-orig-yes.c(71,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB092-threadprivatemissing2-orig-yes.c(72,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 8  
    remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
@@ -82,7 +82,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB092-threadprivatemissing2-orig-yes.c(71,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB092-threadprivatemissing2-orig-yes.c(72,3)
 <Remainder>
    remark #25436: completely unrolled by 7  
 LOOP END

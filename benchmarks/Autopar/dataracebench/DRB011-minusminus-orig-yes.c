@@ -50,7 +50,7 @@ int main(int argc,char *argv[])
   int i;
   int len = 100;
   int numNodes = len;
-  int numNodes2 = 10;
+  int numNodes2 = 0;
   int x[100];
 // initialize x[]
   

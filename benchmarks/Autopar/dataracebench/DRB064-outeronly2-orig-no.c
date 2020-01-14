@@ -44,8 +44,9 @@ The inner loop has loop carried true data dependence.
 However, the loop is not parallelized so no race condition.
 */
 #include <omp.h> 
+int n = 100;
+int m = 100;
 double b[100][100];
-#define N 100
 
 int init()
 {
@@ -53,11 +54,11 @@ int init()
   int j;
   int k;
   
-#pragma omp parallel for private (i,j)
-  for (i = 0; i <= 99; i += 1) {
+#pragma omp parallel for private (i,j) firstprivate (n,m)
+  for (i = 0; i <= n - 1; i += 1) {
     
 #pragma omp parallel for private (j)
-    for (j = 0; j <= 99; j += 1) {
+    for (j = 0; j <= m - 1; j += 1) {
       b[i][j] = (i * j);
     }
   }
@@ -83,8 +84,8 @@ int print()
   int i;
   int j;
   int k;
-  for (i = 0; i <= 99; i += 1) {
-    for (j = 0; j <= 99; j += 1) {
+  for (i = 0; i <= n - 1; i += 1) {
+    for (j = 0; j <= m - 1; j += 1) {
       printf("%lf\n",b[i][j]);
     }
   }

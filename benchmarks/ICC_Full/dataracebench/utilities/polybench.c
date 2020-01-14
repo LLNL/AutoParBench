@@ -89,8 +89,6 @@ void polybench_flush_cache()
   double* flush = (double*) calloc (cs, sizeof(double));
   int i;
   double tmp = 0.0;
-#ifdef _OPENMP
-#endif
   for (i = 0; i < cs; i++)
     tmp += flush[i];
   assert (tmp <= 10.0);
@@ -157,16 +155,11 @@ void test_fail(char *file, int line, char *call, int retval)
 
 void polybench_papi_init()
 {
-# ifdef _OPENMP
-  {
-    {
-      if (omp_get_max_threads () < polybench_papi_counters_threadid)
-	polybench_papi_counters_threadid = omp_get_max_threads () - 1;
-    }
+   if (omp_get_max_threads () < polybench_papi_counters_threadid)
+     polybench_papi_counters_threadid = omp_get_max_threads () - 1;
 
     if (omp_get_thread_num () == polybench_papi_counters_threadid)
-      {
-# endif
+    {
 	int retval;
 	polybench_papi_eventset = PAPI_NULL;
 	if ((retval = PAPI_library_init (PAPI_VER_CURRENT)) != PAPI_VER_CURRENT)
@@ -184,32 +177,21 @@ void polybench_papi_init()
 	      test_fail (__FILE__, __LINE__, "PAPI_event_name_to_code", retval);
 	  }
 	polybench_papi_eventlist[k] = 0;
-
-
-# ifdef _OPENMP
-      }
   }
-# endif
 }
 
 
 void polybench_papi_close()
 {
-# ifdef _OPENMP
-  {
     if (omp_get_thread_num () == polybench_papi_counters_threadid)
       {
-# endif
 	int retval;
 	if ((retval = PAPI_destroy_eventset (&polybench_papi_eventset))
 	    != PAPI_OK)
 	  test_fail (__FILE__, __LINE__, "PAPI_destroy_eventset", retval);
 	if (PAPI_is_initialized ())
 	  PAPI_shutdown ();
-# ifdef _OPENMP
       }
-  }
-# endif
 }
 
 int polybench_papi_start_counter(int evid)
@@ -218,11 +200,8 @@ int polybench_papi_start_counter(int evid)
     polybench_flush_cache();
 # endif
 
-# ifdef _OPENMP
-  {
     if (omp_get_thread_num () == polybench_papi_counters_threadid)
       {
-# endif
 
 	int retval = 1;
 	char descr[PAPI_MAX_STR_LEN];
@@ -236,21 +215,15 @@ int polybench_papi_start_counter(int evid)
 	  test_fail (__FILE__, __LINE__, "PAPI_get_event_info", retval);
 	if ((retval = PAPI_start (polybench_papi_eventset)) != PAPI_OK)
 	  test_fail (__FILE__, __LINE__, "PAPI_start", retval);
-# ifdef _OPENMP
       }
-  }
-# endif
   return 0;
 }
 
 
 void polybench_papi_stop_counter(int evid)
 {
-# ifdef _OPENMP
-  {
     if (omp_get_thread_num () == polybench_papi_counters_threadid)
       {
-# endif
 	int retval;
 	long_long values[1];
 	values[0] = 0;
@@ -267,17 +240,13 @@ void polybench_papi_stop_counter(int evid)
 	     (polybench_papi_eventset,
 	      polybench_papi_eventlist[evid])) != PAPI_OK)
 	  test_fail (__FILE__, __LINE__, "PAPI_remove_event", retval);
-# ifdef _OPENMP
       }
-  }
-# endif
 }
 
 
 void polybench_papi_print()
 {
   int verbose = 0;
-# ifdef _OPENMP
   {
     if (omp_get_thread_num() == polybench_papi_counters_threadid)
       {
@@ -286,7 +255,6 @@ void polybench_papi_print()
 #endif
 	if (verbose)
 	  printf ("On thread %d:\n", polybench_papi_counters_threadid);
-#endif
 	int evid;
 	for (evid = 0; polybench_papi_eventlist[evid] != 0; ++evid)
 	  {
@@ -297,10 +265,8 @@ void polybench_papi_print()
 	      printf ("\n");
 	  }
 	printf ("\n");
-# ifdef _OPENMP
       }
   }
-# endif
 }
 
 #endif

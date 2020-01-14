@@ -243,8 +243,9 @@ c---------------------------------------------------------------------*/
   }
   norm2u3(r[lt],n1,n2,n3,&rnm2,&rnmu,nx[lt],ny[lt],nz[lt]);
 {
-#if defined(_OPENMP)
-#endif /* _OPENMP */
+//#if defined(_OPENMP)
+//  nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */
 /* end parallel */
   }
   timer_stop(1);
@@ -297,7 +298,7 @@ c---------------------------------------------------------------------*/
    else {
     mflops = 0.0;
   }
-  c_print_results("MG",Class,nx[lt],ny[lt],nz[lt],nit,nthreads,t,mflops,"          floating point",verified,"3.0 structured","01 Dec 2019","(none)","(none)","-lm","(none)","(none)","(none)","randdp");
+  c_print_results("MG",Class,nx[lt],ny[lt],nz[lt],nit,nthreads,t,mflops,"          floating point",verified,"3.0 structured","28 Nov 2019","(none)","(none)","-lm","(none)","(none)","(none)","randdp");
 }
 /*--------------------------------------------------------------------
 c-------------------------------------------------------------------*/

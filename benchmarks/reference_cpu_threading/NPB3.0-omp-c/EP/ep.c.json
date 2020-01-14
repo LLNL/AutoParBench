@@ -64,12 +64,10 @@
 "loop id":"6",
 "loop line":"157",
 "loop column":"5",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"induction variable":"k",
-"reduction":["+:sy"]
+"multiversioned":"false"
 },
 "loop - object id : 7":{
 "file":"./NPB3.0-omp-c/EP/ep.c",

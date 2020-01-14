@@ -32,14 +32,14 @@ Begin optimization report for: foo1..0(double *, double *, int)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (foo1..0(double *, double *, int)) [1/3=33.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(52,1)
+INLINE REPORT: (foo1..0(double *, double *, int)) [1/3=33.3%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(51,1)
   CLONED FROM: foo1(double *, double *, int)(X,X,100)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(55,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(53,3)
 <Multiversioned v1>
    remark #25228: Loop multiversioned for Data Dependence
    remark #17108: loop was not parallelized: insufficient computational work
@@ -48,11 +48,11 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataraceben
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(55,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(53,3)
 <Multiversioned v2>
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between o1[i] (57:5) and c[i] (57:5)
-   remark #17106: parallel dependence: assumed ANTI dependence between c[i] (57:5) and o1[i] (57:5)
+   remark #17106: parallel dependence: assumed FLOW dependence between o1[i] (55:5) and c[i] (55:5)
+   remark #17106: parallel dependence: assumed ANTI dependence between c[i] (55:5) and o1[i] (55:5)
    remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
    remark #25438: unrolled without remainder by 2  
    remark #25015: Estimate of max trip count of loop=100
@@ -60,7 +60,7 @@ LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(52,1):remark #34051: REGISTER ALLOCATION : [foo1..0] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c:52
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(51,1):remark #34051: REGISTER ALLOCATION : [foo1..0] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c:51
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -95,31 +95,31 @@ Begin optimization report for: main()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main()) [2/3=66.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(65,1)
-  -> CP_CLONE (73,3) foo1..0(double *, double *, int) (isz = 18) (sz = 27)
+INLINE REPORT: (main()) [2/3=66.7%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(62,1)
+  -> CP_CLONE (69,3) foo1..0(double *, double *, int) (isz = 18) (sz = 27)
      [[ Unable to inline callsite  <1>]]
-  -> EXTERN: (76,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (72,5) printf(const char *, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(68,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(64,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25438: unrolled without remainder by 2  
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(75,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(71,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(76,5) ]
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(72,5) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(65,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c:65
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(62,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c:62
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -154,13 +154,13 @@ Begin optimization report for: foo1(double *, double *, int)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (foo1(double *, double *, int)) [3/3=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(52,1)
+INLINE REPORT: (foo1(double *, double *, int)) [3/3=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(51,1)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(55,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(53,3)
 <Multiversioned v1>
    remark #25228: Loop multiversioned for Data Dependence
    remark #17108: loop was not parallelized: insufficient computational work
@@ -168,27 +168,27 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataraceben
    remark #25439: unrolled with remainder by 8  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(55,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(53,3)
 <Remainder, Multiversioned v1>
    remark #25436: completely unrolled by 7  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(55,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(53,3)
 <Multiversioned v2>
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed FLOW dependence between o1[i] (57:5) and c[i] (57:5)
-   remark #17106: parallel dependence: assumed ANTI dependence between c[i] (57:5) and o1[i] (57:5)
+   remark #17106: parallel dependence: assumed FLOW dependence between o1[i] (55:5) and c[i] (55:5)
+   remark #17106: parallel dependence: assumed ANTI dependence between c[i] (55:5) and o1[i] (55:5)
    remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
    remark #25439: unrolled with remainder by 2  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(55,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(53,3)
 <Remainder, Multiversioned v2>
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(52,1):remark #34051: REGISTER ALLOCATION : [foo1] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c:52
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c(51,1):remark #34051: REGISTER ALLOCATION : [foo1] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB050-functionparameter-orig-no.c:51
 
     Hardware registers
         Reserved     :    2[ rsp rip]

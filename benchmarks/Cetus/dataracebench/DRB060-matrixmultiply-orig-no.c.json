@@ -3,52 +3,33 @@
 "file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
 "function":"init",
 "loop id":"1",
-"loop line":"107",
+"loop line":"106",
 "loop column":"2",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
 "induction variable":"i",
-"private":["i","j","k"],
-"firstprivate":["a","b","c"],
-"lastprivate":["a","b","c"]
+"private":["i","j"]
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
 "function":"init",
 "loop id":"2",
-"loop line":"115",
+"loop line":"112",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"induction variable":"k",
-"private":["j","k"],
-"firstprivate":["a","c"],
-"lastprivate":["a","c"]
+"induction variable":"j",
+"private":["j"]
 },
 "loop - object id : 3":{
 "file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
-"function":"init",
-"loop id":"3",
-"loop line":"123",
-"loop column":"4",
-"pragma type":"parallel for",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false",
-"induction variable":"j",
-"private":["j"],
-"firstprivate":["a"],
-"lastprivate":["a"]
-},
-"loop - object id : 4":{
-"file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
 "function":"mmm",
 "loop id":"1",
-"loop line":"143",
+"loop line":"131",
 "loop column":"2",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -57,11 +38,11 @@
 "induction variable":"i",
 "private":["i","j","k"]
 },
-"loop - object id : 5":{
+"loop - object id : 4":{
 "file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
 "function":"mmm",
 "loop id":"2",
-"loop line":"150",
+"loop line":"138",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -71,11 +52,11 @@
 "private":["j","k"],
 "reduction":["+:c[i][j]"]
 },
-"loop - object id : 6":{
+"loop - object id : 5":{
 "file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
 "function":"mmm",
 "loop id":"3",
-"loop line":"156",
+"loop line":"144",
 "loop column":"4",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -84,34 +65,23 @@
 "induction variable":"j",
 "private":["j"]
 },
-"loop - object id : 7":{
+"loop - object id : 6":{
 "file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
 "function":"print",
 "loop id":"1",
-"loop line":"172",
+"loop line":"160",
 "loop column":"2",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 8":{
+"loop - object id : 7":{
 "file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
 "function":"print",
 "loop id":"2",
-"loop line":"176",
+"loop line":"164",
 "loop column":"3",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 9":{
-"file":"./dataracebench/DRB060-matrixmultiply-orig-no.c",
-"function":"print",
-"loop id":"3",
-"loop line":"180",
-"loop column":"4",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",

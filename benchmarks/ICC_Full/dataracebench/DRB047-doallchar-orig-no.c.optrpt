@@ -32,13 +32,20 @@ Begin optimization report for: main()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(58,1)
-  -> EXTERN: (66,5) printf(const char *__restrict__, ...)
+INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(55,1)
+  -> EXTERN: (64,5) printf(const char *, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(57,3)
+   remark #17109: LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=100
+LOOP END
+
 LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(60,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
@@ -47,20 +54,17 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(62,3)
-   remark #17109: LOOP WAS AUTO-PARALLELIZED
-   remark #17101: parallel loop shared={ } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ }
-   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-   remark #25438: unrolled without remainder by 2  
-   remark #25015: Estimate of max trip count of loop=100
-LOOP END
-
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(65,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(63,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(66,5) ]
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(64,5) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(57,3)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25015: Estimate of max trip count of loop=100
+LOOP END
+
 LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(60,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
@@ -68,44 +72,33 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
 LOOP END
 
 LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(60,3)
-<Remainder>
-   remark #25015: Estimate of max trip count of loop=100
-LOOP END
-
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(62,3)
-   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-   remark #25439: unrolled with remainder by 2  
-   remark #25015: Estimate of max trip count of loop=100
-LOOP END
-
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(62,3)
 <Remainder>
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(58,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c:58
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c(55,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB047-doallchar-orig-no.c:55
 
     Hardware registers
         Reserved     :    2[ rsp rip]
         Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
         Callee-save  :    6[ rbx rbp r12-r15]
-        Assigned     :   11[ rax rdx rcx rbx rsi rdi r8-r9 r12-r14]
+        Assigned     :   12[ rax rdx rcx rbx rsi rdi r8-r10 r12-r14]
         
     Routine temporaries
-        Total         :     147
-            Global    :      35
-            Local     :     112
-        Regenerable   :      62
+        Total         :     160
+            Global    :      32
+            Local     :     128
+        Regenerable   :      64
         Spilled       :       0
         
     Routine stack
         Variables     :      44 bytes*
-            Reads     :       6 [4.00e+02 ~ 12.3%]
+            Reads     :       6 [4.00e+02 ~ 6.9%]
             Writes    :      12 [0.00e+00 ~ 0.0%]
         Spills        :      40 bytes*
-            Reads     :      15 [5.00e+00 ~ 0.2%]
+            Reads     :      15 [5.00e+00 ~ 0.1%]
             Writes    :      15 [0.00e+00 ~ 0.0%]
     
     Notes

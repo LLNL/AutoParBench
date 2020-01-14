@@ -69,6 +69,7 @@ int main(int argc, char* argv[])
 /* CPU reference computation */  
     for (i=0;i< len; i++)
       sum2 += a[i]*b[i];
-  printf ("sum=%f sum2=%f\n", sum, sum2);
+ 
+  printf ("sum=%lf sum2=%lf\n", sum, sum2);
   return 0;
 }

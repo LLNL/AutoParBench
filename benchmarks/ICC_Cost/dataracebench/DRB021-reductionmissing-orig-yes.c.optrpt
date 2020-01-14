@@ -47,7 +47,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataraceben
    remark #25438: unrolled without remainder by 2  
    remark #25015: Estimate of max trip count of loop=10000
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB021-reductionmissing-orig-yes.c(63,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB021-reductionmissing-orig-yes.c(63,6)
       remark #25421: Loop eliminated in Collapsing 
 
    LOOP END

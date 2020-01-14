@@ -48,7 +48,6 @@ THE POSSIBILITY OF SUCH DAMAGE.
 Freshly allocated pointers do not alias to each other.
 */
 #include <stdlib.h>
-
 void setup(int N)
 {
   double * m_pdv_sum = (double* ) malloc (sizeof (double) * N );

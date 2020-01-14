@@ -24,7 +24,6 @@ static
 void init_array(int n, DATA_TYPE POLYBENCH_2D(C,N,N,n,n))
 {
   int i, j;
-
   for (i = 0; i < n; i++)
     for (j = 0; j < n; j++)
       C[i][j] = 42;
@@ -57,7 +56,6 @@ void kernel_template(int n, DATA_TYPE POLYBENCH_2D(C,N,N,n,n))
   for (i = 0; i < _PB_N; i++)
     for (j = 0; j < _PB_N; j++)
       C[i][j] += 42;
-
 }
 
 

@@ -56,7 +56,7 @@ int main(int argc,char *argv[])
     
 #pragma omp parallel for private (j)
     for (j = 0; j <= 19; j += 1) {
-      a[i][j] = (i * 20 + j);
+      a[i][j] += (i + j) + 0.1;
     }
   }
   for (i = 0; i <= 18; i += 1) {

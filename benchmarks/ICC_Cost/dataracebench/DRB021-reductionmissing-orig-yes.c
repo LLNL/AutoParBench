@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
   float u[100][100];
 
   for (i = 0; i < len; i++)
-    for (j = 0; j < len; j++)
+     for (j = 0; j < len; j++)
         u[i][j] = 0.5; 
 
   for (i = 0; i < len; i++)

@@ -274,8 +274,9 @@ c-------------------------------------------------------------------*/
 /* end of main iter inv pow meth */
   }
 {
-#if defined(_OPENMP)
-#endif /* _OPENMP */
+//#if defined(_OPENMP)
+//    nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */
 /* end parallel */
   }
   timer_stop(1);
@@ -285,6 +286,7 @@ c-------------------------------------------------------------------*/
   t = timer_read(1);
   printf(" Benchmark completed\n");
   epsilon = 1.0e-10;
+//epsilon = 1.0e-2;
   if (class != 'U') {
     if (fabs(zeta - zeta_verify_value) <= epsilon) {
       verified = 1;
@@ -310,7 +312,7 @@ c-------------------------------------------------------------------*/
    else {
     mflops = 0.0;
   }
-  c_print_results("CG",class,14000,0,0,15,nthreads,t,mflops,"          floating point",verified,"3.0 structured","01 Dec 2019","(none)","(none)","-lm","(none)","(none)","(none)","randdp");
+  c_print_results("CG",class,14000,0,0,15,nthreads,t,mflops,"          floating point",verified,"3.0 structured","14 Jan 2020","(none)","(none)","-lm","(none)","(none)","(none)","randdp");
 }
 /*--------------------------------------------------------------------
 c-------------------------------------------------------------------*/
@@ -475,7 +477,6 @@ c-------------------------------------------------------------------*/
 /*--------------------------------------------------------------------
 c  Obtain alpha = rho / (p.q)
 c-------------------------------------------------------------------*/
-//#pragma omp single	
       alpha = rho0 / d;
 /*--------------------------------------------------------------------
 c  Save a temporary of rho
@@ -499,11 +500,9 @@ c---------------------------------------------------------------------*/
 	for (j = 1; j <= lastcol-firstcol+1; j++) {*/
         rho = rho + r[j] * r[j];
       }
-//#pragma omp barrier
 /*--------------------------------------------------------------------
 c  Obtain beta:
 c-------------------------------------------------------------------*/
-//#pragma omp single	
       beta = rho / rho0;
 /*--------------------------------------------------------------------
 c  p = r + beta*p

@@ -64,10 +64,11 @@ int main()
     for (i=1;i<=1000;i++)
     {
       sum0=sum0+i;
-    }
-  }  
-      sum= sum+sum0;
-/*  reference calculation */
+    }   
+  }
+  sum= sum+sum0;
+
+  /*  reference calculation */
   for (i=1;i<=1000;i++)
   {
     sum1=sum1+i;

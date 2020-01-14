@@ -96,7 +96,7 @@ int indexSet[N] = {
 
 int main (int argc, char* argv[])
 {
-  double * base = (double*) malloc(sizeof(double)* (2013+1+12));
+  double * base = (double*) malloc(sizeof(double)* (2013+12+1));
   if (base == 0)
   {
     printf("Error, malloc() returns NULL. End execution. \n");
@@ -104,8 +104,9 @@ int main (int argc, char* argv[])
   }
 
   double * xa1 = base;
-  double * xa2 = base + 1;
+  double * xa2 = base + 12;
   int i;
+
   for (i =521; i<= 2025; ++i)
   {
     base[i]=0.0;
@@ -114,15 +115,15 @@ int main (int argc, char* argv[])
   for (i =0; i< N; ++i) // this level of loop has no loop carried dependence
   {
     int idx = indexSet[i];
-    xa1[idx]+= 4.0;
-    xa2[idx]+= 4.0;
+    xa1[idx]+= 1.0;
+    xa2[idx]+= 3.0;
   }
 
   // verify the results, no overlapping of xa1 vs. xa2, no addition happens to the same element twice
   for (i =521; i<= 2025; ++i)
   {
-    printf ("%f  ", base[i]);
-    //assert (base[i]!=4.0);
+    //printf ("%f  ", base[i]);
+    assert (base[i]!=4.0);
   }
 
   free (base);

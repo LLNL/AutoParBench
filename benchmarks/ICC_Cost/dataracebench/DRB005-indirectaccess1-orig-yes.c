@@ -102,9 +102,9 @@ int indexSet[N] = {
 
 int main (int argc, char* argv[])
 {
-  // max index value is 2013. +1 to ensure a reference like base[2015] 
-  // Pointers will never access the same offset as (xa2 = base + 2014).
-  double * base = (double*) malloc(sizeof(double)* (2013+1+2013+1));
+  // max index value is 2013. +12 to obtain a valid xa2[idx] after xa1+12.
+  // +1 to ensure a reference like base[2015] is within the bound.
+  double * base = (double*) malloc(sizeof(double)* (2013+12+1));
   if (base == 0)
   {
     printf ("Error in malloc(). Aborting ...\n");
@@ -112,7 +112,7 @@ int main (int argc, char* argv[])
   }
 
   double * xa1 = base;
-  double * xa2 = xa1 + 2014;
+  double * xa2 = xa1 + 12;
   int i;
 
   // initialize segments touched by indexSet
@@ -128,7 +128,7 @@ int main (int argc, char* argv[])
     xa2[idx]+= 3.0 + i;
   }
 
-  printf("x1[999]=%f xa2[1285]=%f\n", xa1[999], xa2[1285]);
+  printf("x1[999]=%lf xa2[1285]=%lf\n", xa1[999], xa2[1285]);
   free (base);
   return  0;
 }

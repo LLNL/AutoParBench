@@ -66,6 +66,7 @@ void initialize()
   dx = 2.0 / (n - 1);
   dy = 2.0 / (m - 1);
 /* Initialize initial condition and RHS */
+//#pragma omp parallel for private(i,j,xx,yy)
   
 #pragma omp parallel for private (xx,yy,i,j) firstprivate (n,m)
   for (i = 0; i <= n - 1; i += 1) {
@@ -128,6 +129,7 @@ void jacobi()
         error = error + resid * resid;
       }
     }
+/*  omp end parallel */
 /* Error check */
     k = k + 1;
     error = sqrt(error) / (n * m);

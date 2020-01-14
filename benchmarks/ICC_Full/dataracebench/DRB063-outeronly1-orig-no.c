@@ -50,13 +50,12 @@ Only the outmost loop can be parallelized.
 */
 int n=100, m=100;
 double b[100][100];
-#define N 100
 
 int init()
 {
   int i,j,k;
-  for (i = 0; i < N; i++) {
-    for (j = 0; j < N; j++) {
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < m; j++) {
       b[i][j] = i * j;
     }
   }
@@ -74,8 +73,8 @@ void foo()
 int print()
 {
   int i,j,k;
-  for (i = 0; i < N; i++) {
-    for (j = 0; j < N; j++) {
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < m; j++) {
       printf("%lf\n", b[i][j]);
     }
   }
@@ -89,3 +88,4 @@ int main()
   print();
   return 0;
 }
+

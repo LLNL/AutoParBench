@@ -96,8 +96,6 @@ The inner loop's loop iteration variable needs an explicit private() clause,
 otherwise it will be shared by default. 
 
 */
-#include <stdio.h>
-#include <stdlib.h>
 int a[100][100];
 int main()
 {
@@ -115,7 +113,7 @@ int main()
 		#pragma omp parallel for private(j)
 		for (j=0; j<100; j ++ )
 		{
-			a[i][j]=((i*200)+j);
+			a[i][j]=(i+j);
 		}
 	}
 	#pragma cetus private(i, j) 
@@ -141,7 +139,7 @@ int main()
 		#pragma loop name main#2#0 
 		for (j=0; j<100; j ++ )
 		{
-			printf("%d", a[i][j]);
+			printf("%d\n", a[i][j]);
 		}
 	}
 	_ret_val_0=0;

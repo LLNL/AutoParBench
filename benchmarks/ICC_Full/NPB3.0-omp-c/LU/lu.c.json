@@ -50,8 +50,8 @@
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"blts",
 "loop id":"5",
-"loop line":"224",
-"loop column":"2",
+"loop line":"235",
+"loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
@@ -61,8 +61,8 @@
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"blts",
 "loop id":"6",
-"loop line":"229",
-"loop column":"2",
+"loop line":"236",
+"loop column":"7",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
@@ -72,28 +72,6 @@
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"blts",
 "loop id":"7",
-"loop line":"235",
-"loop column":"5",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 8":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"blts",
-"loop id":"8",
-"loop line":"236",
-"loop column":"7",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 9":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"blts",
-"loop id":"9",
 "loop line":"256",
 "loop column":"7",
 "pragma type":"parallel for",
@@ -103,10 +81,10 @@
 "shared":["tmat"],
 "firstprivate":["ist","jst","_2","d","m","j","i"]
 },
-"loop - object id : 10":{
+"loop - object id : 8":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"blts",
-"loop id":"10",
+"loop id":"8",
 "loop line":"257",
 "loop column":"2",
 "pragma type":"parallel for",
@@ -116,11 +94,37 @@
 "shared":["tmat"],
 "firstprivate":["ist","jst","_2","d","m","j","i"]
 },
+"loop - object id : 9":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"blts",
+"loop id":"9",
+"loop line":"266",
+"loop column":"7",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"shared":["tmat"],
+"firstprivate":["_2","j","i"]
+},
+"loop - object id : 10":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"blts",
+"loop id":"10",
+"loop line":"278",
+"loop column":"7",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"shared":["tmat"],
+"firstprivate":["_2","j","i"]
+},
 "loop - object id : 11":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"blts",
 "loop id":"11",
-"loop line":"266",
+"loop line":"290",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -133,32 +137,6 @@
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"blts",
 "loop id":"12",
-"loop line":"278",
-"loop column":"7",
-"pragma type":"parallel for",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false",
-"shared":["tmat"],
-"firstprivate":["_2","j","i"]
-},
-"loop - object id : 13":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"blts",
-"loop id":"13",
-"loop line":"290",
-"loop column":"7",
-"pragma type":"parallel for",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false",
-"shared":["tmat"],
-"firstprivate":["_2","j","i"]
-},
-"loop - object id : 14":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"blts",
-"loop id":"14",
 "loop line":"302",
 "loop column":"7",
 "pragma type":"parallel for",
@@ -168,7 +146,7 @@
 "shared":["tmat"],
 "firstprivate":["_2","j","i"]
 },
-"loop - object id : 15":{
+"loop - object id : 13":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"buts",
 "loop id":"1",
@@ -180,7 +158,7 @@
 "multiversioned":"false",
 "firstprivate":["ist","iend","j","m","udz","k","v","omega","tv","jst","jend","i"]
 },
-"loop - object id : 16":{
+"loop - object id : 14":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"buts",
 "loop id":"2",
@@ -192,7 +170,7 @@
 "multiversioned":"false",
 "firstprivate":["ist","iend","j","m","udz","k","v","omega","tv","jst","jend","i"]
 },
-"loop - object id : 17":{
+"loop - object id : 15":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"buts",
 "loop id":"3",
@@ -204,7 +182,7 @@
 "multiversioned":"false",
 "firstprivate":["ist","iend","j","m","udz","k","v","omega","tv","jst","jend","i"]
 },
-"loop - object id : 18":{
+"loop - object id : 16":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"buts",
 "loop id":"4",
@@ -215,32 +193,10 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 19":{
+"loop - object id : 17":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"buts",
 "loop id":"5",
-"loop line":"456",
-"loop column":"7",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 20":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"buts",
-"loop id":"6",
-"loop line":"461",
-"loop column":"7",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 21":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"buts",
-"loop id":"7",
 "loop line":"467",
 "loop column":"5",
 "pragma type":"NULL",
@@ -248,10 +204,10 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 22":{
+"loop - object id : 18":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"buts",
-"loop id":"8",
+"loop id":"6",
 "loop line":"468",
 "loop column":"7",
 "pragma type":"NULL",
@@ -259,10 +215,10 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 23":{
+"loop - object id : 19":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"buts",
-"loop id":"9",
+"loop id":"7",
 "loop line":"485",
 "loop column":"7",
 "pragma type":"parallel for",
@@ -272,10 +228,10 @@
 "shared":["tmat"],
 "firstprivate":["iend","jend","_2","d","m","j","i"]
 },
-"loop - object id : 24":{
+"loop - object id : 20":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"buts",
-"loop id":"10",
+"loop id":"8",
 "loop line":"486",
 "loop column":"2",
 "pragma type":"parallel for",
@@ -285,10 +241,10 @@
 "shared":["tmat"],
 "firstprivate":["iend","jend","_2","d","m","j","i"]
 },
-"loop - object id : 25":{
+"loop - object id : 21":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"buts",
-"loop id":"11",
+"loop id":"9",
 "loop line":"495",
 "loop column":"7",
 "pragma type":"parallel for",
@@ -298,10 +254,10 @@
 "shared":["tmat"],
 "firstprivate":["_2","j","i"]
 },
-"loop - object id : 26":{
+"loop - object id : 22":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"buts",
-"loop id":"12",
+"loop id":"10",
 "loop line":"507",
 "loop column":"7",
 "pragma type":"parallel for",
@@ -311,10 +267,10 @@
 "shared":["tmat"],
 "firstprivate":["_2","j","i"]
 },
-"loop - object id : 27":{
+"loop - object id : 23":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"buts",
-"loop id":"13",
+"loop id":"11",
 "loop line":"519",
 "loop column":"7",
 "pragma type":"parallel for",
@@ -324,10 +280,10 @@
 "shared":["tmat"],
 "firstprivate":["_2","j","i"]
 },
-"loop - object id : 28":{
+"loop - object id : 24":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"buts",
-"loop id":"14",
+"loop id":"12",
 "loop line":"531",
 "loop column":"7",
 "pragma type":"parallel for",
@@ -337,10 +293,10 @@
 "shared":["tmat"],
 "firstprivate":["_2","j","i"]
 },
-"loop - object id : 29":{
+"loop - object id : 25":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"buts",
-"loop id":"15",
+"loop id":"13",
 "loop line":"629",
 "loop column":"7",
 "pragma type":"parallel for",
@@ -349,7 +305,7 @@
 "multiversioned":"false",
 "firstprivate":["iend","jend","tv","k","v","_2","j","i"]
 },
-"loop - object id : 30":{
+"loop - object id : 26":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"1",
@@ -361,7 +317,7 @@
 "multiversioned":"false",
 "firstprivate":["nx","m","k","j","nz","ny","i"]
 },
-"loop - object id : 31":{
+"loop - object id : 27":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"2",
@@ -373,7 +329,7 @@
 "multiversioned":"false",
 "firstprivate":["nx","m","k","j","nz","ny","i"]
 },
-"loop - object id : 32":{
+"loop - object id : 28":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"3",
@@ -385,7 +341,7 @@
 "multiversioned":"false",
 "firstprivate":["nx","m","k","j","nz","ny","i"]
 },
-"loop - object id : 33":{
+"loop - object id : 29":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"4",
@@ -397,7 +353,7 @@
 "multiversioned":"false",
 "firstprivate":["nx","m","k","j","nz","ny","i"]
 },
-"loop - object id : 34":{
+"loop - object id : 30":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"5",
@@ -409,7 +365,7 @@
 "multiversioned":"false",
 "firstprivate":["nx","m","k","j","xi","eta","zeta","nx0","ny0","nz","ny","i"]
 },
-"loop - object id : 35":{
+"loop - object id : 31":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"6",
@@ -421,7 +377,7 @@
 "multiversioned":"false",
 "firstprivate":["nx","m","k","j","xi","eta","zeta","nx0","ny0","nz","ny","i"]
 },
-"loop - object id : 36":{
+"loop - object id : 32":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"7",
@@ -433,7 +389,7 @@
 "multiversioned":"false",
 "firstprivate":["nx","m","k","j","xi","eta","zeta","nx0","ny0","nz","ny","i"]
 },
-"loop - object id : 37":{
+"loop - object id : 33":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"8",
@@ -444,7 +400,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 38":{
+"loop - object id : 34":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"9",
@@ -456,7 +412,7 @@
 "multiversioned":"false",
 "firstprivate":["L2","nx","j","k","u21","q","nz","jst","jend","i"]
 },
-"loop - object id : 39":{
+"loop - object id : 35":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"10",
@@ -468,7 +424,7 @@
 "multiversioned":"false",
 "firstprivate":["L2","nx","j","k","u21","q","nz","jst","jend","i"]
 },
-"loop - object id : 40":{
+"loop - object id : 36":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"11",
@@ -480,7 +436,7 @@
 "multiversioned":"false",
 "firstprivate":["L2","nx","j","k","u21","q","nz","jst","jend","i"]
 },
-"loop - object id : 41":{
+"loop - object id : 37":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"12",
@@ -492,7 +448,7 @@
 "multiversioned":"false",
 "firstprivate":["jend","m","i","jst","k","u21i","u31i","u41i","u51i","tmp","u21im1","u31im1","u41im1","u51im1","tx2","ist","iend","tx3","L2","tx1","dx1","dx2","dx3","dx4","dx5","dssp","iend1","nx","nz","j"]
 },
-"loop - object id : 42":{
+"loop - object id : 38":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"13",
@@ -504,7 +460,7 @@
 "multiversioned":"false",
 "firstprivate":["jend","m","i","jst","k","u21i","u31i","u41i","u51i","tmp","u21im1","u31im1","u41im1","u51im1","tx2","ist","iend","tx3","L2","tx1","dx1","dx2","dx3","dx4","dx5","dssp","iend1","nx","nz","j"]
 },
-"loop - object id : 43":{
+"loop - object id : 39":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"14",
@@ -516,7 +472,7 @@
 "multiversioned":"false",
 "firstprivate":["jend","m","i","jst","k","u21i","u31i","u41i","u51i","tmp","u21im1","u31im1","u41im1","u51im1","tx2","ist","iend","tx3","L2","tx1","dx1","dx2","dx3","dx4","dx5","dssp","iend1","nx","nz","j"]
 },
-"loop - object id : 44":{
+"loop - object id : 40":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"15",
@@ -528,7 +484,7 @@
 "multiversioned":"false",
 "firstprivate":["jend","m","i","jst","k","u21i","u31i","u41i","u51i","tmp","u21im1","u31im1","u41im1","u51im1","tx2","ist","iend","tx3","L2","tx1","dx1","dx2","dx3","dx4","dx5","dssp","iend1","nx","nz","j"]
 },
-"loop - object id : 45":{
+"loop - object id : 41":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"16",
@@ -540,7 +496,7 @@
 "multiversioned":"false",
 "firstprivate":["jend","m","i","jst","k","u21i","u31i","u41i","u51i","tmp","u21im1","u31im1","u41im1","u51im1","tx2","ist","iend","tx3","L2","tx1","dx1","dx2","dx3","dx4","dx5","dssp","iend1","nx","nz","j"]
 },
-"loop - object id : 46":{
+"loop - object id : 42":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"17",
@@ -552,7 +508,7 @@
 "multiversioned":"false",
 "firstprivate":["jend","m","i","jst","k","u21i","u31i","u41i","u51i","tmp","u21im1","u31im1","u41im1","u51im1","tx2","ist","iend","tx3","L2","tx1","dx1","dx2","dx3","dx4","dx5","dssp","iend1","nx","nz","j"]
 },
-"loop - object id : 47":{
+"loop - object id : 43":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"18",
@@ -563,7 +519,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 48":{
+"loop - object id : 44":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"19",
@@ -574,7 +530,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 49":{
+"loop - object id : 45":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"20",
@@ -585,7 +541,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 50":{
+"loop - object id : 46":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"21",
@@ -596,7 +552,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 51":{
+"loop - object id : 47":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"22",
@@ -608,11 +564,11 @@
 "multiversioned":"false",
 "firstprivate":["iend","ist","j","k","ny","u31","q","nz","L2","i"]
 },
-"loop - object id : 52":{
+"loop - object id : 48":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"23",
-"loop line":"895",
+"loop line":"896",
 "loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -620,11 +576,11 @@
 "multiversioned":"false",
 "firstprivate":["iend","ist","j","k","ny","u31","q","nz","L2","i"]
 },
-"loop - object id : 53":{
+"loop - object id : 49":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"24",
-"loop line":"896",
+"loop line":"897",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -632,12 +588,60 @@
 "multiversioned":"false",
 "firstprivate":["iend","ist","j","k","ny","u31","q","nz","L2","i"]
 },
-"loop - object id : 54":{
+"loop - object id : 50":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"25",
-"loop line":"912",
+"loop line":"913",
 "loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","jend1","ny","nz","i"]
+},
+"loop - object id : 51":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"erhs",
+"loop id":"26",
+"loop line":"914",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","jend1","ny","nz","i"]
+},
+"loop - object id : 52":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"erhs",
+"loop id":"27",
+"loop line":"915",
+"loop column":"7",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","jend1","ny","nz","i"]
+},
+"loop - object id : 53":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"erhs",
+"loop id":"28",
+"loop line":"916",
+"loop column":"2",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","jend1","ny","nz","i"]
+},
+"loop - object id : 54":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"erhs",
+"loop id":"29",
+"loop line":"921",
+"loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
@@ -647,9 +651,9 @@
 "loop - object id : 55":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
-"loop id":"26",
-"loop line":"913",
-"loop column":"5",
+"loop id":"30",
+"loop line":"948",
+"loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
@@ -659,57 +663,53 @@
 "loop - object id : 56":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
-"loop id":"27",
-"loop line":"914",
+"loop id":"31",
+"loop line":"978",
 "loop column":"7",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","jend1","ny","nz","i"]
+"multiversioned":"false"
 },
 "loop - object id : 57":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
-"loop id":"28",
-"loop line":"915",
-"loop column":"2",
-"pragma type":"parallel for",
+"loop id":"32",
+"loop line":"993",
+"loop column":"7",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","jend1","ny","nz","i"]
+"multiversioned":"false"
 },
 "loop - object id : 58":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
-"loop id":"29",
-"loop line":"920",
-"loop column":"7",
-"pragma type":"parallel for",
+"loop id":"33",
+"loop line":"994",
+"loop column":"2",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","jend1","ny","nz","i"]
+"multiversioned":"false"
 },
 "loop - object id : 59":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
-"loop id":"30",
-"loop line":"947",
+"loop id":"34",
+"loop line":"1004",
 "loop column":"7",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","jend1","ny","nz","i"]
+"multiversioned":"false"
 },
 "loop - object id : 60":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
-"loop id":"31",
-"loop line":"977",
-"loop column":"7",
+"loop id":"35",
+"loop line":"1022",
+"loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
@@ -718,9 +718,9 @@
 "loop - object id : 61":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
-"loop id":"32",
-"loop line":"992",
-"loop column":"7",
+"loop id":"36",
+"loop line":"1023",
+"loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
@@ -729,52 +729,8 @@
 "loop - object id : 62":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
-"loop id":"33",
-"loop line":"993",
-"loop column":"2",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 63":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"erhs",
-"loop id":"34",
-"loop line":"1003",
-"loop column":"7",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 64":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"erhs",
-"loop id":"35",
-"loop line":"1021",
-"loop column":"3",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 65":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"erhs",
-"loop id":"36",
-"loop line":"1022",
-"loop column":"5",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 66":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"erhs",
 "loop id":"37",
-"loop line":"1023",
+"loop line":"1024",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -782,11 +738,11 @@
 "multiversioned":"false",
 "firstprivate":["nz","ist","jst","u41","q","k","j","i"]
 },
-"loop - object id : 67":{
+"loop - object id : 63":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"38",
-"loop line":"1037",
+"loop line":"1038",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -794,11 +750,11 @@
 "multiversioned":"false",
 "firstprivate":["nz","ist","jst","m","tz2","k","j","i"]
 },
-"loop - object id : 68":{
+"loop - object id : 64":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"39",
-"loop line":"1038",
+"loop line":"1039",
 "loop column":"2",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -806,11 +762,11 @@
 "multiversioned":"false",
 "firstprivate":["nz","ist","jst","m","tz2","k","j","i"]
 },
-"loop - object id : 69":{
+"loop - object id : 65":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"40",
-"loop line":"1043",
+"loop line":"1044",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -818,11 +774,11 @@
 "multiversioned":"false",
 "firstprivate":["nz","ist","jst","u21k","u31k","u41k","u51k","tmp","u21km1","u31km1","u41km1","u51km1","tz3","k","j","i"]
 },
-"loop - object id : 70":{
+"loop - object id : 66":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"41",
-"loop line":"1070",
+"loop line":"1071",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -830,22 +786,22 @@
 "multiversioned":"false",
 "firstprivate":["nz","ist","jst","tz1","dz1","dz2","tz3","dz3","dz4","dz5","k","j","i"]
 },
-"loop - object id : 71":{
+"loop - object id : 67":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"42",
-"loop line":"1100",
+"loop line":"1101",
 "loop column":"7",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 72":{
+"loop - object id : 68":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"43",
-"loop line":"1112",
+"loop line":"1113",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -853,11 +809,11 @@
 "multiversioned":"false",
 "firstprivate":["nz","ist","jst","m","dssp","k","j","i"]
 },
-"loop - object id : 73":{
+"loop - object id : 69":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"44",
-"loop line":"1113",
+"loop line":"1114",
 "loop column":"2",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -865,11 +821,56 @@
 "multiversioned":"false",
 "firstprivate":["nz","ist","jst","m","dssp","k","j","i"]
 },
-"loop - object id : 74":{
+"loop - object id : 70":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"erhs",
 "loop id":"45",
-"loop line":"1123",
+"loop line":"1124",
+"loop column":"7",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 71":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"error",
+"loop id":"1",
+"loop line":"1158",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["m"]
+},
+"loop - object id : 72":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"error",
+"loop id":"2",
+"loop line":"1162",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 73":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"error",
+"loop id":"3",
+"loop line":"1164",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 74":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"error",
+"loop id":"4",
+"loop line":"1166",
 "loop column":"7",
 "pragma type":"NULL",
 "ordered":"false",
@@ -879,53 +880,8 @@
 "loop - object id : 75":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"error",
-"loop id":"1",
-"loop line":"1157",
-"loop column":"3",
-"pragma type":"parallel for",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false",
-"firstprivate":["m"]
-},
-"loop - object id : 76":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"error",
-"loop id":"2",
-"loop line":"1161",
-"loop column":"3",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 77":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"error",
-"loop id":"3",
-"loop line":"1163",
-"loop column":"5",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 78":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"error",
-"loop id":"4",
-"loop line":"1165",
-"loop column":"7",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 79":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"error",
 "loop id":"5",
-"loop line":"1167",
+"loop line":"1168",
 "loop column":"2",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -934,11 +890,11 @@
 "shared":["u000ijk"],
 "firstprivate":["ist","tmp","m","jst","k","j","i"]
 },
-"loop - object id : 80":{
+"loop - object id : 76":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"error",
 "loop id":"6",
-"loop line":"1175",
+"loop line":"1176",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -946,11 +902,11 @@
 "multiversioned":"false",
 "firstprivate":["nz0","ny0","nx0","m"]
 },
-"loop - object id : 81":{
+"loop - object id : 77":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"exact",
 "loop id":"1",
-"loop line":"1201",
+"loop line":"1202",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -958,11 +914,11 @@
 "multiversioned":"false",
 "firstprivate":["zeta","eta","xi","u000ijk","m"]
 },
-"loop - object id : 82":{
+"loop - object id : 78":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"jacld",
 "loop id":"1",
-"loop line":"1240",
+"loop line":"1241",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -970,11 +926,11 @@
 "multiversioned":"false",
 "firstprivate":["iend","_2","ist","j","tmp1","tmp2","tmp3","k","dz1","tz1","dy1","ty1","dx1","tx1","dt","dz2","dy2","dx2","dz3","dy3","dx3","dz4","dy4","dx4","dz5","dy5","dx5","tz2","ty2","tx2","jst","jend","i"]
 },
-"loop - object id : 83":{
+"loop - object id : 79":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"jacld",
 "loop id":"2",
-"loop line":"1241",
+"loop line":"1242",
 "loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -982,11 +938,11 @@
 "multiversioned":"false",
 "firstprivate":["iend","_2","ist","j","tmp1","tmp2","tmp3","k","dz1","tz1","dy1","ty1","dx1","tx1","dt","dz2","dy2","dx2","dz3","dy3","dx3","dz4","dy4","dx4","dz5","dy5","dx5","tz2","ty2","tx2","jst","jend","i"]
 },
-"loop - object id : 84":{
+"loop - object id : 80":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"jacld",
 "loop id":"3",
-"loop line":"1254",
+"loop line":"1255",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -994,11 +950,11 @@
 "multiversioned":"false",
 "firstprivate":["iend","_2","ist","j","tmp1","tmp2","tmp3","k","dz1","tz1","dy1","ty1","dx1","tx1","dt","dz2","dy2","dx2","dz3","dy3","dx3","dz4","dy4","dx4","dz5","dy5","dx5","tz2","ty2","tx2","jst","jend","i"]
 },
-"loop - object id : 85":{
+"loop - object id : 81":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"jacu",
 "loop id":"1",
-"loop line":"1608",
+"loop line":"1609",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1006,11 +962,11 @@
 "multiversioned":"false",
 "firstprivate":["ist","_2","iend","j","tmp1","tmp2","tmp3","k","dz1","tz1","dy1","ty1","dx1","tx1","dt","dz2","dy2","dx2","dz3","dy3","dx3","dz4","dy4","dx4","dz5","dy5","dx5","tx2","ty2","tz2","jst","jend","i"]
 },
-"loop - object id : 86":{
+"loop - object id : 82":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"jacu",
 "loop id":"2",
-"loop line":"1609",
+"loop line":"1610",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1018,11 +974,11 @@
 "multiversioned":"false",
 "firstprivate":["ist","_2","iend","j","tmp1","tmp2","tmp3","k","dz1","tz1","dy1","ty1","dx1","tx1","dt","dz2","dy2","dx2","dz3","dy3","dx3","dz4","dy4","dx4","dz5","dy5","dx5","tx2","ty2","tz2","jst","jend","i"]
 },
-"loop - object id : 87":{
+"loop - object id : 83":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"jacu",
 "loop id":"3",
-"loop line":"1626",
+"loop line":"1627",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1030,11 +986,11 @@
 "multiversioned":"false",
 "firstprivate":["ist","_2","iend","j","tmp1","tmp2","tmp3","k","dz1","tz1","dy1","ty1","dx1","tx1","dt","dz2","dy2","dx2","dz3","dy3","dx3","dz4","dy4","dx4","dz5","dy5","dx5","tx2","ty2","tz2","jst","jend","i"]
 },
-"loop - object id : 88":{
+"loop - object id : 84":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"l2norm",
 "loop id":"1",
-"loop line":"1981",
+"loop line":"1982",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1042,11 +998,11 @@
 "multiversioned":"false",
 "firstprivate":["sum","m"]
 },
-"loop - object id : 89":{
+"loop - object id : 85":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"l2norm",
 "loop id":"2",
-"loop line":"1985",
+"loop line":"1986",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1055,11 +1011,11 @@
 "firstprivate":["iend","ist","j","k","v","nz0","jst","jend","i"],
 "reduction":["sum4","sum3","sum2","sum1","sum0"]
 },
-"loop - object id : 90":{
+"loop - object id : 86":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"l2norm",
 "loop id":"3",
-"loop line":"1986",
+"loop line":"1987",
 "loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1068,11 +1024,11 @@
 "firstprivate":["iend","ist","j","k","v","nz0","jst","jend","i"],
 "reduction":["sum4","sum3","sum2","sum1","sum0"]
 },
-"loop - object id : 91":{
+"loop - object id : 87":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"l2norm",
 "loop id":"4",
-"loop line":"1987",
+"loop line":"1988",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1081,11 +1037,11 @@
 "firstprivate":["iend","ist","j","k","v","nz0","jst","jend","i"],
 "reduction":["sum4","sum3","sum2","sum1","sum0"]
 },
-"loop - object id : 92":{
+"loop - object id : 88":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"l2norm",
 "loop id":"5",
-"loop line":"2005",
+"loop line":"2006",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1093,11 +1049,11 @@
 "multiversioned":"false",
 "firstprivate":["nz0","ny0","nx0","sum","m"]
 },
-"loop - object id : 93":{
+"loop - object id : 89":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
 "loop id":"1",
-"loop line":"2054",
+"loop line":"2055",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1105,263 +1061,263 @@
 "multiversioned":"false",
 "shared":["phi1","phi2"],
 "firstprivate":["k","i"]
+},
+"loop - object id : 90":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"pintgr",
+"loop id":"2",
+"loop line":"2056",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"shared":["phi1","phi2"],
+"firstprivate":["k","i"]
+},
+"loop - object id : 91":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"pintgr",
+"loop id":"3",
+"loop line":"2061",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"shared":["phi1","phi2"],
+"firstprivate":["ibeg","ifin","j","jbeg","ki1","ki2","jfin","i"]
+},
+"loop - object id : 92":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"pintgr",
+"loop id":"4",
+"loop line":"2063",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"shared":["phi1","phi2"],
+"firstprivate":["ibeg","ifin","j","jbeg","ki1","ki2","jfin","i"]
+},
+"loop - object id : 93":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"pintgr",
+"loop id":"5",
+"loop line":"2086",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"shared":["phi2","phi1"],
+"firstprivate":["ibeg","ifin1","j","jbeg","jfin1","i"],
+"reduction":["frc1"]
 },
 "loop - object id : 94":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"2",
-"loop line":"2055",
+"loop id":"6",
+"loop line":"2087",
 "loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":["phi1","phi2"],
-"firstprivate":["k","i"]
+"shared":["phi2","phi1"],
+"firstprivate":["ibeg","ifin1","j","jbeg","jfin1","i"],
+"reduction":["frc1"]
 },
 "loop - object id : 95":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"3",
-"loop line":"2060",
+"loop id":"7",
+"loop line":"2104",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
 "shared":["phi1","phi2"],
-"firstprivate":["ibeg","ifin","j","jbeg","ki1","ki2","jfin","i"]
+"firstprivate":["k","i"]
 },
 "loop - object id : 96":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"4",
-"loop line":"2062",
+"loop id":"8",
+"loop line":"2105",
 "loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
 "shared":["phi1","phi2"],
-"firstprivate":["ibeg","ifin","j","jbeg","ki1","ki2","jfin","i"]
+"firstprivate":["k","i"]
 },
 "loop - object id : 97":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"5",
-"loop line":"2085",
-"loop column":"3",
+"loop id":"9",
+"loop line":"2112",
+"loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":["phi2","phi1"],
-"firstprivate":["ibeg","ifin1","j","jbeg","jfin1","i"],
-"reduction":["frc1"]
+"shared":["phi1"],
+"firstprivate":["ibeg","ifin","k","jbeg","ki1","ki2","i"]
 },
 "loop - object id : 98":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"6",
-"loop line":"2086",
-"loop column":"5",
+"loop id":"10",
+"loop line":"2114",
+"loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":["phi2","phi1"],
-"firstprivate":["ibeg","ifin1","j","jbeg","jfin1","i"],
-"reduction":["frc1"]
+"shared":["phi1"],
+"firstprivate":["ibeg","ifin","k","jbeg","ki1","ki2","i"]
 },
 "loop - object id : 99":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"7",
-"loop line":"2103",
-"loop column":"3",
+"loop id":"11",
+"loop line":"2126",
+"loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":["phi1","phi2"],
-"firstprivate":["k","i"]
+"shared":["phi2"],
+"firstprivate":["ibeg","ifin","k","jfin","ki1","ki2","i"]
 },
 "loop - object id : 100":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"8",
-"loop line":"2104",
-"loop column":"5",
+"loop id":"12",
+"loop line":"2128",
+"loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":["phi1","phi2"],
-"firstprivate":["k","i"]
+"shared":["phi2"],
+"firstprivate":["ibeg","ifin","k","jfin","ki1","ki2","i"]
 },
 "loop - object id : 101":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"9",
-"loop line":"2111",
-"loop column":"5",
+"loop id":"13",
+"loop line":"2140",
+"loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":["phi1"],
-"firstprivate":["ibeg","ifin","k","jbeg","ki1","ki2","i"]
+"shared":["phi2","phi1"],
+"firstprivate":["ibeg","ifin1","k","ki1","ki2","i"],
+"reduction":["frc2"]
 },
 "loop - object id : 102":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"10",
-"loop line":"2113",
-"loop column":"7",
+"loop id":"14",
+"loop line":"2141",
+"loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":["phi1"],
-"firstprivate":["ibeg","ifin","k","jbeg","ki1","ki2","i"]
+"shared":["phi2","phi1"],
+"firstprivate":["ibeg","ifin1","k","ki1","ki2","i"],
+"reduction":["frc2"]
 },
 "loop - object id : 103":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"11",
-"loop line":"2125",
-"loop column":"5",
+"loop id":"15",
+"loop line":"2159",
+"loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":["phi2"],
-"firstprivate":["ibeg","ifin","k","jfin","ki1","ki2","i"]
+"shared":["phi1","phi2"],
+"firstprivate":["k","i"]
 },
 "loop - object id : 104":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"12",
-"loop line":"2127",
-"loop column":"7",
+"loop id":"16",
+"loop line":"2160",
+"loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":["phi2"],
-"firstprivate":["ibeg","ifin","k","jfin","ki1","ki2","i"]
+"shared":["phi1","phi2"],
+"firstprivate":["k","i"]
 },
 "loop - object id : 105":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"13",
-"loop line":"2139",
-"loop column":"3",
+"loop id":"17",
+"loop line":"2167",
+"loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":["phi2","phi1"],
-"firstprivate":["ibeg","ifin1","k","ki1","ki2","i"],
-"reduction":["frc2"]
+"shared":["phi1"],
+"firstprivate":["jbeg","jfin","k","ibeg","ki1","ki2","j"]
 },
 "loop - object id : 106":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"14",
-"loop line":"2140",
-"loop column":"5",
+"loop id":"18",
+"loop line":"2169",
+"loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":["phi2","phi1"],
-"firstprivate":["ibeg","ifin1","k","ki1","ki2","i"],
-"reduction":["frc2"]
+"shared":["phi1"],
+"firstprivate":["jbeg","jfin","k","ibeg","ki1","ki2","j"]
 },
 "loop - object id : 107":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"15",
-"loop line":"2158",
-"loop column":"3",
+"loop id":"19",
+"loop line":"2181",
+"loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":["phi1","phi2"],
-"firstprivate":["k","i"]
+"shared":["phi2"],
+"firstprivate":["jbeg","jfin","k","ifin","ki1","ki2","j"]
 },
 "loop - object id : 108":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"16",
-"loop line":"2159",
-"loop column":"5",
+"loop id":"20",
+"loop line":"2183",
+"loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"shared":["phi1","phi2"],
-"firstprivate":["k","i"]
+"shared":["phi2"],
+"firstprivate":["jbeg","jfin","k","ifin","ki1","ki2","j"]
 },
 "loop - object id : 109":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
-"loop id":"17",
-"loop line":"2166",
-"loop column":"5",
-"pragma type":"parallel for",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false",
-"shared":["phi1"],
-"firstprivate":["jbeg","jfin","k","ibeg","ki1","ki2","j"]
-},
-"loop - object id : 110":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"pintgr",
-"loop id":"18",
-"loop line":"2168",
-"loop column":"7",
-"pragma type":"parallel for",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false",
-"shared":["phi1"],
-"firstprivate":["jbeg","jfin","k","ibeg","ki1","ki2","j"]
-},
-"loop - object id : 111":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"pintgr",
-"loop id":"19",
-"loop line":"2180",
-"loop column":"5",
-"pragma type":"parallel for",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false",
-"shared":["phi2"],
-"firstprivate":["jbeg","jfin","k","ifin","ki1","ki2","j"]
-},
-"loop - object id : 112":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"pintgr",
-"loop id":"20",
-"loop line":"2182",
-"loop column":"7",
-"pragma type":"parallel for",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false",
-"shared":["phi2"],
-"firstprivate":["jbeg","jfin","k","ifin","ki1","ki2","j"]
-},
-"loop - object id : 113":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"pintgr",
 "loop id":"21",
-"loop line":"2194",
+"loop line":"2195",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1371,11 +1327,11 @@
 "firstprivate":["jbeg","jfin1","k","ki1","ki2","j"],
 "reduction":["frc3"]
 },
-"loop - object id : 114":{
+"loop - object id : 110":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"pintgr",
 "loop id":"22",
-"loop line":"2195",
+"loop line":"2196",
 "loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1385,11 +1341,55 @@
 "firstprivate":["jbeg","jfin1","k","ki1","ki2","j"],
 "reduction":["frc3"]
 },
-"loop - object id : 115":{
+"loop - object id : 111":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"read_input",
 "loop id":"1",
-"loop line":"2236",
+"loop line":"2237",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 112":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"read_input",
+"loop id":"2",
+"loop line":"2239",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 113":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"read_input",
+"loop id":"3",
+"loop line":"2241",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 114":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"read_input",
+"loop id":"4",
+"loop line":"2243",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 115":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"read_input",
+"loop id":"5",
+"loop line":"2245",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
@@ -1399,8 +1399,8 @@
 "loop - object id : 116":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"read_input",
-"loop id":"2",
-"loop line":"2238",
+"loop id":"6",
+"loop line":"2247",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
@@ -1410,8 +1410,8 @@
 "loop - object id : 117":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"read_input",
-"loop id":"3",
-"loop line":"2240",
+"loop id":"7",
+"loop line":"2249",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
@@ -1421,8 +1421,8 @@
 "loop - object id : 118":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"read_input",
-"loop id":"4",
-"loop line":"2242",
+"loop id":"8",
+"loop line":"2251",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
@@ -1432,8 +1432,8 @@
 "loop - object id : 119":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"read_input",
-"loop id":"5",
-"loop line":"2244",
+"loop id":"9",
+"loop line":"2253",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
@@ -1443,8 +1443,8 @@
 "loop - object id : 120":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"read_input",
-"loop id":"6",
-"loop line":"2246",
+"loop id":"10",
+"loop line":"2256",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
@@ -1454,8 +1454,8 @@
 "loop - object id : 121":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"read_input",
-"loop id":"7",
-"loop line":"2248",
+"loop id":"11",
+"loop line":"2258",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
@@ -1465,8 +1465,8 @@
 "loop - object id : 122":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"read_input",
-"loop id":"8",
-"loop line":"2250",
+"loop id":"12",
+"loop line":"2260",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
@@ -1476,52 +1476,8 @@
 "loop - object id : 123":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"read_input",
-"loop id":"9",
-"loop line":"2252",
-"loop column":"5",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 124":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"read_input",
-"loop id":"10",
-"loop line":"2255",
-"loop column":"5",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 125":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"read_input",
-"loop id":"11",
-"loop line":"2257",
-"loop column":"5",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 126":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"read_input",
-"loop id":"12",
-"loop line":"2259",
-"loop column":"5",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 127":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"read_input",
 "loop id":"13",
-"loop line":"2267",
+"loop line":"2268",
 "loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1529,11 +1485,11 @@
 "multiversioned":"false",
 "firstprivate":["_2"]
 },
-"loop - object id : 128":{
+"loop - object id : 124":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"1",
-"loop line":"2326",
+"loop line":"2327",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1541,11 +1497,11 @@
 "multiversioned":"false",
 "firstprivate":["nx","j","k","m","nz","ny","i"]
 },
-"loop - object id : 129":{
+"loop - object id : 125":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"2",
-"loop line":"2327",
+"loop line":"2328",
 "loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1553,11 +1509,11 @@
 "multiversioned":"false",
 "firstprivate":["nx","j","k","m","nz","ny","i"]
 },
-"loop - object id : 130":{
+"loop - object id : 126":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"3",
-"loop line":"2328",
+"loop line":"2329",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1565,60 +1521,108 @@
 "multiversioned":"false",
 "firstprivate":["nx","j","k","m","nz","ny","i"]
 },
-"loop - object id : 131":{
+"loop - object id : 127":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"4",
-"loop line":"2329",
+"loop line":"2330",
+"loop column":"8",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["nx","j","k","m","nz","ny","i"]
+},
+"loop - object id : 128":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"rhs",
+"loop id":"5",
+"loop line":"2344",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["L2","nx","j","k","u21","q","nz","jst","jend","i"]
+},
+"loop - object id : 129":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"rhs",
+"loop id":"6",
+"loop line":"2345",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["L2","nx","j","k","u21","q","nz","jst","jend","i"]
+},
+"loop - object id : 130":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"rhs",
+"loop id":"7",
+"loop line":"2346",
+"loop column":"7",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["L2","nx","j","k","u21","q","nz","jst","jend","i"]
+},
+"loop - object id : 131":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"rhs",
+"loop id":"8",
+"loop line":"2364",
+"loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["jend","m","i","jst","k","u21i","u31i","u41i","u51i","tmp","u21im1","u31im1","u41im1","u51im1","tx2","ist","iend","tx3","L2","tx1","dx1","dx2","dx3","dx4","dx5","dssp","nx","nz","j"]
+},
+"loop - object id : 132":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"rhs",
+"loop id":"9",
+"loop line":"2365",
+"loop column":"5",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["jend","m","i","jst","k","u21i","u31i","u41i","u51i","tmp","u21im1","u31im1","u41im1","u51im1","tx2","ist","iend","tx3","L2","tx1","dx1","dx2","dx3","dx4","dx5","dssp","nx","nz","j"]
+},
+"loop - object id : 133":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"rhs",
+"loop id":"10",
+"loop line":"2366",
+"loop column":"7",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["jend","m","i","jst","k","u21i","u31i","u41i","u51i","tmp","u21im1","u31im1","u41im1","u51im1","tx2","ist","iend","tx3","L2","tx1","dx1","dx2","dx3","dx4","dx5","dssp","nx","nz","j"]
+},
+"loop - object id : 134":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"rhs",
+"loop id":"11",
+"loop line":"2367",
 "loop column":"2",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"firstprivate":["nx","j","k","m","nz","ny","i"]
-},
-"loop - object id : 132":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"rhs",
-"loop id":"5",
-"loop line":"2343",
-"loop column":"3",
-"pragma type":"parallel for",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false",
-"firstprivate":["L2","nx","j","k","u21","q","nz","jst","jend","i"]
-},
-"loop - object id : 133":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"rhs",
-"loop id":"6",
-"loop line":"2344",
-"loop column":"5",
-"pragma type":"parallel for",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false",
-"firstprivate":["L2","nx","j","k","u21","q","nz","jst","jend","i"]
-},
-"loop - object id : 134":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"rhs",
-"loop id":"7",
-"loop line":"2345",
-"loop column":"7",
-"pragma type":"parallel for",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false",
-"firstprivate":["L2","nx","j","k","u21","q","nz","jst","jend","i"]
+"firstprivate":["jend","m","i","jst","k","u21i","u31i","u41i","u51i","tmp","u21im1","u31im1","u41im1","u51im1","tx2","ist","iend","tx3","L2","tx1","dx1","dx2","dx3","dx4","dx5","dssp","nx","nz","j"]
 },
 "loop - object id : 135":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
-"loop id":"8",
-"loop line":"2363",
-"loop column":"3",
+"loop id":"12",
+"loop line":"2375",
+"loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
@@ -1628,9 +1632,9 @@
 "loop - object id : 136":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
-"loop id":"9",
-"loop line":"2364",
-"loop column":"5",
+"loop id":"13",
+"loop line":"2401",
+"loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
@@ -1640,100 +1644,52 @@
 "loop - object id : 137":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
-"loop id":"10",
-"loop line":"2365",
+"loop id":"14",
+"loop line":"2431",
 "loop column":"7",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["jend","m","i","jst","k","u21i","u31i","u41i","u51i","tmp","u21im1","u31im1","u41im1","u51im1","tx2","ist","iend","tx3","L2","tx1","dx1","dx2","dx3","dx4","dx5","dssp","nx","nz","j"]
+"multiversioned":"false"
 },
 "loop - object id : 138":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
-"loop id":"11",
-"loop line":"2366",
-"loop column":"2",
-"pragma type":"parallel for",
+"loop id":"15",
+"loop line":"2446",
+"loop column":"7",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["jend","m","i","jst","k","u21i","u31i","u41i","u51i","tmp","u21im1","u31im1","u41im1","u51im1","tx2","ist","iend","tx3","L2","tx1","dx1","dx2","dx3","dx4","dx5","dssp","nx","nz","j"]
+"multiversioned":"false"
 },
 "loop - object id : 139":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
-"loop id":"12",
-"loop line":"2374",
-"loop column":"7",
-"pragma type":"parallel for",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false",
-"firstprivate":["jend","m","i","jst","k","u21i","u31i","u41i","u51i","tmp","u21im1","u31im1","u41im1","u51im1","tx2","ist","iend","tx3","L2","tx1","dx1","dx2","dx3","dx4","dx5","dssp","nx","nz","j"]
-},
-"loop - object id : 140":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"rhs",
-"loop id":"13",
-"loop line":"2400",
-"loop column":"7",
-"pragma type":"parallel for",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false",
-"firstprivate":["jend","m","i","jst","k","u21i","u31i","u41i","u51i","tmp","u21im1","u31im1","u41im1","u51im1","tx2","ist","iend","tx3","L2","tx1","dx1","dx2","dx3","dx4","dx5","dssp","nx","nz","j"]
-},
-"loop - object id : 141":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"rhs",
-"loop id":"14",
-"loop line":"2430",
-"loop column":"7",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 142":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"rhs",
-"loop id":"15",
-"loop line":"2445",
-"loop column":"7",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 143":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"rhs",
 "loop id":"16",
-"loop line":"2446",
+"loop line":"2447",
 "loop column":"2",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 144":{
+"loop - object id : 140":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"17",
-"loop line":"2457",
+"loop line":"2458",
 "loop column":"7",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 145":{
+"loop - object id : 141":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"18",
-"loop line":"2478",
+"loop line":"2479",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1741,11 +1697,11 @@
 "multiversioned":"false",
 "firstprivate":["iend","ist","j","k","ny","u31","q","nz","L2","i"]
 },
-"loop - object id : 146":{
+"loop - object id : 142":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"19",
-"loop line":"2479",
+"loop line":"2480",
 "loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1753,11 +1709,11 @@
 "multiversioned":"false",
 "firstprivate":["iend","ist","j","k","ny","u31","q","nz","L2","i"]
 },
-"loop - object id : 147":{
+"loop - object id : 143":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"20",
-"loop line":"2480",
+"loop line":"2481",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1765,12 +1721,60 @@
 "multiversioned":"false",
 "firstprivate":["iend","ist","j","k","ny","u31","q","nz","L2","i"]
 },
-"loop - object id : 148":{
+"loop - object id : 144":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"21",
-"loop line":"2497",
+"loop line":"2498",
 "loop column":"3",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","ny","nz","i"]
+},
+"loop - object id : 145":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"rhs",
+"loop id":"22",
+"loop line":"2499",
+"loop column":"7",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","ny","nz","i"]
+},
+"loop - object id : 146":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"rhs",
+"loop id":"23",
+"loop line":"2500",
+"loop column":"7",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","ny","nz","i"]
+},
+"loop - object id : 147":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"rhs",
+"loop id":"24",
+"loop line":"2501",
+"loop column":"2",
+"pragma type":"parallel for",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false",
+"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","ny","nz","i"]
+},
+"loop - object id : 148":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"rhs",
+"loop id":"25",
+"loop line":"2508",
+"loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
@@ -1780,9 +1784,9 @@
 "loop - object id : 149":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
-"loop id":"22",
-"loop line":"2498",
-"loop column":"5",
+"loop id":"26",
+"loop line":"2533",
+"loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
 "offload":"false",
@@ -1792,57 +1796,53 @@
 "loop - object id : 150":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
-"loop id":"23",
-"loop line":"2499",
+"loop id":"27",
+"loop line":"2569",
 "loop column":"7",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","ny","nz","i"]
+"multiversioned":"false"
 },
 "loop - object id : 151":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
-"loop id":"24",
-"loop line":"2500",
-"loop column":"2",
-"pragma type":"parallel for",
+"loop id":"28",
+"loop line":"2583",
+"loop column":"7",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","ny","nz","i"]
+"multiversioned":"false"
 },
 "loop - object id : 152":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
-"loop id":"25",
-"loop line":"2507",
-"loop column":"7",
-"pragma type":"parallel for",
+"loop id":"29",
+"loop line":"2584",
+"loop column":"2",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","ny","nz","i"]
+"multiversioned":"false"
 },
 "loop - object id : 153":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
-"loop id":"26",
-"loop line":"2532",
+"loop id":"30",
+"loop line":"2594",
 "loop column":"7",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["iend","m","j","ist","k","u21j","u31j","u41j","u51j","tmp","u21jm1","u31jm1","u41jm1","u51jm1","ty2","jst","jend","ty3","L2","ty1","dy1","dy2","dy3","dy4","dy5","dssp","ny","nz","i"]
+"multiversioned":"false"
 },
 "loop - object id : 154":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
-"loop id":"27",
-"loop line":"2568",
-"loop column":"7",
+"loop id":"31",
+"loop line":"2611",
+"loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
@@ -1851,9 +1851,9 @@
 "loop - object id : 155":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
-"loop id":"28",
-"loop line":"2582",
-"loop column":"7",
+"loop id":"32",
+"loop line":"2612",
+"loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
@@ -1862,52 +1862,8 @@
 "loop - object id : 156":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
-"loop id":"29",
-"loop line":"2583",
-"loop column":"2",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 157":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"rhs",
-"loop id":"30",
-"loop line":"2593",
-"loop column":"7",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 158":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"rhs",
-"loop id":"31",
-"loop line":"2610",
-"loop column":"3",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 159":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"rhs",
-"loop id":"32",
-"loop line":"2611",
-"loop column":"5",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 160":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"rhs",
 "loop id":"33",
-"loop line":"2612",
+"loop line":"2613",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1915,11 +1871,11 @@
 "multiversioned":"false",
 "firstprivate":["nz","ist","jst","u41","q","k","j","i"]
 },
-"loop - object id : 161":{
+"loop - object id : 157":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"34",
-"loop line":"2627",
+"loop line":"2628",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1927,11 +1883,11 @@
 "multiversioned":"false",
 "firstprivate":["nz","ist","jst","m","tz2","k","j","i"]
 },
-"loop - object id : 162":{
+"loop - object id : 158":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"35",
-"loop line":"2628",
+"loop line":"2629",
 "loop column":"2",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1939,11 +1895,11 @@
 "multiversioned":"false",
 "firstprivate":["nz","ist","jst","m","tz2","k","j","i"]
 },
-"loop - object id : 163":{
+"loop - object id : 159":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"36",
-"loop line":"2634",
+"loop line":"2635",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1951,11 +1907,11 @@
 "multiversioned":"false",
 "firstprivate":["nz","ist","jst","u21k","u31k","u41k","u51k","tmp","u21km1","u31km1","u41km1","u51km1","tz3","k","j","i"]
 },
-"loop - object id : 164":{
+"loop - object id : 160":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"37",
-"loop line":"2660",
+"loop line":"2661",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1963,22 +1919,22 @@
 "multiversioned":"false",
 "firstprivate":["nz","ist","jst","tz1","dz1","dz2","tz3","dz3","dz4","dz5","k","j","i"]
 },
-"loop - object id : 165":{
+"loop - object id : 161":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"38",
-"loop line":"2690",
+"loop line":"2691",
 "loop column":"7",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 166":{
+"loop - object id : 162":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"39",
-"loop line":"2702",
+"loop line":"2703",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1986,11 +1942,11 @@
 "multiversioned":"false",
 "firstprivate":["nz","ist","jst","m","dssp","k","j","i"]
 },
-"loop - object id : 167":{
+"loop - object id : 163":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"40",
-"loop line":"2703",
+"loop line":"2704",
 "loop column":"2",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -1998,12 +1954,56 @@
 "multiversioned":"false",
 "firstprivate":["nz","ist","jst","m","dssp","k","j","i"]
 },
-"loop - object id : 168":{
+"loop - object id : 164":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"rhs",
 "loop id":"41",
-"loop line":"2713",
+"loop line":"2714",
 "loop column":"7",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 165":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"setbv",
+"loop id":"1",
+"loop line":"2751",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 166":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"setbv",
+"loop id":"2",
+"loop line":"2753",
+"loop column":"5",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 167":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"setbv",
+"loop id":"3",
+"loop line":"2763",
+"loop column":"3",
+"pragma type":"NULL",
+"ordered":"false",
+"offload":"false",
+"multiversioned":"false"
+},
+"loop - object id : 168":{
+"file":"./NPB3.0-omp-c/LU/lu.c",
+"function":"setbv",
+"loop id":"4",
+"loop line":"2765",
+"loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
@@ -2012,8 +2012,8 @@
 "loop - object id : 169":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"setbv",
-"loop id":"1",
-"loop line":"2750",
+"loop id":"5",
+"loop line":"2770",
 "loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",
@@ -2023,8 +2023,8 @@
 "loop - object id : 170":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"setbv",
-"loop id":"2",
-"loop line":"2752",
+"loop id":"6",
+"loop line":"2772",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
@@ -2034,8 +2034,8 @@
 "loop - object id : 171":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"setbv",
-"loop id":"3",
-"loop line":"2762",
+"loop id":"7",
+"loop line":"2780",
 "loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",
@@ -2045,8 +2045,8 @@
 "loop - object id : 172":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"setbv",
-"loop id":"4",
-"loop line":"2764",
+"loop id":"8",
+"loop line":"2782",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
@@ -2056,8 +2056,8 @@
 "loop - object id : 173":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"setbv",
-"loop id":"5",
-"loop line":"2769",
+"loop id":"9",
+"loop line":"2787",
 "loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",
@@ -2067,8 +2067,8 @@
 "loop - object id : 174":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"setbv",
-"loop id":"6",
-"loop line":"2771",
+"loop id":"10",
+"loop line":"2789",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
@@ -2077,9 +2077,9 @@
 },
 "loop - object id : 175":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"setbv",
-"loop id":"7",
-"loop line":"2779",
+"function":"setcoeff",
+"loop id":"1",
+"loop line":"2857",
 "loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",
@@ -2088,10 +2088,10 @@
 },
 "loop - object id : 176":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"setbv",
-"loop id":"8",
-"loop line":"2781",
-"loop column":"5",
+"function":"setcoeff",
+"loop id":"2",
+"loop line":"2874",
+"loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
@@ -2099,9 +2099,9 @@
 },
 "loop - object id : 177":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"setbv",
-"loop id":"9",
-"loop line":"2786",
+"function":"setcoeff",
+"loop id":"3",
+"loop line":"2891",
 "loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",
@@ -2110,10 +2110,10 @@
 },
 "loop - object id : 178":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"setbv",
-"loop id":"10",
-"loop line":"2788",
-"loop column":"5",
+"function":"setcoeff",
+"loop id":"4",
+"loop line":"2908",
+"loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
@@ -2122,8 +2122,8 @@
 "loop - object id : 179":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"setcoeff",
-"loop id":"1",
-"loop line":"2856",
+"loop id":"5",
+"loop line":"2925",
 "loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",
@@ -2132,9 +2132,9 @@
 },
 "loop - object id : 180":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"setcoeff",
-"loop id":"2",
-"loop line":"2873",
+"function":"setiv",
+"loop id":"1",
+"loop line":"2964",
 "loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",
@@ -2143,10 +2143,10 @@
 },
 "loop - object id : 181":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"setcoeff",
-"loop id":"3",
-"loop line":"2890",
-"loop column":"3",
+"function":"setiv",
+"loop id":"2",
+"loop line":"2966",
+"loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
@@ -2154,10 +2154,10 @@
 },
 "loop - object id : 182":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"setcoeff",
-"loop id":"4",
-"loop line":"2907",
-"loop column":"3",
+"function":"setiv",
+"loop id":"3",
+"loop line":"2970",
+"loop column":"2",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
@@ -2165,53 +2165,9 @@
 },
 "loop - object id : 183":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"setcoeff",
-"loop id":"5",
-"loop line":"2924",
-"loop column":"3",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 184":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"setiv",
-"loop id":"1",
-"loop line":"2963",
-"loop column":"3",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 185":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"setiv",
-"loop id":"2",
-"loop line":"2965",
-"loop column":"5",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 186":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
-"function":"setiv",
-"loop id":"3",
-"loop line":"2969",
-"loop column":"2",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 187":{
-"file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"setiv",
 "loop id":"4",
-"loop line":"2979",
+"loop line":"2980",
 "loop column":"6",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -2220,11 +2176,11 @@
 "shared":["ue_nx0jk","ue_1jk","ue_iny0k","ue_i1k","ue_ijnz","ue_ij1"],
 "firstprivate":["pxi","peta","pzeta","xi","eta","zeta","m","i","k","j"]
 },
-"loop - object id : 188":{
+"loop - object id : 184":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"1",
-"loop line":"3026",
+"loop line":"3027",
 "loop column":"3",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -2232,11 +2188,11 @@
 "multiversioned":"false",
 "firstprivate":["j","k","m","i"]
 },
-"loop - object id : 189":{
+"loop - object id : 185":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"2",
-"loop line":"3027",
+"loop line":"3028",
 "loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -2244,11 +2200,11 @@
 "multiversioned":"false",
 "firstprivate":["j","k","m","i"]
 },
-"loop - object id : 190":{
+"loop - object id : 186":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"3",
-"loop line":"3028",
+"loop line":"3029",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -2256,11 +2212,11 @@
 "multiversioned":"false",
 "firstprivate":["j","k","m","i"]
 },
-"loop - object id : 191":{
+"loop - object id : 187":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"4",
-"loop line":"3029",
+"loop line":"3030",
 "loop column":"2",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -2268,22 +2224,22 @@
 "multiversioned":"false",
 "firstprivate":["j","k","m","i"]
 },
-"loop - object id : 192":{
+"loop - object id : 188":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"5",
-"loop line":"3060",
+"loop line":"3061",
 "loop column":"3",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 193":{
+"loop - object id : 189":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"6",
-"loop line":"3071",
+"loop line":"3072",
 "loop column":"5",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -2291,11 +2247,11 @@
 "multiversioned":"false",
 "firstprivate":["iend","ist","j","k","m","dt","nz","jst","jend","i","istep"]
 },
-"loop - object id : 194":{
+"loop - object id : 190":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"7",
-"loop line":"3072",
+"loop line":"3073",
 "loop column":"7",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -2303,11 +2259,11 @@
 "multiversioned":"false",
 "firstprivate":["iend","ist","j","k","m","dt","nz","jst","jend","i","istep"]
 },
-"loop - object id : 195":{
+"loop - object id : 191":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"8",
-"loop line":"3073",
+"loop line":"3074",
 "loop column":"2",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -2315,11 +2271,11 @@
 "multiversioned":"false",
 "firstprivate":["iend","ist","j","k","m","dt","nz","jst","jend","i","istep"]
 },
-"loop - object id : 196":{
+"loop - object id : 192":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"9",
-"loop line":"3074",
+"loop line":"3075",
 "loop column":"4",
 "pragma type":"parallel for",
 "ordered":"false",
@@ -2327,29 +2283,29 @@
 "multiversioned":"false",
 "firstprivate":["iend","ist","j","k","m","dt","nz","jst","jend","i","istep"]
 },
-"loop - object id : 197":{
+"loop - object id : 193":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"10",
-"loop line":"3081",
+"loop line":"3082",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 198":{
+"loop - object id : 194":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"11",
-"loop line":"3099",
+"loop line":"3100",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 199":{
+"loop - object id : 195":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"12",
@@ -2361,7 +2317,7 @@
 "multiversioned":"false",
 "firstprivate":["iend","ist","j","k","m","tmp","nz","jst","jend","i","istep"]
 },
-"loop - object id : 200":{
+"loop - object id : 196":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"13",
@@ -2373,7 +2329,7 @@
 "multiversioned":"false",
 "firstprivate":["iend","ist","j","k","m","tmp","nz","jst","jend","i","istep"]
 },
-"loop - object id : 201":{
+"loop - object id : 197":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"14",
@@ -2385,7 +2341,7 @@
 "multiversioned":"false",
 "firstprivate":["iend","ist","j","k","m","tmp","nz","jst","jend","i","istep"]
 },
-"loop - object id : 202":{
+"loop - object id : 198":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"ssor",
 "loop id":"15",
@@ -2397,7 +2353,7 @@
 "multiversioned":"false",
 "firstprivate":["iend","ist","j","k","m","tmp","nz","jst","jend","i","istep"]
 },
-"loop - object id : 203":{
+"loop - object id : 199":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"verify",
 "loop id":"1",
@@ -2410,7 +2366,7 @@
 "shared":["xcrref","xceref"],
 "firstprivate":["m"]
 },
-"loop - object id : 204":{
+"loop - object id : 200":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"verify",
 "loop id":"2",
@@ -2423,7 +2379,7 @@
 "shared":["xcrref","xcrdif","xceref","xcedif"],
 "firstprivate":["xcr","xce","m"]
 },
-"loop - object id : 205":{
+"loop - object id : 201":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"verify",
 "loop id":"3",
@@ -2434,7 +2390,7 @@
 "offload":"false",
 "multiversioned":"false"
 },
-"loop - object id : 206":{
+"loop - object id : 202":{
 "file":"./NPB3.0-omp-c/LU/lu.c",
 "function":"verify",
 "loop id":"4",

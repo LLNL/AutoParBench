@@ -42,7 +42,6 @@ A loop with loop-carried anti-dependence.
 Data race pair: a[i+1]@67:10 vs. a[i]@67:5
 */
 #include <stdlib.h>
-#include <stdio.h>
 #include <omp.h> 
 
 int main(int argc,char *argv[])

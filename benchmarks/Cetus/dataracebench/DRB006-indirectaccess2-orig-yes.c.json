@@ -9,14 +9,13 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"induction variable":"i",
-"private":["i"]
+"induction variable":"i"
 },
 "loop - object id : 2":{
 "file":"./dataracebench/DRB006-indirectaccess2-orig-yes.c",
 "function":"main",
 "loop id":"2",
-"loop line":"139",
+"loop line":"137",
 "loop column":"2",
 "pragma type":"NULL",
 "ordered":"false",

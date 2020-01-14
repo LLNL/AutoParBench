@@ -88,8 +88,6 @@ IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 
 */
-#include <stdio.h>
-#include <stdlib.h>
 /*
 
 One dimension array computation
@@ -109,7 +107,7 @@ int main()
 	#pragma omp parallel for private(i)
 	for (i=0; i<100; i ++ )
 	{
-		a[i]=i;
+		a[i]=(i%120);
 	}
 	#pragma cetus private(i) 
 	#pragma loop name main#1 

@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
   int i;
   int len=100;
 
-  int numNodes=len, numNodes2=10; 
+  int numNodes=len, numNodes2=0; 
   int x[100]; 
 
   // initialize x[]
@@ -70,7 +70,7 @@ int main(int argc, char* argv[])
 
   for (i=numNodes-1 ; i>-1 ; --i) {
     if (x[i]<=0) {
-      numNodes2--;
+      numNodes2-- ;
     }
   }
   printf ("numNodes2 = %d\n", numNodes2);

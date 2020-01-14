@@ -35,7 +35,7 @@ Begin optimization report for: main()
 INLINE REPORT: (main()) [1/2=50.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB084-threadprivatemissing-orig-yes.c(65,1)
   -> (69,6) foo(int) (isz = 0) (sz = 5)
      [[ Unable to inline callsite  <1>]]
-  -> EXTERN: (78,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (77,3) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
@@ -47,8 +47,8 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB084-threadprivatemissing-orig-yes.c(74,3)
-   remark #25084: Preprocess Loopnests: Moving Out Store    [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB084-threadprivatemissing-orig-yes.c(76,5) ]
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB084-threadprivatemissing-orig-yes.c(73,3)
+   remark #25084: Preprocess Loopnests: Moving Out Store    [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB084-threadprivatemissing-orig-yes.c(75,5) ]
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ } private={ } firstprivate={ i } lastprivate={ } firstlastprivate={ } reduction={ sum1 }
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
@@ -58,7 +58,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB084-threadprivatemissing-orig-yes.c(74,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB084-threadprivatemissing-orig-yes.c(73,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 8  
    remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
@@ -66,7 +66,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB084-threadprivatemissing-orig-yes.c(74,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB084-threadprivatemissing-orig-yes.c(73,3)
 <Remainder>
    remark #25436: completely unrolled by 7  
 LOOP END

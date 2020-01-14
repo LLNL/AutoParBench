@@ -27,9 +27,10 @@
 #include "../common/npb-C.h"
 /* global variables */
 #include "applu.h"
-#if defined(_OPENMP)
+//#if defined(_OPENMP)
 /* for thread synchronization */
-#endif /* _OPENMP */
+//static boolean flag[ISIZ1/2*2+1];
+//#endif /* _OPENMP */
 /* function declarations */
 #include <omp.h> 
 static void blts(int nx,int ny,int nz,int k,double omega,double v[64][65][65][5],double ldz[64][64][5][5],double ldy[64][64][5][5],double ldx[64][64][5][5],double d[64][64][5][5],int ist,int iend,int jst,int jend,int nx0,int ny0);
@@ -90,8 +91,9 @@ c   compute the forcing term based on prescribed exact solution
 --------------------------------------------------------------------*/
   erhs();
 {
-#if defined(_OPENMP)  
-#endif /* _OPENMP */  
+//#if defined(_OPENMP)  
+//  nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */  
   }
 /*--------------------------------------------------------------------
 c   perform the SSOR iterations
@@ -110,7 +112,7 @@ c   verification test
 --------------------------------------------------------------------*/
   verify(rsdnm,errnm,frc,&class,&verified);
   mflops = ((double )itmax) * (1984.77 * ((double )nx0) * ((double )ny0) * ((double )nz0) - 10923.3 * (((double )(nx0 + ny0 + nz0)) / 3.0 * (((double )(nx0 + ny0 + nz0)) / 3.0)) + 27770.9 * ((double )(nx0 + ny0 + nz0)) / 3.0 - 144010.0) / (maxtime * 1000000.0);
-  c_print_results("LU",class,nx0,ny0,nz0,itmax,nthreads,maxtime,mflops,"          floating point",verified,"3.0 structured","01 Dec 2019","(none)","(none)","-lm","(none)","(none)","(none)","(none)");
+  c_print_results("LU",class,nx0,ny0,nz0,itmax,nthreads,maxtime,mflops,"          floating point",verified,"3.0 structured","14 Jan 2020","(none)","(none)","-lm","(none)","(none)","(none)","(none)");
 }
 /*--------------------------------------------------------------------
 --------------------------------------------------------------------*/
@@ -152,8 +154,18 @@ c  local variables
     }
   }
   for (i = ist; i <= iend; i += 1) {
-#if defined(_OPENMP)      
-#endif /* _OPENMP */
+//#if defined(_OPENMP)      
+//   if (i != ist) {
+//	while (flag[i-1] == 0) {
+//	    ;
+//	}
+//    }
+//    if (i != iend) {
+//	while (flag[i] == 1) {
+//	    ;
+//	}
+//    }
+//#endif /* _OPENMP */
     for (j = jst; j <= jend; j += 1) {
       
 #pragma omp parallel for private (m) firstprivate (omega)
@@ -241,8 +253,10 @@ c   back substitution
       v[i][j][k][0] = v[i][j][k][0] - tmat[0][1] * v[i][j][k][1] - tmat[0][2] * v[i][j][k][2] - tmat[0][3] * v[i][j][k][3] - tmat[0][4] * v[i][j][k][4];
       v[i][j][k][0] = v[i][j][k][0] / tmat[0][0];
     }
-#if defined(_OPENMP)    
-#endif /* _OPENMP */    
+//#if defined(_OPENMP)    
+//   if (i != ist) flag[i-1] = 0;
+//    if (i != iend) flag[i] = 1;
+//#endif /* _OPENMP */    
   }
 }
 /*--------------------------------------------------------------------
@@ -285,8 +299,18 @@ c  local variables
     }
   }
   for (i = iend; i >= ist; i += -1) {
-#if defined(_OPENMP)      
-#endif /* _OPENMP */
+//#if defined(_OPENMP)      
+//    if (i != iend) {
+//      while (flag[i+1] == 0) {
+//	;
+//      }
+////    }
+//    if (i != ist) {
+//      while (flag[i] == 1) {
+//	;
+//     }
+//    }
+//#endif /* _OPENMP */
     for (j = jend; j >= jst; j += -1) {
       
 #pragma omp parallel for private (m) firstprivate (omega)
@@ -377,8 +401,10 @@ c   back substitution
       v[i][j][k][3] = v[i][j][k][3] - tv[i][j][3];
       v[i][j][k][4] = v[i][j][k][4] - tv[i][j][4];
     }
-#if defined(_OPENMP)    
-#endif /* _OPENMP */    
+//#if defined(_OPENMP)    
+//    if (i != iend) flag[i+1] = 0;
+//    if (i != ist) flag[i] = 1;
+//#endif /* _OPENMP */    
   }
 }
 /*--------------------------------------------------------------------
@@ -612,6 +638,7 @@ c   eta-direction flux differences
     
 #pragma omp parallel for private (q,u31,i,j,k) firstprivate (L1,L2)
     for (i = ist; i <= iend; i += 1) {
+//firstprivate(iend ,ist ,k ,ny ,u31 ,q ,nz ,L2 ,i ) 
       
 #pragma omp parallel for private (q,u31,j,k)
       for (j = L1; j <= L2; j += 1) {
@@ -1030,15 +1057,17 @@ c  local variables
   r43 = 4.0 / 3.0;
   c1345 = 1.40e+00 * 1.00e-01 * 1.00e+00 * 1.40e+00;
   c34 = 1.00e-01 * 1.00e+00;
-#if defined(_OPENMP)  
-#else	  
+//#if defined(_OPENMP)  
   
-#pragma omp parallel for private (tmp1,tmp2,tmp3,i,j) firstprivate (iend,jst,jend)
-  for (i = ist; i <= iend; i += 1) {
+#pragma omp parallel for private (tmp1,tmp2,tmp3,i,j) firstprivate (ist,jst,jend)
+  for (i = iend; i >= ist; i += -1) {
     
 #pragma omp parallel for private (tmp1,tmp2,tmp3,j) firstprivate (k,r43,c1345,c34,tx1,tx2,ty1,ty2,tz1,tz2,dx1,dx2,dx3,dx4,dx5,dy1,dy2,dy3,dy4,dy5,dz1,dz2,dz3,dz4,dz5,dt)
-    for (j = jst; j <= jend; j += 1) {
-#endif	
+    for (j = jend; j >= jst; j += -1) {
+/*#else	  
+  for (i = ist; i <= iend; i++) {
+    for (j = jst; j <= jend; j++) {
+#endif*/
 /*--------------------------------------------------------------------
 c   form the block daigonal
 --------------------------------------------------------------------*/

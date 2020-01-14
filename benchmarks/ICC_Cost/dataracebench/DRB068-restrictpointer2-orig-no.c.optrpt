@@ -32,27 +32,27 @@ Begin optimization report for: main()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main()) [1/4=25.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(84,1)
-  -> EXTERN: (88,14) malloc(size_t)
-  -> EXTERN: (91,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
-  -> EXTERN: (95,14) malloc(size_t)
-  -> EXTERN: (98,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
-  -> EXTERN: (102,14) malloc(size_t)
-  -> EXTERN: (105,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
-  -> (109,3) init(int, int *__restrict__, int *__restrict__, int *__restrict__) (isz = 21) (sz = 32)
+INLINE REPORT: (main()) [1/4=25.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(85,1)
+  -> EXTERN: (89,14) malloc(size_t)
+  -> EXTERN: (92,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (96,14) malloc(size_t)
+  -> EXTERN: (99,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (103,14) malloc(size_t)
+  -> EXTERN: (106,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> (110,3) init(int, int *__restrict__, int *__restrict__, int *__restrict__) (isz = 21) (sz = 32)
      [[ Unable to inline callsite  <1>]]
-  -> (110,3) foo(int, int *__restrict__, int *__restrict__, int *__restrict__) (isz = 19) (sz = 30)
+  -> (111,3) foo(int, int *__restrict__, int *__restrict__, int *__restrict__) (isz = 19) (sz = 30)
      [[ Unable to inline callsite  <1>]]
-  -> (111,3) print(int, int *__restrict__, int *__restrict__, int *__restrict__) (isz = 24) (sz = 35)
+  -> (112,3) print(int, int *__restrict__, int *__restrict__, int *__restrict__) (isz = 24) (sz = 35)
      [[ Unable to inline callsite  <1>]]
-  -> EXTERN: (113,3) free(void *)
   -> EXTERN: (114,3) free(void *)
   -> EXTERN: (115,3) free(void *)
+  -> EXTERN: (116,3) free(void *)
 
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(84,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c:84
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(85,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c:85
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -87,25 +87,25 @@ Begin optimization report for: foo(int, int *__restrict__, int *__restrict__, in
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (foo(int, int *__restrict__, int *__restrict__, int *__restrict__)) [2/4=50.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(69,1)
+INLINE REPORT: (foo(int, int *__restrict__, int *__restrict__, int *__restrict__)) [2/4=50.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(70,1)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(71,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(72,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(71,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(72,3)
 <Remainder>
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(69,1):remark #34051: REGISTER ALLOCATION : [foo] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c:69
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(70,1):remark #34051: REGISTER ALLOCATION : [foo] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c:70
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -140,22 +140,22 @@ Begin optimization report for: print(int, int *__restrict__, int *__restrict__, 
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (print(int, int *__restrict__, int *__restrict__, int *__restrict__)) [3/4=75.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(76,1)
-  -> EXTERN: (79,5) printf(const char *__restrict__, ...)
+INLINE REPORT: (print(int, int *__restrict__, int *__restrict__, int *__restrict__)) [3/4=75.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(77,1)
+  -> EXTERN: (80,5) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(78,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(79,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(79,5) ]
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(80,5) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(76,1):remark #34051: REGISTER ALLOCATION : [print] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c:76
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(77,1):remark #34051: REGISTER ALLOCATION : [print] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c:77
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -190,26 +190,26 @@ Begin optimization report for: init(int, int *__restrict__, int *__restrict__, i
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (init(int, int *__restrict__, int *__restrict__, int *__restrict__)) [4/4=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(59,1)
+INLINE REPORT: (init(int, int *__restrict__, int *__restrict__, int *__restrict__)) [4/4=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(60,1)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(61,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(62,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 8  
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(61,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(62,3)
 <Remainder>
    remark #25436: completely unrolled by 7  
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(59,1):remark #34051: REGISTER ALLOCATION : [init] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c:59
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c(60,1):remark #34051: REGISTER ALLOCATION : [init] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB068-restrictpointer2-orig-no.c:60
 
     Hardware registers
         Reserved     :    2[ rsp rip]

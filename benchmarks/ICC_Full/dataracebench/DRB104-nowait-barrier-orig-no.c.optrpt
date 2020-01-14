@@ -34,9 +34,9 @@ Begin optimization report for: main()
 
 INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB104-nowait-barrier-orig-no.c(56,1)
   -> EXTERN: (59,7) _vla_alloc(long)
-  -> EXTERN: (70,3) __assert_fail(const char *, const char *, unsigned int, const char *)
-  -> EXTERN: (71,3) _vla_free(void *, long)
-  -> EXTERN: (71,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (69,3) __assert_fail(const char *, const char *, unsigned int, const char *)
+  -> EXTERN: (70,3) _vla_free(void *, long)
+  -> EXTERN: (70,3) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
@@ -50,7 +50,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB104-nowait-barrier-orig-no.c(65,5)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB104-nowait-barrier-orig-no.c(65,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ } private={ } firstprivate={ a i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
@@ -69,13 +69,13 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB104-nowait-barrier-orig-no.c(65,5)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB104-nowait-barrier-orig-no.c(65,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB104-nowait-barrier-orig-no.c(65,5)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB104-nowait-barrier-orig-no.c(65,3)
 <Remainder>
    remark #25015: Estimate of max trip count of loop=1000
 LOOP END

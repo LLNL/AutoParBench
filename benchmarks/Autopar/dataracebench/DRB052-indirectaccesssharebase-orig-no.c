@@ -53,13 +53,13 @@ int indexSet[180] = {(521), (523), (525), (527), (529), (531), (547), (549), (55
 
 int main(int argc,char *argv[])
 {
-  double *base = (double *)(malloc(sizeof(double ) * (2013 + 1 + 12)));
+  double *base = (double *)(malloc(sizeof(double ) * (2013 + 12 + 1)));
   if (base == 0) {
     printf("Error, malloc() returns NULL. End execution. \n");
     return 1;
   }
   double *xa1 = base;
-  double *xa2 = base + 1;
+  double *xa2 = base + 12;
   int i;
   
 #pragma omp parallel for private (i)
@@ -69,13 +69,19 @@ int main(int argc,char *argv[])
 // this level of loop has no loop carried dependence
   for (i = 0; i <= 179; i += 1) {
     int idx = indexSet[i];
-    xa1[idx] += 4.0;
-    xa2[idx] += 4.0;
+    xa1[idx] += 1.0;
+    xa2[idx] += 3.0;
   }
 // verify the results, no overlapping of xa1 vs. xa2, no addition happens to the same element twice
   for (i = 521; i <= 2025; i += 1) {
-    printf("%f  ",base[i]);
-//assert (base[i]!=4.0);
+//printf ("%f  ", base[i]);
+    (((void )(sizeof(((base[i] != 4.0?1 : 0))))) , ((
+{
+      if (base[i] != 4.0) 
+        ;
+       else 
+        __assert_fail("base[i]!=4.0","DRB052-indirectaccesssharebase-orig-no.c",126,__PRETTY_FUNCTION__);
+    })));
   }
   free(base);
   return 0;

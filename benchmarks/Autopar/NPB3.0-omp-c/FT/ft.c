@@ -144,8 +144,9 @@ c-------------------------------------------------------------------*/
   }
   verify(256,256,128,niter,&verified,&class);
 {
-#if defined(_OPENMP)
-#endif /* _OPENMP */    
+//#if defined(_OPENMP)
+//    nthreads = omp_get_num_threads();
+//#endif /* _OPENMP */    
 /* end parallel */
   }
   timer_stop(0);
@@ -156,7 +157,7 @@ c-------------------------------------------------------------------*/
    else {
     mflops = 0.0;
   }
-  c_print_results("FT",class,256,256,128,niter,nthreads,total_time,mflops,"          floating point",verified,"3.0 structured","01 Dec 2019","(none)","(none)","-lm","(none)","(none)","(none)","randdp");
+  c_print_results("FT",class,256,256,128,niter,nthreads,total_time,mflops,"          floating point",verified,"3.0 structured","14 Jan 2020","(none)","(none)","-lm","(none)","(none)","(none)","randdp");
   if (0 == 1) 
     print_timers();
 }

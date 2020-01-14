@@ -36,35 +36,14 @@
 "offload":"false",
 "multiversioned":"false",
 "induction variable":"i",
-"private":["i","j"]
+"private":["i","j"],
+"firstprivate":["n","m"]
 },
 "loop - object id : 4":{
 "file":"./dataracebench/DRB037-truedepseconddimension-orig-yes.c",
 "function":"main",
 "loop id":"4",
 "loop line":"68",
-"loop column":"5",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 5":{
-"file":"./dataracebench/DRB037-truedepseconddimension-orig-yes.c",
-"function":"main",
-"loop id":"5",
-"loop line":"72",
-"loop column":"3",
-"pragma type":"NULL",
-"ordered":"false",
-"offload":"false",
-"multiversioned":"false"
-},
-"loop - object id : 6":{
-"file":"./dataracebench/DRB037-truedepseconddimension-orig-yes.c",
-"function":"main",
-"loop id":"6",
-"loop line":"73",
 "loop column":"5",
 "pragma type":"NULL",
 "ordered":"false",

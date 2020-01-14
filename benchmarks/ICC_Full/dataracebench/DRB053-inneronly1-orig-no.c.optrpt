@@ -34,7 +34,7 @@ Begin optimization report for: main(int, char **)
 
 INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(53,1)
   -> EXTERN: (57,3) memset(void *, int, size_t)
-  -> EXTERN: (71,7) printf(const char *, ...)
+  -> EXTERN: (73,7) printf(const char *, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
@@ -53,12 +53,12 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    LOOP END
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(63,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(65,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed ANTI dependence between a[i+1][j] (65:7) and a[i][j] (65:7)
+   remark #17106: parallel dependence: assumed ANTI dependence between a[i+1][j] (67:7) and a[i][j] (67:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(64,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(66,5)
       remark #17109: LOOP WAS AUTO-PARALLELIZED
       remark #17101: parallel loop shared={ a } private={ } firstprivate={ j i } lastprivate={ } firstlastprivate={ } reduction={ }
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
@@ -66,15 +66,15 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    LOOP END
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(69,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(71,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *, ...) (71:7) and call:printf(const char *, ...) (71:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *, ...) (71:7) and call:printf(const char *, ...) (71:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *, ...) (73:7) and call:printf(const char *, ...) (73:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *, ...) (73:7) and call:printf(const char *, ...) (73:7)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(70,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(72,5)
       remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(71,7) ]
+      remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(73,7) ]
       remark #15344: loop was not vectorized: vector dependence prevents vectorization
    LOOP END
 LOOP END
@@ -91,13 +91,13 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    LOOP END
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(64,5)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(66,5)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 8  
    remark #25015: Estimate of max trip count of loop=20
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(64,5)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB053-inneronly1-orig-no.c(66,5)
 <Remainder>
    remark #25436: completely unrolled by 7  
 LOOP END
@@ -114,16 +114,16 @@ LOOP END
         Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
         
     Routine temporaries
-        Total         :     287
-            Global    :      51
-            Local     :     236
-        Regenerable   :      75
+        Total         :     292
+            Global    :      50
+            Local     :     242
+        Regenerable   :      77
         Spilled       :       0
         
     Routine stack
         Variables     :    3272 bytes*
-            Reads     :      55 [1.58e+03 ~ 11.0%]
-            Writes    :      37 [3.80e+02 ~ 2.6%]
+            Reads     :      55 [1.58e+03 ~ 10.0%]
+            Writes    :      37 [3.80e+02 ~ 2.4%]
         Spills        :      40 bytes*
             Reads     :      15 [5.00e+00 ~ 0.0%]
             Writes    :      15 [0.00e+00 ~ 0.0%]

@@ -40,6 +40,7 @@ THE POSSIBILITY OF SUCH DAMAGE.
 /*
 Classic i-k-j matrix multiplication
 */
+#include <stdio.h>
 #define N 100
 #define M 100 
 #define K 100
@@ -53,13 +54,15 @@ int init()
   int i;
   int j;
   int k;
+  
+#pragma omp parallel for private (i,j)
   for (i = 0; i <= 99; i += 1) {
-    for (k = 0; k <= 99; k += 1) {
-      for (j = 0; j <= 99; j += 1) {
-        c[i][j] = (i * j);
-        a[i][k] = (i * j);
-        b[k][j] = (i * j);
-      }
+    
+#pragma omp parallel for private (j)
+    for (j = 0; j <= 99; j += 1) {
+      a[i][j] = ((double )i) * j;
+      b[i][j] = ((double )i) * j;
+      c[i][j] = ((double )i) * j;
     }
   }
   return 0;
@@ -90,10 +93,8 @@ int print()
   int j;
   int k;
   for (i = 0; i <= 99; i += 1) {
-    for (k = 0; k <= 99; k += 1) {
-      for (j = 0; j <= 99; j += 1) {
-        printf("%lf %lf %lf\n",c[i][j],a[i][k],b[k][j]);
-      }
+    for (j = 0; j <= 99; j += 1) {
+      printf("%lf %lf %lf\n",c[i][j],a[i][j],b[i][j]);
     }
   }
   return 0;

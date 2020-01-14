@@ -88,8 +88,6 @@ IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 
 */
-#include <stdio.h>
-#include <stdlib.h>
 /*
 
 Arrays passed as function parameters
@@ -115,13 +113,12 @@ double c[100];
 int main()
 {
 	int i;
-	int len = 100;
 	int _ret_val_0;
 	#pragma cetus private(i) 
 	#pragma loop name main#0 
 	#pragma cetus parallel 
 	#pragma omp parallel for private(i)
-	for (i=0; i<len;  ++ i)
+	for (i=0; i<100;  ++ i)
 	{
 		c[i]=(i+1.01);
 		o1[i]=(i+1.01);
@@ -129,7 +126,7 @@ int main()
 	foo1(o1, c, 100);
 	#pragma cetus private(i) 
 	#pragma loop name main#1 
-	for (i=0; i<len;  ++ i)
+	for (i=0; i<100;  ++ i)
 	{
 		printf("%lf\n", o1[i]);
 	}

@@ -33,33 +33,46 @@ Begin optimization report for: main()
     Report from: Interprocedural optimizations [ipo]
 
 INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB095-doall2-taskloop-orig-yes.c(58,1)
-  -> EXTERN: (66,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (70,3) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB095-doall2-taskloop-orig-yes.c(61,5)
-   remark #25420: Collapsed with loop at line 62 
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB095-doall2-taskloop-orig-yes.c(60,3)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+   remark #25015: Estimate of max trip count of loop=100
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB095-doall2-taskloop-orig-yes.c(61,5)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25438: unrolled without remainder by 2  
+      remark #25015: Estimate of max trip count of loop=100
+   LOOP END
+LOOP END
+
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB095-doall2-taskloop-orig-yes.c(66,3)
+   remark #25420: Collapsed with loop at line 67 
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ } private={ } firstprivate={ j i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25438: unrolled without remainder by 2  
    remark #25015: Estimate of max trip count of loop=10000
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB095-doall2-taskloop-orig-yes.c(62,7)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB095-doall2-taskloop-orig-yes.c(67,5)
       remark #25421: Loop eliminated in Collapsing 
 
    LOOP END
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB095-doall2-taskloop-orig-yes.c(61,5)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB095-doall2-taskloop-orig-yes.c(66,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
    remark #25015: Estimate of max trip count of loop=10000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB095-doall2-taskloop-orig-yes.c(61,5)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB095-doall2-taskloop-orig-yes.c(66,3)
 <Remainder>
    remark #25015: Estimate of max trip count of loop=10000
 LOOP END
@@ -75,15 +88,15 @@ LOOP END
         Assigned     :   11[ rax rdx rcx rbx rsi rdi r8-r9 r12-r14]
         
     Routine temporaries
-        Total         :      87
-            Global    :      17
-            Local     :      70
-        Regenerable   :      40
+        Total         :      94
+            Global    :      22
+            Local     :      72
+        Regenerable   :      41
         Spilled       :       0
         
     Routine stack
         Variables     :      28 bytes*
-            Reads     :       4 [2.00e+04 ~ 17.4%]
+            Reads     :       4 [2.00e+04 ~ 12.9%]
             Writes    :       8 [0.00e+00 ~ 0.0%]
         Spills        :      40 bytes*
             Reads     :      10 [5.00e+00 ~ 0.0%]

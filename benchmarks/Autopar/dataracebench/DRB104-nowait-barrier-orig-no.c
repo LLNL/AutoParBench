@@ -58,12 +58,10 @@ int main()
   for (i = 0; i <= len - 1; i += 1) {
     a[i] = i;
   }
-{
-    
+  
 #pragma omp parallel for private (i) firstprivate (len,b)
-    for (i = 0; i <= len - 1; i += 1) {
-      a[i] = b + a[i] * 5;
-    }
+  for (i = 0; i <= len - 1; i += 1) {
+    a[i] = b + a[i] * 5;
   }
   error = a[9] + 1;
   (((void )(sizeof(((error == 51?1 : 0))))) , ((
@@ -71,7 +69,7 @@ int main()
     if (error == 51) 
       ;
      else 
-      __assert_fail("error == 51","DRB104-nowait-barrier-orig-no.c",70,__PRETTY_FUNCTION__);
+      __assert_fail("error == 51","DRB104-nowait-barrier-orig-no.c",69,__PRETTY_FUNCTION__);
   })));
   printf("error = %d\n",error);
   return 0;

@@ -33,8 +33,7 @@ Begin optimization report for: main(int, char **)
     Report from: Interprocedural optimizations [ipo]
 
 INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB003-antidep2-orig-yes.c(54,1)
-  -> EXTERN: (72,7) printf(const char *__restrict__, ...)
-  -> EXTERN: (74,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (70,3) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
@@ -63,19 +62,6 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
       remark #17101: parallel loop shared={ a } private={ } firstprivate={ j i } lastprivate={ } firstlastprivate={ } reduction={ }
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25436: completely unrolled by 20  
-   LOOP END
-LOOP END
-
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB003-antidep2-orig-yes.c(70,3)
-   remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *__restrict__, ...) (72:7) and call:printf(const char *__restrict__, ...) (72:7)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between call:printf(const char *__restrict__, ...) (72:7) and call:printf(const char *__restrict__, ...) (72:7)
-   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
-
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB003-antidep2-orig-yes.c(71,5)
-      remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB003-antidep2-orig-yes.c(72,7) ]
-      remark #15344: loop was not vectorized: vector dependence prevents vectorization
    LOOP END
 LOOP END
 
@@ -113,18 +99,18 @@ LOOP END
         Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
         
     Routine temporaries
-        Total         :     295
-            Global    :      53
-            Local     :     242
-        Regenerable   :      77
+        Total         :     272
+            Global    :      48
+            Local     :     224
+        Regenerable   :      75
         Spilled       :       0
         
     Routine stack
         Variables     :    3272 bytes*
-            Reads     :      56 [1.27e+03 ~ 9.9%]
-            Writes    :      37 [3.05e+02 ~ 2.4%]
+            Reads     :      56 [1.35e+03 ~ 19.3%]
+            Writes    :      37 [3.24e+02 ~ 4.6%]
         Spills        :      40 bytes*
-            Reads     :      15 [5.00e+00 ~ 0.0%]
+            Reads     :      15 [5.00e+00 ~ 0.1%]
             Writes    :      15 [0.00e+00 ~ 0.0%]
     
     Notes

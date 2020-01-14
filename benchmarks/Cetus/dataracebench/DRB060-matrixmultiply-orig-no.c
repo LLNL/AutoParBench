@@ -93,39 +93,27 @@ THE POSSIBILITY OF SUCH DAMAGE.
 Classic i-k-j matrix multiplication
 
 */
+#include <stdio.h>
 double a[100][100], b[100][100], c[100][100];
 int init()
 {
 	int i, j, k;
 	int _ret_val_0;
-	#pragma cetus firstprivate(a, b, c) 
-	#pragma cetus private(i, j, k) 
-	#pragma cetus lastprivate(a, b, c) 
+	#pragma cetus private(i, j) 
 	#pragma loop name init#0 
 	#pragma cetus parallel 
-	#pragma omp parallel for private(i, j, k) firstprivate(a, b, c) lastprivate(a, b, c)
+	#pragma omp parallel for private(i, j)
 	for (i=0; i<100; i ++ )
 	{
-		#pragma cetus firstprivate(a, c) 
-		#pragma cetus private(j, k) 
-		#pragma cetus lastprivate(a, c) 
+		#pragma cetus private(j) 
 		#pragma loop name init#0#0 
 		#pragma cetus parallel 
-		#pragma omp parallel for private(j, k) firstprivate(a, c) lastprivate(a, c)
-		for (k=0; k<100; k ++ )
+		#pragma omp parallel for private(j)
+		for (j=0; j<100; j ++ )
 		{
-			#pragma cetus firstprivate(a) 
-			#pragma cetus private(j) 
-			#pragma cetus lastprivate(a) 
-			#pragma loop name init#0#0#0 
-			#pragma cetus parallel 
-			#pragma omp parallel for private(j) firstprivate(a) lastprivate(a)
-			for (j=0; j<100; j ++ )
-			{
-				c[i][j]=(i*j);
-				a[i][k]=(i*j);
-				b[k][j]=(i*j);
-			}
+			a[i][j]=(((double)i)*j);
+			b[i][j]=(((double)i)*j);
+			c[i][j]=(((double)i)*j);
 		}
 	}
 	_ret_val_0=0;
@@ -167,20 +155,15 @@ int print()
 {
 	int i, j, k;
 	int _ret_val_0;
-	#pragma cetus private(i, j, k) 
+	#pragma cetus private(i, j) 
 	#pragma loop name print#0 
 	for (i=0; i<100; i ++ )
 	{
-		#pragma cetus private(j, k) 
+		#pragma cetus private(j) 
 		#pragma loop name print#0#0 
-		for (k=0; k<100; k ++ )
+		for (j=0; j<100; j ++ )
 		{
-			#pragma cetus private(j) 
-			#pragma loop name print#0#0#0 
-			for (j=0; j<100; j ++ )
-			{
-				printf("%lf %lf %lf\n", c[i][j], a[i][k], b[k][j]);
-			}
+			printf("%lf %lf %lf\n", c[i][j], a[i][j], b[i][j]);
 		}
 	}
 	_ret_val_0=0;

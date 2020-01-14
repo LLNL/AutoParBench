@@ -35,8 +35,8 @@ Begin optimization report for: main(int, char **)
 INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB036-truedepscalar-var-yes.c(53,1)
   -> EXTERN: (60,11) atoi(const char *)
   -> EXTERN: (62,7) _vla_alloc(long)
-  -> EXTERN: (71,5) printf(const char *, ...)
-  -> EXTERN: (74,3) _vla_free(void *, long)
+  -> EXTERN: (70,5) printf(const char *, ...)
+  -> EXTERN: (73,3) _vla_free(void *, long)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
@@ -44,11 +44,11 @@ INLINE REPORT: (main(int, char **)) [1/1=100.0%] /home/gleison/Desktop/AutoParBe
 
 LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB036-truedepscalar-var-yes.c(64,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed ANTI dependence between tmp (66:5) and tmp (67:5)
-   remark #17106: parallel dependence: assumed FLOW dependence between tmp (67:5) and tmp (66:5)
+   remark #17106: parallel dependence: assumed ANTI dependence between tmp (65:5) and tmp (66:5)
+   remark #17106: parallel dependence: assumed FLOW dependence between tmp (66:5) and tmp (65:5)
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
-   remark #15346: vector dependence: assumed ANTI dependence between tmp (66:5) and tmp (67:5)
-   remark #15346: vector dependence: assumed FLOW dependence between tmp (67:5) and tmp (66:5)
+   remark #15346: vector dependence: assumed ANTI dependence between tmp (65:5) and tmp (66:5)
+   remark #15346: vector dependence: assumed FLOW dependence between tmp (66:5) and tmp (65:5)
    remark #25439: unrolled with remainder by 2  
    remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
 LOOP END
@@ -57,9 +57,9 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataraceben
 <Remainder>
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB036-truedepscalar-var-yes.c(70,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB036-truedepscalar-var-yes.c(69,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB036-truedepscalar-var-yes.c(71,5) ]
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB036-truedepscalar-var-yes.c(70,5) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 

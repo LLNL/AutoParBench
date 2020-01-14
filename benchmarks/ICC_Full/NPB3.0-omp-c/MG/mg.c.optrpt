@@ -1594,7 +1594,6 @@ INLINE REPORT: (main(int, char **)) [16/17=94.1%] /home/gleison/Desktop/AutoParB
      [[ Unable to inline callsite  <1>]]
   -> (269,5) norm2u3(double ***, int, int, int, double *, double *, int, int, int) (isz = 84) (sz = 105)
      [[ Unable to inline callsite  <1>]]
-  -> EXTERN: (273,14) omp_get_num_threads(void)
   -> EXTERN: (277,5) timer_stop(int)
   -> EXTERN: (278,9) timer_read(int)
   -> EXTERN: (279,13) timer_read(int)
@@ -1719,9 +1718,9 @@ LOOP END
         Assigned     :   16[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm1]
         
     Routine temporaries
-        Total         :     515
-            Global    :     120
-            Local     :     395
+        Total         :     512
+            Global    :     118
+            Local     :     394
         Regenerable   :     170
         Spilled       :      20
         

@@ -95,7 +95,6 @@ Data race pair: a[i+1]@67:10 vs. a[i]@67:5
 
 */
 #include <stdlib.h>
-#include <stdio.h>
 int main(int argc, char * argv[])
 {
 	int i;

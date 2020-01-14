@@ -64,6 +64,7 @@ void foo(real8 * restrict newSxx, real8 * restrict newSyy, int length)
   }
 }
 
+
 void print(real8 * restrict newSxx, real8 * restrict newSyy, int length)
 {
   int i;
@@ -73,7 +74,6 @@ void print(real8 * restrict newSxx, real8 * restrict newSyy, int length)
   }
 }
 
-
 int main()
 {
   int length=1000;
@@ -81,7 +81,7 @@ int main()
   real8* newSyy = malloc (length* sizeof (real8));
 
   foo(newSxx, newSyy, length);
-  print(newSxx, newSyy, length);  
+  print(newSxx, newSyy, length);
 
   free (newSxx);
   free (newSyy);

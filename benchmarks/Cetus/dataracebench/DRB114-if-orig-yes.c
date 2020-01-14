@@ -97,12 +97,6 @@ Data race pair: a[i+1]@66:5 vs. a[i]@66:12
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-void task(int * a, int i)
-{
-	a[i+1]=(a[i]+1);
-	return ;
-}
-
 int main(int argc, char * argv[])
 {
 	int i;
@@ -122,7 +116,7 @@ int main(int argc, char * argv[])
 	#pragma loop name main#1 
 	for (i=0; i<(len-1); i ++ )
 	{
-		task( & a[0], i);
+		a[i+1]=(a[i]+1);
 	}
 	printf("a[50]=%d\n", a[50]);
 	_ret_val_0=0;

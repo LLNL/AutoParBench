@@ -32,41 +32,41 @@ Begin optimization report for: main()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB112-linear-orig-no.c(51,1)
-  -> EXTERN: (53,10) _vla_alloc(long)
-  -> EXTERN: (53,18) _vla_alloc(long)
-  -> EXTERN: (53,26) _vla_alloc(long)
-  -> EXTERN: (69,3) _vla_free(void *, long)
-  -> EXTERN: (69,3) _vla_free(void *, long)
-  -> EXTERN: (69,3) _vla_free(void *, long)
-  -> EXTERN: (69,3) printf(const char *__restrict__, ...)
+INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB112-linear-orig-no.c(54,1)
+  -> EXTERN: (56,10) _vla_alloc(long)
+  -> EXTERN: (56,18) _vla_alloc(long)
+  -> EXTERN: (56,26) _vla_alloc(long)
+  -> EXTERN: (72,3) _vla_free(void *, long)
+  -> EXTERN: (72,3) _vla_free(void *, long)
+  -> EXTERN: (72,3) _vla_free(void *, long)
+  -> EXTERN: (72,3) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB112-linear-orig-no.c(56,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB112-linear-orig-no.c(59,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ } private={ } firstprivate={ a b c i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB112-linear-orig-no.c(63,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB112-linear-orig-no.c(66,3)
    remark #17108: loop was not parallelized: insufficient computational work
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25438: unrolled without remainder by 2  
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB112-linear-orig-no.c(56,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB112-linear-orig-no.c(59,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25015: Estimate of max trip count of loop=100
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB112-linear-orig-no.c(51,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB112-linear-orig-no.c:51
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB112-linear-orig-no.c(54,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB112-linear-orig-no.c:54
 
     Hardware registers
         Reserved     :    2[ rsp rip]
