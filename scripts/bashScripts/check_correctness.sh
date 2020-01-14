@@ -1,5 +1,10 @@
 #!/bin/bash
-#set -e 
+
+#//******************************************************************************************************************//
+#// Copyright (c) 2020, Lawrence Livermore National Security, LLC.
+#// and Federal University of Minas Gerais
+#// SPDX-License-Identifier: (BSD-3-Clause)
+#//*****************************************************************************************************************//
 
 set_environment() {
 # Set environment variables
@@ -20,10 +25,10 @@ cd "../"
 
 # Create a directory to store the outputs.
 OUTPUTS="${THIS}/Outputs"
-#if [ -d "${OUTPUTS}" ]; then
-#  rm -r "${OUTPUTS}"
-#fi
-#mkdir "${OUTPUTS}"
+if [ -d "${OUTPUTS}" ]; then
+  rm -r "${OUTPUTS}"
+fi
+mkdir "${OUTPUTS}"
 }
 
 clean_environment() {

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#//******************************************************************************************************************//
+#// Copyright (c) 2020, Lawrence Livermore National Security, LLC.
+#// and Federal University of Minas Gerais
+#// SPDX-License-Identifier: (BSD-3-Clause)
+#//*****************************************************************************************************************//
+
 set_environment() {
 export PATH="/opt/intel/compilers_and_libraries_2019.4.243/linux/bin/intel64/:$PATH"
 THIS=$(pwd)

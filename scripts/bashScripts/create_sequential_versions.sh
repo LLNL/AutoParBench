@@ -1,4 +1,11 @@
 #!/bin/bash
+
+#//******************************************************************************************************************//
+#// Copyright (c) 2020, Lawrence Livermore National Security, LLC.
+#// and Federal University of Minas Gerais
+#// SPDX-License-Identifier: (BSD-3-Clause)
+#//*****************************************************************************************************************//
+
 set -e 
 
 # Step 1 : Create a copy of the benchmarks and remove OpenMP Directives

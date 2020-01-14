@@ -1,5 +1,11 @@
 #!/bin/bash
-#set -e 
+
+#//******************************************************************************************************************//
+#// Copyright (c) 2020, Lawrence Livermore National Security, LLC.
+#// and Federal University of Minas Gerais
+#// SPDX-License-Identifier: (BSD-3-Clause)
+#//*****************************************************************************************************************//
+
 # This script can run pragma finder in all benchmarks that do not need an input.
 
 # Step 1 : Set the directories to run OpenMP Extractor.

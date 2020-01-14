@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#//******************************************************************************************************************//
+#// Copyright (c) 2020, Lawrence Livermore National Security, LLC.
+#// and Federal University of Minas Gerais
+#// SPDX-License-Identifier: (BSD-3-Clause)
+#//*****************************************************************************************************************//
+
 set_environment() {
 # Step 1: Define flags to be used in the scripts
 THIS=$(pwd)

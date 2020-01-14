@@ -1,4 +1,11 @@
 #!/bin/bash
+
+#//******************************************************************************************************************//
+#// Copyright (c) 2020, Lawrence Livermore National Security, LLC.
+#// and Federal University of Minas Gerais
+#// SPDX-License-Identifier: (BSD-3-Clause)
+#//*****************************************************************************************************************//
+
 set -e 
 
 # This script can run dawncc in all benchmarks that do not need an input.
