@@ -58,6 +58,7 @@ int main (int argc, char* argv[])
   int a[len];
   a[0] = 2;
 
+  #pragma omp parallel for
   for (i=0;i<len;i++)
     a[i] = i;
 

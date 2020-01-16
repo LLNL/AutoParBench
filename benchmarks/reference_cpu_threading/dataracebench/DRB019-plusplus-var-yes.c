@@ -68,7 +68,8 @@ int main(int argc, char* argv[])
   #pragma omp parallel for
   for (i=0; i<inLen; ++i) 
     input[i]=i; 
-
+  
+  #pragma omp parallel for linear(outLen)
   for (i=0; i<inLen; ++i) {
     output[outLen++] = input[i] ;
   }  
