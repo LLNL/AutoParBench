@@ -4,7 +4,7 @@ See "https://software.intel.com/en-us/intel-advisor-xe" for details.
 
 Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
 
-Compiler options: -c -qopenmp -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB055-jacobi2d-parallel-no.o
+Compiler options: -c -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB055-jacobi2d-parallel-no.o
 
     Report from: Interprocedural optimizations [ipo]
 
@@ -56,6 +56,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataraceben
       remark #15344: loop was not vectorized: vector dependence prevents vectorization
       remark #15346: vector dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (46:7) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (48:9)
       remark #15346: vector dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (48:9) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (46:7)
+      remark #25015: Estimate of max trip count of loop=500
    LOOP END
 LOOP END
 
@@ -70,19 +71,19 @@ LOOP END
         Assigned     :   12[ rax rdx rcx rbx rbp rsi rdi r12-r15 zmm0]
         
     Routine temporaries
-        Total         :      38
-            Global    :      15
-            Local     :      23
+        Total         :      42
+            Global    :      17
+            Local     :      25
         Regenerable   :       8
-        Spilled       :       6
+        Spilled       :       8
         
     Routine stack
         Variables     :       0 bytes*
             Reads     :       0 [0.00e+00 ~ 0.0%]
             Writes    :       0 [0.00e+00 ~ 0.0%]
-        Spills        :       0 bytes*
-            Reads     :       0 [0.00e+00 ~ 0.0%]
-            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      64 bytes*
+            Reads     :       8 [1.54e+01 ~ 2.4%]
+            Writes    :       8 [1.14e+01 ~ 1.8%]
     
     Notes
     
@@ -219,8 +220,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataraceben
    LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB055-jacobi2d-parallel-no.c(29,9)
    <Multiversioned v1>
       remark #25228: Loop multiversioned for Data Dependence
-      remark #17109: LOOP WAS AUTO-PARALLELIZED
-      remark #17101: parallel loop shared={ } private={ } firstprivate={ A B c2 c1 } lastprivate={ } firstlastprivate={ } reduction={ }
+      remark #17108: loop was not parallelized: insufficient computational work
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25015: Estimate of max trip count of loop=500
    LOOP END
@@ -235,12 +235,6 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataraceben
    LOOP END
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB055-jacobi2d-parallel-no.c(29,9)
-<Multiversioned v1>
-   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-   remark #25015: Estimate of max trip count of loop=500
-LOOP END
-
     Report from: Code generation optimizations [cg]
 
 /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB055-jacobi2d-parallel-no.c(21,1):remark #34051: REGISTER ALLOCATION : [init_array] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB055-jacobi2d-parallel-no.c:21
@@ -249,22 +243,22 @@ LOOP END
         Reserved     :    2[ rsp rip]
         Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
         Callee-save  :    6[ rbx rbp r12-r15]
-        Assigned     :   21[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm5]
+        Assigned     :   18[ rax rdx rcx rbx rbp rsi rdi r8-r11 r15 zmm0-zmm5]
         
     Routine temporaries
-        Total         :     141
-            Global    :      40
-            Local     :     101
-        Regenerable   :      37
-        Spilled       :       0
+        Total         :      54
+            Global    :      27
+            Local     :      27
+        Regenerable   :       4
+        Spilled       :       3
         
     Routine stack
-        Variables     :      44 bytes*
-            Reads     :       2 [1.25e+01 ~ 2.6%]
-            Writes    :       9 [0.00e+00 ~ 0.0%]
-        Spills        :      48 bytes*
-            Reads     :      12 [6.00e+00 ~ 1.2%]
-            Writes    :      12 [0.00e+00 ~ 0.0%]
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      24 bytes*
+            Reads     :       3 [1.35e+00 ~ 0.5%]
+            Writes    :       3 [0.00e+00 ~ 0.0%]
     
     Notes
     
@@ -281,7 +275,7 @@ Begin optimization report for: main(int, char **)
 INLINE REPORT: (main(int, char **)) [4/4=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Cost/dataracebench/DRB055-jacobi2d-parallel-no.c(102,1)
   -> EXTERN: (108,39) polybench_alloc_data(unsigned long long, int)
   -> EXTERN: (111,39) polybench_alloc_data(unsigned long long, int)
-  -> (114,3) init_array(int, double (*)[500], double (*)[500]) (isz = 50) (sz = 59)
+  -> (114,3) init_array(int, double (*)[500], double (*)[500]) (isz = 52) (sz = 61)
      [[ Unable to inline callsite  <1>]]
   -> EXTERN: (116,3) polybench_timer_start()
   -> (119,3) kernel_jacobi_2d_imper(int, int, double (*)[500], double (*)[500]) (isz = 485) (sz = 496)

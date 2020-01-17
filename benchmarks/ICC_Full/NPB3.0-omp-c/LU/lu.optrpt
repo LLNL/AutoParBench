@@ -4,7 +4,7 @@ See "https://software.intel.com/en-us/intel-advisor-xe" for details.
 
 Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
 
-Compiler options: -w -qopenmp -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -c
+Compiler options: -w -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -c
 
     Report from: Interprocedural optimizations [ipo]
 
@@ -737,7 +737,6 @@ LOOP BEGIN at lu.c(2611,3)
          remark #25420: Collapsed with loop at line 2629 
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-         remark #25439: unrolled with remainder by 8  
          remark #25015: Estimate of max trip count of loop=5
 
          LOOP BEGIN at lu.c(2629,2)
@@ -776,11 +775,6 @@ LOOP BEGIN at lu.c(2611,3)
 
       LOOP BEGIN at lu.c(2714,7)
          remark #25436: completely unrolled by 5   (pre-vector) 
-      LOOP END
-
-      LOOP BEGIN at lu.c(2628,7)
-      <Remainder>
-         remark #25436: completely unrolled by 7  
       LOOP END
    LOOP END
 LOOP END
@@ -924,19 +918,19 @@ lu.c(2302,23):remark #34051: REGISTER ALLOCATION : [rhs] lu.c:2302
         Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
         
     Routine temporaries
-        Total         :    2838
-            Global    :     390
-            Local     :    2448
+        Total         :    2743
+            Global    :     388
+            Local     :    2355
         Regenerable   :     312
-        Spilled       :     127
+        Spilled       :     126
         
     Routine stack
         Variables     :     616 bytes*
             Reads     :       8 [4.49e+02 ~ 0.0%]
             Writes    :     112 [0.00e+00 ~ 0.0%]
-        Spills        :    1064 bytes*
-            Reads     :     213 [1.91e+05 ~ 0.1%]
-            Writes    :     202 [7.45e+04 ~ 0.0%]
+        Spills        :    1056 bytes*
+            Reads     :     211 [1.82e+05 ~ 0.1%]
+            Writes    :     201 [7.17e+04 ~ 0.0%]
     
     Notes
     
@@ -1072,33 +1066,16 @@ LOOP BEGIN at lu.c(453,3)
       remark #17106: parallel dependence: assumed FLOW dependence between tmat[m][_2] (486:2) and tmat[0][0] (626:7)
       remark #17106: parallel dependence: assumed ANTI dependence between tmat[0][0] (626:7) and tmat[m][_2] (486:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
-      remark #25456: Number of Array Refs Scalar Replaced In Loop: 88
-
-      LOOP BEGIN at lu.c(468,7)
-         remark #25436: completely unrolled by 5   (pre-vector) 
-      LOOP END
 
       LOOP BEGIN at lu.c(485,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
-         remark #25436: completely unrolled by 5  
+         remark #25015: Estimate of max trip count of loop=5
 
          LOOP BEGIN at lu.c(486,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-            remark #25436: completely unrolled by 5  
-         LOOP END
-
-         LOOP BEGIN at lu.c(486,2)
-         LOOP END
-
-         LOOP BEGIN at lu.c(486,2)
-         LOOP END
-
-         LOOP BEGIN at lu.c(486,2)
-         LOOP END
-
-         LOOP BEGIN at lu.c(486,2)
+            remark #25015: Estimate of max trip count of loop=5
          LOOP END
       LOOP END
 
@@ -1131,6 +1108,10 @@ LOOP BEGIN at lu.c(453,3)
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 5  
       LOOP END
+
+      LOOP BEGIN at lu.c(468,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
+      LOOP END
    LOOP END
 LOOP END
 
@@ -1161,19 +1142,19 @@ lu.c(424,23):remark #34051: REGISTER ALLOCATION : [buts] lu.c:424
         Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
         
     Routine temporaries
-        Total         :     687
-            Global    :      94
-            Local     :     593
-        Regenerable   :      57
-        Spilled       :      30
+        Total         :     701
+            Global    :     102
+            Local     :     599
+        Regenerable   :      58
+        Spilled       :      44
         
     Routine stack
-        Variables     :      84 bytes*
-            Reads     :       2 [9.41e+00 ~ 0.1%]
-            Writes    :      17 [0.00e+00 ~ 0.0%]
-        Spills        :     288 bytes*
-            Reads     :      49 [2.78e+02 ~ 2.0%]
-            Writes    :      43 [1.95e+02 ~ 1.4%]
+        Variables     :     284 bytes*
+            Reads     :      32 [7.59e+02 ~ 4.0%]
+            Writes    :      33 [4.00e+02 ~ 2.1%]
+        Spills        :     400 bytes*
+            Reads     :      67 [6.46e+02 ~ 3.4%]
+            Writes    :      58 [4.88e+02 ~ 2.5%]
     
     Notes
     
@@ -1205,7 +1186,7 @@ LOOP BEGIN at lu.c(1609,3)
 
       LOOP BEGIN at lu.c(1627,7)
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-         remark #25436: completely unrolled by 4  
+         remark #25015: Estimate of max trip count of loop=4
       LOOP END
    LOOP END
 LOOP END
@@ -1222,7 +1203,7 @@ LOOP BEGIN at lu.c(1609,3)
       LOOP BEGIN at lu.c(1627,7)
          remark #17107: loop was not parallelized: inner loop
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-         remark #25436: completely unrolled by 4  
+         remark #25015: Estimate of max trip count of loop=4
       LOOP END
    LOOP END
 LOOP END
@@ -1238,19 +1219,19 @@ lu.c(1589,25):remark #34051: REGISTER ALLOCATION : [jacu] lu.c:1589
         Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
         
     Routine temporaries
-        Total         :    1288
-            Global    :     292
-            Local     :     996
+        Total         :    1294
+            Global    :     302
+            Local     :     992
         Regenerable   :     131
-        Spilled       :     181
+        Spilled       :     184
         
     Routine stack
         Variables     :     328 bytes*
             Reads     :       2 [1.15e+02 ~ 0.0%]
             Writes    :      47 [0.00e+00 ~ 0.0%]
-        Spills        :    1488 bytes*
-            Reads     :     261 [5.24e+05 ~ 12.7%]
-            Writes    :     248 [3.57e+04 ~ 0.9%]
+        Spills        :    1512 bytes*
+            Reads     :     266 [5.21e+05 ~ 12.4%]
+            Writes    :     251 [3.58e+04 ~ 0.8%]
     
     Notes
     
@@ -1303,33 +1284,16 @@ LOOP BEGIN at lu.c(220,3)
       remark #17106: parallel dependence: assumed FLOW dependence between v[i][j][k][m] (238:2) and v[i][j-1][k][0] (238:2)
       remark #17106: parallel dependence: assumed FLOW dependence between v[i][j][k][m] (238:2) and v[i][j-1][k][0] (238:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
-      remark #25456: Number of Array Refs Scalar Replaced In Loop: 83
-
-      LOOP BEGIN at lu.c(236,7)
-         remark #25436: completely unrolled by 5   (pre-vector) 
-      LOOP END
 
       LOOP BEGIN at lu.c(256,7)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
-         remark #25436: completely unrolled by 5  
+         remark #25015: Estimate of max trip count of loop=5
 
          LOOP BEGIN at lu.c(257,2)
             remark #17108: loop was not parallelized: insufficient computational work
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-            remark #25436: completely unrolled by 5  
-         LOOP END
-
-         LOOP BEGIN at lu.c(257,2)
-         LOOP END
-
-         LOOP BEGIN at lu.c(257,2)
-         LOOP END
-
-         LOOP BEGIN at lu.c(257,2)
-         LOOP END
-
-         LOOP BEGIN at lu.c(257,2)
+            remark #25015: Estimate of max trip count of loop=5
          LOOP END
       LOOP END
 
@@ -1355,6 +1319,10 @@ LOOP BEGIN at lu.c(220,3)
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
          remark #25436: completely unrolled by 4  
+      LOOP END
+
+      LOOP BEGIN at lu.c(236,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
       LOOP END
    LOOP END
 LOOP END
@@ -1386,19 +1354,19 @@ lu.c(191,24):remark #34051: REGISTER ALLOCATION : [blts] lu.c:191
         Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
         
     Routine temporaries
-        Total         :     682
-            Global    :      82
-            Local     :     600
-        Regenerable   :      54
-        Spilled       :      21
+        Total         :     700
+            Global    :      88
+            Local     :     612
+        Regenerable   :      55
+        Spilled       :      32
         
     Routine stack
-        Variables     :      76 bytes*
-            Reads     :       2 [9.41e+00 ~ 0.1%]
-            Writes    :      16 [0.00e+00 ~ 0.0%]
-        Spills        :     216 bytes*
-            Reads     :      36 [2.41e+02 ~ 1.7%]
-            Writes    :      34 [1.88e+02 ~ 1.3%]
+        Variables     :     276 bytes*
+            Reads     :      32 [7.59e+02 ~ 4.0%]
+            Writes    :      32 [4.00e+02 ~ 2.1%]
+        Spills        :     304 bytes*
+            Reads     :      48 [4.18e+02 ~ 2.2%]
+            Writes    :      45 [3.36e+02 ~ 1.8%]
     
     Notes
     
@@ -1430,7 +1398,7 @@ LOOP BEGIN at lu.c(1241,3)
 
       LOOP BEGIN at lu.c(1255,7)
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-         remark #25436: completely unrolled by 4  
+         remark #25015: Estimate of max trip count of loop=4
       LOOP END
    LOOP END
 LOOP END
@@ -1447,7 +1415,7 @@ LOOP BEGIN at lu.c(1241,3)
       LOOP BEGIN at lu.c(1255,7)
          remark #17107: loop was not parallelized: inner loop
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-         remark #25436: completely unrolled by 4  
+         remark #25015: Estimate of max trip count of loop=4
       LOOP END
    LOOP END
 LOOP END
@@ -1463,10 +1431,10 @@ lu.c(1222,26):remark #34051: REGISTER ALLOCATION : [jacld] lu.c:1222
         Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
         
     Routine temporaries
-        Total         :    1338
-            Global    :     291
-            Local     :    1047
-        Regenerable   :     129
+        Total         :    1344
+            Global    :     303
+            Local     :    1041
+        Regenerable   :     131
         Spilled       :     177
         
     Routine stack
@@ -1474,8 +1442,8 @@ lu.c(1222,26):remark #34051: REGISTER ALLOCATION : [jacld] lu.c:1222
             Reads     :       2 [1.15e+02 ~ 0.0%]
             Writes    :      47 [0.00e+00 ~ 0.0%]
         Spills        :    1456 bytes*
-            Reads     :     265 [5.34e+05 ~ 12.9%]
-            Writes    :     240 [2.20e+04 ~ 0.5%]
+            Reads     :     266 [5.31e+05 ~ 12.5%]
+            Writes    :     240 [1.54e+04 ~ 0.4%]
     
     Notes
     
@@ -1958,7 +1926,6 @@ LOOP BEGIN at lu.c(1022,3)
          remark #25420: Collapsed with loop at line 1039 
          remark #17108: loop was not parallelized: insufficient computational work
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-         remark #25439: unrolled with remainder by 8  
          remark #25015: Estimate of max trip count of loop=5
 
          LOOP BEGIN at lu.c(1039,2)
@@ -1997,11 +1964,6 @@ LOOP BEGIN at lu.c(1022,3)
 
       LOOP BEGIN at lu.c(1124,7)
          remark #25436: completely unrolled by 5   (pre-vector) 
-      LOOP END
-
-      LOOP BEGIN at lu.c(1038,7)
-      <Remainder>
-         remark #25436: completely unrolled by 7  
       LOOP END
    LOOP END
 LOOP END
@@ -2164,19 +2126,19 @@ lu.c(689,24):remark #34051: REGISTER ALLOCATION : [erhs] lu.c:689
         Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
         
     Routine temporaries
-        Total         :    3239
-            Global    :     485
-            Local     :    2754
-        Regenerable   :     360
-        Spilled       :     182
+        Total         :    3140
+            Global    :     480
+            Local     :    2660
+        Regenerable   :     358
+        Spilled       :     179
         
     Routine stack
         Variables     :     704 bytes*
             Reads     :      10 [5.57e+02 ~ 0.0%]
             Writes    :     131 [0.00e+00 ~ 0.0%]
-        Spills        :    1496 bytes*
-            Reads     :     284 [4.72e+06 ~ 1.7%]
-            Writes    :     259 [1.98e+05 ~ 0.1%]
+        Spills        :    1480 bytes*
+            Reads     :     282 [4.71e+06 ~ 1.7%]
+            Writes    :     257 [1.95e+05 ~ 0.1%]
     
     Notes
     

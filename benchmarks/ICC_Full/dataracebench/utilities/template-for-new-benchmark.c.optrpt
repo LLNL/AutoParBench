@@ -4,7 +4,7 @@ See "https://software.intel.com/en-us/intel-advisor-xe" for details.
 
 Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
 
-Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.o
+Compiler options: -c -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.o
 
     Report from: Interprocedural optimizations [ipo]
 
@@ -58,6 +58,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
       remark #15344: loop was not vectorized: vector dependence prevents vectorization
       remark #15346: vector dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (42:2) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (43:19)
       remark #15346: vector dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (43:19) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (42:2)
+      remark #25015: Estimate of max trip count of loop=1024
    LOOP END
 
    LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(41,5)
@@ -66,6 +67,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
       remark #15344: loop was not vectorized: vector dependence prevents vectorization
       remark #15346: vector dependence: assumed FLOW dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (42:2) and C[i][j] (42:2)
       remark #15346: vector dependence: assumed ANTI dependence between C[i][j] (42:2) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (42:2)
+      remark #25015: Estimate of max trip count of loop=1024
    LOOP END
 LOOP END
 
@@ -77,22 +79,22 @@ LOOP END
         Reserved     :    2[ rsp rip]
         Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
         Callee-save  :    6[ rbx rbp r12-r15]
-        Assigned     :    9[ rax rdx rcx rbx rbp rsi rdi r15 zmm0]
+        Assigned     :   12[ rax rdx rcx rbx rbp rsi rdi r8 r13-r15 zmm0]
         
     Routine temporaries
-        Total         :      39
-            Global    :      12
-            Local     :      27
+        Total         :      44
+            Global    :      14
+            Local     :      30
         Regenerable   :       9
-        Spilled       :       3
+        Spilled       :       5
         
     Routine stack
         Variables     :       0 bytes*
             Reads     :       0 [0.00e+00 ~ 0.0%]
             Writes    :       0 [0.00e+00 ~ 0.0%]
-        Spills        :       0 bytes*
-            Reads     :       0 [0.00e+00 ~ 0.0%]
-            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      40 bytes*
+            Reads     :       5 [4.50e+00 ~ 0.8%]
+            Writes    :       5 [2.00e+00 ~ 0.4%]
     
     Notes
     
@@ -113,28 +115,36 @@ INLINE REPORT: (kernel_template(int, double (*)[1024])) [2/4=50.0%] /home/gleiso
 
 
 LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(56,3)
-   remark #25420: Collapsed with loop at line 57 
    remark #17109: LOOP WAS AUTO-PARALLELIZED
-   remark #17101: parallel loop shared={ } private={ } firstprivate={ j C i } lastprivate={ } firstlastprivate={ } reduction={ }
-   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-   remark #25438: unrolled without remainder by 2  
-   remark #25015: Estimate of max trip count of loop=1048576
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ j C n i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
    LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(57,5)
-      remark #25421: Loop eliminated in Collapsing 
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 8  
+      remark #25015: Estimate of max trip count of loop=1024
+   LOOP END
 
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(57,5)
+   <Remainder>
+      remark #25436: completely unrolled by 7  
    LOOP END
 LOOP END
 
 LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(56,3)
-   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-   remark #25439: unrolled with remainder by 8  
-   remark #25015: Estimate of max trip count of loop=1048576
-LOOP END
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(56,3)
-<Remainder>
-   remark #25436: completely unrolled by 7  
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(57,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 8  
+      remark #25015: Estimate of max trip count of loop=1024
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(57,5)
+   <Remainder>
+      remark #25436: completely unrolled by 7  
+   LOOP END
 LOOP END
 
     Report from: Code generation optimizations [cg]
@@ -145,19 +155,19 @@ LOOP END
         Reserved     :    2[ rsp rip]
         Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
         Callee-save  :    6[ rbx rbp r12-r15]
-        Assigned     :   21[ rax rdx rcx rbx rbp rsi rdi r8-r9 r12-r14 zmm0-zmm8]
+        Assigned     :   24[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm8]
         
     Routine temporaries
-        Total         :     129
-            Global    :      23
-            Local     :     106
-        Regenerable   :      30
+        Total         :     203
+            Global    :      42
+            Local     :     161
+        Regenerable   :      37
         Spilled       :       0
         
     Routine stack
-        Variables     :      32 bytes*
-            Reads     :       2 [5.00e+01 ~ 12.8%]
-            Writes    :       7 [0.00e+00 ~ 0.0%]
+        Variables     :      40 bytes*
+            Reads     :       2 [1.00e+01 ~ 2.4%]
+            Writes    :       9 [0.00e+00 ~ 0.0%]
         Spills        :      48 bytes*
             Reads     :      12 [6.00e+00 ~ 1.5%]
             Writes    :      12 [0.00e+00 ~ 0.0%]
@@ -181,28 +191,36 @@ INLINE REPORT: (init_array(int, double (*)[1024])) [3/4=75.0%] /home/gleison/Des
 
 
 LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(27,3)
-   remark #25420: Collapsed with loop at line 28 
    remark #17109: LOOP WAS AUTO-PARALLELIZED
-   remark #17101: parallel loop shared={ } private={ } firstprivate={ j C i } lastprivate={ } firstlastprivate={ } reduction={ }
-   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-   remark #25438: unrolled without remainder by 2  
-   remark #25015: Estimate of max trip count of loop=1048576
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ j C n i } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
    LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(28,5)
-      remark #25421: Loop eliminated in Collapsing 
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 2  
+      remark #25015: Estimate of max trip count of loop=1024
+   LOOP END
 
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(28,5)
+   <Remainder>
+      remark #25015: Estimate of max trip count of loop=1024
    LOOP END
 LOOP END
 
 LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(27,3)
-   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-   remark #25439: unrolled with remainder by 2  
-   remark #25015: Estimate of max trip count of loop=1048576
-LOOP END
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(27,3)
-<Remainder>
-   remark #25015: Estimate of max trip count of loop=1048576
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(28,5)
+      remark #17107: loop was not parallelized: inner loop
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 2  
+      remark #25015: Estimate of max trip count of loop=1024
+   LOOP END
+
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/utilities/template-for-new-benchmark.c(28,5)
+   <Remainder>
+      remark #25015: Estimate of max trip count of loop=1024
+   LOOP END
 LOOP END
 
     Report from: Code generation optimizations [cg]
@@ -213,21 +231,21 @@ LOOP END
         Reserved     :    2[ rsp rip]
         Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
         Callee-save  :    6[ rbx rbp r12-r15]
-        Assigned     :   12[ rax rdx rcx rbx rbp rsi rdi r8-r9 r12-r14]
+        Assigned     :   15[ rax rdx rcx rbx rbp rsi rdi r8-r15]
         
     Routine temporaries
-        Total         :      83
-            Global    :      23
-            Local     :      60
-        Regenerable   :      31
+        Total         :     109
+            Global    :      40
+            Local     :      69
+        Regenerable   :      35
         Spilled       :       0
         
     Routine stack
-        Variables     :      32 bytes*
-            Reads     :       2 [5.00e+01 ~ 14.5%]
-            Writes    :       7 [0.00e+00 ~ 0.0%]
+        Variables     :      40 bytes*
+            Reads     :       2 [1.00e+01 ~ 2.6%]
+            Writes    :       9 [0.00e+00 ~ 0.0%]
         Spills        :      48 bytes*
-            Reads     :      12 [6.00e+00 ~ 1.7%]
+            Reads     :      12 [6.00e+00 ~ 1.5%]
             Writes    :      12 [0.00e+00 ~ 0.0%]
     
     Notes

@@ -1,0 +1,130 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -w -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -c -o ./kernel/kernel_cpu.o -fopenmp
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: kernel_cpu(int, record *, knode *, long, int, long, int, long *, long *, int *, record *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (kernel_cpu(int, record *, knode *, long, int, long, int, long *, long *, int *, record *)) [1/1=100.0%] ./kernel/kernel_cpu.c(48,1)
+  -> EXTERN: (59,10) get_time()
+  -> EXTERN: (66,17) omp_get_max_threads(void)
+  -> EXTERN: (68,2) omp_set_num_threads(int)
+  -> EXTERN: (74,10) get_time()
+  -> EXTERN: (124,10) get_time()
+  -> EXTERN: (130,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (132,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (133,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (135,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (136,2) printf(const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./kernel/kernel_cpu.c(86,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between offset[bid] (100:7) and currKnode[bid] (117:5)
+   remark #17106: parallel dependence: assumed ANTI dependence between currKnode[bid] (117:5) and offset[bid] (100:7)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ./kernel/kernel_cpu.c(89,3)
+      remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+      remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 ) --> ( 2 1 ) 
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed OUTPUT dependence between offset[bid] (100:7) and currKnode[bid] (107:4)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between currKnode[bid] (107:4) and offset[bid] (100:7)
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+      LOOP BEGIN at ./kernel/kernel_cpu.c(92,4)
+         remark #17104: loop was not parallelized: existence of parallel dependence
+         remark #17106: parallel dependence: assumed FLOW dependence between offset[bid] (100:7) and offset[bid] (100:7)
+         remark #17106: parallel dependence: assumed ANTI dependence between offset[bid] (100:7) and offset[bid] (100:7)
+         remark #17106: parallel dependence: assumed OUTPUT dependence between offset[bid] (100:7) and offset[bid] (100:7)
+         remark #17106: parallel dependence: assumed OUTPUT dependence between offset[bid] (100:7) and offset[bid] (100:7)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between offset[bid] (100:7) and offset[bid] (100:7)
+         remark #15346: vector dependence: assumed ANTI dependence between offset[bid] (100:7) and offset[bid] (100:7)
+         remark #25439: unrolled with remainder by 2  
+      LOOP END
+
+      LOOP BEGIN at ./kernel/kernel_cpu.c(92,4)
+      <Remainder>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at ./kernel/kernel_cpu.c(114,3)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between ans->value[bid] (117:5) and records->value[knodes->indices[currKnode[bid]][thid]] (117:5)
+      remark #17106: parallel dependence: assumed ANTI dependence between records->value[knodes->indices[currKnode[bid]][thid]] (117:5) and ans->value[bid] (117:5)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between ans->value[bid] (117:5) and ans->value[bid] (117:5)
+      remark #17106: parallel dependence: assumed OUTPUT dependence between ans->value[bid] (117:5) and ans->value[bid] (117:5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between ans->value[bid] (117:5) and records->value[knodes->indices[currKnode[bid]][thid]] (117:5)
+      remark #15346: vector dependence: assumed ANTI dependence between records->value[knodes->indices[currKnode[bid]][thid]] (117:5) and ans->value[bid] (117:5)
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at ./kernel/kernel_cpu.c(114,3)
+   <Remainder>
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./kernel/kernel_cpu.c(48,1):remark #34051: REGISTER ALLOCATION : [kernel_cpu] ./kernel/kernel_cpu.c:48
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   19[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm3]
+        
+    Routine temporaries
+        Total         :     119
+            Global    :      50
+            Local     :      69
+        Regenerable   :      26
+        Spilled       :      13
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      56 bytes*
+            Reads     :       8 [3.63e+01 ~ 1.8%]
+            Writes    :       7 [3.18e+01 ~ 1.6%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================

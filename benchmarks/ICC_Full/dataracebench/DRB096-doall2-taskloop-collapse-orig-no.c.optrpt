@@ -4,7 +4,7 @@ See "https://software.intel.com/en-us/intel-advisor-xe" for details.
 
 Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
 
-Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.o
+Compiler options: -c -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.o
 
     Report from: Interprocedural optimizations [ipo]
 
@@ -32,45 +32,45 @@ Begin optimization report for: main()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(59,1)
-  -> EXTERN: (69,3) printf(const char *__restrict__, ...)
+INLINE REPORT: (main()) [1/1=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(56,1)
+  -> EXTERN: (66,3) printf(const char *__restrict__, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(61,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(58,3)
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ } private={ } firstprivate={ j i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=100
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(62,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(59,5)
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25438: unrolled without remainder by 2  
       remark #25015: Estimate of max trip count of loop=100
    LOOP END
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(65,3)
-   remark #25420: Collapsed with loop at line 66 
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(62,3)
+   remark #25420: Collapsed with loop at line 63 
    remark #17109: LOOP WAS AUTO-PARALLELIZED
    remark #17101: parallel loop shared={ } private={ } firstprivate={ j i } lastprivate={ } firstlastprivate={ } reduction={ }
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25438: unrolled without remainder by 2  
    remark #25015: Estimate of max trip count of loop=10000
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(66,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(63,5)
       remark #25421: Loop eliminated in Collapsing 
 
    LOOP END
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(61,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(58,3)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
    remark #25015: Estimate of max trip count of loop=100
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(62,5)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(59,5)
       remark #17107: loop was not parallelized: inner loop
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25438: unrolled without remainder by 2  
@@ -78,20 +78,20 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    LOOP END
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(65,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(62,3)
    remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
    remark #25439: unrolled with remainder by 2  
    remark #25015: Estimate of max trip count of loop=10000
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(65,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(62,3)
 <Remainder>
    remark #25015: Estimate of max trip count of loop=10000
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(59,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c:59
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c(56,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB096-doall2-taskloop-collapse-orig-no.c:56
 
     Hardware registers
         Reserved     :    2[ rsp rip]

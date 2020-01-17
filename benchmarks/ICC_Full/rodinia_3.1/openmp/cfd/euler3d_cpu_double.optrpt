@@ -1,0 +1,1993 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -w -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -Dblock_length=8 -fopenmp -o euler3d_cpu_double
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)))/usr/include/c++/7.4.0/ostream(109,7)
+
+===========================================================================
+
+Begin optimization report for: std::char_traits<char>::length(const std::char_traits<char>::char_type *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::char_traits<char>::length(const std::char_traits<char>::char_type *)) [2/54=3.7%] /usr/include/c++/7.4.0/bits/char_traits.h(315,7)
+  -> EXTERN: (320,9) __builtin_strlen(const char *)
+
+
+    Report from: Code generation optimizations [cg]
+
+/usr/include/c++/7.4.0/bits/char_traits.h(315,7):remark #34051: REGISTER ALLOCATION : [_ZNSt11char_traitsIcE6lengthEPKc] /usr/include/c++/7.4.0/bits/char_traits.h:315
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      12
+            Global    :       7
+            Local     :       5
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: std::operator|(std::_Ios_Iostate, std::_Ios_Iostate)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::operator|(std::_Ios_Iostate, std::_Ios_Iostate)) [3/54=5.6%] /usr/include/c++/7.4.0/bits/ios_base.h(170,3)
+
+
+    Report from: Code generation optimizations [cg]
+
+/usr/include/c++/7.4.0/bits/ios_base.h(170,3):remark #34051: REGISTER ALLOCATION : [_ZStorSt12_Ios_IostateS_] /usr/include/c++/7.4.0/bits/ios_base.h:170
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      12
+            Global    :       0
+            Local     :      12
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: std::basic_ios<char, std::char_traits<char>>::setstate(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ios<char, std::char_traits<char>>::setstate(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate))/usr/include/c++/7.4.0/bits/basic_ios.h(158,7)
+
+===========================================================================
+
+Begin optimization report for: std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *))/usr/include/c++/7.4.0/ostream(557,5)
+
+===========================================================================
+
+Begin optimization report for: dealloc<double>(double *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (dealloc<double>(double *)) [6/54=11.1%] euler3d_cpu_double.cpp(50,1)
+  -> EXTERN: (51,2) operator delete[](void *)
+
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(50,1):remark #34051: REGISTER ALLOCATION : [_Z7deallocIdEvPT_] euler3d_cpu_double.cpp:50
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    1[ rdi]
+        
+    Routine temporaries
+        Total         :       9
+            Global    :       7
+            Local     :       2
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: std::operator|..0(std::_Ios_Openmode, std::_Ios_Openmode)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::operator|..0(std::_Ios_Openmode, std::_Ios_Openmode)) [7/54=13.0%] /usr/include/c++/7.4.0/bits/ios_base.h(130,3)
+  CLONED FROM: std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)(X,8)
+
+
+    Report from: Code generation optimizations [cg]
+
+/usr/include/c++/7.4.0/bits/ios_base.h(130,3):remark #34051: REGISTER ALLOCATION : [_ZStorSt13_Ios_OpenmodeS_..0] /usr/include/c++/7.4.0/bits/ios_base.h:130
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       0
+            Local     :      11
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: dealloc<int>(int *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (dealloc<int>(int *)) [8/54=14.8%] euler3d_cpu_double.cpp(50,1)
+  -> EXTERN: (51,2) operator delete[](void *)
+
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(50,1):remark #34051: REGISTER ALLOCATION : [_Z7deallocIiEvPT_] euler3d_cpu_double.cpp:50
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    1[ rdi]
+        
+    Routine temporaries
+        Total         :       9
+            Global    :       7
+            Local     :       2
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: std::operator|..1(std::_Ios_Openmode, std::_Ios_Openmode)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::operator|..1(std::_Ios_Openmode, std::_Ios_Openmode)) [9/54=16.7%] /usr/include/c++/7.4.0/bits/ios_base.h(130,3)
+  CLONED FROM: std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)(X,16)
+
+
+    Report from: Code generation optimizations [cg]
+
+/usr/include/c++/7.4.0/bits/ios_base.h(130,3):remark #34051: REGISTER ALLOCATION : [_ZStorSt13_Ios_OpenmodeS_..1] /usr/include/c++/7.4.0/bits/ios_base.h:130
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       0
+            Local     :      11
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double))/usr/include/c++/7.4.0/ostream(221,7)
+
+===========================================================================
+
+Begin optimization report for: dump(double *, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (dump(double *, int, int)) [11/54=20.4%] euler3d_cpu_double.cpp(65,1)
+  -> INLINE (MANUAL): (69,22) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const) (isz = 1) (sz = 6)
+    -> INLINE (MANUAL): /usr/include/c++/7.4.0/fstream:(737,7) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *) (isz = 35) (sz = 42)
+      -> INLINE (MANUAL): (738,9) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (738,9) std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 26) (sz = 33)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(93,26) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (738,9) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 34) (sz = 39)
+        -> EXTERN: (239,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+        -> EXTERN: (239,7) __cxa_call_unexpected
+        -> EXTERN: (239,15) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (239,24) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,24) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+  -> INLINE (MANUAL): (69,22) std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const, const char *, std::ios_base::openmode) (isz = 1) (sz = 10)
+    -> INLINE (MANUAL): /usr/include/c++/7.4.0/fstream:(697,7) std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *, const char *, std::ios_base::openmode) (isz = 74) (sz = 85)
+      -> INLINE (MANUAL): (697,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (697,7) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 34) (sz = 39)
+        -> EXTERN: (239,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+        -> EXTERN: (239,7) __cxa_call_unexpected
+        -> EXTERN: (239,15) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (239,24) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,24) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+      -> INLINE (MANUAL): (697,7) std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 26) (sz = 33)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(93,26) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> EXTERN: (697,7) std::basic_filebuf<char, std::char_traits<char>>::basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *)
+      -> INLINE (MANUAL): (697,7) std::basic_ostream<char, std::char_traits<char>>::basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 44) (sz = 51)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(384,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(460,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 19) (sz = 24)
+            -> EXTERN: (460,7) std::ios_base::ios_base(std::ios_base *const)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(384,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+        -> EXTERN: /usr/include/c++/7.4.0/ostream:(385,15) std::basic_ios<char, std::char_traits<char>>::init(std::basic_ios<char, std::char_traits<char>> *, std::basic_streambuf<char, std::char_traits<char>> *)
+      -> INLINE (MANUAL): (697,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(460,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 19) (sz = 24)
+          -> EXTERN: (460,7) std::ios_base::ios_base(std::ios_base *const)
+      -> EXTERN: (701,8) std::basic_ios<char, std::char_traits<char>>::init(std::basic_ios<char, std::char_traits<char>> *, std::basic_streambuf<char, std::char_traits<char>> *)
+      -> INLINE (MANUAL): (702,8) std::basic_ofstream<char, std::char_traits<char>>::open(std::basic_ofstream<char, std::char_traits<char>> *, const char *, std::ios_base::openmode) (isz = 23) (sz = 32)
+        -> EXTERN: (802,18) std::basic_filebuf<char, std::char_traits<char>>::open(std::basic_filebuf<char, std::char_traits<char>> *, const char *, std::ios_base::openmode)
+        -> CP_CLONE (802,35) std::operator|..1(std::_Ios_Openmode, std::_Ios_Openmode) (isz = 0) (sz = 7)
+           [[ Unable to inline callsite  <1>]]
+        -> INLINE (MANUAL): (803,10) std::basic_ios<char, std::char_traits<char>>::setstate(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate) (isz = 7) (sz = 14)
+          -> EXTERN: /usr/include/c++/7.4.0/bits/basic_ios.h:(158,15) std::basic_ios<char, std::char_traits<char>>::clear(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(158,27) std::basic_ios<char, std::char_traits<char>>::rdstate(const std::basic_ios<char, std::char_traits<char>> *) const (isz = 0) (sz = 6)
+          -> /usr/include/c++/7.4.0/bits/basic_ios.h:(158,37) std::operator|(std::_Ios_Iostate, std::_Ios_Iostate) (isz = 0) (sz = 7)
+             [[ Unable to inline callsite  <1>]]
+        -> EXTERN: (807,10) std::basic_ios<char, std::char_traits<char>>::clear(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate)
+  -> EXTERN: (70,8) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, int)
+  -> (70,15) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <2>]]
+  -> EXTERN: (70,22) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, int)
+  -> (70,30) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <2>]]
+  -> (71,37) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double) (isz = 1) (sz = 10)
+     [[ Called routine is noinline  <2>]]
+  -> (71,72) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <2>]]
+  -> INLINE (MANUAL): (72,2) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const) (isz = 1) (sz = 6)
+    -> INLINE (MANUAL): /usr/include/c++/7.4.0/fstream:(737,7) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *) (isz = 35) (sz = 42)
+      -> INLINE (MANUAL): (738,9) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (738,9) std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 26) (sz = 33)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(93,26) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (738,9) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 34) (sz = 39)
+        -> EXTERN: (239,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+        -> EXTERN: (239,7) __cxa_call_unexpected
+        -> EXTERN: (239,15) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (239,24) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,24) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+  -> INLINE (MANUAL): (76,22) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const) (isz = 1) (sz = 6)
+    -> INLINE (MANUAL): /usr/include/c++/7.4.0/fstream:(737,7) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *) (isz = 35) (sz = 42)
+      -> INLINE (MANUAL): (738,9) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (738,9) std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 26) (sz = 33)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(93,26) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (738,9) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 34) (sz = 39)
+        -> EXTERN: (239,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+        -> EXTERN: (239,7) __cxa_call_unexpected
+        -> EXTERN: (239,15) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (239,24) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,24) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+  -> INLINE (MANUAL): (76,22) std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const, const char *, std::ios_base::openmode) (isz = 1) (sz = 10)
+    -> INLINE (MANUAL): /usr/include/c++/7.4.0/fstream:(697,7) std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *, const char *, std::ios_base::openmode) (isz = 74) (sz = 85)
+      -> INLINE (MANUAL): (697,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (697,7) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 34) (sz = 39)
+        -> EXTERN: (239,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+        -> EXTERN: (239,7) __cxa_call_unexpected
+        -> EXTERN: (239,15) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (239,24) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,24) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+      -> INLINE (MANUAL): (697,7) std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 26) (sz = 33)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(93,26) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> EXTERN: (697,7) std::basic_filebuf<char, std::char_traits<char>>::basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *)
+      -> INLINE (MANUAL): (697,7) std::basic_ostream<char, std::char_traits<char>>::basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 44) (sz = 51)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(384,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(460,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 19) (sz = 24)
+            -> EXTERN: (460,7) std::ios_base::ios_base(std::ios_base *const)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(384,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+        -> EXTERN: /usr/include/c++/7.4.0/ostream:(385,15) std::basic_ios<char, std::char_traits<char>>::init(std::basic_ios<char, std::char_traits<char>> *, std::basic_streambuf<char, std::char_traits<char>> *)
+      -> INLINE (MANUAL): (697,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(460,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 19) (sz = 24)
+          -> EXTERN: (460,7) std::ios_base::ios_base(std::ios_base *const)
+      -> EXTERN: (701,8) std::basic_ios<char, std::char_traits<char>>::init(std::basic_ios<char, std::char_traits<char>> *, std::basic_streambuf<char, std::char_traits<char>> *)
+      -> INLINE (MANUAL): (702,8) std::basic_ofstream<char, std::char_traits<char>>::open(std::basic_ofstream<char, std::char_traits<char>> *, const char *, std::ios_base::openmode) (isz = 23) (sz = 32)
+        -> EXTERN: (802,18) std::basic_filebuf<char, std::char_traits<char>>::open(std::basic_filebuf<char, std::char_traits<char>> *, const char *, std::ios_base::openmode)
+        -> CP_CLONE (802,35) std::operator|..1(std::_Ios_Openmode, std::_Ios_Openmode) (isz = 0) (sz = 7)
+           [[ Unable to inline callsite  <1>]]
+        -> INLINE (MANUAL): (803,10) std::basic_ios<char, std::char_traits<char>>::setstate(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate) (isz = 7) (sz = 14)
+          -> EXTERN: /usr/include/c++/7.4.0/bits/basic_ios.h:(158,15) std::basic_ios<char, std::char_traits<char>>::clear(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(158,27) std::basic_ios<char, std::char_traits<char>>::rdstate(const std::basic_ios<char, std::char_traits<char>> *) const (isz = 0) (sz = 6)
+          -> /usr/include/c++/7.4.0/bits/basic_ios.h:(158,37) std::operator|(std::_Ios_Iostate, std::_Ios_Iostate) (isz = 0) (sz = 7)
+             [[ Unable to inline callsite  <1>]]
+        -> EXTERN: (807,10) std::basic_ios<char, std::char_traits<char>>::clear(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate)
+  -> EXTERN: (77,8) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, int)
+  -> (77,15) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <2>]]
+  -> EXTERN: (77,22) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, int)
+  -> (77,30) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <2>]]
+  -> (80,40) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double) (isz = 1) (sz = 10)
+     [[ Called routine is noinline  <2>]]
+  -> (80,80) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <2>]]
+  -> (81,9) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <2>]]
+  -> INLINE (MANUAL): (83,2) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const) (isz = 1) (sz = 6)
+    -> INLINE (MANUAL): /usr/include/c++/7.4.0/fstream:(737,7) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *) (isz = 35) (sz = 42)
+      -> INLINE (MANUAL): (738,9) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (738,9) std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 26) (sz = 33)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(93,26) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (738,9) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 34) (sz = 39)
+        -> EXTERN: (239,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+        -> EXTERN: (239,7) __cxa_call_unexpected
+        -> EXTERN: (239,15) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (239,24) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,24) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+  -> INLINE (MANUAL): (86,22) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const) (isz = 1) (sz = 6)
+    -> INLINE (MANUAL): /usr/include/c++/7.4.0/fstream:(737,7) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *) (isz = 35) (sz = 42)
+      -> INLINE (MANUAL): (738,9) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (738,9) std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 26) (sz = 33)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(93,26) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (738,9) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 34) (sz = 39)
+        -> EXTERN: (239,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+        -> EXTERN: (239,7) __cxa_call_unexpected
+        -> EXTERN: (239,15) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (239,24) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,24) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+  -> INLINE (MANUAL): (86,22) std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const, const char *, std::ios_base::openmode) (isz = 1) (sz = 10)
+    -> INLINE (MANUAL): /usr/include/c++/7.4.0/fstream:(697,7) std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *, const char *, std::ios_base::openmode) (isz = 74) (sz = 85)
+      -> INLINE (MANUAL): (697,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (697,7) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 34) (sz = 39)
+        -> EXTERN: (239,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+        -> EXTERN: (239,7) __cxa_call_unexpected
+        -> EXTERN: (239,15) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (239,24) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,24) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+      -> INLINE (MANUAL): (697,7) std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 26) (sz = 33)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(93,26) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> EXTERN: (697,7) std::basic_filebuf<char, std::char_traits<char>>::basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *)
+      -> INLINE (MANUAL): (697,7) std::basic_ostream<char, std::char_traits<char>>::basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 44) (sz = 51)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(384,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(460,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 19) (sz = 24)
+            -> EXTERN: (460,7) std::ios_base::ios_base(std::ios_base *const)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(384,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+        -> EXTERN: /usr/include/c++/7.4.0/ostream:(385,15) std::basic_ios<char, std::char_traits<char>>::init(std::basic_ios<char, std::char_traits<char>> *, std::basic_streambuf<char, std::char_traits<char>> *)
+      -> INLINE (MANUAL): (697,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(460,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 19) (sz = 24)
+          -> EXTERN: (460,7) std::ios_base::ios_base(std::ios_base *const)
+      -> EXTERN: (701,8) std::basic_ios<char, std::char_traits<char>>::init(std::basic_ios<char, std::char_traits<char>> *, std::basic_streambuf<char, std::char_traits<char>> *)
+      -> INLINE (MANUAL): (702,8) std::basic_ofstream<char, std::char_traits<char>>::open(std::basic_ofstream<char, std::char_traits<char>> *, const char *, std::ios_base::openmode) (isz = 23) (sz = 32)
+        -> EXTERN: (802,18) std::basic_filebuf<char, std::char_traits<char>>::open(std::basic_filebuf<char, std::char_traits<char>> *, const char *, std::ios_base::openmode)
+        -> CP_CLONE (802,35) std::operator|..1(std::_Ios_Openmode, std::_Ios_Openmode) (isz = 0) (sz = 7)
+           [[ Unable to inline callsite  <1>]]
+        -> INLINE (MANUAL): (803,10) std::basic_ios<char, std::char_traits<char>>::setstate(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate) (isz = 7) (sz = 14)
+          -> EXTERN: /usr/include/c++/7.4.0/bits/basic_ios.h:(158,15) std::basic_ios<char, std::char_traits<char>>::clear(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(158,27) std::basic_ios<char, std::char_traits<char>>::rdstate(const std::basic_ios<char, std::char_traits<char>> *) const (isz = 0) (sz = 6)
+          -> /usr/include/c++/7.4.0/bits/basic_ios.h:(158,37) std::operator|(std::_Ios_Iostate, std::_Ios_Iostate) (isz = 0) (sz = 7)
+             [[ Unable to inline callsite  <1>]]
+        -> EXTERN: (807,10) std::basic_ios<char, std::char_traits<char>>::clear(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate)
+  -> EXTERN: (87,8) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, int)
+  -> (87,15) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <2>]]
+  -> EXTERN: (87,22) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, int)
+  -> (87,30) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <2>]]
+  -> (88,37) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double) (isz = 1) (sz = 10)
+     [[ Called routine is noinline  <2>]]
+  -> (88,79) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <2>]]
+  -> INLINE (MANUAL): (89,2) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const) (isz = 1) (sz = 6)
+    -> INLINE (MANUAL): /usr/include/c++/7.4.0/fstream:(737,7) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *) (isz = 35) (sz = 42)
+      -> INLINE (MANUAL): (738,9) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (738,9) std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *) (isz = 26) (sz = 33)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/ostream:(93,26) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (738,9) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 34) (sz = 39)
+        -> EXTERN: (239,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+        -> EXTERN: (239,7) __cxa_call_unexpected
+        -> EXTERN: (239,15) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (239,24) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,24) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at euler3d_cpu_double.cpp(71,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #26015: Exception can be thrown by the call to std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)   [ euler3d_cpu_double.cpp(71,37) ]
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ euler3d_cpu_double.cpp(71,37) ]
+LOOP END
+
+LOOP BEGIN at euler3d_cpu_double.cpp(80,4)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #26015: Exception can be thrown by the call to std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)   [ euler3d_cpu_double.cpp(80,40) ]
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ euler3d_cpu_double.cpp(80,40) ]
+LOOP END
+
+LOOP BEGIN at euler3d_cpu_double.cpp(88,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #26015: Exception can be thrown by the call to std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)   [ euler3d_cpu_double.cpp(88,37) ]
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ euler3d_cpu_double.cpp(88,37) ]
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at euler3d_cpu_double.cpp(78,3)
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ euler3d_cpu_double.cpp(80,40) ]
+   remark #17102: loop was not parallelized: not a parallelization candidate
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(65,1):remark #34051: REGISTER ALLOCATION : [_Z4dumpPdii] euler3d_cpu_double.cpp:65
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   12[ rax rdx rcx rbx rbp rsi rdi r12-r15 zmm0]
+        
+    Routine temporaries
+        Total         :     578
+            Global    :      75
+            Local     :     503
+        Regenerable   :     208
+        Spilled       :       7
+        
+    Routine stack
+        Variables     :    1576 bytes*
+            Reads     :      54 [9.00e+00 ~ 1.6%]
+            Writes    :     135 [5.53e+01 ~ 9.9%]
+        Spills        :       8 bytes*
+            Reads     :       3 [3.00e+00 ~ 0.5%]
+            Writes    :       1 [2.20e-01 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: time_step(int, int, double *, double *, double *, double *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (time_step(int, int, double *, double *, double *, double *)) [12/54=22.2%] euler3d_cpu_double.cpp(316,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at euler3d_cpu_double.cpp(317,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between step_factors[i] (319:47) and variables[i*5+3] (325:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between variables[i*5+3] (325:3) and step_factors[i] (319:47)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between step_factors[i] (319:47) and variables[i*5+3] (325:3)
+   remark #15346: vector dependence: assumed FLOW dependence between variables[i*5+3] (325:3) and step_factors[i] (319:47)
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(316,1):remark #34051: REGISTER ALLOCATION : [_Z9time_stepiiPdS_S_S_] euler3d_cpu_double.cpp:316
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   16[ rax rdx rcx rsi rdi r8-r11 zmm0-zmm6]
+        
+    Routine temporaries
+        Total         :      41
+            Global    :      16
+            Local     :      25
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: compute_flux_contribution(double &, double3 &, double &, double &, double3 &, double3 &, double3 &, double3 &, double3 &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (compute_flux_contribution(double &, double3 &, double &, double &, double3 &, double3 &, double3 &, double3 &, double3 &)) [13/54=24.1%] euler3d_cpu_double.cpp(112,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(112,1):remark #34051: REGISTER ALLOCATION : [_Z25compute_flux_contributionRdR7double3S_S_S1_S1_S1_S1_S1_] euler3d_cpu_double.cpp:112
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   20[ rax rdx rcx rsi rdi r8-r11 zmm0-zmm10]
+        
+    Routine temporaries
+        Total         :      45
+            Global    :       0
+            Local     :      45
+        Regenerable   :       3
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: compute_speed_of_sound(double &, double &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (compute_speed_of_sound(double &, double &)) [14/54=25.9%] euler3d_cpu_double.cpp(149,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(149,1):remark #34051: REGISTER ALLOCATION : [_Z22compute_speed_of_soundRdS_] euler3d_cpu_double.cpp:149
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rsi rdi zmm0]
+        
+    Routine temporaries
+        Total         :      15
+            Global    :       0
+            Local     :      15
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: compute_pressure(double &, double &, double &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (compute_pressure(double &, double &, double &)) [15/54=27.8%] euler3d_cpu_double.cpp(144,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(144,1):remark #34051: REGISTER ALLOCATION : [_Z16compute_pressureRdS_S_] euler3d_cpu_double.cpp:144
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    5[ rdx rsi rdi zmm0-zmm1]
+        
+    Routine temporaries
+        Total         :      19
+            Global    :       0
+            Local     :      19
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: compute_speed_sqd(double3 &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (compute_speed_sqd(double3 &)) [16/54=29.6%] euler3d_cpu_double.cpp(139,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(139,1):remark #34051: REGISTER ALLOCATION : [_Z17compute_speed_sqdR7double3] euler3d_cpu_double.cpp:139
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rdi zmm0-zmm2]
+        
+    Routine temporaries
+        Total         :      17
+            Global    :       0
+            Local     :      17
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: compute_velocity(double &, double3 &, double3 &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (compute_velocity(double &, double3 &, double3 &)) [17/54=31.5%] euler3d_cpu_double.cpp(132,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(132,1):remark #34051: REGISTER ALLOCATION : [_Z16compute_velocityRdR7double3S1_] euler3d_cpu_double.cpp:132
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    6[ rdx rsi rdi zmm0-zmm2]
+        
+    Routine temporaries
+        Total         :      18
+            Global    :       0
+            Local     :      18
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: compute_flux(int, int *, double *, double *, double *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (compute_flux(int, int *, double *, double *, double *)) [18/54=33.3%] euler3d_cpu_double.cpp(184,1)
+  -> (201,40) compute_velocity(double &, double3 &, double3 &) (isz = 11) (sz = 20)
+     [[ Unable to inline callsite  <1>]]
+  -> (202,49) compute_speed_sqd(double3 &) (isz = 10) (sz = 16)
+     [[ Unable to inline callsite  <1>]]
+  -> (204,49) compute_pressure(double &, double &, double &) (isz = 4) (sz = 14)
+     [[ Unable to inline callsite  <1>]]
+  -> (205,49) compute_speed_of_sound(double &, double &) (isz = 3) (sz = 12)
+     [[ Unable to inline callsite  <1>]]
+  -> (208,3) compute_flux_contribution(double &, double3 &, double &, double &, double3 &, double3 &, double3 &, double3 &, double3 &) (isz = 51) (sz = 72)
+     [[ Unable to inline callsite  <1>]]
+  -> (239,14) compute_velocity(double &, double3 &, double3 &) (isz = 11) (sz = 20)
+     [[ Unable to inline callsite  <1>]]
+  -> (240,41) compute_speed_sqd(double3 &) (isz = 10) (sz = 16)
+     [[ Unable to inline callsite  <1>]]
+  -> (241,41) compute_pressure(double &, double &, double &) (isz = 4) (sz = 14)
+     [[ Unable to inline callsite  <1>]]
+  -> (242,41) compute_speed_of_sound(double &, double &) (isz = 3) (sz = 12)
+     [[ Unable to inline callsite  <1>]]
+  -> (243,14) compute_flux_contribution(double &, double3 &, double &, double &, double3 &, double3 &, double3 &, double3 &, double3 &) (isz = 51) (sz = 72)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at euler3d_cpu_double.cpp(187,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between variables[i*5] (193:22) and fluxes[i*5+4] (311:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between fluxes[i*5+4] (311:3) and variables[i*5] (193:22)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at euler3d_cpu_double.cpp(224,3)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between elements_surrounding_elements[i*4+j] (226:4) and flux_contribution_nb_density_energy (243:14)
+      remark #15382: vectorization support: call to function compute_velocity(double &, double3 &, double3 &) cannot be vectorized   [ euler3d_cpu_double.cpp(239,14) ]
+      remark #15382: vectorization support: call to function compute_speed_sqd(double3 &) cannot be vectorized   [ euler3d_cpu_double.cpp(240,41) ]
+      remark #15382: vectorization support: call to function compute_pressure(double &, double &, double &) cannot be vectorized   [ euler3d_cpu_double.cpp(241,41) ]
+      remark #15382: vectorization support: call to function compute_speed_of_sound(double &, double &) cannot be vectorized   [ euler3d_cpu_double.cpp(242,41) ]
+      remark #15382: vectorization support: call to function compute_flux_contribution(double &, double3 &, double &, double &, double3 &, double3 &, double3 &, double3 &, double3 &) cannot be vectorized   [ euler3d_cpu_double.cpp(243,14) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between elements_surrounding_elements[i*4+j] (226:4) and flux_contribution_nb_density_energy (243:14)
+      remark #25436: completely unrolled by 4  
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(184,1):remark #34051: REGISTER ALLOCATION : [_Z12compute_fluxiPiPdS0_S0_] euler3d_cpu_double.cpp:184
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     782
+            Global    :     120
+            Local     :     662
+        Regenerable   :     128
+        Spilled       :      54
+        
+    Routine stack
+        Variables     :     352 bytes*
+            Reads     :     141 [4.51e+02 ~ 14.7%]
+            Writes    :      35 [1.19e+02 ~ 3.9%]
+        Spills        :     432 bytes*
+            Reads     :     143 [2.76e+02 ~ 9.0%]
+            Writes    :     122 [3.39e+02 ~ 11.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: compute_step_factor(int, double *, double *, double *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (compute_step_factor(int, double *, double *, double *)) [19/54=35.2%] euler3d_cpu_double.cpp(156,1)
+  -> (167,24) compute_velocity(double &, double3 &, double3 &) (isz = 11) (sz = 20)
+     [[ Unable to inline callsite  <1>]]
+  -> (168,27) compute_speed_sqd(double3 &) (isz = 10) (sz = 16)
+     [[ Unable to inline callsite  <1>]]
+  -> (169,27) compute_pressure(double &, double &, double &) (isz = 4) (sz = 14)
+     [[ Unable to inline callsite  <1>]]
+  -> (170,27) compute_speed_of_sound(double &, double &) (isz = 3) (sz = 12)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at euler3d_cpu_double.cpp(157,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between density (159:20) and pressure (170:27)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between pressure (170:27) and density (159:20)
+   remark #15382: vectorization support: call to function compute_velocity(double &, double3 &, double3 &) cannot be vectorized   [ euler3d_cpu_double.cpp(167,24) ]
+   remark #15382: vectorization support: call to function compute_speed_sqd(double3 &) cannot be vectorized   [ euler3d_cpu_double.cpp(168,27) ]
+   remark #15382: vectorization support: call to function compute_pressure(double &, double &, double &) cannot be vectorized   [ euler3d_cpu_double.cpp(169,27) ]
+   remark #15382: vectorization support: call to function compute_speed_of_sound(double &, double &) cannot be vectorized   [ euler3d_cpu_double.cpp(170,27) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed OUTPUT dependence between density (159:20) and pressure (170:27)
+   remark #15346: vector dependence: assumed OUTPUT dependence between pressure (170:27) and density (159:20)
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(156,1):remark #34051: REGISTER ALLOCATION : [_Z19compute_step_factoriPdS_S_] euler3d_cpu_double.cpp:156
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   19[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm3]
+        
+    Routine temporaries
+        Total         :      49
+            Global    :      24
+            Local     :      25
+        Regenerable   :      16
+        Spilled       :       8
+        
+    Routine stack
+        Variables     :      80 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       7 [3.50e+01 ~ 14.3%]
+        Spills        :      64 bytes*
+            Reads     :       8 [1.54e+01 ~ 6.3%]
+            Writes    :       8 [1.13e+01 ~ 4.6%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: copy<double>(double *, double *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (copy<double>(double *, double *, int)) [20/54=37.0%] euler3d_cpu_double.cpp(56,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at euler3d_cpu_double.cpp(57,2)
+   remark #25401: memcopy(with guard) generated
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between src[i] (57:2) and dst[i] (59:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between dst[i] (59:3) and src[i] (57:2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at euler3d_cpu_double.cpp(57,2)
+   <Multiversioned v2>
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between dst[i] (59:3) and src[i] (59:3)
+      remark #17106: parallel dependence: assumed ANTI dependence between src[i] (59:3) and dst[i] (59:3)
+      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at euler3d_cpu_double.cpp(57,2)
+   <Remainder, Multiversioned v2>
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(57,2):remark #34014: optimization advice for memcpy: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+euler3d_cpu_double.cpp(57,2):remark #34014: optimization advice for memcpy: increase the source's alignment to 16 (and use __assume_aligned) to speed up library implementation
+euler3d_cpu_double.cpp(57,2):remark #34026: call to memcpy implemented as a call to optimized library version
+euler3d_cpu_double.cpp(56,1):remark #34051: REGISTER ALLOCATION : [_Z4copyIdEvPT_S1_i] euler3d_cpu_double.cpp:56
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rcx rsi rdi r8-r10]
+        
+    Routine temporaries
+        Total         :      34
+            Global    :      15
+            Local     :      19
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: alloc<double>(int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (alloc<double>(int)) [21/54=38.9%] euler3d_cpu_double.cpp(44,1)
+  -> EXTERN: (45,15) operator new[](std::size_t)
+  -> EXTERN: (45,15) __cxa_throw_bad_array_new_length()
+
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(44,1):remark #34051: REGISTER ALLOCATION : [_Z5allocIdEPT_i] euler3d_cpu_double.cpp:44
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdi r12]
+        
+    Routine temporaries
+        Total         :      12
+            Global    :       7
+            Local     :       5
+        Regenerable   :       1
+        Spilled       :       1
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: initialize_variables(int, double *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (initialize_variables(int, double *)) [22/54=40.7%] euler3d_cpu_double.cpp(104,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at euler3d_cpu_double.cpp(105,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between variables[i*5+j] (107:33) and ff_variable[j] (107:33)
+   remark #17106: parallel dependence: assumed ANTI dependence between ff_variable[j] (107:33) and variables[i*5+j] (107:33)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at euler3d_cpu_double.cpp(107,3)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed FLOW dependence between variables[i*5+j] (107:33) and ff_variable[j] (107:33)
+      remark #17106: parallel dependence: assumed ANTI dependence between ff_variable[j] (107:33) and variables[i*5+j] (107:33)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between variables[i*5+j] (107:33) and ff_variable[j] (107:33)
+      remark #15346: vector dependence: assumed ANTI dependence between ff_variable[j] (107:33) and variables[i*5+j] (107:33)
+      remark #25436: completely unrolled by 5  
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(104,1):remark #34051: REGISTER ALLOCATION : [_Z20initialize_variablesiPd] euler3d_cpu_double.cpp:104
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rsi rdi r8-r11]
+        
+    Routine temporaries
+        Total         :      18
+            Global    :      10
+            Local     :       8
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: std::basic_istream<char, std::char_traits<char>>::operator>>(std::basic_istream<char, std::char_traits<char>> *, double &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_istream<char, std::char_traits<char>>::operator>>(std::basic_istream<char, std::char_traits<char>> *, double &))/usr/include/c++/7.4.0/istream(219,7)
+
+===========================================================================
+
+Begin optimization report for: std::min<int>(const int &, const int &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::min<int>(const int &, const int &)) [24/54=44.4%] /usr/include/c++/7.4.0/bits/stl_algobase.h(196,5)
+
+
+    Report from: Code generation optimizations [cg]
+
+/usr/include/c++/7.4.0/bits/stl_algobase.h(196,5):remark #34051: REGISTER ALLOCATION : [_ZSt3minIiERKT_S2_S2_] /usr/include/c++/7.4.0/bits/stl_algobase.h:196
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      13
+            Global    :       0
+            Local     :      13
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [25/54=46.3%] euler3d_cpu_double.cpp(332,1)
+  -> (335,13) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <2>]]
+  -> (335,41) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <2>]]
+  -> (365,3) compute_flux_contribution(double &, double3 &, double &, double &, double3 &, double3 &, double3 &, double3 &, double3 &) (isz = 51) (sz = 72)
+     [[ Unable to inline callsite  <1>]]
+  -> INLINE (MANUAL): (375,22) std::basic_ifstream<char, std::char_traits<char>>::~basic_ifstream(std::basic_ifstream<char, std::char_traits<char>> *const) (isz = 1) (sz = 6)
+    -> INLINE (MANUAL): /usr/include/c++/7.4.0/fstream:(533,7) std::basic_ifstream<char, std::char_traits<char>>::~basic_ifstream(std::basic_ifstream<char, std::char_traits<char>> *, const long *const *) (isz = 35) (sz = 42)
+      -> INLINE (MANUAL): (534,9) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (534,9) std::basic_istream<char, std::char_traits<char>>::~basic_istream(std::basic_istream<char, std::char_traits<char>> *, const long *const *) (isz = 28) (sz = 35)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/istream:(104,36) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (534,9) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 34) (sz = 39)
+        -> EXTERN: (239,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+        -> EXTERN: (239,7) __cxa_call_unexpected
+        -> EXTERN: (239,15) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (239,24) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,24) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+  -> INLINE (MANUAL): (375,22) std::basic_ifstream<char, std::char_traits<char>>::basic_ifstream(std::basic_ifstream<char, std::char_traits<char>> *const, const char *, std::ios_base::openmode) (isz = 1) (sz = 10)
+    -> INLINE (MANUAL): /usr/include/c++/7.4.0/fstream:(495,7) std::basic_ifstream<char, std::char_traits<char>>::basic_ifstream(std::basic_ifstream<char, std::char_traits<char>> *, const long *const *, const char *, std::ios_base::openmode) (isz = 74) (sz = 85)
+      -> INLINE (MANUAL): (495,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (495,7) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 34) (sz = 39)
+        -> EXTERN: (239,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+        -> EXTERN: (239,7) __cxa_call_unexpected
+        -> EXTERN: (239,15) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (239,24) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,24) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+      -> INLINE (MANUAL): (495,7) std::basic_istream<char, std::char_traits<char>>::~basic_istream(std::basic_istream<char, std::char_traits<char>> *, const long *const *) (isz = 28) (sz = 35)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/istream:(104,36) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> EXTERN: (495,7) std::basic_filebuf<char, std::char_traits<char>>::basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *)
+      -> INLINE (MANUAL): (495,7) std::basic_istream<char, std::char_traits<char>>::basic_istream(std::basic_istream<char, std::char_traits<char>> *, const long *const *) (isz = 46) (sz = 53)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/istream:(606,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(460,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 19) (sz = 24)
+            -> EXTERN: (460,7) std::ios_base::ios_base(std::ios_base *const)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/istream:(606,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+        -> EXTERN: /usr/include/c++/7.4.0/istream:(608,15) std::basic_ios<char, std::char_traits<char>>::init(std::basic_ios<char, std::char_traits<char>> *, std::basic_streambuf<char, std::char_traits<char>> *)
+      -> INLINE (MANUAL): (495,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(460,7) std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 19) (sz = 24)
+          -> EXTERN: (460,7) std::ios_base::ios_base(std::ios_base *const)
+      -> EXTERN: (498,8) std::basic_ios<char, std::char_traits<char>>::init(std::basic_ios<char, std::char_traits<char>> *, std::basic_streambuf<char, std::char_traits<char>> *)
+      -> INLINE (MANUAL): (499,8) std::basic_ifstream<char, std::char_traits<char>>::open(std::basic_ifstream<char, std::char_traits<char>> *, const char *, std::ios_base::openmode) (isz = 23) (sz = 32)
+        -> EXTERN: (597,18) std::basic_filebuf<char, std::char_traits<char>>::open(std::basic_filebuf<char, std::char_traits<char>> *, const char *, std::ios_base::openmode)
+        -> CP_CLONE (597,35) std::operator|..0(std::_Ios_Openmode, std::_Ios_Openmode) (isz = 0) (sz = 7)
+           [[ Unable to inline callsite  <1>]]
+        -> INLINE (MANUAL): (598,10) std::basic_ios<char, std::char_traits<char>>::setstate(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate) (isz = 7) (sz = 14)
+          -> EXTERN: /usr/include/c++/7.4.0/bits/basic_ios.h:(158,15) std::basic_ios<char, std::char_traits<char>>::clear(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(158,27) std::basic_ios<char, std::char_traits<char>>::rdstate(const std::basic_ios<char, std::char_traits<char>> *) const (isz = 0) (sz = 6)
+          -> /usr/include/c++/7.4.0/bits/basic_ios.h:(158,37) std::operator|(std::_Ios_Iostate, std::_Ios_Iostate) (isz = 0) (sz = 7)
+             [[ Unable to inline callsite  <1>]]
+        -> EXTERN: (602,10) std::basic_ios<char, std::char_traits<char>>::clear(std::basic_ios<char, std::char_traits<char>> *, std::ios_base::iostate)
+  -> EXTERN: (377,8) std::basic_istream<char, std::char_traits<char>>::operator>>(std::basic_istream<char, std::char_traits<char>> *, int &)
+  -> (378,47) std::min<int>(const int &, const int &) (isz = 2) (sz = 12)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (380,22) __cxa_throw_bad_array_new_length()
+  -> EXTERN: (380,22) operator new[](std::size_t)
+  -> EXTERN: (381,48) __cxa_throw_bad_array_new_length()
+  -> EXTERN: (381,48) operator new[](std::size_t)
+  -> EXTERN: (382,33) __cxa_throw_bad_array_new_length()
+  -> EXTERN: (382,33) operator new[](std::size_t)
+  -> (387,9) std::basic_istream<char, std::char_traits<char>>::operator>>(std::basic_istream<char, std::char_traits<char>> *, double &) (isz = 1) (sz = 10)
+     [[ Called routine is noinline  <2>]]
+  -> EXTERN: (390,10) std::basic_istream<char, std::char_traits<char>>::operator>>(std::basic_istream<char, std::char_traits<char>> *, int &)
+  -> (396,11) std::basic_istream<char, std::char_traits<char>>::operator>>(std::basic_istream<char, std::char_traits<char>> *, double &) (isz = 1) (sz = 10)
+     [[ Called routine is noinline  <2>]]
+  -> INLINE (MANUAL): (414,2) std::basic_ifstream<char, std::char_traits<char>>::~basic_ifstream(std::basic_ifstream<char, std::char_traits<char>> *const) (isz = 1) (sz = 6)
+    -> INLINE (MANUAL): /usr/include/c++/7.4.0/fstream:(533,7) std::basic_ifstream<char, std::char_traits<char>>::~basic_ifstream(std::basic_ifstream<char, std::char_traits<char>> *, const long *const *) (isz = 35) (sz = 42)
+      -> INLINE (MANUAL): (534,9) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+          -> EXTERN: (282,20) __cxa_call_unexpected
+          -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (534,9) std::basic_istream<char, std::char_traits<char>>::~basic_istream(std::basic_istream<char, std::char_traits<char>> *, const long *const *) (isz = 28) (sz = 35)
+        -> INLINE (MANUAL): /usr/include/c++/7.4.0/istream:(104,36) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/bits/basic_ios.h:(282,7) std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *) (isz = 10) (sz = 15)
+            -> EXTERN: (282,20) __cxa_call_unexpected
+            -> EXTERN: (282,22) std::ios_base::~ios_base(std::ios_base *const)
+      -> INLINE (MANUAL): (534,9) std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *) (isz = 34) (sz = 39)
+        -> EXTERN: (239,7) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+        -> EXTERN: (239,7) __cxa_call_unexpected
+        -> EXTERN: (239,15) std::basic_filebuf<char, std::char_traits<char>>::close(std::basic_filebuf<char, std::char_traits<char>> *)
+        -> EXTERN: (239,24) std::__basic_file<char>::~__basic_file(std::__basic_file<char> *)
+        -> INLINE (MANUAL): (239,24) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const) (isz = 0) (sz = 5)
+          -> INLINE (MANUAL): /usr/include/c++/7.4.0/streambuf:(197,7) std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *) (isz = 9) (sz = 14)
+            -> EXTERN: (198,9) std::locale::~locale(std::locale *)
+  -> (417,22) alloc<double>(int) (isz = 10) (sz = 17)
+     [[ Unable to inline callsite  <1>]]
+  -> (418,2) initialize_variables(int, double *) (isz = 30) (sz = 37)
+     [[ Unable to inline callsite  <1>]]
+  -> (420,26) alloc<double>(int) (isz = 10) (sz = 17)
+     [[ Unable to inline callsite  <1>]]
+  -> (421,19) alloc<double>(int) (isz = 10) (sz = 17)
+     [[ Unable to inline callsite  <1>]]
+  -> (422,25) alloc<double>(int) (isz = 10) (sz = 17)
+     [[ Unable to inline callsite  <1>]]
+  -> (425,12) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <2>]]
+  -> (425,29) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <2>]]
+  -> EXTERN: (426,17) omp_get_wtime()
+  -> (431,3) copy<double>(double *, double *, int) (isz = 16) (sz = 25)
+     [[ Unable to inline callsite  <1>]]
+  -> (434,3) compute_step_factor(int, double *, double *, double *) (isz = 79) (sz = 90)
+     [[ Unable to inline callsite  <1>]]
+  -> (438,4) compute_flux(int, int *, double *, double *, double *) (isz = 431) (sz = 444)
+     [[ Unable to inline callsite  <1>]]
+  -> (439,4) time_step(int, int, double *, double *, double *, double *) (isz = 101) (sz = 116)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (443,15) omp_get_wtime()
+  -> (444,13) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double) (isz = 1) (sz = 10)
+     [[ Called routine is noinline  <2>]]
+  -> (444,42) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <2>]]
+  -> (444,70) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <2>]]
+  -> (446,12) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <2>]]
+  -> (446,36) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <2>]]
+  -> (447,2) dump(double *, int, int) (isz = 223) (sz = 232)
+     [[ Unable to inline callsite  <1>]]
+  -> (448,12) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <2>]]
+  -> (448,35) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <2>]]
+  -> (451,12) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <2>]]
+  -> (451,32) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <2>]]
+  -> (452,2) dealloc<double>(double *) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+  -> (453,2) dealloc<int>(int *) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+  -> (454,2) dealloc<double>(double *) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+  -> (456,2) dealloc<double>(double *) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+  -> (457,2) dealloc<double>(double *) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+  -> (458,2) dealloc<double>(double *) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+  -> (459,2) dealloc<double>(double *) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+  -> (461,12) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *) (isz = 15) (sz = 24)
+     [[ Called routine is noinline  <2>]]
+  -> (461,25) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &)) (isz = 0) (sz = 9)
+     [[ Called routine is noinline  <2>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at euler3d_cpu_double.cpp(394,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #26015: Exception can be thrown by the call to std::basic_istream<char, std::char_traits<char>>::operator>>(std::basic_istream<char, std::char_traits<char>> *, double &)   [ euler3d_cpu_double.cpp(396,11) ]
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ euler3d_cpu_double.cpp(396,11) ]
+LOOP END
+
+LOOP BEGIN at euler3d_cpu_double.cpp(404,3)
+<Distributed chunk1>
+   remark #25426: Loop Distributed (3 way) 
+   remark #17100: DISTRIBUTED LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ nelr nel i areas last } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at euler3d_cpu_double.cpp(404,3)
+<Remainder, Distributed chunk1>
+LOOP END
+
+LOOP BEGIN at euler3d_cpu_double.cpp(404,3)
+<Distributed chunk2>
+   remark #17100: DISTRIBUTED LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ nelr j nel i elements_surrounding_elements last } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at euler3d_cpu_double.cpp(407,4)
+   <Distributed chunk1>
+      remark #25426: Loop Distributed (2 way) 
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25436: completely unrolled by 4  
+   LOOP END
+LOOP END
+
+LOOP BEGIN at euler3d_cpu_double.cpp(404,3)
+<Distributed chunk3>
+   remark #25444: Loopnest Interchanged: ( 1 2 3 ) --> ( 1 3 2 )
+   remark #17100: DISTRIBUTED LOOP WAS AUTO-PARALLELIZED
+   remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ nelr j k nel i normals last } lastprivate={ } firstlastprivate={ } reduction={ }
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at euler3d_cpu_double.cpp(411,5)
+   <Distributed chunk2>
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25436: completely unrolled by 3  
+
+      LOOP BEGIN at euler3d_cpu_double.cpp(407,4)
+         remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+         remark #25436: completely unrolled by 4  
+      LOOP END
+
+      LOOP BEGIN at euler3d_cpu_double.cpp(407,4)
+      LOOP END
+
+      LOOP BEGIN at euler3d_cpu_double.cpp(407,4)
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at euler3d_cpu_double.cpp(429,2)
+   remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
+   remark #25452: Original Order found to be proper, but by a close margin
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at euler3d_cpu_double.cpp(436,3)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15382: vectorization support: call to function compute_flux(int, int *, double *, double *, double *) cannot be vectorized   [ euler3d_cpu_double.cpp(438,4) ]
+      remark #15382: vectorization support: call to function time_step(int, int, double *, double *, double *, double *) cannot be vectorized   [ euler3d_cpu_double.cpp(439,4) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+
+LOOP BEGIN at euler3d_cpu_double.cpp(404,3)
+<Distributed chunk1>
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at euler3d_cpu_double.cpp(404,3)
+<Remainder, Distributed chunk1>
+LOOP END
+
+LOOP BEGIN at euler3d_cpu_double.cpp(404,3)
+<Distributed chunk2>
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at euler3d_cpu_double.cpp(407,4)
+   <Distributed chunk1>
+      remark #17107: loop was not parallelized: inner loop
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed FLOW dependence between elements_surrounding_elements[i*4+j] (410:5) and elements_surrounding_elements[last*4+j] (410:5)
+      remark #15346: vector dependence: assumed ANTI dependence between elements_surrounding_elements[last*4+j] (410:5) and elements_surrounding_elements[i*4+j] (410:5)
+      remark #25436: completely unrolled by 4  
+   LOOP END
+LOOP END
+
+LOOP BEGIN at euler3d_cpu_double.cpp(404,3)
+<Distributed chunk3>
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at euler3d_cpu_double.cpp(411,5)
+   <Distributed chunk2>
+      remark #17107: loop was not parallelized: inner loop
+      remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+      remark #25436: completely unrolled by 3  
+
+      LOOP BEGIN at euler3d_cpu_double.cpp(407,4)
+         remark #17107: loop was not parallelized: inner loop
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization
+         remark #15346: vector dependence: assumed FLOW dependence between normals[(i*4+j)*3+k] (411:35) and normals[(last*4+j)*3+k] (411:35)
+         remark #15346: vector dependence: assumed ANTI dependence between normals[(last*4+j)*3+k] (411:35) and normals[(i*4+j)*3+k] (411:35)
+         remark #25436: completely unrolled by 4  
+      LOOP END
+
+      LOOP BEGIN at euler3d_cpu_double.cpp(407,4)
+      LOOP END
+
+      LOOP BEGIN at euler3d_cpu_double.cpp(407,4)
+      LOOP END
+   LOOP END
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at euler3d_cpu_double.cpp(385,3)
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ euler3d_cpu_double.cpp(387,9) ]
+   remark #17102: loop was not parallelized: not a parallelization candidate
+
+   LOOP BEGIN at euler3d_cpu_double.cpp(388,4)
+      remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ euler3d_cpu_double.cpp(390,10) ]
+      remark #17102: loop was not parallelized: not a parallelization candidate
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+euler3d_cpu_double.cpp(332,1):remark #34051: REGISTER ALLOCATION : [main] euler3d_cpu_double.cpp:332
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   15[ rax rdx rcx rbx rsi rdi r8-r15 zmm0]
+        
+    Routine temporaries
+        Total         :     685
+            Global    :     148
+            Local     :     537
+        Regenerable   :     238
+        Spilled       :      14
+        
+    Routine stack
+        Variables     :     752 bytes*
+            Reads     :      30 [2.99e+01 ~ 0.0%]
+            Writes    :      91 [1.98e+01 ~ 0.0%]
+        Spills        :     152 bytes*
+            Reads     :      76 [2.31e+04 ~ 22.9%]
+            Writes    :      40 [2.90e+03 ~ 2.9%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *))/usr/include/c++/7.4.0/streambuf(198,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_streambuf<char, std::char_traits<char>>::~basic_streambuf(std::basic_streambuf<char, std::char_traits<char>> *const))/usr/include/c++/7.4.0/streambuf(197,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ios<char, std::char_traits<char>>::rdstate(const std::basic_ios<char, std::char_traits<char>> *) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ios<char, std::char_traits<char>>::rdstate(const std::basic_ios<char, std::char_traits<char>> *) const)/usr/include/c++/7.4.0/bits/basic_ios.h(138,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *))/usr/include/c++/7.4.0/bits/basic_ios.h(282,20)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ios<char, std::char_traits<char>>::~basic_ios(std::basic_ios<char, std::char_traits<char>> *const))/usr/include/c++/7.4.0/bits/basic_ios.h(282,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ios<char, std::char_traits<char>>::widen(const std::basic_ios<char, std::char_traits<char>> *, char) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ios<char, std::char_traits<char>>::widen(const std::basic_ios<char, std::char_traits<char>> *, char) const)/usr/include/c++/7.4.0/bits/basic_ios.h(450,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *))/usr/include/c++/7.4.0/bits/basic_ios.h(463,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *const)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ios<char, std::char_traits<char>>::basic_ios(std::basic_ios<char, std::char_traits<char>> *const))/usr/include/c++/7.4.0/bits/basic_ios.h(460,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ostream<char, std::char_traits<char>>::~basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *))/usr/include/c++/7.4.0/ostream(93,24)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ostream<char, std::char_traits<char>>::basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ostream<char, std::char_traits<char>>::basic_ostream(std::basic_ostream<char, std::char_traits<char>> *, const long *const *))/usr/include/c++/7.4.0/ostream(385,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_istream<char, std::char_traits<char>>::~basic_istream(std::basic_istream<char, std::char_traits<char>> *, const long *const *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_istream<char, std::char_traits<char>>::~basic_istream(std::basic_istream<char, std::char_traits<char>> *, const long *const *))/usr/include/c++/7.4.0/istream(104,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_istream<char, std::char_traits<char>>::basic_istream(std::basic_istream<char, std::char_traits<char>> *, const long *const *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_istream<char, std::char_traits<char>>::basic_istream(std::basic_istream<char, std::char_traits<char>> *, const long *const *))/usr/include/c++/7.4.0/istream(608,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_filebuf<char, std::char_traits<char>>::~basic_filebuf(std::basic_filebuf<char, std::char_traits<char>> *))/usr/include/c++/7.4.0/fstream(239,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ifstream<char, std::char_traits<char>>::basic_ifstream(std::basic_ifstream<char, std::char_traits<char>> *, const long *const *, const char *, std::ios_base::openmode)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ifstream<char, std::char_traits<char>>::basic_ifstream(std::basic_ifstream<char, std::char_traits<char>> *, const long *const *, const char *, std::ios_base::openmode))/usr/include/c++/7.4.0/fstream(497,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ifstream<char, std::char_traits<char>>::basic_ifstream(std::basic_ifstream<char, std::char_traits<char>> *const, const char *, std::ios_base::openmode)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ifstream<char, std::char_traits<char>>::basic_ifstream(std::basic_ifstream<char, std::char_traits<char>> *const, const char *, std::ios_base::openmode))/usr/include/c++/7.4.0/fstream(495,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ifstream<char, std::char_traits<char>>::~basic_ifstream(std::basic_ifstream<char, std::char_traits<char>> *, const long *const *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ifstream<char, std::char_traits<char>>::~basic_ifstream(std::basic_ifstream<char, std::char_traits<char>> *, const long *const *))/usr/include/c++/7.4.0/fstream(534,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ifstream<char, std::char_traits<char>>::~basic_ifstream(std::basic_ifstream<char, std::char_traits<char>> *const)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ifstream<char, std::char_traits<char>>::~basic_ifstream(std::basic_ifstream<char, std::char_traits<char>> *const))/usr/include/c++/7.4.0/fstream(533,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ifstream<char, std::char_traits<char>>::open(std::basic_ifstream<char, std::char_traits<char>> *, const char *, std::ios_base::openmode)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ifstream<char, std::char_traits<char>>::open(std::basic_ifstream<char, std::char_traits<char>> *, const char *, std::ios_base::openmode))/usr/include/c++/7.4.0/fstream(596,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *, const char *, std::ios_base::openmode)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *, const char *, std::ios_base::openmode))/usr/include/c++/7.4.0/fstream(700,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const, const char *, std::ios_base::openmode)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const, const char *, std::ios_base::openmode))/usr/include/c++/7.4.0/fstream(697,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *, const long *const *))/usr/include/c++/7.4.0/fstream(738,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const))/usr/include/c++/7.4.0/fstream(737,7)
+
+===========================================================================
+
+Begin optimization report for: std::basic_ofstream<char, std::char_traits<char>>::open(std::basic_ofstream<char, std::char_traits<char>> *, const char *, std::ios_base::openmode)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::basic_ofstream<char, std::char_traits<char>>::open(std::basic_ofstream<char, std::char_traits<char>> *, const char *, std::ios_base::openmode))/usr/include/c++/7.4.0/fstream(801,7)
+
+===========================================================================
+
+Begin optimization report for: std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)
+
+    Report from: Interprocedural optimizations [ipo]
+
+DEAD STATIC FUNCTION: (std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)) /usr/include/c++/7.4.0/bits/ios_base.h(130,3)
+
+===========================================================================
+
+Begin optimization report for: std::ctype<char>::widen(const std::ctype<char> *, char) const
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::ctype<char>::widen(const std::ctype<char> *, char) const) [50/54=92.6%] /usr/include/c++/7.4.0/bits/locale_facets.h(873,7)
+  -> EXTERN: (876,8) std::ctype<char>::_M_widen_init(const std::ctype<char> *) const
+  -> INDIRECT- (VIRTUAL): (877,24)  EXPR_CONV.SI64.P64(*((SI64*) (this_10297_V$129.0.13->__vptr_V$37_2.0 + EXPR_CONV.SI32.I64(6(SI32)) * 8(I64))))
+     [[ Unable to inline indirect callsite  <3>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+/usr/include/c++/7.4.0/bits/locale_facets.h(873,7):remark #34051: REGISTER ALLOCATION : [_ZNKSt5ctypeIcE5widenEc] /usr/include/c++/7.4.0/bits/locale_facets.h:873
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    6[ rax rdx rbx rbp rsi rdi]
+        
+    Routine temporaries
+        Total         :      19
+            Global    :       8
+            Local     :      11
+        Regenerable   :       0
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: std::__check_facet<std::basic_ios<char, std::char_traits<char>>::__ctype_type>(const std::basic_ios<char, std::char_traits<char>>::__ctype_type *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (std::__check_facet<std::basic_ios<char, std::char_traits<char>>::__ctype_type>(const std::basic_ios<char, std::char_traits<char>>::__ctype_type *)) [51/54=94.4%] /usr/include/c++/7.4.0/bits/basic_ios.h(48,5)
+  -> EXTERN: (50,2) std::__throw_bad_cast()
+
+
+    Report from: Code generation optimizations [cg]
+
+/usr/include/c++/7.4.0/bits/basic_ios.h(48,5):remark #34051: REGISTER ALLOCATION : [_ZSt13__check_facetISt5ctypeIcEERKT_PS3_] /usr/include/c++/7.4.0/bits/basic_ios.h:48
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :       9
+            Global    :       7
+            Local     :       2
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: std::endl<char, std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::endl<char, std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &))/usr/include/c++/7.4.0/ostream(591,5)
+
+===========================================================================
+
+Begin optimization report for: std::flush<char, std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (std::flush<char, std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &))/usr/include/c++/7.4.0/ostream(613,5)
+
+===========================================================================
+
+Begin optimization report for: __sti__$E()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (__sti__$E()) [54/54=100.0%] <compiler generated>
+  -> EXTERN: /usr/include/c++/7.4.0/iostream:(74,25) __cxa_atexit(void (*)(void *), void *, void *)
+  -> EXTERN: /usr/include/c++/7.4.0/iostream:(74,25) std::ios_base::Init::Init(std::ios_base::Init *)
+
+
+    Report from: Code generation optimizations [cg]
+
+<compiler generated>:remark #34051: REGISTER ALLOCATION : [__sti__$E] (null):0
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      13
+            Global    :       7
+            Local     :       6
+        Regenerable   :       7
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> Inlining the function will lead to incorrect program behavior.
+
+<2> The routine declaration is annotated with "__attribute__((noinline))".  
+    Remove this annotation to permit the compiler to inline this routine.
+
+<3> The indirectly called function must be resolved to its targets before it 
+can be inlined.  Consider compiling with -ipo or -prof-gen followed by 
+-prof-use.
+

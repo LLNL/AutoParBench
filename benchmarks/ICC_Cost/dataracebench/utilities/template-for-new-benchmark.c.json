@@ -5,11 +5,10 @@
 "loop id":"1",
 "loop line":"27",
 "loop column":"3",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["j","C","i"]
+"multiversioned":"false"
 },
 "loop - object id : 2":{
 "file":"./dataracebench/utilities/template-for-new-benchmark.c",
@@ -17,11 +16,10 @@
 "loop id":"2",
 "loop line":"28",
 "loop column":"5",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["j","C","i"]
+"multiversioned":"false"
 },
 "loop - object id : 3":{
 "file":"./dataracebench/utilities/template-for-new-benchmark.c",
@@ -51,11 +49,10 @@
 "loop id":"1",
 "loop line":"56",
 "loop column":"3",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["j","C","i"]
+"multiversioned":"false"
 },
 "loop - object id : 6":{
 "file":"./dataracebench/utilities/template-for-new-benchmark.c",
@@ -63,10 +60,9 @@
 "loop id":"2",
 "loop line":"57",
 "loop column":"5",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"false",
-"firstprivate":["j","C","i"]
+"multiversioned":"false"
 }
 }

@@ -16,11 +16,10 @@
 "loop id":"2",
 "loop line":"30",
 "loop column":"9",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"true",
-"firstprivate":["X","A","B","c2","c1"]
+"multiversioned":"true"
 },
 "loop - object id : 3":{
 "file":"./dataracebench/DRB043-adi-parallel-no.c",

@@ -4,7 +4,7 @@ See "https://software.intel.com/en-us/intel-advisor-xe" for details.
 
 Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
 
-Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.o
+Compiler options: -c -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.o
 
     Report from: Interprocedural optimizations [ipo]
 
@@ -829,7 +829,6 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-
          remark #17109: LOOP WAS AUTO-PARALLELIZED
          remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ nz ist jst m tz2 k j i } lastprivate={ } firstlastprivate={ } reduction={ }
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-         remark #25439: unrolled with remainder by 8  
          remark #25015: Estimate of max trip count of loop=5
 
          LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(2629,2)
@@ -871,11 +870,6 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-
 
       LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(2714,7)
          remark #25436: completely unrolled by 5   (pre-vector) 
-      LOOP END
-
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(2628,7)
-      <Remainder>
-         remark #25436: completely unrolled by 7  
       LOOP END
    LOOP END
 LOOP END
@@ -1073,19 +1067,19 @@ LOOP END
         Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
         
     Routine temporaries
-        Total         :    3704
-            Global    :     546
-            Local     :    3158
+        Total         :    3614
+            Global    :     544
+            Local     :    3070
         Regenerable   :     575
-        Spilled       :     147
+        Spilled       :     145
         
     Routine stack
         Variables     :    1140 bytes*
             Reads     :      20 [4.96e+06 ~ 1.5%]
             Writes    :     213 [0.00e+00 ~ 0.0%]
-        Spills        :    1224 bytes*
-            Reads     :     315 [9.27e+05 ~ 0.3%]
-            Writes    :     287 [8.76e+04 ~ 0.0%]
+        Spills        :    1208 bytes*
+            Reads     :     286 [9.26e+05 ~ 0.3%]
+            Writes    :     265 [8.66e+04 ~ 0.0%]
     
     Notes
     
@@ -1240,32 +1234,20 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-
       remark #17106: parallel dependence: assumed ANTI dependence between tmat[0][0] (626:7) and tmat[m][_2] (486:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(468,7)
-         remark #25436: completely unrolled by 5   (pre-vector) 
-      LOOP END
-
       LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(485,7)
          remark #17109: LOOP WAS AUTO-PARALLELIZED
          remark #17101: parallel loop shared={ tmat } private={ } firstprivate={ iend jend _2 d m j i } lastprivate={ } firstlastprivate={ } reduction={ }
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
-         remark #25436: completely unrolled by 5  
+         remark #25015: Estimate of max trip count of loop=5
 
          LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(486,2)
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-            remark #25436: completely unrolled by 5  
+            remark #25015: Estimate of max trip count of loop=5
          LOOP END
+      LOOP END
 
-         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(486,2)
-         LOOP END
-
-         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(486,2)
-         LOOP END
-
-         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(486,2)
-         LOOP END
-
-         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(486,2)
-         LOOP END
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(468,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
       LOOP END
 
       LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(495,7)
@@ -1398,19 +1380,19 @@ LOOP END
         Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
         
     Routine temporaries
-        Total         :    1631
-            Global    :     217
-            Local     :    1414
+        Total         :    1615
+            Global    :     221
+            Local     :    1394
         Regenerable   :     250
         Spilled       :      34
         
     Routine stack
         Variables     :     696 bytes*
-            Reads     :     106 [2.11e+03 ~ 10.3%]
-            Writes    :     135 [9.50e+02 ~ 4.6%]
+            Reads     :     106 [2.11e+03 ~ 9.0%]
+            Writes    :     110 [3.25e+02 ~ 1.4%]
         Spills        :     320 bytes*
-            Reads     :     138 [1.48e+02 ~ 0.7%]
-            Writes    :     112 [4.15e+01 ~ 0.2%]
+            Reads     :     136 [1.23e+02 ~ 0.5%]
+            Writes    :     111 [1.65e+01 ~ 0.1%]
     
     Notes
     
@@ -1442,7 +1424,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-
 
       LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(1627,7)
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-         remark #25436: completely unrolled by 4  
+         remark #25015: Estimate of max trip count of loop=4
       LOOP END
    LOOP END
 LOOP END
@@ -1459,7 +1441,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-
       LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(1627,7)
          remark #17107: loop was not parallelized: inner loop
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-         remark #25436: completely unrolled by 4  
+         remark #25015: Estimate of max trip count of loop=4
       LOOP END
    LOOP END
 LOOP END
@@ -1475,19 +1457,19 @@ LOOP END
         Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
         
     Routine temporaries
-        Total         :    1288
-            Global    :     291
-            Local     :     997
+        Total         :    1294
+            Global    :     301
+            Local     :     993
         Regenerable   :     131
-        Spilled       :     180
+        Spilled       :     183
         
     Routine stack
         Variables     :     328 bytes*
             Reads     :       2 [1.15e+02 ~ 0.0%]
             Writes    :      47 [0.00e+00 ~ 0.0%]
-        Spills        :    1480 bytes*
-            Reads     :     264 [5.24e+05 ~ 12.7%]
-            Writes    :     246 [3.57e+04 ~ 0.9%]
+        Spills        :    1504 bytes*
+            Reads     :     268 [5.21e+05 ~ 12.4%]
+            Writes    :     249 [3.58e+04 ~ 0.8%]
     
     Notes
     
@@ -1541,32 +1523,20 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-
       remark #17106: parallel dependence: assumed FLOW dependence between v[i][j][k][m] (238:2) and v[i][j-1][k][0] (238:2)
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(236,7)
-         remark #25436: completely unrolled by 5   (pre-vector) 
-      LOOP END
-
       LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(256,7)
          remark #17109: LOOP WAS AUTO-PARALLELIZED
          remark #17101: parallel loop shared={ tmat } private={ } firstprivate={ ist jst _2 d m j i } lastprivate={ } firstlastprivate={ } reduction={ }
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
-         remark #25436: completely unrolled by 5  
+         remark #25015: Estimate of max trip count of loop=5
 
          LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(257,2)
             remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-            remark #25436: completely unrolled by 5  
+            remark #25015: Estimate of max trip count of loop=5
          LOOP END
+      LOOP END
 
-         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(257,2)
-         LOOP END
-
-         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(257,2)
-         LOOP END
-
-         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(257,2)
-         LOOP END
-
-         LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(257,2)
-         LOOP END
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(236,7)
+         remark #25436: completely unrolled by 5   (pre-vector) 
       LOOP END
 
       LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(266,7)
@@ -1681,19 +1651,19 @@ LOOP END
         Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
         
     Routine temporaries
-        Total         :    1406
-            Global    :     180
-            Local     :    1226
+        Total         :    1389
+            Global    :     184
+            Local     :    1205
         Regenerable   :     211
         Spilled       :      26
         
     Routine stack
         Variables     :     608 bytes*
-            Reads     :     104 [2.23e+03 ~ 10.5%]
-            Writes    :     120 [1.18e+03 ~ 5.5%]
+            Reads     :     104 [2.23e+03 ~ 9.3%]
+            Writes    :      95 [5.50e+02 ~ 2.3%]
         Spills        :     256 bytes*
-            Reads     :     111 [2.82e+02 ~ 1.3%]
-            Writes    :      98 [2.12e+02 ~ 1.0%]
+            Reads     :     110 [2.82e+02 ~ 1.2%]
+            Writes    :      96 [1.87e+02 ~ 0.8%]
     
     Notes
     
@@ -1725,7 +1695,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-
 
       LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(1255,7)
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-         remark #25436: completely unrolled by 4  
+         remark #25015: Estimate of max trip count of loop=4
       LOOP END
    LOOP END
 LOOP END
@@ -1742,7 +1712,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-
       LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(1255,7)
          remark #17107: loop was not parallelized: inner loop
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-         remark #25436: completely unrolled by 4  
+         remark #25015: Estimate of max trip count of loop=4
       LOOP END
    LOOP END
 LOOP END
@@ -1758,10 +1728,10 @@ LOOP END
         Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
         
     Routine temporaries
-        Total         :    1338
-            Global    :     290
-            Local     :    1048
-        Regenerable   :     129
+        Total         :    1344
+            Global    :     302
+            Local     :    1042
+        Regenerable   :     131
         Spilled       :     176
         
     Routine stack
@@ -1769,8 +1739,8 @@ LOOP END
             Reads     :       2 [1.15e+02 ~ 0.0%]
             Writes    :      47 [0.00e+00 ~ 0.0%]
         Spills        :    1448 bytes*
-            Reads     :     264 [5.34e+05 ~ 12.9%]
-            Writes    :     238 [2.20e+04 ~ 0.5%]
+            Reads     :     265 [5.31e+05 ~ 12.5%]
+            Writes    :     238 [1.54e+04 ~ 0.4%]
     
     Notes
     
@@ -2251,7 +2221,6 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-
          remark #17109: LOOP WAS AUTO-PARALLELIZED
          remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ nz ist jst m tz2 k j i } lastprivate={ } firstlastprivate={ } reduction={ }
          remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
-         remark #25439: unrolled with remainder by 8  
          remark #25015: Estimate of max trip count of loop=5
 
          LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(1039,2)
@@ -2293,11 +2262,6 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-
 
       LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(1124,7)
          remark #25436: completely unrolled by 5   (pre-vector) 
-      LOOP END
-
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/NPB3.0-omp-c/LU/lu.c(1038,7)
-      <Remainder>
-         remark #25436: completely unrolled by 7  
       LOOP END
    LOOP END
 LOOP END
@@ -2524,19 +2488,19 @@ LOOP END
         Assigned     :   31[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm15]
         
     Routine temporaries
-        Total         :    4063
-            Global    :     645
-            Local     :    3418
-        Regenerable   :     624
-        Spilled       :     209
+        Total         :    3969
+            Global    :     640
+            Local     :    3329
+        Regenerable   :     622
+        Spilled       :     205
         
     Routine stack
         Variables     :    1228 bytes*
             Reads     :      22 [4.96e+06 ~ 1.4%]
             Writes    :     232 [0.00e+00 ~ 0.0%]
-        Spills        :    1712 bytes*
-            Reads     :     394 [5.46e+06 ~ 1.5%]
-            Writes    :     358 [2.08e+05 ~ 0.1%]
+        Spills        :    1688 bytes*
+            Reads     :     365 [5.46e+06 ~ 1.5%]
+            Writes    :     336 [2.07e+05 ~ 0.1%]
     
     Notes
     

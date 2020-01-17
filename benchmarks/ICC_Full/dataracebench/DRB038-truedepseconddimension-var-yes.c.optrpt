@@ -4,7 +4,7 @@ See "https://software.intel.com/en-us/intel-advisor-xe" for details.
 
 Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
 
-Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB038-truedepseconddimension-var-yes.o
+Compiler options: -c -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB038-truedepseconddimension-var-yes.o
 
     Report from: Interprocedural optimizations [ipo]
 
@@ -134,10 +134,10 @@ LOOP END
         Assigned     :   22[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm7]
         
     Routine temporaries
-        Total         :     270
-            Global    :      63
-            Local     :     207
-        Regenerable   :      50
+        Total         :     274
+            Global    :      65
+            Local     :     209
+        Regenerable   :      52
         Spilled       :      11
         
     Routine stack
@@ -145,8 +145,8 @@ LOOP END
             Reads     :       4 [9.41e+00 ~ 0.9%]
             Writes    :      12 [0.00e+00 ~ 0.0%]
         Spills        :     128 bytes*
-            Reads     :      25 [5.47e+01 ~ 5.3%]
-            Writes    :      23 [1.67e+01 ~ 1.6%]
+            Reads     :      27 [5.47e+01 ~ 5.3%]
+            Writes    :      25 [1.67e+01 ~ 1.6%]
     
     Notes
     

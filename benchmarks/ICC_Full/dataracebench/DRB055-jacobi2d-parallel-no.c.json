@@ -20,7 +20,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"true",
-"firstprivate":["A","B","c2","c1"]
+"firstprivate":["n","A","B","c2","c1"]
 },
 "loop - object id : 3":{
 "file":"./dataracebench/DRB055-jacobi2d-parallel-no.c",

@@ -4,7 +4,7 @@ See "https://software.intel.com/en-us/intel-advisor-xe" for details.
 
 Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
 
-Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.o
+Compiler options: -c -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.o
 
     Report from: Interprocedural optimizations [ipo]
 
@@ -56,6 +56,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
       remark #15344: loop was not vectorized: vector dependence prevents vectorization
       remark #15346: vector dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (53:7) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (55:9)
       remark #15346: vector dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (55:9) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (53:7)
+      remark #25015: Estimate of max trip count of loop=500
    LOOP END
 LOOP END
 
@@ -70,19 +71,19 @@ LOOP END
         Assigned     :   12[ rax rdx rcx rbx rbp rsi rdi r12-r15 zmm0]
         
     Routine temporaries
-        Total         :      38
-            Global    :      15
-            Local     :      23
+        Total         :      42
+            Global    :      17
+            Local     :      25
         Regenerable   :       8
-        Spilled       :       6
+        Spilled       :       8
         
     Routine stack
         Variables     :       0 bytes*
             Reads     :       0 [0.00e+00 ~ 0.0%]
             Writes    :       0 [0.00e+00 ~ 0.0%]
-        Spills        :       0 bytes*
-            Reads     :       0 [0.00e+00 ~ 0.0%]
-            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      64 bytes*
+            Reads     :       8 [1.54e+01 ~ 2.4%]
+            Writes    :       8 [1.14e+01 ~ 1.8%]
     
     Notes
     
@@ -104,20 +105,16 @@ INLINE REPORT: (kernel_adi(int, int, double (*)[500], double (*)[500], double (*
 
 LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(76,7)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between B[c15][c9] (82:19) and X[499][c15] (134:13)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between X[499][c15] (134:13) and B[c15][c9] (82:19)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between B[c15][c9] (82:19) and X[n-1][c15] (134:13)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between X[n-1][c15] (134:13) and B[c15][c9] (82:19)
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
    LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(78,140)
       remark #17102: loop was not parallelized: not a parallelization candidate
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(79,13)
-         remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
-         remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 3 ) --> ( 1 3 2 ) 
-         remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #17106: parallel dependence: assumed OUTPUT dependence between B[c15][c9] (82:19) and B[c15][c9] (82:19)
-         remark #17106: parallel dependence: assumed OUTPUT dependence between B[c15][c9] (82:19) and B[c15][c9] (82:19)
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(79,142)
+         remark #17102: loop was not parallelized: not a parallelization candidate
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
          LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(80,15)
@@ -145,12 +142,8 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
          LOOP END
       LOOP END
 
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(86,13)
-         remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
-         remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 3 ) --> ( 1 3 2 ) 
-         remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #17106: parallel dependence: assumed OUTPUT dependence between X[c15][c9] (89:19) and X[c15][c9] (89:19)
-         remark #17106: parallel dependence: assumed OUTPUT dependence between X[c15][c9] (89:19) and X[c15][c9] (89:19)
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(86,142)
+         remark #17102: loop was not parallelized: not a parallelization candidate
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
          LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(87,15)
@@ -178,27 +171,25 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
          LOOP END
       LOOP END
 
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(93,13)
-         remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #17106: parallel dependence: assumed OUTPUT dependence between X[c15][498-c9] (96:19) and X[c15][498-c9] (96:19)
-         remark #17106: parallel dependence: assumed OUTPUT dependence between X[c15][498-c9] (96:19) and X[c15][498-c9] (96:19)
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(93,142)
+         remark #17102: loop was not parallelized: not a parallelization candidate
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
          LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(94,15)
             remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
             remark #25451: Advice: Loop Interchange, if possible, might help loopnest. Suggested Permutation : ( 1 2 ) --> ( 2 1 ) 
             remark #17104: loop was not parallelized: existence of parallel dependence
-            remark #17106: parallel dependence: assumed ANTI dependence between X[c15][497-c9] (96:19) and X[c15][498-c9] (96:19)
-            remark #17106: parallel dependence: assumed FLOW dependence between X[c15][498-c9] (96:19) and X[c15][497-c9] (96:19)
+            remark #17106: parallel dependence: assumed ANTI dependence between X[c15][n-2-c9-1] (96:19) and X[c15][n-c9-2] (96:19)
+            remark #17106: parallel dependence: assumed FLOW dependence between X[c15][n-c9-2] (96:19) and X[c15][n-2-c9-1] (96:19)
             remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
             LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(95,17)
                remark #17104: loop was not parallelized: existence of parallel dependence
-               remark #17106: parallel dependence: assumed FLOW dependence between X[c15][498-c9] (96:19) and A[c15][497-c9] (96:19)
-               remark #17106: parallel dependence: assumed ANTI dependence between A[c15][497-c9] (96:19) and X[c15][498-c9] (96:19)
+               remark #17106: parallel dependence: assumed FLOW dependence between X[c15][n-c9-2] (96:19) and A[c15][n-c9-3] (96:19)
+               remark #17106: parallel dependence: assumed ANTI dependence between A[c15][n-c9-3] (96:19) and X[c15][n-c9-2] (96:19)
                remark #15344: loop was not vectorized: vector dependence prevents vectorization
-               remark #15346: vector dependence: assumed FLOW dependence between X[c15][498-c9] (96:19) and A[c15][497-c9] (96:19)
-               remark #15346: vector dependence: assumed ANTI dependence between A[c15][497-c9] (96:19) and X[c15][498-c9] (96:19)
+               remark #15346: vector dependence: assumed FLOW dependence between X[c15][n-c9-2] (96:19) and A[c15][n-c9-3] (96:19)
+               remark #15346: vector dependence: assumed ANTI dependence between A[c15][n-c9-3] (96:19) and X[c15][n-c9-2] (96:19)
                remark #25439: unrolled with remainder by 4  
             LOOP END
 
@@ -209,19 +200,17 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
       LOOP END
    LOOP END
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(102,9)
-      remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between X[c15][499] (104:13) and X[c15][499] (104:13)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between X[c15][499] (104:13) and X[c15][499] (104:13)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(102,138)
+      remark #17102: loop was not parallelized: not a parallelization candidate
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
       LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(103,11)
          remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #17106: parallel dependence: assumed FLOW dependence between X[c15][499] (104:13) and B[c15][499] (104:13)
-         remark #17106: parallel dependence: assumed ANTI dependence between B[c15][499] (104:13) and X[c15][499] (104:13)
+         remark #17106: parallel dependence: assumed FLOW dependence between X[c15][n-1] (104:13) and B[c15][n-1] (104:13)
+         remark #17106: parallel dependence: assumed ANTI dependence between B[c15][n-1] (104:13) and X[c15][n-1] (104:13)
          remark #15344: loop was not vectorized: vector dependence prevents vectorization
-         remark #15346: vector dependence: assumed FLOW dependence between X[c15][499] (104:13) and B[c15][499] (104:13)
-         remark #15346: vector dependence: assumed ANTI dependence between B[c15][499] (104:13) and X[c15][499] (104:13)
+         remark #15346: vector dependence: assumed FLOW dependence between X[c15][n-1] (104:13) and B[c15][n-1] (104:13)
+         remark #15346: vector dependence: assumed ANTI dependence between B[c15][n-1] (104:13) and X[c15][n-1] (104:13)
          remark #25439: unrolled with remainder by 2  
       LOOP END
 
@@ -234,12 +223,8 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
       remark #17102: loop was not parallelized: not a parallelization candidate
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(109,13)
-         remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
-         remark #25452: Original Order found to be proper, but by a close margin
-         remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #17106: parallel dependence: assumed OUTPUT dependence between B[c9][c15] (112:19) and B[c9][c15] (112:19)
-         remark #17106: parallel dependence: assumed OUTPUT dependence between B[c9][c15] (112:19) and B[c9][c15] (112:19)
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(109,142)
+         remark #17102: loop was not parallelized: not a parallelization candidate
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
          LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(110,15)
@@ -264,12 +249,8 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
          LOOP END
       LOOP END
 
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(116,13)
-         remark #25096: Loop Interchange not done due to: Imperfect Loop Nest (Either at Source or due to other Compiler Transformations)
-         remark #25452: Original Order found to be proper, but by a close margin
-         remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #17106: parallel dependence: assumed OUTPUT dependence between X[c9][c15] (119:19) and X[c9][c15] (119:19)
-         remark #17106: parallel dependence: assumed OUTPUT dependence between X[c9][c15] (119:19) and X[c9][c15] (119:19)
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(116,142)
+         remark #17102: loop was not parallelized: not a parallelization candidate
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
          LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(117,15)
@@ -294,25 +275,23 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
          LOOP END
       LOOP END
 
-      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(123,13)
-         remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #17106: parallel dependence: assumed OUTPUT dependence between X[498-c9][c15] (126:19) and X[498-c9][c15] (126:19)
-         remark #17106: parallel dependence: assumed OUTPUT dependence between X[498-c9][c15] (126:19) and X[498-c9][c15] (126:19)
+      LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(123,142)
+         remark #17102: loop was not parallelized: not a parallelization candidate
          remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
          LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(124,15)
             remark #17104: loop was not parallelized: existence of parallel dependence
-            remark #17106: parallel dependence: assumed ANTI dependence between X[497-c9][c15] (126:19) and X[498-c9][c15] (126:19)
-            remark #17106: parallel dependence: assumed FLOW dependence between X[498-c9][c15] (126:19) and X[497-c9][c15] (126:19)
+            remark #17106: parallel dependence: assumed ANTI dependence between X[n-c9-3][c15] (126:19) and X[n-2-c9][c15] (126:19)
+            remark #17106: parallel dependence: assumed FLOW dependence between X[n-2-c9][c15] (126:19) and X[n-c9-3][c15] (126:19)
             remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
             LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(125,17)
                remark #17104: loop was not parallelized: existence of parallel dependence
-               remark #17106: parallel dependence: assumed FLOW dependence between X[498-c9][c15] (126:19) and A[497-c9][c15] (126:19)
-               remark #17106: parallel dependence: assumed ANTI dependence between A[497-c9][c15] (126:19) and X[498-c9][c15] (126:19)
+               remark #17106: parallel dependence: assumed FLOW dependence between X[n-2-c9][c15] (126:19) and A[n-3-c9][c15] (126:19)
+               remark #17106: parallel dependence: assumed ANTI dependence between A[n-3-c9][c15] (126:19) and X[n-2-c9][c15] (126:19)
                remark #15344: loop was not vectorized: vector dependence prevents vectorization
-               remark #15346: vector dependence: assumed FLOW dependence between X[498-c9][c15] (126:19) and A[497-c9][c15] (126:19)
-               remark #15346: vector dependence: assumed ANTI dependence between A[497-c9][c15] (126:19) and X[498-c9][c15] (126:19)
+               remark #15346: vector dependence: assumed FLOW dependence between X[n-2-c9][c15] (126:19) and A[n-3-c9][c15] (126:19)
+               remark #15346: vector dependence: assumed ANTI dependence between A[n-3-c9][c15] (126:19) and X[n-2-c9][c15] (126:19)
                remark #25439: unrolled with remainder by 4  
             LOOP END
 
@@ -323,19 +302,17 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
       LOOP END
    LOOP END
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(132,9)
-      remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between X[499][c15] (134:13) and X[499][c15] (134:13)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between X[499][c15] (134:13) and X[499][c15] (134:13)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(132,138)
+      remark #17102: loop was not parallelized: not a parallelization candidate
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
       LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(133,11)
          remark #17104: loop was not parallelized: existence of parallel dependence
-         remark #17106: parallel dependence: assumed FLOW dependence between X[499][c15] (134:13) and B[499][c15] (134:13)
-         remark #17106: parallel dependence: assumed ANTI dependence between B[499][c15] (134:13) and X[499][c15] (134:13)
+         remark #17106: parallel dependence: assumed FLOW dependence between X[n-1][c15] (134:13) and B[n-1][c15] (134:13)
+         remark #17106: parallel dependence: assumed ANTI dependence between B[n-1][c15] (134:13) and X[n-1][c15] (134:13)
          remark #15344: loop was not vectorized: vector dependence prevents vectorization
-         remark #15346: vector dependence: assumed FLOW dependence between X[499][c15] (134:13) and B[499][c15] (134:13)
-         remark #15346: vector dependence: assumed ANTI dependence between B[499][c15] (134:13) and X[499][c15] (134:13)
+         remark #15346: vector dependence: assumed FLOW dependence between X[n-1][c15] (134:13) and B[n-1][c15] (134:13)
+         remark #15346: vector dependence: assumed ANTI dependence between B[n-1][c15] (134:13) and X[n-1][c15] (134:13)
          remark #25439: unrolled with remainder by 2  
       LOOP END
 
@@ -356,19 +333,19 @@ LOOP END
         Assigned     :   23[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm7]
         
     Routine temporaries
-        Total         :     458
-            Global    :     185
-            Local     :     273
+        Total         :     531
+            Global    :     196
+            Local     :     335
         Regenerable   :       9
-        Spilled       :      42
+        Spilled       :      62
         
     Routine stack
         Variables     :       0 bytes*
             Reads     :       0 [0.00e+00 ~ 0.0%]
             Writes    :       0 [0.00e+00 ~ 0.0%]
-        Spills        :     288 bytes*
-            Reads     :      93 [5.95e+02 ~ 4.6%]
-            Writes    :      71 [2.20e+02 ~ 1.7%]
+        Spills        :     456 bytes*
+            Reads     :     161 [9.38e+02 ~ 6.7%]
+            Writes    :     113 [4.29e+02 ~ 3.1%]
     
     Notes
     
@@ -388,18 +365,12 @@ INLINE REPORT: (init_array(int, double (*)[500], double (*)[500], double (*)[500
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(30,7)
-   remark #25101: Loop Interchange not done due to: Original Order seems proper
-   remark #25452: Original Order found to be proper, but by a close margin
-   remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #17106: parallel dependence: assumed OUTPUT dependence between X[c3][c4] (34:15) and B[c3][c4] (36:15)
-   remark #17106: parallel dependence: assumed OUTPUT dependence between B[c3][c4] (36:15) and X[c3][c4] (34:15)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(30,136)
+   remark #17102: loop was not parallelized: not a parallelization candidate
    remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
-   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(31,9)
-      remark #17104: loop was not parallelized: existence of parallel dependence
-      remark #17106: parallel dependence: assumed OUTPUT dependence between X[c3][c4] (34:15) and B[c3][c4] (36:15)
-      remark #17106: parallel dependence: assumed OUTPUT dependence between B[c3][c4] (36:15) and X[c3][c4] (34:15)
+   LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(31,138)
+      remark #17102: loop was not parallelized: not a parallelization candidate
       remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
 
       LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB044-adi-tile-no.c(32,10)
@@ -432,19 +403,19 @@ LOOP END
         Assigned     :   23[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm7]
         
     Routine temporaries
-        Total         :      52
-            Global    :      29
-            Local     :      23
-        Regenerable   :       7
-        Spilled       :       8
+        Total         :      68
+            Global    :      32
+            Local     :      36
+        Regenerable   :       4
+        Spilled       :      12
         
     Routine stack
         Variables     :       0 bytes*
             Reads     :       0 [0.00e+00 ~ 0.0%]
             Writes    :       0 [0.00e+00 ~ 0.0%]
-        Spills        :      48 bytes*
-            Reads     :       6 [1.56e+01 ~ 0.6%]
-            Writes    :       6 [1.56e+01 ~ 0.6%]
+        Spills        :      96 bytes*
+            Reads     :      12 [2.10e+01 ~ 0.8%]
+            Writes    :      12 [2.10e+01 ~ 0.8%]
     
     Notes
     
@@ -465,7 +436,7 @@ INLINE REPORT: (main(int, char **)) [4/4=100.0%] /home/gleison/Desktop/AutoParBe
   -> (160,3) init_array(int, double (*)[500], double (*)[500], double (*)[500]) (isz = 141) (sz = 152)
      [[ Unable to inline callsite  <1>]]
   -> EXTERN: (162,3) polybench_timer_start()
-  -> (165,3) kernel_adi(int, int, double (*)[500], double (*)[500], double (*)[500]) (isz = 874) (sz = 887)
+  -> (165,3) kernel_adi(int, int, double (*)[500], double (*)[500], double (*)[500]) (isz = 876) (sz = 889)
      [[ Unable to inline callsite  <1>]]
   -> EXTERN: (167,3) polybench_timer_stop()
   -> EXTERN: (169,3) polybench_timer_print()

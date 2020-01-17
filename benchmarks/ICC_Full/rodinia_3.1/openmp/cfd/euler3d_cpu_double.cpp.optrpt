@@ -4,7 +4,7 @@ See "https://software.intel.com/en-us/intel-advisor-xe" for details.
 
 Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
 
-Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/cfd/euler3d_cpu_double.o
+Compiler options: -c -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/cfd/euler3d_cpu_double.o
 
     Report from: Interprocedural optimizations [ipo]
 
@@ -664,10 +664,10 @@ LOOP END
     Routine stack
         Variables     :    1576 bytes*
             Reads     :      54 [9.00e+00 ~ 1.6%]
-            Writes    :     135 [5.53e+01 ~ 9.9%]
+            Writes    :     135 [3.74e+01 ~ 6.8%]
         Spills        :       8 bytes*
             Reads     :       3 [3.00e+00 ~ 0.5%]
-            Writes    :       1 [2.20e-01 ~ 0.0%]
+            Writes    :       1 [1.00e+00 ~ 0.2%]
     
     Notes
     
@@ -1622,16 +1622,16 @@ LOOP END
         Assigned     :   15[ rax rdx rcx rbx rsi rdi r8-r15 zmm0]
         
     Routine temporaries
-        Total         :     685
-            Global    :     148
-            Local     :     537
-        Regenerable   :     238
+        Total         :     689
+            Global    :     150
+            Local     :     539
+        Regenerable   :     240
         Spilled       :      14
         
     Routine stack
         Variables     :     752 bytes*
             Reads     :      30 [2.99e+01 ~ 0.0%]
-            Writes    :      91 [1.98e+01 ~ 0.0%]
+            Writes    :      91 [1.58e+01 ~ 0.0%]
         Spills        :     152 bytes*
             Reads     :      76 [2.31e+04 ~ 22.9%]
             Writes    :      40 [2.90e+03 ~ 2.9%]
@@ -1953,13 +1953,13 @@ INLINE REPORT: (__sti__$E()) [54/54=100.0%] <compiler generated>
         Reserved     :    2[ rsp rip]
         Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
         Callee-save  :    6[ rbx rbp r12-r15]
-        Assigned     :    3[ rdx rsi rdi]
+        Assigned     :    4[ rax rdx rsi rdi]
         
     Routine temporaries
-        Total         :      13
+        Total         :      20
             Global    :       7
-            Local     :       6
-        Regenerable   :       7
+            Local     :      13
+        Regenerable   :      14
         Spilled       :       0
         
     Routine stack

@@ -13,3 +13,16 @@ inputs/
 data/
 Outputs/
 setparams
+output.txt
+bfs
+bfs_offload
+result.txt
+density
+density_energy
+euler3d_cpu
+euler3d_cpu_double
+momentum
+heartwall
+hotspot
+3D
+

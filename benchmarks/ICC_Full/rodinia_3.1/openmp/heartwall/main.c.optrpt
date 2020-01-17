@@ -4,7 +4,7 @@ See "https://software.intel.com/en-us/intel-advisor-xe" for details.
 
 Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
 
-Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/heartwall/main.o
+Compiler options: -c -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/rodinia_3.1/openmp/heartwall/main.o
 
     Report from: Interprocedural optimizations [ipo]
 
@@ -1045,18 +1045,18 @@ LOOP END
         
     Routine temporaries
         Total         :    1358
-            Global    :     337
-            Local     :    1021
+            Global    :     340
+            Local     :    1018
         Regenerable   :     572
-        Spilled       :      26
+        Spilled       :      22
         
     Routine stack
         Variables     :    9276 bytes*
-            Reads     :      78 [3.67e+03 ~ 24.0%]
-            Writes    :     371 [1.35e+02 ~ 0.9%]
-        Spills        :     248 bytes*
-            Reads     :     152 [5.16e+01 ~ 0.3%]
-            Writes    :     120 [2.20e+01 ~ 0.1%]
+            Reads     :      78 [3.67e+03 ~ 24.1%]
+            Writes    :     371 [9.95e+01 ~ 0.7%]
+        Spills        :     216 bytes*
+            Reads     :     145 [4.28e+01 ~ 0.3%]
+            Writes    :     118 [2.30e+01 ~ 0.2%]
     
     Notes
     

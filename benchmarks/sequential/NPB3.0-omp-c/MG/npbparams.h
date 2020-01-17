@@ -15,7 +15,7 @@ c  in this directory. Do not modify it by hand.
 #define	NDIM2	8
 #define	NDIM3	8
 #define	CONVERTDOUBLE	FALSE
-#define COMPILETIME "28 Nov 2019"
+#define COMPILETIME "17 Jan 2020"
 #define NPBVERSION "3.0 structured"
 #define CS1 "(none)"
 #define CS2 "(none)"

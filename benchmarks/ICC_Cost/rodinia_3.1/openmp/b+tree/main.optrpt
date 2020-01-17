@@ -1,0 +1,4419 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
+
+Compiler options: -w -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -c -o ./main.o
+
+    Report from: Interprocedural optimizations [ipo]
+
+  WHOLE PROGRAM (SAFE) [EITHER METHOD]: false
+  WHOLE PROGRAM (SEEN) [TABLE METHOD]: false
+  WHOLE PROGRAM (READ) [OBJECT READER METHOD]: false
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+In the inlining report below:
+   "sz" refers to the "size" of the routine. The smaller a routine's size,
+      the more likely it is to be inlined.
+   "isz" refers to the "inlined size" of the routine. This is the amount
+      the calling routine will grow if the called routine is inlined into it.
+      The compiler generally limits the amount a routine can grow by having
+      routines inlined into it.
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [1/78=1.3%] ./main.c(1846,1)
+  -> EXTERN: (1858,7) strcmp(const char *, const char *)
+  -> EXTERN: (1862,11) isInteger(char *)
+  -> EXTERN: (1863,15) atoi(const char *)
+  -> EXTERN: (1865,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (1872,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (1878,12) strcmp(const char *, const char *)
+  -> EXTERN: (1887,8) printf(const char *__restrict__, ...)
+  -> EXTERN: (1891,12) strcmp(const char *, const char *)
+  -> EXTERN: (1900,8) printf(const char *__restrict__, ...)
+  -> EXTERN: (1907,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (1910,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (1911,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (1918,20) fopen(const char *__restrict__, const char *__restrict__)
+  -> EXTERN: (1919,30) fputs(const char *__restrict__, FILE *__restrict__)
+  -> EXTERN: (1919,67) exit(int)
+  -> EXTERN: (1922,6) fseek(FILE *, long, int)
+  -> EXTERN: (1923,14) ftell(FILE *)
+  -> EXTERN: (1924,6) rewind(FILE *)
+  -> EXTERN: (1927,30) exit(int)
+  -> EXTERN: (1927,30) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (1927,30) malloc(size_t)
+  -> EXTERN: (1928,34) fputs(const char *__restrict__, FILE *__restrict__)
+  -> EXTERN: (1928,80) exit(int)
+  -> EXTERN: (1931,15) fread(void *__restrict__, size_t, size_t, FILE *__restrict__)
+  -> EXTERN: (1932,28) fputs(const char *__restrict__, FILE *__restrict__)
+  -> EXTERN: (1932,73) exit(int)
+  -> EXTERN: (1937,6) fclose(FILE *)
+  -> EXTERN: (1941,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (1942,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (1946,14) fopen(const char *__restrict__, const char *__restrict__)
+  -> EXTERN: (1948,8) fputs(const char *__restrict__, FILE *__restrict__)
+  -> EXTERN: (1949,6) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (1950,6) fclose(FILE *)
+  -> EXTERN: (1975,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (1978,18) fopen(const char *__restrict__, const char *__restrict__)
+  -> EXTERN: (1980,4) perror(const char *)
+  -> EXTERN: (1981,4) exit(int)
+  -> EXTERN: (1985,3) fscanf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (1989,11) feof(FILE *)
+  -> EXTERN: (1989,11) feof(FILE *)
+  -> EXTERN: (1990,4) fscanf(FILE *__restrict__, const char *__restrict__, ...)
+  -> (1991,11) insert(node *, int, int) (isz = 38) (sz = 52)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1995,3) fclose(FILE *)
+  -> EXTERN: (2001,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (2009,2) printf(const char *__restrict__, ...)
+  -> (2010,18) transform_to_cuda(node *, bool) (isz = 400) (sz = 409)
+     [[ Unable to inline callsite  <1>]]
+  -> (2011,14) height(node *) (isz = 19) (sz = 26)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (2019,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (2020,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (2021,9) sscanf(const char *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2021,9) sscanf(const char *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2030,5) scanf(const char *__restrict__, ...)
+  -> EXTERN: (2031,12) getchar(void)
+  -> EXTERN: (2031,12) getchar(void)
+  -> (2032,12) insert(node *, int, int) (isz = 38) (sz = 52)
+     [[ Unable to inline callsite  <1>]]
+  -> (2033,5) print_tree(node *) (isz = 148) (sz = 154)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (2051,5) scanf(const char *__restrict__, ...)
+  -> EXTERN: (2052,12) getchar(void)
+  -> EXTERN: (2052,12) getchar(void)
+  -> (2053,9) find(node *, int, bool) (isz = 37) (sz = 50)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (2055,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2057,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2067,5) scanf(const char *__restrict__, ...)
+  -> EXTERN: (2068,12) getchar(void)
+  -> EXTERN: (2068,12) getchar(void)
+  -> (2069,21) deleteVal(node *, int) (isz = 22) (sz = 31)
+     [[ Unable to inline callsite  <1>]]
+  -> (2070,5) print_tree(node *) (isz = 148) (sz = 154)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (2080,12) getchar(void)
+  -> EXTERN: (2080,12) getchar(void)
+  -> (2081,12) destroy_tree(node *) (isz = 0) (sz = 7)
+     [[ Unable to inline callsite  <1>]]
+  -> (2082,5) print_tree(node *) (isz = 148) (sz = 154)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (2092,12) getchar(void)
+  -> EXTERN: (2092,12) getchar(void)
+  -> (2093,5) print_leaves(node *) (isz = 83) (sz = 89)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (2103,12) getchar(void)
+  -> EXTERN: (2103,12) getchar(void)
+  -> (2104,5) print_tree(node *) (isz = 148) (sz = 154)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (2114,12) getchar(void)
+  -> EXTERN: (2114,12) getchar(void)
+  -> EXTERN: (2125,12) getchar(void)
+  -> EXTERN: (2125,12) getchar(void)
+  -> EXTERN: (2138,5) sscanf(const char *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2142,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2145,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (2146,6) exit(int)
+  -> EXTERN: (2163,25) exit(int)
+  -> EXTERN: (2163,25) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2163,25) malloc(size_t)
+  -> EXTERN: (2165,5) memset(void *, int, size_t)
+  -> EXTERN: (2169,22) exit(int)
+  -> EXTERN: (2169,22) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2169,22) malloc(size_t)
+  -> EXTERN: (2171,5) memset(void *, int, size_t)
+  -> EXTERN: (2175,19) exit(int)
+  -> EXTERN: (2175,19) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2175,19) malloc(size_t)
+  -> EXTERN: (2179,17) rand(void)
+  -> EXTERN: (2183,29) exit(int)
+  -> EXTERN: (2183,29) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2183,29) malloc(size_t)
+  -> EXTERN: (2190,5) kernel_cpu(int, record *, knode *, long, int, long, int, long *, long *, int *, record *)
+  -> EXTERN: (2215,13) fopen(const char *__restrict__, const char *__restrict__)
+  -> EXTERN: (2218,9) fputs(const char *__restrict__, FILE *__restrict__)
+  -> EXTERN: (2221,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2223,7) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2225,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2226,33) fclose(FILE *)
+  -> EXTERN: (2229,5) free(void *)
+  -> EXTERN: (2230,5) free(void *)
+  -> EXTERN: (2231,5) free(void *)
+  -> EXTERN: (2232,5) free(void *)
+  -> EXTERN: (2246,5) scanf(const char *__restrict__, ...)
+  -> EXTERN: (2247,5) scanf(const char *__restrict__, ...)
+  -> EXTERN: (2253,5) printf(const char *__restrict__, ...)
+  -> (2255,15) findRange(node *, int, int) (isz = 86) (sz = 98)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (2256,5) printf(const char *__restrict__, ...)
+  -> (2256,34) list_get_length(list_t *) (isz = 0) (sz = 6)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (2258,5) free(void *)
+  -> EXTERN: (2271,5) sscanf(const char *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2276,5) sscanf(const char *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2280,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (2283,6) printf(const char *__restrict__, ...)
+  -> EXTERN: (2284,6) exit(int)
+  -> EXTERN: (2295,25) exit(int)
+  -> EXTERN: (2295,25) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2295,25) malloc(size_t)
+  -> EXTERN: (2297,5) memset(void *, int, size_t)
+  -> EXTERN: (2301,22) exit(int)
+  -> EXTERN: (2301,22) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2301,22) malloc(size_t)
+  -> EXTERN: (2303,5) memset(void *, int, size_t)
+  -> EXTERN: (2307,25) exit(int)
+  -> EXTERN: (2307,25) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2307,25) malloc(size_t)
+  -> EXTERN: (2309,5) memset(void *, int, size_t)
+  -> EXTERN: (2313,24) exit(int)
+  -> EXTERN: (2313,24) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2313,24) malloc(size_t)
+  -> EXTERN: (2315,5) memset(void *, int, size_t)
+  -> EXTERN: (2319,20) exit(int)
+  -> EXTERN: (2319,20) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2319,20) malloc(size_t)
+  -> EXTERN: (2321,18) exit(int)
+  -> EXTERN: (2321,18) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2321,18) malloc(size_t)
+  -> EXTERN: (2325,18) rand(void)
+  -> EXTERN: (2335,23) exit(int)
+  -> EXTERN: (2335,23) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2335,23) malloc(size_t)
+  -> EXTERN: (2337,24) exit(int)
+  -> EXTERN: (2337,24) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2337,24) malloc(size_t)
+  -> EXTERN: (2345,5) kernel_cpu_2(int, knode *, long, int, long, int, long *, long *, long *, long *, int *, int *, int *, int *)
+  -> EXTERN: (2371,13) fopen(const char *__restrict__, const char *__restrict__)
+  -> EXTERN: (2374,9) fputs(const char *__restrict__, FILE *__restrict__)
+  -> EXTERN: (2377,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2379,7) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2381,5) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (2382,33) fclose(FILE *)
+  -> EXTERN: (2385,5) free(void *)
+  -> EXTERN: (2386,5) free(void *)
+  -> EXTERN: (2387,5) free(void *)
+  -> EXTERN: (2388,5) free(void *)
+  -> EXTERN: (2389,5) free(void *)
+  -> EXTERN: (2390,5) free(void *)
+  -> EXTERN: (2391,5) free(void *)
+  -> EXTERN: (2392,5) free(void *)
+  -> EXTERN: (2412,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (2415,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (2421,2) free(void *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(1857,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ./main.c(1989,3)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ./main.c(2080,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ./main.c(2114,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ./main.c(2103,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ./main.c(2092,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ./main.c(2139,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable commandPointer was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ./main.c(2178,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:rand(void) (2179:17) and call:rand(void) (2179:17)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:rand(void) (2179:17) and call:rand(void) (2179:17)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+LOOP END
+
+LOOP BEGIN at ./main.c(2185,5)
+   remark #25408: memset generated
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between _tmp->value[i] (2185:5) and _tmp->value[i] (2186:6)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between _tmp->value[i] (2186:6) and _tmp->value[i] (2185:5)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ./main.c(2185,5)
+      remark #17108: loop was not parallelized: insufficient computational work
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+      remark #25439: unrolled with remainder by 2  
+      remark #25015: Estimate of max trip count of loop=24
+   LOOP END
+
+   LOOP BEGIN at ./main.c(2185,5)
+   <Remainder>
+      remark #25015: Estimate of max trip count of loop=24
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ./main.c(2222,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (2223:7) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (2223:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (2223:7) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (2223:7)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+LOOP END
+
+LOOP BEGIN at ./main.c(2272,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable commandPointer was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ./main.c(2277,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable commandPointer was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ./main.c(2324,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:rand(void) (2325:18) and call:rand(void) (2325:18)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:rand(void) (2325:18) and call:rand(void) (2325:18)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+LOOP END
+
+LOOP BEGIN at ./main.c(2339,5)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at ./main.c(2339,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at ./main.c(2378,5)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (2379:7) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (2379:7)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (2379:7) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (2379:7)
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+LOOP END
+
+LOOP BEGIN at ./main.c(2031,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ./main.c(2052,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ./main.c(2068,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ./main.c(2125,5)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at ./main.c(2021,2)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+   remark #17102: loop was not parallelized: not a parallelization candidate
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(2165,5):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+./main.c(2165,5):remark #34026: call to memset implemented as a call to optimized library version
+./main.c(2171,5):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+./main.c(2171,5):remark #34026: call to memset implemented as a call to optimized library version
+./main.c(2185,5):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+./main.c(2185,5):remark #34026: call to memset implemented as a call to optimized library version
+./main.c(2297,5):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+./main.c(2297,5):remark #34026: call to memset implemented as a call to optimized library version
+./main.c(2303,5):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+./main.c(2303,5):remark #34026: call to memset implemented as a call to optimized library version
+./main.c(2309,5):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+./main.c(2309,5):remark #34026: call to memset implemented as a call to optimized library version
+./main.c(2315,5):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+./main.c(2315,5):remark #34026: call to memset implemented as a call to optimized library version
+./main.c(1846,1):remark #34051: REGISTER ALLOCATION : [main] ./main.c:1846
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   16[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm1]
+        
+    Routine temporaries
+        Total         :     707
+            Global    :     181
+            Local     :     526
+        Regenerable   :     312
+        Spilled       :      49
+        
+    Routine stack
+        Variables     :      29 bytes*
+            Reads     :      25 [6.54e+00 ~ 2.6%]
+            Writes    :       5 [1.50e-01 ~ 0.1%]
+        Spills        :     352 bytes*
+            Reads     :     118 [4.28e+00 ~ 1.7%]
+            Writes    :      58 [1.88e+00 ~ 0.7%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: insert(node *, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (insert(node *, int, int)) [2/78=2.6%] ./main.c(1364,1)
+  -> (1370,6) find(node *, int, bool) (isz = 37) (sz = 50)
+     [[ Unable to inline callsite  <1>]]
+  -> (1374,12) make_record(int) (isz = 26) (sz = 33)
+     [[ Unable to inline callsite  <1>]]
+  -> (1378,10) start_new_tree(int, record *) (isz = 18) (sz = 27)
+     [[ Unable to inline callsite  <1>]]
+  -> CP_CLONE (1381,9) find_leaf..0(node *, int, bool) (isz = 142) (sz = 154)
+     [[ Unable to inline callsite  <1>]]
+  -> (1385,10) insert_into_leaf(node *, int, record *) (isz = 65) (sz = 76)
+     [[ Unable to inline callsite  <1>]]
+  -> (1390,9) insert_into_leaf_after_splitting(node *, node *, int, record *) (isz = 273) (sz = 286)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1364,1):remark #34051: REGISTER ALLOCATION : [insert] ./main.c:1364
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rsi rdi r8 r13-r15]
+        
+    Routine temporaries
+        Total         :      38
+            Global    :      15
+            Local     :      23
+        Regenerable   :       2
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: make_record(int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (make_record(int)) [3/78=3.8%] ./main.c(1026,1)
+  -> EXTERN: (1027,34) exit(int)
+  -> EXTERN: (1027,34) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (1027,34) malloc(size_t)
+  -> EXTERN: (1029,3) perror(const char *)
+  -> EXTERN: (1030,3) exit(int)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1026,1):remark #34051: REGISTER ALLOCATION : [make_record] ./main.c:1026
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    6[ rax rdx rcx rsi rdi r13]
+        
+    Routine temporaries
+        Total         :      21
+            Global    :       9
+            Local     :      12
+        Regenerable   :       8
+        Spilled       :       1
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: start_new_tree(int, record *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (start_new_tree(int, record *)) [4/78=5.1%] ./main.c(1348,1)
+  -> (1350,16) make_leaf(void) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1348,1):remark #34051: REGISTER ALLOCATION : [start_new_tree] ./main.c:1348
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rcx rsi rdi r8 r13-r14]
+        
+    Routine temporaries
+        Total         :      18
+            Global    :      10
+            Local     :       8
+        Regenerable   :       1
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: make_leaf(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (make_leaf(void)) [5/78=6.4%] ./main.c(1068,1)
+  -> (1069,15) make_node(void) (isz = 92) (sz = 97)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1068,1):remark #34051: REGISTER ALLOCATION : [make_leaf] ./main.c:1068
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    1[ rax]
+        
+    Routine temporaries
+        Total         :       9
+            Global    :       8
+            Local     :       1
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: make_node(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (make_node(void)) [6/78=7.7%] ./main.c(1041,1)
+  -> EXTERN: (1043,22) exit(int)
+  -> EXTERN: (1043,22) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (1043,22) malloc(size_t)
+  -> EXTERN: (1045,3) perror(const char *)
+  -> EXTERN: (1046,3) exit(int)
+  -> EXTERN: (1048,27) exit(int)
+  -> EXTERN: (1048,27) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (1048,27) malloc(size_t)
+  -> EXTERN: (1050,3) perror(const char *)
+  -> EXTERN: (1051,3) exit(int)
+  -> EXTERN: (1053,33) exit(int)
+  -> EXTERN: (1053,33) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (1053,33) malloc(size_t)
+  -> EXTERN: (1055,3) perror(const char *)
+  -> EXTERN: (1056,3) exit(int)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1041,1):remark #34051: REGISTER ALLOCATION : [make_node] ./main.c:1041
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rcx rsi rdi r14-r15]
+        
+    Routine temporaries
+        Total         :      48
+            Global    :      13
+            Local     :      35
+        Regenerable   :      24
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: find_leaf..0(node *, int, bool)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (find_leaf..0(node *, int, bool)) [7/78=9.0%] ./main.c(953,1)
+  CLONED FROM: find_leaf(node *, int, bool)(X,X,0)
+  -> EXTERN: (959,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (964,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (966,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (967,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (977,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (981,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (983,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (984,3) printf(const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(962,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ./main.c(970,3)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(953,1):remark #34051: REGISTER ALLOCATION : [find_leaf..0] ./main.c:953
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    6[ rax rdx rcx rsi rdi r8]
+        
+    Routine temporaries
+        Total         :      18
+            Global    :      12
+            Local     :       6
+        Regenerable   :       2
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: insert_into_leaf(node *, int, record *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (insert_into_leaf(node *, int, record *)) [8/78=10.3%] ./main.c(1089,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(1094,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+LOOP END
+
+LOOP BEGIN at ./main.c(1097,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between leaf->keys (1098:3) and *(leaf->pointers+i*8) (1099:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between *(leaf->pointers+i*8) (1099:3) and leaf->keys (1098:3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between leaf->keys (1098:3) and *(leaf->pointers+i*8) (1099:3)
+   remark #15346: vector dependence: assumed FLOW dependence between *(leaf->pointers+i*8) (1099:3) and leaf->keys (1098:3)
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at ./main.c(1097,2)
+<Remainder>
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1089,1):remark #34051: REGISTER ALLOCATION : [insert_into_leaf] ./main.c:1089
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   14[ rax rdx rcx rbx rbp rsi rdi r8-r11 r13-r15]
+        
+    Routine temporaries
+        Total         :      46
+            Global    :      22
+            Local     :      24
+        Regenerable   :       1
+        Spilled       :       5
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      16 bytes*
+            Reads     :       2 [1.80e+00 ~ 1.4%]
+            Writes    :       2 [1.80e+00 ~ 1.4%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: insert_into_leaf_after_splitting(node *, node *, int, record *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (insert_into_leaf_after_splitting(node *, node *, int, record *)) [9/78=11.5%] ./main.c(1113,1)
+  -> (1120,13) make_leaf(void) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1122,22) exit(int)
+  -> EXTERN: (1122,22) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (1122,22) malloc(size_t)
+  -> EXTERN: (1124,3) perror(const char *)
+  -> EXTERN: (1125,3) exit(int)
+  -> EXTERN: (1128,28) exit(int)
+  -> EXTERN: (1128,28) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (1128,28) malloc(size_t)
+  -> EXTERN: (1130,3) perror(const char *)
+  -> EXTERN: (1131,3) exit(int)
+  -> (1149,10) cut(int) (isz = 9) (sz = 17)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1163,2) free(void *)
+  -> EXTERN: (1164,2) free(void *)
+  -> (1177,9) insert_into_parent(node *, node *, int, node *) (isz = 29) (sz = 44)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(1135,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable insertion_index was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at ./main.c(1138,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between j (1139:3) and j (1139:29)
+   remark #17106: parallel dependence: assumed ANTI dependence between j (1139:3) and j (1138:46)
+   remark #17106: parallel dependence: assumed FLOW dependence between j (1138:46) and j (1139:3)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between _tmp[j] (1140:3) and _tmp[j] (1140:3)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between _tmp[j] (1140:3) and _tmp[j] (1140:3)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between _tmp[j] (1141:3) and _tmp[j] (1141:3)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between _tmp[j] (1141:3) and _tmp[j] (1141:3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between j (1139:3) and j (1139:29)
+   remark #15346: vector dependence: assumed ANTI dependence between j (1139:3) and j (1138:46)
+   remark #15346: vector dependence: assumed FLOW dependence between j (1138:46) and j (1139:3)
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at ./main.c(1138,2)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at ./main.c(1151,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between leaf->pointers[i] (1152:3) and leaf->keys (1153:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between leaf->keys (1153:3) and leaf->pointers[i] (1152:3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between leaf->pointers[i] (1152:3) and leaf->keys (1153:3)
+   remark #15346: vector dependence: assumed ANTI dependence between leaf->keys (1153:3) and leaf->pointers[i] (1152:3)
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at ./main.c(1151,2)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at ./main.c(1157,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable j was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+LOOP END
+
+LOOP BEGIN at ./main.c(1169,2)
+   remark #25408: memset generated
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between leaf->pointers (1169:2) and leaf->pointers[i] (1170:2)
+   remark #17106: parallel dependence: assumed FLOW dependence between leaf->pointers[i] (1170:2) and leaf->pointers (1169:2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ./main.c(1169,2)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between leaf->pointers (1170:2) and leaf->pointers[i] (1170:2)
+      remark #17106: parallel dependence: assumed FLOW dependence between leaf->pointers[i] (1170:2) and leaf->pointers (1170:2)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between leaf->pointers (1170:2) and leaf->pointers[i] (1170:2)
+      remark #15346: vector dependence: assumed FLOW dependence between leaf->pointers[i] (1170:2) and leaf->pointers (1170:2)
+      remark #25439: unrolled with remainder by 2  
+      remark #25015: Estimate of max trip count of loop=12
+   LOOP END
+
+   LOOP BEGIN at ./main.c(1169,2)
+   <Remainder>
+      remark #25015: Estimate of max trip count of loop=12
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ./main.c(1171,2)
+   remark #25408: memset generated
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between new_leaf->pointers (1171:2) and new_leaf->pointers[i] (1172:2)
+   remark #17106: parallel dependence: assumed FLOW dependence between new_leaf->pointers[i] (1172:2) and new_leaf->pointers (1171:2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ./main.c(1171,2)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between new_leaf->pointers (1172:2) and new_leaf->pointers[i] (1172:2)
+      remark #17106: parallel dependence: assumed FLOW dependence between new_leaf->pointers[i] (1172:2) and new_leaf->pointers (1172:2)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between new_leaf->pointers (1172:2) and new_leaf->pointers[i] (1172:2)
+      remark #15346: vector dependence: assumed FLOW dependence between new_leaf->pointers[i] (1172:2) and new_leaf->pointers (1172:2)
+      remark #25439: unrolled with remainder by 2  
+      remark #25015: Estimate of max trip count of loop=12
+   LOOP END
+
+   LOOP BEGIN at ./main.c(1171,2)
+   <Remainder>
+      remark #25015: Estimate of max trip count of loop=12
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1169,2):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+./main.c(1169,2):remark #34026: call to memset implemented as a call to optimized library version
+./main.c(1171,2):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+./main.c(1171,2):remark #34026: call to memset implemented as a call to optimized library version
+./main.c(1113,1):remark #34051: REGISTER ALLOCATION : [insert_into_leaf_after_splitting] ./main.c:1113
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   15[ rax rdx rcx rbx rbp rsi rdi r8-r15]
+        
+    Routine temporaries
+        Total         :     182
+            Global    :      59
+            Local     :     123
+        Regenerable   :      17
+        Spilled       :      11
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      32 bytes*
+            Reads     :       4 [3.79e+00 ~ 0.9%]
+            Writes    :       4 [3.85e+00 ~ 0.9%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: insert_into_parent(node *, node *, int, node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (insert_into_parent(node *, node *, int, node *)) [10/78=12.8%] ./main.c(1290,1)
+  -> (1300,9) insert_into_new_root(node *, int, node *) (isz = 19) (sz = 30)
+     [[ Unable to inline callsite  <1>]]
+  -> (1310,15) get_left_index(node *, node *) (isz = 18) (sz = 27)
+     [[ Unable to inline callsite  <1>]]
+  -> (1317,9) insert_into_node(node *, node *, int, int, node *) (isz = 43) (sz = 58)
+     [[ Unable to inline callsite  <1>]]
+  -> (1323,9) insert_into_node_after_splitting(node *, node *, int, int, node *) (isz = 258) (sz = 273)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1290,1):remark #34051: REGISTER ALLOCATION : [insert_into_parent] ./main.c:1290
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   10[ rax rdx rcx rbx rbp rsi rdi r8 r14-r15]
+        
+    Routine temporaries
+        Total         :      34
+            Global    :      13
+            Local     :      21
+        Regenerable   :       0
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: insert_into_new_root(node *, int, node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (insert_into_new_root(node *, int, node *)) [11/78=14.1%] ./main.c(1331,1)
+  -> (1333,16) make_node(void) (isz = 92) (sz = 97)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1331,1):remark #34051: REGISTER ALLOCATION : [insert_into_new_root] ./main.c:1331
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rcx rbx rsi rdi r14-r15]
+        
+    Routine temporaries
+        Total         :      18
+            Global    :      11
+            Local     :       7
+        Regenerable   :       0
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: get_left_index(node *, node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (get_left_index(node *, node *)) [12/78=15.4%] ./main.c(1077,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(1080,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1077,1):remark #34051: REGISTER ALLOCATION : [get_left_index] ./main.c:1077
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    5[ rax rdx rcx rsi rdi]
+        
+    Routine temporaries
+        Total         :      15
+            Global    :      11
+            Local     :       4
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: insert_into_node(node *, node *, int, int, node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (insert_into_node(node *, node *, int, int, node *)) [13/78=16.7%] ./main.c(1187,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(1191,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between n->pointers (1192:3) and *(n->pointers+(i+1)*8) (1192:3)
+   remark #17106: parallel dependence: assumed FLOW dependence between *(n->pointers+(i+1)*8) (1192:3) and n->pointers (1192:3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between n->pointers (1192:3) and *(n->pointers+(i+1)*8) (1192:3)
+   remark #15346: vector dependence: assumed FLOW dependence between *(n->pointers+(i+1)*8) (1192:3) and n->pointers (1192:3)
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at ./main.c(1191,2)
+<Remainder>
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1187,1):remark #34051: REGISTER ALLOCATION : [insert_into_node] ./main.c:1187
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   14[ rax rdx rcx rbx rbp rsi rdi r8-r11 r13-r15]
+        
+    Routine temporaries
+        Total         :      48
+            Global    :      18
+            Local     :      30
+        Regenerable   :       0
+        Spilled       :       5
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      24 bytes*
+            Reads     :       3 [2.70e+00 ~ 2.4%]
+            Writes    :       3 [2.70e+00 ~ 2.4%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: insert_into_node_after_splitting(node *, node *, int, int, node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (insert_into_node_after_splitting(node *, node *, int, int, node *)) [14/78=17.9%] ./main.c(1208,1)
+  -> EXTERN: (1224,28) exit(int)
+  -> EXTERN: (1224,28) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (1224,28) malloc(size_t)
+  -> EXTERN: (1226,3) perror(const char *)
+  -> EXTERN: (1227,3) exit(int)
+  -> EXTERN: (1229,22) exit(int)
+  -> EXTERN: (1229,22) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (1229,22) malloc(size_t)
+  -> EXTERN: (1231,3) perror(const char *)
+  -> EXTERN: (1232,3) exit(int)
+  -> (1252,10) cut(int) (isz = 9) (sz = 17)
+     [[ Unable to inline callsite  <1>]]
+  -> (1253,13) make_node(void) (isz = 92) (sz = 97)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1268,2) free(void *)
+  -> EXTERN: (1269,2) free(void *)
+  -> (1281,9) insert_into_parent(node *, node *, int, node *) (isz = 29) (sz = 44)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(1235,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between j (1236:3) and j (1236:28)
+   remark #17106: parallel dependence: assumed ANTI dependence between j (1236:3) and j (1235:54)
+   remark #17106: parallel dependence: assumed FLOW dependence between j (1235:54) and j (1236:3)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between _tmp[j] (1237:3) and _tmp[j] (1237:3)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between _tmp[j] (1237:3) and _tmp[j] (1237:3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between j (1236:3) and j (1236:28)
+   remark #15346: vector dependence: assumed ANTI dependence between j (1236:3) and j (1235:54)
+   remark #15346: vector dependence: assumed FLOW dependence between j (1235:54) and j (1236:3)
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at ./main.c(1235,2)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at ./main.c(1240,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between j (1241:3) and j (1241:24)
+   remark #17106: parallel dependence: assumed ANTI dependence between j (1241:3) and j (1240:50)
+   remark #17106: parallel dependence: assumed FLOW dependence between j (1240:50) and j (1241:3)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between _tmp[j] (1242:3) and _tmp[j] (1242:3)
+   remark #17106: parallel dependence: assumed OUTPUT dependence between _tmp[j] (1242:3) and _tmp[j] (1242:3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between j (1241:3) and j (1241:24)
+   remark #15346: vector dependence: assumed ANTI dependence between j (1241:3) and j (1240:50)
+   remark #15346: vector dependence: assumed FLOW dependence between j (1240:50) and j (1241:3)
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at ./main.c(1240,2)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at ./main.c(1255,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between old_node->pointers[i] (1256:3) and old_node->keys (1257:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between old_node->keys (1257:3) and old_node->pointers[i] (1256:3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between old_node->pointers[i] (1256:3) and old_node->keys (1257:3)
+   remark #15346: vector dependence: assumed ANTI dependence between old_node->keys (1257:3) and old_node->pointers[i] (1256:3)
+   remark #25439: unrolled with remainder by 2  
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+LOOP BEGIN at ./main.c(1255,2)
+<Remainder>
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+LOOP BEGIN at ./main.c(1262,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable j was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+LOOP END
+
+LOOP BEGIN at ./main.c(1271,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between (*(new_node->pointers+i*8))->parent (1273:3) and new_node->pointers[i] (1273:3)
+   remark #17106: parallel dependence: assumed ANTI dependence between new_node->pointers[i] (1273:3) and (*(new_node->pointers+i*8))->parent (1273:3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between (*(new_node->pointers+i*8))->parent (1273:3) and new_node->pointers[i] (1273:3)
+   remark #15346: vector dependence: assumed ANTI dependence between new_node->pointers[i] (1273:3) and (*(new_node->pointers+i*8))->parent (1273:3)
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at ./main.c(1271,2)
+<Remainder>
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1208,1):remark #34051: REGISTER ALLOCATION : [insert_into_node_after_splitting] ./main.c:1208
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   15[ rax rdx rcx rbx rbp rsi rdi r8-r15]
+        
+    Routine temporaries
+        Total         :     154
+            Global    :      56
+            Local     :      98
+        Regenerable   :      16
+        Spilled       :       8
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      16 bytes*
+            Reads     :       2 [1.94e+00 ~ 0.5%]
+            Writes    :       2 [2.00e+00 ~ 0.6%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: destroy_tree(node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (destroy_tree(node *)) [15/78=19.2%] ./main.c(1830,1)
+  -> (1831,2) destroy_tree_nodes(node *) (isz = 54) (sz = 59)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1830,1):remark #34051: REGISTER ALLOCATION : [destroy_tree] ./main.c:1830
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       6
+            Local     :       4
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: destroy_tree_nodes(node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (destroy_tree_nodes(node *)) [16/78=20.5%] ./main.c(1814,1)
+  -> EXTERN: (1818,2) free(void *)
+  -> (1821,2) destroy_tree_nodes(node *) (isz = 54) (sz = 59)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1822,2) free(void *)
+  -> EXTERN: (1823,2) free(void *)
+  -> EXTERN: (1824,2) free(void *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(1817,2)
+   remark #17108: loop was not parallelized: insufficient computational work
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+LOOP END
+
+LOOP BEGIN at ./main.c(1820,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1814,1):remark #34051: REGISTER ALLOCATION : [destroy_tree_nodes] ./main.c:1814
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rdi r12-r15]
+        
+    Routine temporaries
+        Total         :      21
+            Global    :      10
+            Local     :      11
+        Regenerable   :       0
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      24 bytes*
+            Reads     :       4 [1.84e+00 ~ 2.7%]
+            Writes    :       4 [1.84e+00 ~ 2.7%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: findRange(node *, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (findRange(node *, int, int)) [17/78=21.8%] ./main.c(756,1)
+  -> CP_CLONE (759,13) find_leaf..0(node *, int, bool) (isz = 142) (sz = 154)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (763,31) exit(int)
+  -> EXTERN: (763,31) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (763,31) malloc(size_t)
+  -> (764,2) list_init(list_t *, int32_t (*)(const void *, const void *), void (*)(void *)) (isz = 7) (sz = 16)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(768,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ./main.c(770,3)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(756,1):remark #34051: REGISTER ALLOCATION : [findRange] ./main.c:756
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    6[ rax rdx rcx rsi rdi r15]
+        
+    Routine temporaries
+        Total         :      33
+            Global    :      10
+            Local     :      23
+        Regenerable   :      12
+        Spilled       :       1
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_get_length(list_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_get_length(list_t *)) [18/78=23.1%] ./main.c(496,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(496,1):remark #34051: REGISTER ALLOCATION : [list_get_length] ./main.c:496
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       0
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: find(node *, int, bool)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (find(node *, int, bool)) [19/78=24.4%] ./main.c(993,1)
+  -> (996,13) find_leaf(node *, int, bool) (isz = 142) (sz = 154)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(999,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(993,1):remark #34051: REGISTER ALLOCATION : [find] ./main.c:993
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rcx rsi rdi r8 r14]
+        
+    Routine temporaries
+        Total         :      26
+            Global    :      13
+            Local     :      13
+        Regenerable   :       2
+        Spilled       :       1
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: find_leaf(node *, int, bool)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (find_leaf(node *, int, bool)) [20/78=25.6%] ./main.c(953,1)
+  -> EXTERN: (959,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (964,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (966,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (967,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (977,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (981,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (983,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (984,3) printf(const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(962,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ./main.c(965,4)
+      remark #17102: loop was not parallelized: not a parallelization candidate
+      remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+
+   LOOP BEGIN at ./main.c(970,3)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ./main.c(982,3)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(953,1):remark #34051: REGISTER ALLOCATION : [find_leaf] ./main.c:953
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rsi rdi r12-r15]
+        
+    Routine temporaries
+        Total         :      61
+            Global    :      17
+            Local     :      44
+        Regenerable   :      23
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      24 bytes*
+            Reads     :       4 [2.55e+00 ~ 1.1%]
+            Writes    :       4 [2.55e+00 ~ 1.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: print_leaves(node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (print_leaves(node *)) [21/78=26.9%] ./main.c(851,1)
+  -> EXTERN: (855,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (864,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (869,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (875,2) printf(const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(858,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at ./main.c(868,19)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ./main.c(861,3)
+      remark #17102: loop was not parallelized: not a parallelization candidate
+      remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(851,1):remark #34051: REGISTER ALLOCATION : [print_leaves] ./main.c:851
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   10[ rax rdx rcx rsi rdi r8 r12-r15]
+        
+    Routine temporaries
+        Total         :      29
+            Global    :      12
+            Local     :      17
+        Regenerable   :      10
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      32 bytes*
+            Reads     :       4 [3.94e+00 ~ 0.9%]
+            Writes    :       8 [3.94e+00 ~ 0.9%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: deleteVal(node *, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (deleteVal(node *, int)) [22/78=28.2%] ./main.c(1797,1)
+  -> (1802,15) find(node *, int, bool) (isz = 37) (sz = 50)
+     [[ Unable to inline callsite  <1>]]
+  -> CP_CLONE (1803,13) find_leaf..0(node *, int, bool) (isz = 142) (sz = 154)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1805,3) free(void *)
+  -> (1806,10) delete_entry(node *, node *, int, void *) (isz = 84) (sz = 100)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1797,1):remark #34051: REGISTER ALLOCATION : [deleteVal] ./main.c:1797
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rbx rbp rsi rdi r12-r13]
+        
+    Routine temporaries
+        Total         :      26
+            Global    :      12
+            Local     :      14
+        Regenerable   :       2
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: delete_entry(node *, node *, int, void *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (delete_entry(node *, node *, int, void *)) [23/78=29.5%] ./main.c(1726,1)
+  -> (1736,6) remove_entry_from_node(node *, int, node *) (isz = 147) (sz = 158)
+     [[ Unable to inline callsite  <1>]]
+  -> (1742,9) adjust_root(node *) (isz = 20) (sz = 28)
+     [[ Unable to inline callsite  <1>]]
+  -> (1753,26) cut(int) (isz = 9) (sz = 17)
+     [[ Unable to inline callsite  <1>]]
+  -> (1753,43) cut(int) (isz = 9) (sz = 17)
+     [[ Unable to inline callsite  <1>]]
+  -> (1774,19) get_neighbor_index(node *) (isz = 29) (sz = 36)
+     [[ Unable to inline callsite  <1>]]
+  -> (1785,9) coalesce_nodes(node *, node *, node *, int, int) (isz = 268) (sz = 283)
+     [[ Unable to inline callsite  <1>]]
+  -> (1790,9) redistribute_nodes(node *, node *, node *, int, int, int) (isz = 234) (sz = 251)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1726,1):remark #34051: REGISTER ALLOCATION : [delete_entry] ./main.c:1726
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   11[ rax rdx rcx rsi rdi r8-r11 r14-r15]
+        
+    Routine temporaries
+        Total         :      64
+            Global    :      24
+            Local     :      40
+        Regenerable   :       1
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: cut(int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (cut(int)) [24/78=30.8%] ./main.c(1012,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1012,1):remark #34051: REGISTER ALLOCATION : [cut] ./main.c:1012
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      17
+            Global    :       8
+            Local     :       9
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: remove_entry_from_node(node *, int, node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (remove_entry_from_node(node *, int, node *)) [25/78=32.1%] ./main.c(1425,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(1431,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+LOOP BEGIN at ./main.c(1433,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+LOOP BEGIN at ./main.c(1440,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+LOOP BEGIN at ./main.c(1442,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between n->pointers (1443:2) and *(n->pointers+(i-1)*8) (1443:2)
+   remark #17106: parallel dependence: assumed FLOW dependence between *(n->pointers+(i-1)*8) (1443:2) and n->pointers (1443:2)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between n->pointers (1443:2) and *(n->pointers+(i-1)*8) (1443:2)
+   remark #15346: vector dependence: assumed FLOW dependence between *(n->pointers+(i-1)*8) (1443:2) and n->pointers (1443:2)
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at ./main.c(1442,2)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at ./main.c(1452,2)
+   remark #25408: memset generated
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between n->pointers (1452:2) and n->pointers[i] (1453:2)
+   remark #17106: parallel dependence: assumed FLOW dependence between n->pointers[i] (1453:2) and n->pointers (1452:2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ./main.c(1452,2)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between n->pointers (1453:2) and n->pointers[i] (1453:2)
+      remark #17106: parallel dependence: assumed FLOW dependence between n->pointers[i] (1453:2) and n->pointers (1453:2)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between n->pointers (1453:2) and n->pointers[i] (1453:2)
+      remark #15346: vector dependence: assumed FLOW dependence between n->pointers[i] (1453:2) and n->pointers (1453:2)
+      remark #25439: unrolled with remainder by 2  
+      remark #25015: Estimate of max trip count of loop=12
+   LOOP END
+
+   LOOP BEGIN at ./main.c(1452,2)
+   <Remainder>
+      remark #25015: Estimate of max trip count of loop=12
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ./main.c(1455,2)
+   remark #25408: memset generated
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between n->pointers (1455:2) and n->pointers[i] (1456:2)
+   remark #17106: parallel dependence: assumed FLOW dependence between n->pointers[i] (1456:2) and n->pointers (1455:2)
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ./main.c(1455,2)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between n->pointers (1456:2) and n->pointers[i] (1456:2)
+      remark #17106: parallel dependence: assumed FLOW dependence between n->pointers[i] (1456:2) and n->pointers (1456:2)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between n->pointers (1456:2) and n->pointers[i] (1456:2)
+      remark #15346: vector dependence: assumed FLOW dependence between n->pointers[i] (1456:2) and n->pointers (1456:2)
+      remark #25439: unrolled with remainder by 2  
+      remark #25015: Estimate of max trip count of loop=12
+   LOOP END
+
+   LOOP BEGIN at ./main.c(1455,2)
+   <Remainder>
+      remark #25015: Estimate of max trip count of loop=12
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1452,2):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+./main.c(1452,2):remark #34026: call to memset implemented as a call to optimized library version
+./main.c(1455,2):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+./main.c(1455,2):remark #34026: call to memset implemented as a call to optimized library version
+./main.c(1425,1):remark #34051: REGISTER ALLOCATION : [remove_entry_from_node] ./main.c:1425
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   12[ rax rdx rcx rbx rbp rsi rdi r8-r11 r15]
+        
+    Routine temporaries
+        Total         :     110
+            Global    :      43
+            Local     :      67
+        Regenerable   :       4
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      16 bytes*
+            Reads     :       2 [1.80e+00 ~ 0.8%]
+            Writes    :       2 [1.80e+00 ~ 0.8%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: adjust_root(node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (adjust_root(node *)) [26/78=33.3%] ./main.c(1464,1)
+  -> EXTERN: (1494,2) free(void *)
+  -> EXTERN: (1495,2) free(void *)
+  -> EXTERN: (1496,2) free(void *)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1464,1):remark #34051: REGISTER ALLOCATION : [adjust_root] ./main.c:1464
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    5[ rax rbp rdi r12-r13]
+        
+    Routine temporaries
+        Total         :      16
+            Global    :       9
+            Local     :       7
+        Regenerable   :       0
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: get_neighbor_index(node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (get_neighbor_index(node *)) [27/78=34.6%] ./main.c(1400,1)
+  -> EXTERN: (1415,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (1417,2) exit(int)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(1410,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1400,1):remark #34051: REGISTER ALLOCATION : [get_neighbor_index] ./main.c:1400
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rcx rdi]
+        
+    Routine temporaries
+        Total         :      18
+            Global    :      11
+            Local     :       7
+        Regenerable   :       3
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: coalesce_nodes(node *, node *, node *, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (coalesce_nodes(node *, node *, node *, int, int)) [28/78=35.9%] ./main.c(1508,5)
+  -> (1571,12) cut(int) (isz = 9) (sz = 17)
+     [[ Unable to inline callsite  <1>]]
+  -> (1626,10) delete_entry(node *, node *, int, void *) (isz = 84) (sz = 100)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (1627,3) free(void *)
+  -> EXTERN: (1628,3) free(void *)
+  -> EXTERN: (1629,3) free(void *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(1574,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between neighbor->keys (1575:4) and neighbor->pointers[i] (1576:4)
+   remark #17106: parallel dependence: assumed FLOW dependence between neighbor->pointers[i] (1576:4) and neighbor->keys (1575:4)
+   remark #25427: Loop Statements Reordered
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between neighbor->keys (1575:4) and neighbor->pointers[i] (1576:4)
+   remark #15346: vector dependence: assumed FLOW dependence between neighbor->pointers[i] (1576:4) and neighbor->keys (1575:4)
+   remark #25439: unrolled with remainder by 2  
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 3
+LOOP END
+
+LOOP BEGIN at ./main.c(1574,3)
+<Remainder>
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 3
+LOOP END
+
+LOOP BEGIN at ./main.c(1593,4)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable j was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+LOOP END
+
+LOOP BEGIN at ./main.c(1604,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between (*(neighbor->pointers+i*8))->parent (1606:4) and neighbor->pointers[i] (1606:4)
+   remark #17106: parallel dependence: assumed ANTI dependence between neighbor->pointers[i] (1606:4) and (*(neighbor->pointers+i*8))->parent (1606:4)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed FLOW dependence between (*(neighbor->pointers+i*8))->parent (1606:4) and neighbor->pointers[i] (1606:4)
+   remark #15346: vector dependence: assumed ANTI dependence between neighbor->pointers[i] (1606:4) and (*(neighbor->pointers+i*8))->parent (1606:4)
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at ./main.c(1604,3)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at ./main.c(1617,3)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable j was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+LOOP END
+
+LOOP BEGIN at ./main.c(1632,2)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed FLOW dependence between n->parent->keys[i] (1634:3) and n->parent->pointers[i+1] (1633:2)
+   remark #17106: parallel dependence: assumed ANTI dependence between n->parent->pointers[i+1] (1633:2) and n->parent->keys[i] (1634:3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ ./main.c(1633,2) ]
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1508,5):remark #34051: REGISTER ALLOCATION : [coalesce_nodes] ./main.c:1508
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   15[ rax rdx rcx rbx rbp rsi rdi r8-r15]
+        
+    Routine temporaries
+        Total         :     129
+            Global    :      45
+            Local     :      84
+        Regenerable   :       2
+        Spilled       :      11
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      32 bytes*
+            Reads     :       5 [1.17e+00 ~ 0.6%]
+            Writes    :       7 [2.35e+00 ~ 1.2%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: redistribute_nodes(node *, node *, node *, int, int, int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (redistribute_nodes(node *, node *, node *, int, int, int)) [29/78=37.2%] ./main.c(1650,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(1663,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #17106: parallel dependence: assumed ANTI dependence between n->keys (1664:4) and *(n->pointers+i*8) (1665:4)
+   remark #17106: parallel dependence: assumed FLOW dependence between *(n->pointers+i*8) (1665:4) and n->keys (1664:4)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   remark #15346: vector dependence: assumed ANTI dependence between n->keys (1664:4) and *(n->pointers+i*8) (1665:4)
+   remark #15346: vector dependence: assumed FLOW dependence between *(n->pointers+i*8) (1665:4) and n->keys (1664:4)
+   remark #25439: unrolled with remainder by 2  
+LOOP END
+
+LOOP BEGIN at ./main.c(1663,3)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at ./main.c(1702,3)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(1650,1):remark #34051: REGISTER ALLOCATION : [redistribute_nodes] ./main.c:1650
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   14[ rax rdx rcx rbx rbp rsi rdi r8-r11 r13-r15]
+        
+    Routine temporaries
+        Total         :     108
+            Global    :      21
+            Local     :      87
+        Regenerable   :       1
+        Spilled       :       5
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      24 bytes*
+            Reads     :       3 [2.47e+00 ~ 1.8%]
+            Writes    :       3 [2.47e+00 ~ 1.8%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: print_tree(node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (print_tree(node *)) [30/78=38.5%] ./main.c(907,1)
+  -> EXTERN: (915,3) printf(const char *__restrict__, ...)
+  -> (919,2) enqueue(node *) (isz = 22) (sz = 27)
+     [[ Unable to inline callsite  <1>]]
+  -> (921,7) dequeue(void) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+  -> (923,15) path_to_root(node *, node *) (isz = 13) (sz = 22)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (926,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (930,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (933,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (934,4) printf(const char *__restrict__, ...)
+  -> (938,3) enqueue(node *) (isz = 22) (sz = 27)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (941,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (943,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (945,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (947,2) printf(const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(920,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ./main.c(931,3)
+      remark #17102: loop was not parallelized: not a parallelization candidate
+      remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+
+   LOOP BEGIN at ./main.c(937,3)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #15382: vectorization support: call to function enqueue(node *) cannot be vectorized   [ ./main.c(938,3) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(907,1):remark #34051: REGISTER ALLOCATION : [print_tree] ./main.c:907
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   12[ rax rdx rcx rbx rbp rsi rdi r8 r12-r15]
+        
+    Routine temporaries
+        Total         :      62
+            Global    :      20
+            Local     :      42
+        Regenerable   :      23
+        Spilled       :       8
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      48 bytes*
+            Reads     :       9 [0.00e+00 ~ 0.0%]
+            Writes    :      12 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: dequeue(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (dequeue(void)) [31/78=39.7%] ./main.c(841,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(841,1):remark #34051: REGISTER ALLOCATION : [dequeue] ./main.c:841
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdx]
+        
+    Routine temporaries
+        Total         :       9
+            Global    :       0
+            Local     :       9
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: path_to_root(node *, node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (path_to_root(node *, node *)) [32/78=41.0%] ./main.c(894,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(897,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable length was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(894,1):remark #34051: REGISTER ALLOCATION : [path_to_root] ./main.c:894
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      12
+            Global    :       9
+            Local     :       3
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: transform_to_cuda(node *, bool)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (transform_to_cuda(node *, bool)) [33/78=42.3%] ./main.c(648,1)
+  -> EXTERN: (652,2) gettimeofday(struct timeval *__restrict__, __timezone_ptr_t)
+  -> EXTERN: (653,26) pow(double, double)
+  -> EXTERN: (653,36) log(double)
+  -> EXTERN: (653,46) log(double)
+  -> EXTERN: (655,15) exit(int)
+  -> EXTERN: (655,15) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (655,15) malloc(size_t)
+  -> EXTERN: (657,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (658,3) exit(int)
+  -> (662,24) kmalloc(int) (isz = 12) (sz = 19)
+     [[ Unable to inline callsite  <1>]]
+  -> (664,20) kmalloc(int) (isz = 12) (sz = 19)
+     [[ Unable to inline callsite  <1>]]
+  -> (668,2) enqueue(node *) (isz = 22) (sz = 27)
+     [[ Unable to inline callsite  <1>]]
+  -> (678,7) dequeue(void) (isz = 4) (sz = 9)
+     [[ Unable to inline callsite  <1>]]
+  -> (694,5) enqueue(node *) (isz = 22) (sz = 27)
+     [[ Unable to inline callsite  <1>]]
+  -> (702,4) enqueue(node *) (isz = 22) (sz = 27)
+     [[ Unable to inline callsite  <1>]]
+  -> EXTERN: (722,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (723,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (724,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (726,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (727,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (729,5) printf(const char *__restrict__, ...)
+  -> EXTERN: (730,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (736,4) printf(const char *__restrict__, ...)
+  -> EXTERN: (737,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (738,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (739,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (741,2) gettimeofday(struct timeval *__restrict__, __timezone_ptr_t)
+  -> EXTERN: (745,2) printf(const char *__restrict__, ...)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(677,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15541: outer loop was not auto-vectorized: consider using SIMD directive
+
+   LOOP BEGIN at ./main.c(686,3)
+      remark #17102: loop was not parallelized: not a parallelization candidate
+      remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+
+   LOOP BEGIN at ./main.c(692,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between n->keys[i-1] (693:5) and k->indices[i] (695:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between k->indices[i] (695:5) and n->keys[i-1] (693:5)
+      remark #15382: vectorization support: call to function enqueue(node *) cannot be vectorized   [ ./main.c(694,5) ]
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between n->keys[i-1] (693:5) and k->indices[i] (695:5)
+      remark #15346: vector dependence: assumed FLOW dependence between k->indices[i] (695:5) and n->keys[i-1] (693:5)
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+      remark #25015: Estimate of max trip count of loop=509
+   LOOP END
+
+   LOOP BEGIN at ./main.c(706,4)
+      remark #17104: loop was not parallelized: existence of parallel dependence
+      remark #17106: parallel dependence: assumed ANTI dependence between n->keys[i-1] (707:5) and k->indices[i] (709:5)
+      remark #17106: parallel dependence: assumed FLOW dependence between k->indices[i] (709:5) and n->keys[i-1] (707:5)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization
+      remark #15346: vector dependence: assumed ANTI dependence between n->keys[i-1] (707:5) and k->indices[i] (709:5)
+      remark #15346: vector dependence: assumed FLOW dependence between k->indices[i] (709:5) and n->keys[i-1] (707:5)
+      remark #25439: unrolled with remainder by 2  
+      remark #25015: Estimate of max trip count of loop=509
+   LOOP END
+
+   LOOP BEGIN at ./main.c(706,4)
+   <Remainder>
+      remark #25015: Estimate of max trip count of loop=509
+   LOOP END
+
+   LOOP BEGIN at ./main.c(725,4)
+      remark #17102: loop was not parallelized: not a parallelization candidate
+      remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+
+   LOOP BEGIN at ./main.c(728,4)
+      remark #17102: loop was not parallelized: not a parallelization candidate
+      remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+      remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+   LOOP END
+LOOP END
+
+LOOP BEGIN at ./main.c(735,3)
+   remark #17104: loop was not parallelized: existence of parallel dependence
+   remark #15382: vectorization support: call to function printf(const char *__restrict__, ...) cannot be vectorized   [ ./main.c(736,4) ]
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(648,1):remark #34051: REGISTER ALLOCATION : [transform_to_cuda] ./main.c:648
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   19[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm3]
+        
+    Routine temporaries
+        Total         :     188
+            Global    :      63
+            Local     :     125
+        Regenerable   :      55
+        Spilled       :      14
+        
+    Routine stack
+        Variables     :      32 bytes*
+            Reads     :       4 [3.94e+00 ~ 0.4%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      64 bytes*
+            Reads     :      11 [2.27e+01 ~ 2.4%]
+            Writes    :      11 [1.82e+01 ~ 1.9%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: enqueue(node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (enqueue(node *)) [34/78=43.6%] ./main.c(822,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(830,3)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(822,1):remark #34051: REGISTER ALLOCATION : [enqueue] ./main.c:822
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       9
+            Local     :       1
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: kmalloc(int)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (kmalloc(int)) [35/78=44.9%] ./main.c(632,1)
+  -> EXTERN: (638,3) printf(const char *__restrict__, ...)
+  -> EXTERN: (639,3) exit(int)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(632,1):remark #34051: REGISTER ALLOCATION : [kmalloc] ./main.c:632
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      17
+            Global    :       7
+            Local     :      10
+        Regenerable   :       3
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: height(node *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (height(node *)) [36/78=46.2%] ./main.c(881,1)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(884,2)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15523: loop was not vectorized: loop control variable h was found, but loop iteration count cannot be computed before executing the loop
+   remark #25456: Number of Array Refs Scalar Replaced In Loop: 1
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(881,1):remark #34051: REGISTER ALLOCATION : [height] ./main.c:881
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rdx rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       8
+            Local     :       3
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_reset(list_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_reset(list_t *)) [37/78=47.4%] ./main.c(178,1)
+  -> (179,3) list_delete(list_t *) (isz = 24) (sz = 29)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(178,1):remark #34051: REGISTER ALLOCATION : [list_reset] ./main.c:178
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    1[ rdi]
+        
+    Routine temporaries
+        Total         :       9
+            Global    :       0
+            Local     :       9
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_delete(list_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_delete(list_t *)) [38/78=48.7%] ./main.c(161,1)
+  -> (169,5) list_item_delete(list_item_t *, void (*)(void *)) (isz = 4) (sz = 11)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(165,3)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(161,1):remark #34051: REGISTER ALLOCATION : [list_delete] ./main.c:161
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    5[ rax rsi rdi r12-r13]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       8
+            Local     :       6
+        Regenerable   :       1
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      16 bytes*
+            Reads     :       2 [1.97e+00 ~ 3.2%]
+            Writes    :       2 [1.97e+00 ~ 3.2%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_item_delete(list_item_t *, void (*)(void *))
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_item_delete(list_item_t *, void (*)(void *))) [39/78=50.0%] ./main.c(533,1)
+  -> INDIRECT-: (535,5)  datum_delete_1067_V$5a.0.28
+     [[ Unable to inline indirect callsite  <2>]]
+  -> EXTERN: (538,3) free(void *)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(533,1):remark #34051: REGISTER ALLOCATION : [list_item_delete] ./main.c:533
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rsi rdi r12]
+        
+    Routine temporaries
+        Total         :      13
+            Global    :       8
+            Local     :       5
+        Regenerable   :       0
+        Spilled       :       1
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_insert_item_head(list_t *, list_item_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_insert_item_head(list_t *, list_item_t *)) [40/78=51.3%] ./main.c(185,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(185,1):remark #34051: REGISTER ALLOCATION : [list_insert_item_head] ./main.c:185
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      12
+            Global    :       9
+            Local     :       3
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_insert_item_tail(list_t *, list_item_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_insert_item_tail(list_t *, list_item_t *)) [41/78=52.6%] ./main.c(201,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(201,1):remark #34051: REGISTER ALLOCATION : [list_insert_item_tail] ./main.c:201
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      13
+            Global    :       8
+            Local     :       5
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_insert_item_before(list_t *, list_item_t *, list_item_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_insert_item_before(list_t *, list_item_t *, list_item_t *)) [42/78=53.8%] ./main.c(218,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(218,1):remark #34051: REGISTER ALLOCATION : [list_insert_item_before] ./main.c:218
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    5[ rax rdx rcx rsi rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       9
+            Local     :       5
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_insert_item_after(list_t *, list_item_t *, list_item_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_insert_item_after(list_t *, list_item_t *, list_item_t *)) [43/78=55.1%] ./main.c(239,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(239,1):remark #34051: REGISTER ALLOCATION : [list_insert_item_after] ./main.c:239
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    5[ rax rdx rcx rsi rdi]
+        
+    Routine temporaries
+        Total         :      14
+            Global    :       9
+            Local     :       5
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_insert_item_sorted(list_t *, list_item_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_insert_item_sorted(list_t *, list_item_t *)) [44/78=56.4%] ./main.c(259,1)
+  -> INDIRECT-: (263,32)  l_988_V$25.0.8->compare_V$12
+     [[ Unable to inline indirect callsite  <2>]]
+  -> (263,43) list_item_get_datum(list_item_t *) (isz = 0) (sz = 6)
+     [[ Unable to inline callsite  <1>]]
+  -> (264,8) list_item_get_datum(list_item_t *) (isz = 0) (sz = 6)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(263,25)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(259,1):remark #34051: REGISTER ALLOCATION : [list_insert_item_sorted] ./main.c:259
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rsi rdi r12-r15]
+        
+    Routine temporaries
+        Total         :      26
+            Global    :      14
+            Local     :      12
+        Regenerable   :       1
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      32 bytes*
+            Reads     :       8 [3.52e+00 ~ 5.0%]
+            Writes    :       4 [3.47e+00 ~ 4.9%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_item_get_datum(list_item_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_item_get_datum(list_item_t *)) [45/78=57.7%] ./main.c(543,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(543,1):remark #34051: REGISTER ALLOCATION : [list_item_get_datum] ./main.c:543
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       0
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_insert_head(list_t *, void *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_insert_head(list_t *, void *)) [46/78=59.0%] ./main.c(288,1)
+  -> EXTERN: (290,22) exit(int)
+  -> EXTERN: (290,22) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (290,22) malloc(size_t)
+  -> (291,3) list_item_init(list_item_t *, void *) (isz = 4) (sz = 11)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(288,1):remark #34051: REGISTER ALLOCATION : [list_insert_head] ./main.c:288
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rcx rsi rdi r12-r14]
+        
+    Routine temporaries
+        Total         :      26
+            Global    :      11
+            Local     :      15
+        Regenerable   :       9
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_insert_tail(list_t *, void *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_insert_tail(list_t *, void *)) [47/78=60.3%] ./main.c(308,1)
+  -> EXTERN: (311,22) exit(int)
+  -> EXTERN: (311,22) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (311,22) malloc(size_t)
+  -> (312,3) list_item_init(list_item_t *, void *) (isz = 4) (sz = 11)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(308,1):remark #34051: REGISTER ALLOCATION : [list_insert_tail] ./main.c:308
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    8[ rax rdx rcx rbp rsi rdi r12-r13]
+        
+    Routine temporaries
+        Total         :      27
+            Global    :      10
+            Local     :      17
+        Regenerable   :       9
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_insert_before(list_t *, list_item_t *, void *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_insert_before(list_t *, list_item_t *, void *)) [48/78=61.5%] ./main.c(329,1)
+  -> EXTERN: (332,22) exit(int)
+  -> EXTERN: (332,22) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (332,22) malloc(size_t)
+  -> (333,3) list_item_init(list_item_t *, void *) (isz = 4) (sz = 11)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(329,1):remark #34051: REGISTER ALLOCATION : [list_insert_before] ./main.c:329
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rsi rdi r12-r15]
+        
+    Routine temporaries
+        Total         :      27
+            Global    :      11
+            Local     :      16
+        Regenerable   :       8
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_insert_after(list_t *, list_item_t *, void *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_insert_after(list_t *, list_item_t *, void *)) [49/78=62.8%] ./main.c(355,1)
+  -> EXTERN: (358,22) exit(int)
+  -> EXTERN: (358,22) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (358,22) malloc(size_t)
+  -> (359,3) list_item_init(list_item_t *, void *) (isz = 4) (sz = 11)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(355,1):remark #34051: REGISTER ALLOCATION : [list_insert_after] ./main.c:355
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rsi rdi r12-r15]
+        
+    Routine temporaries
+        Total         :      27
+            Global    :      11
+            Local     :      16
+        Regenerable   :       8
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_insert_sorted(list_t *, void *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_insert_sorted(list_t *, void *)) [50/78=64.1%] ./main.c(380,1)
+  -> EXTERN: (384,22) exit(int)
+  -> EXTERN: (384,22) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (384,22) malloc(size_t)
+  -> (385,3) list_item_init(list_item_t *, void *) (isz = 4) (sz = 11)
+     [[ Unable to inline callsite  <1>]]
+  -> INDIRECT-: (389,32)  l_1025_V$3e.0.13->compare_V$12
+     [[ Unable to inline indirect callsite  <2>]]
+  -> (389,43) list_item_get_datum(list_item_t *) (isz = 0) (sz = 6)
+     [[ Unable to inline callsite  <1>]]
+  -> (390,8) list_item_get_datum(list_item_t *) (isz = 0) (sz = 6)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(389,25)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(380,1):remark #34051: REGISTER ALLOCATION : [list_insert_sorted] ./main.c:380
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    9[ rax rdx rcx rsi rdi r12-r15]
+        
+    Routine temporaries
+        Total         :      40
+            Global    :      16
+            Local     :      24
+        Regenerable   :       9
+        Spilled       :       4
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       8 bytes*
+            Reads     :       2 [7.74e-01 ~ 1.1%]
+            Writes    :       1 [7.63e-01 ~ 1.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_remove_head(list_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_remove_head(list_t *)) [51/78=65.4%] ./main.c(434,1)
+  -> (435,3) list_remove_item(list_t *, list_item_t *) (isz = 38) (sz = 45)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(434,1):remark #34051: REGISTER ALLOCATION : [list_remove_head] ./main.c:434
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rsi rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       0
+            Local     :      11
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_remove_item(list_t *, list_item_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_remove_item(list_t *, list_item_t *)) [52/78=66.7%] ./main.c(414,1)
+  -> (429,3) list_item_delete(list_item_t *, void (*)(void *)) (isz = 4) (sz = 11)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(414,1):remark #34051: REGISTER ALLOCATION : [list_remove_item] ./main.c:414
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    7[ rax rdx rcx rsi rdi r8-r9]
+        
+    Routine temporaries
+        Total         :      21
+            Global    :      11
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_remove_tail(list_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_remove_tail(list_t *)) [53/78=67.9%] ./main.c(440,1)
+  -> (441,3) list_remove_item(list_t *, list_item_t *) (isz = 38) (sz = 45)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(440,1):remark #34051: REGISTER ALLOCATION : [list_remove_tail] ./main.c:440
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rsi rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       0
+            Local     :      11
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_find_item(list_t *, void *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_find_item(list_t *, void *)) [54/78=69.2%] ./main.c(447,1)
+  -> INDIRECT-: (450,28)  l_1049_V$47.0.17->compare_V$12
+     [[ Unable to inline indirect callsite  <2>]]
+  -> (450,46) list_item_get_datum(list_item_t *) (isz = 0) (sz = 6)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(450,22)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(447,1):remark #34051: REGISTER ALLOCATION : [list_find_item] ./main.c:447
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    6[ rax rsi rdi r12-r14]
+        
+    Routine temporaries
+        Total         :      19
+            Global    :      12
+            Local     :       7
+        Regenerable   :       0
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      24 bytes*
+            Reads     :       6 [2.96e+00 ~ 5.3%]
+            Writes    :       3 [2.96e+00 ~ 5.3%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_get_head_item(list_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_get_head_item(list_t *)) [55/78=70.5%] ./main.c(459,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(459,1):remark #34051: REGISTER ALLOCATION : [list_get_head_item] ./main.c:459
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       0
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_get_tail_item(list_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_get_tail_item(list_t *)) [56/78=71.8%] ./main.c(465,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(465,1):remark #34051: REGISTER ALLOCATION : [list_get_tail_item] ./main.c:465
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       0
+            Local     :      10
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_find(list_t *, void *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_find(list_t *, void *)) [57/78=73.1%] ./main.c(472,1)
+  -> INDIRECT-: (475,28)  l_1054_V$4c.0.20->compare_V$12
+     [[ Unable to inline indirect callsite  <2>]]
+  -> (475,46) list_item_get_datum(list_item_t *) (isz = 0) (sz = 6)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(475,22)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(472,1):remark #34051: REGISTER ALLOCATION : [list_find] ./main.c:472
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    6[ rax rsi rdi r12-r14]
+        
+    Routine temporaries
+        Total         :      20
+            Global    :      13
+            Local     :       7
+        Regenerable   :       0
+        Spilled       :       3
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_get_head(list_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_get_head(list_t *)) [58/78=74.4%] ./main.c(484,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(484,1):remark #34051: REGISTER ALLOCATION : [list_get_head] ./main.c:484
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       8
+            Local     :       3
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_get_tail(list_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_get_tail(list_t *)) [59/78=75.6%] ./main.c(490,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(490,1):remark #34051: REGISTER ALLOCATION : [list_get_tail] ./main.c:490
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       8
+            Local     :       3
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_is_empty(list_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_is_empty(list_t *)) [60/78=76.9%] ./main.c(502,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(502,1):remark #34051: REGISTER ALLOCATION : [list_is_empty] ./main.c:502
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       0
+            Local     :      11
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_not_empty(list_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_not_empty(list_t *)) [61/78=78.2%] ./main.c(508,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(508,1):remark #34051: REGISTER ALLOCATION : [list_not_empty] ./main.c:508
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       0
+            Local     :      11
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_visit_items(list_t *, void (*)(void *))
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_visit_items(list_t *, void (*)(void *))) [62/78=79.5%] ./main.c(515,1)
+  -> INDIRECT-: (519,5)  visitor_1062_V$55.0.26
+     [[ Unable to inline indirect callsite  <2>]]
+  -> (519,13) list_item_get_datum(list_item_t *) (isz = 0) (sz = 6)
+     [[ Unable to inline callsite  <1>]]
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at ./main.c(518,3)
+   remark #17102: loop was not parallelized: not a parallelization candidate
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(515,1):remark #34051: REGISTER ALLOCATION : [list_visit_items] ./main.c:515
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    5[ rax rsi rdi r12-r13]
+        
+    Routine temporaries
+        Total         :      15
+            Global    :       9
+            Local     :       6
+        Regenerable   :       0
+        Spilled       :       2
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      16 bytes*
+            Reads     :       2 [1.97e+00 ~ 3.2%]
+            Writes    :       2 [1.97e+00 ~ 3.2%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_iterator_delete(list_iterator_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_iterator_delete(list_iterator_t *)) [63/78=80.8%] ./main.c(556,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(556,1):remark #34051: REGISTER ALLOCATION : [list_iterator_delete] ./main.c:556
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    1[ rdi]
+        
+    Routine temporaries
+        Total         :       8
+            Global    :       0
+            Local     :       8
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_iterator_next(list_iterator_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_iterator_next(list_iterator_t *)) [64/78=82.1%] ./main.c(562,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(562,1):remark #34051: REGISTER ALLOCATION : [list_iterator_next] ./main.c:562
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       8
+            Local     :       2
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_iterator_prev(list_iterator_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_iterator_prev(list_iterator_t *)) [65/78=83.3%] ./main.c(569,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(569,1):remark #34051: REGISTER ALLOCATION : [list_iterator_prev] ./main.c:569
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       8
+            Local     :       2
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_iterator_get_datum(list_iterator_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_iterator_get_datum(list_iterator_t *)) [66/78=84.6%] ./main.c(576,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(576,1):remark #34051: REGISTER ALLOCATION : [list_iterator_get_datum] ./main.c:576
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       8
+            Local     :       3
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_iterator_is_valid(list_iterator_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_iterator_is_valid(list_iterator_t *)) [67/78=85.9%] ./main.c(582,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(582,1):remark #34051: REGISTER ALLOCATION : [list_iterator_is_valid] ./main.c:582
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       0
+            Local     :      11
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_reverse_iterator_delete(list_reverse_iterator_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_reverse_iterator_delete(list_reverse_iterator_t *)) [68/78=87.2%] ./main.c(595,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(595,1):remark #34051: REGISTER ALLOCATION : [list_reverse_iterator_delete] ./main.c:595
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    1[ rdi]
+        
+    Routine temporaries
+        Total         :       8
+            Global    :       0
+            Local     :       8
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_reverse_iterator_next(list_reverse_iterator_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_reverse_iterator_next(list_reverse_iterator_t *)) [69/78=88.5%] ./main.c(601,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(601,1):remark #34051: REGISTER ALLOCATION : [list_reverse_iterator_next] ./main.c:601
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       8
+            Local     :       2
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_reverse_iterator_prev(list_reverse_iterator_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_reverse_iterator_prev(list_reverse_iterator_t *)) [70/78=89.7%] ./main.c(608,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(608,1):remark #34051: REGISTER ALLOCATION : [list_reverse_iterator_prev] ./main.c:608
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      10
+            Global    :       8
+            Local     :       2
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_reverse_iterator_get_datum(list_reverse_iterator_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_reverse_iterator_get_datum(list_reverse_iterator_t *)) [71/78=91.0%] ./main.c(615,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(615,1):remark #34051: REGISTER ALLOCATION : [list_reverse_iterator_get_datum] ./main.c:615
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       8
+            Local     :       3
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_reverse_iterator_is_valid(list_reverse_iterator_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_reverse_iterator_is_valid(list_reverse_iterator_t *)) [72/78=92.3%] ./main.c(621,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(621,1):remark #34051: REGISTER ALLOCATION : [list_reverse_iterator_is_valid] ./main.c:621
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       0
+            Local     :      11
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: usage_1(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (usage_1(void)) [73/78=93.6%] ./main.c(788,1)
+  -> EXTERN: (790,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (791,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (792,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (793,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (794,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (795,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (796,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (797,2) printf(const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(788,1):remark #34051: REGISTER ALLOCATION : [usage_1] ./main.c:788
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      29
+            Global    :       6
+            Local     :      23
+        Regenerable   :      21
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: usage_2(void)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (usage_2(void)) [74/78=94.9%] ./main.c(804,1)
+  -> EXTERN: (806,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (807,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (808,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (809,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (810,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (811,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (812,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (813,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (814,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (815,2) printf(const char *__restrict__, ...)
+  -> EXTERN: (816,2) printf(const char *__restrict__, ...)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(804,1):remark #34051: REGISTER ALLOCATION : [usage_2] ./main.c:804
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    1[ rdi]
+        
+    Routine temporaries
+        Total         :      28
+            Global    :       6
+            Local     :      22
+        Regenerable   :      22
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_reverse_iterator_init(list_t *, list_reverse_iterator_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_reverse_iterator_init(list_t *, list_reverse_iterator_t *)) [75/78=96.2%] ./main.c(589,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(589,1):remark #34051: REGISTER ALLOCATION : [list_reverse_iterator_init] ./main.c:589
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       8
+            Local     :       3
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_iterator_init(list_t *, list_iterator_t *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_iterator_init(list_t *, list_iterator_t *)) [76/78=97.4%] ./main.c(550,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(550,1):remark #34051: REGISTER ALLOCATION : [list_iterator_init] ./main.c:550
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       8
+            Local     :       3
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_item_init(list_item_t *, void *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_item_init(list_item_t *, void *)) [77/78=98.7%] ./main.c(525,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(525,1):remark #34051: REGISTER ALLOCATION : [list_item_init] ./main.c:525
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      11
+            Global    :       0
+            Local     :      11
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: list_init(list_t *, int32_t (*)(const void *, const void *), void (*)(void *))
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (list_init(list_t *, int32_t (*)(const void *, const void *), void (*)(void *))) [78/78=100.0%] ./main.c(152,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+./main.c(152,1):remark #34051: REGISTER ALLOCATION : [list_init] ./main.c:152
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    4[ rax rdx rsi rdi]
+        
+    Routine temporaries
+        Total         :      13
+            Global    :       0
+            Local     :      13
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING FOOTNOTES:
+
+<1> Inlining the function will lead to incorrect program behavior.
+
+<2> The indirectly called function must be resolved to its targets before it 
+can be inlined.  Consider compiling with -ipo or -prof-gen followed by 
+-prof-use.
+

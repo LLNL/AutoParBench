@@ -9,7 +9,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"firstprivate":["j","C","i"]
+"firstprivate":["j","C","n","i"]
 },
 "loop - object id : 2":{
 "file":"./dataracebench/utilities/template-for-new-benchmark.c",
@@ -21,7 +21,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"firstprivate":["j","C","i"]
+"firstprivate":["j","C","n","i"]
 },
 "loop - object id : 3":{
 "file":"./dataracebench/utilities/template-for-new-benchmark.c",
@@ -55,7 +55,7 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"firstprivate":["j","C","i"]
+"firstprivate":["j","C","n","i"]
 },
 "loop - object id : 6":{
 "file":"./dataracebench/utilities/template-for-new-benchmark.c",
@@ -67,6 +67,6 @@
 "ordered":"false",
 "offload":"false",
 "multiversioned":"false",
-"firstprivate":["j","C","i"]
+"firstprivate":["j","C","n","i"]
 }
 }

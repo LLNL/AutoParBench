@@ -4,7 +4,7 @@ See "https://software.intel.com/en-us/intel-advisor-xe" for details.
 
 Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
 
-Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.o
+Compiler options: -c -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB043-adi-parallel-no.o
 
     Report from: Interprocedural optimizations [ipo]
 
@@ -56,6 +56,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
       remark #15344: loop was not vectorized: vector dependence prevents vectorization
       remark #15346: vector dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (49:7) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (51:9)
       remark #15346: vector dependence: assumed OUTPUT dependence between call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (51:9) and call:fprintf(FILE *__restrict__, const char *__restrict__, ...) (49:7)
+      remark #25015: Estimate of max trip count of loop=500
    LOOP END
 LOOP END
 
@@ -70,19 +71,19 @@ LOOP END
         Assigned     :   12[ rax rdx rcx rbx rbp rsi rdi r12-r15 zmm0]
         
     Routine temporaries
-        Total         :      38
-            Global    :      15
-            Local     :      23
+        Total         :      42
+            Global    :      17
+            Local     :      25
         Regenerable   :       8
-        Spilled       :       6
+        Spilled       :       8
         
     Routine stack
         Variables     :       0 bytes*
             Reads     :       0 [0.00e+00 ~ 0.0%]
             Writes    :       0 [0.00e+00 ~ 0.0%]
-        Spills        :       0 bytes*
-            Reads     :       0 [0.00e+00 ~ 0.0%]
-            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      64 bytes*
+            Reads     :       8 [1.54e+01 ~ 2.4%]
+            Writes    :       8 [1.14e+01 ~ 1.8%]
     
     Notes
     
@@ -306,7 +307,7 @@ LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataraceben
    <Multiversioned v1>
       remark #25228: Loop multiversioned for Data Dependence
       remark #17109: LOOP WAS AUTO-PARALLELIZED
-      remark #17101: parallel loop shared={ } private={ } firstprivate={ X A B c2 c1 } lastprivate={ } firstlastprivate={ } reduction={ }
+      remark #17101: parallel loop shared={ .2 } private={ } firstprivate={ n X A B c2 c1 } lastprivate={ } firstlastprivate={ } reduction={ }
       remark #15540: loop was not vectorized: auto-vectorization is disabled with -no-vec flag
       remark #25015: Estimate of max trip count of loop=500
    LOOP END
@@ -338,19 +339,19 @@ LOOP END
         Assigned     :   23[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm7]
         
     Routine temporaries
-        Total         :     171
-            Global    :      52
-            Local     :     119
-        Regenerable   :      40
-        Spilled       :       3
+        Total         :     179
+            Global    :      57
+            Local     :     122
+        Regenerable   :      41
+        Spilled       :       6
         
     Routine stack
-        Variables     :      52 bytes*
-            Reads     :       2 [1.25e+01 ~ 1.9%]
-            Writes    :      10 [0.00e+00 ~ 0.0%]
-        Spills        :      72 bytes*
-            Reads     :      18 [6.00e+00 ~ 0.9%]
-            Writes    :      16 [0.00e+00 ~ 0.0%]
+        Variables     :      60 bytes*
+            Reads     :       2 [1.25e+01 ~ 1.8%]
+            Writes    :      12 [0.00e+00 ~ 0.0%]
+        Spills        :      96 bytes*
+            Reads     :      27 [8.25e+00 ~ 1.2%]
+            Writes    :      20 [6.00e+00 ~ 0.9%]
     
     Notes
     
@@ -368,7 +369,7 @@ INLINE REPORT: (main(int, char **)) [4/4=100.0%] /home/gleison/Desktop/AutoParBe
   -> EXTERN: (111,39) polybench_alloc_data(unsigned long long, int)
   -> EXTERN: (114,39) polybench_alloc_data(unsigned long long, int)
   -> EXTERN: (117,39) polybench_alloc_data(unsigned long long, int)
-  -> (120,3) init_array(int, double (*)[500], double (*)[500], double (*)[500]) (isz = 61) (sz = 72)
+  -> (120,3) init_array(int, double (*)[500], double (*)[500], double (*)[500]) (isz = 63) (sz = 74)
      [[ Unable to inline callsite  <1>]]
   -> EXTERN: (122,3) polybench_timer_start()
   -> (125,3) kernel_adi(int, int, double (*)[500], double (*)[500], double (*)[500]) (isz = 332) (sz = 345)

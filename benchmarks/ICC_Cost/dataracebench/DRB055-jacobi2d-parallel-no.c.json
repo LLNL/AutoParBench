@@ -16,11 +16,10 @@
 "loop id":"2",
 "loop line":"29",
 "loop column":"9",
-"pragma type":"parallel for",
+"pragma type":"NULL",
 "ordered":"false",
 "offload":"false",
-"multiversioned":"true",
-"firstprivate":["A","B","c2","c1"]
+"multiversioned":"true"
 },
 "loop - object id : 3":{
 "file":"./dataracebench/DRB055-jacobi2d-parallel-no.c",

@@ -49,10 +49,6 @@ THE POSSIBILITY OF SUCH DAMAGE.
  * This requires OpenMP 4.5 to work. 
  * Earlier OpenMP does not allow a reference type for a variable within firstprivate(). 
  * */
-#if (_OPENMP<201511)
-#error "OpenMP 4.5 compilers (e.g. GCC 6.x or later ) are needed to compile this test."
-#endif
-
 #include <stdio.h>
 #define MYLEN 100
 int a[MYLEN];

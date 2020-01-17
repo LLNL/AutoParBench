@@ -4,7 +4,7 @@ See "https://software.intel.com/en-us/intel-advisor-xe" for details.
 
 Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.0.4.243 Build 20190416
 
-Compiler options: -c -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.o
+Compiler options: -c -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 -o /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.o
 
     Report from: Interprocedural optimizations [ipo]
 
@@ -32,30 +32,30 @@ Begin optimization report for: main()
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (main()) [1/2=50.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(66,1)
-  -> (72,9) gen_task(int &) (isz = 3) (sz = 8)
+INLINE REPORT: (main()) [1/2=50.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(62,1)
+  -> (68,9) gen_task(int &) (isz = 3) (sz = 8)
      [[ Unable to inline callsite  <1>]]
-  -> EXTERN: (83,7) printf(const char *, ...)
+  -> EXTERN: (79,7) printf(const char *, ...)
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(70,7)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(66,7)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function gen_task(int &) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(72,9) ]
+   remark #15382: vectorization support: call to function gen_task(int &) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(68,9) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 
-LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(78,3)
+LOOP BEGIN at /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(74,3)
    remark #17104: loop was not parallelized: existence of parallel dependence
-   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(83,7) ]
+   remark #15382: vectorization support: call to function printf(const char *, ...) cannot be vectorized   [ /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(79,7) ]
    remark #15344: loop was not vectorized: vector dependence prevents vectorization
 LOOP END
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(66,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp:66
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(62,1):remark #34051: REGISTER ALLOCATION : [main] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp:62
 
     Hardware registers
         Reserved     :    2[ rsp rip]
@@ -90,12 +90,12 @@ Begin optimization report for: gen_task(int &)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (gen_task(int &)) [2/2=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(61,1)
+INLINE REPORT: (gen_task(int &)) [2/2=100.0%] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(57,1)
 
 
     Report from: Code generation optimizations [cg]
 
-/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(61,1):remark #34051: REGISTER ALLOCATION : [_Z8gen_taskRi] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp:61
+/home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp(57,1):remark #34051: REGISTER ALLOCATION : [_Z8gen_taskRi] /home/gleison/Desktop/AutoParBench/benchmarks/ICC_Full/dataracebench/DRB100-task-reference-orig-no.cpp:57
 
     Hardware registers
         Reserved     :    2[ rsp rip]
