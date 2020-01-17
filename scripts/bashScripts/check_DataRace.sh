@@ -70,7 +70,6 @@ dataracebench_micro_list=(
 ./DRB048-firstprivate-orig-no.c
 ./DRB049-fprintf-orig-no.c
 ./DRB050-functionparameter-orig-no.c
-./DRB050-functionparameter-orig-yes.c
 ./DRB052-indirectaccesssharebase-orig-no.c
 ./DRB053-inneronly1-orig-no.c
 ./DRB054-inneronly2-orig-no.c
@@ -101,10 +100,7 @@ dataracebench_micro_list=(
 ./DRB097-target-teams-distribute-orig-no.c
 ./DRB098-simd2-orig-no.c
 ./DRB099-targetparallelfor2-orig-no.c
-./DRB100-task-reference-orig-no.c
-./DRB101-task-value-orig-no.c
 ./DRB104-nowait-barrier-orig-no.c
-./DRB108-atomic-orig-no.c
 ./DRB109-orderedmissing-orig-yes.c
 ./DRB110-ordered-orig-no.c
 ./DRB111-linearmissing-orig-yes.c
@@ -322,7 +318,7 @@ for f in ${dataracebench_micro_list[@]}; do
   REPORT="${REPORT}<td>${f}</td>"
   run_Intel_Inspector "${f/.c/.out}" 
 
-  COMPILER="icc -w -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=3"
+  COMPILER="icc -w -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5"
   ${COMPILER} -std=c99 "${SEQUENTIALDIR}/${f}" -o "${f/.c/.out}" -lm
   run_Intel_Inspector "${f/.c/.out}" 
 
@@ -353,7 +349,7 @@ for f in ${dataracebench_poly_list[@]}; do
 
 
   echo "${SEQUENTIALDIR}/utilities/polybench.c"
-  COMPILER="icc -w -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=3"
+  COMPILER="icc -w -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5"
   (${COMPILER} -std=c99 -c "${SEQUENTIALDIR}/utilities/polybench.c" -o polybench.o -lm)
   (${COMPILER} -std=c99 -c "${SEQUENTIALDIR}/${f}" -o ${f/.c/.o} -lm)
   (${COMPILER} -o ${f/.c/.out} -std=c99 polybench.o ${f/.c/.o} -lm)

@@ -54,7 +54,7 @@ setEnvironment () {
   cd ../
   SCRIPTS=$(pwd)
   cd "${THIS}"
-  COMPILER="icc -w -qopenmp -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5"
+  COMPILER="icc -w -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5"
   cd "${SCRIPTS}/../benchmarks/ICC_Full/NPB3.0-omp-c"
   CLINK=${COMPILER} CC=${COMPILER} make veryclean
   mkdir  "${SCRIPTS}/../benchmarks/ICC_Full/NPB3.0-omp-c/bin"
@@ -77,7 +77,7 @@ setEnvironment () {
 }
 
 cleanEnvironment () {
-  COMPILER="icc -w -qopenmp -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5"
+  COMPILER="icc -w -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5"
   cd "${SCRIPTS}/../benchmarks/ICC_Full/NPB3.0-omp-c"
   CLINK=${COMPILER} CC=${COMPILER} make veryclean
   cd "${THIS}"

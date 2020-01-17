@@ -1,0 +1,346 @@
+Sequential 1
+Ground Truth 1
+Parallel with threshold 1
+BT A
+
+real	1m3.788s
+user	12m20.570s
+sys	0m15.540s
+CG A
+
+real	0m0.295s
+user	0m2.951s
+sys	0m0.004s
+EP A
+
+real	0m15.373s
+user	0m17.505s
+sys	0m0.076s
+FT A
+
+real	0m3.441s
+user	0m19.387s
+sys	0m0.621s
+IS A
+
+real	0m1.253s
+user	0m5.353s
+sys	0m0.184s
+MG A
+
+real	0m2.303s
+user	0m7.455s
+sys	0m0.226s
+SP A
+
+real	0m22.415s
+user	4m22.769s
+sys	0m2.314s
+BPT A
+
+real	0m0.790s
+user	0m0.777s
+sys	0m0.012s
+BFS A
+
+real	0m1.046s
+user	0m1.017s
+sys	0m0.029s
+E3C A
+
+real	3m36.036s
+user	3m35.537s
+sys	0m0.492s
+E3D A
+
+real	3m38.914s
+user	3m38.438s
+sys	0m0.468s
+HTW A
+
+real	0m9.634s
+user	0m9.597s
+sys	0m0.036s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.023 seconds
+
+real	0m0.881s
+user	0m0.867s
+sys	0m0.012s
+H3D A
+1 threads running
+Time: 2.826 (s)
+Accuracy: 4.096975e-05
+
+real	0m7.398s
+user	0m7.362s
+sys	0m0.036s
+Parallel without threshold 1
+BT A
+
+real	62m13.703s
+user	728m35.781s
+sys	2m55.378s
+CG A
+
+real	0m0.293s
+user	0m3.154s
+sys	0m0.040s
+EP A
+
+real	0m15.075s
+user	0m17.252s
+sys	0m0.040s
+FT A
+
+real	0m4.073s
+user	0m47.138s
+sys	0m1.503s
+IS A
+
+real	0m1.189s
+user	0m7.242s
+sys	0m0.181s
+MG A
+
+real	0m4.719s
+user	0m52.050s
+sys	0m0.288s
+SP A
+
+real	0m37.092s
+user	7m22.894s
+sys	0m1.832s
+BPT A
+
+real	0m0.804s
+user	0m1.218s
+sys	0m0.028s
+BFS A
+
+real	0m1.040s
+user	0m1.012s
+sys	0m0.028s
+E3C A
+
+real	3m30.423s
+user	3m29.884s
+sys	0m0.520s
+E3D A
+
+real	3m30.017s
+user	3m31.629s
+sys	0m0.597s
+HTW A
+
+real	10m32.715s
+user	42m11.837s
+sys	0m0.469s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.023 seconds
+
+real	0m0.860s
+user	0m0.852s
+sys	0m0.008s
+H3D A
+1 threads running
+Time: 2.654 (s)
+Accuracy: 4.096975e-05
+
+real	0m6.980s
+user	0m6.964s
+sys	0m0.016s
+Optimized with -O3 1
+BT A
+
+real	0m47.713s
+user	0m47.656s
+sys	0m0.056s
+CG A
+
+real	0m0.717s
+user	0m0.705s
+sys	0m0.012s
+EP A
+
+real	0m15.030s
+user	0m15.026s
+sys	0m0.004s
+FT A
+
+real	0m3.508s
+user	0m3.415s
+sys	0m0.092s
+IS A
+
+real	0m1.110s
+user	0m1.081s
+sys	0m0.028s
+MG A
+
+real	0m2.209s
+user	0m2.105s
+sys	0m0.104s
+SP A
+
+real	0m21.168s
+user	0m21.147s
+sys	0m0.020s
+BPT A
+
+real	0m0.602s
+user	0m0.590s
+sys	0m0.012s
+BFS A
+
+real	0m0.957s
+user	0m0.933s
+sys	0m0.024s
+E3C A
+
+real	1m53.752s
+user	1m53.278s
+sys	0m0.472s
+E3D A
+
+real	2m12.331s
+user	2m11.841s
+sys	0m0.488s
+HTW A
+
+real	0m25.353s
+user	0m25.313s
+sys	0m0.040s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.006 seconds
+
+real	0m0.839s
+user	0m0.823s
+sys	0m0.016s
+H3D A
+1 threads running
+Time: 0.245 (s)
+Accuracy: 3.101152e-04
+
+real	0m2.566s
+user	0m2.530s
+sys	0m0.036s
+Manual 1
+BT A
+
+real	0m29.885s
+user	5m46.601s
+sys	0m1.399s
+CG A
+
+real	0m0.657s
+user	0m6.674s
+sys	0m0.158s
+EP A
+
+real	0m2.045s
+user	0m22.855s
+sys	0m0.092s
+FT A
+
+real	0m1.888s
+user	0m14.363s
+sys	0m0.442s
+IS A
+
+real	0m1.322s
+user	0m6.074s
+sys	0m0.128s
+MG A
+
+real	0m1.954s
+user	0m14.611s
+sys	0m0.321s
+SP A
+
+real	0m48.937s
+user	8m59.835s
+sys	0m6.918s
+BPT A
+
+real	0m1.009s
+user	0m0.617s
+sys	0m0.032s
+BFS A
+
+real	0m1.246s
+user	0m3.019s
+sys	0m0.108s
+E3C A
+
+real	0m19.359s
+user	3m23.856s
+sys	0m1.107s
+E3D A
+
+real	0m38.612s
+user	7m10.157s
+sys	0m2.191s
+HTW A
+
+real	0m8.632s
+user	0m28.588s
+sys	0m0.077s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.008 seconds
+
+real	0m1.768s
+user	0m1.608s
+sys	0m0.032s
+H3D A
+12 threads running
+Time: 0.685 (s)
+Accuracy: 4.096975e-05
+
+real	0m5.943s
+user	0m14.597s
+sys	0m0.168s
+AUTOPAR 1
+BT A
+
+real	9m10.368s
+user	105m55.201s
+sys	0m38.959s
+CG A
+
+real	0m0.668s
+user	0m7.565s
+sys	0m0.081s
+EP A
+
+real	0m15.774s
+user	0m17.817s
+sys	0m0.032s
+FT A
+
+real	1m26.532s
+user	16m35.878s
+sys	0m6.980s
+IS A
+
+real	0m1.244s
+user	0m7.397s
+sys	0m0.194s
+MG A
+
+real	0m2.871s
+user	0m27.290s
+sys	0m0.672s
+SP A
+
+real	1m15.123s
+user	14m40.803s
+sys	0m5.031s

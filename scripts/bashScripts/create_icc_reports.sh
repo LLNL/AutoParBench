@@ -35,7 +35,7 @@ cd "${SCRIPTS}/../benchmarks/${ICC_DIR}"
 OUTPUT_DIR=$(pwd)
 cd ${SCRIPTS}
 
-COMPILER="icc -qopenmp -w"
+COMPILER="icc -w -parallel"
 if [ -d "${OUTPUT_DIR}/NPB3.0-omp-c/" ]; then
   cd "${OUTPUT_DIR}/NPB3.0-omp-c/"
   if [ -d "${OUTPUT_DIR}/NPB3.0-omp-c/bin" ]; then
@@ -107,16 +107,16 @@ done
 rm pragmaRemover.out
 cd $SCRIPTS
 
-COMPILER="icc -qopenmp -w"
+COMPILER="icc -w -parallel"
 if [ -d "${OUTPUT_DIR}/NPB3.0-omp-c/" ]; then
   cd "${OUTPUT_DIR}/NPB3.0-omp-c/"
-  CLINK=${COMPILER} CC=${COMPILER} make veryclean
+  CLINK=${COMPILER} CC=${COMPILER} make clean
 fi
 cd "${THIS}"
 }
 
-run_icc "sequential" "ICC_Full" " -qopenmp -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 "
-run_icc "sequential" "ICC_Cost" " -qopenmp -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 "
-run_icc "reference_cpu_simd" "ICC_Simd" " -qopenmp -par-threshold0 -vec-threshold0 -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 "
+run_icc "sequential" "ICC_Full" " -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 "
+run_icc "sequential" "ICC_Cost" " -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 "
+run_icc "reference_cpu_simd" "ICC_Simd" " -par-threshold0 -vec-threshold0 -fno-inline -parallel -qopt-report-phase=all -qopt-report=5 "
 
 
