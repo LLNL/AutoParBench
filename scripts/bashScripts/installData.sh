@@ -14,10 +14,10 @@ SCRIPTS=$(pwd)
 cd "${THIS}"
 
 #Download the data
-#wget www.cs.virginia.edu/~kw5na/lava/Rodinia/Packages/Current/rodinia_3.1.tar.bz2
+wget www.cs.virginia.edu/~kw5na/lava/Rodinia/Packages/Current/rodinia_3.1.tar.bz2
 
 #Unzip rodinia
-#tar xjf "${THIS}/rodinia_3.1.tar.bz2"
+tar xjf "${THIS}/rodinia_3.1.tar.bz2"
 
 #Copy data to original benchmarks from rodinia
 if [ ! -d "${SCRIPTS}/../benchmarks/original/rodinia_3.1/data" ]; then
@@ -26,6 +26,10 @@ fi
 #Copy data to sequential benchmarks from rodinia
 if [ ! -d "${SCRIPTS}/../benchmarks/sequential/rodinia_3.1/data" ]; then
   cp -r "${THIS}/rodinia_3.1/data" "${SCRIPTS}/../benchmarks/sequential/rodinia_3.1/data" 
+fi
+#Copy data to reference cpu threading benchmarks from rodinia
+if [ ! -d "${SCRIPTS}/../benchmarks/reference_cpu_threading/rodinia_3.1/data" ]; then
+  cp -r "${THIS}/rodinia_3.1/data" "${SCRIPTS}/../benchmarks/reference_cpu_threading/rodinia_3.1/data" 
 fi
 #Copy data to Autopar benchmarks from rodinia
 if [ ! -d "${SCRIPTS}/../benchmarks/Autopar/rodinia_3.1/data" ]; then

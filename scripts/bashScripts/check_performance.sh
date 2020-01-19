@@ -80,9 +80,17 @@ COMP_TYPE=${2}
 cd "${TOPDIR}/benchmarks/${DIRECTORY}/rodinia_3.1"
 RODINIADIR=$(pwd)
 cd "${SCRIPTS}"
+
+if [ -d "${TOPDIR}/benchmarks/${DIRECTORY}/rodinia_3.1/bin" ] ; then
+  rm -r "${TOPDIR}/benchmarks/${DIRECTORY}/rodinia_3.1/bin"
+fi
+mkdir "${TOPDIR}/benchmarks/${DIRECTORY}/rodinia_3.1/bin"
+mkdir "${TOPDIR}/benchmarks/${DIRECTORY}/rodinia_3.1/bin/linux"
+mkdir "${TOPDIR}/benchmarks/${DIRECTORY}/rodinia_3.1/bin/linux/omp"
+
 chmod 777 -R "${RODINIADIR}"
 cd "${RODINIADIR}"
-make OMP_clean
+#make OMP_clean
 LINK=${COMPLINK} ICC=${COMPICC} CXX=${COMPILERCPP} CC=${COMPILER} make OMP
 echo "b+tree"
 cd "${RODINIADIR}/openmp/b+tree"
@@ -138,7 +146,12 @@ cd "../../"
 TOPDIR=$(pwd)
 cd "${SCRIPTS}"
 OUTPUTS="${SCRIPTS}/Outputs"
-	
+
+if [ -d "${SCRIPTS}/Outputs" ]; then
+  rm -r "${SCRIPTS}/Outputs"
+fi
+mkdir "${SCRIPTS}/Outputs"
+
 if [ -f "${SCRIPTS}/reports/time.txt" ]; then
   rm -r "${SCRIPTS}/reports/time.txt"
 fi
@@ -152,10 +165,10 @@ COMPLINK="icc -qopenmp -w"
 COMPICC="icc -qopenmp -w "
 DIRECTORY="sequential"
 
-for i in $(seq 1 1 1); do
+for i in $(seq 1 1 5); do
   echo "Sequential ${i}" &>> "${SCRIPTS}/reports/time.txt"
-#  run_NAS "ref" "A"
-#  run_Rodinia "ref" "A"
+  run_NAS "ref" "A"
+  run_Rodinia "ref" "A"
 done
 
 COMPILER="icc -qopenmp -w"
@@ -164,10 +177,10 @@ COMPLINK="icc -qopenmp -w"
 COMPICC="icc -qopenmp -w "
 DIRECTORY="reference_cpu_threading"
 
-for i in $(seq 1 1 1); do
+for i in $(seq 1 1 5); do
   echo "Ground Truth ${i}" &>> "${SCRIPTS}/reports/time.txt"
-#  run_NAS "ground_truth" "A"
-#  run_Rodinia "ground_truth" "A"
+  run_NAS "ground_truth" "A"
+  run_Rodinia "ground_truth" "A"
 done
 
 COMPILER="icc -w -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5"
@@ -176,7 +189,7 @@ COMPLINK="icc -w -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-repo
 COMPICC="icc -w -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5"
 DIRECTORY="ICC_Cost"
 
-for i in $(seq 1 1 1); do
+for i in $(seq 1 1 5); do
   echo "Parallel with threshold ${i}" &>> "${SCRIPTS}/reports/time.txt"
   run_NAS "ICC_Cost" "A"
   run_Rodinia "ICC_Cost" "A"
@@ -188,7 +201,7 @@ COMPLINK="icc -w -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phas
 COMPICC="icc -w -par-threshold0 -no-vec -fno-inline -parallel -qopt-report-phase=all -qopt-report=5"
 DIRECTORY="ICC_Full"
 
-for i in $(seq 1 1 1); do
+for i in $(seq 1 1 5); do
   echo "Parallel without threshold ${i}" &>> "${SCRIPTS}/reports/time.txt"
   run_NAS "ICC_Full" "A"
   run_Rodinia "ICC_Full" "A"
@@ -200,7 +213,7 @@ COMPLINK="icc -w -qopenmp -O3"
 COMPICC="icc -w -qopenmp -O3"
 DIRECTORY="sequential"
 
-for i in $(seq 1 1 1); do
+for i in $(seq 1 1 5); do
   echo "Optimized with -O3 ${i}" &>> "${SCRIPTS}/reports/time.txt"
   run_NAS "par_no_threshold" "A"
   run_Rodinia "par_no_threshold" "A"
@@ -212,7 +225,7 @@ COMPLINK="icc -qopenmp -w"
 COMPICC="icc -qopenmp -w "
 DIRECTORY="original"
 
-for i in $(seq 1 1 1); do
+for i in $(seq 1 1 5); do
   echo "Manual ${i}" &>> "${SCRIPTS}/reports/time.txt"
   run_NAS "manual" "A"
   run_Rodinia "manual" "A"
@@ -224,7 +237,7 @@ COMPLINK="icc -qopenmp -w"
 COMPICC="icc -qopenmp -w "
 DIRECTORY="Autopar"
 
-for i in $(seq 1 1 1); do
+for i in $(seq 1 1 5); do
   echo "AUTOPAR ${i}" &>> "${SCRIPTS}/reports/time.txt"
   run_NAS "autopar" "A"
   run_Rodinia "autopar" "A"
@@ -236,7 +249,7 @@ COMPLINK="icc -qopenmp -w"
 COMPICC="icc -qopenmp -w "
 DIRECTORY="Cetus"
 
-for i in $(seq 1 1 1); do
+for i in $(seq 1 1 5); do
   echo "CETUS ${i}" &>> "${SCRIPTS}/reports/time.txt"
   run_NAS "cetus" "A"
   run_Rodinia "cetus" "A"
@@ -245,6 +258,12 @@ done
 }
 
 clean_Repository() {
+SCRIPTS=$(pwd)
+cd "../../"
+TOPDIR=$(pwd)
+cd "${SCRIPTS}"
+OUTPUT_DIR="${TOPDIR}/benchmarks/${DIRECTORY}/rodinia_3.1"
+
 BENCHS=$(find $OUTPUT_DIR -name "*.c" | sort)
 BENCHSCPP=$(find $OUTPUT_DIR -name "*.cpp" | sort)
 DIRECTORY="${1}"

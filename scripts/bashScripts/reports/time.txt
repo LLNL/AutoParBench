@@ -1,346 +1,3040 @@
 Sequential 1
-Ground Truth 1
-Parallel with threshold 1
 BT A
 
-real	1m3.788s
-user	12m20.570s
-sys	0m15.540s
+real	1m8.787s
+user	1m8.723s
+sys	0m0.064s
 CG A
 
-real	0m0.295s
-user	0m2.951s
-sys	0m0.004s
-EP A
-
-real	0m15.373s
-user	0m17.505s
-sys	0m0.076s
-FT A
-
-real	0m3.441s
-user	0m19.387s
-sys	0m0.621s
-IS A
-
-real	0m1.253s
-user	0m5.353s
-sys	0m0.184s
-MG A
-
-real	0m2.303s
-user	0m7.455s
-sys	0m0.226s
-SP A
-
-real	0m22.415s
-user	4m22.769s
-sys	0m2.314s
-BPT A
-
-real	0m0.790s
-user	0m0.777s
-sys	0m0.012s
-BFS A
-
-real	0m1.046s
-user	0m1.017s
-sys	0m0.029s
-E3C A
-
-real	3m36.036s
-user	3m35.537s
-sys	0m0.492s
-E3D A
-
-real	3m38.914s
-user	3m38.438s
-sys	0m0.468s
-HTW A
-
-real	0m9.634s
-user	0m9.597s
-sys	0m0.036s
-HTP A
-Start computing the transient temperature
-Ending simulation
-Total time: 0.023 seconds
-
-real	0m0.881s
-user	0m0.867s
-sys	0m0.012s
-H3D A
-1 threads running
-Time: 2.826 (s)
-Accuracy: 4.096975e-05
-
-real	0m7.398s
-user	0m7.362s
-sys	0m0.036s
-Parallel without threshold 1
-BT A
-
-real	62m13.703s
-user	728m35.781s
-sys	2m55.378s
-CG A
-
-real	0m0.293s
-user	0m3.154s
-sys	0m0.040s
-EP A
-
-real	0m15.075s
-user	0m17.252s
-sys	0m0.040s
-FT A
-
-real	0m4.073s
-user	0m47.138s
-sys	0m1.503s
-IS A
-
-real	0m1.189s
-user	0m7.242s
-sys	0m0.181s
-MG A
-
-real	0m4.719s
-user	0m52.050s
-sys	0m0.288s
-SP A
-
-real	0m37.092s
-user	7m22.894s
-sys	0m1.832s
-BPT A
-
-real	0m0.804s
-user	0m1.218s
-sys	0m0.028s
-BFS A
-
-real	0m1.040s
-user	0m1.012s
-sys	0m0.028s
-E3C A
-
-real	3m30.423s
-user	3m29.884s
-sys	0m0.520s
-E3D A
-
-real	3m30.017s
-user	3m31.629s
-sys	0m0.597s
-HTW A
-
-real	10m32.715s
-user	42m11.837s
-sys	0m0.469s
-HTP A
-Start computing the transient temperature
-Ending simulation
-Total time: 0.023 seconds
-
-real	0m0.860s
-user	0m0.852s
-sys	0m0.008s
-H3D A
-1 threads running
-Time: 2.654 (s)
-Accuracy: 4.096975e-05
-
-real	0m6.980s
-user	0m6.964s
+real	0m1.037s
+user	0m1.021s
 sys	0m0.016s
-Optimized with -O3 1
-BT A
-
-real	0m47.713s
-user	0m47.656s
-sys	0m0.056s
-CG A
-
-real	0m0.717s
-user	0m0.705s
-sys	0m0.012s
 EP A
 
-real	0m15.030s
-user	0m15.026s
+real	0m17.745s
+user	0m17.741s
 sys	0m0.004s
 FT A
 
-real	0m3.508s
-user	0m3.415s
-sys	0m0.092s
+real	0m4.225s
+user	0m4.157s
+sys	0m0.068s
 IS A
 
-real	0m1.110s
-user	0m1.081s
-sys	0m0.028s
+real	0m1.427s
+user	0m1.411s
+sys	0m0.016s
 MG A
 
-real	0m2.209s
-user	0m2.105s
-sys	0m0.104s
+real	0m2.277s
+user	0m2.185s
+sys	0m0.092s
 SP A
 
-real	0m21.168s
-user	0m21.147s
+real	0m35.703s
+user	0m35.683s
 sys	0m0.020s
 BPT A
 
-real	0m0.602s
-user	0m0.590s
+real	0m0.702s
+user	0m0.682s
+sys	0m0.020s
+BFS A
+
+real	0m1.185s
+user	0m1.153s
+sys	0m0.032s
+E3C A
+
+real	2m17.842s
+user	2m17.346s
+sys	0m0.496s
+E3D A
+
+real	2m41.992s
+user	2m41.475s
+sys	0m0.517s
+HTW A
+
+real	0m28.062s
+user	0m27.883s
+sys	0m0.021s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m1.073s
+user	0m1.008s
+sys	0m0.024s
+H3D A
+1 threads running
+Time: 3.172 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.338s
+user	0m8.270s
+sys	0m0.044s
+Sequential 2
+BT A
+
+real	1m8.539s
+user	1m8.467s
+sys	0m0.072s
+CG A
+
+real	0m1.053s
+user	0m1.045s
+sys	0m0.008s
+EP A
+
+real	0m17.749s
+user	0m17.748s
+sys	0m0.001s
+FT A
+
+real	0m4.141s
+user	0m4.021s
+sys	0m0.120s
+IS A
+
+real	0m1.678s
+user	0m1.669s
+sys	0m0.008s
+MG A
+
+real	0m2.305s
+user	0m2.217s
+sys	0m0.088s
+SP A
+
+real	0m35.632s
+user	0m35.612s
+sys	0m0.020s
+BPT A
+
+real	0m0.697s
+user	0m0.668s
+sys	0m0.029s
+BFS A
+
+real	0m1.206s
+user	0m1.155s
+sys	0m0.050s
+E3C A
+
+real	2m17.560s
+user	2m17.059s
+sys	0m0.500s
+E3D A
+
+real	2m41.314s
+user	2m40.782s
+sys	0m0.532s
+HTW A
+
+real	0m27.812s
+user	0m27.791s
+sys	0m0.020s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m0.993s
+user	0m0.969s
+sys	0m0.024s
+H3D A
+1 threads running
+Time: 3.147 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.336s
+user	0m8.308s
+sys	0m0.028s
+Sequential 3
+BT A
+
+real	1m8.679s
+user	1m8.612s
+sys	0m0.065s
+CG A
+
+real	0m1.063s
+user	0m1.058s
+sys	0m0.005s
+EP A
+
+real	0m18.140s
+user	0m18.136s
+sys	0m0.004s
+FT A
+
+real	0m4.204s
+user	0m4.111s
+sys	0m0.093s
+IS A
+
+real	0m1.383s
+user	0m1.351s
+sys	0m0.032s
+MG A
+
+real	0m2.274s
+user	0m2.186s
+sys	0m0.088s
+SP A
+
+real	0m35.408s
+user	0m35.383s
+sys	0m0.024s
+BPT A
+
+real	0m0.695s
+user	0m0.667s
+sys	0m0.028s
+BFS A
+
+real	0m1.213s
+user	0m1.173s
+sys	0m0.040s
+E3C A
+
+real	2m17.369s
+user	2m16.905s
+sys	0m0.464s
+E3D A
+
+real	2m41.298s
+user	2m40.841s
+sys	0m0.457s
+HTW A
+
+real	0m27.802s
+user	0m27.757s
+sys	0m0.044s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.027 seconds
+
+real	0m1.028s
+user	0m0.996s
+sys	0m0.032s
+H3D A
+1 threads running
+Time: 3.151 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.299s
+user	0m8.262s
+sys	0m0.037s
+Sequential 4
+BT A
+
+real	1m8.869s
+user	1m8.809s
+sys	0m0.060s
+CG A
+
+real	0m1.023s
+user	0m1.022s
+sys	0m0.001s
+EP A
+
+real	0m17.675s
+user	0m17.675s
+sys	0m0.000s
+FT A
+
+real	0m4.214s
+user	0m4.114s
+sys	0m0.100s
+IS A
+
+real	0m1.576s
+user	0m1.552s
+sys	0m0.024s
+MG A
+
+real	0m2.306s
+user	0m2.214s
+sys	0m0.092s
+SP A
+
+real	0m35.528s
+user	0m35.507s
+sys	0m0.020s
+BPT A
+
+real	0m0.707s
+user	0m0.678s
+sys	0m0.029s
+BFS A
+
+real	0m1.202s
+user	0m1.166s
+sys	0m0.036s
+E3C A
+
+real	2m17.267s
+user	2m16.742s
+sys	0m0.524s
+E3D A
+
+real	2m40.749s
+user	2m40.284s
+sys	0m0.464s
+HTW A
+
+real	0m27.640s
+user	0m27.606s
+sys	0m0.034s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.027 seconds
+
+real	0m1.011s
+user	0m0.991s
+sys	0m0.020s
+H3D A
+1 threads running
+Time: 3.151 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.288s
+user	0m8.260s
+sys	0m0.028s
+Sequential 5
+BT A
+
+real	1m8.508s
+user	1m8.452s
+sys	0m0.056s
+CG A
+
+real	0m1.058s
+user	0m1.046s
+sys	0m0.012s
+EP A
+
+real	0m17.934s
+user	0m17.934s
+sys	0m0.000s
+FT A
+
+real	0m4.224s
+user	0m4.139s
+sys	0m0.085s
+IS A
+
+real	0m1.376s
+user	0m1.360s
+sys	0m0.016s
+MG A
+
+real	0m2.296s
+user	0m2.180s
+sys	0m0.116s
+SP A
+
+real	0m35.523s
+user	0m35.503s
+sys	0m0.020s
+BPT A
+
+real	0m0.700s
+user	0m0.664s
+sys	0m0.036s
+BFS A
+
+real	0m1.200s
+user	0m1.154s
+sys	0m0.046s
+E3C A
+
+real	2m17.647s
+user	2m17.186s
+sys	0m0.460s
+E3D A
+
+real	2m40.946s
+user	2m40.520s
+sys	0m0.424s
+HTW A
+
+real	0m27.535s
+user	0m27.523s
+sys	0m0.012s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m0.979s
+user	0m0.959s
+sys	0m0.020s
+H3D A
+1 threads running
+Time: 3.170 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.452s
+user	0m8.275s
+sys	0m0.024s
+Ground Truth 1
+BT A
+
+real	1m10.014s
+user	9m19.148s
+sys	0m0.400s
+CG A
+
+real	0m0.542s
+user	0m4.265s
+sys	0m0.032s
+EP A
+
+real	0m17.777s
+user	0m19.107s
+sys	0m0.032s
+FT A
+
+real	0m3.180s
+user	0m20.973s
+sys	0m0.276s
+IS A
+
+real	0m1.357s
+user	0m5.722s
+sys	0m0.152s
+MG A
+
+real	0m2.548s
+user	0m16.505s
+sys	0m0.268s
+SP A
+
+real	0m53.238s
+user	7m3.870s
+sys	0m1.804s
+BPT A
+
+real	0m0.749s
+user	0m0.713s
+sys	0m0.020s
+BFS A
+
+real	0m1.366s
+user	0m1.229s
+sys	0m0.033s
+E3C A
+
+real	2m17.494s
+user	2m16.753s
+sys	0m0.533s
+E3D A
+
+real	2m39.722s
+user	2m39.228s
+sys	0m0.492s
+HTW A
+
+real	0m7.431s
+user	0m30.300s
+sys	0m0.061s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m1.119s
+user	0m1.070s
+sys	0m0.008s
+H3D A
+1 threads running
+Time: 1.283 (s)
+Accuracy: 4.096975e-05
+
+real	0m6.507s
+user	0m18.204s
+sys	0m0.104s
+Ground Truth 2
+BT A
+
+real	1m10.305s
+user	9m21.625s
+sys	0m0.460s
+CG A
+
+real	0m0.553s
+user	0m4.339s
+sys	0m0.032s
+EP A
+
+real	0m17.845s
+user	0m19.189s
+sys	0m0.044s
+FT A
+
+real	0m3.190s
+user	0m21.123s
+sys	0m0.252s
+IS A
+
+real	0m1.354s
+user	0m5.711s
+sys	0m0.116s
+MG A
+
+real	0m2.543s
+user	0m16.499s
+sys	0m0.260s
+SP A
+
+real	0m56.051s
+user	7m25.883s
+sys	0m2.192s
+BPT A
+
+real	0m0.692s
+user	0m0.680s
 sys	0m0.012s
 BFS A
 
-real	0m0.957s
-user	0m0.933s
+real	0m1.223s
+user	0m1.191s
+sys	0m0.032s
+E3C A
+
+real	2m17.460s
+user	2m17.055s
+sys	0m0.404s
+E3D A
+
+real	2m41.023s
+user	2m40.557s
+sys	0m0.464s
+HTW A
+
+real	0m7.415s
+user	0m30.363s
+sys	0m0.077s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m1.004s
+user	0m1.000s
+sys	0m0.004s
+H3D A
+1 threads running
+Time: 1.292 (s)
+Accuracy: 4.096975e-05
+
+real	0m6.521s
+user	0m18.303s
+sys	0m0.120s
+Ground Truth 3
+BT A
+
+real	1m10.026s
+user	9m19.319s
+sys	0m0.541s
+CG A
+
+real	0m0.538s
+user	0m4.233s
+sys	0m0.032s
+EP A
+
+real	0m17.872s
+user	0m19.235s
+sys	0m0.024s
+FT A
+
+real	0m3.204s
+user	0m21.251s
+sys	0m0.280s
+IS A
+
+real	0m1.342s
+user	0m5.719s
+sys	0m0.104s
+MG A
+
+real	0m2.537s
+user	0m16.438s
+sys	0m0.208s
+SP A
+
+real	0m54.957s
+user	7m17.380s
+sys	0m2.053s
+BPT A
+
+real	0m0.710s
+user	0m0.686s
+sys	0m0.024s
+BFS A
+
+real	0m1.197s
+user	0m1.185s
+sys	0m0.012s
+E3C A
+
+real	2m17.628s
+user	2m17.108s
+sys	0m0.518s
+E3D A
+
+real	2m41.353s
+user	2m40.837s
+sys	0m0.516s
+HTW A
+
+real	0m7.393s
+user	0m30.269s
+sys	0m0.084s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.027 seconds
+
+real	0m0.988s
+user	0m0.968s
+sys	0m0.020s
+H3D A
+1 threads running
+Time: 1.267 (s)
+Accuracy: 4.096975e-05
+
+real	0m6.442s
+user	0m17.983s
+sys	0m0.096s
+Ground Truth 4
+BT A
+
+real	1m10.374s
+user	9m22.236s
+sys	0m0.356s
+CG A
+
+real	0m0.540s
+user	0m4.251s
+sys	0m0.028s
+EP A
+
+real	0m17.790s
+user	0m19.155s
+sys	0m0.036s
+FT A
+
+real	0m3.162s
+user	0m20.987s
+sys	0m0.320s
+IS A
+
+real	0m1.347s
+user	0m5.680s
+sys	0m0.143s
+MG A
+
+real	0m2.545s
+user	0m16.578s
+sys	0m0.220s
+SP A
+
+real	0m54.104s
+user	7m10.302s
+sys	0m2.288s
+BPT A
+
+real	0m0.698s
+user	0m0.666s
+sys	0m0.032s
+BFS A
+
+real	0m1.181s
+user	0m1.154s
+sys	0m0.026s
+E3C A
+
+real	2m17.195s
+user	2m16.702s
+sys	0m0.492s
+E3D A
+
+real	2m40.909s
+user	2m40.405s
+sys	0m0.500s
+HTW A
+
+real	0m7.403s
+user	0m30.342s
+sys	0m0.052s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m1.010s
+user	0m0.998s
+sys	0m0.012s
+H3D A
+1 threads running
+Time: 1.298 (s)
+Accuracy: 4.096975e-05
+
+real	0m6.562s
+user	0m18.323s
+sys	0m0.176s
+Ground Truth 5
+BT A
+
+real	1m10.083s
+user	9m19.867s
+sys	0m0.449s
+CG A
+
+real	0m0.543s
+user	0m4.288s
+sys	0m0.020s
+EP A
+
+real	0m17.775s
+user	0m19.135s
+sys	0m0.028s
+FT A
+
+real	0m3.204s
+user	0m21.322s
+sys	0m0.252s
+IS A
+
+real	0m1.350s
+user	0m5.671s
+sys	0m0.148s
+MG A
+
+real	0m2.533s
+user	0m16.421s
+sys	0m0.228s
+SP A
+
+real	0m52.525s
+user	6m58.039s
+sys	0m1.936s
+BPT A
+
+real	0m0.711s
+user	0m0.691s
+sys	0m0.020s
+BFS A
+
+real	0m1.182s
+user	0m1.162s
+sys	0m0.020s
+E3C A
+
+real	2m18.211s
+user	2m17.735s
+sys	0m0.476s
+E3D A
+
+real	2m41.061s
+user	2m40.560s
+sys	0m0.500s
+HTW A
+
+real	0m7.372s
+user	0m30.030s
+sys	0m0.084s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.027 seconds
+
+real	0m1.013s
+user	0m1.001s
+sys	0m0.012s
+H3D A
+1 threads running
+Time: 1.273 (s)
+Accuracy: 4.096975e-05
+
+real	0m6.504s
+user	0m18.171s
+sys	0m0.100s
+Parallel with threshold 1
+BT A
+
+real	1m16.694s
+user	10m1.168s
+sys	0m11.747s
+CG A
+
+real	0m0.544s
+user	0m3.894s
+sys	0m0.020s
+EP A
+
+real	0m17.838s
+user	0m19.192s
+sys	0m0.033s
+FT A
+
+real	0m4.643s
+user	0m15.159s
+sys	0m0.359s
+IS A
+
+real	0m1.438s
+user	0m4.747s
+sys	0m0.084s
+MG A
+
+real	0m2.669s
+user	0m6.200s
+sys	0m0.176s
+SP A
+
+real	0m36.954s
+user	4m53.631s
+sys	0m1.760s
+BPT A
+
+real	0m0.896s
+user	0m0.872s
+sys	0m0.024s
+BFS A
+
+real	0m1.210s
+user	0m1.185s
+sys	0m0.025s
+E3C A
+
+real	4m9.862s
+user	4m9.373s
+sys	0m0.489s
+E3D A
+
+real	4m14.353s
+user	4m13.880s
+sys	0m0.468s
+HTW A
+
+real	0m10.897s
+user	0m10.853s
+sys	0m0.044s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.027 seconds
+
+real	0m1.023s
+user	0m1.011s
+sys	0m0.012s
+H3D A
+1 threads running
+Time: 3.144 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.285s
+user	0m8.265s
+sys	0m0.020s
+Parallel with threshold 2
+BT A
+
+real	1m16.765s
+user	10m2.576s
+sys	0m11.007s
+CG A
+
+real	0m0.544s
+user	0m3.906s
+sys	0m0.012s
+EP A
+
+real	0m17.708s
+user	0m19.075s
+sys	0m0.020s
+FT A
+
+real	0m4.611s
+user	0m15.087s
+sys	0m0.375s
+IS A
+
+real	0m1.472s
+user	0m4.762s
+sys	0m0.101s
+MG A
+
+real	0m2.676s
+user	0m6.167s
+sys	0m0.216s
+SP A
+
+real	0m36.792s
+user	4m52.405s
+sys	0m1.660s
+BPT A
+
+real	0m0.924s
+user	0m0.912s
+sys	0m0.012s
+BFS A
+
+real	0m1.195s
+user	0m1.161s
+sys	0m0.034s
+E3C A
+
+real	4m10.799s
+user	4m10.319s
+sys	0m0.480s
+E3D A
+
+real	4m13.815s
+user	4m13.263s
+sys	0m0.552s
+HTW A
+
+real	0m10.829s
+user	0m10.797s
+sys	0m0.032s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m1.031s
+user	0m0.990s
+sys	0m0.008s
+H3D A
+1 threads running
+Time: 3.163 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.298s
+user	0m8.274s
+sys	0m0.024s
+Parallel with threshold 3
+BT A
+
+real	1m16.558s
+user	9m59.499s
+sys	0m12.431s
+CG A
+
+real	0m0.556s
+user	0m3.918s
+sys	0m0.028s
+EP A
+
+real	0m17.794s
+user	0m19.169s
+sys	0m0.012s
+FT A
+
+real	0m4.629s
+user	0m15.143s
+sys	0m0.388s
+IS A
+
+real	0m1.459s
+user	0m4.743s
+sys	0m0.104s
+MG A
+
+real	0m2.700s
+user	0m6.215s
+sys	0m0.191s
+SP A
+
+real	0m36.825s
+user	4m52.759s
+sys	0m1.616s
+BPT A
+
+real	0m0.920s
+user	0m0.909s
+sys	0m0.012s
+BFS A
+
+real	0m1.233s
+user	0m1.206s
+sys	0m0.026s
+E3C A
+
+real	4m11.471s
+user	4m10.957s
+sys	0m0.514s
+E3D A
+
+real	4m13.006s
+user	4m12.499s
+sys	0m0.501s
+HTW A
+
+real	0m10.864s
+user	0m10.836s
+sys	0m0.028s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m1.017s
+user	0m0.990s
+sys	0m0.008s
+H3D A
+1 threads running
+Time: 3.136 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.333s
+user	0m8.297s
+sys	0m0.036s
+Parallel with threshold 4
+BT A
+
+real	1m16.524s
+user	9m59.851s
+sys	0m11.759s
+CG A
+
+real	0m0.540s
+user	0m3.861s
+sys	0m0.036s
+EP A
+
+real	0m17.847s
+user	0m19.222s
+sys	0m0.012s
+FT A
+
+real	0m4.654s
+user	0m15.142s
+sys	0m0.408s
+IS A
+
+real	0m1.467s
+user	0m4.734s
+sys	0m0.123s
+MG A
+
+real	0m2.676s
+user	0m6.163s
+sys	0m0.220s
+SP A
+
+real	0m36.973s
+user	4m53.723s
+sys	0m1.840s
+BPT A
+
+real	0m0.926s
+user	0m0.898s
+sys	0m0.028s
+BFS A
+
+real	0m1.177s
+user	0m1.157s
+sys	0m0.020s
+E3C A
+
+real	4m11.805s
+user	4m11.322s
+sys	0m0.477s
+E3D A
+
+real	4m13.266s
+user	4m12.761s
+sys	0m0.504s
+HTW A
+
+real	0m10.862s
+user	0m10.842s
+sys	0m0.020s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.027 seconds
+
+real	0m1.047s
+user	0m1.006s
+sys	0m0.008s
+H3D A
+1 threads running
+Time: 3.122 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.217s
+user	0m8.177s
+sys	0m0.040s
+Parallel with threshold 5
+BT A
+
+real	1m16.720s
+user	10m1.416s
+sys	0m11.792s
+CG A
+
+real	0m0.543s
+user	0m3.883s
+sys	0m0.024s
+EP A
+
+real	0m17.694s
+user	0m19.028s
+sys	0m0.052s
+FT A
+
+real	0m4.604s
+user	0m15.120s
+sys	0m0.386s
+IS A
+
+real	0m1.446s
+user	0m4.732s
+sys	0m0.100s
+MG A
+
+real	0m2.669s
+user	0m6.101s
+sys	0m0.196s
+SP A
+
+real	0m36.844s
+user	4m52.725s
+sys	0m1.748s
+BPT A
+
+real	0m0.929s
+user	0m0.892s
+sys	0m0.036s
+BFS A
+
+real	0m1.203s
+user	0m1.172s
+sys	0m0.030s
+E3C A
+
+real	4m12.620s
+user	4m12.167s
+sys	0m0.452s
+E3D A
+
+real	4m13.535s
+user	4m13.002s
+sys	0m0.532s
+HTW A
+
+real	0m10.833s
+user	0m10.801s
+sys	0m0.032s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.027 seconds
+
+real	0m1.087s
+user	0m1.005s
+sys	0m0.016s
+H3D A
+1 threads running
+Time: 3.122 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.263s
+user	0m8.215s
+sys	0m0.048s
+Parallel without threshold 1
+BT A
+
+real	48m6.108s
+user	384m42.246s
+sys	0m1.069s
+CG A
+
+real	0m0.541s
+user	0m4.102s
+sys	0m0.024s
+EP A
+
+real	0m17.878s
+user	0m19.248s
+sys	0m0.028s
+FT A
+
+real	0m4.897s
+user	0m37.958s
+sys	0m1.096s
+IS A
+
+real	0m1.451s
+user	0m5.976s
+sys	0m0.119s
+MG A
+
+real	0m5.242s
+user	0m38.096s
+sys	0m0.248s
+SP A
+
+real	0m50.407s
+user	6m41.303s
+sys	0m1.664s
+BPT A
+
+real	0m0.929s
+user	0m1.236s
+sys	0m0.024s
+BFS A
+
+real	0m1.183s
+user	0m1.159s
 sys	0m0.024s
 E3C A
 
-real	1m53.752s
-user	1m53.278s
-sys	0m0.472s
+real	4m9.953s
+user	4m9.449s
+sys	0m0.501s
 E3D A
 
-real	2m12.331s
-user	2m11.841s
-sys	0m0.488s
+real	4m12.749s
+user	4m13.673s
+sys	0m0.460s
 HTW A
 
-real	0m25.353s
-user	0m25.313s
+real	12m3.719s
+user	48m15.634s
 sys	0m0.040s
 HTP A
 Start computing the transient temperature
 Ending simulation
-Total time: 0.006 seconds
+Total time: 0.027 seconds
 
-real	0m0.839s
-user	0m0.823s
-sys	0m0.016s
+real	0m1.029s
+user	0m1.017s
+sys	0m0.012s
 H3D A
 1 threads running
-Time: 0.245 (s)
-Accuracy: 3.101152e-04
+Time: 3.197 (s)
+Accuracy: 4.096975e-05
 
-real	0m2.566s
-user	0m2.530s
-sys	0m0.036s
-Manual 1
+real	0m8.348s
+user	0m8.320s
+sys	0m0.028s
+Parallel without threshold 2
 BT A
 
-real	0m29.885s
-user	5m46.601s
-sys	0m1.399s
+real	48m51.960s
+user	390m49.071s
+sys	0m1.004s
 CG A
 
-real	0m0.657s
-user	0m6.674s
-sys	0m0.158s
+real	0m0.540s
+user	0m4.098s
+sys	0m0.029s
 EP A
 
-real	0m2.045s
-user	0m22.855s
-sys	0m0.092s
+real	0m17.647s
+user	0m18.971s
+sys	0m0.040s
 FT A
 
-real	0m1.888s
-user	0m14.363s
-sys	0m0.442s
+real	0m4.912s
+user	0m38.131s
+sys	0m1.039s
 IS A
 
-real	0m1.322s
-user	0m6.074s
-sys	0m0.128s
+real	0m1.443s
+user	0m6.020s
+sys	0m0.179s
 MG A
 
-real	0m1.954s
-user	0m14.611s
-sys	0m0.321s
+real	0m5.066s
+user	0m36.625s
+sys	0m0.224s
 SP A
 
-real	0m48.937s
-user	8m59.835s
-sys	0m6.918s
+real	0m50.379s
+user	6m41.051s
+sys	0m1.752s
 BPT A
 
-real	0m1.009s
-user	0m0.617s
+real	0m0.935s
+user	0m1.247s
+sys	0m0.020s
+BFS A
+
+real	0m1.193s
+user	0m1.155s
+sys	0m0.038s
+E3C A
+
+real	4m10.409s
+user	4m9.957s
+sys	0m0.452s
+E3D A
+
+real	4m12.641s
+user	4m13.494s
+sys	0m0.572s
+HTW A
+
+real	12m21.958s
+user	49m28.548s
+sys	0m0.080s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m1.003s
+user	0m0.995s
+sys	0m0.008s
+H3D A
+1 threads running
+Time: 3.130 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.225s
+user	0m8.193s
+sys	0m0.032s
+Parallel without threshold 3
+BT A
+
+real	45m10.705s
+user	361m19.372s
+sys	0m0.933s
+CG A
+
+real	0m0.541s
+user	0m4.105s
+sys	0m0.024s
+EP A
+
+real	0m17.813s
+user	0m19.148s
+sys	0m0.053s
+FT A
+
+real	0m4.894s
+user	0m38.224s
+sys	0m0.816s
+IS A
+
+real	0m1.437s
+user	0m6.006s
+sys	0m0.116s
+MG A
+
+real	0m5.121s
+user	0m37.143s
+sys	0m0.201s
+SP A
+
+real	0m51.556s
+user	6m50.359s
+sys	0m1.848s
+BPT A
+
+real	0m0.928s
+user	0m1.235s
+sys	0m0.024s
+BFS A
+
+real	0m1.190s
+user	0m1.142s
+sys	0m0.048s
+E3C A
+
+real	4m10.352s
+user	4m9.835s
+sys	0m0.516s
+E3D A
+
+real	4m13.042s
+user	4m13.898s
+sys	0m0.529s
+HTW A
+
+real	11m58.868s
+user	47m56.198s
+sys	0m0.044s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m1.001s
+user	0m0.977s
+sys	0m0.024s
+H3D A
+1 threads running
+Time: 3.137 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.306s
+user	0m8.274s
+sys	0m0.032s
+Parallel without threshold 4
+BT A
+
+real	48m20.138s
+user	386m34.409s
+sys	0m1.212s
+CG A
+
+real	0m0.543s
+user	0m4.123s
+sys	0m0.024s
+EP A
+
+real	0m17.790s
+user	0m19.134s
+sys	0m0.044s
+FT A
+
+real	0m4.916s
+user	0m38.290s
+sys	0m0.916s
+IS A
+
+real	0m1.428s
+user	0m6.006s
+sys	0m0.108s
+MG A
+
+real	0m5.053s
+user	0m36.623s
+sys	0m0.188s
+SP A
+
+real	0m51.675s
+user	6m51.539s
+sys	0m1.632s
+BPT A
+
+real	0m0.935s
+user	0m1.227s
+sys	0m0.040s
+BFS A
+
+real	0m1.237s
+user	0m1.192s
+sys	0m0.026s
+E3C A
+
+real	4m12.110s
+user	4m11.618s
+sys	0m0.488s
+E3D A
+
+real	4m13.446s
+user	4m14.396s
+sys	0m0.476s
+HTW A
+
+real	12m2.303s
+user	48m9.942s
+sys	0m0.044s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.027 seconds
+
+real	0m1.019s
+user	0m1.007s
+sys	0m0.012s
+H3D A
+1 threads running
+Time: 3.134 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.260s
+user	0m8.220s
+sys	0m0.040s
+Parallel without threshold 5
+BT A
+
+real	48m46.041s
+user	390m1.831s
+sys	0m0.980s
+CG A
+
+real	0m0.538s
+user	0m4.081s
+sys	0m0.024s
+EP A
+
+real	0m17.665s
+user	0m19.020s
+sys	0m0.032s
+FT A
+
+real	0m4.899s
+user	0m37.908s
+sys	0m1.169s
+IS A
+
+real	0m1.448s
+user	0m5.927s
+sys	0m0.164s
+MG A
+
+real	0m5.042s
+user	0m36.562s
+sys	0m0.172s
+SP A
+
+real	0m51.822s
+user	6m52.621s
+sys	0m1.712s
+BPT A
+
+real	0m0.939s
+user	0m1.239s
 sys	0m0.032s
 BFS A
 
-real	0m1.246s
-user	0m3.019s
-sys	0m0.108s
+real	0m1.388s
+user	0m1.129s
+sys	0m0.054s
 E3C A
 
-real	0m19.359s
-user	3m23.856s
-sys	0m1.107s
+real	4m11.972s
+user	4m11.478s
+sys	0m0.494s
 E3D A
 
-real	0m38.612s
-user	7m10.157s
-sys	0m2.191s
+real	4m12.263s
+user	4m13.152s
+sys	0m0.496s
 HTW A
 
-real	0m8.632s
-user	0m28.588s
-sys	0m0.077s
+real	11m55.572s
+user	47m42.976s
+sys	0m0.084s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m0.986s
+user	0m0.971s
+sys	0m0.016s
+H3D A
+1 threads running
+Time: 3.175 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.310s
+user	0m8.270s
+sys	0m0.040s
+Optimized with -O3 1
+BT A
+
+real	1m8.785s
+user	1m8.708s
+sys	0m0.076s
+CG A
+
+real	0m1.041s
+user	0m1.037s
+sys	0m0.004s
+EP A
+
+real	0m17.709s
+user	0m17.709s
+sys	0m0.000s
+FT A
+
+real	0m5.652s
+user	0m5.540s
+sys	0m0.113s
+IS A
+
+real	0m1.689s
+user	0m1.665s
+sys	0m0.024s
+MG A
+
+real	0m2.670s
+user	0m2.565s
+sys	0m0.105s
+SP A
+
+real	0m34.708s
+user	0m34.700s
+sys	0m0.008s
+BPT A
+
+real	0m0.703s
+user	0m0.695s
+sys	0m0.008s
+BFS A
+
+real	0m1.200s
+user	0m1.172s
+sys	0m0.028s
+E3C A
+
+real	2m17.056s
+user	2m16.568s
+sys	0m0.488s
+E3D A
+
+real	2m41.452s
+user	2m40.954s
+sys	0m0.496s
+HTW A
+
+real	0m27.584s
+user	0m27.556s
+sys	0m0.028s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.025 seconds
+
+real	0m0.987s
+user	0m0.975s
+sys	0m0.012s
+H3D A
+1 threads running
+Time: 3.172 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.329s
+user	0m8.309s
+sys	0m0.020s
+Optimized with -O3 2
+BT A
+
+real	1m8.835s
+user	1m8.779s
+sys	0m0.056s
+CG A
+
+real	0m1.071s
+user	0m1.059s
+sys	0m0.012s
+EP A
+
+real	0m17.734s
+user	0m17.734s
+sys	0m0.000s
+FT A
+
+real	0m6.076s
+user	0m5.992s
+sys	0m0.084s
+IS A
+
+real	0m1.666s
+user	0m1.654s
+sys	0m0.012s
+MG A
+
+real	0m2.707s
+user	0m2.607s
+sys	0m0.100s
+SP A
+
+real	0m34.502s
+user	0m34.482s
+sys	0m0.020s
+BPT A
+
+real	0m0.723s
+user	0m0.711s
+sys	0m0.012s
+BFS A
+
+real	0m1.212s
+user	0m1.166s
+sys	0m0.046s
+E3C A
+
+real	2m16.074s
+user	2m15.621s
+sys	0m0.454s
+E3D A
+
+real	2m41.540s
+user	2m41.075s
+sys	0m0.464s
+HTW A
+
+real	0m27.844s
+user	0m27.816s
+sys	0m0.028s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m1.120s
+user	0m0.983s
+sys	0m0.008s
+H3D A
+1 threads running
+Time: 3.179 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.339s
+user	0m8.295s
+sys	0m0.044s
+Optimized with -O3 3
+BT A
+
+real	1m8.890s
+user	1m8.819s
+sys	0m0.069s
+CG A
+
+real	0m1.053s
+user	0m1.045s
+sys	0m0.008s
+EP A
+
+real	0m17.630s
+user	0m17.630s
+sys	0m0.000s
+FT A
+
+real	0m6.111s
+user	0m6.003s
+sys	0m0.108s
+IS A
+
+real	0m1.564s
+user	0m1.540s
+sys	0m0.024s
+MG A
+
+real	0m2.708s
+user	0m2.608s
+sys	0m0.100s
+SP A
+
+real	0m34.608s
+user	0m34.584s
+sys	0m0.024s
+BPT A
+
+real	0m0.697s
+user	0m0.665s
+sys	0m0.032s
+BFS A
+
+real	0m1.180s
+user	0m1.158s
+sys	0m0.022s
+E3C A
+
+real	2m16.979s
+user	2m16.479s
+sys	0m0.500s
+E3D A
+
+real	2m41.849s
+user	2m41.353s
+sys	0m0.496s
+HTW A
+
+real	0m27.704s
+user	0m27.680s
+sys	0m0.024s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m1.021s
+user	0m1.004s
+sys	0m0.016s
+H3D A
+1 threads running
+Time: 3.191 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.371s
+user	0m8.348s
+sys	0m0.020s
+Optimized with -O3 4
+BT A
+
+real	1m8.857s
+user	1m8.799s
+sys	0m0.056s
+CG A
+
+real	0m1.051s
+user	0m1.036s
+sys	0m0.016s
+EP A
+
+real	0m17.679s
+user	0m17.678s
+sys	0m0.001s
+FT A
+
+real	0m6.014s
+user	0m5.941s
+sys	0m0.073s
+IS A
+
+real	0m1.675s
+user	0m1.656s
+sys	0m0.020s
+MG A
+
+real	0m2.641s
+user	0m2.545s
+sys	0m0.096s
+SP A
+
+real	0m34.629s
+user	0m34.601s
+sys	0m0.028s
+BPT A
+
+real	0m0.705s
+user	0m0.693s
+sys	0m0.013s
+BFS A
+
+real	0m1.219s
+user	0m1.185s
+sys	0m0.034s
+E3C A
+
+real	2m16.432s
+user	2m15.911s
+sys	0m0.521s
+E3D A
+
+real	2m42.134s
+user	2m41.666s
+sys	0m0.464s
+HTW A
+
+real	0m27.920s
+user	0m27.888s
+sys	0m0.032s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m1.030s
+user	0m0.998s
+sys	0m0.032s
+H3D A
+1 threads running
+Time: 3.173 (s)
+Accuracy: 4.096975e-05
+
+real	0m8.482s
+user	0m8.297s
+sys	0m0.040s
+Optimized with -O3 5
+BT A
+
+real	1m8.854s
+user	1m8.793s
+sys	0m0.061s
+CG A
+
+real	0m1.060s
+user	0m1.040s
+sys	0m0.020s
+EP A
+
+real	0m17.801s
+user	0m17.801s
+sys	0m0.000s
+FT A
+
+real	0m6.036s
+user	0m5.928s
+sys	0m0.108s
+IS A
+
+real	0m1.427s
+user	0m1.423s
+sys	0m0.004s
+MG A
+
+real	0m2.712s
+user	0m2.608s
+sys	0m0.104s
+SP A
+
+real	0m34.547s
+user	0m34.514s
+sys	0m0.032s
+BPT A
+
+real	0m0.716s
+user	0m0.696s
+sys	0m0.021s
+BFS A
+
+real	0m1.206s
+user	0m1.184s
+sys	0m0.022s
+E3C A
+
+real	2m16.217s
+user	2m15.715s
+sys	0m0.500s
+E3D A
+
+real	2m42.068s
+user	2m41.615s
+sys	0m0.452s
+HTW A
+
+real	0m27.882s
+user	0m27.849s
+sys	0m0.032s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.026 seconds
+
+real	0m0.987s
+user	0m0.955s
+sys	0m0.032s
+H3D A
+1 threads running
+Time: 3.164 (s)
+Accuracy: 4.096975e-05
+
+real	0m9.067s
+user	0m8.234s
+sys	0m0.052s
+Manual 1
+BT A
+
+real	0m50.500s
+user	6m43.032s
+sys	0m0.512s
+CG A
+
+real	0m0.562s
+user	0m4.437s
+sys	0m0.016s
+EP A
+
+real	0m2.653s
+user	0m21.169s
+sys	0m0.012s
+FT A
+
+real	0m2.400s
+user	0m14.980s
+sys	0m0.245s
+IS A
+
+real	0m1.467s
+user	0m5.574s
+sys	0m0.096s
+MG A
+
+real	0m2.479s
+user	0m14.649s
+sys	0m0.188s
+SP A
+
+real	0m41.066s
+user	5m26.979s
+sys	0m0.868s
+BPT A
+
+real	0m0.742s
+user	0m0.683s
+sys	0m0.032s
+BFS A
+
+real	0m1.243s
+user	0m2.585s
+sys	0m0.036s
+E3C A
+
+real	0m27.268s
+user	3m22.319s
+sys	0m0.548s
+E3D A
+
+real	0m56.436s
+user	7m17.497s
+sys	0m0.820s
+HTW A
+
+real	0m7.364s
+user	0m29.195s
+sys	0m0.060s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.009 seconds
+
+real	0m1.074s
+user	0m1.623s
+sys	0m0.020s
+H3D A
+8 threads running
+Time: 1.179 (s)
+Accuracy: 4.096975e-05
+
+real	0m6.422s
+user	0m15.928s
+sys	0m0.100s
+Manual 2
+BT A
+
+real	0m50.503s
+user	6m42.996s
+sys	0m0.488s
+CG A
+
+real	0m0.539s
+user	0m4.227s
+sys	0m0.040s
+EP A
+
+real	0m2.696s
+user	0m21.523s
+sys	0m0.004s
+FT A
+
+real	0m2.391s
+user	0m14.862s
+sys	0m0.324s
+IS A
+
+real	0m1.491s
+user	0m5.658s
+sys	0m0.080s
+MG A
+
+real	0m2.450s
+user	0m14.594s
+sys	0m0.168s
+SP A
+
+real	0m41.489s
+user	5m30.556s
+sys	0m0.680s
+BPT A
+
+real	0m0.720s
+user	0m0.707s
+sys	0m0.012s
+BFS A
+
+real	0m1.189s
+user	0m2.606s
+sys	0m0.056s
+E3C A
+
+real	0m28.114s
+user	3m31.157s
+sys	0m0.604s
+E3D A
+
+real	0m56.702s
+user	7m19.409s
+sys	0m0.836s
+HTW A
+
+real	0m7.325s
+user	0m29.232s
+sys	0m0.048s
 HTP A
 Start computing the transient temperature
 Ending simulation
 Total time: 0.008 seconds
 
-real	0m1.768s
-user	0m1.608s
-sys	0m0.032s
+real	0m1.004s
+user	0m1.572s
+sys	0m0.048s
 H3D A
-12 threads running
-Time: 0.685 (s)
+8 threads running
+Time: 1.211 (s)
 Accuracy: 4.096975e-05
 
-real	0m5.943s
-user	0m14.597s
-sys	0m0.168s
+real	0m6.517s
+user	0m16.098s
+sys	0m0.116s
+Manual 3
+BT A
+
+real	0m50.580s
+user	6m43.625s
+sys	0m0.452s
+CG A
+
+real	0m0.543s
+user	0m4.269s
+sys	0m0.033s
+EP A
+
+real	0m2.708s
+user	0m21.597s
+sys	0m0.020s
+FT A
+
+real	0m2.365s
+user	0m14.615s
+sys	0m0.259s
+IS A
+
+real	0m1.499s
+user	0m5.670s
+sys	0m0.088s
+MG A
+
+real	0m2.469s
+user	0m14.606s
+sys	0m0.189s
+SP A
+
+real	0m41.356s
+user	5m29.349s
+sys	0m0.784s
+BPT A
+
+real	0m0.731s
+user	0m0.711s
+sys	0m0.020s
+BFS A
+
+real	0m1.186s
+user	0m2.672s
+sys	0m0.064s
+E3C A
+
+real	0m27.960s
+user	3m30.103s
+sys	0m0.562s
+E3D A
+
+real	0m56.535s
+user	7m18.132s
+sys	0m0.864s
+HTW A
+
+real	0m7.324s
+user	0m29.209s
+sys	0m0.064s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.009 seconds
+
+real	0m0.987s
+user	0m1.600s
+sys	0m0.020s
+H3D A
+8 threads running
+Time: 1.230 (s)
+Accuracy: 4.096975e-05
+
+real	0m6.634s
+user	0m16.306s
+sys	0m0.076s
+Manual 4
+BT A
+
+real	0m50.580s
+user	6m43.432s
+sys	0m0.584s
+CG A
+
+real	0m0.568s
+user	0m4.473s
+sys	0m0.020s
+EP A
+
+real	0m2.687s
+user	0m21.440s
+sys	0m0.017s
+FT A
+
+real	0m2.330s
+user	0m14.469s
+sys	0m0.285s
+IS A
+
+real	0m1.488s
+user	0m5.593s
+sys	0m0.096s
+MG A
+
+real	0m2.459s
+user	0m14.636s
+sys	0m0.156s
+SP A
+
+real	0m41.554s
+user	5m30.920s
+sys	0m0.804s
+BPT A
+
+real	0m0.727s
+user	0m0.695s
+sys	0m0.032s
+BFS A
+
+real	0m1.202s
+user	0m2.661s
+sys	0m0.054s
+E3C A
+
+real	0m28.192s
+user	3m31.700s
+sys	0m0.506s
+E3D A
+
+real	0m56.569s
+user	7m18.012s
+sys	0m0.836s
+HTW A
+
+real	0m7.309s
+user	0m29.161s
+sys	0m0.056s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.008 seconds
+
+real	0m0.990s
+user	0m1.607s
+sys	0m0.016s
+H3D A
+8 threads running
+Time: 1.208 (s)
+Accuracy: 4.096975e-05
+
+real	0m6.841s
+user	0m16.164s
+sys	0m0.084s
+Manual 5
+BT A
+
+real	0m50.543s
+user	6m43.300s
+sys	0m0.472s
+CG A
+
+real	0m0.586s
+user	0m4.629s
+sys	0m0.020s
+EP A
+
+real	0m2.648s
+user	0m21.134s
+sys	0m0.020s
+FT A
+
+real	0m2.347s
+user	0m14.530s
+sys	0m0.344s
+IS A
+
+real	0m1.492s
+user	0m5.665s
+sys	0m0.096s
+MG A
+
+real	0m2.450s
+user	0m14.682s
+sys	0m0.144s
+SP A
+
+real	0m41.492s
+user	5m30.448s
+sys	0m0.740s
+BPT A
+
+real	0m0.717s
+user	0m0.697s
+sys	0m0.020s
+BFS A
+
+real	0m1.185s
+user	0m2.622s
+sys	0m0.056s
+E3C A
+
+real	0m28.077s
+user	3m31.028s
+sys	0m0.554s
+E3D A
+
+real	0m56.602s
+user	7m18.933s
+sys	0m0.812s
+HTW A
+
+real	0m7.341s
+user	0m29.287s
+sys	0m0.056s
+HTP A
+Start computing the transient temperature
+Ending simulation
+Total time: 0.009 seconds
+
+real	0m1.017s
+user	0m1.602s
+sys	0m0.048s
+H3D A
+8 threads running
+Time: 1.213 (s)
+Accuracy: 4.096975e-05
+
+real	0m6.402s
+user	0m16.214s
+sys	0m0.088s
 AUTOPAR 1
 BT A
 
-real	9m10.368s
-user	105m55.201s
-sys	0m38.959s
+real	6m46.087s
+user	54m6.895s
+sys	0m0.640s
 CG A
 
-real	0m0.668s
-user	0m7.565s
-sys	0m0.081s
+real	0m0.914s
+user	0m7.199s
+sys	0m0.040s
 EP A
 
-real	0m15.774s
-user	0m17.817s
+real	0m17.795s
+user	0m19.172s
+sys	0m0.049s
+FT A
+
+real	0m57.824s
+user	7m37.949s
+sys	0m0.337s
+IS A
+
+real	0m1.404s
+user	0m5.894s
+sys	0m0.164s
+MG A
+
+real	0m2.981s
+user	0m19.749s
+sys	0m0.612s
+SP A
+
+real	1m32.936s
+user	12m21.707s
+sys	0m1.436s
+BPT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+BFS A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3C A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3D A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTW A
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
+HTP A
+timeout: failed to run command ‘./hotspot’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+H3D A
+timeout: failed to run command ‘./3D’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+AUTOPAR 2
+BT A
+
+real	6m53.580s
+user	55m6.612s
+sys	0m0.732s
+CG A
+
+real	0m0.910s
+user	0m7.126s
+sys	0m0.088s
+EP A
+
+real	0m17.684s
+user	0m19.100s
 sys	0m0.032s
 FT A
 
-real	1m26.532s
-user	16m35.878s
-sys	0m6.980s
+real	0m59.937s
+user	7m55.107s
+sys	0m0.264s
 IS A
 
-real	0m1.244s
-user	0m7.397s
-sys	0m0.194s
+real	0m1.397s
+user	0m5.881s
+sys	0m0.128s
 MG A
 
-real	0m2.871s
-user	0m27.290s
-sys	0m0.672s
+real	0m2.989s
+user	0m19.806s
+sys	0m0.551s
 SP A
 
-real	1m15.123s
-user	14m40.803s
-sys	0m5.031s
+real	1m36.590s
+user	12m50.867s
+sys	0m1.460s
+BPT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+BFS A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3C A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3D A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTW A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTP A
+timeout: failed to run command ‘./hotspot’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+H3D A
+timeout: failed to run command ‘./3D’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.001s
+AUTOPAR 3
+BT A
+
+real	6m48.383s
+user	54m25.281s
+sys	0m0.648s
+CG A
+
+real	0m0.916s
+user	0m7.197s
+sys	0m0.080s
+EP A
+
+real	0m17.955s
+user	0m19.363s
+sys	0m0.020s
+FT A
+
+real	0m59.480s
+user	7m51.229s
+sys	0m0.348s
+IS A
+
+real	0m1.395s
+user	0m5.861s
+sys	0m0.156s
+MG A
+
+real	0m2.989s
+user	0m19.889s
+sys	0m0.500s
+SP A
+
+real	1m33.003s
+user	12m22.002s
+sys	0m1.660s
+BPT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+BFS A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3C A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3D A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTW A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTP A
+timeout: failed to run command ‘./hotspot’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+H3D A
+timeout: failed to run command ‘./3D’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+AUTOPAR 4
+BT A
+
+real	6m36.799s
+user	52m52.495s
+sys	0m0.768s
+CG A
+
+real	0m0.922s
+user	0m7.296s
+sys	0m0.044s
+EP A
+
+real	0m17.771s
+user	0m19.175s
+sys	0m0.024s
+FT A
+
+real	0m54.565s
+user	7m12.079s
+sys	0m0.300s
+IS A
+
+real	0m1.407s
+user	0m5.906s
+sys	0m0.165s
+MG A
+
+real	0m2.988s
+user	0m19.745s
+sys	0m0.544s
+SP A
+
+real	1m33.033s
+user	12m22.613s
+sys	0m1.324s
+BPT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+BFS A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3C A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3D A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTW A
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
+HTP A
+timeout: failed to run command ‘./hotspot’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+H3D A
+timeout: failed to run command ‘./3D’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+AUTOPAR 5
+BT A
+
+real	6m53.665s
+user	55m7.479s
+sys	0m0.684s
+CG A
+
+real	0m0.960s
+user	0m7.580s
+sys	0m0.056s
+EP A
+
+real	0m17.775s
+user	0m19.146s
+sys	0m0.016s
+FT A
+
+real	1m0.512s
+user	7m59.553s
+sys	0m0.400s
+IS A
+
+real	0m1.384s
+user	0m5.832s
+sys	0m0.165s
+MG A
+
+real	0m2.997s
+user	0m19.824s
+sys	0m0.552s
+SP A
+
+real	1m31.662s
+user	12m11.386s
+sys	0m1.556s
+BPT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+BFS A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3C A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3D A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTW A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTP A
+timeout: failed to run command ‘./hotspot’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+H3D A
+timeout: failed to run command ‘./3D’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+CETUS 1
+BT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+CG A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+EP A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+FT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+IS A
+
+real	0m1.406s
+user	0m5.804s
+sys	0m0.171s
+MG A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+SP A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+BPT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+BFS A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3C A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3D A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTW A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTP A
+timeout: failed to run command ‘./hotspot’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+H3D A
+timeout: failed to run command ‘./3D’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+CETUS 2
+BT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+CG A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+EP A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+FT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+IS A
+
+real	0m1.408s
+user	0m5.836s
+sys	0m0.152s
+MG A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+SP A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.001s
+BPT A
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
+BFS A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3C A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3D A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTW A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTP A
+timeout: failed to run command ‘./hotspot’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+H3D A
+timeout: failed to run command ‘./3D’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.001s
+CETUS 3
+BT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+CG A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+EP A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+FT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+IS A
+
+real	0m1.411s
+user	0m5.888s
+sys	0m0.172s
+MG A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+SP A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+BPT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+BFS A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3C A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3D A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTW A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTP A
+timeout: failed to run command ‘./hotspot’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+H3D A
+timeout: failed to run command ‘./3D’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+CETUS 4
+BT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+CG A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.001s
+EP A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+FT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+IS A
+
+real	0m1.424s
+user	0m5.932s
+sys	0m0.104s
+MG A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.001s
+SP A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+BPT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+BFS A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3C A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3D A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTW A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTP A
+timeout: failed to run command ‘./hotspot’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+H3D A
+timeout: failed to run command ‘./3D’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+CETUS 5
+BT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+CG A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+EP A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+FT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+IS A
+
+real	0m1.397s
+user	0m5.946s
+sys	0m0.124s
+MG A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+SP A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+BPT A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+BFS A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3C A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+E3D A
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+HTW A
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
+HTP A
+timeout: failed to run command ‘./hotspot’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+H3D A
+timeout: failed to run command ‘./3D’: No such file or directory
+
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
