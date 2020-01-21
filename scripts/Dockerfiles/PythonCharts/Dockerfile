@@ -25,8 +25,10 @@ RUN python -m pip install plotnine
 RUN DEBIAN_FRONTEND=noninteractive apt-get install dialog -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y -q install python-tk
 
+WORKDIR /usr/src
+
 #NOTE: Remove the token when AutoParBench be a public repository
-RUN git clone https://gleisonsdm:78e48c089ce620d071324e3d202546b457f9e8b9@github.com/chunhualiao/AutoParBench.git ${PYSCRIPTS_PATH}
+RUN git clone https://github.com/gleisonsdm/AutoParBench.git ${PYSCRIPTS_PATH}
 
 #Go back to root folder
 WORKDIR /root
