@@ -50,22 +50,21 @@ def main(filename):
 
     df = pd.DataFrame.from_dict(list_data)
     print(df)
-    p=ggplot(df, aes(x='loops', y='benchmarks', fill='loop')) + geom_bar(stat = 'identity', width=0.6, show_legend = False) 
+    
+    p=ggplot(df, aes(x='loops', y='benchmarks', fill='loop')) + geom_bar(stat = 'identity', position = 'dodge',width=0.6, show_legend = False) 
+    
     p= p +  ggtitle("") + xlab("") + ylab("") + theme_classic()
     p= p + theme(axis_title_x=element_blank(), axis_text_x=element_blank(), axis_ticks=element_blank())
     p= p + theme(axis_title_y=element_blank(),axis_text_y=element_blank(), axis_ticks=element_blank())
     #p= p + theme(axis_text_x  = element_text(angle = 90, hjust = 0.2, size = 15))
+    
     colors=[]
     colors.append('#999999')
     colors.append('#444444')
+    
     p= p + scale_fill_manual(values=colors)
     p.save("num_benchmarks_loops.png")
 
-
-    #df = pd.DataFrame.from_dict(list_data)
-    #p=ggplot(df, aes(x='lines', y='benchmarks')) + geom_bar(stat = 'identity', width=0.6, position = position_dodge(width=0.7)) + theme_light()
-    #p= p + ggtitle("") + xlab("") + ylab("Number of Benchmarks") + theme(axis_text_x  = element_text(angle = 90, hjust = 0.2, size = 15))
-    #p.save("num_benchmarks_loops.png")
 
 if __name__ == "__main__":
     main(sys.argv[1])
