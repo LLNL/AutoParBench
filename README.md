@@ -66,4 +66,4 @@ The built tool to support the JSON format and designed to provide facilities to 
  
 # Acknowledgement
 
-Work on the test framework design was supported by the U.S. DOE Advanced Scientific Computing Program (ASCR SC-21). Experiments were funded through the LLNL-LDRD Program under ProjectNo. 18-ERD-006.
+Work on the test framework design was supported by the U.S. DOE Advanced Scientific Computing Program (ASCR SC-21). Experiments were funded through the LLNL-LDRD Program under ProjectNo. 18-ERD-006. LLNL-CODE-800798
