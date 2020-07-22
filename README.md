@@ -66,7 +66,7 @@ The built tool to support the JSON format and designed to provide facilities to 
 
 # Publication
 
-Gleison Souza Diniz Mendonça, Chunhua Liao and Fernando Magno Quintão Pereira, AutoParBench: A Unified Test Framework for OpenMP-based Parallelizers, International Conference on Supercomputing, June 29-July 2 2020, Worldwide online Event (Barcelona, Spain), LLNL-CONF-795158, [pdf](https://github.com/chunhualiao/pubdocs/blob/master/AutoParBench-ICS2020-final.pdf)
+Gleison Souza Diniz Mendonça, Chunhua Liao and Fernando Magno Quintão Pereira, AutoParBench: A Unified Test Framework for OpenMP-based Parallelizers, International Conference on Supercomputing, June 29-July 2 2020, Worldwide online Event (Barcelona, Spain), LLNL-CONF-795158, [pdf](https://github.com/chunhualiao/pubdocs/blob/master/papers-slides/AutoParBench-ICS2020-final.pdf)
 
 # Acknowledgement
 
