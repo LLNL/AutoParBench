@@ -70,4 +70,4 @@ Gleison Souza Diniz Mendonça, Chunhua Liao and Fernando Magno Quintão Pereira,
 
 # Acknowledgement
 
-Work on the test framework design was supported by the U.S. DOE Advanced Scientific Computing Program (ASCR SC-21). Experiments were funded through the LLNL-LDRD Program under ProjectNo. 18-ERD-006. LLNL-CODE-800798
+Work on the test framework design was supported by the U.S. DOE Advanced Scientific Computing Program (ASCR SC-21). Experiments were funded through the LLNL-LDRD Program under Project No. 18-ERD-006. LLNL-CODE-800798
